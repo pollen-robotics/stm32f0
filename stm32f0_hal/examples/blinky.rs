@@ -7,8 +7,7 @@ use cortex_m::asm;
 
 extern crate stm32f0_hal;
 
-fn main() {
-}
+fn main() {}
 
 // As we are not using interrupts, we just register a dummy catch all handler
 #[link_section = ".vector_table.interrupts"]
