@@ -1,0 +1,16 @@
+language: rust
+rust:
+  - nightly
+cache: cargo
+
+addons:
+  apt:
+    packages:
+      - binutils-arm-none-eabi
+
+before_script:
+  - export PATH="$PATH:$HOME/.cargo/bin"
+  - which xargo || cargo install xargo -f --vers 0.3.8
+
+script:
+  - xargo check --target thumbv6m-none-eabi

@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "stm32f0x2",
+]
+
+[profile.release]
+lto = true
