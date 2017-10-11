@@ -1,5 +1,7 @@
 # Rust API for the STM32F0 micro controller
 
+[![Build Status](https://travis-ci.org/pollen/stm32f0.svg?branch=master)](https://travis-ci.org/pollen/stm32f0)
+
 The API is composed of two main crates:
 
 * the stm32f0x2 is the raw API as generated via [svd2rust](https://github.com/japaric/svd2rust)
