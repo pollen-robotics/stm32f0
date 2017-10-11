@@ -1,0 +1,24 @@
+language: rust
+rust:
+  - nightly
+cache: cargo
+
+addons:
+  apt:
+    sources:
+      - debian-sid
+    packages:
+      - binutils-arm-none-eabi
+
+env:
+  - TARGET=x86_64-unknown-linux-gnu
+  - TARGET=thumbv6m-none-eabi
+
+
+before_script:
+  - export PATH="$PATH:$HOME/.cargo/bin"
+  - which xargo || (cd .. && cargo install xargo -f --vers 0.3.8)
+  - rustup component list | grep 'rust-src.*installed' || rustup component add rust-src
+
+script:
+  - xargo check --target $TARGET

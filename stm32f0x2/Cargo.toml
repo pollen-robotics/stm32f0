@@ -1,0 +1,25 @@
+[package]
+authors = ["Pollen Robotics <contact@pollen-robotics.com>"]
+name = "stm32f0x2"
+version = "0.1.0"
+description = "API for the STM32F0x2 micro-controller (generated using svd2rust)"
+keywords = ["embedded", "STM32"]
+categories = ["hardware-support", "no-std"]
+license = "Apache-2.0"
+repository = "https://github.com/pollen/stm32f0"
+exclude = ["*.svd"]
+
+[badges]
+travis-ci = { repository = "pollen/stm32f0" }
+
+[dependencies]
+bare-metal = "0.1.1"
+cortex-m = "0.3.1"
+vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3.6"
+
+[features]
+rt = ["cortex-m-rt"]
