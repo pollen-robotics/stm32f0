@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "stm32f0x2",
+  "stm32f0_hal",
 ]
 
 [profile.release]
