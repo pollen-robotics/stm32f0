@@ -8,9 +8,13 @@ addons:
     packages:
       - binutils-arm-none-eabi
 
+env:
+  - TARGET=x86_64-unknown-linux-gnu
+  - TARGET=thumbv6em-none-ebihfs
+
 before_script:
   - export PATH="$PATH:$HOME/.cargo/bin"
-  - which xargo || cargo install xargo -f --vers 0.3.8
+  - bash ci/before_script.sh
 
 script:
-  - xargo check --target thumbv6m-none-eabi
+  - xargo check --target $TARGET
