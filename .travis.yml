@@ -23,4 +23,4 @@ before_script:
 
 script:
   - xargo check --target $TARGET
-  - cargo fmt -- --package smt32f0_hal --write-mode=diff
+  - cargo fmt --all -- --write-mode=diff
