@@ -23,4 +23,5 @@ before_script:
 
 script:
   - xargo check --target $TARGET
+  - xargo build --features "clippy"
   - cargo fmt --all -- --write-mode=diff

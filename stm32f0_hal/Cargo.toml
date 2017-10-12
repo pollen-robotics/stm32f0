@@ -26,3 +26,7 @@ version = "0.3.6"
 
 [dependencies.stm32f0x2]
 path = "../stm32f0x2"
+
+[dependencies.clippy]
+optional = true
+version = "*"
