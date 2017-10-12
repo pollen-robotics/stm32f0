@@ -9,28 +9,39 @@ pub enum Mode {
 }
 
 pub enum Pin {
-    P0, P1, P2, P3,
-    P4, P5, P6, P7,
-    P8, P9, P10, P11,
-    P12, P13, P14, P15,
+    P0,
+    P1,
+    P2,
+    P3,
+    P4,
+    P5,
+    P6,
+    P7,
+    P8,
+    P9,
+    P10,
+    P11,
+    P12,
+    P13,
+    P14,
+    P15,
 }
 
 
 pub fn init(_pin: &Pin, _mode: Mode) {
-    cortex_m::interrupt::free(
-       |cs| {
-            let rcc = RCC.borrow(cs);
-            rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
+    cortex_m::interrupt::free(|cs| {
+        let rcc = RCC.borrow(cs);
+        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
 
-            let gpioa = GPIOA.borrow(cs);
-            gpioa.moder.modify(|_, w| w.moder0().bits(0b00));
+        let gpioa = GPIOA.borrow(cs);
+        gpioa.moder.modify(|_, w| w.moder0().bits(0b00));
 
-            let gpioc = GPIOC.borrow(cs);
-            gpioc.moder.modify(|_, w| w.moder6().bits(0b01));
-            gpioc.moder.modify(|_, w| w.moder7().bits(0b01));
-            gpioc.moder.modify(|_, w| w.moder8().bits(0b01));
-            gpioc.moder.modify(|_, w| w.moder9().bits(0b01));
-        });
+        let gpioc = GPIOC.borrow(cs);
+        gpioc.moder.modify(|_, w| w.moder6().bits(0b01));
+        gpioc.moder.modify(|_, w| w.moder7().bits(0b01));
+        gpioc.moder.modify(|_, w| w.moder8().bits(0b01));
+        gpioc.moder.modify(|_, w| w.moder9().bits(0b01));
+    });
 }
 
 pub fn read(_pin: &Pin) -> bool {
@@ -40,8 +51,7 @@ pub fn read(_pin: &Pin) -> bool {
 pub fn write(_pin: &Pin, on: bool) {
     if on {
         PC6.high();
-    }
-    else {
+    } else {
         PC6.low();
     }
 }
