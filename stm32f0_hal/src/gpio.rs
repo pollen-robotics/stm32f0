@@ -26,7 +26,7 @@ pub enum Pin {
 }
 
 
-pub fn init(_pin: &Pin, _mode: Mode) {
+pub fn init(_pin: &Pin, _mode: &Mode) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
 
