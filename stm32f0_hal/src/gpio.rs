@@ -1,3 +1,25 @@
+//! # gpio module
+//!
+//! This module provides access to the GPIO of the stm32f0 board.
+//! You can:
+//!
+//! * configure a PIN in Input or Output
+//! * read or write the PIN depending on its configuration
+//!
+//! ## Examples
+//!
+//! ```
+//! extern crate stm32f0_hal;
+//!
+//! use stm32f0_hal::gpio;
+//!
+//! gpio::init(gpio::Pin::P6, gpio::Mode::Input);
+//! let b = gpio::read(gpio::Pin::P6);
+//!
+//! gpio::init(gpio::Pin::P9, gpio::Mode::Output);
+//! gpio::write(gpio::Pin::P9, true);
+//! ```
+
 use cortex_m;
 use stm32f0x2::{RCC, GPIOA, GPIOC};
 
@@ -26,6 +48,7 @@ pub enum Pin {
 }
 
 
+/// Setup a pin in Input or Output Mode.
 pub fn init(_pin: &Pin, _mode: &Mode) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
@@ -43,10 +66,12 @@ pub fn init(_pin: &Pin, _mode: &Mode) {
     });
 }
 
+/// Read a pin in Input Mode.
 pub fn read(_pin: &Pin) -> bool {
     PA0.read()
 }
 
+/// Write a bool to a pin in Output Mode.
 pub fn write(_pin: &Pin, on: bool) {
     if on {
         PC6.high();
