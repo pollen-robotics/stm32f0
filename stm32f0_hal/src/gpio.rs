@@ -29,12 +29,13 @@ pub enum Pin {
 pub fn init(_pin: &Pin, _mode: Mode) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
-        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
 
         let gpioa = GPIOA.borrow(cs);
+        rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
         gpioa.moder.modify(|_, w| w.moder0().bits(0b00));
 
         let gpioc = GPIOC.borrow(cs);
+        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
         gpioc.moder.modify(|_, w| w.moder6().bits(0b01));
         gpioc.moder.modify(|_, w| w.moder7().bits(0b01));
         gpioc.moder.modify(|_, w| w.moder8().bits(0b01));
@@ -97,6 +98,7 @@ macro_rules! pin {
 
 
 pin_read!(PA0, idr0);
+
 pin!(PC6, bs6, br6);
 pin!(PC7, bs7, br7);
 pin!(PC8, bs8, br8);
