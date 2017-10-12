@@ -1,7 +1,5 @@
-extern crate cortex_m;
-
-extern crate stm32f0x2;
-use self::stm32f0x2::{RCC, GPIOA, GPIOC};
+use cortex_m;
+use stm32f0x2::{RCC, GPIOA, GPIOC};
 
 pub enum Mode {
     Input = 0b00,
