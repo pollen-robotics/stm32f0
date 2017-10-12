@@ -16,22 +16,20 @@ pub enum Pin {
 }
 
 
-pub fn init(_pin: &Pin, mode: Mode) {
-    let mode = mode as u8;
-
+pub fn init(_pin: &Pin, _mode: Mode) {
     cortex_m::interrupt::free(
        |cs| {
             let rcc = RCC.borrow(cs);
             rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
 
             let gpioa = GPIOA.borrow(cs);
-            gpioa.moder.modify(|_, w| w.moder0().bits(mode));
+            gpioa.moder.modify(|_, w| w.moder0().bits(0b00));
 
             let gpioc = GPIOC.borrow(cs);
-            gpioc.moder.modify(|_, w| w.moder6().bits(mode));
-            gpioc.moder.modify(|_, w| w.moder7().bits(mode));
-            gpioc.moder.modify(|_, w| w.moder8().bits(mode));
-            gpioc.moder.modify(|_, w| w.moder9().bits(mode));
+            gpioc.moder.modify(|_, w| w.moder6().bits(0b01));
+            gpioc.moder.modify(|_, w| w.moder7().bits(0b01));
+            gpioc.moder.modify(|_, w| w.moder8().bits(0b01));
+            gpioc.moder.modify(|_, w| w.moder9().bits(0b01));
         });
 }
 
