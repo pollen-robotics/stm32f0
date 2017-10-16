@@ -1,0 +1,32 @@
+[package]
+authors = ["Pollen Robotics <contact@pollen-robotics.com>"]
+categories = [
+    "hardware-support",
+    "no-std",
+]
+description = "Rust API for the STM32F0 micro controller"
+keywords = [
+    "embedded",
+    "STM32",
+]
+license = "Apache-2.0"
+name = "stm32f0_hal"
+repository = "https://github.com/pollen/stm32f0"
+version = "0.1.0"
+
+[badges.travis-ci]
+repository = "pollen/stm32f0"
+
+[dependencies.cortex-m]
+version = "0.3.1"
+
+[dependencies.cortex-m-rt]
+features = ["abort-on-panic"]
+version = "0.3.6"
+
+[dependencies.stm32f0x2]
+path = "../stm32f0x2"
+
+[dependencies.clippy]
+optional = true
+version = "*"
