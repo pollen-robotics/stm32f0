@@ -13,30 +13,84 @@
 //!
 //! use stm32f0_hal::gpio;
 //!
-//! gpio::init(gpio::Pin::P8, gpio::Mode::Input);
-//! let b = gpio::read(gpio::Pin::P8);
-//!
-//! gpio::init(gpio::Pin::P9, gpio::Mode::Output);
-//! gpio::write(gpio::Pin::P9, true);
+// ! let p_in = gpio::Input::setup(gpio::Pin::P8);
+// ! let b = p_in.read();
+// !
+// ! let p_out = gpio::Output::setup(gpio::Pin::P9);
+// ! p_out.write(true);
 //! ```
 
 use cortex_m;
 use stm32f0x2::{RCC, GPIOA};
 
-pub enum Mode {
+enum Mode {
     Input = 0b00,
     Output = 0b01,
 }
 
+/// GPIO Pin available on PORT A
 pub enum Pin {
     P8,
     P9,
     P10,
 }
 
+/// Input Mode Pin
+pub struct Input {
+    pin: Pin,
+}
 
-/// Setup a pin in Input or Output Mode.
-pub fn init(pin: &Pin, mode: Mode) {
+impl Input {
+    /// Setup a PIN in Input Mode
+    pub fn setup(pin: Pin) -> Input {
+        setup_pin(&pin, Mode::Input);
+        Input { pin }
+    }
+
+    /// Read the state of a PIN
+    pub fn read(&self) -> bool {
+        unsafe {
+            match self.pin {
+                Pin::P8 => (*GPIOA.get()).idr.read().idr8().bit(),
+                Pin::P9 => (*GPIOA.get()).idr.read().idr9().bit(),
+                Pin::P10 => (*GPIOA.get()).idr.read().idr10().bit(),
+            }
+        }
+    }
+}
+
+/// Output Mode Pin
+pub struct Output {
+    pin: Pin,
+}
+
+impl Output {
+    /// Setup a PIN in Output Mode
+    pub fn setup(pin: Pin) -> Output {
+        setup_pin(&pin, Mode::Output);
+        Output { pin }
+    }
+    /// Set the PIN to high
+    pub fn high(&mut self) {
+        self.set(true);
+    }
+    /// Set the PIN to low
+    pub fn low(&mut self) {
+        self.set(false);
+    }
+    fn set(&mut self, on: bool) {
+        unsafe {
+            match self.pin {
+                Pin::P8 => (*GPIOA.get()).bsrr.write(|w| w.bs8().bit(on)),
+                Pin::P9 => (*GPIOA.get()).bsrr.write(|w| w.bs9().bit(on)),
+                Pin::P10 => (*GPIOA.get()).bsrr.write(|w| w.bs10().bit(on)),
+            }
+        }
+    }
+}
+
+
+fn setup_pin(pin: &Pin, mode: Mode) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
 
@@ -52,66 +106,3 @@ pub fn init(pin: &Pin, mode: Mode) {
         }
     });
 }
-
-/// Read a pin in Input Mode.
-pub fn read(pin: &Pin) -> bool {
-    match *pin {
-        Pin::P8 => PA8.read(),
-        Pin::P9 => PA9.read(),
-        Pin::P10 => PA10.read(),
-    }
-}
-
-/// Write a bool to a pin in Output Mode.
-pub fn write(_pin: &Pin, _on: bool) {
-    // if on {
-    //     PC6.high();
-    // } else {
-    //     PC6.low();
-    // }
-}
-
-
-macro_rules! pin_read {
-    ($PBX:ident, $idrX:ident) => {
-        pub struct $PBX;
-
-        impl $PBX {
-            pub fn read(&self) -> bool {
-                unsafe {
-                    (*GPIOA.get()).idr.read().$idrX().bit()
-                }
-            }
-        }
-    }
-}
-
-
-// macro_rules! pin_write {
-//     ($PBX:ident, $bsX:ident, $brX:ident) => {
-//         /// Digital output
-//         pub struct $PBX;
-//
-//         impl $PBX {
-//             /// Sets the pin "high" (3V3)
-//             pub fn high(&self) {
-//                 // NOTE(safe) atomic write
-//                 unsafe {
-//                     (*GPIOC.get()).bsrr.write(|w| w.$bsX().bit(true));
-//                 }
-//             }
-//
-//             /// Sets the pin "low" (0V)
-//             pub fn low(&self) {
-//                 // NOTE(safe) atomic write
-//                 unsafe {
-//                     (*GPIOC.get()).bsrr.write(|w| w.$brX().bit(true));
-//                 }
-//             }
-//         }
-//     }
-// }
-
-pin_read!(PA8, idr8);
-pin_read!(PA9, idr9);
-pin_read!(PA10, idr10);
