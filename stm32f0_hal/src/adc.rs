@@ -6,7 +6,33 @@ pub enum Pin {
     P5,
 }
 
-pub fn init(pin: &Pin) {
+pub struct Input {
+    pin: Pin,
+}
+impl Input {
+    pub fn setup(pin: Pin) -> Input {
+        setup_pin(&pin);
+        Input { pin }
+    }
+    pub fn read(&self) -> u16 {
+        // TODO: How to choose which PIN to read?
+
+        cortex_m::interrupt::free(|cs| {
+            let adc = ADC.borrow(cs);
+
+            // Active ADC and Start Conversion
+            adc.cr.write(|w| w.aden().set_bit().adstart().set_bit());
+
+            // Wait end of conversation
+            while adc.isr.read().eoc().bit_is_clear() {}
+
+            // Return result
+            adc.dr.read().data().bits()
+        })
+    }
+}
+
+pub fn setup_pin(pin: &Pin) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
@@ -29,21 +55,4 @@ pub fn init(pin: &Pin) {
             Pin::P5 => adc.chselr.modify(|_, w| w.chsel5().set_bit()),
         }
     });
-}
-
-pub fn read(pin: &Pin) -> u16 {
-    // TODO: How to choose which PIN to read?
-
-    cortex_m::interrupt::free(|cs| {
-        let adc = ADC.borrow(cs);
-
-        // Active ADC and Start Conversion
-        adc.cr.write(|w| w.aden().set_bit().adstart().set_bit());
-
-        // Wait end of conversation
-        while adc.isr.read().eoc().bit_is_clear() {}
-
-        // Return result
-        adc.dr.read().data().bits()
-    })
 }
