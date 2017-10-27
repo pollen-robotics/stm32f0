@@ -18,12 +18,12 @@
 //! ```
 
 use cortex_m;
-use stm32f0x2::{GPIOA, RCC, ADC};
+use stm32f0x2::{GPIOC, RCC, ADC};
 
-/// ADC Pin available on PORT A
+/// ADC Pin available on PORT C
 pub enum Pin {
+    P3,
     P4,
-    P5,
 }
 
 /// Input Mode Pin
@@ -43,8 +43,8 @@ impl Input {
 
             // ADC Channel selection
             match self.pin {
-                Pin::P4 => adc.chselr.write(|w| w.chsel4().set_bit()),
-                Pin::P5 => adc.chselr.write(|w| w.chsel5().set_bit()),
+                Pin::P3 => adc.chselr.write(|w| w.chsel13().set_bit()),
+                Pin::P4 => adc.chselr.write(|w| w.chsel14().set_bit()),
             }
 
             // Active ADC and Start Conversion
@@ -62,18 +62,18 @@ impl Input {
 fn setup_pin(pin: &Pin) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
-        let gpioa = GPIOA.borrow(cs);
+        let gpioc = GPIOC.borrow(cs);
         let adc = ADC.borrow(cs);
 
-        // Clock Activation PORTA
+        // Clock Activation PORTC
         rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
         // Clock activation ADC
         rcc.apb2enr.modify(|_, w| w.adcen().enabled());
 
         // PA Analog Input Channel
         match *pin {
-            Pin::P4 => gpioa.moder.modify(|_, w| w.moder4().analog()),
-            Pin::P5 => gpioa.moder.modify(|_, w| w.moder5().analog()),
+            Pin::P3 => gpioc.moder.modify(|_, w| w.moder3().analog()),
+            Pin::P4 => gpioc.moder.modify(|_, w| w.moder4().analog()),
         }
     });
 }

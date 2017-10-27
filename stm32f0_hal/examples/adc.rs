@@ -16,11 +16,11 @@ use hal::adc;
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
 
+    let p3 = adc::Input::setup(adc::Pin::P3);
     let p4 = adc::Input::setup(adc::Pin::P4);
-    let p5 = adc::Input::setup(adc::Pin::P5);
 
     loop {
-        writeln!(stdout, "{} {}", p4.read(), p5.read());
+        writeln!(stdout, "{} {}", p3.read(), p4.read());
     }
 }
 
