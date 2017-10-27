@@ -8,15 +8,16 @@ use cortex_m::asm;
 extern crate stm32f0_hal;
 use stm32f0_hal::gpio;
 
-const BTN_PIN: gpio::Pin = gpio::Pin::P6;
-const LED_PIN: gpio::Pin = gpio::Pin::P9;
-
 fn main() {
-    gpio::init(&BTN_PIN, &gpio::Mode::Input);
-    gpio::init(&LED_PIN, &gpio::Mode::Output);
+    let button = gpio::Input::setup(gpio::Pin::P8);
+    let mut led = gpio::Output::setup(gpio::Pin::P9);
 
     loop {
-        gpio::write(&LED_PIN, gpio::read(&BTN_PIN));
+        if button.read() {
+            led.high();
+        } else {
+            led.low();
+        }
     }
 }
 
