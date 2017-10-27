@@ -13,10 +13,10 @@
 //!
 //! use stm32f0_hal::gpio;
 //!
-// ! let p_in = gpio::Input::setup(gpio::Pin::P8);
+// ! let p_in = gpio::Input::setup(gpio::Pin::PA1);
 // ! let b = p_in.read();
 // !
-// ! let p_out = gpio::Output::setup(gpio::Pin::P9);
+// ! let p_out = gpio::Output::setup(gpio::Pin::PA5);
 // ! p_out.write(true);
 //! ```
 
@@ -30,9 +30,8 @@ enum Mode {
 
 /// GPIO Pin available on PORT A
 pub enum Pin {
-    P8,
-    P9,
-    P10,
+    PA1,
+    PA5,
 }
 
 /// Input Mode Pin
@@ -51,9 +50,8 @@ impl Input {
     pub fn read(&self) -> bool {
         unsafe {
             match self.pin {
-                Pin::P8 => (*GPIOA.get()).idr.read().idr8().bit(),
-                Pin::P9 => (*GPIOA.get()).idr.read().idr9().bit(),
-                Pin::P10 => (*GPIOA.get()).idr.read().idr10().bit(),
+                Pin::PA1 => (*GPIOA.get()).idr.read().idr1().bit(),
+                Pin::PA5 => (*GPIOA.get()).idr.read().idr5().bit(),
             }
         }
     }
@@ -81,9 +79,8 @@ impl Output {
     fn set(&mut self, on: bool) {
         unsafe {
             match self.pin {
-                Pin::P8 => (*GPIOA.get()).bsrr.write(|w| w.bs8().bit(on)),
-                Pin::P9 => (*GPIOA.get()).bsrr.write(|w| w.bs9().bit(on)),
-                Pin::P10 => (*GPIOA.get()).bsrr.write(|w| w.bs10().bit(on)),
+                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.bs1().bit(on)),
+                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.bs5().bit(on)),
             }
         }
     }
@@ -100,9 +97,8 @@ fn setup_pin(pin: &Pin, mode: Mode) {
         let mode = mode as u8;
 
         match *pin {
-            Pin::P8 => gpioa.moder.modify(|_, w| w.moder8().bits(mode)),
-            Pin::P9 => gpioa.moder.modify(|_, w| w.moder9().bits(mode)),
-            Pin::P10 => gpioa.moder.modify(|_, w| w.moder10().bits(mode)),
+            Pin::PA1 => gpioa.moder.modify(|_, w| w.moder1().bits(mode)),
+            Pin::PA5 => gpioa.moder.modify(|_, w| w.moder5().bits(mode)),
         }
     });
 }
