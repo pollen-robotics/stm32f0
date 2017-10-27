@@ -1,22 +1,43 @@
+//! # ADC module
+//!
+//! This module provides access to the ADC of the stm32f0 board.
+//! You can:
+//!
+//! * configure a PIN in Input
+//! * read the analog value from the PIN
+//!
+//! ## Examples
+//!
+//! ```
+//! extern crate stm32f0_hal;
+//!
+//! use stm32f0_hal::adc;
+//!
+// ! let p = adc::Input::setup(adc::Pin::P4);
+// ! let b = p.read();
+//! ```
+
 use cortex_m;
 use stm32f0x2::{GPIOA, RCC, ADC};
 
+/// ADC Pin available on PORT A
 pub enum Pin {
     P4,
     P5,
 }
 
+/// Input Mode Pin
 pub struct Input {
     pin: Pin,
 }
 impl Input {
+    /// Setup a PIN in Input Mode
     pub fn setup(pin: Pin) -> Input {
         setup_pin(&pin);
         Input { pin }
     }
+    /// Read the analog value of a PIN
     pub fn read(&self) -> u16 {
-        // TODO: How to choose which PIN to read?
-
         cortex_m::interrupt::free(|cs| {
             let adc = ADC.borrow(cs);
 
