@@ -20,6 +20,12 @@ impl Input {
         cortex_m::interrupt::free(|cs| {
             let adc = ADC.borrow(cs);
 
+            // ADC Channel selection
+            match self.pin {
+                Pin::P4 => adc.chselr.write(|w| w.chsel4().set_bit()),
+                Pin::P5 => adc.chselr.write(|w| w.chsel5().set_bit()),
+            }
+
             // Active ADC and Start Conversion
             adc.cr.write(|w| w.aden().set_bit().adstart().set_bit());
 
@@ -32,7 +38,7 @@ impl Input {
     }
 }
 
-pub fn setup_pin(pin: &Pin) {
+fn setup_pin(pin: &Pin) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
@@ -47,12 +53,6 @@ pub fn setup_pin(pin: &Pin) {
         match *pin {
             Pin::P4 => gpioa.moder.modify(|_, w| w.moder4().analog()),
             Pin::P5 => gpioa.moder.modify(|_, w| w.moder5().analog()),
-        }
-
-        // ADC Channel selection
-        match *pin {
-            Pin::P4 => adc.chselr.modify(|_, w| w.chsel4().set_bit()),
-            Pin::P5 => adc.chselr.modify(|_, w| w.chsel5().set_bit()),
         }
     });
 }

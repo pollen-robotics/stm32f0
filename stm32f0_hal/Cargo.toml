@@ -17,6 +17,13 @@ version = "0.1.0"
 [badges.travis-ci]
 repository = "pollen/stm32f0"
 
+[dependencies]
+cortex-m-semihosting = "0.2.0"
+
+[dependencies.clippy]
+optional = true
+version = "*"
+
 [dependencies.cortex-m]
 version = "0.3.1"
 
@@ -26,7 +33,3 @@ version = "0.3.6"
 
 [dependencies.stm32f0x2]
 path = "../stm32f0x2"
-
-[dependencies.clippy]
-optional = true
-version = "*"
