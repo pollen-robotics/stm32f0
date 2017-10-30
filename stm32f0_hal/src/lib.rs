@@ -14,3 +14,4 @@ extern crate stm32f0x2;
 
 pub mod gpio;
 pub mod adc;
+pub mod pwm;

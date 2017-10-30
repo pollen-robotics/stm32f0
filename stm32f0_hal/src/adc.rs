@@ -63,7 +63,6 @@ fn setup_pin(pin: &Pin) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
-        let adc = ADC.borrow(cs);
 
         // Clock Activation PORTC
         rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
