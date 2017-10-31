@@ -70,17 +70,19 @@ impl Output {
     }
     /// Set the PIN to high
     pub fn high(&mut self) {
-        self.set(true);
+        unsafe {
+            match self.pin {
+                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.bs1().bit(true)),
+                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.bs5().bit(true)),
+            }
+        }
     }
     /// Set the PIN to low
     pub fn low(&mut self) {
-        self.set(false);
-    }
-    fn set(&mut self, on: bool) {
         unsafe {
             match self.pin {
-                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.bs1().bit(on)),
-                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.bs5().bit(on)),
+                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.br1().bit(true)),
+                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.br5().bit(true)),
             }
         }
     }
