@@ -13,8 +13,8 @@
 //!
 //! use stm32f0_hal::adc;
 //!
-// ! let p = adc::Input::setup(adc::Pin::P4);
-// ! let b = p.read();
+//! let p = adc::Input::setup(adc::Pin::P4);
+//! let b = p.read();
 //! ```
 
 use cortex_m;
