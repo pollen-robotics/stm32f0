@@ -16903,6 +16903,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI oscillator OFF</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI oscillator ON</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSIRDY</name>
@@ -16919,6 +16931,12 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>3</bitOffset>
               <bitWidth>5</bitWidth>
               <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>31</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>HSICAL</name>
@@ -16935,6 +16953,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSE oscillator OFF</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSE oscillator ON</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSERDY</name>
@@ -16951,6 +16981,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NotBypassed</name>
+                  <description>HSE crystal oscillator not bypassed</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Bypassed</name>
+                  <description>HSE crystal oscillator bypassed with external clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CSSON</name>
@@ -16959,6 +17001,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Clock security system disabled (clock detector OFF).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Clock security system enabled (clock detector ON if the HSE is ready, OFF if not).</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>PLLON</name>
@@ -16966,6 +17020,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>PLL Off.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>PLL On.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>PLLRDY</name>
@@ -17448,6 +17514,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>LSI ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>LSI ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>LSERDYIE</name>
@@ -17455,6 +17533,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>LSE ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>LSE ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSIRDYIE</name>
@@ -17462,6 +17552,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSERDYIE</name>
@@ -17469,6 +17571,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSE ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSE ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>PLLRDYIE</name>
@@ -17476,6 +17590,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>PLL lock interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>PLL lock interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI14RDYE</name>
@@ -17484,6 +17610,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI14 ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI14 ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI48RDYIE</name>
@@ -17492,6 +17630,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI48 ready interrupt disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI48 ready interrupt enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>LSIRDYC</name>
@@ -17499,6 +17649,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>LSIRDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>LSERDYC</name>
@@ -17506,6 +17663,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>LSERDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSIRDYC</name>
@@ -17513,6 +17677,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>HSIRDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSERDYC</name>
@@ -17520,6 +17691,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>HSERDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>PLLRDYC</name>
@@ -17527,6 +17705,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>PLLRDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI14RDYC</name>
@@ -17535,6 +17720,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>HSI14RDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI48RDYC</name>
@@ -17543,6 +17735,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>HSI48RDYF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CSSC</name>
@@ -17551,6 +17750,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>CSSF Cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -17569,54 +17775,117 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>SYSCFG and COMP reset</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset SYSCFG.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>ADCRST</name>
               <description>ADC interface reset</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset ADC.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM1RST</name>
               <description>TIM1 timer reset</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM1 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>SPI1RST</name>
               <description>SPI 1 reset</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset SPI1.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USART1RST</name>
               <description>USART1 reset</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset USART1.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM15RST</name>
               <description>TIM15 timer reset</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM15 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM16RST</name>
               <description>TIM16 timer reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM16 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM17RST</name>
               <description>TIM17 timer reset</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM17 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>DBGMCURST</name>
               <description>Debug MCU reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset Debug MCU.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -17635,84 +17904,182 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>Timer 2 reset</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM2 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM3RST</name>
               <description>Timer 3 reset</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM3 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM6RST</name>
               <description>Timer 6 reset</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM6 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM7RST</name>
               <description>TIM7 timer reset</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM7 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TIM14RST</name>
               <description>Timer 14 reset</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TIM14 timer.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>WWDGRST</name>
               <description>Window watchdog reset</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset window watchdog.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>SPI2RST</name>
               <description>SPI2 reset</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset SPI2.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USART2RST</name>
               <description>USART 2 reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset USART2.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USART3RST</name>
               <description>USART3 reset</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset USART3.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USART4RST</name>
               <description>USART4 reset</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset USART4.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>I2C1RST</name>
               <description>I2C1 reset</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I2C1.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>I2C2RST</name>
               <description>I2C2 reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I2C2.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USBRST</name>
               <description>USB interface reset</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset USB interface.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CANRST</name>
               <description>CAN interface reset</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset CAN interface.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CRSRST</name>
@@ -17720,24 +18087,52 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               reset</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset CRS interface.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>PWRRST</name>
               <description>Power interface reset</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset power interface.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>DACRST</name>
               <description>DAC interface reset</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset DAC.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CECRST</name>
               <description>HDMI CEC reset</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset HDMI CEC.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -17757,7 +18152,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
-                <name>ENABLED</name>
+                <name>Enabled</name>
                 <enumeratedValue>
                   <name>Disabled</name>
                   <description>Disabled.</description>
@@ -17776,7 +18171,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17784,7 +18179,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>FLITF clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17792,7 +18187,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>CRC clock enable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17800,7 +18195,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port A clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17808,7 +18203,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port B clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17816,7 +18211,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port C clock enable</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17824,7 +18219,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port D clock enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17832,7 +18227,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port F clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17841,7 +18236,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="ENABLED">
+              <enumeratedValues derivedFrom="Enabled">
               </enumeratedValues>
             </field>
           </fields>
@@ -17861,7 +18256,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>SYSCFG clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17870,7 +18265,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17878,14 +18273,14 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>TIM1 Timer clock enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
               <name>SPI1EN</name>
               <description>SPI 1 clock enable</description>
               <bitOffset>12</bitOffset>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
               <bitWidth>1</bitWidth>
             </field>
@@ -17894,7 +18289,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>USART1 clock enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17902,7 +18297,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>TIM15 timer clock enable</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17910,7 +18305,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>TIM16 timer clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17918,7 +18313,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>TIM17 timer clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17927,7 +18322,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
           </fields>
@@ -17947,7 +18342,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>Timer 2 clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17955,7 +18350,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>Timer 3 clock enable</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17963,7 +18358,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>Timer 6 clock enable</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17971,7 +18366,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>TIM7 timer clock enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17979,7 +18374,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>Timer 14 clock enable</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17988,7 +18383,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -17996,7 +18391,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>SPI 2 clock enable</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18004,7 +18399,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>USART 2 clock enable</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18012,7 +18407,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>USART3 clock enable</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18020,7 +18415,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>USART4 clock enable</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18028,7 +18423,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I2C 1 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18036,7 +18431,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I2C 2 clock enable</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18044,7 +18439,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>USB interface clock enable</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18052,7 +18447,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>CAN interface clock enable</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18061,7 +18456,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18070,7 +18465,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18078,7 +18473,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>DAC interface clock enable</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
             <field>
@@ -18087,7 +18482,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               enable</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
-              <enumeratedValues derivedFrom="AHBENR.DMA1EN.ENABLED">
+              <enumeratedValues derivedFrom="AHBENR.DMA1EN.Enabled">
               </enumeratedValues>
             </field>
           </fields>
@@ -18108,6 +18503,19 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>Enabled</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>LSERDY</name>
@@ -18124,6 +18532,19 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>Enabled</name>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>LSEDRV</name>
@@ -18132,6 +18553,28 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>3</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Low</name>
+                  <description>Xtal mode low drive capability.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MediumHigh</name>
+                  <description>Xtal mode medium high drive capability.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MediumLow</name>
+                  <description>Xtal mode medium low drive capability.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>High</name>
+                  <description>Xtal mode high drive capability.</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RTCSEL</name>
@@ -18139,6 +18582,28 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NoClock</name>
+                  <description>No Clock.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSE</name>
+                  <description>LSE oscillator clock used as RTC clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSI</name>
+                  <description>LSI oscillator clock used as RTC clock.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HSE</name>
+                  <description>HSE oscillator clock divided by 32 used as RTC clock.</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RTCEN</name>
@@ -18146,6 +18611,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>BDRST</name>
@@ -18154,6 +18631,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NoReset</name>
+                  <description>Reset not activated.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Resets the entire RTC domain.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -18173,6 +18662,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>LSI oscillator OFF.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>LSI oscillator ON.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>LSIRDY</name>
@@ -18188,6 +18689,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Cleared</name>
+                  <description>Clear the reset flags.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>OBLRSTF</name>
@@ -18195,7 +18703,7 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               flag</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
             <field>
               <name>PINRSTF</name>
@@ -18209,14 +18717,14 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>POR/PDR reset flag</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
             <field>
               <name>SFTRSTF</name>
               <description>Software reset flag</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
             <field>
               <name>IWDGRSTF</name>
@@ -18224,21 +18732,21 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               flag</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
             <field>
               <name>WWDGRSTF</name>
               <description>Window watchdog reset flag</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
             <field>
               <name>LPWRRSTF</name>
               <description>Low-power reset flag</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
@@ -18256,30 +18764,65 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>I/O port A reset</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I/O port A.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>IOPBRST</name>
               <description>I/O port B reset</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I/O port B.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>IOPCRST</name>
               <description>I/O port C reset</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I/O port C.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>IOPDRST</name>
               <description>I/O port D reset</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I/O port D.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>IOPFRST</name>
               <description>I/O port F reset</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset I/O port F.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>TSCRST</name>
@@ -18287,6 +18830,13 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               reset</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <description>Reset TSC.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -18304,6 +18854,88 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <description>PREDIV division factor</description>
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
+*              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Div1</name>
+                  <description>PREDIV input clock not divided.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div2</name>
+                  <description>PREDIV input clock divided by 2.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div3</name>
+                  <description>PREDIV input clock divided by 3.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div4</name>
+                  <description>PREDIV input clock divided by 4.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div5</name>
+                  <description>PREDIV input clock divided by 5.</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div6</name>
+                  <description>PREDIV input clock divided by 6.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div7</name>
+                  <description>PREDIV input clock divided by 7.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div8</name>
+                  <description>PREDIV input clock divided by 8.</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div9</name>
+                  <description>PREDIV input clock divided by 9.</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div10</name>
+                  <description>PREDIV input clock divided by 10.</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div11</name>
+                  <description>PREDIV input clock divided by 11.</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div12</name>
+                  <description>PREDIV input clock divided by 12.</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div13</name>
+                  <description>PREDIV input clock divided by 13.</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div14</name>
+                  <description>PREDIV input clock divided by 14.</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div15</name>
+                  <description>PREDIV input clock divided by 15.</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Div16</name>
+                  <description>PREDIV input clock divided by 16.</description>
+                  <value>15</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -18322,6 +18954,28 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>PCLK</name>
+                  <description>PCLK selected as USART3 clock source (default).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SystemClock</name>
+                  <description>System clock (SYSCLK) selected as USART3 clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSE</name>
+                  <description>LSE clock selected as USART3 clock.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HSI</name>
+                  <description>HSI clock selected as USART3 clock.</description>
+                  <value>3</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>I2C1SW</name>
@@ -18329,6 +18983,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>HSI</name>
+                  <description>HSI clock selected as I2C1 clock source (default).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSCLK</name>
+                  <description>System clock (SYSCLK) selected as I2C1 clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>CECSW</name>
@@ -18336,12 +19002,36 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               selection</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>HSI</name>
+                  <description>HSI clock, divided by 244, selected as CEC clock (default).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSE</name>
+                  <description>LSE clock selected as CEC clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>USBSW</name>
               <description>USB clock source selection</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>HSI48</name>
+                  <description>HSI48 clock selected as USB clock source (default).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLLClock</name>
+                  <description>PLL clock (PLLCLK) selected as USB clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>ADCSW</name>
@@ -18355,6 +19045,28 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               selection</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>PCLK</name>
+                  <description>PCLK selected as USART3 clock source (default).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SystemClock</name>
+                  <description>System clock (SYSCLK) selected as USART3 clock.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSE</name>
+                  <description>LSE clock selected as USART3 clock.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HSI</name>
+                  <description>HSI clock selected as USART3 clock.</description>
+                  <value>3</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -18372,6 +19084,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI14 oscillator OFF.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI14 oscillator ON.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI14RDY</name>
@@ -18387,6 +19111,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>ADC interface can turn on the HSI14 oscillator.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>ADC interface can not turn on the HSI14 oscillator.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI14TRIM</name>
@@ -18394,6 +19130,12 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>3</bitOffset>
               <bitWidth>5</bitWidth>
               <access>read-write</access>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>31</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>HSI14CAL</name>
@@ -18408,6 +19150,18 @@ transferred one APB clock cycle later to the DAC_DOR1 register</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>HSI48 oscillator OFF.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>HSI48 oscillator ON.</description>
+                  <value>1</value>
+                </enumeratedValue>
+            </enumeratedValues>
             </field>
             <field>
               <name>HSI48RDY</name>
@@ -26900,6 +27654,18 @@ rate measurement on the next received data frame.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
+			  <enumeratedValues>
+                <enumeratedValue>
+                  <name>0WaitState</name>
+                  <description>Zero wait state, if SYSCLK is below or equal to 24 MHz.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1WaitState</name>
+                  <description>One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PRFTBE</name>
@@ -26907,6 +27673,18 @@ rate measurement on the next received data frame.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+			  <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Prefetch is disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enabled</name>
+                  <description>Prefetch is enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>			  
             </field>
             <field>
               <name>PRFTBS</name>
