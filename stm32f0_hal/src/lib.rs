@@ -4,6 +4,8 @@
 //!
 //! * GPIO
 //! * ADC
+//! * PWM
+//! * RCC
 
 #![no_std]
 #![cfg_attr(feature = "clippy", feature(plugin))]
@@ -11,7 +13,9 @@
 
 extern crate cortex_m;
 extern crate stm32f0x2;
+extern crate cortex_m_rt;
 
 pub mod gpio;
 pub mod adc;
 pub mod pwm;
+pub mod rcc;
