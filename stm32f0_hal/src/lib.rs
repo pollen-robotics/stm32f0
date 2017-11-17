@@ -12,10 +12,13 @@
 #![cfg_attr(feature = "clippy", plugin(clippy))]
 
 extern crate cortex_m;
+#[macro_use(interrupt)]
 extern crate stm32f0x2;
+#[macro_use(exception)]
 extern crate cortex_m_rt;
 
 pub mod gpio;
 pub mod adc;
 pub mod pwm;
 pub mod rcc;
+pub mod uart;
