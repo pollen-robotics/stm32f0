@@ -18,8 +18,9 @@ pub fn init(period: u32) {
         gpiob.afrl.modify(|_, w| w.afrl4().af1());
         gpiob.otyper.modify(|_, w| w.ot4().push_pull());
 
-        tim3.ccmr1_output
-            .modify(|_, w| w.oc1m().pwmmode1().oc1pe().enabled());
+        tim3.ccmr1_output.modify(|_, w| {
+            w.oc1m().pwmmode1().oc1pe().enabled())
+        });
         tim3.ccer.modify(|_, w| w.cc1p().clear_bit());
         set_period(period);
 
@@ -64,10 +65,9 @@ pub fn set_duty(duty: u32) {
     cortex_m::interrupt::free(|cs| {
         let tim3 = TIM3.borrow(cs);
         tim3.ccr1.write(|w| {
-            w.ccr1_l()
-                .bits((duty) as u16)
-                .ccr1_h()
-                .bits((duty >> 16) as u16)
+            w.ccr1_l().bits((duty) as u16).ccr1_h().bits(
+                (duty >> 16) as u16,
+            )
         })
     });
 }
