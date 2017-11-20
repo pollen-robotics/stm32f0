@@ -21,7 +21,7 @@
 //! ```
 
 use cortex_m;
-use stm32f0x2::{RCC, GPIOA};
+use stm32f0x2::{GPIOA, RCC};
 
 enum Mode {
     Input = 0b00,

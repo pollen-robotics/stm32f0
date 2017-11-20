@@ -1,7 +1,7 @@
 #![feature(used)]
 #![no_std]
-extern crate stm32f0_hal as hal;
 extern crate cortex_m;
+extern crate stm32f0_hal as hal;
 
 use hal::rcc;
 use hal::uart;

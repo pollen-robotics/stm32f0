@@ -3,8 +3,8 @@
 
 extern crate stm32f0_hal as hal;
 
-extern crate cortex_m_rt;
 extern crate cortex_m;
+extern crate cortex_m_rt;
 
 use cortex_m::asm;
 

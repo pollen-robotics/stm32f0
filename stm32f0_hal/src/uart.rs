@@ -1,17 +1,17 @@
 use cortex_m;
-use stm32f0x2::{NVIC, RCC, GPIOA, USART1 as UART1};
+use stm32f0x2::{USART1 as UART1, GPIOA, NVIC, RCC};
 use stm32f0x2::interrupt::*;
 
 const FREQUENCY: u32 = 48000000;
 
-static mut DATA_UART1 : u16=0;
+static mut DATA_UART1: u16 = 0;
 
 pub enum NBits {
     _8bits,
     _9bits,
 }
 
-pub enum  StopBits{
+pub enum StopBits {
     _0b5,
     _1b,
     _1b5,
@@ -29,8 +29,8 @@ pub enum Parity {
 
 interrupt!(USART1, receive);
 
-pub fn init(baudrate: u32, nbits : NBits , nbstopbits : StopBits, parity : Parity){
-    cortex_m::interrupt::free(|cs|{
+pub fn init(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity) {
+    cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
         let uart1 = UART1.borrow(cs);
@@ -42,19 +42,19 @@ pub fn init(baudrate: u32, nbits : NBits , nbstopbits : StopBits, parity : Parit
         rcc.apb2enr.write(|w| w.usart1en().enabled());
 
         // Configure PA9/PA10 Alternate Function 1 -> USART1
-        gpioa.ospeedr.write(|w| {
-            w.ospeedr9().high_speed().ospeedr10().high_speed()
-        });
-        gpioa.pupdr.write(
-            |w| w.pupdr9().pull_up().pupdr10().pull_up(),
-        );
+        gpioa
+            .ospeedr
+            .write(|w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+        gpioa
+            .pupdr
+            .write(|w| w.pupdr9().pull_up().pupdr10().pull_up());
         gpioa.afrh.write(|w| w.afrh9().af1().afrh10().af1());
-        gpioa.moder.write(
-            |w| w.moder9().alternate().moder10().alternate(),
-        );
-        gpioa.otyper.write(
-            |w| w.ot9().push_pull().ot10().push_pull(),
-        );
+        gpioa
+            .moder
+            .write(|w| w.moder9().alternate().moder10().alternate());
+        gpioa
+            .otyper
+            .write(|w| w.ot9().push_pull().ot10().push_pull());
 
         // Configure UART : Word length
         match nbits {
@@ -119,19 +119,17 @@ pub fn init(baudrate: u32, nbits : NBits , nbstopbits : StopBits, parity : Parit
         });
         // Configure UART : baudrate
         uart1.brr.write(|w| {
-            w.div_fraction().bits(
-                (FREQUENCY / (baudrate / 2)) as u8 & 0x0F,
-            )
+            w.div_fraction()
+                .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
         });
         uart1.brr.write(|w| {
-            w.div_mantissa().bits(
-                ((FREQUENCY / (baudrate / 2)) >> 4) as u16,
-            )
+            w.div_mantissa()
+                .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
         });
         // Configure UART : Asynchronous mode
-        uart1.cr2.modify(
-            |_, w| w.linen().disabled().clken().disabled(),
-        );
+        uart1
+            .cr2
+            .modify(|_, w| w.linen().disabled().clken().disabled());
         // UART1 enabled
         uart1.cr1.modify(|_, w| w.ue().enabled());
         nvic.enable(Interrupt::USART1);

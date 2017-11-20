@@ -3,9 +3,9 @@
 
 extern crate stm32f0_hal as hal;
 
-extern crate cortex_m_semihosting;
-extern crate cortex_m_rt;
 extern crate cortex_m;
+extern crate cortex_m_rt;
+extern crate cortex_m_semihosting;
 
 use cortex_m_semihosting::hio;
 use core::fmt::Write;

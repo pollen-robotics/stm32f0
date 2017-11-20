@@ -18,7 +18,7 @@
 //! ```
 
 use cortex_m;
-use stm32f0x2::{GPIOC, RCC, ADC};
+use stm32f0x2::{ADC, GPIOC, RCC};
 
 /// ADC Pin available on PORT C
 pub enum Pin {
