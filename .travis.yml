@@ -23,4 +23,4 @@ before_script:
 
 script:
   - xargo check --target $TARGET
-  - bash ci/lint.sh
+  - . ./ci/lint.sh
