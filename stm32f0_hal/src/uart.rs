@@ -52,7 +52,7 @@ pub fn init(baudrate: u32, nbits: NBITS, nbstopbits: STOPBITS, parity: PARITY) {
             |w| w.ot9().push_pull().ot10().push_pull(),
         );
 
-        // Configure UART : Word lenght
+        // Configure UART : Word length
         match nbits {
             NBITS::_8bits => {
                 uart1.cr1.modify(|_, w| w.m()._8bits());
