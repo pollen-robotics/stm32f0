@@ -58,10 +58,10 @@ pub fn init(baudrate: u32, nbits : NBits , nbstopbits : StopBits, parity : Parit
 
         // Configure UART : Word length
         match nbits {
-            NBITS::_8bits => {
+            NBits::_8bits => {
                 uart1.cr1.modify(|_, w| w.m()._8bits());
             }
-            NBITS::_9bits => {
+            NBits::_9bits => {
                 uart1.cr1.modify(|_, w| w.m()._9bits());
             }
         }

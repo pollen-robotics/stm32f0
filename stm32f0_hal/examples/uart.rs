@@ -10,9 +10,9 @@ fn main() {
     rcc::init(); // Full Speed 48Mhz
     uart::init(
         6000000,
-        uart::NBITS::_8bits,
-        uart::STOPBITS::_1b,
-        uart::PARITY::None,
+        uart::NBits::_8bits,
+        uart::StopBits::_1b,
+        uart::Parity::None,
     );
     loop {
         if uart::transmit_complete() {
