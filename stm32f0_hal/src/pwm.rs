@@ -19,7 +19,7 @@ pub fn init(period: u32) {
         gpiob.otyper.modify(|_, w| w.ot4().push_pull());
 
         tim3.ccmr1_output.modify(|_, w| {
-            w.oc1m().pwmmode1().oc1pe().enabled())
+            w.oc1m().pwmmode1().oc1pe().enabled()
         });
         tim3.ccer.modify(|_, w| w.cc1p().clear_bit());
         set_period(period);
