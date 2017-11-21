@@ -11,9 +11,8 @@
 //! rcc::init();
 //! ```
 
-use stm32f0x2::{RCC, FLASH};
+use stm32f0x2::{FLASH, RCC};
 use cortex_m;
-use cortex_m_rt::*;
 use core::ptr;
 
 use cortex_m::peripheral::{SystClkSource, SYST};
