@@ -32,8 +32,9 @@ pub enum Parity {
 interrupt!(USART1, receive);
 
 pub fn setup<F>(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity, mut f: F)
-where F: FnMut(u8)
- {
+where
+    F: FnMut(u8),
+{
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
