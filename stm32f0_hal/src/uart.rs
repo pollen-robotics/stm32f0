@@ -1,3 +1,5 @@
+use core;
+
 use cortex_m;
 use stm32f0x2::{USART1 as UART1, GPIOA, NVIC, RCC};
 use stm32f0x2::interrupt::*;
@@ -29,7 +31,10 @@ pub enum Parity {
 
 interrupt!(USART1, receive);
 
-pub fn init(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity) {
+pub fn setup<F>(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity, mut f: F)
+where
+    F: FnMut(u8),
+{
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
@@ -136,7 +141,10 @@ pub fn init(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity) {
         uart1.cr1.modify(|_, w| w.ue().enabled());
         nvic.enable(Interrupt::USART1);
         nvic.clear_pending(Interrupt::USART1);
-    })
+    });
+    unsafe {
+        RECV_CB = Some(extend_lifetime(&mut f));
+    }
 }
 
 pub fn send(byte: u8) {
@@ -158,17 +166,21 @@ pub fn transmit_complete() -> bool {
     })
 }
 
+static mut RECV_CB: Option<&'static mut FnMut(u8)> = None;
+
 fn receive_callback() {
     cortex_m::interrupt::free(|cs| {
         let uart = UART1.borrow(cs);
         unsafe {
             DATA_UART1 = uart.rdr.read().rdr().bits();
         }
-    })
+    });
+    unsafe {
+        if let Some(ref mut cb) = RECV_CB {
+            cb(DATA_UART1 as u8);
+        }
+    }
 }
-
-
-
 
 pub fn receive() {
     cortex_m::interrupt::free(|cs| {
@@ -177,4 +189,8 @@ pub fn receive() {
             receive_callback();
         }
     })
+}
+
+unsafe fn extend_lifetime<'a>(f: &'a mut FnMut(u8)) -> &'static mut FnMut(u8) {
+    core::mem::transmute::<&'a mut FnMut(u8), &'static mut FnMut(u8)>(f)
 }
