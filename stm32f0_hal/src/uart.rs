@@ -29,7 +29,6 @@ pub enum Parity {
     Odd,
 }
 
-interrupt!(USART1, receive);
 
 pub fn setup<F>(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity, mut f: F)
 where
