@@ -18,7 +18,5 @@ fn main() {
     if uart::transmit_complete() {
         uart::send(0x55);
     }
-    loop {
-
-    }
+    loop {}
 }
