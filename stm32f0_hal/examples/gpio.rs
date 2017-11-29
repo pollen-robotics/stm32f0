@@ -17,7 +17,7 @@ fn main() {
     loop {
         if p0.read() {
             p7.high();
-        }else {
+        } else {
             p7.low();
         }
     }
