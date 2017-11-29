@@ -103,7 +103,8 @@ fn setup_pin(pin: &Pin, mode: Mode) {
 
         let gpioa = GPIOA.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
-        rcc.ahbenr.modify(|_, w| w.iopaen().enabled().iopcen().enabled(),
+        rcc.ahbenr.modify(
+            |_, w| w.iopaen().enabled().iopcen().enabled(),
         );
         let mode = mode as u8;
 
