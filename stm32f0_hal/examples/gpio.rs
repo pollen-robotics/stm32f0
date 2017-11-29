@@ -5,25 +5,18 @@ extern crate stm32f0_hal as hal;
 
 extern crate cortex_m;
 extern crate cortex_m_rt;
-//extern crate cortex_m_semihosting;
 
-//use cortex_m_semihosting::hio;
-//use core::fmt::Write;
 use cortex_m::asm;
 
 use hal::gpio;
 
 fn main() {
-    //let mut stdout = hio::hstdout().unwrap();
-
     let p0 = gpio::Input::setup(gpio::Pin::PA0);
-    //let p5 = gpio::Input::setup(gpio::Pin::PA5);
     let mut p7 = gpio::Output::setup(gpio::Pin::PC7);
 
     loop {
         if p0.read() {
             p7.high();
-            //writeln!(stdout, "{} {}", p1.read(), p5.read());
         }else {
             p7.low();
         }
