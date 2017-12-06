@@ -65,7 +65,7 @@ pub fn ms_delay(delay: u32) {
 }
 
 
-fn systick() -> u32 {
+pub fn systick() -> u32 {
     return unsafe { ptr::read_volatile(&TICKS) };
 }
 
