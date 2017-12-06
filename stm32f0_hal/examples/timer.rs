@@ -13,4 +13,3 @@ fn main() {
     timer::resume();
     loop {}
 }
-
