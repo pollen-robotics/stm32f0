@@ -56,20 +56,3 @@ pub fn resume() {
         timer.cr1.modify(|_, w| w.cen().enabled());
     });
 }
-
-
-interrupt!(TIM7, led);
-
-pub fn led() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        let gpio = GPIOC.borrow(cs);
-        // Clear interrupt flag
-        timer.sr.modify(|_, w| w.uif().clear_bit());
-        if gpio.idr.read().idr7().bit_is_set() {
-            gpio.bsrr.write(|w| w.br7().set_bit());
-        } else {
-            gpio.bsrr.write(|w| w.bs7().set_bit());
-        }
-    });
-}
