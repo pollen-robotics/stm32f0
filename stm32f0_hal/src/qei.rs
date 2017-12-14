@@ -1,5 +1,5 @@
 use cortex_m;
-use stm32f0x2::{TIM3 as TIMER3, TIM7 as TIMER7, RCC, GPIOB, GPIOC,  NVIC, USART3 as UART3};
+use stm32f0x2::{TIM2 as TIMER2, TIM3 as TIMER3, TIM7 as TIMER7, RCC, GPIOA, GPIOB, NVIC, USART3 as UART3};
 use stm32f0x2::interrupt::*;
 use core::ptr;
 
@@ -7,14 +7,59 @@ use alloc;
 use core;
 
 const FREQUENCY : u32 = 48000000;
-const STEP : u16 = 2249;
-const DEGREEBYSTEP : f32 = (360 as f32 /STEP as f32);
+const STEP1 : u16 = 2249;
+const STEP2 : u16 = 2249;
+const DEGREEBYSTEP1 : f32 = (360 as f32 /STEP1 as f32);
+const DEGREEBYSTEP2 : f32 = (360 as f32 /STEP2 as f32);
 
-static mut DEGREE: f32 = 0.0;
-static mut PREVIOUS_DEGREE : f32 = 0.0;
-static mut DELTA_DEGREE : f32 = 0.0;
+static mut DEGREE1: f32 = 0.0;
+static mut PREVIOUS_DEGREE1 : f32 = 0.0;
+static mut DELTA_DEGREE1 : f32 = 0.0;
 
-pub fn init() {
+static mut DEGREE2: f32 = 0.0;
+static mut PREVIOUS_DEGREE2 : f32 = 0.0;
+static mut DELTA_DEGREE2 : f32 = 0.0;
+
+pub fn init_qei1() {
+    cortex_m::interrupt::free(|cs| {
+        let gpio = GPIOA.borrow(cs);
+        let rcc = RCC.borrow(cs);
+        let timer = TIMER2.borrow(cs);
+        let nvic = NVIC.borrow(cs);
+
+        // QEI1 on PTA0 (TIM2_CH1) and PTA1 (TIM2_CH2)
+        rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
+        rcc.apb1enr.modify(|_, w| w.tim2en().enabled());
+        gpio.pupdr.write(|w| w
+            .pupdr0().pull_up()
+            .pupdr1().pull_up());
+        gpio.moder.modify(|_, w| w
+            .moder0().analog()
+            .moder1().analog());
+        // QEI Mode
+        timer.smcr.write(|w| w.sms().encoder_ti1ti2());
+
+        timer.ccmr1_output.write(|w| w.cc1s().ic1mapped_ti1());
+        timer.ccmr1_output.write(|w| w.cc2s().ic2mapped_ti1());
+
+        // Quadrature encoder max. step
+        timer.arr.write(|w| w.arr_h().bits(0));
+        timer.arr.write(|w| w.arr_l().bits(1));
+
+        timer.cr1.modify(|_,w| w.arpe().buffered());
+        timer.cr1.write(|w| w.cen().enabled());
+
+        // Enable interrupt
+        timer.dier.modify(|_, w| w.uie().enabled());
+        // Interrupt activated
+        nvic.enable(Interrupt::TIM2);
+        nvic.clear_pending(Interrupt::TIM2);
+    });
+}
+
+
+
+pub fn init_qei2() {
     cortex_m::interrupt::free(|cs| {
         let gpio = GPIOB.borrow(cs);
         let rcc = RCC.borrow(cs);
@@ -130,11 +175,6 @@ pub fn dt_setup(interval_us: u16) {
         let rcc = RCC.borrow(cs);
         let timer = TIMER7.borrow(cs);
         let nvic = NVIC.borrow(cs);
-        let gpio = GPIOC.borrow(cs);
-
-        // LED Test
-        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
-        gpio.moder.modify(|_, w| w.moder7().output());
 
         //Enable TIM7 clock
         rcc.apb1enr.modify(|_, w| w.tim7en().enabled());
@@ -162,39 +202,58 @@ pub fn dt_resume() {
     });
 }
 
-interrupt!(TIM3, step);
-interrupt!(TIM7, speed);
+interrupt!(TIM2, step_motor1);
+interrupt!(TIM3, step_motor2);
+interrupt!(TIM7, speed_motor);
 
 // INTERRUPT CALL BACK
-fn speed(){
+fn speed_motor(){
     cortex_m::interrupt::free(|cs| {
         let timer = TIMER7.borrow(cs);
         timer.sr.write(| w| w.uif().clear_bit());
         unsafe {
-            DELTA_DEGREE = DEGREE - PREVIOUS_DEGREE;
-            PREVIOUS_DEGREE = DEGREE;
+            DELTA_DEGREE1 = DEGREE1 - PREVIOUS_DEGREE1;
+            PREVIOUS_DEGREE1 = DEGREE1;
+            DELTA_DEGREE2 = DEGREE2 - PREVIOUS_DEGREE2;
+            PREVIOUS_DEGREE2 = DEGREE2;
         }
     });
 }
 
-fn step(){
+fn step_motor1(){
+    cortex_m::interrupt::free(|cs| {
+        let timer = TIMER2.borrow(cs);
+        timer.sr.write(|w| w.uif().clear_bit());
+        if timer.cr1.read().dir().bit_is_clear(){
+            unsafe {DEGREE1=DEGREE1-DEGREEBYSTEP1;}
+        } else {
+            unsafe {DEGREE1=DEGREE1+DEGREEBYSTEP1;}
+        }
+    });
+}
+
+fn step_motor2(){
     cortex_m::interrupt::free(|cs| {
         let timer = TIMER3.borrow(cs);
         timer.sr.write(|w| w.uif().clear_bit());
         if timer.cr1.read().dir().bit_is_clear(){
-            unsafe {DEGREE=DEGREE-DEGREEBYSTEP;}
+            unsafe {DEGREE2=DEGREE2-DEGREEBYSTEP2;}
         } else {
-            unsafe {DEGREE=DEGREE+DEGREEBYSTEP;}
+            unsafe {DEGREE2=DEGREE2+DEGREEBYSTEP2;}
         }
     });
 }
 
 // DEGREE
-pub fn counter() -> f32{
-    return unsafe { ptr::read_volatile(&DEGREE) };
+pub fn counter_motor1() -> f32{
+    return unsafe { ptr::read_volatile(&DEGREE1) };
+}
+pub fn counter_motor2() -> f32{
+    return unsafe { ptr::read_volatile(&DEGREE2) };
 }
 // SPEED
-pub fn get_speed() -> f32 {return unsafe { ptr::read_volatile(&DELTA_DEGREE) }; }
+pub fn get_speed_motor1() -> f32 {return unsafe { ptr::read_volatile(&DELTA_DEGREE1) }; }
+pub fn get_speed_motor2() -> f32 {return unsafe { ptr::read_volatile(&DELTA_DEGREE2) }; }
 
 /// Send a byte to the UART when it's ready.
 ///

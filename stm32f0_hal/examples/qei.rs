@@ -28,11 +28,12 @@ fn main() {
     unsafe { ALLOCATOR.init(heap_start, STACK_SIZE) }
     rcc::init();
     qei::setup_debug(57600);
-    qei::init();
+    qei::init_qei1();
+    qei::init_qei2();
     qei::dt_setup(10000);
     qei::dt_resume();
     loop {
-        log!("Angle Parcouru : {}° - Speed : {}°/s",qei::counter(), qei::get_speed()*100 as f32);
+        log!("Angle Parcouru : {}° - Speed : {}°/s - Angle Parcouru : {}° - Speed : {}°/s ",qei::counter_motor1(), qei::get_speed_motor1()*100 as f32, qei::counter_motor2(), qei::get_speed_motor2()*100 as f32);
         rcc::ms_delay(100);
     }
 }
