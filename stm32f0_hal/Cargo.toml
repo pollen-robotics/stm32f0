@@ -21,6 +21,9 @@ repository = "pollen/stm32f0"
 cortex-m = "0.3.1"
 cortex-m-semihosting = "0.2.0"
 
+[dependencies.alloc-cortex-m0]
+path = "../../alloc-cortex-m0/"
+
 [dependencies.clippy]
 optional = true
 version = "0.0.175"
