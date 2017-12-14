@@ -1,5 +1,5 @@
 use cortex_m;
-use stm32f0x2::{TIM2 as TIMER2, TIM3 as TIMER3, TIM7 as TIMER7, RCC, GPIOA, GPIOB, NVIC, USART3 as UART3};
+use stm32f0x2::{TIM2 as TIMER2, TIM3 as TIMER3, TIM7 as TIMER7, TIM16 as TIMER16, TIM17 as TIMER17, RCC, GPIOA, GPIOB, GPIOC, NVIC, USART3 as UART3};
 use stm32f0x2::interrupt::*;
 use core::ptr;
 
@@ -20,6 +20,116 @@ static mut DEGREE2: f32 = 0.0;
 static mut PREVIOUS_DEGREE2 : f32 = 0.0;
 static mut DELTA_DEGREE2 : f32 = 0.0;
 
+pub fn setup_pwm(period : u16){
+    cortex_m::interrupt::free(|cs| {
+        let rcc = RCC.borrow(cs);
+        let tim16 = TIMER16.borrow(cs);
+        let tim17 = TIMER17.borrow(cs);
+        let gpiob = GPIOB.borrow(cs);
+        let gpioc = GPIOC.borrow(cs);
+
+        // Configure AIN et BIN
+        rcc.ahbenr.modify(|_,w| w.iopcen().enabled());
+        gpioc.moder.modify(|_,w| w
+            .moder0().output()
+            .moder1().output()
+            .moder2().output()
+            .moder3().output()
+        );
+
+
+        // GPIO Clock Activated
+        rcc.ahbenr.modify(|_, w| w.iopben().enabled());
+        // TIMER16 Clock Activated
+        rcc.apb2enr.modify(|_, w| w.tim16en().enabled());
+        gpiob.moder.modify(|_, w| w.moder8().alternate());
+        gpiob.afrh.modify(|_, w| w.afrh8().af2());
+        gpiob.otyper.modify(|_, w| w.ot8().push_pull());
+
+        tim16.ccmr1_output.modify(|_, w| {
+            w.oc1m().pwmmode1().oc1pe().enabled()
+        });
+        tim16.ccer.modify(|_, w| w.cc1p().clear_bit());
+        // Set Prescaler Register - 16 bits
+        tim16.psc.write(|w| w.psc().bits(7));
+        // Set Auto-Reload register - 16 bits
+        tim16.arr.write(|w| w.arr().bits(period));
+        tim16.ccer.modify(|_, w| w.cc1e().active());
+        tim16.cr1.write(|w| w.cen().enabled());
+
+        // TIMER17 Clock Activated
+        rcc.apb2enr.modify(|_, w| w.tim17en().enabled());
+        gpiob.moder.modify(|_, w| w.moder9().alternate());
+        gpiob.afrh.modify(|_, w| w.afrh9().af2());
+        gpiob.otyper.modify(|_, w| w.ot9().push_pull());
+
+        tim17.ccmr1_output.modify(|_, w| {
+            w.oc1m().pwmmode1().oc1pe().enabled()
+        });
+        tim17.ccer.modify(|_, w| w.cc1p().clear_bit());
+        // Set Prescaler Register - 16 bits
+        tim17.psc.write(|w| w.psc().bits(7));
+        // Set Auto-Reload register - 16 bits
+        tim17.arr.write(|w| w.arr().bits(period));
+        tim17.ccer.modify(|_, w| w.cc1e().active());
+        tim17.cr1.write(|w| w.cen().enabled());
+
+        tim16.egr.write(|w| w.ug().set_bit());
+        tim17.egr.write(|w| w.ug().set_bit());
+    });
+}
+
+pub fn pwm_enable(){
+    cortex_m::interrupt::free(|cs| {
+        let tim16 = TIMER16.borrow(cs);
+        let tim17 = TIMER17.borrow(cs);
+        tim16.ccer.modify(|_, w| w.cc1e().set_bit());
+        tim17.ccer.modify(|_, w| w.cc1e().set_bit());
+    });
+}
+
+pub fn set_motor1(power : u8, dir : bool){
+    cortex_m::interrupt::free(|cs| {
+        let gpioc = GPIOC.borrow(cs);
+        if dir {
+            gpioc.bsrr.write(|w| w.bs0().set_bit());
+            gpioc.bsrr.write(|w| w.br1().set_bit());
+        } else {
+            gpioc.bsrr.write(|w| w.br0().set_bit());
+            gpioc.bsrr.write(|w| w.bs1().set_bit());
+        }
+    });
+    set_duty_motor1(power as u16);
+}
+
+pub fn set_motor2(power : u8, dir : bool){
+    cortex_m::interrupt::free(|cs| {
+        let gpioc = GPIOC.borrow(cs);
+        if dir {
+            gpioc.bsrr.write(|w| w.bs2().set_bit());
+            gpioc.bsrr.write(|w| w.br3().set_bit());
+        } else {
+            gpioc.bsrr.write(|w| w.br2().set_bit());
+            gpioc.bsrr.write(|w| w.bs3().set_bit());
+        }
+    });
+    set_duty_motor2(power as u16);
+}
+
+fn set_duty_motor1(duty: u16) {
+    cortex_m::interrupt::free(|cs| {
+        let tim16 = TIMER16.borrow(cs);
+        tim16.ccr1.write(|w| w.ccr1().bits(duty));
+    });
+}
+
+fn set_duty_motor2(duty: u16) {
+    cortex_m::interrupt::free(|cs| {
+        let tim17 = TIMER17.borrow(cs);
+        tim17.ccr1.write(|w| w.ccr1().bits(duty));
+    });
+}
+
 pub fn init_qei1() {
     cortex_m::interrupt::free(|cs| {
         let gpio = GPIOA.borrow(cs);
@@ -33,9 +143,13 @@ pub fn init_qei1() {
         gpio.pupdr.write(|w| w
             .pupdr0().pull_up()
             .pupdr1().pull_up());
+        gpio.afrl.write(|w| w
+            .afrl0().af2()
+            .afrl1().af2());
         gpio.moder.modify(|_, w| w
-            .moder0().analog()
-            .moder1().analog());
+            .moder0().alternate()
+            .moder1().alternate());
+
         // QEI Mode
         timer.smcr.write(|w| w.sms().encoder_ti1ti2());
 
