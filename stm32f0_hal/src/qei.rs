@@ -1,42 +1,47 @@
 use cortex_m;
-use stm32f0x2::{TIM2 as TIMER2, TIM3 as TIMER3, TIM6 as TIMER6, TIM16 as TIMER16, TIM17 as TIMER17, RCC, GPIOA, GPIOB, GPIOC, NVIC, USART3 as UART3};
+use stm32f0x2::{TIM16 as TIMER16, TIM17 as TIMER17, TIM2 as TIMER2, TIM3 as TIMER3,
+                TIM6 as TIMER6, USART3 as UART3, GPIOA, GPIOB, GPIOC, NVIC, RCC};
 use stm32f0x2::interrupt::*;
 use core::ptr;
 
 use alloc;
 use core;
 
-const FREQUENCY : u32 = 48000000;
-const STEP1 : u16 = 2249;
-const STEP2 : u16 = 2249;
-const DEGREEBYSTEP1 : f32 = (360 as f32 /STEP1 as f32);
-const DEGREEBYSTEP2 : f32 = (360 as f32 /STEP2 as f32);
+const FREQUENCY: u32 = 48000000;
+const STEP1: u16 = 2249;
+const STEP2: u16 = 2249;
+const DEGREEBYSTEP1: f32 = (360 as f32 / STEP1 as f32);
+const DEGREEBYSTEP2: f32 = (360 as f32 / STEP2 as f32);
 
 static mut DEGREE1: f32 = 0.0;
-static mut PREVIOUS_DEGREE1 : f32 = 0.0;
-static mut DELTA_DEGREE1 : f32 = 0.0;
+static mut PREVIOUS_DEGREE1: f32 = 0.0;
+static mut DELTA_DEGREE1: f32 = 0.0;
 
 static mut DEGREE2: f32 = 0.0;
-static mut PREVIOUS_DEGREE2 : f32 = 0.0;
-static mut DELTA_DEGREE2 : f32 = 0.0;
+static mut PREVIOUS_DEGREE2: f32 = 0.0;
+static mut DELTA_DEGREE2: f32 = 0.0;
 
-pub fn setup_pwm(frequency_khz : u16){
+pub fn setup_pwm(frequency_khz: u16) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let tim16 = TIMER16.borrow(cs);
         let tim17 = TIMER17.borrow(cs);
         let gpiob = GPIOB.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
-        let prescaler = (((FREQUENCY/1000) as f32/frequency_khz as f32)+0.5) as u16 - 1;
+        let prescaler = (((FREQUENCY / 1000) as f32 / frequency_khz as f32) + 0.5) as u16 - 1;
 
         // Configure AIN et BIN
-        rcc.ahbenr.modify(|_,w| w.iopcen().enabled());
-        gpioc.moder.modify(|_,w| w
-            .moder6().output()
-            .moder7().output()
-            .moder8().output()
-            .moder9().output()
-        );
+        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
+        gpioc.moder.modify(|_, w| {
+            w.moder6()
+                .output()
+                .moder7()
+                .output()
+                .moder8()
+                .output()
+                .moder9()
+                .output()
+        });
 
         // GPIO Clock Activated
         rcc.ahbenr.modify(|_, w| w.iopben().enabled());
@@ -46,13 +51,11 @@ pub fn setup_pwm(frequency_khz : u16){
         gpiob.afrh.modify(|_, w| w.afrh8().af2());
         gpiob.otyper.modify(|_, w| w.ot8().push_pull());
 
-        tim16.cr1.modify(|_,w| w
-            .ckd().div1()
-            .arpe().buffered());
+        tim16.cr1.modify(|_, w| w.ckd().div1().arpe().buffered());
 
-        tim16.ccmr1_output.modify(|_, w| {
-            w.oc1m().pwmmode1().oc1pe().enabled()
-        });
+        tim16
+            .ccmr1_output
+            .modify(|_, w| w.oc1m().pwmmode1().oc1pe().enabled());
         tim16.ccer.modify(|_, w| w.cc1p().clear_bit());
 
         // Set Prescaler Register - 16 bits
@@ -68,12 +71,10 @@ pub fn setup_pwm(frequency_khz : u16){
         gpiob.afrh.modify(|_, w| w.afrh9().af2());
         gpiob.otyper.modify(|_, w| w.ot9().push_pull());
 
-        tim17.cr1.modify(|_,w| w
-            .ckd().div1()
-            .arpe().buffered());
-        tim17.ccmr1_output.modify(|_, w| {
-            w.oc1m().pwmmode1().oc1pe().enabled()
-        });
+        tim17.cr1.modify(|_, w| w.ckd().div1().arpe().buffered());
+        tim17
+            .ccmr1_output
+            .modify(|_, w| w.oc1m().pwmmode1().oc1pe().enabled());
 
         tim17.ccer.modify(|_, w| w.cc1p().clear_bit());
         // Set Prescaler Register - 16 bits
@@ -92,7 +93,7 @@ pub fn setup_pwm(frequency_khz : u16){
     });
 }
 
-pub fn pwm_enable(){
+pub fn pwm_enable() {
     cortex_m::interrupt::free(|cs| {
         let tim16 = TIMER16.borrow(cs);
         let tim17 = TIMER17.borrow(cs);
@@ -101,29 +102,29 @@ pub fn pwm_enable(){
     });
 }
 
-pub fn set_motor1(power : u16, dir : bool){
+pub fn set_motor1(power: u16, dir: bool) {
     cortex_m::interrupt::free(|cs| {
         let gpioc = GPIOC.borrow(cs);
         if dir {
-            gpioc.bsrr.write(|w| w.bs6().set_bit());        // AIN1 =1
-            gpioc.bsrr.write(|w| w.br7().set_bit());        // AIN2 =0
+            gpioc.bsrr.write(|w| w.bs6().set_bit()); // AIN1 =1
+            gpioc.bsrr.write(|w| w.br7().set_bit()); // AIN2 =0
         } else {
-            gpioc.bsrr.write(|w| w.br6().set_bit());        // AIN1 =0
-            gpioc.bsrr.write(|w| w.bs7().set_bit());        // AIN2 =1
+            gpioc.bsrr.write(|w| w.br6().set_bit()); // AIN1 =0
+            gpioc.bsrr.write(|w| w.bs7().set_bit()); // AIN2 =1
         }
     });
     set_duty_motor1(power as u16);
 }
 
-pub fn set_motor2(power : u16, dir : bool){
+pub fn set_motor2(power: u16, dir: bool) {
     cortex_m::interrupt::free(|cs| {
         let gpioc = GPIOC.borrow(cs);
         if dir {
-            gpioc.bsrr.write(|w| w.bs8().set_bit());        // BIN1
-            gpioc.bsrr.write(|w| w.br9().set_bit());        // BIN2
+            gpioc.bsrr.write(|w| w.bs8().set_bit()); // BIN1
+            gpioc.bsrr.write(|w| w.br9().set_bit()); // BIN2
         } else {
-            gpioc.bsrr.write(|w| w.br8().set_bit());        // BIN1
-            gpioc.bsrr.write(|w| w.bs9().set_bit());        // BIN2
+            gpioc.bsrr.write(|w| w.br8().set_bit()); // BIN1
+            gpioc.bsrr.write(|w| w.bs9().set_bit()); // BIN2
         }
     });
     set_duty_motor2(power as u16);
@@ -153,15 +154,11 @@ pub fn init_qei1() {
         // QEI1 on PTA0 (TIM2_CH1) and PTA1 (TIM2_CH2)
         rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
         rcc.apb1enr.modify(|_, w| w.tim2en().enabled());
-        gpio.pupdr.write(|w| w
-            .pupdr0().pull_up()
-            .pupdr1().pull_up());
-        gpio.afrl.write(|w| w
-            .afrl0().af2()
-            .afrl1().af2());
-        gpio.moder.modify(|_, w| w
-            .moder0().alternate()
-            .moder1().alternate());
+        gpio.pupdr
+            .write(|w| w.pupdr0().pull_up().pupdr1().pull_up());
+        gpio.afrl.write(|w| w.afrl0().af2().afrl1().af2());
+        gpio.moder
+            .modify(|_, w| w.moder0().alternate().moder1().alternate());
 
         // QEI Mode
         timer.smcr.write(|w| w.sms().encoder_ti1ti2());
@@ -173,7 +170,7 @@ pub fn init_qei1() {
         timer.arr.write(|w| w.arr_h().bits(0));
         timer.arr.write(|w| w.arr_l().bits(1));
 
-        timer.cr1.modify(|_,w| w.arpe().buffered());
+        timer.cr1.modify(|_, w| w.arpe().buffered());
         timer.cr1.write(|w| w.cen().enabled());
 
         // Enable interrupt
@@ -183,8 +180,6 @@ pub fn init_qei1() {
         nvic.clear_pending(Interrupt::TIM2);
     });
 }
-
-
 
 pub fn init_qei2() {
     cortex_m::interrupt::free(|cs| {
@@ -196,15 +191,11 @@ pub fn init_qei2() {
         // QEI on PTB4 (TIM3_CH1) and PTB5 (TIM3_CH2)
         rcc.ahbenr.modify(|_, w| w.iopben().enabled());
         rcc.apb1enr.modify(|_, w| w.tim3en().enabled());
-        gpio.pupdr.write(|w| w
-            .pupdr4().pull_up()
-            .pupdr5().pull_up());
-        gpio.afrl.write(|w| w
-            .afrl4().af1()
-            .afrl5().af1());
-        gpio.moder.modify(|_, w| w
-            .moder4().alternate()
-            .moder5().alternate());
+        gpio.pupdr
+            .write(|w| w.pupdr4().pull_up().pupdr5().pull_up());
+        gpio.afrl.write(|w| w.afrl4().af1().afrl5().af1());
+        gpio.moder
+            .modify(|_, w| w.moder4().alternate().moder5().alternate());
         // QEI Mode
         timer.smcr.write(|w| w.sms().encoder_ti1ti2());
 
@@ -215,7 +206,7 @@ pub fn init_qei2() {
         timer.arr.write(|w| w.arr_h().bits(0));
         timer.arr.write(|w| w.arr_l().bits(1));
 
-        timer.cr1.modify(|_,w| w.arpe().buffered());
+        timer.cr1.modify(|_, w| w.arpe().buffered());
         timer.cr1.write(|w| w.cen().enabled());
 
         // Enable interrupt
@@ -308,9 +299,11 @@ pub fn dt_setup(interval_ms: u16) {
 
         // configure Time Out
         // Set Prescaler Register - 16 bits
-        timer.psc.modify(|_, w| w.psc().bits(4800-1));
+        timer.psc.modify(|_, w| w.psc().bits(4800 - 1));
         // Set Auto-Reload register - 16 bits
-        timer.arr.modify(|_, w| w.arr().bits((interval_ms*10) - 1));
+        timer
+            .arr
+            .modify(|_, w| w.arr().bits((interval_ms * 10) - 1));
 
         timer.cr1.modify(|_, w| w.opm().continuous());
         // Enable interrupt
@@ -329,16 +322,15 @@ pub fn dt_resume() {
     });
 }
 
-
 interrupt!(TIM2, step_motor1);
 interrupt!(TIM3, step_motor2);
 interrupt!(TIM6_DAC, speed_motor);
 
 // INTERRUPT CALL BACK
-fn speed_motor(){
+fn speed_motor() {
     cortex_m::interrupt::free(|cs| {
         let timer = TIMER6.borrow(cs);
-        timer.sr.write(| w| w.uif().clear_bit());
+        timer.sr.write(|w| w.uif().clear_bit());
         unsafe {
             DELTA_DEGREE1 = DEGREE1 - PREVIOUS_DEGREE1;
             PREVIOUS_DEGREE1 = DEGREE1;
@@ -348,40 +340,52 @@ fn speed_motor(){
     });
 }
 
-fn step_motor1(){
+fn step_motor1() {
     cortex_m::interrupt::free(|cs| {
         let timer = TIMER2.borrow(cs);
         timer.sr.write(|w| w.uif().clear_bit());
-        if timer.cr1.read().dir().bit_is_clear(){
-            unsafe {DEGREE1=DEGREE1-DEGREEBYSTEP1;}
+        if timer.cr1.read().dir().bit_is_clear() {
+            unsafe {
+                DEGREE1 = DEGREE1 - DEGREEBYSTEP1;
+            }
         } else {
-            unsafe {DEGREE1=DEGREE1+DEGREEBYSTEP1;}
+            unsafe {
+                DEGREE1 = DEGREE1 + DEGREEBYSTEP1;
+            }
         }
     });
 }
 
-fn step_motor2(){
+fn step_motor2() {
     cortex_m::interrupt::free(|cs| {
         let timer = TIMER3.borrow(cs);
         timer.sr.write(|w| w.uif().clear_bit());
-        if timer.cr1.read().dir().bit_is_clear(){
-            unsafe {DEGREE2=DEGREE2-DEGREEBYSTEP2;}
+        if timer.cr1.read().dir().bit_is_clear() {
+            unsafe {
+                DEGREE2 = DEGREE2 - DEGREEBYSTEP2;
+            }
         } else {
-            unsafe {DEGREE2=DEGREE2+DEGREEBYSTEP2;}
+            unsafe {
+                DEGREE2 = DEGREE2 + DEGREEBYSTEP2;
+            }
         }
     });
 }
 
 // DEGREE
-pub fn counter_motor1() -> f32{
+pub fn counter_motor1() -> f32 {
     return unsafe { ptr::read_volatile(&DEGREE1) };
 }
-pub fn counter_motor2() -> f32{
+pub fn counter_motor2() -> f32 {
     return unsafe { ptr::read_volatile(&DEGREE2) };
 }
 // SPEED
-pub fn get_speed_motor1() -> f32 {return unsafe { ptr::read_volatile(&DELTA_DEGREE1) }; }
-pub fn get_speed_motor2() -> f32 {return unsafe { ptr::read_volatile(&DELTA_DEGREE2) }; }
+pub fn get_speed_motor1() -> f32 {
+    return unsafe { ptr::read_volatile(&DELTA_DEGREE1) };
+}
+pub fn get_speed_motor2() -> f32 {
+    return unsafe { ptr::read_volatile(&DELTA_DEGREE2) };
+}
 
 /// Send a byte to the UART when it's ready.
 ///
@@ -407,7 +411,6 @@ fn debug_transmit_complete(cs: &cortex_m::interrupt::CriticalSection) -> bool {
         false
     }
 }
-
 
 /// Uart Logger implementation
 ///

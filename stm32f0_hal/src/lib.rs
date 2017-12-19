@@ -12,13 +12,12 @@
 #![cfg_attr(feature = "clippy", plugin(clippy))]
 #![feature(alloc)]
 
+extern crate alloc;
 extern crate cortex_m;
 #[macro_use(exception)]
 extern crate cortex_m_rt;
 #[macro_use(interrupt)]
 extern crate stm32f0x2;
-extern crate alloc;
-
 
 pub mod gpio;
 pub mod adc;
