@@ -20,7 +20,7 @@ before_script:
   - which xargo || (cd .. && cargo install xargo -f --vers 0.3.8)
   - rustup component list | grep 'rust-src.*installed' || rustup component add rust-src
   - which cargo-install-update || cargo install cargo-update
-  - cargo install-update rustfmt-nightly -i
+  - (cd .. && cargo install-update rustfmt-nightly -i)
   - set -e
 
 script:
