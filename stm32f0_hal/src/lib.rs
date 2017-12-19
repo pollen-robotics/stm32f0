@@ -10,9 +10,7 @@
 #![no_std]
 #![cfg_attr(feature = "clippy", feature(plugin))]
 #![cfg_attr(feature = "clippy", plugin(clippy))]
-#![feature(alloc)]
 
-extern crate alloc;
 extern crate cortex_m;
 #[macro_use(exception)]
 extern crate cortex_m_rt;

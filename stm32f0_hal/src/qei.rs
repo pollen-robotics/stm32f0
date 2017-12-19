@@ -4,7 +4,6 @@ use stm32f0x2::{TIM16 as TIMER16, TIM17 as TIMER17, TIM2 as TIMER2, TIM3 as TIME
 use stm32f0x2::interrupt::*;
 use core::ptr;
 
-use alloc;
 use core;
 
 const FREQUENCY: u32 = 48000000;
@@ -420,7 +419,7 @@ pub static mut LOGGER: UartLogger = UartLogger {};
 
 pub struct UartLogger {}
 impl core::fmt::Write for UartLogger {
-    fn write_str(&mut self, s: &str) -> Result<(), alloc::fmt::Error> {
+    fn write_str(&mut self, s: &str) -> Result<(), core::fmt::Error> {
         for &b in s.as_bytes() {
             debug_send_when_ready(b);
         }
