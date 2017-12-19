@@ -26,7 +26,7 @@ path = "../../alloc-cortex-m0/"
 
 [dependencies.clippy]
 optional = true
-version = "0.0.175"
+version = "0.0.176"
 
 [dependencies.cortex-m-rt]
 features = ["abort-on-panic"]

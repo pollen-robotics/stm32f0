@@ -27,18 +27,18 @@ fn main() {
     let heap_start = unsafe { &mut _sheap as *mut u32 as usize };
     unsafe { ALLOCATOR.init(heap_start, STACK_SIZE) }
     rcc::init();
-    qei::setup_debug(57600);
+    qei::setup_debug(115200);
     qei::init_qei1();
     qei::init_qei2();
-    qei::dt_setup(10000);
-    qei::dt_resume();
-    qei::setup_pwm(1000);
-    qei::set_motor1(100,true);
-    qei::set_motor2(100,false);
+    qei::setup_pwm(10);       // Set PWM frequency = 100 Khz
+    qei::set_motor1(350,true);  //
+    qei::set_motor2(350,true);
     qei::pwm_enable();
+    qei::dt_setup(1000);        // Speed per second - interval = 1 sec
+    qei::dt_resume();
     loop {
-        log!("Angle Parcouru : {}° - Speed : {}°/s - Angle Parcouru : {}° - Speed : {}°/s ",qei::counter_motor1(), qei::get_speed_motor1()*100 as f32, qei::counter_motor2(), qei::get_speed_motor2()*100 as f32);
-        rcc::ms_delay(100);
+        log!("Moteur 1 : Angle Parcouru : {}° - Speed : {}°/s Moteur 2 : Angle Parcouru : {}° - Speed : {}°/s ",qei::counter_motor1(), qei::get_speed_motor1() as f32, qei::counter_motor2(), qei::get_speed_motor2() as f32);
+        rcc::ms_delay(1000);
     }
 }
 
