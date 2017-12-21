@@ -20,11 +20,10 @@ static mut DEGREE2: f32 = 0.0;
 static mut PREVIOUS_DEGREE2: f32 = 0.0;
 static mut DELTA_DEGREE2: f32 = 0.0;
 
-pub fn setup_pwm(frequency_khz: u16) {
+pub fn setup_pwm1(frequency_khz: u16) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let tim16 = TIMER16.borrow(cs);
-        let tim17 = TIMER17.borrow(cs);
         let gpiob = GPIOB.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
         let prescaler = (((FREQUENCY / 1000) as f32 / frequency_khz as f32) + 0.5) as u16 - 1;
@@ -35,10 +34,6 @@ pub fn setup_pwm(frequency_khz: u16) {
             w.moder6()
                 .output()
                 .moder7()
-                .output()
-                .moder8()
-                .output()
-                .moder9()
                 .output()
         });
 
@@ -64,6 +59,32 @@ pub fn setup_pwm(frequency_khz: u16) {
         tim16.ccer.modify(|_, w| w.cc1e().active());
         tim16.cr1.write(|w| w.cen().enabled());
 
+        tim16.bdtr.write(|w| w.moe().set_bit());
+
+        tim16.egr.write(|w| w.ug().set_bit());
+    });
+}
+
+pub fn setup_pwm2(frequency_khz: u16) {
+    cortex_m::interrupt::free(|cs| {
+        let rcc = RCC.borrow(cs);
+        let tim17 = TIMER17.borrow(cs);
+        let gpiob = GPIOB.borrow(cs);
+        let gpioc = GPIOC.borrow(cs);
+        let prescaler = (((FREQUENCY / 1000) as f32 / frequency_khz as f32) + 0.5) as u16 - 1;
+
+        // Configure AIN et BIN
+        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
+        gpioc.moder.modify(|_, w| {
+            w.moder8()
+                .output()
+                .moder9()
+                .output()
+        });
+
+        // GPIO Clock Activated
+        rcc.ahbenr.modify(|_, w| w.iopben().enabled());
+
         // TIMER17 Clock Activated
         rcc.apb2enr.modify(|_, w| w.tim17en().enabled());
         gpiob.moder.modify(|_, w| w.moder9().alternate());
@@ -84,19 +105,22 @@ pub fn setup_pwm(frequency_khz: u16) {
         tim17.ccer.modify(|_, w| w.cc1e().active());
         tim17.cr1.write(|w| w.cen().enabled());
 
-        tim16.bdtr.write(|w| w.moe().set_bit());
         tim17.bdtr.write(|w| w.moe().set_bit());
 
-        tim16.egr.write(|w| w.ug().set_bit());
         tim17.egr.write(|w| w.ug().set_bit());
     });
 }
 
-pub fn pwm_enable() {
+pub fn pwm_enable1() {
     cortex_m::interrupt::free(|cs| {
         let tim16 = TIMER16.borrow(cs);
-        let tim17 = TIMER17.borrow(cs);
         tim16.ccer.modify(|_, w| w.cc1e().set_bit());
+    });
+}
+
+pub fn pwm_enable2() {
+    cortex_m::interrupt::free(|cs| {
+        let tim17 = TIMER17.borrow(cs);
         tim17.ccer.modify(|_, w| w.cc1e().set_bit());
     });
 }

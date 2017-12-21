@@ -30,10 +30,12 @@ fn main() {
     qei::setup_debug(115200);
     qei::init_qei1();
     qei::init_qei2();
-    qei::setup_pwm(10);       // Set PWM frequency = 100 Khz
+    qei::setup_pwm1(10);       // Set PWM frequency = 100 Khz
+    qei::setup_pwm2(10);       // Set PWM frequency = 100 Khz
     qei::set_motor1(350,true);  //
     qei::set_motor2(350,true);
-    qei::pwm_enable();
+    qei::pwm_enable1();
+    qei::pwm_enable2();
     qei::dt_setup(1000);        // Speed per second - interval = 1 sec
     qei::dt_resume();
     loop {
