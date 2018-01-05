@@ -1,7 +1,7 @@
 //use core;
 
 use cortex_m;
-use stm32f0x2::{TIM7 as TIMER7, NVIC, RCC, GPIOC};
+use stm32f0x2::{TIM7 as TIMER7, GPIOC, NVIC, RCC};
 use stm32f0x2::interrupt::*;
 
 pub fn setup(timeout: u16) {

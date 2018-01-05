@@ -29,7 +29,6 @@ pub enum Parity {
     Odd,
 }
 
-
 pub fn setup<F>(baudrate: u32, nbits: NBits, nbstopbits: StopBits, parity: Parity, mut f: F)
 where
     F: FnMut(u8),
@@ -46,19 +45,19 @@ where
         rcc.apb2enr.write(|w| w.usart1en().enabled());
 
         // Configure PA9/PA10 Alternate Function 1 -> USART1
-        gpioa.ospeedr.write(|w| {
-            w.ospeedr9().high_speed().ospeedr10().high_speed()
-        });
-        gpioa.pupdr.write(
-            |w| w.pupdr9().pull_up().pupdr10().pull_up(),
-        );
+        gpioa
+            .ospeedr
+            .write(|w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+        gpioa
+            .pupdr
+            .write(|w| w.pupdr9().pull_up().pupdr10().pull_up());
         gpioa.afrh.write(|w| w.afrh9().af1().afrh10().af1());
-        gpioa.moder.write(
-            |w| w.moder9().alternate().moder10().alternate(),
-        );
-        gpioa.otyper.write(
-            |w| w.ot9().push_pull().ot10().push_pull(),
-        );
+        gpioa
+            .moder
+            .write(|w| w.moder9().alternate().moder10().alternate());
+        gpioa
+            .otyper
+            .write(|w| w.ot9().push_pull().ot10().push_pull());
 
         // Configure UART : Word length
         match nbits {
@@ -123,19 +122,17 @@ where
         });
         // Configure UART : baudrate
         uart1.brr.write(|w| {
-            w.div_fraction().bits(
-                (FREQUENCY / (baudrate / 2)) as u8 & 0x0F,
-            )
+            w.div_fraction()
+                .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
         });
         uart1.brr.write(|w| {
-            w.div_mantissa().bits(
-                ((FREQUENCY / (baudrate / 2)) >> 4) as u16,
-            )
+            w.div_mantissa()
+                .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
         });
         // Configure UART : Asynchronous mode
-        uart1.cr2.modify(
-            |_, w| w.linen().disabled().clken().disabled(),
-        );
+        uart1
+            .cr2
+            .modify(|_, w| w.linen().disabled().clken().disabled());
         // UART1 enabled
         uart1.cr1.modify(|_, w| w.ue().enabled());
         nvic.enable(Interrupt::USART1);
