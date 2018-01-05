@@ -24,7 +24,6 @@ fn main() {
     }
 }
 
-
 // As we are not using interrupts, we just register a dummy catch all handler
 #[link_section = ".vector_table.interrupts"]
 #[used]
