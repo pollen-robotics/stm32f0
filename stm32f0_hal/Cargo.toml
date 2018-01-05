@@ -32,3 +32,11 @@ version = "0.3.6"
 [dependencies.stm32f0x2]
 features = ["rt"]
 path = "../stm32f0x2"
+
+[features]
+default = []
+use_alloc = ["alloc-cortex-m0"]
+
+[dependencies.alloc-cortex-m0]
+path = "../../alloc-cortex-m0/"
+optional = true
