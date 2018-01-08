@@ -35,8 +35,8 @@ path = "../stm32f0x2"
 
 [features]
 default = []
-use_alloc = ["alloc-cortex-m0"]
+use_alloc = ["alloc-cortex-m"]
 
-[dependencies.alloc-cortex-m0]
-path = "../../alloc-cortex-m0/"
+[dependencies.alloc-cortex-m]
+git = "https://github.com/pollen/alloc-cortex-m"
 optional = true

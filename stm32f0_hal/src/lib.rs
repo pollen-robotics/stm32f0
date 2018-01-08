@@ -24,12 +24,11 @@ pub mod rcc;
 pub mod uart;
 pub mod timer;
 
-
 #[cfg(feature = "use_alloc")]
-extern crate alloc_cortex_m0 as heap;
+extern crate alloc_cortex_m as heap;
 #[cfg(feature = "use_alloc")]
 #[global_allocator]
-static ALLOCATOR: heap::CortexM0Heap = heap::CortexM0Heap::empty();
+static ALLOCATOR: heap::CortexMHeap = heap::CortexMHeap::empty();
 #[cfg(feature = "use_alloc")]
 pub mod allocator {
     extern "C" {
