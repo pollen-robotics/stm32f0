@@ -23,3 +23,4 @@ pub mod pwm;
 pub mod rcc;
 pub mod uart;
 pub mod timer;
+pub mod qei;
