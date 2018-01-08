@@ -2,7 +2,7 @@
 
 extern crate stm32f0_hal as hal;
 
-use hal::{uart, rcc};
+use hal::{rcc, uart};
 
 fn main() {
     rcc::init(); // Full Speed 48Mhz
@@ -14,7 +14,7 @@ fn main() {
         uart::Parity::None,
         |byte| uart::send(byte),
     );
-    
+
     if uart::transmit_complete() {
         uart::send(0x55);
     }
