@@ -8,8 +8,6 @@
 //! * RCC
 
 #![no_std]
-#![cfg_attr(feature = "clippy", feature(plugin))]
-#![cfg_attr(feature = "clippy", plugin(clippy))]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
 
 extern crate cortex_m;
