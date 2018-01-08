@@ -26,6 +26,7 @@ before_script:
 script:
   - cargo clean
   - xargo check --target $TARGET
+  - xargo build --target $TARGET --examples --all-features
   - . ./ci/lint.sh
 
 after_script:
