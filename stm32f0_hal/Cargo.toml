@@ -11,11 +11,11 @@ keywords = [
 ]
 license = "Apache-2.0"
 name = "stm32f0_hal"
-repository = "https://github.com/pollen/stm32f0"
+repository = "https://github.com/pollen-robotics/stm32f0"
 version = "0.1.0"
 
 [badges.travis-ci]
-repository = "pollen/stm32f0"
+repository = "pollen-robotics/stm32f0"
 
 [dependencies]
 cortex-m = "0.3.1"

@@ -6,11 +6,11 @@ description = "API for the STM32F0x2 micro-controller (generated using svd2rust)
 keywords = ["embedded", "STM32"]
 categories = ["hardware-support", "no-std"]
 license = "Apache-2.0"
-repository = "https://github.com/pollen/stm32f0"
+repository = "https://github.com/pollen-robotics/stm32f0"
 exclude = ["*.svd"]
 
 [badges]
-travis-ci = { repository = "pollen/stm32f0" }
+travis-ci = { repository = "pollen-robotics/stm32f0" }
 
 [dependencies]
 bare-metal = "0.1.1"
