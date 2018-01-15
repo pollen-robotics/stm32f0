@@ -15,12 +15,13 @@ use hal::adc;
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
-
-    let p3 = adc::Input::setup(adc::Pin::P3);
-    let p4 = adc::Input::setup(adc::Pin::P4);
+    let Channel0 = adc::Analog::setup(adc::Channel::ADC0);
+    let Channel1 = adc::Analog::setup(adc::Channel::ADC1);
+    //let p3 = adc::Input::setup(adc::Pin::P3);
+    //let p4 = adc::Input::setup(adc::Pin::P4);
 
     loop {
-        writeln!(stdout, "{} {}", p3.read(), p4.read());
+        writeln!(stdout, "{} {}", Channel0.read(), Channel1.read());
     }
 }
 

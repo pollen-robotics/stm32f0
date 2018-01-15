@@ -18,23 +18,25 @@
 //! ```
 
 use cortex_m;
-use stm32f0x2::{ADC, GPIOC, RCC};
+use stm32f0x2::{ADC, GPIOA, GPIOC, RCC};
 
-/// ADC Pin available on PORT C
-pub enum Pin {
-    P3,
-    P4,
+/// ADC Channel
+pub enum Channel {
+    ADC0,
+    ADC1,
+    ADC13,
+    ADC14,
 }
 
 /// Input Mode Pin
-pub struct Input {
-    pin: Pin,
+pub struct Analog {
+    pin: Channel,
 }
-impl Input {
+impl Analog {
     /// Setup a PIN in Input Mode
-    pub fn setup(pin: Pin) -> Input {
+    pub fn setup(pin: Channel) -> Analog {
         setup_pin(&pin);
-        Input { pin }
+        Analog { pin }
     }
     /// Read the analog value of a PIN
     pub fn read(&self) -> u16 {
@@ -43,8 +45,11 @@ impl Input {
 
             // ADC Channel selection
             match self.pin {
-                Pin::P3 => adc.chselr.write(|w| w.chsel13().set_bit()),
-                Pin::P4 => adc.chselr.write(|w| w.chsel14().set_bit()),
+                Channel::ADC0 => adc.chselr.write(|w| w.chsel0().set_bit()),
+                Channel::ADC1 => adc.chselr.write(|w| w.chsel1().set_bit()),
+                Channel::ADC13 => adc.chselr.write(|w| w.chsel13().set_bit()),
+                Channel::ADC14 => adc.chselr.write(|w| w.chsel14().set_bit()),
+
             }
 
             // Active ADC and Start Conversion
@@ -59,20 +64,28 @@ impl Input {
     }
 }
 
-fn setup_pin(pin: &Pin) {
+fn setup_pin(pin: &Channel) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
+        let gpioa = GPIOA.borrow(cs);
+        // Clock Activation
+        match *pin {
+            Channel::ADC0 => rcc.ahbenr.modify(|_, w| w.iopaen().enabled()),
+            Channel::ADC1 => rcc.ahbenr.modify(|_, w| w.iopaen().enabled()),
+            Channel::ADC13 => rcc.ahbenr.modify(|_, w| w.iopcen().enabled()),
+            Channel::ADC14 => rcc.ahbenr.modify(|_, w| w.iopcen().enabled()),
+        }
 
-        // Clock Activation PORTC
-        rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
         // Clock activation ADC
         rcc.apb2enr.modify(|_, w| w.adcen().enabled());
 
         // PA Analog Input Channel
         match *pin {
-            Pin::P3 => gpioc.moder.modify(|_, w| w.moder3().analog()),
-            Pin::P4 => gpioc.moder.modify(|_, w| w.moder4().analog()),
+            Channel::ADC0 => gpioa.moder.modify(|_, w| w.moder0().analog()),
+            Channel::ADC1 => gpioa.moder.modify(|_, w| w.moder1().analog()),
+            Channel::ADC13 => gpioc.moder.modify(|_, w| w.moder3().analog()),
+            Channel::ADC14 => gpioc.moder.modify(|_, w| w.moder4().analog()),
         }
     });
 }
