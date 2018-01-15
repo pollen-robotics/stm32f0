@@ -19,7 +19,7 @@ vcell = "0.1.0"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.3.6"
+version = "=0.3.7"
 
 [features]
 rt = ["cortex-m-rt"]

@@ -27,7 +27,7 @@ version = "0.0.175"
 
 [dependencies.cortex-m-rt]
 features = ["abort-on-panic"]
-version = "0.3.6"
+version = "=0.3.7"
 
 [dependencies.stm32f0x2]
 features = ["rt"]
