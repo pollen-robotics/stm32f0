@@ -19,22 +19,29 @@
 // ! let p_out = gpio::Output::setup(gpio::Pin::PA5);
 // ! p_out.write(true);
 //! ```
-use core;
 
 use cortex_m;
-use stm32f0x2::{GPIOA, GPIOC, RCC, EXTI, NVIC};
-use stm32f0x2::interrupt::*;
+
+use stm32f0x2::{GPIOA, GPIOB, GPIOC, EXTI, NVIC, RCC};
+use stm32f0x2::interrupt::Interrupt;
 
 enum Mode {
     Input = 0b00,
     Output = 0b01,
 }
 
-/// GPIO Pin available on PORT A
+/// GPIO Pin available
 pub enum Pin {
     PA0,
     PA1,
     PA5,
+    PB0,
+    PB1,
+    PB3,
+    PB4,
+    PB5,
+    PB10,
+    PB11,
     PC7,
 }
 
@@ -57,6 +64,13 @@ impl Input {
                 Pin::PA0 => (*GPIOA.get()).idr.read().idr0().bit(),
                 Pin::PA1 => (*GPIOA.get()).idr.read().idr1().bit(),
                 Pin::PA5 => (*GPIOA.get()).idr.read().idr5().bit(),
+                Pin::PB0 => (*GPIOB.get()).idr.read().idr0().bit(),
+                Pin::PB1 => (*GPIOB.get()).idr.read().idr1().bit(),
+                Pin::PB3 => (*GPIOB.get()).idr.read().idr3().bit(),
+                Pin::PB4 => (*GPIOB.get()).idr.read().idr4().bit(),
+                Pin::PB5 => (*GPIOB.get()).idr.read().idr5().bit(),
+                Pin::PB10 => (*GPIOB.get()).idr.read().idr10().bit(),
+                Pin::PB11 => (*GPIOB.get()).idr.read().idr11().bit(),
                 Pin::PC7 => (*GPIOC.get()).idr.read().idr7().bit(),
             }
         }
@@ -99,7 +113,8 @@ impl Input {
                     exti.imr.modify( |_,w| w.mr7().set_bit());
                     nvic.enable(Interrupt::EXTI4_15);
                 })
-            }
+            },
+            _ => panic!("Unsupported PIN!")
         }
     }
 }
@@ -123,6 +138,13 @@ impl Output {
                 Pin::PA0 => (*GPIOA.get()).bsrr.write(|w| w.bs0().bit(true)),
                 Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.bs1().bit(true)),
                 Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.bs5().bit(true)),
+                Pin::PB0 => (*GPIOB.get()).bsrr.write(|w| w.bs0().bit(true)),
+                Pin::PB1 => (*GPIOB.get()).bsrr.write(|w| w.bs1().bit(true)),
+                Pin::PB3 => (*GPIOB.get()).bsrr.write(|w| w.bs3().bit(true)),
+                Pin::PB4 => (*GPIOB.get()).bsrr.write(|w| w.bs4().bit(true)),
+                Pin::PB5 => (*GPIOB.get()).bsrr.write(|w| w.bs5().bit(true)),
+                Pin::PB10 => (*GPIOB.get()).bsrr.write(|w| w.bs10().bit(true)),
+                Pin::PB11 => (*GPIOB.get()).bsrr.write(|w| w.bs11().bit(true)),
                 Pin::PC7 => (*GPIOC.get()).bsrr.write(|w| w.bs7().bit(true)),
             }
         }
@@ -134,6 +156,13 @@ impl Output {
                 Pin::PA0 => (*GPIOA.get()).bsrr.write(|w| w.br0().bit(true)),
                 Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.br1().bit(true)),
                 Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.br5().bit(true)),
+                Pin::PB0 => (*GPIOB.get()).bsrr.write(|w| w.br0().bit(true)),
+                Pin::PB1 => (*GPIOB.get()).bsrr.write(|w| w.br1().bit(true)),
+                Pin::PB3 => (*GPIOB.get()).bsrr.write(|w| w.br3().bit(true)),
+                Pin::PB4 => (*GPIOB.get()).bsrr.write(|w| w.br4().bit(true)),
+                Pin::PB5 => (*GPIOB.get()).bsrr.write(|w| w.br5().bit(true)),
+                Pin::PB10 => (*GPIOB.get()).bsrr.write(|w| w.br10().bit(true)),
+                Pin::PB11 => (*GPIOB.get()).bsrr.write(|w| w.br11().bit(true)),
                 Pin::PC7 => (*GPIOC.get()).bsrr.write(|w| w.br7().bit(true)),
             }
         }
@@ -145,17 +174,24 @@ fn setup_pin(pin: &Pin, mode: Mode) {
         let rcc = RCC.borrow(cs);
 
         let gpioa = GPIOA.borrow(cs);
+        let gpiob = GPIOB.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
         rcc.ahbenr
-            .modify(|_, w| w.iopaen().enabled().iopcen().enabled());
+            .modify(|_, w| w.iopaen().enabled().iopben().enabled().iopcen().enabled());
         let mode = mode as u8;
 
         match *pin {
             Pin::PA0 => gpioa.moder.modify(|_, w| w.moder0().bits(mode)),
             Pin::PA1 => gpioa.moder.modify(|_, w| w.moder1().bits(mode)),
             Pin::PA5 => gpioa.moder.modify(|_, w| w.moder5().bits(mode)),
+            Pin::PB0 => gpiob.moder.modify(|_, w| w.moder0().bits(mode)),
+            Pin::PB1 => gpiob.moder.modify(|_, w| w.moder1().bits(mode)),
+            Pin::PB3 => gpiob.moder.modify(|_, w| w.moder3().bits(mode)),
+            Pin::PB4 => gpiob.moder.modify(|_, w| w.moder4().bits(mode)),
+            Pin::PB5 => gpiob.moder.modify(|_, w| w.moder5().bits(mode)),
+            Pin::PB10 => gpiob.moder.modify(|_, w| w.moder10().bits(mode)),
+            Pin::PB11 => gpiob.moder.modify(|_, w| w.moder11().bits(mode)),
             Pin::PC7 => gpioc.moder.modify(|_, w| w.moder7().bits(mode)),
         }
     });
 }
-

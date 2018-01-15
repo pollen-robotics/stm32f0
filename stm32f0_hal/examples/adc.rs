@@ -9,11 +9,9 @@ use core::fmt::Write;
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
-
-    let p3 = adc::Input::setup(adc::Pin::P3);
-    let p4 = adc::Input::setup(adc::Pin::P4);
-
+    let channel0 = adc::Analog::setup(adc::Channel::ADC0);
+    let channel1 = adc::Analog::setup(adc::Channel::ADC1);
     loop {
-        writeln!(stdout, "{} {}", p3.read(), p4.read()).unwrap();
+        writeln!(stdout, "{} {}", channel0.read(), channel1.read()).unwrap();
     }
 }
