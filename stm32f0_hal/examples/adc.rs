@@ -15,14 +15,13 @@ use hal::adc;
 
 fn main() {
     let mut stdout = hio::hstdout().unwrap();
-
-    let p3 = adc::Input::setup(adc::Pin::P3);
-    let p4 = adc::Input::setup(adc::Pin::P4);
-
+    let channel0 = adc::Analog::setup(adc::Channel::ADC0);
+    let channel1 = adc::Analog::setup(adc::Channel::ADC1);
     loop {
-        writeln!(stdout, "{} {}", p3.read(), p4.read());
+        writeln!(stdout, "{} {}", channel0.read(), channel1.read());
     }
 }
+
 
 // As we are not using interrupts, we just register a dummy catch all handler
 #[link_section = ".vector_table.interrupts"]
