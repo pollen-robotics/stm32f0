@@ -49,7 +49,6 @@ impl Analog {
                 Channel::ADC1 => adc.chselr.write(|w| w.chsel1().set_bit()),
                 Channel::ADC13 => adc.chselr.write(|w| w.chsel13().set_bit()),
                 Channel::ADC14 => adc.chselr.write(|w| w.chsel14().set_bit()),
-
             }
 
             // Active ADC and Start Conversion
