@@ -4,5 +4,10 @@ members = [
   "stm32f0_hal",
 ]
 
+[profile.dev]
+opt-level = 0
+debug = true
+codegen-units = 1
+
 [profile.release]
 lto = true

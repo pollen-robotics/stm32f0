@@ -21,7 +21,9 @@
 //! ```
 
 use cortex_m;
-use stm32f0x2::{GPIOA, GPIOB, GPIOC, RCC};
+
+use stm32f0x2::{EXTI, GPIOA, GPIOB, GPIOC, NVIC, RCC};
+use stm32f0x2::interrupt::Interrupt;
 
 enum Mode {
     Input = 0b00,
@@ -71,6 +73,40 @@ impl Input {
                 Pin::PB11 => (*GPIOB.get()).idr.read().idr11().bit(),
                 Pin::PC7 => (*GPIOC.get()).idr.read().idr7().bit(),
             }
+        }
+    }
+
+    pub fn init_interrupt(&self) {
+        match self.pin {
+            Pin::PA0 => cortex_m::interrupt::free(|cs| {
+                let exti = EXTI.borrow(cs);
+                let nvic = NVIC.borrow(cs);
+                exti.rtsr.modify(|_, w| w.tr0().set_bit());
+                exti.imr.modify(|_, w| w.mr0().set_bit());
+                nvic.enable(Interrupt::EXTI0_1);
+            }),
+            Pin::PA1 => cortex_m::interrupt::free(|cs| {
+                let exti = EXTI.borrow(cs);
+                let nvic = NVIC.borrow(cs);
+                exti.rtsr.modify(|_, w| w.tr1().set_bit());
+                exti.imr.modify(|_, w| w.mr1().set_bit());
+                nvic.enable(Interrupt::EXTI0_1);
+            }),
+            Pin::PA5 => cortex_m::interrupt::free(|cs| {
+                let exti = EXTI.borrow(cs);
+                let nvic = NVIC.borrow(cs);
+                exti.rtsr.modify(|_, w| w.tr5().set_bit());
+                exti.imr.modify(|_, w| w.mr5().set_bit());
+                nvic.enable(Interrupt::EXTI4_15);
+            }),
+            Pin::PC7 => cortex_m::interrupt::free(|cs| {
+                let exti = EXTI.borrow(cs);
+                let nvic = NVIC.borrow(cs);
+                exti.rtsr.modify(|_, w| w.tr7().set_bit());
+                exti.imr.modify(|_, w| w.mr7().set_bit());
+                nvic.enable(Interrupt::EXTI4_15);
+            }),
+            _ => panic!("Unsupported PIN!"),
         }
     }
 }
