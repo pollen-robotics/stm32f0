@@ -19,9 +19,11 @@
 // ! let p_out = gpio::Output::setup(gpio::Pin::PA5);
 // ! p_out.write(true);
 //! ```
+use core;
 
 use cortex_m;
-use stm32f0x2::{GPIOA, GPIOC, RCC};
+use stm32f0x2::{GPIOA, GPIOC, RCC, EXTI, NVIC};
+use stm32f0x2::interrupt::*;
 
 enum Mode {
     Input = 0b00,
@@ -43,7 +45,7 @@ pub struct Input {
 
 impl Input {
     /// Setup a PIN in Input Mode
-    pub fn setup(pin: Pin) -> Input {
+    pub fn setup(pin: Pin) -> Input{
         setup_pin(&pin, Mode::Input);
         Input { pin }
     }
@@ -59,7 +61,49 @@ impl Input {
             }
         }
     }
+
+    pub fn init_interrupt(&self) {
+        match self.pin {
+            Pin::PA0 => {
+                cortex_m::interrupt::free(|cs| {
+                    let exti = EXTI.borrow(cs);
+                    let nvic = NVIC.borrow(cs);
+                    exti.rtsr.modify(|_, w| w.tr0().set_bit());
+                    exti.imr.modify( |_,w| w.mr0().set_bit());
+                    nvic.enable(Interrupt::EXTI0_1);
+                })
+            }
+            Pin::PA1 => {
+                cortex_m::interrupt::free(|cs| {
+                    let exti = EXTI.borrow(cs);
+                    let nvic = NVIC.borrow(cs);
+                    exti.rtsr.modify(|_, w| w.tr1().set_bit());
+                    exti.imr.modify( |_,w| w.mr1().set_bit());
+                    nvic.enable(Interrupt::EXTI0_1);
+                })
+            }
+            Pin::PA5 => {
+                cortex_m::interrupt::free(|cs| {
+                    let exti = EXTI.borrow(cs);
+                    let nvic = NVIC.borrow(cs);
+                    exti.rtsr.modify(|_, w| w.tr5().set_bit());
+                    exti.imr.modify( |_,w| w.mr5().set_bit());
+                    nvic.enable(Interrupt::EXTI4_15);
+                })
+            }
+            Pin::PC7 => {
+                cortex_m::interrupt::free(|cs| {
+                    let exti = EXTI.borrow(cs);
+                    let nvic = NVIC.borrow(cs);
+                    exti.rtsr.modify(|_, w| w.tr7().set_bit());
+                    exti.imr.modify( |_,w| w.mr7().set_bit());
+                    nvic.enable(Interrupt::EXTI4_15);
+                })
+            }
+        }
+    }
 }
+
 
 /// Output Mode Pin
 pub struct Output {
@@ -114,3 +158,4 @@ fn setup_pin(pin: &Pin, mode: Mode) {
         }
     });
 }
+
