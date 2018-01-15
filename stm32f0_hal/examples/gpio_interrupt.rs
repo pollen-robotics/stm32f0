@@ -1,7 +1,7 @@
 #![no_std]
 
-extern crate stm32f0_hal as hal;
 extern crate cortex_m;
+extern crate stm32f0_hal as hal;
 #[macro_use(interrupt)]
 extern crate stm32f0x2;
 
@@ -18,12 +18,10 @@ fn main() {
 
     rcc::init(); // Full Speed 48Mhz
     p0.init_interrupt();
-    loop {
-
-    }
+    loop {}
 }
 
-interrupt!(EXTI0_1,pa0_cb);
+interrupt!(EXTI0_1, pa0_cb);
 
 fn pa0_cb() {
     cortex_m::interrupt::free(|cs| {
@@ -35,7 +33,5 @@ fn pa0_cb() {
                 p7.high();
             }
         }
-
-
     })
 }
