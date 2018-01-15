@@ -14,13 +14,14 @@ env:
   - TARGET=x86_64-unknown-linux-gnu
   - TARGET=thumbv6m-none-eabi
 
+before_install:
+  - rustup default nightly-2017-12-25
 
 before_script:
   - export PATH="$PATH:$HOME/.cargo/bin"
+  - (cd .. && cargo install --force rustfmt-nightly)
   - which xargo || (cd .. && cargo install xargo -f --vers 0.3.8)
   - rustup component list | grep 'rust-src.*installed' || rustup component add rust-src
-  - which cargo-install-update || (cd .. && cargo install cargo-update)
-  - (cd .. && cargo install-update rustfmt-nightly -i)
   - set -e
 
 script:
