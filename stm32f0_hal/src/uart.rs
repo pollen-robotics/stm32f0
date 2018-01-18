@@ -152,7 +152,6 @@ impl Uart {
             }
             Uarts::Uart3 => {
                 cortex_m::interrupt::free(|cs| {
-                    let rcc = RCC.borrow(cs);
                     let nvic = NVIC.borrow(cs);
                     let gpiob = GPIOB.borrow(cs);
                     let uart3 = UART3.borrow(cs);
@@ -258,7 +257,6 @@ impl Uart {
                 });
                 Uart { uart }
             }
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -272,7 +270,6 @@ impl Uart {
                 let uart3 = UART3.borrow(cs);
                 uart3.tdr.write(|w| w.tdr().bits(byte as u16));
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -296,7 +293,6 @@ impl Uart {
                     false
                 }
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -318,7 +314,6 @@ impl Uart {
                     None
                 }
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 }
