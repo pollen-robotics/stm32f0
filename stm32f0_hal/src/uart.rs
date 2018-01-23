@@ -49,27 +49,31 @@ impl Uart {
                     let nvic = NVIC.borrow(cs);
                     let gpioa = GPIOA.borrow(cs);
                     let uart1 = UART1.borrow(cs);
-                    // Enable GPIOA Clock
-                    rcc.ahbenr.write(|w| w.iopaen().enabled());
-                    // Enable USART1 Clock
-                    rcc.apb2enr.write(|w| w.usart1en().enabled());
+                    // Enable GPIOA Clock into the Advanced High-performance Bus
+                    rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
+                    // Enable USART1 Clock  into the Advanced Peripheral Bus 2
+                    rcc.apb2enr.modify(|_, w| w.usart1en().enabled());
 
-                    // Configure PA9/PA10 Alternate Function 1 -> USART1
+                    // Configure speed of PA9/PA10 (refer to the datasheet for the frequency, the power supply and load conditions)
                     gpioa
                         .ospeedr
-                        .write(|w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+                        .modify(|_, w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+                    // Use pull-up on PA9/10
                     gpioa
                         .pupdr
-                        .write(|w| w.pupdr9().pull_up().pupdr10().pull_up());
-                    gpioa.afrh.write(|w| w.afrh9().af1().afrh10().af1());
+                        .modify(|_, w| w.pupdr9().pull_up().pupdr10().pull_up());
+                    // Configure PA9/PA10 Alternate Function 1 -> USART1 (PA9 -> TX & PA10 -> RX )
+                    gpioa.afrh.modify(|_, w| w.afrh9().af1().afrh10().af1());
+                    // PA9 & PA10 as Alternate function (USART1 peripheral)
                     gpioa
                         .moder
-                        .write(|w| w.moder9().alternate().moder10().alternate());
+                        .modify(|_, w| w.moder9().alternate().moder10().alternate());
+                    // PA9 & PA10 push-pull configuration
                     gpioa
                         .otyper
-                        .write(|w| w.ot9().push_pull().ot10().push_pull());
+                        .modify(|_, w| w.ot9().push_pull().ot10().push_pull());
 
-                    // Configure UART : Word length
+                    // Configure UART1 : Word length
                     match nbits {
                         NBits::_8bits => {
                             uart1.cr1.modify(|_, w| w.m()._8bits());
@@ -78,7 +82,7 @@ impl Uart {
                             uart1.cr1.modify(|_, w| w.m()._9bits());
                         }
                     }
-                    // Configure UART : Parity
+                    // Configure UART1 : Parity
                     match parity {
                         Parity::None => {
                             uart1.cr1.modify(|_, w| w.pce().disabled());
@@ -92,7 +96,7 @@ impl Uart {
                             uart1.cr1.modify(|_, w| w.ps().odd());
                         }
                     }
-                    // Configure UART : Transfert Direction - Oversampling - RX Interrupt
+                    // Configure UART1 : Transfert Direction - Oversampling - RX Interrupt
                     uart1.cr1.modify(|_, w| {
                         w.te()
                             .enabled()
@@ -103,7 +107,7 @@ impl Uart {
                             .rxneie()
                             .enabled()
                     });
-                    // Configure UART : 1 stop bit
+                    // Configure UART1 : stop bit
                     match nbstopbits {
                         StopBits::_0b5 => {
                             uart1.cr2.modify(|_, w| w.stop().half_stop());
@@ -119,8 +123,8 @@ impl Uart {
                         }
                     }
 
-                    // Configure UART : disable hardware flow control - Overrun interrupt
-                    uart1.cr3.write(|w| {
+                    // Configure UART1 : disable hardware flow control - Overrun interrupt
+                    uart1.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
                             .ctse()
@@ -130,21 +134,22 @@ impl Uart {
                             .ovrdis()
                             .disabled()
                     });
-                    // Configure UART : baudrate
-                    uart1.brr.write(|w| {
+                    // Configure UART1 : baudrate
+                    uart1.brr.modify(|_, w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart1.brr.write(|w| {
+                    uart1.brr.modify(|_, w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
-                    // Configure UART : Asynchronous mode
+                    // Configure UART1 : Asynchronous mode
                     uart1
                         .cr2
                         .modify(|_, w| w.linen().disabled().clken().disabled());
                     // UART1 enabled
                     uart1.cr1.modify(|_, w| w.ue().enabled());
+                    // Interrupt UART1 activated into NVIC
                     nvic.enable(USART1);
                     nvic.clear_pending(USART1);
                 });
@@ -156,26 +161,29 @@ impl Uart {
                     let nvic = NVIC.borrow(cs);
                     let gpiob = GPIOB.borrow(cs);
                     let uart3 = UART3.borrow(cs);
-                    let rcc = RCC.borrow(cs);
-                    // Enable GPIOA Clock
-                    rcc.ahbenr.write(|w| w.iopben().enabled());
-                    // Enable USART1 Clock
-                    rcc.apb1enr.write(|w| w.usart3en().enabled());
+                    // Enable GPIOB Clock into the Advanced High-performance Bus
+                    rcc.ahbenr.modify(|_, w| w.iopben().enabled());
+                    // Enable USART3 Clock  into the Advanced Peripheral Bus 2
+                    rcc.apb1enr.modify(|_, w| w.usart3en().enabled());
 
-                    // Configure PB10/PB11 Alternate Function 1 -> USART3
+                    // Configure speed of PB10/PB11 (refer to the datasheet for the frequency, the power supply and load conditions)
                     gpiob
                         .ospeedr
-                        .write(|w| w.ospeedr10().high_speed().ospeedr11().high_speed());
+                        .modify(|_, w| w.ospeedr10().high_speed().ospeedr11().high_speed());
+                    // Use pull-up on PB10/11
                     gpiob
                         .pupdr
-                        .write(|w| w.pupdr10().pull_up().pupdr11().pull_up());
-                    gpiob.afrh.write(|w| w.afrh10().af4().afrh11().af4());
+                        .modify(|_, w| w.pupdr10().pull_up().pupdr11().pull_up());
+                    // Configure PB10/PB11 Alternate Function 1 -> USART3 (PB10 -> TX & PB11 -> RX )
+                    gpiob.afrh.modify(|_, w| w.afrh10().af4().afrh11().af4());
+                    // PA9 & PA10 as Alternate function (USART3 Peripheral)
                     gpiob
                         .moder
-                        .write(|w| w.moder10().alternate().moder11().alternate());
+                        .modify(|_, w| w.moder10().alternate().moder11().alternate());
+                    // PA9 & PA10 push-pull configuration
                     gpiob
                         .otyper
-                        .write(|w| w.ot10().push_pull().ot11().push_pull());
+                        .modify(|_, w| w.ot10().push_pull().ot11().push_pull());
 
                     // Configure UART : Word length
                     match nbits {
@@ -186,7 +194,7 @@ impl Uart {
                             uart3.cr1.modify(|_, w| w.m()._9bits());
                         }
                     }
-                    // Configure UART : Parity
+                    // Configure UART3 : Parity
                     match parity {
                         Parity::None => {
                             uart3.cr1.modify(|_, w| w.pce().disabled());
@@ -200,7 +208,7 @@ impl Uart {
                             uart3.cr1.modify(|_, w| w.ps().odd());
                         }
                     }
-                    // Configure UART : Transfert Direction - Oversampling - RX Interrupt
+                    // Configure UART3 : Transfert Direction - Oversampling - RX Interrupt
                     uart3.cr1.modify(|_, w| {
                         w.te()
                             .enabled()
@@ -211,7 +219,7 @@ impl Uart {
                             .rxneie()
                             .enabled()
                     });
-                    // Configure UART : 1 stop bit
+                    // Configure UART3 : 1 stop bit
                     match nbstopbits {
                         StopBits::_0b5 => {
                             uart3.cr2.modify(|_, w| w.stop().half_stop());
@@ -227,8 +235,8 @@ impl Uart {
                         }
                     }
 
-                    // Configure UART : disable hardware flow control - Overrun interrupt
-                    uart3.cr3.write(|w| {
+                    // Configure UART3 : disable hardware flow control - Overrun interrupt
+                    uart3.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
                             .ctse()
@@ -238,27 +246,27 @@ impl Uart {
                             .ovrdis()
                             .disabled()
                     });
-                    // Configure UART : baudrate
-                    uart3.brr.write(|w| {
+                    // Configure UART3 : baudrate
+                    uart3.brr.modify(|_, w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart3.brr.write(|w| {
+                    uart3.brr.modify(|_, w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
-                    // Configure UART : Asynchronous mode
+                    // Configure UART3 : Asynchronous mode
                     uart3
                         .cr2
                         .modify(|_, w| w.linen().disabled().clken().disabled());
-                    // UART enabled
+                    // UART3 enabled
                     uart3.cr1.modify(|_, w| w.ue().enabled());
+                    // Interrupt UART3 (and USART4) activated into NVIC
                     nvic.enable(USART3_4);
                     nvic.clear_pending(USART3_4);
                 });
                 Uart { uart }
             }
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -266,13 +274,14 @@ impl Uart {
         match self.uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
+                // the byte is stored in the UART1 transmit register
                 uart1.tdr.write(|w| w.tdr().bits(byte as u16));
             }),
             Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
                 let uart3 = UART3.borrow(cs);
+                // the byte is stored in the UART3 transmit register
                 uart3.tdr.write(|w| w.tdr().bits(byte as u16));
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -280,7 +289,9 @@ impl Uart {
         match self.uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
+                // Check the Transmit Completed flag status
                 if uart1.isr.read().tc().bit_is_set() {
+                    // if transmit completed, clear the transmit completed flag and return true
                     uart1.icr.write(|w| w.tccf().clear_bit());
                     true
                 } else {
@@ -289,14 +300,15 @@ impl Uart {
             }),
             Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
                 let uart3 = UART3.borrow(cs);
+                // Check the Transmit Completed flag status
                 if uart3.isr.read().tc().bit_is_set() {
+                    // if transmit completed, clear the transmit completed flag and return true
                     uart3.icr.write(|w| w.tccf().clear_bit());
                     true
                 } else {
                     false
                 }
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 
@@ -304,7 +316,9 @@ impl Uart {
         match self.uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
+                // Check the Receive Not Empty flag flag status
                 if uart1.isr.read().rxne().bit_is_set() {
+                    // if true, read the received data and finish the rxne flag cleared procedure
                     Some(uart1.rdr.read().rdr().bits() as u8)
                 } else {
                     None
@@ -312,13 +326,14 @@ impl Uart {
             }),
             Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
                 let uart3 = UART3.borrow(cs);
+                // Check the Receive Not Empty flag flag status
                 if uart3.isr.read().rxne().bit_is_set() {
+                    // if true, read the received data and finish the rxne flag cleared procedure
                     Some(uart3.rdr.read().rdr().bits() as u8)
                 } else {
                     None
                 }
             }),
-            _ => panic!("Unsupported UART!"),
         }
     }
 }

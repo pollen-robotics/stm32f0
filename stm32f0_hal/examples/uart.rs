@@ -11,6 +11,7 @@ static mut UART1: Option<uart::Uart> = None;
 static mut DATA_UART1: u8 = 0;
 
 fn main() {
+    rcc::init(); // Full Speed 48Mhz
     let uart3 = uart::Uart::setup(
         uart::Uarts::Uart3,
         57600,
@@ -27,7 +28,6 @@ fn main() {
             uart::Parity::None,
         ));
     }
-    rcc::init(); // Full Speed 48Mhz
     loop {
         if uart3.transmit_complete() {
             uart3.send(0x55);
