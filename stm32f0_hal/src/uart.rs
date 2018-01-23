@@ -49,15 +49,22 @@ impl Uart {
                     let nvic = NVIC.borrow(cs);
                     let gpioa = GPIOA.borrow(cs);
                     let uart1 = UART1.borrow(cs);
+<<<<<<< HEAD
                     // Enable GPIOA Clock into the Advanced High-performance Bus
                     rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
                     // Enable USART1 Clock  into the Advanced Peripheral Bus 2
+=======
+                    // Enable GPIOA Clock
+                    rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
+                    // Enable USART1 Clock
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     rcc.apb2enr.modify(|_, w| w.usart1en().enabled());
 
                     // Configure speed of PA9/PA10 (refer to the datasheet for the frequency, the power supply and load conditions)
                     gpioa
                         .ospeedr
                         .modify(|_, w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+<<<<<<< HEAD
                     // Use pull-up on PA9/10
                     gpioa
                         .pupdr
@@ -69,6 +76,15 @@ impl Uart {
                         .moder
                         .modify(|_, w| w.moder9().alternate().moder10().alternate());
                     // PA9 & PA10 push-pull configuration
+=======
+                    gpioa
+                        .pupdr
+                        .modify(|_, w| w.pupdr9().pull_up().pupdr10().pull_up());
+                    gpioa.afrh.modify(|_, w| w.afrh9().af1().afrh10().af1());
+                    gpioa
+                        .moder
+                        .modify(|_, w| w.moder9().alternate().moder10().alternate());
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     gpioa
                         .otyper
                         .modify(|_, w| w.ot9().push_pull().ot10().push_pull());
@@ -123,7 +139,11 @@ impl Uart {
                         }
                     }
 
+<<<<<<< HEAD
                     // Configure UART1 : disable hardware flow control - Overrun interrupt
+=======
+                    // Configure UART : disable hardware flow control - Overrun interrupt
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     uart1.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
@@ -157,19 +177,26 @@ impl Uart {
             }
             Uarts::Uart3 => {
                 cortex_m::interrupt::free(|cs| {
-                    let rcc = RCC.borrow(cs);
                     let nvic = NVIC.borrow(cs);
                     let gpiob = GPIOB.borrow(cs);
                     let uart3 = UART3.borrow(cs);
+<<<<<<< HEAD
                     // Enable GPIOB Clock into the Advanced High-performance Bus
                     rcc.ahbenr.modify(|_, w| w.iopben().enabled());
                     // Enable USART3 Clock  into the Advanced Peripheral Bus 2
+=======
+                    let rcc = RCC.borrow(cs);
+                    // Enable GPIOA Clock
+                    rcc.ahbenr.modify(|_, w| w.iopben().enabled());
+                    // Enable USART1 Clock
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     rcc.apb1enr.modify(|_, w| w.usart3en().enabled());
 
                     // Configure speed of PB10/PB11 (refer to the datasheet for the frequency, the power supply and load conditions)
                     gpiob
                         .ospeedr
                         .modify(|_, w| w.ospeedr10().high_speed().ospeedr11().high_speed());
+<<<<<<< HEAD
                     // Use pull-up on PB10/11
                     gpiob
                         .pupdr
@@ -181,6 +208,15 @@ impl Uart {
                         .moder
                         .modify(|_, w| w.moder10().alternate().moder11().alternate());
                     // PA9 & PA10 push-pull configuration
+=======
+                    gpiob
+                        .pupdr
+                        .modify(|_, w| w.pupdr10().pull_up().pupdr11().pull_up());
+                    gpiob.afrh.modify(|_, w| w.afrh10().af4().afrh11().af4());
+                    gpiob
+                        .moder
+                        .modify(|_, w| w.moder10().alternate().moder11().alternate());
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     gpiob
                         .otyper
                         .modify(|_, w| w.ot10().push_pull().ot11().push_pull());
@@ -235,7 +271,11 @@ impl Uart {
                         }
                     }
 
+<<<<<<< HEAD
                     // Configure UART3 : disable hardware flow control - Overrun interrupt
+=======
+                    // Configure UART : disable hardware flow control - Overrun interrupt
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     uart3.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
@@ -274,6 +314,7 @@ impl Uart {
         match self.uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
+<<<<<<< HEAD
                 // the byte is stored in the UART1 transmit register
                 uart1.tdr.write(|w| w.tdr().bits(byte as u16));
             }),
@@ -281,6 +322,13 @@ impl Uart {
                 let uart3 = UART3.borrow(cs);
                 // the byte is stored in the UART3 transmit register
                 uart3.tdr.write(|w| w.tdr().bits(byte as u16));
+=======
+                uart1.tdr.modify(|_, w| w.tdr().bits(byte as u16));
+            }),
+            Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
+                let uart3 = UART3.borrow(cs);
+                uart3.tdr.modify(|_, w| w.tdr().bits(byte as u16));
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
             }),
         }
     }
@@ -291,8 +339,12 @@ impl Uart {
                 let uart1 = UART1.borrow(cs);
                 // Check the Transmit Completed flag status
                 if uart1.isr.read().tc().bit_is_set() {
+<<<<<<< HEAD
                     // if transmit completed, clear the transmit completed flag and return true
                     uart1.icr.write(|w| w.tccf().clear_bit());
+=======
+                    uart1.icr.modify(|_, w| w.tccf().clear_bit());
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     true
                 } else {
                     false
@@ -302,8 +354,12 @@ impl Uart {
                 let uart3 = UART3.borrow(cs);
                 // Check the Transmit Completed flag status
                 if uart3.isr.read().tc().bit_is_set() {
+<<<<<<< HEAD
                     // if transmit completed, clear the transmit completed flag and return true
                     uart3.icr.write(|w| w.tccf().clear_bit());
+=======
+                    uart3.icr.modify(|_, w| w.tccf().clear_bit());
+>>>>>>> 2aa95150cba752257a5ea068937f32a1a769acab
                     true
                 } else {
                     false
