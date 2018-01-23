@@ -50,24 +50,24 @@ impl Uart {
                     let gpioa = GPIOA.borrow(cs);
                     let uart1 = UART1.borrow(cs);
                     // Enable GPIOA Clock
-                    rcc.ahbenr.write(|w| w.iopaen().enabled());
+                    rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
                     // Enable USART1 Clock
-                    rcc.apb2enr.write(|w| w.usart1en().enabled());
+                    rcc.apb2enr.modify(|_, w| w.usart1en().enabled());
 
                     // Configure PA9/PA10 Alternate Function 1 -> USART1
                     gpioa
                         .ospeedr
-                        .write(|w| w.ospeedr9().high_speed().ospeedr10().high_speed());
+                        .modify(|_, w| w.ospeedr9().high_speed().ospeedr10().high_speed());
                     gpioa
                         .pupdr
-                        .write(|w| w.pupdr9().pull_up().pupdr10().pull_up());
-                    gpioa.afrh.write(|w| w.afrh9().af1().afrh10().af1());
+                        .modify(|_, w| w.pupdr9().pull_up().pupdr10().pull_up());
+                    gpioa.afrh.modify(|_, w| w.afrh9().af1().afrh10().af1());
                     gpioa
                         .moder
-                        .write(|w| w.moder9().alternate().moder10().alternate());
+                        .modify(|_, w| w.moder9().alternate().moder10().alternate());
                     gpioa
                         .otyper
-                        .write(|w| w.ot9().push_pull().ot10().push_pull());
+                        .modify(|_, w| w.ot9().push_pull().ot10().push_pull());
 
                     // Configure UART : Word length
                     match nbits {
@@ -120,7 +120,7 @@ impl Uart {
                     }
 
                     // Configure UART : disable hardware flow control - Overrun interrupt
-                    uart1.cr3.write(|w| {
+                    uart1.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
                             .ctse()
@@ -131,11 +131,11 @@ impl Uart {
                             .disabled()
                     });
                     // Configure UART : baudrate
-                    uart1.brr.write(|w| {
+                    uart1.brr.modify(|_, w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart1.brr.write(|w| {
+                    uart1.brr.modify(|_, w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
@@ -157,24 +157,24 @@ impl Uart {
                     let uart3 = UART3.borrow(cs);
                     let rcc = RCC.borrow(cs);
                     // Enable GPIOA Clock
-                    rcc.ahbenr.write(|w| w.iopben().enabled());
+                    rcc.ahbenr.modify(|_, w| w.iopben().enabled());
                     // Enable USART1 Clock
-                    rcc.apb1enr.write(|w| w.usart3en().enabled());
+                    rcc.apb1enr.modify(|_, w| w.usart3en().enabled());
 
                     // Configure PB10/PB11 Alternate Function 1 -> USART3
                     gpiob
                         .ospeedr
-                        .write(|w| w.ospeedr10().high_speed().ospeedr11().high_speed());
+                        .modify(|_, w| w.ospeedr10().high_speed().ospeedr11().high_speed());
                     gpiob
                         .pupdr
-                        .write(|w| w.pupdr10().pull_up().pupdr11().pull_up());
-                    gpiob.afrh.write(|w| w.afrh10().af4().afrh11().af4());
+                        .modify(|_, w| w.pupdr10().pull_up().pupdr11().pull_up());
+                    gpiob.afrh.modify(|_, w| w.afrh10().af4().afrh11().af4());
                     gpiob
                         .moder
-                        .write(|w| w.moder10().alternate().moder11().alternate());
+                        .modify(|_, w| w.moder10().alternate().moder11().alternate());
                     gpiob
                         .otyper
-                        .write(|w| w.ot10().push_pull().ot11().push_pull());
+                        .modify(|_, w| w.ot10().push_pull().ot11().push_pull());
 
                     // Configure UART : Word length
                     match nbits {
@@ -227,7 +227,7 @@ impl Uart {
                     }
 
                     // Configure UART : disable hardware flow control - Overrun interrupt
-                    uart3.cr3.write(|w| {
+                    uart3.cr3.modify(|_, w| {
                         w.rtse()
                             .disabled()
                             .ctse()
@@ -238,11 +238,11 @@ impl Uart {
                             .disabled()
                     });
                     // Configure UART : baudrate
-                    uart3.brr.write(|w| {
+                    uart3.brr.modify(|_, w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart3.brr.write(|w| {
+                    uart3.brr.modify(|_, w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
@@ -264,11 +264,11 @@ impl Uart {
         match self.uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
-                uart1.tdr.write(|w| w.tdr().bits(byte as u16));
+                uart1.tdr.modify(|_, w| w.tdr().bits(byte as u16));
             }),
             Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
                 let uart3 = UART3.borrow(cs);
-                uart3.tdr.write(|w| w.tdr().bits(byte as u16));
+                uart3.tdr.modify(|_, w| w.tdr().bits(byte as u16));
             }),
         }
     }
@@ -278,7 +278,7 @@ impl Uart {
             Uarts::Uart1 => cortex_m::interrupt::free(|cs| {
                 let uart1 = UART1.borrow(cs);
                 if uart1.isr.read().tc().bit_is_set() {
-                    uart1.icr.write(|w| w.tccf().clear_bit());
+                    uart1.icr.modify(|_, w| w.tccf().clear_bit());
                     true
                 } else {
                     false
@@ -287,7 +287,7 @@ impl Uart {
             Uarts::Uart3 => cortex_m::interrupt::free(|cs| {
                 let uart3 = UART3.borrow(cs);
                 if uart3.isr.read().tc().bit_is_set() {
-                    uart3.icr.write(|w| w.tccf().clear_bit());
+                    uart3.icr.modify(|_, w| w.tccf().clear_bit());
                     true
                 } else {
                     false
