@@ -4,7 +4,7 @@ extern crate stm32f0_hal;
 use stm32f0_hal::{gpio, rcc};
 
 fn main() {
-    let mut led = gpio::Output::setup(gpio::Pin::PA5);
+    let mut led = gpio::Output::setup(gpio::Pin::PC7);
     rcc::init();
 
     loop {
