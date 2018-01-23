@@ -131,11 +131,11 @@ impl Uart {
                             .disabled()
                     });
                     // Configure UART : baudrate
-                    uart1.brr.modify(|_, w| {
+                    uart1.brr.write(|w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart1.brr.modify(|_, w| {
+                    uart1.brr.write(|w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
@@ -238,11 +238,11 @@ impl Uart {
                             .disabled()
                     });
                     // Configure UART : baudrate
-                    uart3.brr.modify(|_, w| {
+                    uart3.brr.write(|w| {
                         w.div_fraction()
                             .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
                     });
-                    uart3.brr.modify(|_, w| {
+                    uart3.brr.write(|w| {
                         w.div_mantissa()
                             .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
                     });
