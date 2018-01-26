@@ -3,7 +3,7 @@ use stm32f0x2::{TIM3, GPIOB, GPIOC, RCC};
 use cortex_m;
 
 static mut FREQ: u32 = 0;
-static mut DUT: u8 = 0;
+static mut DUT: f32 = 0.0;
 
 // PWM channels : Pins available
 pub enum Pin {
@@ -140,11 +140,11 @@ impl Pwm {
         });
     }
 
-    pub fn set_duty(&self, duty: u8) {
+    pub fn set_duty(&self, duty: f32) {
         cortex_m::interrupt::free(|cs| {
             let tim3 = TIM3.borrow(cs);
             unsafe {
-                let ccr_value = ((1000000 / FREQ) / 100) * duty as u32;
+                let ccr_value = (((1000000.0 / FREQ as f32) / 100.0) * duty) as u32;
                 DUT = duty;
                 match self.pin {
                     Pin::PB4 => tim3.ccr1.write(|w| {
