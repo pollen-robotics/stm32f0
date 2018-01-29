@@ -4,6 +4,7 @@ use cortex_m;
 
 static mut FREQ: u32 = 0;
 static mut DUT: f32 = 0.0;
+const FREQUENCY: u32 = 48_000_000;
 
 // PWM channels : Pins available
 pub enum Pin {
@@ -27,7 +28,7 @@ impl Pwm {
             let gpiob = GPIOB.borrow(cs);
             let gpioc = GPIOC.borrow(cs);
 
-            // GPIOB Clock Activated
+            // GPIOB and GPIOC Clock Activated
             rcc.ahbenr
                 .modify(|_, w| w.iopben().enabled().iopcen().enabled());
             // TIMER Clock Activated
@@ -106,12 +107,13 @@ impl Pwm {
         Pwm { pin }
     }
 
+    // Be careful, after you have set frequency, it will be necessary to set all duty cycles of others PWMs
     pub fn set_frequency(&self, frequency: u32) {
         cortex_m::interrupt::free(|cs| {
             let tim3 = TIM3.borrow(cs);
 
             // Set Prescaler Register - 16 bits
-            tim3.psc.write(|w| w.psc().bits(23)); // 1 MHz // 23
+            tim3.psc.write(|w| w.psc().bits((FREQUENCY / (1_000_000 * 2)) - 1)); // Counter clock Frequency = (fCK_PSC / (PSC[15:0] + 1)
 
             // Set Auto-Reload register - 16 bits
             let arr = 1000000 / frequency; //1000000
