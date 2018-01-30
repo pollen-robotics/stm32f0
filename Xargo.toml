@@ -4,6 +4,3 @@ stage = 0
 [dependencies.compiler_builtins]
 features = ["mem"]
 stage = 1
-
-[target.thumbv6m-none-eabi.dependencies]
-alloc = {}

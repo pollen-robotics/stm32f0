@@ -13,8 +13,6 @@ First you need to setup your environment to cross compile it for armv6. You can 
 
 Then you can build both workspaces directly from the root using ```xargo build --target thumbv6m-none-eabi```.
 
->**Warning: due to some recent APIs break, you should use the nightly 25-12-2017! We will fix that real soon.**
-
 ## Usage
 
 You can find examples in the [stm32f0_hal/examples](./stm32f0_hal/examples) folder. They can be built directly.

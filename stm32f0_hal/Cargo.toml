@@ -1,5 +1,5 @@
 [package]
-authors = ["Pollen Robotics <contact@pollen-robotics.com>"]
+authors = ["Pollen Robotics <luos@pollen-robotics.com>"]
 categories = [
     "hardware-support",
     "no-std",
@@ -12,29 +12,26 @@ keywords = [
 license = "Apache-2.0"
 name = "stm32f0_hal"
 repository = "https://github.com/pollen-robotics/stm32f0"
-version = "0.1.0"
+version = "0.2.0"
 
 [badges.travis-ci]
 repository = "pollen-robotics/stm32f0"
 
 [dependencies]
-cortex-m = "0.3.1"
+bare-metal = "0.1.1"
+cortex-m = "0.4.3"
 
-[dev-dependencies]
-cortex-m-semihosting = "0.2.0"
-
-[dependencies.cortex-m-rt]
-features = ["abort-on-panic"]
-version = "=0.3.7"
+[dependencies.embedded-hal]
+features = ["unproven"]
+version = "0.1.0"
 
 [dependencies.stm32f0x2]
+path = "../stm32f0x2"
+
+[dev-dependencies.stm32f0x2]
 features = ["rt"]
 path = "../stm32f0x2"
 
-[features]
-default = []
-use_alloc = ["alloc-cortex-m"]
-
-[dependencies.alloc-cortex-m]
-git = "https://github.com/pollen-robotics/alloc-cortex-m"
-optional = true
+[dev-dependencies.cortex-m-rt]
+features = ["abort-on-panic"]
+version = "0.3.12"
