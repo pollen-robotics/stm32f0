@@ -23,10 +23,7 @@ For instance, to build the *blinky* example: ```xargo build --target thumbv6m-no
 
 You can generate the doc via ```xargo doc``` for a complete API.
 
-## Troubleshoot
+## How to generate stm32f0x2
 
-### Xargo version
-
-If you encounter an error such as: ```error: no matching version = 0.0.0 found for package compiler_builtins (required by sysroot)```
-
-Make sure you downgrade your xargo version to 0.3.8: ```cargo install xargo --vers 0.3.8 -f```
+* ```svd2rust -i STM32F0x2.svd | rustfmt | tee -a src/lib.rs```
+* ```form -i src/lib.rs -o ./src```
