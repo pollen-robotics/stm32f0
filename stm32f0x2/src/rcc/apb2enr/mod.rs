@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::APB2ENR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::APB2ENR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::APB2ENR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -68,19 +68,19 @@ pub struct _SYSCFGENW<'a> {
 }
 impl<'a> _SYSCFGENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SYSCFGENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -93,7 +93,7 @@ impl<'a> _SYSCFGENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -110,19 +110,19 @@ pub struct _ADCENW<'a> {
 }
 impl<'a> _ADCENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ADCENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -135,7 +135,7 @@ impl<'a> _ADCENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -152,19 +152,19 @@ pub struct _TIM1ENW<'a> {
 }
 impl<'a> _TIM1ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM1ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -177,7 +177,7 @@ impl<'a> _TIM1ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -194,19 +194,19 @@ pub struct _SPI1ENW<'a> {
 }
 impl<'a> _SPI1ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SPI1ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -219,7 +219,7 @@ impl<'a> _SPI1ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -236,19 +236,19 @@ pub struct _USART1ENW<'a> {
 }
 impl<'a> _USART1ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: USART1ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -261,7 +261,7 @@ impl<'a> _USART1ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -278,19 +278,19 @@ pub struct _TIM15ENW<'a> {
 }
 impl<'a> _TIM15ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM15ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -303,7 +303,7 @@ impl<'a> _TIM15ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -320,19 +320,19 @@ pub struct _TIM16ENW<'a> {
 }
 impl<'a> _TIM16ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM16ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -345,7 +345,7 @@ impl<'a> _TIM16ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -362,19 +362,19 @@ pub struct _TIM17ENW<'a> {
 }
 impl<'a> _TIM17ENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM17ENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -387,7 +387,7 @@ impl<'a> _TIM17ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -404,19 +404,19 @@ pub struct _DBGMCUENW<'a> {
 }
 impl<'a> _DBGMCUENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: DBGMCUENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::DISABLED)
     }
     #[doc = "Enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(super::ahbenr::DMA1ENW::ENABLED)
     }
@@ -429,7 +429,7 @@ impl<'a> _DBGMCUENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -440,12 +440,12 @@ impl<'a> _DBGMCUENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - SYSCFG clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syscfgen(&self) -> SYSCFGENR {
         SYSCFGENR::_from({
             const MASK: bool = true;
@@ -454,7 +454,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - ADC 1 interface clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn adcen(&self) -> ADCENR {
         ADCENR::_from({
             const MASK: bool = true;
@@ -463,7 +463,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - TIM1 Timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1en(&self) -> TIM1ENR {
         TIM1ENR::_from({
             const MASK: bool = true;
@@ -472,7 +472,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - SPI 1 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn spi1en(&self) -> SPI1ENR {
         SPI1ENR::_from({
             const MASK: bool = true;
@@ -481,7 +481,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - USART1 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1en(&self) -> USART1ENR {
         USART1ENR::_from({
             const MASK: bool = true;
@@ -490,7 +490,7 @@ impl R {
         })
     }
     #[doc = "Bit 16 - TIM15 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim15en(&self) -> TIM15ENR {
         TIM15ENR::_from({
             const MASK: bool = true;
@@ -499,7 +499,7 @@ impl R {
         })
     }
     #[doc = "Bit 17 - TIM16 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16en(&self) -> TIM16ENR {
         TIM16ENR::_from({
             const MASK: bool = true;
@@ -508,7 +508,7 @@ impl R {
         })
     }
     #[doc = "Bit 18 - TIM17 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17en(&self) -> TIM17ENR {
         TIM17ENR::_from({
             const MASK: bool = true;
@@ -517,7 +517,7 @@ impl R {
         })
     }
     #[doc = "Bit 22 - MCU debug module clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dbgmcuen(&self) -> DBGMCUENR {
         DBGMCUENR::_from({
             const MASK: bool = true;
@@ -528,58 +528,58 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - SYSCFG clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syscfgen(&mut self) -> _SYSCFGENW {
         _SYSCFGENW { w: self }
     }
     #[doc = "Bit 9 - ADC 1 interface clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn adcen(&mut self) -> _ADCENW {
         _ADCENW { w: self }
     }
     #[doc = "Bit 11 - TIM1 Timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1en(&mut self) -> _TIM1ENW {
         _TIM1ENW { w: self }
     }
     #[doc = "Bit 12 - SPI 1 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn spi1en(&mut self) -> _SPI1ENW {
         _SPI1ENW { w: self }
     }
     #[doc = "Bit 14 - USART1 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1en(&mut self) -> _USART1ENW {
         _USART1ENW { w: self }
     }
     #[doc = "Bit 16 - TIM15 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim15en(&mut self) -> _TIM15ENW {
         _TIM15ENW { w: self }
     }
     #[doc = "Bit 17 - TIM16 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16en(&mut self) -> _TIM16ENW {
         _TIM16ENW { w: self }
     }
     #[doc = "Bit 18 - TIM17 timer clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17en(&mut self) -> _TIM17ENW {
         _TIM17ENW { w: self }
     }
     #[doc = "Bit 22 - MCU debug module clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dbgmcuen(&mut self) -> _DBGMCUENW {
         _DBGMCUENW { w: self }
     }

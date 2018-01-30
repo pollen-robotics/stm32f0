@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::BDTR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::BDTR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::BDTR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum MOER {
 }
 impl MOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             MOER::DISABLED => false,
@@ -69,7 +69,7 @@ impl MOER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> MOER {
         match value {
             false => MOER::DISABLED,
@@ -77,12 +77,12 @@ impl MOER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == MOER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == MOER::ENABLED
     }
@@ -95,17 +95,17 @@ pub enum AOER {
 }
 impl AOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             AOER::DISABLED => false,
@@ -114,7 +114,7 @@ impl AOER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> AOER {
         match value {
             false => AOER::DISABLED,
@@ -122,12 +122,12 @@ impl AOER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == AOER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == AOER::ENABLED
     }
@@ -140,17 +140,17 @@ pub enum BKPR {
 }
 impl BKPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             BKPR::ACTIVELOW => false,
@@ -159,7 +159,7 @@ impl BKPR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> BKPR {
         match value {
             false => BKPR::ACTIVELOW,
@@ -167,12 +167,12 @@ impl BKPR {
         }
     }
     #[doc = "Checks if the value of the field is `ACTIVELOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_active_low(&self) -> bool {
         *self == BKPR::ACTIVELOW
     }
     #[doc = "Checks if the value of the field is `ACTIVEHIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_active_high(&self) -> bool {
         *self == BKPR::ACTIVEHIGH
     }
@@ -185,17 +185,17 @@ pub enum BKER {
 }
 impl BKER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             BKER::DISABLED => false,
@@ -204,7 +204,7 @@ impl BKER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> BKER {
         match value {
             false => BKER::DISABLED,
@@ -212,12 +212,12 @@ impl BKER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == BKER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == BKER::ENABLED
     }
@@ -230,17 +230,17 @@ pub enum OSSRR {
 }
 impl OSSRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OSSRR::DISABLED => false,
@@ -249,7 +249,7 @@ impl OSSRR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OSSRR {
         match value {
             false => OSSRR::DISABLED,
@@ -257,35 +257,32 @@ impl OSSRR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == OSSRR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == OSSRR::ENABLED
     }
 }
 #[doc = "Possible values of the field `OSSI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OSSIR {
-    #[doc = "When inactive, OC/OCN outputs are disabled"] DISABLED,
-    #[doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1"] ENABLED,
-}
+pub enum OSSIR {# [ doc = "When inactive, OC/OCN outputs are disabled" ] DISABLED , # [ doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1" ] ENABLED ,}
 impl OSSIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OSSIR::DISABLED => false,
@@ -294,7 +291,7 @@ impl OSSIR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OSSIR {
         match value {
             false => OSSIR::DISABLED,
@@ -302,27 +299,22 @@ impl OSSIR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == OSSIR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == OSSIR::ENABLED
     }
 }
 #[doc = "Possible values of the field `LOCK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKR {
-    #[doc = "LOCK OFF - No bit is write protected."] LOCKOFF,
-    #[doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written."] LOCKLVL1,
-    #[doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written."] LOCKLVL2,
-    #[doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written."] LOCKLVL3,
-}
+pub enum LOCKR {# [ doc = "LOCK OFF - No bit is write protected." ] LOCKOFF , # [ doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written." ] LOCKLVL1 , # [ doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written." ] LOCKLVL2 , # [ doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written." ] LOCKLVL3 ,}
 impl LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             LOCKR::LOCKOFF => 0,
@@ -333,7 +325,7 @@ impl LOCKR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> LOCKR {
         match value {
             0 => LOCKR::LOCKOFF,
@@ -344,22 +336,22 @@ impl LOCKR {
         }
     }
     #[doc = "Checks if the value of the field is `LOCKOFF`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lock_off(&self) -> bool {
         *self == LOCKR::LOCKOFF
     }
     #[doc = "Checks if the value of the field is `LOCKLVL1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lock_lvl1(&self) -> bool {
         *self == LOCKR::LOCKLVL1
     }
     #[doc = "Checks if the value of the field is `LOCKLVL2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lock_lvl2(&self) -> bool {
         *self == LOCKR::LOCKLVL2
     }
     #[doc = "Checks if the value of the field is `LOCKLVL3`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lock_lvl3(&self) -> bool {
         *self == LOCKR::LOCKLVL3
     }
@@ -370,7 +362,7 @@ pub struct DTGR {
 }
 impl DTGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -383,7 +375,7 @@ pub enum MOEW {
 impl MOEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             MOEW::DISABLED => false,
@@ -397,19 +389,19 @@ pub struct _MOEW<'a> {
 }
 impl<'a> _MOEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MOEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC and OCN outputs are disabled or forced to idle state"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(MOEW::DISABLED)
     }
     #[doc = "OC and OCN outputs are enabled if their respective enable bits are set"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(MOEW::ENABLED)
     }
@@ -422,7 +414,7 @@ impl<'a> _MOEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -439,7 +431,7 @@ pub enum AOEW {
 impl AOEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             AOEW::DISABLED => false,
@@ -453,19 +445,19 @@ pub struct _AOEW<'a> {
 }
 impl<'a> _AOEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: AOEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "MOE can be set only by software"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(AOEW::DISABLED)
     }
     #[doc = "MOE can be set by software or automatically at the next update event"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(AOEW::ENABLED)
     }
@@ -478,7 +470,7 @@ impl<'a> _AOEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -495,7 +487,7 @@ pub enum BKPW {
 impl BKPW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             BKPW::ACTIVELOW => false,
@@ -509,19 +501,19 @@ pub struct _BKPW<'a> {
 }
 impl<'a> _BKPW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: BKPW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Break input BRK is active low"]
-    #[inline(always)]
+    #[inline]
     pub fn active_low(self) -> &'a mut W {
         self.variant(BKPW::ACTIVELOW)
     }
     #[doc = "Break input BRK is active high"]
-    #[inline(always)]
+    #[inline]
     pub fn active_high(self) -> &'a mut W {
         self.variant(BKPW::ACTIVEHIGH)
     }
@@ -534,7 +526,7 @@ impl<'a> _BKPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -551,7 +543,7 @@ pub enum BKEW {
 impl BKEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             BKEW::DISABLED => false,
@@ -565,19 +557,19 @@ pub struct _BKEW<'a> {
 }
 impl<'a> _BKEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: BKEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Break inputs (BRK and CCS clock failure event) disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(BKEW::DISABLED)
     }
     #[doc = "Break inputs (BRK and CCS clock failure event) enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(BKEW::ENABLED)
     }
@@ -590,7 +582,7 @@ impl<'a> _BKEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -607,7 +599,7 @@ pub enum OSSRW {
 impl OSSRW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OSSRW::DISABLED => false,
@@ -621,19 +613,19 @@ pub struct _OSSRW<'a> {
 }
 impl<'a> _OSSRW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OSSRW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "When inactive, OC/OCN outputs are disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(OSSRW::DISABLED)
     }
     #[doc = "When inactive, OC/OCN outputs are enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(OSSRW::ENABLED)
     }
@@ -646,7 +638,7 @@ impl<'a> _OSSRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -656,14 +648,11 @@ impl<'a> _OSSRW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `OSSI`"]
-pub enum OSSIW {
-    #[doc = "When inactive, OC/OCN outputs are disabled"] DISABLED,
-    #[doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1"] ENABLED,
-}
+pub enum OSSIW {# [ doc = "When inactive, OC/OCN outputs are disabled" ] DISABLED , # [ doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1" ] ENABLED ,}
 impl OSSIW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OSSIW::DISABLED => false,
@@ -677,19 +666,18 @@ pub struct _OSSIW<'a> {
 }
 impl<'a> _OSSIW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OSSIW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "When inactive, OC/OCN outputs are disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(OSSIW::DISABLED)
     }
-    #[doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1"]
-    #[inline(always)]
+    # [ doc = "When inactive, OC/OCN outputs are forced first with their idle level as soon as CCxE=1 or CCxNE=1. OC/OCN enable output signal=1" ] # [ inline ]
     pub fn enabled(self) -> &'a mut W {
         self.variant(OSSIW::ENABLED)
     }
@@ -702,7 +690,7 @@ impl<'a> _OSSIW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -712,16 +700,11 @@ impl<'a> _OSSIW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `LOCK`"]
-pub enum LOCKW {
-    #[doc = "LOCK OFF - No bit is write protected."] LOCKOFF,
-    #[doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written."] LOCKLVL1,
-    #[doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written."] LOCKLVL2,
-    #[doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written."] LOCKLVL3,
-}
+pub enum LOCKW {# [ doc = "LOCK OFF - No bit is write protected." ] LOCKOFF , # [ doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written." ] LOCKLVL1 , # [ doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written." ] LOCKLVL2 , # [ doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written." ] LOCKLVL3 ,}
 impl LOCKW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             LOCKW::LOCKOFF => 0,
@@ -737,34 +720,31 @@ pub struct _LOCKW<'a> {
 }
 impl<'a> _LOCKW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LOCKW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "LOCK OFF - No bit is write protected."]
-    #[inline(always)]
+    #[inline]
     pub fn lock_off(self) -> &'a mut W {
         self.variant(LOCKW::LOCKOFF)
     }
-    #[doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written."]
-    #[inline(always)]
+    # [ doc = "LOCK Level 1 = DTG bits in TIMx_BDTR register, OISx and OISxN bits in TIMx_CR2 register and BKE/BKP/AOE bits in TIMx_BDTR register can no longer be written." ] # [ inline ]
     pub fn lock_lvl1(self) -> &'a mut W {
         self.variant(LOCKW::LOCKLVL1)
     }
-    #[doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written."]
-    #[inline(always)]
+    # [ doc = "LOCK Level 2 = LOCK Level 1 + CC Polarity bits (CCxP/CCxNP bits in TIMx_CCER register, as long as the related channel is configured in output through the CCxS bits) as well as OSSR and OSSI bits can no longer be written." ] # [ inline ]
     pub fn lock_lvl2(self) -> &'a mut W {
         self.variant(LOCKW::LOCKLVL2)
     }
-    #[doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written."]
-    #[inline(always)]
+    # [ doc = "LOCK Level 3 = LOCK Level 2 + CC Control bits (OCxM and OCxPE bits in TIMx_CCMRx registers, as long as the related channel is configured in output through the CCxS bits) can no longer be written." ] # [ inline ]
     pub fn lock_lvl3(self) -> &'a mut W {
         self.variant(LOCKW::LOCKLVL3)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 8;
@@ -779,7 +759,7 @@ pub struct _DTGW<'a> {
 }
 impl<'a> _DTGW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
@@ -790,12 +770,12 @@ impl<'a> _DTGW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 15 - Main output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn moe(&self) -> MOER {
         MOER::_from({
             const MASK: bool = true;
@@ -804,7 +784,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - Automatic output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn aoe(&self) -> AOER {
         AOER::_from({
             const MASK: bool = true;
@@ -813,7 +793,7 @@ impl R {
         })
     }
     #[doc = "Bit 13 - Break polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn bkp(&self) -> BKPR {
         BKPR::_from({
             const MASK: bool = true;
@@ -822,7 +802,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - Break enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bke(&self) -> BKER {
         BKER::_from({
             const MASK: bool = true;
@@ -831,7 +811,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - Off-state selection for Run mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ossr(&self) -> OSSRR {
         OSSRR::_from({
             const MASK: bool = true;
@@ -840,7 +820,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - Off-state selection for Idle mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ossi(&self) -> OSSIR {
         OSSIR::_from({
             const MASK: bool = true;
@@ -849,7 +829,7 @@ impl R {
         })
     }
     #[doc = "Bits 8:9 - Lock configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn lock(&self) -> LOCKR {
         LOCKR::_from({
             const MASK: u8 = 3;
@@ -858,7 +838,7 @@ impl R {
         })
     }
     #[doc = "Bits 0:7 - Dead-time generator setup"]
-    #[inline(always)]
+    #[inline]
     pub fn dtg(&self) -> DTGR {
         let bits = {
             const MASK: u8 = 255;
@@ -870,53 +850,53 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 15 - Main output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn moe(&mut self) -> _MOEW {
         _MOEW { w: self }
     }
     #[doc = "Bit 14 - Automatic output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn aoe(&mut self) -> _AOEW {
         _AOEW { w: self }
     }
     #[doc = "Bit 13 - Break polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn bkp(&mut self) -> _BKPW {
         _BKPW { w: self }
     }
     #[doc = "Bit 12 - Break enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bke(&mut self) -> _BKEW {
         _BKEW { w: self }
     }
     #[doc = "Bit 11 - Off-state selection for Run mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ossr(&mut self) -> _OSSRW {
         _OSSRW { w: self }
     }
     #[doc = "Bit 10 - Off-state selection for Idle mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ossi(&mut self) -> _OSSIW {
         _OSSIW { w: self }
     }
     #[doc = "Bits 8:9 - Lock configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn lock(&mut self) -> _LOCKW {
         _LOCKW { w: self }
     }
     #[doc = "Bits 0:7 - Dead-time generator setup"]
-    #[inline(always)]
+    #[inline]
     pub fn dtg(&mut self) -> _DTGW {
         _DTGW { w: self }
     }

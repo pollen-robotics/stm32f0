@@ -2,17 +2,28 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control register 1"] pub cr1: CR1,
-    #[doc = "0x04 - Control register 2"] pub cr2: CR2,
-    #[doc = "0x08 - Own address register 1"] pub oar1: OAR1,
-    #[doc = "0x0c - Own address register 2"] pub oar2: OAR2,
-    #[doc = "0x10 - Timing register"] pub timingr: TIMINGR,
-    #[doc = "0x14 - Status register 1"] pub timeoutr: TIMEOUTR,
-    #[doc = "0x18 - Interrupt and Status register"] pub isr: ISR,
-    #[doc = "0x1c - Interrupt clear register"] pub icr: ICR,
-    #[doc = "0x20 - PEC register"] pub pecr: PECR,
-    #[doc = "0x24 - Receive data register"] pub rxdr: RXDR,
-    #[doc = "0x28 - Transmit data register"] pub txdr: TXDR,
+    #[doc = "0x00 - Control register 1"]
+    pub cr1: CR1,
+    #[doc = "0x04 - Control register 2"]
+    pub cr2: CR2,
+    #[doc = "0x08 - Own address register 1"]
+    pub oar1: OAR1,
+    #[doc = "0x0c - Own address register 2"]
+    pub oar2: OAR2,
+    #[doc = "0x10 - Timing register"]
+    pub timingr: TIMINGR,
+    #[doc = "0x14 - Status register 1"]
+    pub timeoutr: TIMEOUTR,
+    #[doc = "0x18 - Interrupt and Status register"]
+    pub isr: ISR,
+    #[doc = "0x1c - Interrupt clear register"]
+    pub icr: ICR,
+    #[doc = "0x20 - PEC register"]
+    pub pecr: PECR,
+    #[doc = "0x24 - Receive data register"]
+    pub rxdr: RXDR,
+    #[doc = "0x28 - Transmit data register"]
+    pub txdr: TXDR,
 }
 #[doc = "Control register 1"]
 pub struct CR1 {

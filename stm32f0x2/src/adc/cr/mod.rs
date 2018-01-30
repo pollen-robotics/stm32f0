@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct ADCALR {
 }
 impl ADCALR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct ADSTPR {
 }
 impl ADSTPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct ADSTARTR {
 }
 impl ADSTARTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct ADDISR {
 }
 impl ADDISR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +132,17 @@ pub struct ADENR {
 }
 impl ADENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -161,7 +161,7 @@ impl<'a> _ADCALW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -184,7 +184,7 @@ impl<'a> _ADSTPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -207,7 +207,7 @@ impl<'a> _ADSTARTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -230,7 +230,7 @@ impl<'a> _ADDISW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -253,7 +253,7 @@ impl<'a> _ADENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -264,12 +264,12 @@ impl<'a> _ADENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 31 - ADC calibration"]
-    #[inline(always)]
+    #[inline]
     pub fn adcal(&self) -> ADCALR {
         let bits = {
             const MASK: bool = true;
@@ -279,7 +279,7 @@ impl R {
         ADCALR { bits }
     }
     #[doc = "Bit 4 - ADC stop conversion command"]
-    #[inline(always)]
+    #[inline]
     pub fn adstp(&self) -> ADSTPR {
         let bits = {
             const MASK: bool = true;
@@ -289,7 +289,7 @@ impl R {
         ADSTPR { bits }
     }
     #[doc = "Bit 2 - ADC start conversion command"]
-    #[inline(always)]
+    #[inline]
     pub fn adstart(&self) -> ADSTARTR {
         let bits = {
             const MASK: bool = true;
@@ -299,7 +299,7 @@ impl R {
         ADSTARTR { bits }
     }
     #[doc = "Bit 1 - ADC disable command"]
-    #[inline(always)]
+    #[inline]
     pub fn addis(&self) -> ADDISR {
         let bits = {
             const MASK: bool = true;
@@ -309,7 +309,7 @@ impl R {
         ADDISR { bits }
     }
     #[doc = "Bit 0 - ADC enable command"]
-    #[inline(always)]
+    #[inline]
     pub fn aden(&self) -> ADENR {
         let bits = {
             const MASK: bool = true;
@@ -321,38 +321,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 31 - ADC calibration"]
-    #[inline(always)]
+    #[inline]
     pub fn adcal(&mut self) -> _ADCALW {
         _ADCALW { w: self }
     }
     #[doc = "Bit 4 - ADC stop conversion command"]
-    #[inline(always)]
+    #[inline]
     pub fn adstp(&mut self) -> _ADSTPW {
         _ADSTPW { w: self }
     }
     #[doc = "Bit 2 - ADC start conversion command"]
-    #[inline(always)]
+    #[inline]
     pub fn adstart(&mut self) -> _ADSTARTW {
         _ADSTARTW { w: self }
     }
     #[doc = "Bit 1 - ADC disable command"]
-    #[inline(always)]
+    #[inline]
     pub fn addis(&mut self) -> _ADDISW {
         _ADDISW { w: self }
     }
     #[doc = "Bit 0 - ADC enable command"]
-    #[inline(always)]
+    #[inline]
     pub fn aden(&mut self) -> _ADENW {
         _ADENW { w: self }
     }

@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::TSDR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,7 +17,7 @@ pub struct WDUR {
 }
 impl WDUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -28,17 +28,17 @@ pub struct MTR {
 }
 impl MTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -49,7 +49,7 @@ pub struct MUR {
 }
 impl MUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -60,7 +60,7 @@ pub struct DTR {
 }
 impl DTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -71,19 +71,19 @@ pub struct DUR {
 }
 impl DUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 13:15 - Week day units"]
-    #[inline(always)]
+    #[inline]
     pub fn wdu(&self) -> WDUR {
         let bits = {
             const MASK: u8 = 7;
@@ -93,7 +93,7 @@ impl R {
         WDUR { bits }
     }
     #[doc = "Bit 12 - Month tens in BCD format"]
-    #[inline(always)]
+    #[inline]
     pub fn mt(&self) -> MTR {
         let bits = {
             const MASK: bool = true;
@@ -103,7 +103,7 @@ impl R {
         MTR { bits }
     }
     #[doc = "Bits 8:11 - Month units in BCD format"]
-    #[inline(always)]
+    #[inline]
     pub fn mu(&self) -> MUR {
         let bits = {
             const MASK: u8 = 15;
@@ -113,7 +113,7 @@ impl R {
         MUR { bits }
     }
     #[doc = "Bits 4:5 - Date tens in BCD format"]
-    #[inline(always)]
+    #[inline]
     pub fn dt(&self) -> DTR {
         let bits = {
             const MASK: u8 = 3;
@@ -123,7 +123,7 @@ impl R {
         DTR { bits }
     }
     #[doc = "Bits 0:3 - Date units in BCD format"]
-    #[inline(always)]
+    #[inline]
     pub fn du(&self) -> DUR {
         let bits = {
             const MASK: u8 = 15;

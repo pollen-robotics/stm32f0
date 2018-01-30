@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::SR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,17 +17,17 @@ pub struct PVUR {
 }
 impl PVUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -38,17 +38,17 @@ pub struct RVUR {
 }
 impl RVUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -59,29 +59,29 @@ pub struct WVUR {
 }
 impl WVUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Watchdog prescaler value update"]
-    #[inline(always)]
+    #[inline]
     pub fn pvu(&self) -> PVUR {
         let bits = {
             const MASK: bool = true;
@@ -91,7 +91,7 @@ impl R {
         PVUR { bits }
     }
     #[doc = "Bit 1 - Watchdog counter reload value update"]
-    #[inline(always)]
+    #[inline]
     pub fn rvu(&self) -> RVUR {
         let bits = {
             const MASK: bool = true;
@@ -101,7 +101,7 @@ impl R {
         RVUR { bits }
     }
     #[doc = "Bit 2 - Watchdog counter window value update"]
-    #[inline(always)]
+    #[inline]
     pub fn wvu(&self) -> WVUR {
         let bits = {
             const MASK: bool = true;

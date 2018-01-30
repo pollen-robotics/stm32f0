@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::DIER {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::DIER {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::DIER {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum UDER {
 }
 impl UDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             UDER::DISABLED => false,
@@ -69,7 +69,7 @@ impl UDER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> UDER {
         match value {
             false => UDER::DISABLED,
@@ -77,12 +77,12 @@ impl UDER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == UDER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == UDER::ENABLED
     }
@@ -95,17 +95,17 @@ pub enum UIER {
 }
 impl UIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             UIER::DISABLED => false,
@@ -114,7 +114,7 @@ impl UIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> UIER {
         match value {
             false => UIER::DISABLED,
@@ -122,12 +122,12 @@ impl UIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == UIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == UIER::ENABLED
     }
@@ -140,7 +140,7 @@ pub enum UDEW {
 impl UDEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UDEW::DISABLED => false,
@@ -154,19 +154,19 @@ pub struct _UDEW<'a> {
 }
 impl<'a> _UDEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UDEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Update DMA request disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(UDEW::DISABLED)
     }
     #[doc = "Update DMA request enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(UDEW::ENABLED)
     }
@@ -179,7 +179,7 @@ impl<'a> _UDEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -196,7 +196,7 @@ pub enum UIEW {
 impl UIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UIEW::DISABLED => false,
@@ -210,19 +210,19 @@ pub struct _UIEW<'a> {
 }
 impl<'a> _UIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Update interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(UIEW::DISABLED)
     }
     #[doc = "Update interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(UIEW::ENABLED)
     }
@@ -235,7 +235,7 @@ impl<'a> _UIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -246,12 +246,12 @@ impl<'a> _UIEW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 8 - Update DMA request enable"]
-    #[inline(always)]
+    #[inline]
     pub fn ude(&self) -> UDER {
         UDER::_from({
             const MASK: bool = true;
@@ -260,7 +260,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Update interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn uie(&self) -> UIER {
         UIER::_from({
             const MASK: bool = true;
@@ -271,23 +271,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 8 - Update DMA request enable"]
-    #[inline(always)]
+    #[inline]
     pub fn ude(&mut self) -> _UDEW {
         _UDEW { w: self }
     }
     #[doc = "Bit 0 - Update interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn uie(&mut self) -> _UIEW {
         _UIEW { w: self }
     }

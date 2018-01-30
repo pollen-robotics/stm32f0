@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::COMP_CSR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::COMP_CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::COMP_CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct COMP1ENR {
 }
 impl COMP1ENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct COMP1_INP_DACR {
 }
 impl COMP1_INP_DACR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,7 +90,7 @@ pub struct COMP1MODER {
 }
 impl COMP1MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -101,7 +101,7 @@ pub struct COMP1INSELR {
 }
 impl COMP1INSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -112,7 +112,7 @@ pub struct COMP1OUTSELR {
 }
 impl COMP1OUTSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -123,17 +123,17 @@ pub struct COMP1POLR {
 }
 impl COMP1POLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -144,7 +144,7 @@ pub struct COMP1HYSTR {
 }
 impl COMP1HYSTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -155,17 +155,17 @@ pub struct COMP1OUTR {
 }
 impl COMP1OUTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -176,17 +176,17 @@ pub struct COMP1LOCKR {
 }
 impl COMP1LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -197,17 +197,17 @@ pub struct COMP2ENR {
 }
 impl COMP2ENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -218,7 +218,7 @@ pub struct COMP2MODER {
 }
 impl COMP2MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -229,7 +229,7 @@ pub struct COMP2INSELR {
 }
 impl COMP2INSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -240,17 +240,17 @@ pub struct WNDWENR {
 }
 impl WNDWENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -261,7 +261,7 @@ pub struct COMP2OUTSELR {
 }
 impl COMP2OUTSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -272,17 +272,17 @@ pub struct COMP2POLR {
 }
 impl COMP2POLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -293,7 +293,7 @@ pub struct COMP2HYSTR {
 }
 impl COMP2HYSTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -304,17 +304,17 @@ pub struct COMP2OUTR {
 }
 impl COMP2OUTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -325,17 +325,17 @@ pub struct COMP2LOCKR {
 }
 impl COMP2LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -354,7 +354,7 @@ impl<'a> _COMP1ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -377,7 +377,7 @@ impl<'a> _COMP1_INP_DACW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -392,7 +392,7 @@ pub struct _COMP1MODEW<'a> {
 }
 impl<'a> _COMP1MODEW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 2;
@@ -407,7 +407,7 @@ pub struct _COMP1INSELW<'a> {
 }
 impl<'a> _COMP1INSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 4;
@@ -422,7 +422,7 @@ pub struct _COMP1OUTSELW<'a> {
 }
 impl<'a> _COMP1OUTSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 8;
@@ -445,7 +445,7 @@ impl<'a> _COMP1POLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -460,7 +460,7 @@ pub struct _COMP1HYSTW<'a> {
 }
 impl<'a> _COMP1HYSTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 12;
@@ -483,7 +483,7 @@ impl<'a> _COMP1LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -506,7 +506,7 @@ impl<'a> _COMP2ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -521,7 +521,7 @@ pub struct _COMP2MODEW<'a> {
 }
 impl<'a> _COMP2MODEW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 18;
@@ -536,7 +536,7 @@ pub struct _COMP2INSELW<'a> {
 }
 impl<'a> _COMP2INSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 20;
@@ -559,7 +559,7 @@ impl<'a> _WNDWENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -574,7 +574,7 @@ pub struct _COMP2OUTSELW<'a> {
 }
 impl<'a> _COMP2OUTSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 24;
@@ -597,7 +597,7 @@ impl<'a> _COMP2POLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 27;
@@ -612,7 +612,7 @@ pub struct _COMP2HYSTW<'a> {
 }
 impl<'a> _COMP2HYSTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 28;
@@ -635,7 +635,7 @@ impl<'a> _COMP2LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -646,12 +646,12 @@ impl<'a> _COMP2LOCKW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Comparator 1 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1en(&self) -> COMP1ENR {
         let bits = {
             const MASK: bool = true;
@@ -661,7 +661,7 @@ impl R {
         COMP1ENR { bits }
     }
     #[doc = "Bit 1 - COMP1_INP_DAC"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1_inp_dac(&self) -> COMP1_INP_DACR {
         let bits = {
             const MASK: bool = true;
@@ -671,7 +671,7 @@ impl R {
         COMP1_INP_DACR { bits }
     }
     #[doc = "Bits 2:3 - Comparator 1 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1mode(&self) -> COMP1MODER {
         let bits = {
             const MASK: u8 = 3;
@@ -681,7 +681,7 @@ impl R {
         COMP1MODER { bits }
     }
     #[doc = "Bits 4:6 - Comparator 1 inverting input selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1insel(&self) -> COMP1INSELR {
         let bits = {
             const MASK: u8 = 7;
@@ -691,7 +691,7 @@ impl R {
         COMP1INSELR { bits }
     }
     #[doc = "Bits 8:10 - Comparator 1 output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1outsel(&self) -> COMP1OUTSELR {
         let bits = {
             const MASK: u8 = 7;
@@ -701,7 +701,7 @@ impl R {
         COMP1OUTSELR { bits }
     }
     #[doc = "Bit 11 - Comparator 1 output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1pol(&self) -> COMP1POLR {
         let bits = {
             const MASK: bool = true;
@@ -711,7 +711,7 @@ impl R {
         COMP1POLR { bits }
     }
     #[doc = "Bits 12:13 - Comparator 1 hysteresis"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1hyst(&self) -> COMP1HYSTR {
         let bits = {
             const MASK: u8 = 3;
@@ -721,7 +721,7 @@ impl R {
         COMP1HYSTR { bits }
     }
     #[doc = "Bit 14 - Comparator 1 output"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1out(&self) -> COMP1OUTR {
         let bits = {
             const MASK: bool = true;
@@ -731,7 +731,7 @@ impl R {
         COMP1OUTR { bits }
     }
     #[doc = "Bit 15 - Comparator 1 lock"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1lock(&self) -> COMP1LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -741,7 +741,7 @@ impl R {
         COMP1LOCKR { bits }
     }
     #[doc = "Bit 16 - Comparator 2 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2en(&self) -> COMP2ENR {
         let bits = {
             const MASK: bool = true;
@@ -751,7 +751,7 @@ impl R {
         COMP2ENR { bits }
     }
     #[doc = "Bits 18:19 - Comparator 2 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2mode(&self) -> COMP2MODER {
         let bits = {
             const MASK: u8 = 3;
@@ -761,7 +761,7 @@ impl R {
         COMP2MODER { bits }
     }
     #[doc = "Bits 20:22 - Comparator 2 inverting input selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2insel(&self) -> COMP2INSELR {
         let bits = {
             const MASK: u8 = 7;
@@ -771,7 +771,7 @@ impl R {
         COMP2INSELR { bits }
     }
     #[doc = "Bit 23 - Window mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn wndwen(&self) -> WNDWENR {
         let bits = {
             const MASK: bool = true;
@@ -781,7 +781,7 @@ impl R {
         WNDWENR { bits }
     }
     #[doc = "Bits 24:26 - Comparator 2 output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2outsel(&self) -> COMP2OUTSELR {
         let bits = {
             const MASK: u8 = 7;
@@ -791,7 +791,7 @@ impl R {
         COMP2OUTSELR { bits }
     }
     #[doc = "Bit 27 - Comparator 2 output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2pol(&self) -> COMP2POLR {
         let bits = {
             const MASK: bool = true;
@@ -801,7 +801,7 @@ impl R {
         COMP2POLR { bits }
     }
     #[doc = "Bits 28:29 - Comparator 2 hysteresis"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2hyst(&self) -> COMP2HYSTR {
         let bits = {
             const MASK: u8 = 3;
@@ -811,7 +811,7 @@ impl R {
         COMP2HYSTR { bits }
     }
     #[doc = "Bit 30 - Comparator 2 output"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2out(&self) -> COMP2OUTR {
         let bits = {
             const MASK: bool = true;
@@ -821,7 +821,7 @@ impl R {
         COMP2OUTR { bits }
     }
     #[doc = "Bit 31 - Comparator 2 lock"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2lock(&self) -> COMP2LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -833,93 +833,93 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Comparator 1 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1en(&mut self) -> _COMP1ENW {
         _COMP1ENW { w: self }
     }
     #[doc = "Bit 1 - COMP1_INP_DAC"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1_inp_dac(&mut self) -> _COMP1_INP_DACW {
         _COMP1_INP_DACW { w: self }
     }
     #[doc = "Bits 2:3 - Comparator 1 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1mode(&mut self) -> _COMP1MODEW {
         _COMP1MODEW { w: self }
     }
     #[doc = "Bits 4:6 - Comparator 1 inverting input selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1insel(&mut self) -> _COMP1INSELW {
         _COMP1INSELW { w: self }
     }
     #[doc = "Bits 8:10 - Comparator 1 output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1outsel(&mut self) -> _COMP1OUTSELW {
         _COMP1OUTSELW { w: self }
     }
     #[doc = "Bit 11 - Comparator 1 output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1pol(&mut self) -> _COMP1POLW {
         _COMP1POLW { w: self }
     }
     #[doc = "Bits 12:13 - Comparator 1 hysteresis"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1hyst(&mut self) -> _COMP1HYSTW {
         _COMP1HYSTW { w: self }
     }
     #[doc = "Bit 15 - Comparator 1 lock"]
-    #[inline(always)]
+    #[inline]
     pub fn comp1lock(&mut self) -> _COMP1LOCKW {
         _COMP1LOCKW { w: self }
     }
     #[doc = "Bit 16 - Comparator 2 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2en(&mut self) -> _COMP2ENW {
         _COMP2ENW { w: self }
     }
     #[doc = "Bits 18:19 - Comparator 2 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2mode(&mut self) -> _COMP2MODEW {
         _COMP2MODEW { w: self }
     }
     #[doc = "Bits 20:22 - Comparator 2 inverting input selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2insel(&mut self) -> _COMP2INSELW {
         _COMP2INSELW { w: self }
     }
     #[doc = "Bit 23 - Window mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn wndwen(&mut self) -> _WNDWENW {
         _WNDWENW { w: self }
     }
     #[doc = "Bits 24:26 - Comparator 2 output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2outsel(&mut self) -> _COMP2OUTSELW {
         _COMP2OUTSELW { w: self }
     }
     #[doc = "Bit 27 - Comparator 2 output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2pol(&mut self) -> _COMP2POLW {
         _COMP2POLW { w: self }
     }
     #[doc = "Bits 28:29 - Comparator 2 hysteresis"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2hyst(&mut self) -> _COMP2HYSTW {
         _COMP2HYSTW { w: self }
     }
     #[doc = "Bit 31 - Comparator 2 lock"]
-    #[inline(always)]
+    #[inline]
     pub fn comp2lock(&mut self) -> _COMP2LOCKW {
         _COMP2LOCKW { w: self }
     }

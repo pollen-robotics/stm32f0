@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::ARR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::ARR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::ARR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct ARR_HR {
 }
 impl ARR_HR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct ARR_LR {
 }
 impl ARR_LR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct _ARR_HW<'a> {
 }
 impl<'a> _ARR_HW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 16;
@@ -85,7 +85,7 @@ pub struct _ARR_LW<'a> {
 }
 impl<'a> _ARR_LW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -96,12 +96,12 @@ impl<'a> _ARR_LW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - High Auto-reload value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn arr_h(&self) -> ARR_HR {
         let bits = {
             const MASK: u16 = 65535;
@@ -111,7 +111,7 @@ impl R {
         ARR_HR { bits }
     }
     #[doc = "Bits 0:15 - Low Auto-reload value"]
-    #[inline(always)]
+    #[inline]
     pub fn arr_l(&self) -> ARR_LR {
         let bits = {
             const MASK: u16 = 65535;
@@ -123,23 +123,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:31 - High Auto-reload value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn arr_h(&mut self) -> _ARR_HW {
         _ARR_HW { w: self }
     }
     #[doc = "Bits 0:15 - Low Auto-reload value"]
-    #[inline(always)]
+    #[inline]
     pub fn arr_l(&mut self) -> _ARR_LW {
         _ARR_LW { w: self }
     }

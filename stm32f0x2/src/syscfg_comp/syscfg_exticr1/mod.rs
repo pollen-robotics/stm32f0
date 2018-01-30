@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SYSCFG_EXTICR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::SYSCFG_EXTICR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::SYSCFG_EXTICR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct EXTI3R {
 }
 impl EXTI3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct EXTI2R {
 }
 impl EXTI2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct EXTI1R {
 }
 impl EXTI1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -81,7 +81,7 @@ pub struct EXTI0R {
 }
 impl EXTI0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -92,7 +92,7 @@ pub struct _EXTI3W<'a> {
 }
 impl<'a> _EXTI3W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 12;
@@ -107,7 +107,7 @@ pub struct _EXTI2W<'a> {
 }
 impl<'a> _EXTI2W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 8;
@@ -122,7 +122,7 @@ pub struct _EXTI1W<'a> {
 }
 impl<'a> _EXTI1W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 4;
@@ -137,7 +137,7 @@ pub struct _EXTI0W<'a> {
 }
 impl<'a> _EXTI0W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
@@ -148,12 +148,12 @@ impl<'a> _EXTI0W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 12:15 - EXTI 3 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti3(&self) -> EXTI3R {
         let bits = {
             const MASK: u8 = 15;
@@ -163,7 +163,7 @@ impl R {
         EXTI3R { bits }
     }
     #[doc = "Bits 8:11 - EXTI 2 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti2(&self) -> EXTI2R {
         let bits = {
             const MASK: u8 = 15;
@@ -173,7 +173,7 @@ impl R {
         EXTI2R { bits }
     }
     #[doc = "Bits 4:7 - EXTI 1 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti1(&self) -> EXTI1R {
         let bits = {
             const MASK: u8 = 15;
@@ -183,7 +183,7 @@ impl R {
         EXTI1R { bits }
     }
     #[doc = "Bits 0:3 - EXTI 0 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti0(&self) -> EXTI0R {
         let bits = {
             const MASK: u8 = 15;
@@ -195,33 +195,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 12:15 - EXTI 3 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti3(&mut self) -> _EXTI3W {
         _EXTI3W { w: self }
     }
     #[doc = "Bits 8:11 - EXTI 2 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti2(&mut self) -> _EXTI2W {
         _EXTI2W { w: self }
     }
     #[doc = "Bits 4:7 - EXTI 1 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti1(&mut self) -> _EXTI1W {
         _EXTI1W { w: self }
     }
     #[doc = "Bits 0:3 - EXTI 0 configuration bits"]
-    #[inline(always)]
+    #[inline]
     pub fn exti0(&mut self) -> _EXTI0W {
         _EXTI0W { w: self }
     }

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SYSCFG_CFGR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::SYSCFG_CFGR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::SYSCFG_CFGR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct MEM_MODER {
 }
 impl MEM_MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,17 +59,17 @@ pub struct ADC_DMA_RMPR {
 }
 impl ADC_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,17 +80,17 @@ pub struct USART1_TX_DMA_RMPR {
 }
 impl USART1_TX_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -101,17 +101,17 @@ pub struct USART1_RX_DMA_RMPR {
 }
 impl USART1_RX_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -122,17 +122,17 @@ pub struct TIM16_DMA_RMPR {
 }
 impl TIM16_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -143,17 +143,17 @@ pub struct TIM17_DMA_RMPR {
 }
 impl TIM17_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -164,17 +164,17 @@ pub struct I2C_PB6_FMR {
 }
 impl I2C_PB6_FMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -185,17 +185,17 @@ pub struct I2C_PB7_FMR {
 }
 impl I2C_PB7_FMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -206,17 +206,17 @@ pub struct I2C_PB8_FMR {
 }
 impl I2C_PB8_FMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -227,17 +227,17 @@ pub struct I2C_PB9_FMR {
 }
 impl I2C_PB9_FMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -248,17 +248,17 @@ pub struct I2C1_FM_PLUSR {
 }
 impl I2C1_FM_PLUSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -269,17 +269,17 @@ pub struct I2C2_FM_PLUSR {
 }
 impl I2C2_FM_PLUSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -290,17 +290,17 @@ pub struct SPI2_DMA_RMPR {
 }
 impl SPI2_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -311,17 +311,17 @@ pub struct USART2_DMA_RMPR {
 }
 impl USART2_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -332,17 +332,17 @@ pub struct USART3_DMA_RMPR {
 }
 impl USART3_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -353,17 +353,17 @@ pub struct I2C1_DMA_RMPR {
 }
 impl I2C1_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -374,17 +374,17 @@ pub struct TIM1_DMA_RMPR {
 }
 impl TIM1_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -395,17 +395,17 @@ pub struct TIM2_DMA_RMPR {
 }
 impl TIM2_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -416,17 +416,17 @@ pub struct TIM3_DMA_RMPR {
 }
 impl TIM3_DMA_RMPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -437,7 +437,7 @@ pub struct _MEM_MODEW<'a> {
 }
 impl<'a> _MEM_MODEW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
@@ -460,7 +460,7 @@ impl<'a> _ADC_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -483,7 +483,7 @@ impl<'a> _USART1_TX_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -506,7 +506,7 @@ impl<'a> _USART1_RX_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -529,7 +529,7 @@ impl<'a> _TIM16_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -552,7 +552,7 @@ impl<'a> _TIM17_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -575,7 +575,7 @@ impl<'a> _I2C_PB6_FMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -598,7 +598,7 @@ impl<'a> _I2C_PB7_FMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -621,7 +621,7 @@ impl<'a> _I2C_PB8_FMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -644,7 +644,7 @@ impl<'a> _I2C_PB9_FMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -667,7 +667,7 @@ impl<'a> _I2C1_FM_PLUSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -690,7 +690,7 @@ impl<'a> _I2C2_FM_PLUSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -713,7 +713,7 @@ impl<'a> _SPI2_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -736,7 +736,7 @@ impl<'a> _USART2_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 25;
@@ -759,7 +759,7 @@ impl<'a> _USART3_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 26;
@@ -782,7 +782,7 @@ impl<'a> _I2C1_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 27;
@@ -805,7 +805,7 @@ impl<'a> _TIM1_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 28;
@@ -828,7 +828,7 @@ impl<'a> _TIM2_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 29;
@@ -851,7 +851,7 @@ impl<'a> _TIM3_DMA_RMPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 30;
@@ -862,12 +862,12 @@ impl<'a> _TIM3_DMA_RMPW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:1 - Memory mapping selection bits"]
-    #[inline(always)]
+    #[inline]
     pub fn mem_mode(&self) -> MEM_MODER {
         let bits = {
             const MASK: u8 = 3;
@@ -877,7 +877,7 @@ impl R {
         MEM_MODER { bits }
     }
     #[doc = "Bit 8 - ADC DMA remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn adc_dma_rmp(&self) -> ADC_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -887,7 +887,7 @@ impl R {
         ADC_DMA_RMPR { bits }
     }
     #[doc = "Bit 9 - USART1_TX DMA remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1_tx_dma_rmp(&self) -> USART1_TX_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -897,7 +897,7 @@ impl R {
         USART1_TX_DMA_RMPR { bits }
     }
     #[doc = "Bit 10 - USART1_RX DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1_rx_dma_rmp(&self) -> USART1_RX_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -907,7 +907,7 @@ impl R {
         USART1_RX_DMA_RMPR { bits }
     }
     #[doc = "Bit 11 - TIM16 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16_dma_rmp(&self) -> TIM16_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -917,7 +917,7 @@ impl R {
         TIM16_DMA_RMPR { bits }
     }
     #[doc = "Bit 12 - TIM17 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17_dma_rmp(&self) -> TIM17_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -927,7 +927,7 @@ impl R {
         TIM17_DMA_RMPR { bits }
     }
     #[doc = "Bit 16 - Fast Mode Plus (FM plus) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb6_fm(&self) -> I2C_PB6_FMR {
         let bits = {
             const MASK: bool = true;
@@ -937,7 +937,7 @@ impl R {
         I2C_PB6_FMR { bits }
     }
     #[doc = "Bit 17 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb7_fm(&self) -> I2C_PB7_FMR {
         let bits = {
             const MASK: bool = true;
@@ -947,7 +947,7 @@ impl R {
         I2C_PB7_FMR { bits }
     }
     #[doc = "Bit 18 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb8_fm(&self) -> I2C_PB8_FMR {
         let bits = {
             const MASK: bool = true;
@@ -957,7 +957,7 @@ impl R {
         I2C_PB8_FMR { bits }
     }
     #[doc = "Bit 19 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb9_fm(&self) -> I2C_PB9_FMR {
         let bits = {
             const MASK: bool = true;
@@ -967,7 +967,7 @@ impl R {
         I2C_PB9_FMR { bits }
     }
     #[doc = "Bit 20 - FM+ driving capability activation for I2C1"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1_fm_plus(&self) -> I2C1_FM_PLUSR {
         let bits = {
             const MASK: bool = true;
@@ -977,7 +977,7 @@ impl R {
         I2C1_FM_PLUSR { bits }
     }
     #[doc = "Bit 21 - FM+ driving capability activation for I2C2"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c2_fm_plus(&self) -> I2C2_FM_PLUSR {
         let bits = {
             const MASK: bool = true;
@@ -987,7 +987,7 @@ impl R {
         I2C2_FM_PLUSR { bits }
     }
     #[doc = "Bit 24 - SPI2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn spi2_dma_rmp(&self) -> SPI2_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -997,7 +997,7 @@ impl R {
         SPI2_DMA_RMPR { bits }
     }
     #[doc = "Bit 25 - USART2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart2_dma_rmp(&self) -> USART2_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1007,7 +1007,7 @@ impl R {
         USART2_DMA_RMPR { bits }
     }
     #[doc = "Bit 26 - USART3 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart3_dma_rmp(&self) -> USART3_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1017,7 +1017,7 @@ impl R {
         USART3_DMA_RMPR { bits }
     }
     #[doc = "Bit 27 - I2C1 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1_dma_rmp(&self) -> I2C1_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1027,7 +1027,7 @@ impl R {
         I2C1_DMA_RMPR { bits }
     }
     #[doc = "Bit 28 - TIM1 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1_dma_rmp(&self) -> TIM1_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1037,7 +1037,7 @@ impl R {
         TIM1_DMA_RMPR { bits }
     }
     #[doc = "Bit 29 - TIM2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim2_dma_rmp(&self) -> TIM2_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1047,7 +1047,7 @@ impl R {
         TIM2_DMA_RMPR { bits }
     }
     #[doc = "Bit 30 - TIM3 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim3_dma_rmp(&self) -> TIM3_DMA_RMPR {
         let bits = {
             const MASK: bool = true;
@@ -1059,108 +1059,108 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:1 - Memory mapping selection bits"]
-    #[inline(always)]
+    #[inline]
     pub fn mem_mode(&mut self) -> _MEM_MODEW {
         _MEM_MODEW { w: self }
     }
     #[doc = "Bit 8 - ADC DMA remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn adc_dma_rmp(&mut self) -> _ADC_DMA_RMPW {
         _ADC_DMA_RMPW { w: self }
     }
     #[doc = "Bit 9 - USART1_TX DMA remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1_tx_dma_rmp(&mut self) -> _USART1_TX_DMA_RMPW {
         _USART1_TX_DMA_RMPW { w: self }
     }
     #[doc = "Bit 10 - USART1_RX DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1_rx_dma_rmp(&mut self) -> _USART1_RX_DMA_RMPW {
         _USART1_RX_DMA_RMPW { w: self }
     }
     #[doc = "Bit 11 - TIM16 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16_dma_rmp(&mut self) -> _TIM16_DMA_RMPW {
         _TIM16_DMA_RMPW { w: self }
     }
     #[doc = "Bit 12 - TIM17 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17_dma_rmp(&mut self) -> _TIM17_DMA_RMPW {
         _TIM17_DMA_RMPW { w: self }
     }
     #[doc = "Bit 16 - Fast Mode Plus (FM plus) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb6_fm(&mut self) -> _I2C_PB6_FMW {
         _I2C_PB6_FMW { w: self }
     }
     #[doc = "Bit 17 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb7_fm(&mut self) -> _I2C_PB7_FMW {
         _I2C_PB7_FMW { w: self }
     }
     #[doc = "Bit 18 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb8_fm(&mut self) -> _I2C_PB8_FMW {
         _I2C_PB8_FMW { w: self }
     }
     #[doc = "Bit 19 - Fast Mode Plus (FM+) driving capability activation bits."]
-    #[inline(always)]
+    #[inline]
     pub fn i2c_pb9_fm(&mut self) -> _I2C_PB9_FMW {
         _I2C_PB9_FMW { w: self }
     }
     #[doc = "Bit 20 - FM+ driving capability activation for I2C1"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1_fm_plus(&mut self) -> _I2C1_FM_PLUSW {
         _I2C1_FM_PLUSW { w: self }
     }
     #[doc = "Bit 21 - FM+ driving capability activation for I2C2"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c2_fm_plus(&mut self) -> _I2C2_FM_PLUSW {
         _I2C2_FM_PLUSW { w: self }
     }
     #[doc = "Bit 24 - SPI2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn spi2_dma_rmp(&mut self) -> _SPI2_DMA_RMPW {
         _SPI2_DMA_RMPW { w: self }
     }
     #[doc = "Bit 25 - USART2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart2_dma_rmp(&mut self) -> _USART2_DMA_RMPW {
         _USART2_DMA_RMPW { w: self }
     }
     #[doc = "Bit 26 - USART3 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn usart3_dma_rmp(&mut self) -> _USART3_DMA_RMPW {
         _USART3_DMA_RMPW { w: self }
     }
     #[doc = "Bit 27 - I2C1 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1_dma_rmp(&mut self) -> _I2C1_DMA_RMPW {
         _I2C1_DMA_RMPW { w: self }
     }
     #[doc = "Bit 28 - TIM1 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1_dma_rmp(&mut self) -> _TIM1_DMA_RMPW {
         _TIM1_DMA_RMPW { w: self }
     }
     #[doc = "Bit 29 - TIM2 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim2_dma_rmp(&mut self) -> _TIM2_DMA_RMPW {
         _TIM2_DMA_RMPW { w: self }
     }
     #[doc = "Bit 30 - TIM3 DMA request remapping bit"]
-    #[inline(always)]
+    #[inline]
     pub fn tim3_dma_rmp(&mut self) -> _TIM3_DMA_RMPW {
         _TIM3_DMA_RMPW { w: self }
     }

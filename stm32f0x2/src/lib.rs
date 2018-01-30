@@ -1,12 +1,4 @@
-#![cfg_attr(feature = "rt", feature(global_asm))]
-#![cfg_attr(feature = "rt", feature(macro_reexport))]
-#![cfg_attr(feature = "rt", feature(used))]
-#![doc = "Peripheral access API for STM32F0X2 microcontrollers (generated using svd2rust v0.11.4)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.4/svd2rust/#peripheral-api"]
-#![deny(missing_docs)]
-#![deny(warnings)]
-#![allow(non_camel_case_types)]
-#![feature(const_fn)]
-#![no_std]
+# ! [ cfg_attr ( feature = "rt" , feature ( global_asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for STM32F0X2 microcontrollers (generated using svd2rust v0.12.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.12.0/svd2rust/#peripheral-api" ] # ! [ allow ( private_no_mangle_statics ) ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]
 extern crate bare_metal;
 extern crate cortex_m;
 #[macro_reexport(default_handler, exception)]
@@ -14,685 +6,1003 @@ extern crate cortex_m;
 extern crate cortex_m_rt;
 extern crate vcell;
 use core::ops::Deref;
-use bare_metal::Peripheral;
+use core::marker::PhantomData;
 #[doc = r" Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 2;
 pub use interrupt::Interrupt;
 #[doc(hidden)]
 pub mod interrupt;
+pub use cortex_m::peripheral::Peripherals as CorePeripherals;
 pub use cortex_m::peripheral::CPUID;
 pub use cortex_m::peripheral::DCB;
 pub use cortex_m::peripheral::DWT;
-pub use cortex_m::peripheral::FPB;
-pub use cortex_m::peripheral::FPU;
-pub use cortex_m::peripheral::ITM;
 pub use cortex_m::peripheral::MPU;
 pub use cortex_m::peripheral::NVIC;
 pub use cortex_m::peripheral::SCB;
 pub use cortex_m::peripheral::SYST;
-pub use cortex_m::peripheral::TPIU;
-#[doc = "cyclic redundancy check calculation unit"]
-pub const CRC: Peripheral<CRC> = unsafe { Peripheral::new(1073885184) };
-#[doc = "cyclic redundancy check calculation unit"]
-pub mod crc;
 #[doc = "cyclic redundancy check calculation unit"]
 pub struct CRC {
-    register_block: crc::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CRC {}
+impl CRC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const crc::RegisterBlock {
+        1073885184 as *const _
+    }
 }
 impl Deref for CRC {
     type Target = crc::RegisterBlock;
     fn deref(&self) -> &crc::RegisterBlock {
-        &self.register_block
+        unsafe { &*CRC::ptr() }
     }
 }
-#[doc = "General-purpose I/Os"]
-pub const GPIOF: Peripheral<GPIOF> = unsafe { Peripheral::new(1207964672) };
-#[doc = "General-purpose I/Os"]
-pub mod gpiof;
+#[doc = "cyclic redundancy check calculation unit"]
+pub mod crc;
 #[doc = "General-purpose I/Os"]
 pub struct GPIOF {
-    register_block: gpiof::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOF {}
+impl GPIOF {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpiof::RegisterBlock {
+        1207964672 as *const _
+    }
 }
 impl Deref for GPIOF {
     type Target = gpiof::RegisterBlock;
     fn deref(&self) -> &gpiof::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOF::ptr() }
     }
 }
+#[doc = "General-purpose I/Os"]
+pub mod gpiof;
 #[doc = "GPIOD"]
-pub const GPIOD: Peripheral<GPIOD> = unsafe { Peripheral::new(1207962624) };
-#[doc = r" Register block"]
 pub struct GPIOD {
-    register_block: gpiof::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOD {}
+impl GPIOD {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpiof::RegisterBlock {
+        1207962624 as *const _
+    }
 }
 impl Deref for GPIOD {
     type Target = gpiof::RegisterBlock;
     fn deref(&self) -> &gpiof::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOD::ptr() }
     }
 }
 #[doc = "GPIOC"]
-pub const GPIOC: Peripheral<GPIOC> = unsafe { Peripheral::new(1207961600) };
-#[doc = r" Register block"]
 pub struct GPIOC {
-    register_block: gpiof::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOC {}
+impl GPIOC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpiof::RegisterBlock {
+        1207961600 as *const _
+    }
 }
 impl Deref for GPIOC {
     type Target = gpiof::RegisterBlock;
     fn deref(&self) -> &gpiof::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOC::ptr() }
     }
 }
 #[doc = "GPIOB"]
-pub const GPIOB: Peripheral<GPIOB> = unsafe { Peripheral::new(1207960576) };
-#[doc = r" Register block"]
 pub struct GPIOB {
-    register_block: gpiof::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOB {}
+impl GPIOB {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpiof::RegisterBlock {
+        1207960576 as *const _
+    }
 }
 impl Deref for GPIOB {
     type Target = gpiof::RegisterBlock;
     fn deref(&self) -> &gpiof::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOB::ptr() }
     }
 }
 #[doc = "GPIOE"]
-pub const GPIOE: Peripheral<GPIOE> = unsafe { Peripheral::new(1207963648) };
-#[doc = r" Register block"]
 pub struct GPIOE {
-    register_block: gpiof::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOE {}
+impl GPIOE {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpiof::RegisterBlock {
+        1207963648 as *const _
+    }
 }
 impl Deref for GPIOE {
     type Target = gpiof::RegisterBlock;
     fn deref(&self) -> &gpiof::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOE::ptr() }
     }
 }
 #[doc = "General-purpose I/Os"]
-pub const GPIOA: Peripheral<GPIOA> = unsafe { Peripheral::new(1207959552) };
-#[doc = "General-purpose I/Os"]
-pub mod gpioa;
-#[doc = "General-purpose I/Os"]
 pub struct GPIOA {
-    register_block: gpioa::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIOA {}
+impl GPIOA {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const gpioa::RegisterBlock {
+        1207959552 as *const _
+    }
 }
 impl Deref for GPIOA {
     type Target = gpioa::RegisterBlock;
     fn deref(&self) -> &gpioa::RegisterBlock {
-        &self.register_block
+        unsafe { &*GPIOA::ptr() }
     }
 }
-#[doc = "Serial peripheral interface"]
-pub const SPI1: Peripheral<SPI1> = unsafe { Peripheral::new(1073819648) };
-#[doc = "Serial peripheral interface"]
-pub mod spi1;
+#[doc = "General-purpose I/Os"]
+pub mod gpioa;
 #[doc = "Serial peripheral interface"]
 pub struct SPI1 {
-    register_block: spi1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI1 {}
+impl SPI1 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const spi1::RegisterBlock {
+        1073819648 as *const _
+    }
 }
 impl Deref for SPI1 {
     type Target = spi1::RegisterBlock;
     fn deref(&self) -> &spi1::RegisterBlock {
-        &self.register_block
+        unsafe { &*SPI1::ptr() }
     }
 }
+#[doc = "Serial peripheral interface"]
+pub mod spi1;
 #[doc = "SPI2"]
-pub const SPI2: Peripheral<SPI2> = unsafe { Peripheral::new(1073756160) };
-#[doc = r" Register block"]
 pub struct SPI2 {
-    register_block: spi1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI2 {}
+impl SPI2 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const spi1::RegisterBlock {
+        1073756160 as *const _
+    }
 }
 impl Deref for SPI2 {
     type Target = spi1::RegisterBlock;
     fn deref(&self) -> &spi1::RegisterBlock {
-        &self.register_block
+        unsafe { &*SPI2::ptr() }
     }
 }
 #[doc = "Digital-to-analog converter"]
-pub const DAC: Peripheral<DAC> = unsafe { Peripheral::new(1073771520) };
-#[doc = "Digital-to-analog converter"]
-pub mod dac;
-#[doc = "Digital-to-analog converter"]
 pub struct DAC {
-    register_block: dac::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DAC {}
+impl DAC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const dac::RegisterBlock {
+        1073771520 as *const _
+    }
 }
 impl Deref for DAC {
     type Target = dac::RegisterBlock;
     fn deref(&self) -> &dac::RegisterBlock {
-        &self.register_block
+        unsafe { &*DAC::ptr() }
     }
 }
-#[doc = "Power control"]
-pub const PWR: Peripheral<PWR> = unsafe { Peripheral::new(1073770496) };
-#[doc = "Power control"]
-pub mod pwr;
+#[doc = "Digital-to-analog converter"]
+pub mod dac;
 #[doc = "Power control"]
 pub struct PWR {
-    register_block: pwr::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PWR {}
+impl PWR {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const pwr::RegisterBlock {
+        1073770496 as *const _
+    }
 }
 impl Deref for PWR {
     type Target = pwr::RegisterBlock;
     fn deref(&self) -> &pwr::RegisterBlock {
-        &self.register_block
+        unsafe { &*PWR::ptr() }
     }
 }
-#[doc = "Inter-integrated circuit"]
-pub const I2C1: Peripheral<I2C1> = unsafe { Peripheral::new(1073763328) };
-#[doc = "Inter-integrated circuit"]
-pub mod i2c1;
+#[doc = "Power control"]
+pub mod pwr;
 #[doc = "Inter-integrated circuit"]
 pub struct I2C1 {
-    register_block: i2c1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2C1 {}
+impl I2C1 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const i2c1::RegisterBlock {
+        1073763328 as *const _
+    }
 }
 impl Deref for I2C1 {
     type Target = i2c1::RegisterBlock;
     fn deref(&self) -> &i2c1::RegisterBlock {
-        &self.register_block
+        unsafe { &*I2C1::ptr() }
     }
 }
+#[doc = "Inter-integrated circuit"]
+pub mod i2c1;
 #[doc = "I2C2"]
-pub const I2C2: Peripheral<I2C2> = unsafe { Peripheral::new(1073764352) };
-#[doc = r" Register block"]
 pub struct I2C2 {
-    register_block: i2c1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2C2 {}
+impl I2C2 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const i2c1::RegisterBlock {
+        1073764352 as *const _
+    }
 }
 impl Deref for I2C2 {
     type Target = i2c1::RegisterBlock;
     fn deref(&self) -> &i2c1::RegisterBlock {
-        &self.register_block
+        unsafe { &*I2C2::ptr() }
     }
 }
 #[doc = "Independent watchdog"]
-pub const IWDG: Peripheral<IWDG> = unsafe { Peripheral::new(1073754112) };
-#[doc = "Independent watchdog"]
-pub mod iwdg;
-#[doc = "Independent watchdog"]
 pub struct IWDG {
-    register_block: iwdg::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for IWDG {}
+impl IWDG {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const iwdg::RegisterBlock {
+        1073754112 as *const _
+    }
 }
 impl Deref for IWDG {
     type Target = iwdg::RegisterBlock;
     fn deref(&self) -> &iwdg::RegisterBlock {
-        &self.register_block
+        unsafe { &*IWDG::ptr() }
     }
 }
-#[doc = "Window watchdog"]
-pub const WWDG: Peripheral<WWDG> = unsafe { Peripheral::new(1073753088) };
-#[doc = "Window watchdog"]
-pub mod wwdg;
+#[doc = "Independent watchdog"]
+pub mod iwdg;
 #[doc = "Window watchdog"]
 pub struct WWDG {
-    register_block: wwdg::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for WWDG {}
+impl WWDG {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const wwdg::RegisterBlock {
+        1073753088 as *const _
+    }
 }
 impl Deref for WWDG {
     type Target = wwdg::RegisterBlock;
     fn deref(&self) -> &wwdg::RegisterBlock {
-        &self.register_block
+        unsafe { &*WWDG::ptr() }
     }
 }
-#[doc = "Advanced-timers"]
-pub const TIM1: Peripheral<TIM1> = unsafe { Peripheral::new(1073818624) };
-#[doc = "Advanced-timers"]
-pub mod tim1;
+#[doc = "Window watchdog"]
+pub mod wwdg;
 #[doc = "Advanced-timers"]
 pub struct TIM1 {
-    register_block: tim1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM1 {}
+impl TIM1 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim1::RegisterBlock {
+        1073818624 as *const _
+    }
 }
 impl Deref for TIM1 {
     type Target = tim1::RegisterBlock;
     fn deref(&self) -> &tim1::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM1::ptr() }
     }
 }
-#[doc = "General-purpose-timers"]
-pub const TIM2: Peripheral<TIM2> = unsafe { Peripheral::new(1073741824) };
-#[doc = "General-purpose-timers"]
-pub mod tim2;
+#[doc = "Advanced-timers"]
+pub mod tim1;
 #[doc = "General-purpose-timers"]
 pub struct TIM2 {
-    register_block: tim2::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM2 {}
+impl TIM2 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim2::RegisterBlock {
+        1073741824 as *const _
+    }
 }
 impl Deref for TIM2 {
     type Target = tim2::RegisterBlock;
     fn deref(&self) -> &tim2::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM2::ptr() }
     }
 }
+#[doc = "General-purpose-timers"]
+pub mod tim2;
 #[doc = "TIM3"]
-pub const TIM3: Peripheral<TIM3> = unsafe { Peripheral::new(1073742848) };
-#[doc = r" Register block"]
 pub struct TIM3 {
-    register_block: tim2::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM3 {}
+impl TIM3 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim2::RegisterBlock {
+        1073742848 as *const _
+    }
 }
 impl Deref for TIM3 {
     type Target = tim2::RegisterBlock;
     fn deref(&self) -> &tim2::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM3::ptr() }
     }
 }
 #[doc = "General-purpose-timers"]
-pub const TIM14: Peripheral<TIM14> = unsafe { Peripheral::new(1073750016) };
-#[doc = "General-purpose-timers"]
-pub mod tim14;
-#[doc = "General-purpose-timers"]
 pub struct TIM14 {
-    register_block: tim14::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM14 {}
+impl TIM14 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim14::RegisterBlock {
+        1073750016 as *const _
+    }
 }
 impl Deref for TIM14 {
     type Target = tim14::RegisterBlock;
     fn deref(&self) -> &tim14::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM14::ptr() }
     }
 }
-#[doc = "Basic-timers"]
-pub const TIM6: Peripheral<TIM6> = unsafe { Peripheral::new(1073745920) };
-#[doc = "Basic-timers"]
-pub mod tim6;
+#[doc = "General-purpose-timers"]
+pub mod tim14;
 #[doc = "Basic-timers"]
 pub struct TIM6 {
-    register_block: tim6::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM6 {}
+impl TIM6 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim6::RegisterBlock {
+        1073745920 as *const _
+    }
 }
 impl Deref for TIM6 {
     type Target = tim6::RegisterBlock;
     fn deref(&self) -> &tim6::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM6::ptr() }
     }
 }
+#[doc = "Basic-timers"]
+pub mod tim6;
 #[doc = "TIM7"]
-pub const TIM7: Peripheral<TIM7> = unsafe { Peripheral::new(1073746944) };
-#[doc = r" Register block"]
 pub struct TIM7 {
-    register_block: tim6::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM7 {}
+impl TIM7 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim6::RegisterBlock {
+        1073746944 as *const _
+    }
 }
 impl Deref for TIM7 {
     type Target = tim6::RegisterBlock;
     fn deref(&self) -> &tim6::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM7::ptr() }
     }
 }
 #[doc = "External interrupt/event controller"]
-pub const EXTI: Peripheral<EXTI> = unsafe { Peripheral::new(1073808384) };
-#[doc = "External interrupt/event controller"]
-pub mod exti;
-#[doc = "External interrupt/event controller"]
 pub struct EXTI {
-    register_block: exti::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for EXTI {}
+impl EXTI {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const exti::RegisterBlock {
+        1073808384 as *const _
+    }
 }
 impl Deref for EXTI {
     type Target = exti::RegisterBlock;
     fn deref(&self) -> &exti::RegisterBlock {
-        &self.register_block
+        unsafe { &*EXTI::ptr() }
     }
 }
-#[doc = "DMA controller"]
-pub const DMA1: Peripheral<DMA1> = unsafe { Peripheral::new(1073872896) };
-#[doc = "DMA controller"]
-pub mod dma1;
+#[doc = "External interrupt/event controller"]
+pub mod exti;
 #[doc = "DMA controller"]
 pub struct DMA1 {
-    register_block: dma1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DMA1 {}
+impl DMA1 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const dma1::RegisterBlock {
+        1073872896 as *const _
+    }
 }
 impl Deref for DMA1 {
     type Target = dma1::RegisterBlock;
     fn deref(&self) -> &dma1::RegisterBlock {
-        &self.register_block
+        unsafe { &*DMA1::ptr() }
     }
 }
-#[doc = "Reset and clock control"]
-pub const RCC: Peripheral<RCC> = unsafe { Peripheral::new(1073876992) };
-#[doc = "Reset and clock control"]
-pub mod rcc;
+#[doc = "DMA controller"]
+pub mod dma1;
 #[doc = "Reset and clock control"]
 pub struct RCC {
-    register_block: rcc::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RCC {}
+impl RCC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const rcc::RegisterBlock {
+        1073876992 as *const _
+    }
 }
 impl Deref for RCC {
     type Target = rcc::RegisterBlock;
     fn deref(&self) -> &rcc::RegisterBlock {
-        &self.register_block
+        unsafe { &*RCC::ptr() }
     }
 }
-#[doc = "System configuration controller"]
-pub const SYSCFG_COMP: Peripheral<SYSCFG_COMP> = unsafe { Peripheral::new(1073807360) };
-#[doc = "System configuration controller"]
-pub mod syscfg_comp;
+#[doc = "Reset and clock control"]
+pub mod rcc;
 #[doc = "System configuration controller"]
 pub struct SYSCFG_COMP {
-    register_block: syscfg_comp::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYSCFG_COMP {}
+impl SYSCFG_COMP {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const syscfg_comp::RegisterBlock {
+        1073807360 as *const _
+    }
 }
 impl Deref for SYSCFG_COMP {
     type Target = syscfg_comp::RegisterBlock;
     fn deref(&self) -> &syscfg_comp::RegisterBlock {
-        &self.register_block
+        unsafe { &*SYSCFG_COMP::ptr() }
     }
 }
-#[doc = "Analog-to-digital converter"]
-pub const ADC: Peripheral<ADC> = unsafe { Peripheral::new(1073816576) };
-#[doc = "Analog-to-digital converter"]
-pub mod adc;
+#[doc = "System configuration controller"]
+pub mod syscfg_comp;
 #[doc = "Analog-to-digital converter"]
 pub struct ADC {
-    register_block: adc::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ADC {}
+impl ADC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const adc::RegisterBlock {
+        1073816576 as *const _
+    }
 }
 impl Deref for ADC {
     type Target = adc::RegisterBlock;
     fn deref(&self) -> &adc::RegisterBlock {
-        &self.register_block
+        unsafe { &*ADC::ptr() }
     }
 }
-#[doc = "Universal synchronous asynchronous receiver transmitter"]
-pub const USART1: Peripheral<USART1> = unsafe { Peripheral::new(1073821696) };
-#[doc = "Universal synchronous asynchronous receiver transmitter"]
-pub mod usart1;
+#[doc = "Analog-to-digital converter"]
+pub mod adc;
 #[doc = "Universal synchronous asynchronous receiver transmitter"]
 pub struct USART1 {
-    register_block: usart1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USART1 {}
+impl USART1 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usart1::RegisterBlock {
+        1073821696 as *const _
+    }
 }
 impl Deref for USART1 {
     type Target = usart1::RegisterBlock;
     fn deref(&self) -> &usart1::RegisterBlock {
-        &self.register_block
+        unsafe { &*USART1::ptr() }
     }
 }
+#[doc = "Universal synchronous asynchronous receiver transmitter"]
+pub mod usart1;
 #[doc = "USART2"]
-pub const USART2: Peripheral<USART2> = unsafe { Peripheral::new(1073759232) };
-#[doc = r" Register block"]
 pub struct USART2 {
-    register_block: usart1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USART2 {}
+impl USART2 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usart1::RegisterBlock {
+        1073759232 as *const _
+    }
 }
 impl Deref for USART2 {
     type Target = usart1::RegisterBlock;
     fn deref(&self) -> &usart1::RegisterBlock {
-        &self.register_block
+        unsafe { &*USART2::ptr() }
     }
 }
 #[doc = "USART3"]
-pub const USART3: Peripheral<USART3> = unsafe { Peripheral::new(1073760256) };
-#[doc = r" Register block"]
 pub struct USART3 {
-    register_block: usart1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USART3 {}
+impl USART3 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usart1::RegisterBlock {
+        1073760256 as *const _
+    }
 }
 impl Deref for USART3 {
     type Target = usart1::RegisterBlock;
     fn deref(&self) -> &usart1::RegisterBlock {
-        &self.register_block
+        unsafe { &*USART3::ptr() }
     }
 }
 #[doc = "USART4"]
-pub const USART4: Peripheral<USART4> = unsafe { Peripheral::new(1073761280) };
-#[doc = r" Register block"]
 pub struct USART4 {
-    register_block: usart1::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USART4 {}
+impl USART4 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usart1::RegisterBlock {
+        1073761280 as *const _
+    }
 }
 impl Deref for USART4 {
     type Target = usart1::RegisterBlock;
     fn deref(&self) -> &usart1::RegisterBlock {
-        &self.register_block
+        unsafe { &*USART4::ptr() }
     }
 }
 #[doc = "Real-time clock"]
-pub const RTC: Peripheral<RTC> = unsafe { Peripheral::new(1073752064) };
-#[doc = "Real-time clock"]
-pub mod rtc;
-#[doc = "Real-time clock"]
 pub struct RTC {
-    register_block: rtc::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RTC {}
+impl RTC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const rtc::RegisterBlock {
+        1073752064 as *const _
+    }
 }
 impl Deref for RTC {
     type Target = rtc::RegisterBlock;
     fn deref(&self) -> &rtc::RegisterBlock {
-        &self.register_block
+        unsafe { &*RTC::ptr() }
     }
 }
-#[doc = "General-purpose-timers"]
-pub const TIM15: Peripheral<TIM15> = unsafe { Peripheral::new(1073823744) };
-#[doc = "General-purpose-timers"]
-pub mod tim15;
+#[doc = "Real-time clock"]
+pub mod rtc;
 #[doc = "General-purpose-timers"]
 pub struct TIM15 {
-    register_block: tim15::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM15 {}
+impl TIM15 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim15::RegisterBlock {
+        1073823744 as *const _
+    }
 }
 impl Deref for TIM15 {
     type Target = tim15::RegisterBlock;
     fn deref(&self) -> &tim15::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM15::ptr() }
     }
 }
 #[doc = "General-purpose-timers"]
-pub const TIM16: Peripheral<TIM16> = unsafe { Peripheral::new(1073824768) };
-#[doc = "General-purpose-timers"]
-pub mod tim16;
+pub mod tim15;
 #[doc = "General-purpose-timers"]
 pub struct TIM16 {
-    register_block: tim16::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM16 {}
+impl TIM16 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim16::RegisterBlock {
+        1073824768 as *const _
+    }
 }
 impl Deref for TIM16 {
     type Target = tim16::RegisterBlock;
     fn deref(&self) -> &tim16::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM16::ptr() }
     }
 }
+#[doc = "General-purpose-timers"]
+pub mod tim16;
 #[doc = "TIM17"]
-pub const TIM17: Peripheral<TIM17> = unsafe { Peripheral::new(1073825792) };
-#[doc = r" Register block"]
 pub struct TIM17 {
-    register_block: tim16::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIM17 {}
+impl TIM17 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tim16::RegisterBlock {
+        1073825792 as *const _
+    }
 }
 impl Deref for TIM17 {
     type Target = tim16::RegisterBlock;
     fn deref(&self) -> &tim16::RegisterBlock {
-        &self.register_block
+        unsafe { &*TIM17::ptr() }
     }
 }
 #[doc = "Touch sensing controller"]
-pub const TSC: Peripheral<TSC> = unsafe { Peripheral::new(1073889280) };
-#[doc = "Touch sensing controller"]
-pub mod tsc;
-#[doc = "Touch sensing controller"]
 pub struct TSC {
-    register_block: tsc::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TSC {}
+impl TSC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const tsc::RegisterBlock {
+        1073889280 as *const _
+    }
 }
 impl Deref for TSC {
     type Target = tsc::RegisterBlock;
     fn deref(&self) -> &tsc::RegisterBlock {
-        &self.register_block
+        unsafe { &*TSC::ptr() }
     }
 }
-#[doc = "HDMI-CEC controller"]
-pub const CEC: Peripheral<CEC> = unsafe { Peripheral::new(1073772544) };
-#[doc = "HDMI-CEC controller"]
-pub mod cec;
+#[doc = "Touch sensing controller"]
+pub mod tsc;
 #[doc = "HDMI-CEC controller"]
 pub struct CEC {
-    register_block: cec::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CEC {}
+impl CEC {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const cec::RegisterBlock {
+        1073772544 as *const _
+    }
 }
 impl Deref for CEC {
     type Target = cec::RegisterBlock;
     fn deref(&self) -> &cec::RegisterBlock {
-        &self.register_block
+        unsafe { &*CEC::ptr() }
     }
 }
-#[doc = "Flash"]
-pub const FLASH: Peripheral<FLASH> = unsafe { Peripheral::new(1073881088) };
-#[doc = "Flash"]
-pub mod flash;
+#[doc = "HDMI-CEC controller"]
+pub mod cec;
 #[doc = "Flash"]
 pub struct FLASH {
-    register_block: flash::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for FLASH {}
+impl FLASH {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const flash::RegisterBlock {
+        1073881088 as *const _
+    }
 }
 impl Deref for FLASH {
     type Target = flash::RegisterBlock;
     fn deref(&self) -> &flash::RegisterBlock {
-        &self.register_block
+        unsafe { &*FLASH::ptr() }
     }
 }
-#[doc = "Debug support"]
-pub const DBGMCU: Peripheral<DBGMCU> = unsafe { Peripheral::new(1073829888) };
-#[doc = "Debug support"]
-pub mod dbgmcu;
+#[doc = "Flash"]
+pub mod flash;
 #[doc = "Debug support"]
 pub struct DBGMCU {
-    register_block: dbgmcu::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DBGMCU {}
+impl DBGMCU {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const dbgmcu::RegisterBlock {
+        1073829888 as *const _
+    }
 }
 impl Deref for DBGMCU {
     type Target = dbgmcu::RegisterBlock;
     fn deref(&self) -> &dbgmcu::RegisterBlock {
-        &self.register_block
+        unsafe { &*DBGMCU::ptr() }
     }
 }
-#[doc = "Universal serial bus full-speed device interface"]
-pub const USB: Peripheral<USB> = unsafe { Peripheral::new(1073765376) };
-#[doc = "Universal serial bus full-speed device interface"]
-pub mod usb;
+#[doc = "Debug support"]
+pub mod dbgmcu;
 #[doc = "Universal serial bus full-speed device interface"]
 pub struct USB {
-    register_block: usb::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USB {}
+impl USB {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usb::RegisterBlock {
+        1073765376 as *const _
+    }
 }
 impl Deref for USB {
     type Target = usb::RegisterBlock;
     fn deref(&self) -> &usb::RegisterBlock {
-        &self.register_block
+        unsafe { &*USB::ptr() }
     }
 }
-#[doc = "Clock recovery system"]
-pub const CRS: Peripheral<CRS> = unsafe { Peripheral::new(1073769472) };
-#[doc = "Clock recovery system"]
-pub mod crs;
+#[doc = "Universal serial bus full-speed device interface"]
+pub mod usb;
 #[doc = "Clock recovery system"]
 pub struct CRS {
-    register_block: crs::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CRS {}
+impl CRS {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const crs::RegisterBlock {
+        1073769472 as *const _
+    }
 }
 impl Deref for CRS {
     type Target = crs::RegisterBlock;
     fn deref(&self) -> &crs::RegisterBlock {
-        &self.register_block
+        unsafe { &*CRS::ptr() }
     }
 }
-#[doc = "Controller area network"]
-pub const CAN: Peripheral<CAN> = unsafe { Peripheral::new(1073767424) };
-#[doc = "Controller area network"]
-pub mod can;
+#[doc = "Clock recovery system"]
+pub mod crs;
 #[doc = "Controller area network"]
 pub struct CAN {
-    register_block: can::RegisterBlock,
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CAN {}
+impl CAN {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const can::RegisterBlock {
+        1073767424 as *const _
+    }
 }
 impl Deref for CAN {
     type Target = can::RegisterBlock;
     fn deref(&self) -> &can::RegisterBlock {
-        &self.register_block
+        unsafe { &*CAN::ptr() }
     }
 }
+#[doc = "Controller area network"]
+pub mod can;
+#[no_mangle]
+static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals"]
 #[allow(non_snake_case)]
-pub struct Peripherals<'a> {
-    #[doc = "CPUID"] pub CPUID: &'a CPUID,
-    #[doc = "DCB"] pub DCB: &'a DCB,
-    #[doc = "DWT"] pub DWT: &'a DWT,
-    #[doc = "FPB"] pub FPB: &'a FPB,
-    #[doc = "FPU"] pub FPU: &'a FPU,
-    #[doc = "ITM"] pub ITM: &'a ITM,
-    #[doc = "MPU"] pub MPU: &'a MPU,
-    #[doc = "NVIC"] pub NVIC: &'a NVIC,
-    #[doc = "SCB"] pub SCB: &'a SCB,
-    #[doc = "SYST"] pub SYST: &'a SYST,
-    #[doc = "TPIU"] pub TPIU: &'a TPIU,
-    #[doc = "CRC"] pub CRC: &'a CRC,
-    #[doc = "GPIOF"] pub GPIOF: &'a GPIOF,
-    #[doc = "GPIOD"] pub GPIOD: &'a GPIOD,
-    #[doc = "GPIOC"] pub GPIOC: &'a GPIOC,
-    #[doc = "GPIOB"] pub GPIOB: &'a GPIOB,
-    #[doc = "GPIOE"] pub GPIOE: &'a GPIOE,
-    #[doc = "GPIOA"] pub GPIOA: &'a GPIOA,
-    #[doc = "SPI1"] pub SPI1: &'a SPI1,
-    #[doc = "SPI2"] pub SPI2: &'a SPI2,
-    #[doc = "DAC"] pub DAC: &'a DAC,
-    #[doc = "PWR"] pub PWR: &'a PWR,
-    #[doc = "I2C1"] pub I2C1: &'a I2C1,
-    #[doc = "I2C2"] pub I2C2: &'a I2C2,
-    #[doc = "IWDG"] pub IWDG: &'a IWDG,
-    #[doc = "WWDG"] pub WWDG: &'a WWDG,
-    #[doc = "TIM1"] pub TIM1: &'a TIM1,
-    #[doc = "TIM2"] pub TIM2: &'a TIM2,
-    #[doc = "TIM3"] pub TIM3: &'a TIM3,
-    #[doc = "TIM14"] pub TIM14: &'a TIM14,
-    #[doc = "TIM6"] pub TIM6: &'a TIM6,
-    #[doc = "TIM7"] pub TIM7: &'a TIM7,
-    #[doc = "EXTI"] pub EXTI: &'a EXTI,
-    #[doc = "DMA1"] pub DMA1: &'a DMA1,
-    #[doc = "RCC"] pub RCC: &'a RCC,
-    #[doc = "SYSCFG_COMP"] pub SYSCFG_COMP: &'a SYSCFG_COMP,
-    #[doc = "ADC"] pub ADC: &'a ADC,
-    #[doc = "USART1"] pub USART1: &'a USART1,
-    #[doc = "USART2"] pub USART2: &'a USART2,
-    #[doc = "USART3"] pub USART3: &'a USART3,
-    #[doc = "USART4"] pub USART4: &'a USART4,
-    #[doc = "RTC"] pub RTC: &'a RTC,
-    #[doc = "TIM15"] pub TIM15: &'a TIM15,
-    #[doc = "TIM16"] pub TIM16: &'a TIM16,
-    #[doc = "TIM17"] pub TIM17: &'a TIM17,
-    #[doc = "TSC"] pub TSC: &'a TSC,
-    #[doc = "CEC"] pub CEC: &'a CEC,
-    #[doc = "FLASH"] pub FLASH: &'a FLASH,
-    #[doc = "DBGMCU"] pub DBGMCU: &'a DBGMCU,
-    #[doc = "USB"] pub USB: &'a USB,
-    #[doc = "CRS"] pub CRS: &'a CRS,
-    #[doc = "CAN"] pub CAN: &'a CAN,
+pub struct Peripherals {
+    #[doc = "CRC"]
+    pub CRC: CRC,
+    #[doc = "GPIOF"]
+    pub GPIOF: GPIOF,
+    #[doc = "GPIOD"]
+    pub GPIOD: GPIOD,
+    #[doc = "GPIOC"]
+    pub GPIOC: GPIOC,
+    #[doc = "GPIOB"]
+    pub GPIOB: GPIOB,
+    #[doc = "GPIOE"]
+    pub GPIOE: GPIOE,
+    #[doc = "GPIOA"]
+    pub GPIOA: GPIOA,
+    #[doc = "SPI1"]
+    pub SPI1: SPI1,
+    #[doc = "SPI2"]
+    pub SPI2: SPI2,
+    #[doc = "DAC"]
+    pub DAC: DAC,
+    #[doc = "PWR"]
+    pub PWR: PWR,
+    #[doc = "I2C1"]
+    pub I2C1: I2C1,
+    #[doc = "I2C2"]
+    pub I2C2: I2C2,
+    #[doc = "IWDG"]
+    pub IWDG: IWDG,
+    #[doc = "WWDG"]
+    pub WWDG: WWDG,
+    #[doc = "TIM1"]
+    pub TIM1: TIM1,
+    #[doc = "TIM2"]
+    pub TIM2: TIM2,
+    #[doc = "TIM3"]
+    pub TIM3: TIM3,
+    #[doc = "TIM14"]
+    pub TIM14: TIM14,
+    #[doc = "TIM6"]
+    pub TIM6: TIM6,
+    #[doc = "TIM7"]
+    pub TIM7: TIM7,
+    #[doc = "EXTI"]
+    pub EXTI: EXTI,
+    #[doc = "DMA1"]
+    pub DMA1: DMA1,
+    #[doc = "RCC"]
+    pub RCC: RCC,
+    #[doc = "SYSCFG_COMP"]
+    pub SYSCFG_COMP: SYSCFG_COMP,
+    #[doc = "ADC"]
+    pub ADC: ADC,
+    #[doc = "USART1"]
+    pub USART1: USART1,
+    #[doc = "USART2"]
+    pub USART2: USART2,
+    #[doc = "USART3"]
+    pub USART3: USART3,
+    #[doc = "USART4"]
+    pub USART4: USART4,
+    #[doc = "RTC"]
+    pub RTC: RTC,
+    #[doc = "TIM15"]
+    pub TIM15: TIM15,
+    #[doc = "TIM16"]
+    pub TIM16: TIM16,
+    #[doc = "TIM17"]
+    pub TIM17: TIM17,
+    #[doc = "TSC"]
+    pub TSC: TSC,
+    #[doc = "CEC"]
+    pub CEC: CEC,
+    #[doc = "FLASH"]
+    pub FLASH: FLASH,
+    #[doc = "DBGMCU"]
+    pub DBGMCU: DBGMCU,
+    #[doc = "USB"]
+    pub USB: USB,
+    #[doc = "CRS"]
+    pub CRS: CRS,
+    #[doc = "CAN"]
+    pub CAN: CAN,
 }
-impl<'a> Peripherals<'a> {
-    #[doc = r" Grants access to all the peripherals"]
-    pub unsafe fn all() -> Self {
+impl Peripherals {
+    #[doc = r" Returns all the peripherals *once*"]
+    #[inline]
+    pub fn take() -> Option<Self> {
+        cortex_m::interrupt::free(|_| {
+            if unsafe { DEVICE_PERIPHERALS } {
+                None
+            } else {
+                Some(unsafe { Peripherals::steal() })
+            }
+        })
+    }
+    #[doc = r" Unchecked version of `Peripherals::take`"]
+    pub unsafe fn steal() -> Self {
+        debug_assert!(!DEVICE_PERIPHERALS);
+        DEVICE_PERIPHERALS = true;
         Peripherals {
-            CPUID: &*CPUID.get(),
-            DCB: &*DCB.get(),
-            DWT: &*DWT.get(),
-            FPB: &*FPB.get(),
-            FPU: &*FPU.get(),
-            ITM: &*ITM.get(),
-            MPU: &*MPU.get(),
-            NVIC: &*NVIC.get(),
-            SCB: &*SCB.get(),
-            SYST: &*SYST.get(),
-            TPIU: &*TPIU.get(),
-            CRC: &*CRC.get(),
-            GPIOF: &*GPIOF.get(),
-            GPIOD: &*GPIOD.get(),
-            GPIOC: &*GPIOC.get(),
-            GPIOB: &*GPIOB.get(),
-            GPIOE: &*GPIOE.get(),
-            GPIOA: &*GPIOA.get(),
-            SPI1: &*SPI1.get(),
-            SPI2: &*SPI2.get(),
-            DAC: &*DAC.get(),
-            PWR: &*PWR.get(),
-            I2C1: &*I2C1.get(),
-            I2C2: &*I2C2.get(),
-            IWDG: &*IWDG.get(),
-            WWDG: &*WWDG.get(),
-            TIM1: &*TIM1.get(),
-            TIM2: &*TIM2.get(),
-            TIM3: &*TIM3.get(),
-            TIM14: &*TIM14.get(),
-            TIM6: &*TIM6.get(),
-            TIM7: &*TIM7.get(),
-            EXTI: &*EXTI.get(),
-            DMA1: &*DMA1.get(),
-            RCC: &*RCC.get(),
-            SYSCFG_COMP: &*SYSCFG_COMP.get(),
-            ADC: &*ADC.get(),
-            USART1: &*USART1.get(),
-            USART2: &*USART2.get(),
-            USART3: &*USART3.get(),
-            USART4: &*USART4.get(),
-            RTC: &*RTC.get(),
-            TIM15: &*TIM15.get(),
-            TIM16: &*TIM16.get(),
-            TIM17: &*TIM17.get(),
-            TSC: &*TSC.get(),
-            CEC: &*CEC.get(),
-            FLASH: &*FLASH.get(),
-            DBGMCU: &*DBGMCU.get(),
-            USB: &*USB.get(),
-            CRS: &*CRS.get(),
-            CAN: &*CAN.get(),
+            CRC: CRC {
+                _marker: PhantomData,
+            },
+            GPIOF: GPIOF {
+                _marker: PhantomData,
+            },
+            GPIOD: GPIOD {
+                _marker: PhantomData,
+            },
+            GPIOC: GPIOC {
+                _marker: PhantomData,
+            },
+            GPIOB: GPIOB {
+                _marker: PhantomData,
+            },
+            GPIOE: GPIOE {
+                _marker: PhantomData,
+            },
+            GPIOA: GPIOA {
+                _marker: PhantomData,
+            },
+            SPI1: SPI1 {
+                _marker: PhantomData,
+            },
+            SPI2: SPI2 {
+                _marker: PhantomData,
+            },
+            DAC: DAC {
+                _marker: PhantomData,
+            },
+            PWR: PWR {
+                _marker: PhantomData,
+            },
+            I2C1: I2C1 {
+                _marker: PhantomData,
+            },
+            I2C2: I2C2 {
+                _marker: PhantomData,
+            },
+            IWDG: IWDG {
+                _marker: PhantomData,
+            },
+            WWDG: WWDG {
+                _marker: PhantomData,
+            },
+            TIM1: TIM1 {
+                _marker: PhantomData,
+            },
+            TIM2: TIM2 {
+                _marker: PhantomData,
+            },
+            TIM3: TIM3 {
+                _marker: PhantomData,
+            },
+            TIM14: TIM14 {
+                _marker: PhantomData,
+            },
+            TIM6: TIM6 {
+                _marker: PhantomData,
+            },
+            TIM7: TIM7 {
+                _marker: PhantomData,
+            },
+            EXTI: EXTI {
+                _marker: PhantomData,
+            },
+            DMA1: DMA1 {
+                _marker: PhantomData,
+            },
+            RCC: RCC {
+                _marker: PhantomData,
+            },
+            SYSCFG_COMP: SYSCFG_COMP {
+                _marker: PhantomData,
+            },
+            ADC: ADC {
+                _marker: PhantomData,
+            },
+            USART1: USART1 {
+                _marker: PhantomData,
+            },
+            USART2: USART2 {
+                _marker: PhantomData,
+            },
+            USART3: USART3 {
+                _marker: PhantomData,
+            },
+            USART4: USART4 {
+                _marker: PhantomData,
+            },
+            RTC: RTC {
+                _marker: PhantomData,
+            },
+            TIM15: TIM15 {
+                _marker: PhantomData,
+            },
+            TIM16: TIM16 {
+                _marker: PhantomData,
+            },
+            TIM17: TIM17 {
+                _marker: PhantomData,
+            },
+            TSC: TSC {
+                _marker: PhantomData,
+            },
+            CEC: CEC {
+                _marker: PhantomData,
+            },
+            FLASH: FLASH {
+                _marker: PhantomData,
+            },
+            DBGMCU: DBGMCU {
+                _marker: PhantomData,
+            },
+            USB: USB {
+                _marker: PhantomData,
+            },
+            CRS: CRS {
+                _marker: PhantomData,
+            },
+            CAN: CAN {
+                _marker: PhantomData,
+            },
         }
     }
 }

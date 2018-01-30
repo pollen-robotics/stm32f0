@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR2 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CFGR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CFGR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -64,7 +64,7 @@ pub enum PREDIVR {
 }
 impl PREDIVR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             PREDIVR::DIV1 => 0,
@@ -87,7 +87,7 @@ impl PREDIVR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> PREDIVR {
         match value {
             0 => PREDIVR::DIV1,
@@ -110,82 +110,82 @@ impl PREDIVR {
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div1(&self) -> bool {
         *self == PREDIVR::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == PREDIVR::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV3`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div3(&self) -> bool {
         *self == PREDIVR::DIV3
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div4(&self) -> bool {
         *self == PREDIVR::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV5`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div5(&self) -> bool {
         *self == PREDIVR::DIV5
     }
     #[doc = "Checks if the value of the field is `DIV6`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div6(&self) -> bool {
         *self == PREDIVR::DIV6
     }
     #[doc = "Checks if the value of the field is `DIV7`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div7(&self) -> bool {
         *self == PREDIVR::DIV7
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div8(&self) -> bool {
         *self == PREDIVR::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV9`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div9(&self) -> bool {
         *self == PREDIVR::DIV9
     }
     #[doc = "Checks if the value of the field is `DIV10`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div10(&self) -> bool {
         *self == PREDIVR::DIV10
     }
     #[doc = "Checks if the value of the field is `DIV11`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div11(&self) -> bool {
         *self == PREDIVR::DIV11
     }
     #[doc = "Checks if the value of the field is `DIV12`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div12(&self) -> bool {
         *self == PREDIVR::DIV12
     }
     #[doc = "Checks if the value of the field is `DIV13`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div13(&self) -> bool {
         *self == PREDIVR::DIV13
     }
     #[doc = "Checks if the value of the field is `DIV14`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div14(&self) -> bool {
         *self == PREDIVR::DIV14
     }
     #[doc = "Checks if the value of the field is `DIV15`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div15(&self) -> bool {
         *self == PREDIVR::DIV15
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div16(&self) -> bool {
         *self == PREDIVR::DIV16
     }
@@ -212,7 +212,7 @@ pub enum PREDIVW {
 impl PREDIVW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             PREDIVW::DIV1 => 0,
@@ -240,94 +240,94 @@ pub struct _PREDIVW<'a> {
 }
 impl<'a> _PREDIVW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PREDIVW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "PREDIV input clock not divided."]
-    #[inline(always)]
+    #[inline]
     pub fn div1(self) -> &'a mut W {
         self.variant(PREDIVW::DIV1)
     }
     #[doc = "PREDIV input clock divided by 2."]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(PREDIVW::DIV2)
     }
     #[doc = "PREDIV input clock divided by 3."]
-    #[inline(always)]
+    #[inline]
     pub fn div3(self) -> &'a mut W {
         self.variant(PREDIVW::DIV3)
     }
     #[doc = "PREDIV input clock divided by 4."]
-    #[inline(always)]
+    #[inline]
     pub fn div4(self) -> &'a mut W {
         self.variant(PREDIVW::DIV4)
     }
     #[doc = "PREDIV input clock divided by 5."]
-    #[inline(always)]
+    #[inline]
     pub fn div5(self) -> &'a mut W {
         self.variant(PREDIVW::DIV5)
     }
     #[doc = "PREDIV input clock divided by 6."]
-    #[inline(always)]
+    #[inline]
     pub fn div6(self) -> &'a mut W {
         self.variant(PREDIVW::DIV6)
     }
     #[doc = "PREDIV input clock divided by 7."]
-    #[inline(always)]
+    #[inline]
     pub fn div7(self) -> &'a mut W {
         self.variant(PREDIVW::DIV7)
     }
     #[doc = "PREDIV input clock divided by 8."]
-    #[inline(always)]
+    #[inline]
     pub fn div8(self) -> &'a mut W {
         self.variant(PREDIVW::DIV8)
     }
     #[doc = "PREDIV input clock divided by 9."]
-    #[inline(always)]
+    #[inline]
     pub fn div9(self) -> &'a mut W {
         self.variant(PREDIVW::DIV9)
     }
     #[doc = "PREDIV input clock divided by 10."]
-    #[inline(always)]
+    #[inline]
     pub fn div10(self) -> &'a mut W {
         self.variant(PREDIVW::DIV10)
     }
     #[doc = "PREDIV input clock divided by 11."]
-    #[inline(always)]
+    #[inline]
     pub fn div11(self) -> &'a mut W {
         self.variant(PREDIVW::DIV11)
     }
     #[doc = "PREDIV input clock divided by 12."]
-    #[inline(always)]
+    #[inline]
     pub fn div12(self) -> &'a mut W {
         self.variant(PREDIVW::DIV12)
     }
     #[doc = "PREDIV input clock divided by 13."]
-    #[inline(always)]
+    #[inline]
     pub fn div13(self) -> &'a mut W {
         self.variant(PREDIVW::DIV13)
     }
     #[doc = "PREDIV input clock divided by 14."]
-    #[inline(always)]
+    #[inline]
     pub fn div14(self) -> &'a mut W {
         self.variant(PREDIVW::DIV14)
     }
     #[doc = "PREDIV input clock divided by 15."]
-    #[inline(always)]
+    #[inline]
     pub fn div15(self) -> &'a mut W {
         self.variant(PREDIVW::DIV15)
     }
     #[doc = "PREDIV input clock divided by 16."]
-    #[inline(always)]
+    #[inline]
     pub fn div16(self) -> &'a mut W {
         self.variant(PREDIVW::DIV16)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
@@ -338,12 +338,12 @@ impl<'a> _PREDIVW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:3 - PREDIV division factor"]
-    #[inline(always)]
+    #[inline]
     pub fn prediv(&self) -> PREDIVR {
         PREDIVR::_from({
             const MASK: u8 = 15;
@@ -354,18 +354,18 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:3 - PREDIV division factor"]
-    #[inline(always)]
+    #[inline]
     pub fn prediv(&mut self) -> _PREDIVW {
         _PREDIVW { w: self }
     }

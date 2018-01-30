@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CCER {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CCER {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CCER {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum CC2NPR {
 }
 impl CC2NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC2NPR::HIGH => false,
@@ -69,7 +69,7 @@ impl CC2NPR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC2NPR {
         match value {
             false => CC2NPR::HIGH,
@@ -77,12 +77,12 @@ impl CC2NPR {
         }
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_high(&self) -> bool {
         *self == CC2NPR::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_low(&self) -> bool {
         *self == CC2NPR::LOW
     }
@@ -95,17 +95,17 @@ pub enum CC2PR {
 }
 impl CC2PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC2PR::HIGH => false,
@@ -114,7 +114,7 @@ impl CC2PR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC2PR {
         match value {
             false => CC2PR::HIGH,
@@ -122,35 +122,32 @@ impl CC2PR {
         }
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_high(&self) -> bool {
         *self == CC2PR::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_low(&self) -> bool {
         *self == CC2PR::LOW
     }
 }
 #[doc = "Possible values of the field `CC2E`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CC2ER {
-    #[doc = "Output : OC1 is not active - Input : Capture disabled"] INACTIVE,
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"] ACTIVE,
-}
+pub enum CC2ER {# [ doc = "Output : OC1 is not active - Input : Capture disabled" ] INACTIVE , # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] ACTIVE ,}
 impl CC2ER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC2ER::INACTIVE => false,
@@ -159,7 +156,7 @@ impl CC2ER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC2ER {
         match value {
             false => CC2ER::INACTIVE,
@@ -167,12 +164,12 @@ impl CC2ER {
         }
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_inactive(&self) -> bool {
         *self == CC2ER::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_active(&self) -> bool {
         *self == CC2ER::ACTIVE
     }
@@ -185,17 +182,17 @@ pub enum CC1NPR {
 }
 impl CC1NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1NPR::HIGH => false,
@@ -204,7 +201,7 @@ impl CC1NPR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1NPR {
         match value {
             false => CC1NPR::HIGH,
@@ -212,12 +209,12 @@ impl CC1NPR {
         }
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_high(&self) -> bool {
         *self == CC1NPR::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_low(&self) -> bool {
         *self == CC1NPR::LOW
     }
@@ -230,17 +227,17 @@ pub enum CC1NER {
 }
 impl CC1NER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1NER::DISABLED => false,
@@ -249,7 +246,7 @@ impl CC1NER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1NER {
         match value {
             false => CC1NER::DISABLED,
@@ -257,12 +254,12 @@ impl CC1NER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == CC1NER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == CC1NER::ENABLED
     }
@@ -275,17 +272,17 @@ pub enum CC1PR {
 }
 impl CC1PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1PR::HIGH => false,
@@ -294,7 +291,7 @@ impl CC1PR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1PR {
         match value {
             false => CC1PR::HIGH,
@@ -302,35 +299,32 @@ impl CC1PR {
         }
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_high(&self) -> bool {
         *self == CC1PR::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_low(&self) -> bool {
         *self == CC1PR::LOW
     }
 }
 #[doc = "Possible values of the field `CC1E`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CC1ER {
-    #[doc = "Output : OC1 is not active - Input : Capture disabled"] INACTIVE,
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"] ACTIVE,
-}
+pub enum CC1ER {# [ doc = "Output : OC1 is not active - Input : Capture disabled" ] INACTIVE , # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] ACTIVE ,}
 impl CC1ER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1ER::INACTIVE => false,
@@ -339,7 +333,7 @@ impl CC1ER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1ER {
         match value {
             false => CC1ER::INACTIVE,
@@ -347,12 +341,12 @@ impl CC1ER {
         }
     }
     #[doc = "Checks if the value of the field is `INACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_inactive(&self) -> bool {
         *self == CC1ER::INACTIVE
     }
     #[doc = "Checks if the value of the field is `ACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_active(&self) -> bool {
         *self == CC1ER::ACTIVE
     }
@@ -365,7 +359,7 @@ pub enum CC2NPW {
 impl CC2NPW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC2NPW::HIGH => false,
@@ -379,19 +373,19 @@ pub struct _CC2NPW<'a> {
 }
 impl<'a> _CC2NPW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC2NPW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "active high"]
-    #[inline(always)]
+    #[inline]
     pub fn high(self) -> &'a mut W {
         self.variant(CC2NPW::HIGH)
     }
     #[doc = "active low"]
-    #[inline(always)]
+    #[inline]
     pub fn low(self) -> &'a mut W {
         self.variant(CC2NPW::LOW)
     }
@@ -404,7 +398,7 @@ impl<'a> _CC2NPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -421,7 +415,7 @@ pub enum CC2PW {
 impl CC2PW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC2PW::HIGH => false,
@@ -435,19 +429,19 @@ pub struct _CC2PW<'a> {
 }
 impl<'a> _CC2PW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC2PW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "active high"]
-    #[inline(always)]
+    #[inline]
     pub fn high(self) -> &'a mut W {
         self.variant(CC2PW::HIGH)
     }
     #[doc = "active low"]
-    #[inline(always)]
+    #[inline]
     pub fn low(self) -> &'a mut W {
         self.variant(CC2PW::LOW)
     }
@@ -460,7 +454,7 @@ impl<'a> _CC2PW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -470,14 +464,11 @@ impl<'a> _CC2PW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `CC2E`"]
-pub enum CC2EW {
-    #[doc = "Output : OC1 is not active - Input : Capture disabled"] INACTIVE,
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"] ACTIVE,
-}
+pub enum CC2EW {# [ doc = "Output : OC1 is not active - Input : Capture disabled" ] INACTIVE , # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] ACTIVE ,}
 impl CC2EW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC2EW::INACTIVE => false,
@@ -491,19 +482,18 @@ pub struct _CC2EW<'a> {
 }
 impl<'a> _CC2EW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC2EW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Output : OC1 is not active - Input : Capture disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn inactive(self) -> &'a mut W {
         self.variant(CC2EW::INACTIVE)
     }
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"]
-    #[inline(always)]
+    # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] # [ inline ]
     pub fn active(self) -> &'a mut W {
         self.variant(CC2EW::ACTIVE)
     }
@@ -516,7 +506,7 @@ impl<'a> _CC2EW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -533,7 +523,7 @@ pub enum CC1NPW {
 impl CC1NPW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1NPW::HIGH => false,
@@ -547,19 +537,19 @@ pub struct _CC1NPW<'a> {
 }
 impl<'a> _CC1NPW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1NPW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "active high"]
-    #[inline(always)]
+    #[inline]
     pub fn high(self) -> &'a mut W {
         self.variant(CC1NPW::HIGH)
     }
     #[doc = "active low"]
-    #[inline(always)]
+    #[inline]
     pub fn low(self) -> &'a mut W {
         self.variant(CC1NPW::LOW)
     }
@@ -572,7 +562,7 @@ impl<'a> _CC1NPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -589,7 +579,7 @@ pub enum CC1NEW {
 impl CC1NEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1NEW::DISABLED => false,
@@ -603,19 +593,19 @@ pub struct _CC1NEW<'a> {
 }
 impl<'a> _CC1NEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1NEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Off"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(CC1NEW::DISABLED)
     }
     #[doc = "On"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CC1NEW::ENABLED)
     }
@@ -628,7 +618,7 @@ impl<'a> _CC1NEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -645,7 +635,7 @@ pub enum CC1PW {
 impl CC1PW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1PW::HIGH => false,
@@ -659,19 +649,19 @@ pub struct _CC1PW<'a> {
 }
 impl<'a> _CC1PW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1PW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "active high"]
-    #[inline(always)]
+    #[inline]
     pub fn high(self) -> &'a mut W {
         self.variant(CC1PW::HIGH)
     }
     #[doc = "active low"]
-    #[inline(always)]
+    #[inline]
     pub fn low(self) -> &'a mut W {
         self.variant(CC1PW::LOW)
     }
@@ -684,7 +674,7 @@ impl<'a> _CC1PW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -694,14 +684,11 @@ impl<'a> _CC1PW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `CC1E`"]
-pub enum CC1EW {
-    #[doc = "Output : OC1 is not active - Input : Capture disabled"] INACTIVE,
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"] ACTIVE,
-}
+pub enum CC1EW {# [ doc = "Output : OC1 is not active - Input : Capture disabled" ] INACTIVE , # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] ACTIVE ,}
 impl CC1EW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1EW::INACTIVE => false,
@@ -715,19 +702,18 @@ pub struct _CC1EW<'a> {
 }
 impl<'a> _CC1EW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1EW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Output : OC1 is not active - Input : Capture disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn inactive(self) -> &'a mut W {
         self.variant(CC1EW::INACTIVE)
     }
-    #[doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled"]
-    #[inline(always)]
+    # [ doc = "Output : OC1 signal is output on the corresponding output pin - Input : Capture enabled" ] # [ inline ]
     pub fn active(self) -> &'a mut W {
         self.variant(CC1EW::ACTIVE)
     }
@@ -740,7 +726,7 @@ impl<'a> _CC1EW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -751,12 +737,12 @@ impl<'a> _CC1EW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 7 - Capture/Compare 2 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2np(&self) -> CC2NPR {
         CC2NPR::_from({
             const MASK: bool = true;
@@ -765,7 +751,7 @@ impl R {
         })
     }
     #[doc = "Bit 5 - Capture/Compare 2 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2p(&self) -> CC2PR {
         CC2PR::_from({
             const MASK: bool = true;
@@ -774,7 +760,7 @@ impl R {
         })
     }
     #[doc = "Bit 4 - Capture/Compare 2 output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2e(&self) -> CC2ER {
         CC2ER::_from({
             const MASK: bool = true;
@@ -783,7 +769,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Capture/Compare 1 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1np(&self) -> CC1NPR {
         CC1NPR::_from({
             const MASK: bool = true;
@@ -792,7 +778,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1ne(&self) -> CC1NER {
         CC1NER::_from({
             const MASK: bool = true;
@@ -801,7 +787,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Capture/Compare 1 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1p(&self) -> CC1PR {
         CC1PR::_from({
             const MASK: bool = true;
@@ -810,7 +796,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Capture/Compare 1 output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1e(&self) -> CC1ER {
         CC1ER::_from({
             const MASK: bool = true;
@@ -821,48 +807,48 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 7 - Capture/Compare 2 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2np(&mut self) -> _CC2NPW {
         _CC2NPW { w: self }
     }
     #[doc = "Bit 5 - Capture/Compare 2 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2p(&mut self) -> _CC2PW {
         _CC2PW { w: self }
     }
     #[doc = "Bit 4 - Capture/Compare 2 output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2e(&mut self) -> _CC2EW {
         _CC2EW { w: self }
     }
     #[doc = "Bit 3 - Capture/Compare 1 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1np(&mut self) -> _CC1NPW {
         _CC1NPW { w: self }
     }
     #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1ne(&mut self) -> _CC1NEW {
         _CC1NEW { w: self }
     }
     #[doc = "Bit 1 - Capture/Compare 1 output Polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1p(&mut self) -> _CC1PW {
         _CC1PW { w: self }
     }
     #[doc = "Bit 0 - Capture/Compare 1 output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1e(&mut self) -> _CC1EW {
         _CC1EW { w: self }
     }

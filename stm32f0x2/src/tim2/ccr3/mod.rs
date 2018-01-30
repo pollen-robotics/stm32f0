@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CCR3 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CCR3 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CCR3 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct CCR3_HR {
 }
 impl CCR3_HR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct CCR3_LR {
 }
 impl CCR3_LR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct _CCR3_HW<'a> {
 }
 impl<'a> _CCR3_HW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 16;
@@ -85,7 +85,7 @@ pub struct _CCR3_LW<'a> {
 }
 impl<'a> _CCR3_LW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -96,12 +96,12 @@ impl<'a> _CCR3_LW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - High Capture/Compare value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr3_h(&self) -> CCR3_HR {
         let bits = {
             const MASK: u16 = 65535;
@@ -111,7 +111,7 @@ impl R {
         CCR3_HR { bits }
     }
     #[doc = "Bits 0:15 - Low Capture/Compare value"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr3_l(&self) -> CCR3_LR {
         let bits = {
             const MASK: u16 = 65535;
@@ -123,23 +123,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:31 - High Capture/Compare value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr3_h(&mut self) -> _CCR3_HW {
         _CCR3_HW { w: self }
     }
     #[doc = "Bits 0:15 - Low Capture/Compare value"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr3_l(&mut self) -> _CCR3_LW {
         _CCR3_LW { w: self }
     }

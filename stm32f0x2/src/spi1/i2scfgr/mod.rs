@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::I2SCFGR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::I2SCFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::I2SCFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum I2SMODR {
 }
 impl I2SMODR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             I2SMODR::SPI => false,
@@ -69,7 +69,7 @@ impl I2SMODR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> I2SMODR {
         match value {
             false => I2SMODR::SPI,
@@ -77,12 +77,12 @@ impl I2SMODR {
         }
     }
     #[doc = "Checks if the value of the field is `SPI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_spi(&self) -> bool {
         *self == I2SMODR::SPI
     }
     #[doc = "Checks if the value of the field is `I2S`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_i2s(&self) -> bool {
         *self == I2SMODR::I2S
     }
@@ -95,17 +95,17 @@ pub enum I2SER {
 }
 impl I2SER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             I2SER::DISABLE => false,
@@ -114,7 +114,7 @@ impl I2SER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> I2SER {
         match value {
             false => I2SER::DISABLE,
@@ -122,12 +122,12 @@ impl I2SER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disable(&self) -> bool {
         *self == I2SER::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enable(&self) -> bool {
         *self == I2SER::ENABLE
     }
@@ -142,7 +142,7 @@ pub enum I2SCFGR {
 }
 impl I2SCFGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             I2SCFGR::SLAVE_TRANSMIT => 0,
@@ -153,7 +153,7 @@ impl I2SCFGR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> I2SCFGR {
         match value {
             0 => I2SCFGR::SLAVE_TRANSMIT,
@@ -164,22 +164,22 @@ impl I2SCFGR {
         }
     }
     #[doc = "Checks if the value of the field is `SLAVE_TRANSMIT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_slave_transmit(&self) -> bool {
         *self == I2SCFGR::SLAVE_TRANSMIT
     }
     #[doc = "Checks if the value of the field is `SLAVE_RECEIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_slave_receive(&self) -> bool {
         *self == I2SCFGR::SLAVE_RECEIVE
     }
     #[doc = "Checks if the value of the field is `MASTER_TRANSMIT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_master_transmit(&self) -> bool {
         *self == I2SCFGR::MASTER_TRANSMIT
     }
     #[doc = "Checks if the value of the field is `MASTER_RECEIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_master_receive(&self) -> bool {
         *self == I2SCFGR::MASTER_RECEIVE
     }
@@ -192,17 +192,17 @@ pub enum PCMSYNCR {
 }
 impl PCMSYNCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PCMSYNCR::SHORT => false,
@@ -211,7 +211,7 @@ impl PCMSYNCR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PCMSYNCR {
         match value {
             false => PCMSYNCR::SHORT,
@@ -219,12 +219,12 @@ impl PCMSYNCR {
         }
     }
     #[doc = "Checks if the value of the field is `SHORT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_short(&self) -> bool {
         *self == PCMSYNCR::SHORT
     }
     #[doc = "Checks if the value of the field is `LONG`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_long(&self) -> bool {
         *self == PCMSYNCR::LONG
     }
@@ -239,7 +239,7 @@ pub enum I2SSTDR {
 }
 impl I2SSTDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             I2SSTDR::I2S => 0,
@@ -250,7 +250,7 @@ impl I2SSTDR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> I2SSTDR {
         match value {
             0 => I2SSTDR::I2S,
@@ -261,22 +261,22 @@ impl I2SSTDR {
         }
     }
     #[doc = "Checks if the value of the field is `I2S`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_i2s(&self) -> bool {
         *self == I2SSTDR::I2S
     }
     #[doc = "Checks if the value of the field is `MSB`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_msb(&self) -> bool {
         *self == I2SSTDR::MSB
     }
     #[doc = "Checks if the value of the field is `LSB`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lsb(&self) -> bool {
         *self == I2SSTDR::LSB
     }
     #[doc = "Checks if the value of the field is `PCM`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pcm(&self) -> bool {
         *self == I2SSTDR::PCM
     }
@@ -289,17 +289,17 @@ pub enum CKPOLR {
 }
 impl CKPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CKPOLR::IDLELOW => false,
@@ -308,7 +308,7 @@ impl CKPOLR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CKPOLR {
         match value {
             false => CKPOLR::IDLELOW,
@@ -316,12 +316,12 @@ impl CKPOLR {
         }
     }
     #[doc = "Checks if the value of the field is `IDLELOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_idle_low(&self) -> bool {
         *self == CKPOLR::IDLELOW
     }
     #[doc = "Checks if the value of the field is `IDLEHIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_idle_high(&self) -> bool {
         *self == CKPOLR::IDLEHIGH
     }
@@ -336,7 +336,7 @@ pub enum DATLENR {
 }
 impl DATLENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             DATLENR::_16BITS => 0,
@@ -347,7 +347,7 @@ impl DATLENR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> DATLENR {
         match value {
             0 => DATLENR::_16BITS,
@@ -357,17 +357,17 @@ impl DATLENR {
         }
     }
     #[doc = "Checks if the value of the field is `_16BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_16bits(&self) -> bool {
         *self == DATLENR::_16BITS
     }
     #[doc = "Checks if the value of the field is `_24BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_24bits(&self) -> bool {
         *self == DATLENR::_24BITS
     }
     #[doc = "Checks if the value of the field is `_32BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_32bits(&self) -> bool {
         *self == DATLENR::_32BITS
     }
@@ -380,17 +380,17 @@ pub enum CHLENR {
 }
 impl CHLENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CHLENR::_16BITS => false,
@@ -399,7 +399,7 @@ impl CHLENR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CHLENR {
         match value {
             false => CHLENR::_16BITS,
@@ -407,12 +407,12 @@ impl CHLENR {
         }
     }
     #[doc = "Checks if the value of the field is `_16BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_16bits(&self) -> bool {
         *self == CHLENR::_16BITS
     }
     #[doc = "Checks if the value of the field is `_32BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_32bits(&self) -> bool {
         *self == CHLENR::_32BITS
     }
@@ -425,7 +425,7 @@ pub enum I2SMODW {
 impl I2SMODW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             I2SMODW::SPI => false,
@@ -439,19 +439,19 @@ pub struct _I2SMODW<'a> {
 }
 impl<'a> _I2SMODW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: I2SMODW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "SPI mode is selected"]
-    #[inline(always)]
+    #[inline]
     pub fn spi(self) -> &'a mut W {
         self.variant(I2SMODW::SPI)
     }
     #[doc = "I2S mode is selected"]
-    #[inline(always)]
+    #[inline]
     pub fn i2s(self) -> &'a mut W {
         self.variant(I2SMODW::I2S)
     }
@@ -464,7 +464,7 @@ impl<'a> _I2SMODW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -481,7 +481,7 @@ pub enum I2SEW {
 impl I2SEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             I2SEW::DISABLE => false,
@@ -495,19 +495,19 @@ pub struct _I2SEW<'a> {
 }
 impl<'a> _I2SEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: I2SEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "I2S peripheral is disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disable(self) -> &'a mut W {
         self.variant(I2SEW::DISABLE)
     }
     #[doc = "I2S peripheral is enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enable(self) -> &'a mut W {
         self.variant(I2SEW::ENABLE)
     }
@@ -520,7 +520,7 @@ impl<'a> _I2SEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -539,7 +539,7 @@ pub enum I2SCFGW {
 impl I2SCFGW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             I2SCFGW::SLAVE_TRANSMIT => 0,
@@ -555,34 +555,34 @@ pub struct _I2SCFGW<'a> {
 }
 impl<'a> _I2SCFGW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: I2SCFGW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Slave - transmit"]
-    #[inline(always)]
+    #[inline]
     pub fn slave_transmit(self) -> &'a mut W {
         self.variant(I2SCFGW::SLAVE_TRANSMIT)
     }
     #[doc = "Slave - receive"]
-    #[inline(always)]
+    #[inline]
     pub fn slave_receive(self) -> &'a mut W {
         self.variant(I2SCFGW::SLAVE_RECEIVE)
     }
     #[doc = "Master - transmit"]
-    #[inline(always)]
+    #[inline]
     pub fn master_transmit(self) -> &'a mut W {
         self.variant(I2SCFGW::MASTER_TRANSMIT)
     }
     #[doc = "Master - receive"]
-    #[inline(always)]
+    #[inline]
     pub fn master_receive(self) -> &'a mut W {
         self.variant(I2SCFGW::MASTER_RECEIVE)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 8;
@@ -599,7 +599,7 @@ pub enum PCMSYNCW {
 impl PCMSYNCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PCMSYNCW::SHORT => false,
@@ -613,19 +613,19 @@ pub struct _PCMSYNCW<'a> {
 }
 impl<'a> _PCMSYNCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PCMSYNCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Short frame synchronization"]
-    #[inline(always)]
+    #[inline]
     pub fn short(self) -> &'a mut W {
         self.variant(PCMSYNCW::SHORT)
     }
     #[doc = "Long frame synchronization"]
-    #[inline(always)]
+    #[inline]
     pub fn long(self) -> &'a mut W {
         self.variant(PCMSYNCW::LONG)
     }
@@ -638,7 +638,7 @@ impl<'a> _PCMSYNCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -657,7 +657,7 @@ pub enum I2SSTDW {
 impl I2SSTDW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             I2SSTDW::I2S => 0,
@@ -673,34 +673,34 @@ pub struct _I2SSTDW<'a> {
 }
 impl<'a> _I2SSTDW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: I2SSTDW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "I2S Philips standard."]
-    #[inline(always)]
+    #[inline]
     pub fn i2s(self) -> &'a mut W {
         self.variant(I2SSTDW::I2S)
     }
     #[doc = "MSB justified standard (left justified)"]
-    #[inline(always)]
+    #[inline]
     pub fn msb(self) -> &'a mut W {
         self.variant(I2SSTDW::MSB)
     }
     #[doc = "LSB justified standard (right justified)"]
-    #[inline(always)]
+    #[inline]
     pub fn lsb(self) -> &'a mut W {
         self.variant(I2SSTDW::LSB)
     }
     #[doc = "PCM standard"]
-    #[inline(always)]
+    #[inline]
     pub fn pcm(self) -> &'a mut W {
         self.variant(I2SSTDW::PCM)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 4;
@@ -717,7 +717,7 @@ pub enum CKPOLW {
 impl CKPOLW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CKPOLW::IDLELOW => false,
@@ -731,19 +731,19 @@ pub struct _CKPOLW<'a> {
 }
 impl<'a> _CKPOLW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CKPOLW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "I2S clock inactive state is low level"]
-    #[inline(always)]
+    #[inline]
     pub fn idle_low(self) -> &'a mut W {
         self.variant(CKPOLW::IDLELOW)
     }
     #[doc = "I2S clock inactive state is high level"]
-    #[inline(always)]
+    #[inline]
     pub fn idle_high(self) -> &'a mut W {
         self.variant(CKPOLW::IDLEHIGH)
     }
@@ -756,7 +756,7 @@ impl<'a> _CKPOLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -774,7 +774,7 @@ pub enum DATLENW {
 impl DATLENW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             DATLENW::_16BITS => 0,
@@ -789,27 +789,27 @@ pub struct _DATLENW<'a> {
 }
 impl<'a> _DATLENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: DATLENW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "16-bit data length"]
-    #[inline(always)]
+    #[inline]
     pub fn _16bits(self) -> &'a mut W {
         self.variant(DATLENW::_16BITS)
     }
     #[doc = "24-bit data length"]
-    #[inline(always)]
+    #[inline]
     pub fn _24bits(self) -> &'a mut W {
         self.variant(DATLENW::_24BITS)
     }
     #[doc = "32-bit data length"]
-    #[inline(always)]
+    #[inline]
     pub fn _32bits(self) -> &'a mut W {
         self.variant(DATLENW::_32BITS)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 1;
@@ -826,7 +826,7 @@ pub enum CHLENW {
 impl CHLENW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CHLENW::_16BITS => false,
@@ -840,19 +840,19 @@ pub struct _CHLENW<'a> {
 }
 impl<'a> _CHLENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CHLENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "16-bit wide"]
-    #[inline(always)]
+    #[inline]
     pub fn _16bits(self) -> &'a mut W {
         self.variant(CHLENW::_16BITS)
     }
     #[doc = "32-bit wide"]
-    #[inline(always)]
+    #[inline]
     pub fn _32bits(self) -> &'a mut W {
         self.variant(CHLENW::_32BITS)
     }
@@ -865,7 +865,7 @@ impl<'a> _CHLENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -876,12 +876,12 @@ impl<'a> _CHLENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 11 - I2S mode selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2smod(&self) -> I2SMODR {
         I2SMODR::_from({
             const MASK: bool = true;
@@ -890,7 +890,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - I2S Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn i2se(&self) -> I2SER {
         I2SER::_from({
             const MASK: bool = true;
@@ -899,7 +899,7 @@ impl R {
         })
     }
     #[doc = "Bits 8:9 - I2S configuration mode"]
-    #[inline(always)]
+    #[inline]
     pub fn i2scfg(&self) -> I2SCFGR {
         I2SCFGR::_from({
             const MASK: u8 = 3;
@@ -908,7 +908,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - PCM frame synchronization"]
-    #[inline(always)]
+    #[inline]
     pub fn pcmsync(&self) -> PCMSYNCR {
         PCMSYNCR::_from({
             const MASK: bool = true;
@@ -917,7 +917,7 @@ impl R {
         })
     }
     #[doc = "Bits 4:5 - I2S standard selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2sstd(&self) -> I2SSTDR {
         I2SSTDR::_from({
             const MASK: u8 = 3;
@@ -926,7 +926,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Steady state clock polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn ckpol(&self) -> CKPOLR {
         CKPOLR::_from({
             const MASK: bool = true;
@@ -935,7 +935,7 @@ impl R {
         })
     }
     #[doc = "Bits 1:2 - Data length to be transferred"]
-    #[inline(always)]
+    #[inline]
     pub fn datlen(&self) -> DATLENR {
         DATLENR::_from({
             const MASK: u8 = 3;
@@ -944,7 +944,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Channel length (number of bits per audio channel)"]
-    #[inline(always)]
+    #[inline]
     pub fn chlen(&self) -> CHLENR {
         CHLENR::_from({
             const MASK: bool = true;
@@ -955,53 +955,53 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 11 - I2S mode selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2smod(&mut self) -> _I2SMODW {
         _I2SMODW { w: self }
     }
     #[doc = "Bit 10 - I2S Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn i2se(&mut self) -> _I2SEW {
         _I2SEW { w: self }
     }
     #[doc = "Bits 8:9 - I2S configuration mode"]
-    #[inline(always)]
+    #[inline]
     pub fn i2scfg(&mut self) -> _I2SCFGW {
         _I2SCFGW { w: self }
     }
     #[doc = "Bit 7 - PCM frame synchronization"]
-    #[inline(always)]
+    #[inline]
     pub fn pcmsync(&mut self) -> _PCMSYNCW {
         _PCMSYNCW { w: self }
     }
     #[doc = "Bits 4:5 - I2S standard selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2sstd(&mut self) -> _I2SSTDW {
         _I2SSTDW { w: self }
     }
     #[doc = "Bit 3 - Steady state clock polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn ckpol(&mut self) -> _CKPOLW {
         _CKPOLW { w: self }
     }
     #[doc = "Bits 1:2 - Data length to be transferred"]
-    #[inline(always)]
+    #[inline]
     pub fn datlen(&mut self) -> _DATLENW {
         _DATLENW { w: self }
     }
     #[doc = "Bit 0 - Channel length (number of bits per audio channel)"]
-    #[inline(always)]
+    #[inline]
     pub fn chlen(&mut self) -> _CHLENW {
         _CHLENW { w: self }
     }

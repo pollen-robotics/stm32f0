@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::MODER {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::MODER {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::MODER {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -52,7 +52,7 @@ pub enum MODER15R {
 }
 impl MODER15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             MODER15R::INPUT => 0,
@@ -63,7 +63,7 @@ impl MODER15R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> MODER15R {
         match value {
             0 => MODER15R::INPUT,
@@ -74,22 +74,22 @@ impl MODER15R {
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_input(&self) -> bool {
         *self == MODER15R::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_output(&self) -> bool {
         *self == MODER15R::OUTPUT
     }
     #[doc = "Checks if the value of the field is `ALTERNATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_alternate(&self) -> bool {
         *self == MODER15R::ALTERNATE
     }
     #[doc = "Checks if the value of the field is `ANALOG`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_analog(&self) -> bool {
         *self == MODER15R::ANALOG
     }
@@ -134,7 +134,7 @@ pub enum MODER15W {
 impl MODER15W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             MODER15W::INPUT => 0,
@@ -150,34 +150,34 @@ pub struct _MODER15W<'a> {
 }
 impl<'a> _MODER15W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER15W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 30;
@@ -194,34 +194,34 @@ pub struct _MODER14W<'a> {
 }
 impl<'a> _MODER14W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER14W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 28;
@@ -238,34 +238,34 @@ pub struct _MODER13W<'a> {
 }
 impl<'a> _MODER13W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER13W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 26;
@@ -282,34 +282,34 @@ pub struct _MODER12W<'a> {
 }
 impl<'a> _MODER12W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER12W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 24;
@@ -326,34 +326,34 @@ pub struct _MODER11W<'a> {
 }
 impl<'a> _MODER11W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER11W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 22;
@@ -370,34 +370,34 @@ pub struct _MODER10W<'a> {
 }
 impl<'a> _MODER10W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER10W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 20;
@@ -414,34 +414,34 @@ pub struct _MODER9W<'a> {
 }
 impl<'a> _MODER9W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER9W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 18;
@@ -458,34 +458,34 @@ pub struct _MODER8W<'a> {
 }
 impl<'a> _MODER8W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER8W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 16;
@@ -502,34 +502,34 @@ pub struct _MODER7W<'a> {
 }
 impl<'a> _MODER7W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER7W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 14;
@@ -546,34 +546,34 @@ pub struct _MODER6W<'a> {
 }
 impl<'a> _MODER6W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER6W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 12;
@@ -590,34 +590,34 @@ pub struct _MODER5W<'a> {
 }
 impl<'a> _MODER5W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER5W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 10;
@@ -634,34 +634,34 @@ pub struct _MODER4W<'a> {
 }
 impl<'a> _MODER4W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER4W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 8;
@@ -678,34 +678,34 @@ pub struct _MODER3W<'a> {
 }
 impl<'a> _MODER3W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER3W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 6;
@@ -722,34 +722,34 @@ pub struct _MODER2W<'a> {
 }
 impl<'a> _MODER2W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER2W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 4;
@@ -766,34 +766,34 @@ pub struct _MODER1W<'a> {
 }
 impl<'a> _MODER1W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER1W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 2;
@@ -810,34 +810,34 @@ pub struct _MODER0W<'a> {
 }
 impl<'a> _MODER0W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MODER0W) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Input mode (reset state)"]
-    #[inline(always)]
+    #[inline]
     pub fn input(self) -> &'a mut W {
         self.variant(MODER15W::INPUT)
     }
     #[doc = "General purpose output mode"]
-    #[inline(always)]
+    #[inline]
     pub fn output(self) -> &'a mut W {
         self.variant(MODER15W::OUTPUT)
     }
     #[doc = "Alternate function mode"]
-    #[inline(always)]
+    #[inline]
     pub fn alternate(self) -> &'a mut W {
         self.variant(MODER15W::ALTERNATE)
     }
     #[doc = "Analog mode"]
-    #[inline(always)]
+    #[inline]
     pub fn analog(self) -> &'a mut W {
         self.variant(MODER15W::ANALOG)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
@@ -848,12 +848,12 @@ impl<'a> _MODER0W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder15(&self) -> MODER15R {
         MODER15R::_from({
             const MASK: u8 = 3;
@@ -862,7 +862,7 @@ impl R {
         })
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder14(&self) -> MODER14R {
         MODER14R::_from({
             const MASK: u8 = 3;
@@ -871,7 +871,7 @@ impl R {
         })
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder13(&self) -> MODER13R {
         MODER13R::_from({
             const MASK: u8 = 3;
@@ -880,7 +880,7 @@ impl R {
         })
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder12(&self) -> MODER12R {
         MODER12R::_from({
             const MASK: u8 = 3;
@@ -889,7 +889,7 @@ impl R {
         })
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder11(&self) -> MODER11R {
         MODER11R::_from({
             const MASK: u8 = 3;
@@ -898,7 +898,7 @@ impl R {
         })
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder10(&self) -> MODER10R {
         MODER10R::_from({
             const MASK: u8 = 3;
@@ -907,7 +907,7 @@ impl R {
         })
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder9(&self) -> MODER9R {
         MODER9R::_from({
             const MASK: u8 = 3;
@@ -916,7 +916,7 @@ impl R {
         })
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder8(&self) -> MODER8R {
         MODER8R::_from({
             const MASK: u8 = 3;
@@ -925,7 +925,7 @@ impl R {
         })
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder7(&self) -> MODER7R {
         MODER7R::_from({
             const MASK: u8 = 3;
@@ -934,7 +934,7 @@ impl R {
         })
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder6(&self) -> MODER6R {
         MODER6R::_from({
             const MASK: u8 = 3;
@@ -943,7 +943,7 @@ impl R {
         })
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder5(&self) -> MODER5R {
         MODER5R::_from({
             const MASK: u8 = 3;
@@ -952,7 +952,7 @@ impl R {
         })
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder4(&self) -> MODER4R {
         MODER4R::_from({
             const MASK: u8 = 3;
@@ -961,7 +961,7 @@ impl R {
         })
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder3(&self) -> MODER3R {
         MODER3R::_from({
             const MASK: u8 = 3;
@@ -970,7 +970,7 @@ impl R {
         })
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder2(&self) -> MODER2R {
         MODER2R::_from({
             const MASK: u8 = 3;
@@ -979,7 +979,7 @@ impl R {
         })
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder1(&self) -> MODER1R {
         MODER1R::_from({
             const MASK: u8 = 3;
@@ -988,7 +988,7 @@ impl R {
         })
     }
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder0(&self) -> MODER0R {
         MODER0R::_from({
             const MASK: u8 = 3;
@@ -999,93 +999,93 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder15(&mut self) -> _MODER15W {
         _MODER15W { w: self }
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder14(&mut self) -> _MODER14W {
         _MODER14W { w: self }
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder13(&mut self) -> _MODER13W {
         _MODER13W { w: self }
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder12(&mut self) -> _MODER12W {
         _MODER12W { w: self }
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder11(&mut self) -> _MODER11W {
         _MODER11W { w: self }
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder10(&mut self) -> _MODER10W {
         _MODER10W { w: self }
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder9(&mut self) -> _MODER9W {
         _MODER9W { w: self }
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder8(&mut self) -> _MODER8W {
         _MODER8W { w: self }
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder7(&mut self) -> _MODER7W {
         _MODER7W { w: self }
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder6(&mut self) -> _MODER6W {
         _MODER6W { w: self }
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder5(&mut self) -> _MODER5W {
         _MODER5W { w: self }
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder4(&mut self) -> _MODER4W {
         _MODER4W { w: self }
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder3(&mut self) -> _MODER3W {
         _MODER3W { w: self }
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder2(&mut self) -> _MODER2W {
         _MODER2W { w: self }
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder1(&mut self) -> _MODER1W {
         _MODER1W { w: self }
     }
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn moder0(&mut self) -> _MODER0W {
         _MODER0W { w: self }
     }

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::APB2RSTR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::APB2RSTR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::APB2RSTR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum SYSCFGRSTR {
 }
 impl SYSCFGRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SYSCFGRSTR::RESET => true,
@@ -69,7 +69,7 @@ impl SYSCFGRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SYSCFGRSTR {
         match value {
             true => SYSCFGRSTR::RESET,
@@ -77,7 +77,7 @@ impl SYSCFGRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == SYSCFGRSTR::RESET
     }
@@ -90,17 +90,17 @@ pub enum ADCRSTR {
 }
 impl ADCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             ADCRSTR::RESET => true,
@@ -109,7 +109,7 @@ impl ADCRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> ADCRSTR {
         match value {
             true => ADCRSTR::RESET,
@@ -117,7 +117,7 @@ impl ADCRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == ADCRSTR::RESET
     }
@@ -130,17 +130,17 @@ pub enum TIM1RSTR {
 }
 impl TIM1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TIM1RSTR::RESET => true,
@@ -149,7 +149,7 @@ impl TIM1RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TIM1RSTR {
         match value {
             true => TIM1RSTR::RESET,
@@ -157,7 +157,7 @@ impl TIM1RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == TIM1RSTR::RESET
     }
@@ -170,17 +170,17 @@ pub enum SPI1RSTR {
 }
 impl SPI1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SPI1RSTR::RESET => true,
@@ -189,7 +189,7 @@ impl SPI1RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SPI1RSTR {
         match value {
             true => SPI1RSTR::RESET,
@@ -197,7 +197,7 @@ impl SPI1RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == SPI1RSTR::RESET
     }
@@ -210,17 +210,17 @@ pub enum USART1RSTR {
 }
 impl USART1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             USART1RSTR::RESET => true,
@@ -229,7 +229,7 @@ impl USART1RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> USART1RSTR {
         match value {
             true => USART1RSTR::RESET,
@@ -237,7 +237,7 @@ impl USART1RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == USART1RSTR::RESET
     }
@@ -250,17 +250,17 @@ pub enum TIM15RSTR {
 }
 impl TIM15RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TIM15RSTR::RESET => true,
@@ -269,7 +269,7 @@ impl TIM15RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TIM15RSTR {
         match value {
             true => TIM15RSTR::RESET,
@@ -277,7 +277,7 @@ impl TIM15RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == TIM15RSTR::RESET
     }
@@ -290,17 +290,17 @@ pub enum TIM16RSTR {
 }
 impl TIM16RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TIM16RSTR::RESET => true,
@@ -309,7 +309,7 @@ impl TIM16RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TIM16RSTR {
         match value {
             true => TIM16RSTR::RESET,
@@ -317,7 +317,7 @@ impl TIM16RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == TIM16RSTR::RESET
     }
@@ -330,17 +330,17 @@ pub enum TIM17RSTR {
 }
 impl TIM17RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TIM17RSTR::RESET => true,
@@ -349,7 +349,7 @@ impl TIM17RSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TIM17RSTR {
         match value {
             true => TIM17RSTR::RESET,
@@ -357,7 +357,7 @@ impl TIM17RSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == TIM17RSTR::RESET
     }
@@ -370,17 +370,17 @@ pub enum DBGMCURSTR {
 }
 impl DBGMCURSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             DBGMCURSTR::RESET => true,
@@ -389,7 +389,7 @@ impl DBGMCURSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> DBGMCURSTR {
         match value {
             true => DBGMCURSTR::RESET,
@@ -397,7 +397,7 @@ impl DBGMCURSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == DBGMCURSTR::RESET
     }
@@ -409,7 +409,7 @@ pub enum SYSCFGRSTW {
 impl SYSCFGRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SYSCFGRSTW::RESET => true,
@@ -422,14 +422,14 @@ pub struct _SYSCFGRSTW<'a> {
 }
 impl<'a> _SYSCFGRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SYSCFGRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset SYSCFG."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(SYSCFGRSTW::RESET)
     }
@@ -442,7 +442,7 @@ impl<'a> _SYSCFGRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -458,7 +458,7 @@ pub enum ADCRSTW {
 impl ADCRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             ADCRSTW::RESET => true,
@@ -471,14 +471,14 @@ pub struct _ADCRSTW<'a> {
 }
 impl<'a> _ADCRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ADCRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset ADC."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ADCRSTW::RESET)
     }
@@ -491,7 +491,7 @@ impl<'a> _ADCRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -507,7 +507,7 @@ pub enum TIM1RSTW {
 impl TIM1RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TIM1RSTW::RESET => true,
@@ -520,14 +520,14 @@ pub struct _TIM1RSTW<'a> {
 }
 impl<'a> _TIM1RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM1RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset TIM1 timer."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(TIM1RSTW::RESET)
     }
@@ -540,7 +540,7 @@ impl<'a> _TIM1RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -556,7 +556,7 @@ pub enum SPI1RSTW {
 impl SPI1RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SPI1RSTW::RESET => true,
@@ -569,14 +569,14 @@ pub struct _SPI1RSTW<'a> {
 }
 impl<'a> _SPI1RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SPI1RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset SPI1."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(SPI1RSTW::RESET)
     }
@@ -589,7 +589,7 @@ impl<'a> _SPI1RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -605,7 +605,7 @@ pub enum USART1RSTW {
 impl USART1RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             USART1RSTW::RESET => true,
@@ -618,14 +618,14 @@ pub struct _USART1RSTW<'a> {
 }
 impl<'a> _USART1RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: USART1RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset USART1."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(USART1RSTW::RESET)
     }
@@ -638,7 +638,7 @@ impl<'a> _USART1RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -654,7 +654,7 @@ pub enum TIM15RSTW {
 impl TIM15RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TIM15RSTW::RESET => true,
@@ -667,14 +667,14 @@ pub struct _TIM15RSTW<'a> {
 }
 impl<'a> _TIM15RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM15RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset TIM15 timer."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(TIM15RSTW::RESET)
     }
@@ -687,7 +687,7 @@ impl<'a> _TIM15RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -703,7 +703,7 @@ pub enum TIM16RSTW {
 impl TIM16RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TIM16RSTW::RESET => true,
@@ -716,14 +716,14 @@ pub struct _TIM16RSTW<'a> {
 }
 impl<'a> _TIM16RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM16RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset TIM16 timer."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(TIM16RSTW::RESET)
     }
@@ -736,7 +736,7 @@ impl<'a> _TIM16RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -752,7 +752,7 @@ pub enum TIM17RSTW {
 impl TIM17RSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TIM17RSTW::RESET => true,
@@ -765,14 +765,14 @@ pub struct _TIM17RSTW<'a> {
 }
 impl<'a> _TIM17RSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIM17RSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset TIM17 timer."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(TIM17RSTW::RESET)
     }
@@ -785,7 +785,7 @@ impl<'a> _TIM17RSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -801,7 +801,7 @@ pub enum DBGMCURSTW {
 impl DBGMCURSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             DBGMCURSTW::RESET => true,
@@ -814,14 +814,14 @@ pub struct _DBGMCURSTW<'a> {
 }
 impl<'a> _DBGMCURSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: DBGMCURSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset Debug MCU."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(DBGMCURSTW::RESET)
     }
@@ -834,7 +834,7 @@ impl<'a> _DBGMCURSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -845,12 +845,12 @@ impl<'a> _DBGMCURSTW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - SYSCFG and COMP reset"]
-    #[inline(always)]
+    #[inline]
     pub fn syscfgrst(&self) -> SYSCFGRSTR {
         SYSCFGRSTR::_from({
             const MASK: bool = true;
@@ -859,7 +859,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - ADC interface reset"]
-    #[inline(always)]
+    #[inline]
     pub fn adcrst(&self) -> ADCRSTR {
         ADCRSTR::_from({
             const MASK: bool = true;
@@ -868,7 +868,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - TIM1 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1rst(&self) -> TIM1RSTR {
         TIM1RSTR::_from({
             const MASK: bool = true;
@@ -877,7 +877,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - SPI 1 reset"]
-    #[inline(always)]
+    #[inline]
     pub fn spi1rst(&self) -> SPI1RSTR {
         SPI1RSTR::_from({
             const MASK: bool = true;
@@ -886,7 +886,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - USART1 reset"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1rst(&self) -> USART1RSTR {
         USART1RSTR::_from({
             const MASK: bool = true;
@@ -895,7 +895,7 @@ impl R {
         })
     }
     #[doc = "Bit 16 - TIM15 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim15rst(&self) -> TIM15RSTR {
         TIM15RSTR::_from({
             const MASK: bool = true;
@@ -904,7 +904,7 @@ impl R {
         })
     }
     #[doc = "Bit 17 - TIM16 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16rst(&self) -> TIM16RSTR {
         TIM16RSTR::_from({
             const MASK: bool = true;
@@ -913,7 +913,7 @@ impl R {
         })
     }
     #[doc = "Bit 18 - TIM17 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17rst(&self) -> TIM17RSTR {
         TIM17RSTR::_from({
             const MASK: bool = true;
@@ -922,7 +922,7 @@ impl R {
         })
     }
     #[doc = "Bit 22 - Debug MCU reset"]
-    #[inline(always)]
+    #[inline]
     pub fn dbgmcurst(&self) -> DBGMCURSTR {
         DBGMCURSTR::_from({
             const MASK: bool = true;
@@ -933,58 +933,58 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - SYSCFG and COMP reset"]
-    #[inline(always)]
+    #[inline]
     pub fn syscfgrst(&mut self) -> _SYSCFGRSTW {
         _SYSCFGRSTW { w: self }
     }
     #[doc = "Bit 9 - ADC interface reset"]
-    #[inline(always)]
+    #[inline]
     pub fn adcrst(&mut self) -> _ADCRSTW {
         _ADCRSTW { w: self }
     }
     #[doc = "Bit 11 - TIM1 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim1rst(&mut self) -> _TIM1RSTW {
         _TIM1RSTW { w: self }
     }
     #[doc = "Bit 12 - SPI 1 reset"]
-    #[inline(always)]
+    #[inline]
     pub fn spi1rst(&mut self) -> _SPI1RSTW {
         _SPI1RSTW { w: self }
     }
     #[doc = "Bit 14 - USART1 reset"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1rst(&mut self) -> _USART1RSTW {
         _USART1RSTW { w: self }
     }
     #[doc = "Bit 16 - TIM15 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim15rst(&mut self) -> _TIM15RSTW {
         _TIM15RSTW { w: self }
     }
     #[doc = "Bit 17 - TIM16 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim16rst(&mut self) -> _TIM16RSTW {
         _TIM16RSTW { w: self }
     }
     #[doc = "Bit 18 - TIM17 timer reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tim17rst(&mut self) -> _TIM17RSTW {
         _TIM17RSTW { w: self }
     }
     #[doc = "Bit 22 - Debug MCU reset"]
-    #[inline(always)]
+    #[inline]
     pub fn dbgmcurst(&mut self) -> _DBGMCURSTW {
         _DBGMCURSTW { w: self }
     }

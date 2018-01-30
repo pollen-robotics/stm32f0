@@ -2,29 +2,49 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - time register"] pub tr: TR,
-    #[doc = "0x04 - date register"] pub dr: DR,
-    #[doc = "0x08 - control register"] pub cr: CR,
-    #[doc = "0x0c - initialization and status register"] pub isr: ISR,
-    #[doc = "0x10 - prescaler register"] pub prer: PRER,
+    #[doc = "0x00 - time register"]
+    pub tr: TR,
+    #[doc = "0x04 - date register"]
+    pub dr: DR,
+    #[doc = "0x08 - control register"]
+    pub cr: CR,
+    #[doc = "0x0c - initialization and status register"]
+    pub isr: ISR,
+    #[doc = "0x10 - prescaler register"]
+    pub prer: PRER,
     _reserved0: [u8; 8usize],
-    #[doc = "0x1c - alarm A register"] pub alrmar: ALRMAR,
+    #[doc = "0x1c - alarm A register"]
+    pub alrmar: ALRMAR,
     _reserved1: [u8; 4usize],
-    #[doc = "0x24 - write protection register"] pub wpr: WPR,
-    #[doc = "0x28 - sub second register"] pub ssr: SSR,
-    #[doc = "0x2c - shift control register"] pub shiftr: SHIFTR,
-    #[doc = "0x30 - timestamp time register"] pub tstr: TSTR,
-    #[doc = "0x34 - timestamp date register"] pub tsdr: TSDR,
-    #[doc = "0x38 - time-stamp sub second register"] pub tsssr: TSSSR,
-    #[doc = "0x3c - calibration register"] pub calr: CALR,
-    #[doc = "0x40 - tamper and alternate function configuration register"] pub tafcr: TAFCR,
-    #[doc = "0x44 - alarm A sub second register"] pub alrmassr: ALRMASSR,
+    #[doc = "0x24 - write protection register"]
+    pub wpr: WPR,
+    #[doc = "0x28 - sub second register"]
+    pub ssr: SSR,
+    #[doc = "0x2c - shift control register"]
+    pub shiftr: SHIFTR,
+    #[doc = "0x30 - timestamp time register"]
+    pub tstr: TSTR,
+    #[doc = "0x34 - timestamp date register"]
+    pub tsdr: TSDR,
+    #[doc = "0x38 - time-stamp sub second register"]
+    pub tsssr: TSSSR,
+    #[doc = "0x3c - calibration register"]
+    pub calr: CALR,
+    #[doc = "0x40 - tamper and alternate function configuration register"]
+    pub tafcr: TAFCR,
+    #[doc = "0x44 - alarm A sub second register"]
+    pub alrmassr: ALRMASSR,
     _reserved2: [u8; 8usize],
-    #[doc = "0x50 - backup register"] pub bkp0r: BKP0R,
-    #[doc = "0x54 - backup register"] pub bkp1r: BKP1R,
-    #[doc = "0x58 - backup register"] pub bkp2r: BKP2R,
-    #[doc = "0x5c - backup register"] pub bkp3r: BKP3R,
-    #[doc = "0x60 - backup register"] pub bkp4r: BKP4R,
+    #[doc = "0x50 - backup register"]
+    pub bkp0r: BKP0R,
+    #[doc = "0x54 - backup register"]
+    pub bkp1r: BKP1R,
+    #[doc = "0x58 - backup register"]
+    pub bkp2r: BKP2R,
+    #[doc = "0x5c - backup register"]
+    pub bkp3r: BKP3R,
+    #[doc = "0x60 - backup register"]
+    pub bkp4r: BKP4R,
 }
 #[doc = "time register"]
 pub struct TR {

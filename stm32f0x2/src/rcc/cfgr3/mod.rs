@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR3 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CFGR3 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CFGR3 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -52,7 +52,7 @@ pub enum USART1SWR {
 }
 impl USART1SWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             USART1SWR::PCLK => 0,
@@ -63,7 +63,7 @@ impl USART1SWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> USART1SWR {
         match value {
             0 => USART1SWR::PCLK,
@@ -74,22 +74,22 @@ impl USART1SWR {
         }
     }
     #[doc = "Checks if the value of the field is `PCLK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pclk(&self) -> bool {
         *self == USART1SWR::PCLK
     }
     #[doc = "Checks if the value of the field is `SYSTEMCLOCK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_system_clock(&self) -> bool {
         *self == USART1SWR::SYSTEMCLOCK
     }
     #[doc = "Checks if the value of the field is `LSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lse(&self) -> bool {
         *self == USART1SWR::LSE
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == USART1SWR::HSI
     }
@@ -102,17 +102,17 @@ pub enum I2C1SWR {
 }
 impl I2C1SWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             I2C1SWR::HSI => false,
@@ -121,7 +121,7 @@ impl I2C1SWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> I2C1SWR {
         match value {
             false => I2C1SWR::HSI,
@@ -129,12 +129,12 @@ impl I2C1SWR {
         }
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == I2C1SWR::HSI
     }
     #[doc = "Checks if the value of the field is `SYSCLK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_sysclk(&self) -> bool {
         *self == I2C1SWR::SYSCLK
     }
@@ -147,17 +147,17 @@ pub enum CECSWR {
 }
 impl CECSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CECSWR::HSI => false,
@@ -166,7 +166,7 @@ impl CECSWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CECSWR {
         match value {
             false => CECSWR::HSI,
@@ -174,12 +174,12 @@ impl CECSWR {
         }
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == CECSWR::HSI
     }
     #[doc = "Checks if the value of the field is `LSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lse(&self) -> bool {
         *self == CECSWR::LSE
     }
@@ -192,17 +192,17 @@ pub enum USBSWR {
 }
 impl USBSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             USBSWR::HSI48 => false,
@@ -211,7 +211,7 @@ impl USBSWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> USBSWR {
         match value {
             false => USBSWR::HSI48,
@@ -219,12 +219,12 @@ impl USBSWR {
         }
     }
     #[doc = "Checks if the value of the field is `HSI48`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi48(&self) -> bool {
         *self == USBSWR::HSI48
     }
     #[doc = "Checks if the value of the field is `PLLCLOCK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pllclock(&self) -> bool {
         *self == USBSWR::PLLCLOCK
     }
@@ -235,17 +235,17 @@ pub struct ADCSWR {
 }
 impl ADCSWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -260,7 +260,7 @@ pub enum USART2SWR {
 }
 impl USART2SWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             USART2SWR::PCLK => 0,
@@ -271,7 +271,7 @@ impl USART2SWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> USART2SWR {
         match value {
             0 => USART2SWR::PCLK,
@@ -282,22 +282,22 @@ impl USART2SWR {
         }
     }
     #[doc = "Checks if the value of the field is `PCLK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pclk(&self) -> bool {
         *self == USART2SWR::PCLK
     }
     #[doc = "Checks if the value of the field is `SYSTEMCLOCK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_system_clock(&self) -> bool {
         *self == USART2SWR::SYSTEMCLOCK
     }
     #[doc = "Checks if the value of the field is `LSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lse(&self) -> bool {
         *self == USART2SWR::LSE
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == USART2SWR::HSI
     }
@@ -312,7 +312,7 @@ pub enum USART1SWW {
 impl USART1SWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             USART1SWW::PCLK => 0,
@@ -328,34 +328,34 @@ pub struct _USART1SWW<'a> {
 }
 impl<'a> _USART1SWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: USART1SWW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "PCLK selected as USART3 clock source (default)."]
-    #[inline(always)]
+    #[inline]
     pub fn pclk(self) -> &'a mut W {
         self.variant(USART1SWW::PCLK)
     }
     #[doc = "System clock (SYSCLK) selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn system_clock(self) -> &'a mut W {
         self.variant(USART1SWW::SYSTEMCLOCK)
     }
     #[doc = "LSE clock selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn lse(self) -> &'a mut W {
         self.variant(USART1SWW::LSE)
     }
     #[doc = "HSI clock selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(USART1SWW::HSI)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
@@ -372,7 +372,7 @@ pub enum I2C1SWW {
 impl I2C1SWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             I2C1SWW::HSI => false,
@@ -386,19 +386,19 @@ pub struct _I2C1SWW<'a> {
 }
 impl<'a> _I2C1SWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: I2C1SWW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI clock selected as I2C1 clock source (default)."]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(I2C1SWW::HSI)
     }
     #[doc = "System clock (SYSCLK) selected as I2C1 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn sysclk(self) -> &'a mut W {
         self.variant(I2C1SWW::SYSCLK)
     }
@@ -411,7 +411,7 @@ impl<'a> _I2C1SWW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -428,7 +428,7 @@ pub enum CECSWW {
 impl CECSWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CECSWW::HSI => false,
@@ -442,19 +442,19 @@ pub struct _CECSWW<'a> {
 }
 impl<'a> _CECSWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CECSWW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI clock, divided by 244, selected as CEC clock (default)."]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(CECSWW::HSI)
     }
     #[doc = "LSE clock selected as CEC clock."]
-    #[inline(always)]
+    #[inline]
     pub fn lse(self) -> &'a mut W {
         self.variant(CECSWW::LSE)
     }
@@ -467,7 +467,7 @@ impl<'a> _CECSWW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -484,7 +484,7 @@ pub enum USBSWW {
 impl USBSWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             USBSWW::HSI48 => false,
@@ -498,19 +498,19 @@ pub struct _USBSWW<'a> {
 }
 impl<'a> _USBSWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: USBSWW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI48 clock selected as USB clock source (default)."]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48(self) -> &'a mut W {
         self.variant(USBSWW::HSI48)
     }
     #[doc = "PLL clock (PLLCLK) selected as USB clock."]
-    #[inline(always)]
+    #[inline]
     pub fn pllclock(self) -> &'a mut W {
         self.variant(USBSWW::PLLCLOCK)
     }
@@ -523,7 +523,7 @@ impl<'a> _USBSWW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -546,7 +546,7 @@ impl<'a> _ADCSWW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -565,7 +565,7 @@ pub enum USART2SWW {
 impl USART2SWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             USART2SWW::PCLK => 0,
@@ -581,34 +581,34 @@ pub struct _USART2SWW<'a> {
 }
 impl<'a> _USART2SWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: USART2SWW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "PCLK selected as USART3 clock source (default)."]
-    #[inline(always)]
+    #[inline]
     pub fn pclk(self) -> &'a mut W {
         self.variant(USART2SWW::PCLK)
     }
     #[doc = "System clock (SYSCLK) selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn system_clock(self) -> &'a mut W {
         self.variant(USART2SWW::SYSTEMCLOCK)
     }
     #[doc = "LSE clock selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn lse(self) -> &'a mut W {
         self.variant(USART2SWW::LSE)
     }
     #[doc = "HSI clock selected as USART3 clock."]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(USART2SWW::HSI)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 16;
@@ -619,12 +619,12 @@ impl<'a> _USART2SWW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:1 - USART1 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1sw(&self) -> USART1SWR {
         USART1SWR::_from({
             const MASK: u8 = 3;
@@ -633,7 +633,7 @@ impl R {
         })
     }
     #[doc = "Bit 4 - I2C1 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1sw(&self) -> I2C1SWR {
         I2C1SWR::_from({
             const MASK: bool = true;
@@ -642,7 +642,7 @@ impl R {
         })
     }
     #[doc = "Bit 6 - HDMI CEC clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cecsw(&self) -> CECSWR {
         CECSWR::_from({
             const MASK: bool = true;
@@ -651,7 +651,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - USB clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usbsw(&self) -> USBSWR {
         USBSWR::_from({
             const MASK: bool = true;
@@ -660,7 +660,7 @@ impl R {
         })
     }
     #[doc = "Bit 8 - ADC clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn adcsw(&self) -> ADCSWR {
         let bits = {
             const MASK: bool = true;
@@ -670,7 +670,7 @@ impl R {
         ADCSWR { bits }
     }
     #[doc = "Bits 16:17 - USART2 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usart2sw(&self) -> USART2SWR {
         USART2SWR::_from({
             const MASK: u8 = 3;
@@ -681,43 +681,43 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:1 - USART1 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usart1sw(&mut self) -> _USART1SWW {
         _USART1SWW { w: self }
     }
     #[doc = "Bit 4 - I2C1 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn i2c1sw(&mut self) -> _I2C1SWW {
         _I2C1SWW { w: self }
     }
     #[doc = "Bit 6 - HDMI CEC clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cecsw(&mut self) -> _CECSWW {
         _CECSWW { w: self }
     }
     #[doc = "Bit 7 - USB clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usbsw(&mut self) -> _USBSWW {
         _USBSWW { w: self }
     }
     #[doc = "Bit 8 - ADC clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn adcsw(&mut self) -> _ADCSWW {
         _ADCSWW { w: self }
     }
     #[doc = "Bits 16:17 - USART2 clock source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn usart2sw(&mut self) -> _USART2SWW {
         _USART2SWW { w: self }
     }

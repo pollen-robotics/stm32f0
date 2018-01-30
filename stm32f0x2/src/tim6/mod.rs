@@ -2,16 +2,24 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - control register 1"] pub cr1: CR1,
-    #[doc = "0x04 - control register 2"] pub cr2: CR2,
+    #[doc = "0x00 - control register 1"]
+    pub cr1: CR1,
+    #[doc = "0x04 - control register 2"]
+    pub cr2: CR2,
     _reserved0: [u8; 4usize],
-    #[doc = "0x0c - DMA/Interrupt enable register"] pub dier: DIER,
-    #[doc = "0x10 - status register"] pub sr: SR,
-    #[doc = "0x14 - event generation register"] pub egr: EGR,
+    #[doc = "0x0c - DMA/Interrupt enable register"]
+    pub dier: DIER,
+    #[doc = "0x10 - status register"]
+    pub sr: SR,
+    #[doc = "0x14 - event generation register"]
+    pub egr: EGR,
     _reserved1: [u8; 12usize],
-    #[doc = "0x24 - counter"] pub cnt: CNT,
-    #[doc = "0x28 - prescaler"] pub psc: PSC,
-    #[doc = "0x2c - auto-reload register"] pub arr: ARR,
+    #[doc = "0x24 - counter"]
+    pub cnt: CNT,
+    #[doc = "0x28 - prescaler"]
+    pub psc: PSC,
+    #[doc = "0x2c - auto-reload register"]
+    pub arr: ARR,
 }
 #[doc = "control register 1"]
 pub struct CR1 {

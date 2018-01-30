@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum CC4OFR {
 }
 impl CC4OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC4OFR::CLEARED => false,
@@ -69,7 +69,7 @@ impl CC4OFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC4OFR {
         match value {
             false => CC4OFR::CLEARED,
@@ -77,7 +77,7 @@ impl CC4OFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC4OFR::CLEARED
     }
@@ -90,17 +90,17 @@ pub enum CC3OFR {
 }
 impl CC3OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC3OFR::CLEARED => false,
@@ -109,7 +109,7 @@ impl CC3OFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC3OFR {
         match value {
             false => CC3OFR::CLEARED,
@@ -117,7 +117,7 @@ impl CC3OFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC3OFR::CLEARED
     }
@@ -130,17 +130,17 @@ pub enum CC2OFR {
 }
 impl CC2OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC2OFR::CLEARED => false,
@@ -149,7 +149,7 @@ impl CC2OFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC2OFR {
         match value {
             false => CC2OFR::CLEARED,
@@ -157,7 +157,7 @@ impl CC2OFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC2OFR::CLEARED
     }
@@ -170,17 +170,17 @@ pub enum CC1OFR {
 }
 impl CC1OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1OFR::CLEARED => false,
@@ -189,7 +189,7 @@ impl CC1OFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1OFR {
         match value {
             false => CC1OFR::CLEARED,
@@ -197,7 +197,7 @@ impl CC1OFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC1OFR::CLEARED
     }
@@ -210,17 +210,17 @@ pub enum TIFR {
 }
 impl TIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TIFR::CLEARED => false,
@@ -229,7 +229,7 @@ impl TIFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TIFR {
         match value {
             false => TIFR::CLEARED,
@@ -237,7 +237,7 @@ impl TIFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == TIFR::CLEARED
     }
@@ -250,17 +250,17 @@ pub enum CC4IFR {
 }
 impl CC4IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC4IFR::CLEARED => false,
@@ -269,7 +269,7 @@ impl CC4IFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC4IFR {
         match value {
             false => CC4IFR::CLEARED,
@@ -277,7 +277,7 @@ impl CC4IFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC4IFR::CLEARED
     }
@@ -290,17 +290,17 @@ pub enum CC3IFR {
 }
 impl CC3IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC3IFR::CLEARED => false,
@@ -309,7 +309,7 @@ impl CC3IFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC3IFR {
         match value {
             false => CC3IFR::CLEARED,
@@ -317,7 +317,7 @@ impl CC3IFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC3IFR::CLEARED
     }
@@ -330,17 +330,17 @@ pub enum CC2IFR {
 }
 impl CC2IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC2IFR::CLEARED => false,
@@ -349,7 +349,7 @@ impl CC2IFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC2IFR {
         match value {
             false => CC2IFR::CLEARED,
@@ -357,7 +357,7 @@ impl CC2IFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC2IFR::CLEARED
     }
@@ -370,17 +370,17 @@ pub enum CC1IFR {
 }
 impl CC1IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CC1IFR::CLEARED => false,
@@ -389,7 +389,7 @@ impl CC1IFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CC1IFR {
         match value {
             false => CC1IFR::CLEARED,
@@ -397,7 +397,7 @@ impl CC1IFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == CC1IFR::CLEARED
     }
@@ -410,17 +410,17 @@ pub enum UIFR {
 }
 impl UIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             UIFR::NOUPDATE => false,
@@ -429,7 +429,7 @@ impl UIFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> UIFR {
         match value {
             false => UIFR::NOUPDATE,
@@ -437,12 +437,12 @@ impl UIFR {
         }
     }
     #[doc = "Checks if the value of the field is `NOUPDATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_update(&self) -> bool {
         *self == UIFR::NOUPDATE
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pending(&self) -> bool {
         *self == UIFR::PENDING
     }
@@ -454,7 +454,7 @@ pub enum CC4OFW {
 impl CC4OFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC4OFW::CLEARED => false,
@@ -467,14 +467,14 @@ pub struct _CC4OFW<'a> {
 }
 impl<'a> _CC4OFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC4OFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC4OFW::CLEARED)
     }
@@ -487,7 +487,7 @@ impl<'a> _CC4OFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -503,7 +503,7 @@ pub enum CC3OFW {
 impl CC3OFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC3OFW::CLEARED => false,
@@ -516,14 +516,14 @@ pub struct _CC3OFW<'a> {
 }
 impl<'a> _CC3OFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC3OFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC3OFW::CLEARED)
     }
@@ -536,7 +536,7 @@ impl<'a> _CC3OFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -552,7 +552,7 @@ pub enum CC2OFW {
 impl CC2OFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC2OFW::CLEARED => false,
@@ -565,14 +565,14 @@ pub struct _CC2OFW<'a> {
 }
 impl<'a> _CC2OFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC2OFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC2OFW::CLEARED)
     }
@@ -585,7 +585,7 @@ impl<'a> _CC2OFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -601,7 +601,7 @@ pub enum CC1OFW {
 impl CC1OFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1OFW::CLEARED => false,
@@ -614,14 +614,14 @@ pub struct _CC1OFW<'a> {
 }
 impl<'a> _CC1OFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1OFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC1OFW::CLEARED)
     }
@@ -634,7 +634,7 @@ impl<'a> _CC1OFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -650,7 +650,7 @@ pub enum TIFW {
 impl TIFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TIFW::CLEARED => false,
@@ -663,14 +663,14 @@ pub struct _TIFW<'a> {
 }
 impl<'a> _TIFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TIFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(TIFW::CLEARED)
     }
@@ -683,7 +683,7 @@ impl<'a> _TIFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -699,7 +699,7 @@ pub enum CC4IFW {
 impl CC4IFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC4IFW::CLEARED => false,
@@ -712,14 +712,14 @@ pub struct _CC4IFW<'a> {
 }
 impl<'a> _CC4IFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC4IFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC4IFW::CLEARED)
     }
@@ -732,7 +732,7 @@ impl<'a> _CC4IFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -748,7 +748,7 @@ pub enum CC3IFW {
 impl CC3IFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC3IFW::CLEARED => false,
@@ -761,14 +761,14 @@ pub struct _CC3IFW<'a> {
 }
 impl<'a> _CC3IFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC3IFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC3IFW::CLEARED)
     }
@@ -781,7 +781,7 @@ impl<'a> _CC3IFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -797,7 +797,7 @@ pub enum CC2IFW {
 impl CC2IFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC2IFW::CLEARED => false,
@@ -810,14 +810,14 @@ pub struct _CC2IFW<'a> {
 }
 impl<'a> _CC2IFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC2IFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC2IFW::CLEARED)
     }
@@ -830,7 +830,7 @@ impl<'a> _CC2IFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -846,7 +846,7 @@ pub enum CC1IFW {
 impl CC1IFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1IFW::CLEARED => false,
@@ -859,14 +859,14 @@ pub struct _CC1IFW<'a> {
 }
 impl<'a> _CC1IFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1IFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear overcapture flag."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(CC1IFW::CLEARED)
     }
@@ -879,7 +879,7 @@ impl<'a> _CC1IFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -895,7 +895,7 @@ pub enum UIFW {
 impl UIFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UIFW::CLEAR => false,
@@ -908,14 +908,14 @@ pub struct _UIFW<'a> {
 }
 impl<'a> _UIFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UIFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clears the update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn clear(self) -> &'a mut W {
         self.variant(UIFW::CLEAR)
     }
@@ -928,7 +928,7 @@ impl<'a> _UIFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -939,12 +939,12 @@ impl<'a> _UIFW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 12 - Capture/Compare 4 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc4of(&self) -> CC4OFR {
         CC4OFR::_from({
             const MASK: bool = true;
@@ -953,7 +953,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - Capture/Compare 3 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc3of(&self) -> CC3OFR {
         CC3OFR::_from({
             const MASK: bool = true;
@@ -962,7 +962,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - Capture/compare 2 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2of(&self) -> CC2OFR {
         CC2OFR::_from({
             const MASK: bool = true;
@@ -971,7 +971,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1of(&self) -> CC1OFR {
         CC1OFR::_from({
             const MASK: bool = true;
@@ -980,7 +980,7 @@ impl R {
         })
     }
     #[doc = "Bit 6 - Trigger interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn tif(&self) -> TIFR {
         TIFR::_from({
             const MASK: bool = true;
@@ -989,7 +989,7 @@ impl R {
         })
     }
     #[doc = "Bit 4 - Capture/Compare 4 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc4if(&self) -> CC4IFR {
         CC4IFR::_from({
             const MASK: bool = true;
@@ -998,7 +998,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Capture/Compare 3 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc3if(&self) -> CC3IFR {
         CC3IFR::_from({
             const MASK: bool = true;
@@ -1007,7 +1007,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Capture/Compare 2 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2if(&self) -> CC2IFR {
         CC2IFR::_from({
             const MASK: bool = true;
@@ -1016,7 +1016,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Capture/compare 1 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1if(&self) -> CC1IFR {
         CC1IFR::_from({
             const MASK: bool = true;
@@ -1025,7 +1025,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn uif(&self) -> UIFR {
         UIFR::_from({
             const MASK: bool = true;
@@ -1036,63 +1036,63 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 12 - Capture/Compare 4 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc4of(&mut self) -> _CC4OFW {
         _CC4OFW { w: self }
     }
     #[doc = "Bit 11 - Capture/Compare 3 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc3of(&mut self) -> _CC3OFW {
         _CC3OFW { w: self }
     }
     #[doc = "Bit 10 - Capture/compare 2 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2of(&mut self) -> _CC2OFW {
         _CC2OFW { w: self }
     }
     #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1of(&mut self) -> _CC1OFW {
         _CC1OFW { w: self }
     }
     #[doc = "Bit 6 - Trigger interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn tif(&mut self) -> _TIFW {
         _TIFW { w: self }
     }
     #[doc = "Bit 4 - Capture/Compare 4 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc4if(&mut self) -> _CC4IFW {
         _CC4IFW { w: self }
     }
     #[doc = "Bit 3 - Capture/Compare 3 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc3if(&mut self) -> _CC3IFW {
         _CC3IFW { w: self }
     }
     #[doc = "Bit 2 - Capture/Compare 2 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc2if(&mut self) -> _CC2IFW {
         _CC2IFW { w: self }
     }
     #[doc = "Bit 1 - Capture/compare 1 interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1if(&mut self) -> _CC1IFW {
         _CC1IFW { w: self }
     }
     #[doc = "Bit 0 - Update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn uif(&mut self) -> _UIFW {
         _UIFW { w: self }
     }

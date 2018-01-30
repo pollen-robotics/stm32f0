@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct TSEDGER {
 }
 impl TSEDGER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct REFCKONR {
 }
 impl REFCKONR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct BYPSHADR {
 }
 impl BYPSHADR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct FMTR {
 }
 impl FMTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +132,17 @@ pub struct ALRAER {
 }
 impl ALRAER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +153,17 @@ pub struct TSER {
 }
 impl TSER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +174,17 @@ pub struct ALRAIER {
 }
 impl ALRAIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +195,17 @@ pub struct TSIER {
 }
 impl TSIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +216,17 @@ pub struct BKPR {
 }
 impl BKPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +237,17 @@ pub struct COSELR {
 }
 impl COSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +258,17 @@ pub struct POLR {
 }
 impl POLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,7 +279,7 @@ pub struct OSELR {
 }
 impl OSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -290,17 +290,17 @@ pub struct COER {
 }
 impl COER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -319,7 +319,7 @@ impl<'a> _TSEDGEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -342,7 +342,7 @@ impl<'a> _REFCKONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -365,7 +365,7 @@ impl<'a> _BYPSHADW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -388,7 +388,7 @@ impl<'a> _FMTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -411,7 +411,7 @@ impl<'a> _ALRAEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -434,7 +434,7 @@ impl<'a> _TSEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -457,7 +457,7 @@ impl<'a> _ALRAIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -480,7 +480,7 @@ impl<'a> _TSIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -503,7 +503,7 @@ impl<'a> _ADD1HW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -526,7 +526,7 @@ impl<'a> _SUB1HW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -549,7 +549,7 @@ impl<'a> _BKPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -572,7 +572,7 @@ impl<'a> _COSELW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -595,7 +595,7 @@ impl<'a> _POLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -610,7 +610,7 @@ pub struct _OSELW<'a> {
 }
 impl<'a> _OSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 21;
@@ -633,7 +633,7 @@ impl<'a> _COEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -644,12 +644,12 @@ impl<'a> _COEW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 3 - Time-stamp event active edge"]
-    #[inline(always)]
+    #[inline]
     pub fn tsedge(&self) -> TSEDGER {
         let bits = {
             const MASK: bool = true;
@@ -659,7 +659,7 @@ impl R {
         TSEDGER { bits }
     }
     #[doc = "Bit 4 - RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
-    #[inline(always)]
+    #[inline]
     pub fn refckon(&self) -> REFCKONR {
         let bits = {
             const MASK: bool = true;
@@ -669,7 +669,7 @@ impl R {
         REFCKONR { bits }
     }
     #[doc = "Bit 5 - Bypass the shadow registers"]
-    #[inline(always)]
+    #[inline]
     pub fn bypshad(&self) -> BYPSHADR {
         let bits = {
             const MASK: bool = true;
@@ -679,7 +679,7 @@ impl R {
         BYPSHADR { bits }
     }
     #[doc = "Bit 6 - Hour format"]
-    #[inline(always)]
+    #[inline]
     pub fn fmt(&self) -> FMTR {
         let bits = {
             const MASK: bool = true;
@@ -689,7 +689,7 @@ impl R {
         FMTR { bits }
     }
     #[doc = "Bit 8 - Alarm A enable"]
-    #[inline(always)]
+    #[inline]
     pub fn alrae(&self) -> ALRAER {
         let bits = {
             const MASK: bool = true;
@@ -699,7 +699,7 @@ impl R {
         ALRAER { bits }
     }
     #[doc = "Bit 11 - timestamp enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tse(&self) -> TSER {
         let bits = {
             const MASK: bool = true;
@@ -709,7 +709,7 @@ impl R {
         TSER { bits }
     }
     #[doc = "Bit 12 - Alarm A interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn alraie(&self) -> ALRAIER {
         let bits = {
             const MASK: bool = true;
@@ -719,7 +719,7 @@ impl R {
         ALRAIER { bits }
     }
     #[doc = "Bit 15 - Time-stamp interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tsie(&self) -> TSIER {
         let bits = {
             const MASK: bool = true;
@@ -729,7 +729,7 @@ impl R {
         TSIER { bits }
     }
     #[doc = "Bit 18 - Backup"]
-    #[inline(always)]
+    #[inline]
     pub fn bkp(&self) -> BKPR {
         let bits = {
             const MASK: bool = true;
@@ -739,7 +739,7 @@ impl R {
         BKPR { bits }
     }
     #[doc = "Bit 19 - Calibration output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cosel(&self) -> COSELR {
         let bits = {
             const MASK: bool = true;
@@ -749,7 +749,7 @@ impl R {
         COSELR { bits }
     }
     #[doc = "Bit 20 - Output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn pol(&self) -> POLR {
         let bits = {
             const MASK: bool = true;
@@ -759,7 +759,7 @@ impl R {
         POLR { bits }
     }
     #[doc = "Bits 21:22 - Output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn osel(&self) -> OSELR {
         let bits = {
             const MASK: u8 = 3;
@@ -769,7 +769,7 @@ impl R {
         OSELR { bits }
     }
     #[doc = "Bit 23 - Calibration output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn coe(&self) -> COER {
         let bits = {
             const MASK: bool = true;
@@ -781,88 +781,88 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 3 - Time-stamp event active edge"]
-    #[inline(always)]
+    #[inline]
     pub fn tsedge(&mut self) -> _TSEDGEW {
         _TSEDGEW { w: self }
     }
     #[doc = "Bit 4 - RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
-    #[inline(always)]
+    #[inline]
     pub fn refckon(&mut self) -> _REFCKONW {
         _REFCKONW { w: self }
     }
     #[doc = "Bit 5 - Bypass the shadow registers"]
-    #[inline(always)]
+    #[inline]
     pub fn bypshad(&mut self) -> _BYPSHADW {
         _BYPSHADW { w: self }
     }
     #[doc = "Bit 6 - Hour format"]
-    #[inline(always)]
+    #[inline]
     pub fn fmt(&mut self) -> _FMTW {
         _FMTW { w: self }
     }
     #[doc = "Bit 8 - Alarm A enable"]
-    #[inline(always)]
+    #[inline]
     pub fn alrae(&mut self) -> _ALRAEW {
         _ALRAEW { w: self }
     }
     #[doc = "Bit 11 - timestamp enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tse(&mut self) -> _TSEW {
         _TSEW { w: self }
     }
     #[doc = "Bit 12 - Alarm A interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn alraie(&mut self) -> _ALRAIEW {
         _ALRAIEW { w: self }
     }
     #[doc = "Bit 15 - Time-stamp interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tsie(&mut self) -> _TSIEW {
         _TSIEW { w: self }
     }
     #[doc = "Bit 16 - Add 1 hour (summer time change)"]
-    #[inline(always)]
+    #[inline]
     pub fn add1h(&mut self) -> _ADD1HW {
         _ADD1HW { w: self }
     }
     #[doc = "Bit 17 - Subtract 1 hour (winter time change)"]
-    #[inline(always)]
+    #[inline]
     pub fn sub1h(&mut self) -> _SUB1HW {
         _SUB1HW { w: self }
     }
     #[doc = "Bit 18 - Backup"]
-    #[inline(always)]
+    #[inline]
     pub fn bkp(&mut self) -> _BKPW {
         _BKPW { w: self }
     }
     #[doc = "Bit 19 - Calibration output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cosel(&mut self) -> _COSELW {
         _COSELW { w: self }
     }
     #[doc = "Bit 20 - Output polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn pol(&mut self) -> _POLW {
         _POLW { w: self }
     }
     #[doc = "Bits 21:22 - Output selection"]
-    #[inline(always)]
+    #[inline]
     pub fn osel(&mut self) -> _OSELW {
         _OSELW { w: self }
     }
     #[doc = "Bit 23 - Calibration output enable"]
-    #[inline(always)]
+    #[inline]
     pub fn coe(&mut self) -> _COEW {
         _COEW { w: self }
     }

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CNT {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CNT {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CNT {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct CNT_HR {
 }
 impl CNT_HR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct CNT_LR {
 }
 impl CNT_LR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct _CNT_HW<'a> {
 }
 impl<'a> _CNT_HW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 16;
@@ -85,7 +85,7 @@ pub struct _CNT_LW<'a> {
 }
 impl<'a> _CNT_LW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -96,12 +96,12 @@ impl<'a> _CNT_LW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - High counter value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn cnt_h(&self) -> CNT_HR {
         let bits = {
             const MASK: u16 = 65535;
@@ -111,7 +111,7 @@ impl R {
         CNT_HR { bits }
     }
     #[doc = "Bits 0:15 - Low counter value"]
-    #[inline(always)]
+    #[inline]
     pub fn cnt_l(&self) -> CNT_LR {
         let bits = {
             const MASK: u16 = 65535;
@@ -123,23 +123,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:31 - High counter value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn cnt_h(&mut self) -> _CNT_HW {
         _CNT_HW { w: self }
     }
     #[doc = "Bits 0:15 - Low counter value"]
-    #[inline(always)]
+    #[inline]
     pub fn cnt_l(&mut self) -> _CNT_LW {
         _CNT_LW { w: self }
     }

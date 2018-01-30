@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum ARPER {
 }
 impl ARPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             ARPER::NOTBUFFERED => false,
@@ -69,7 +69,7 @@ impl ARPER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> ARPER {
         match value {
             false => ARPER::NOTBUFFERED,
@@ -77,12 +77,12 @@ impl ARPER {
         }
     }
     #[doc = "Checks if the value of the field is `NOTBUFFERED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_not_buffered(&self) -> bool {
         *self == ARPER::NOTBUFFERED
     }
     #[doc = "Checks if the value of the field is `BUFFERED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_buffered(&self) -> bool {
         *self == ARPER::BUFFERED
     }
@@ -95,17 +95,17 @@ pub enum OPMR {
 }
 impl OPMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OPMR::CONTINUOUS => false,
@@ -114,7 +114,7 @@ impl OPMR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OPMR {
         match value {
             false => OPMR::CONTINUOUS,
@@ -122,35 +122,32 @@ impl OPMR {
         }
     }
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_continuous(&self) -> bool {
         *self == OPMR::CONTINUOUS
     }
     #[doc = "Checks if the value of the field is `ONEPULSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_one_pulse(&self) -> bool {
         *self == OPMR::ONEPULSE
     }
 }
 #[doc = "Possible values of the field `URS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum URSR {
-    #[doc = "Any of the events generate an update interrupt or DMA request if enabled"] ANYEVENT,
-    #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled"] ONLYOVERUNDER,
-}
+pub enum URSR {# [ doc = "Any of the events generate an update interrupt or DMA request if enabled" ] ANYEVENT , # [ doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled" ] ONLYOVERUNDER ,}
 impl URSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             URSR::ANYEVENT => false,
@@ -159,7 +156,7 @@ impl URSR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> URSR {
         match value {
             false => URSR::ANYEVENT,
@@ -167,12 +164,12 @@ impl URSR {
         }
     }
     #[doc = "Checks if the value of the field is `ANYEVENT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_any_event(&self) -> bool {
         *self == URSR::ANYEVENT
     }
     #[doc = "Checks if the value of the field is `ONLYOVERUNDER`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_only_over_under(&self) -> bool {
         *self == URSR::ONLYOVERUNDER
     }
@@ -185,17 +182,17 @@ pub enum UDISR {
 }
 impl UDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             UDISR::ENABLED => false,
@@ -204,7 +201,7 @@ impl UDISR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> UDISR {
         match value {
             false => UDISR::ENABLED,
@@ -212,12 +209,12 @@ impl UDISR {
         }
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == UDISR::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == UDISR::DISABLED
     }
@@ -230,17 +227,17 @@ pub enum CENR {
 }
 impl CENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CENR::DISABLED => false,
@@ -249,7 +246,7 @@ impl CENR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CENR {
         match value {
             false => CENR::DISABLED,
@@ -257,12 +254,12 @@ impl CENR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == CENR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == CENR::ENABLED
     }
@@ -275,7 +272,7 @@ pub enum ARPEW {
 impl ARPEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             ARPEW::NOTBUFFERED => false,
@@ -289,19 +286,19 @@ pub struct _ARPEW<'a> {
 }
 impl<'a> _ARPEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ARPEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "TIMx_ARR register is not buffered"]
-    #[inline(always)]
+    #[inline]
     pub fn not_buffered(self) -> &'a mut W {
         self.variant(ARPEW::NOTBUFFERED)
     }
     #[doc = "TIMx_ARR register is buffered"]
-    #[inline(always)]
+    #[inline]
     pub fn buffered(self) -> &'a mut W {
         self.variant(ARPEW::BUFFERED)
     }
@@ -314,7 +311,7 @@ impl<'a> _ARPEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -331,7 +328,7 @@ pub enum OPMW {
 impl OPMW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OPMW::CONTINUOUS => false,
@@ -345,19 +342,19 @@ pub struct _OPMW<'a> {
 }
 impl<'a> _OPMW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OPMW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Counter is not stopped at update event"]
-    #[inline(always)]
+    #[inline]
     pub fn continuous(self) -> &'a mut W {
         self.variant(OPMW::CONTINUOUS)
     }
     #[doc = "Counter stops counting at the next update event (clearing the CEN bit)"]
-    #[inline(always)]
+    #[inline]
     pub fn one_pulse(self) -> &'a mut W {
         self.variant(OPMW::ONEPULSE)
     }
@@ -370,7 +367,7 @@ impl<'a> _OPMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -380,14 +377,11 @@ impl<'a> _OPMW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `URS`"]
-pub enum URSW {
-    #[doc = "Any of the events generate an update interrupt or DMA request if enabled"] ANYEVENT,
-    #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled"] ONLYOVERUNDER,
-}
+pub enum URSW {# [ doc = "Any of the events generate an update interrupt or DMA request if enabled" ] ANYEVENT , # [ doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled" ] ONLYOVERUNDER ,}
 impl URSW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             URSW::ANYEVENT => false,
@@ -401,19 +395,18 @@ pub struct _URSW<'a> {
 }
 impl<'a> _URSW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: URSW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Any of the events generate an update interrupt or DMA request if enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn any_event(self) -> &'a mut W {
         self.variant(URSW::ANYEVENT)
     }
-    #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled"]
-    #[inline(always)]
+    # [ doc = "Only counter overflow/underflow generates an update interrupt or DMA request if enabled" ] # [ inline ]
     pub fn only_over_under(self) -> &'a mut W {
         self.variant(URSW::ONLYOVERUNDER)
     }
@@ -426,7 +419,7 @@ impl<'a> _URSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -443,7 +436,7 @@ pub enum UDISW {
 impl UDISW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UDISW::ENABLED => false,
@@ -457,19 +450,19 @@ pub struct _UDISW<'a> {
 }
 impl<'a> _UDISW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UDISW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "UEV enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(UDISW::ENABLED)
     }
     #[doc = "UEV disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(UDISW::DISABLED)
     }
@@ -482,7 +475,7 @@ impl<'a> _UDISW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -499,7 +492,7 @@ pub enum CENW {
 impl CENW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CENW::DISABLED => false,
@@ -513,19 +506,19 @@ pub struct _CENW<'a> {
 }
 impl<'a> _CENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Counter disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(CENW::DISABLED)
     }
     #[doc = "Counter enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CENW::ENABLED)
     }
@@ -538,7 +531,7 @@ impl<'a> _CENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -549,12 +542,12 @@ impl<'a> _CENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 7 - Auto-reload preload enable"]
-    #[inline(always)]
+    #[inline]
     pub fn arpe(&self) -> ARPER {
         ARPER::_from({
             const MASK: bool = true;
@@ -563,7 +556,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - One-pulse mode"]
-    #[inline(always)]
+    #[inline]
     pub fn opm(&self) -> OPMR {
         OPMR::_from({
             const MASK: bool = true;
@@ -572,7 +565,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Update request source"]
-    #[inline(always)]
+    #[inline]
     pub fn urs(&self) -> URSR {
         URSR::_from({
             const MASK: bool = true;
@@ -581,7 +574,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Update disable"]
-    #[inline(always)]
+    #[inline]
     pub fn udis(&self) -> UDISR {
         UDISR::_from({
             const MASK: bool = true;
@@ -590,7 +583,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Counter enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cen(&self) -> CENR {
         CENR::_from({
             const MASK: bool = true;
@@ -601,38 +594,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 7 - Auto-reload preload enable"]
-    #[inline(always)]
+    #[inline]
     pub fn arpe(&mut self) -> _ARPEW {
         _ARPEW { w: self }
     }
     #[doc = "Bit 3 - One-pulse mode"]
-    #[inline(always)]
+    #[inline]
     pub fn opm(&mut self) -> _OPMW {
         _OPMW { w: self }
     }
     #[doc = "Bit 2 - Update request source"]
-    #[inline(always)]
+    #[inline]
     pub fn urs(&mut self) -> _URSW {
         _URSW { w: self }
     }
     #[doc = "Bit 1 - Update disable"]
-    #[inline(always)]
+    #[inline]
     pub fn udis(&mut self) -> _UDISW {
         _UDISW { w: self }
     }
     #[doc = "Bit 0 - Counter enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cen(&mut self) -> _CENW {
         _CENW { w: self }
     }

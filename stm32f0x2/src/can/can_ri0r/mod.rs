@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::CAN_RI0R {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,7 +17,7 @@ pub struct STIDR {
 }
 impl STIDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -28,7 +28,7 @@ pub struct EXIDR {
 }
 impl EXIDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
@@ -39,17 +39,17 @@ pub struct IDER {
 }
 impl IDER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -60,29 +60,29 @@ pub struct RTRR {
 }
 impl RTRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 21:31 - STID"]
-    #[inline(always)]
+    #[inline]
     pub fn stid(&self) -> STIDR {
         let bits = {
             const MASK: u16 = 2047;
@@ -92,7 +92,7 @@ impl R {
         STIDR { bits }
     }
     #[doc = "Bits 3:20 - EXID"]
-    #[inline(always)]
+    #[inline]
     pub fn exid(&self) -> EXIDR {
         let bits = {
             const MASK: u32 = 262143;
@@ -102,7 +102,7 @@ impl R {
         EXIDR { bits }
     }
     #[doc = "Bit 2 - IDE"]
-    #[inline(always)]
+    #[inline]
     pub fn ide(&self) -> IDER {
         let bits = {
             const MASK: bool = true;
@@ -112,7 +112,7 @@ impl R {
         IDER { bits }
     }
     #[doc = "Bit 1 - RTR"]
-    #[inline(always)]
+    #[inline]
     pub fn rtr(&self) -> RTRR {
         let bits = {
             const MASK: bool = true;

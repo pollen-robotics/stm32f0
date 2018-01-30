@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR2 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum OIS4R {
 }
 impl OIS4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS4R::RESET => false,
@@ -69,7 +69,7 @@ impl OIS4R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS4R {
         match value {
             false => OIS4R::RESET,
@@ -77,12 +77,12 @@ impl OIS4R {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS4R::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS4R::SET
     }
@@ -95,17 +95,17 @@ pub enum OIS3NR {
 }
 impl OIS3NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS3NR::RESET => false,
@@ -114,7 +114,7 @@ impl OIS3NR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS3NR {
         match value {
             false => OIS3NR::RESET,
@@ -122,12 +122,12 @@ impl OIS3NR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS3NR::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS3NR::SET
     }
@@ -140,17 +140,17 @@ pub enum OIS3R {
 }
 impl OIS3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS3R::RESET => false,
@@ -159,7 +159,7 @@ impl OIS3R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS3R {
         match value {
             false => OIS3R::RESET,
@@ -167,12 +167,12 @@ impl OIS3R {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS3R::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS3R::SET
     }
@@ -185,17 +185,17 @@ pub enum OIS2NR {
 }
 impl OIS2NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS2NR::RESET => false,
@@ -204,7 +204,7 @@ impl OIS2NR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS2NR {
         match value {
             false => OIS2NR::RESET,
@@ -212,12 +212,12 @@ impl OIS2NR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS2NR::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS2NR::SET
     }
@@ -230,17 +230,17 @@ pub enum OIS2R {
 }
 impl OIS2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS2R::RESET => false,
@@ -249,7 +249,7 @@ impl OIS2R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS2R {
         match value {
             false => OIS2R::RESET,
@@ -257,12 +257,12 @@ impl OIS2R {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS2R::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS2R::SET
     }
@@ -275,17 +275,17 @@ pub enum OIS1NR {
 }
 impl OIS1NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS1NR::RESET => false,
@@ -294,7 +294,7 @@ impl OIS1NR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS1NR {
         match value {
             false => OIS1NR::RESET,
@@ -302,12 +302,12 @@ impl OIS1NR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS1NR::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS1NR::SET
     }
@@ -320,17 +320,17 @@ pub enum OIS1R {
 }
 impl OIS1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OIS1R::RESET => false,
@@ -339,7 +339,7 @@ impl OIS1R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OIS1R {
         match value {
             false => OIS1R::RESET,
@@ -347,12 +347,12 @@ impl OIS1R {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == OIS1R::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == OIS1R::SET
     }
@@ -361,21 +361,22 @@ impl OIS1R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TI1SR {
     #[doc = "The TIMx CH1 pin is connected to TI1 input"] TI1INPUT,
-    #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"] ALLTI1INPUT,
+    #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
+    ALLTI1INPUT,
 }
 impl TI1SR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TI1SR::TI1INPUT => false,
@@ -384,7 +385,7 @@ impl TI1SR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TI1SR {
         match value {
             false => TI1SR::TI1INPUT,
@@ -392,12 +393,12 @@ impl TI1SR {
         }
     }
     #[doc = "Checks if the value of the field is `TI1INPUT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_ti1input(&self) -> bool {
         *self == TI1SR::TI1INPUT
     }
     #[doc = "Checks if the value of the field is `ALLTI1INPUT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_all_ti1input(&self) -> bool {
         *self == TI1SR::ALLTI1INPUT
     }
@@ -408,7 +409,8 @@ pub enum MMSR {
     #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."] RESET,
     #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."] ENABLE,
     #[doc = "The update event is selected as trigger output (TRGO)."] UPDATE,
-    #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."] COMPAREPULSE,
+    #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."]
+    COMPAREPULSE,
     #[doc = "OC1REF signal is used as trigger output (TRGO)"] COMPAREOC1REF,
     #[doc = "OC2REF signal is used as trigger output (TRGO)"] COMPAREOC2REF,
     #[doc = "OC3REF signal is used as trigger output (TRGO)"] COMPAREOC3REF,
@@ -416,7 +418,7 @@ pub enum MMSR {
 }
 impl MMSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             MMSR::RESET => 0,
@@ -431,7 +433,7 @@ impl MMSR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> MMSR {
         match value {
             0 => MMSR::RESET,
@@ -446,42 +448,42 @@ impl MMSR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == MMSR::RESET
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enable(&self) -> bool {
         *self == MMSR::ENABLE
     }
     #[doc = "Checks if the value of the field is `UPDATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_update(&self) -> bool {
         *self == MMSR::UPDATE
     }
     #[doc = "Checks if the value of the field is `COMPAREPULSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_compare_pulse(&self) -> bool {
         *self == MMSR::COMPAREPULSE
     }
     #[doc = "Checks if the value of the field is `COMPAREOC1REF`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_compare_oc1ref(&self) -> bool {
         *self == MMSR::COMPAREOC1REF
     }
     #[doc = "Checks if the value of the field is `COMPAREOC2REF`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_compare_oc2ref(&self) -> bool {
         *self == MMSR::COMPAREOC2REF
     }
     #[doc = "Checks if the value of the field is `COMPAREOC3REF`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_compare_oc3ref(&self) -> bool {
         *self == MMSR::COMPAREOC3REF
     }
     #[doc = "Checks if the value of the field is `COMPAREOC4REF`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_compare_oc4ref(&self) -> bool {
         *self == MMSR::COMPAREOC4REF
     }
@@ -494,17 +496,17 @@ pub enum CCDSR {
 }
 impl CCDSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CCDSR::CCXEVENT => false,
@@ -513,7 +515,7 @@ impl CCDSR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CCDSR {
         match value {
             false => CCDSR::CCXEVENT,
@@ -521,35 +523,32 @@ impl CCDSR {
         }
     }
     #[doc = "Checks if the value of the field is `CCXEVENT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_ccx_event(&self) -> bool {
         *self == CCDSR::CCXEVENT
     }
     #[doc = "Checks if the value of the field is `UPDATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_update(&self) -> bool {
         *self == CCDSR::UPDATE
     }
 }
 #[doc = "Possible values of the field `CCUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCUSR {
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only"] COMGBITONLY,
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI"] COMGBIT_EDGE,
-}
+pub enum CCUSR {# [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only" ] COMGBITONLY , # [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI" ] COMGBIT_EDGE ,}
 impl CCUSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CCUSR::COMGBITONLY => false,
@@ -558,7 +557,7 @@ impl CCUSR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CCUSR {
         match value {
             false => CCUSR::COMGBITONLY,
@@ -566,35 +565,32 @@ impl CCUSR {
         }
     }
     #[doc = "Checks if the value of the field is `COMGBITONLY`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_comgbit_only(&self) -> bool {
         *self == CCUSR::COMGBITONLY
     }
     #[doc = "Checks if the value of the field is `COMGBIT_EDGE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_comgbit_edge(&self) -> bool {
         *self == CCUSR::COMGBIT_EDGE
     }
 }
 #[doc = "Possible values of the field `CCPC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCPCR {
-    #[doc = "CCxE, CCxNE and OCxM bits are not preloaded"] NOTPRELOADED,
-    #[doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)."] PRELOADED,
-}
+pub enum CCPCR {# [ doc = "CCxE, CCxNE and OCxM bits are not preloaded" ] NOTPRELOADED , # [ doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)." ] PRELOADED ,}
 impl CCPCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CCPCR::NOTPRELOADED => false,
@@ -603,7 +599,7 @@ impl CCPCR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CCPCR {
         match value {
             false => CCPCR::NOTPRELOADED,
@@ -611,12 +607,12 @@ impl CCPCR {
         }
     }
     #[doc = "Checks if the value of the field is `NOTPRELOADED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_not_preloaded(&self) -> bool {
         *self == CCPCR::NOTPRELOADED
     }
     #[doc = "Checks if the value of the field is `PRELOADED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_preloaded(&self) -> bool {
         *self == CCPCR::PRELOADED
     }
@@ -629,7 +625,7 @@ pub enum OIS4W {
 impl OIS4W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS4W::RESET => false,
@@ -643,19 +639,19 @@ pub struct _OIS4W<'a> {
 }
 impl<'a> _OIS4W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS4W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC4=0 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS4W::RESET)
     }
     #[doc = "OC4=1 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS4W::SET)
     }
@@ -668,7 +664,7 @@ impl<'a> _OIS4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -685,7 +681,7 @@ pub enum OIS3NW {
 impl OIS3NW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS3NW::RESET => false,
@@ -699,19 +695,19 @@ pub struct _OIS3NW<'a> {
 }
 impl<'a> _OIS3NW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS3NW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC3N=0 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS3NW::RESET)
     }
     #[doc = "OC3N=1 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS3NW::SET)
     }
@@ -724,7 +720,7 @@ impl<'a> _OIS3NW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -741,7 +737,7 @@ pub enum OIS3W {
 impl OIS3W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS3W::RESET => false,
@@ -755,19 +751,19 @@ pub struct _OIS3W<'a> {
 }
 impl<'a> _OIS3W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS3W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC3=0 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS3W::RESET)
     }
     #[doc = "OC3=1 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS3W::SET)
     }
@@ -780,7 +776,7 @@ impl<'a> _OIS3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -797,7 +793,7 @@ pub enum OIS2NW {
 impl OIS2NW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS2NW::RESET => false,
@@ -811,19 +807,19 @@ pub struct _OIS2NW<'a> {
 }
 impl<'a> _OIS2NW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS2NW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC2N=0 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS2NW::RESET)
     }
     #[doc = "OC2N=1 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS2NW::SET)
     }
@@ -836,7 +832,7 @@ impl<'a> _OIS2NW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -853,7 +849,7 @@ pub enum OIS2W {
 impl OIS2W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS2W::RESET => false,
@@ -867,19 +863,19 @@ pub struct _OIS2W<'a> {
 }
 impl<'a> _OIS2W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS2W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC2=0 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS2W::RESET)
     }
     #[doc = "OC2=1 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS2W::SET)
     }
@@ -892,7 +888,7 @@ impl<'a> _OIS2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -909,7 +905,7 @@ pub enum OIS1NW {
 impl OIS1NW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS1NW::RESET => false,
@@ -923,19 +919,19 @@ pub struct _OIS1NW<'a> {
 }
 impl<'a> _OIS1NW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS1NW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC1N=0 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS1NW::RESET)
     }
     #[doc = "OC1N=1 after a dead-time when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS1NW::SET)
     }
@@ -948,7 +944,7 @@ impl<'a> _OIS1NW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -965,7 +961,7 @@ pub enum OIS1W {
 impl OIS1W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OIS1W::RESET => false,
@@ -979,19 +975,19 @@ pub struct _OIS1W<'a> {
 }
 impl<'a> _OIS1W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OIS1W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "OC1=0 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(OIS1W::RESET)
     }
     #[doc = "OC1=1 when MOE=0"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(OIS1W::SET)
     }
@@ -1004,7 +1000,7 @@ impl<'a> _OIS1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -1016,12 +1012,13 @@ impl<'a> _OIS1W<'a> {
 #[doc = "Values that can be written to the field `TI1S`"]
 pub enum TI1SW {
     #[doc = "The TIMx CH1 pin is connected to TI1 input"] TI1INPUT,
-    #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"] ALLTI1INPUT,
+    #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
+    ALLTI1INPUT,
 }
 impl TI1SW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TI1SW::TI1INPUT => false,
@@ -1035,19 +1032,19 @@ pub struct _TI1SW<'a> {
 }
 impl<'a> _TI1SW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TI1SW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "The TIMx CH1 pin is connected to TI1 input"]
-    #[inline(always)]
+    #[inline]
     pub fn ti1input(self) -> &'a mut W {
         self.variant(TI1SW::TI1INPUT)
     }
     #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
-    #[inline(always)]
+    #[inline]
     pub fn all_ti1input(self) -> &'a mut W {
         self.variant(TI1SW::ALLTI1INPUT)
     }
@@ -1060,7 +1057,7 @@ impl<'a> _TI1SW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -1074,7 +1071,8 @@ pub enum MMSW {
     #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."] RESET,
     #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."] ENABLE,
     #[doc = "The update event is selected as trigger output (TRGO)."] UPDATE,
-    #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."] COMPAREPULSE,
+    #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."]
+    COMPAREPULSE,
     #[doc = "OC1REF signal is used as trigger output (TRGO)"] COMPAREOC1REF,
     #[doc = "OC2REF signal is used as trigger output (TRGO)"] COMPAREOC2REF,
     #[doc = "OC3REF signal is used as trigger output (TRGO)"] COMPAREOC3REF,
@@ -1083,7 +1081,7 @@ pub enum MMSW {
 impl MMSW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             MMSW::RESET => 0,
@@ -1103,54 +1101,54 @@ pub struct _MMSW<'a> {
 }
 impl<'a> _MMSW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MMSW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(MMSW::RESET)
     }
     #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."]
-    #[inline(always)]
+    #[inline]
     pub fn enable(self) -> &'a mut W {
         self.variant(MMSW::ENABLE)
     }
     #[doc = "The update event is selected as trigger output (TRGO)."]
-    #[inline(always)]
+    #[inline]
     pub fn update(self) -> &'a mut W {
         self.variant(MMSW::UPDATE)
     }
     #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."]
-    #[inline(always)]
+    #[inline]
     pub fn compare_pulse(self) -> &'a mut W {
         self.variant(MMSW::COMPAREPULSE)
     }
     #[doc = "OC1REF signal is used as trigger output (TRGO)"]
-    #[inline(always)]
+    #[inline]
     pub fn compare_oc1ref(self) -> &'a mut W {
         self.variant(MMSW::COMPAREOC1REF)
     }
     #[doc = "OC2REF signal is used as trigger output (TRGO)"]
-    #[inline(always)]
+    #[inline]
     pub fn compare_oc2ref(self) -> &'a mut W {
         self.variant(MMSW::COMPAREOC2REF)
     }
     #[doc = "OC3REF signal is used as trigger output (TRGO)"]
-    #[inline(always)]
+    #[inline]
     pub fn compare_oc3ref(self) -> &'a mut W {
         self.variant(MMSW::COMPAREOC3REF)
     }
     #[doc = "OC4REF signal is used as trigger output (TRGO)"]
-    #[inline(always)]
+    #[inline]
     pub fn compare_oc4ref(self) -> &'a mut W {
         self.variant(MMSW::COMPAREOC4REF)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 4;
@@ -1167,7 +1165,7 @@ pub enum CCDSW {
 impl CCDSW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CCDSW::CCXEVENT => false,
@@ -1181,19 +1179,19 @@ pub struct _CCDSW<'a> {
 }
 impl<'a> _CCDSW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CCDSW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "CCx DMA request sent when CCx event occurs"]
-    #[inline(always)]
+    #[inline]
     pub fn ccx_event(self) -> &'a mut W {
         self.variant(CCDSW::CCXEVENT)
     }
     #[doc = "CCx DMA requests sent when update event occurs"]
-    #[inline(always)]
+    #[inline]
     pub fn update(self) -> &'a mut W {
         self.variant(CCDSW::UPDATE)
     }
@@ -1206,7 +1204,7 @@ impl<'a> _CCDSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -1216,14 +1214,11 @@ impl<'a> _CCDSW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `CCUS`"]
-pub enum CCUSW {
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only"] COMGBITONLY,
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI"] COMGBIT_EDGE,
-}
+pub enum CCUSW {# [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only" ] COMGBITONLY , # [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI" ] COMGBIT_EDGE ,}
 impl CCUSW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CCUSW::COMGBITONLY => false,
@@ -1237,19 +1232,17 @@ pub struct _CCUSW<'a> {
 }
 impl<'a> _CCUSW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CCUSW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only"]
-    #[inline(always)]
+    # [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit only" ] # [ inline ]
     pub fn comgbit_only(self) -> &'a mut W {
         self.variant(CCUSW::COMGBITONLY)
     }
-    #[doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI"]
-    #[inline(always)]
+    # [ doc = "When capture/compare control bits are preloaded (CCPC=1), they are updated by setting the COMG bit or when an rising edge occurs on TRGI" ] # [ inline ]
     pub fn comgbit_edge(self) -> &'a mut W {
         self.variant(CCUSW::COMGBIT_EDGE)
     }
@@ -1262,7 +1255,7 @@ impl<'a> _CCUSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -1272,14 +1265,11 @@ impl<'a> _CCUSW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `CCPC`"]
-pub enum CCPCW {
-    #[doc = "CCxE, CCxNE and OCxM bits are not preloaded"] NOTPRELOADED,
-    #[doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)."] PRELOADED,
-}
+pub enum CCPCW {# [ doc = "CCxE, CCxNE and OCxM bits are not preloaded" ] NOTPRELOADED , # [ doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)." ] PRELOADED ,}
 impl CCPCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CCPCW::NOTPRELOADED => false,
@@ -1293,19 +1283,18 @@ pub struct _CCPCW<'a> {
 }
 impl<'a> _CCPCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CCPCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "CCxE, CCxNE and OCxM bits are not preloaded"]
-    #[inline(always)]
+    #[inline]
     pub fn not_preloaded(self) -> &'a mut W {
         self.variant(CCPCW::NOTPRELOADED)
     }
-    #[doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)."]
-    #[inline(always)]
+    # [ doc = "CCxE, CCxNE and OCxM bits are preloaded, after having been written, they are updated only when a communication event (COM) occurs (COMG bit set or rising edge detected on TRGI, depending on the CCUS bit)." ] # [ inline ]
     pub fn preloaded(self) -> &'a mut W {
         self.variant(CCPCW::PRELOADED)
     }
@@ -1318,7 +1307,7 @@ impl<'a> _CCPCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -1329,12 +1318,12 @@ impl<'a> _CCPCW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 14 - Output Idle state 4"]
-    #[inline(always)]
+    #[inline]
     pub fn ois4(&self) -> OIS4R {
         OIS4R::_from({
             const MASK: bool = true;
@@ -1343,7 +1332,7 @@ impl R {
         })
     }
     #[doc = "Bit 13 - Output Idle state 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ois3n(&self) -> OIS3NR {
         OIS3NR::_from({
             const MASK: bool = true;
@@ -1352,7 +1341,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - Output Idle state 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ois3(&self) -> OIS3R {
         OIS3R::_from({
             const MASK: bool = true;
@@ -1361,7 +1350,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - Output Idle state 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ois2n(&self) -> OIS2NR {
         OIS2NR::_from({
             const MASK: bool = true;
@@ -1370,7 +1359,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - Output Idle state 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ois2(&self) -> OIS2R {
         OIS2R::_from({
             const MASK: bool = true;
@@ -1379,7 +1368,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - Output Idle state 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ois1n(&self) -> OIS1NR {
         OIS1NR::_from({
             const MASK: bool = true;
@@ -1388,7 +1377,7 @@ impl R {
         })
     }
     #[doc = "Bit 8 - Output Idle state 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ois1(&self) -> OIS1R {
         OIS1R::_from({
             const MASK: bool = true;
@@ -1397,7 +1386,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - TI1 selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ti1s(&self) -> TI1SR {
         TI1SR::_from({
             const MASK: bool = true;
@@ -1406,7 +1395,7 @@ impl R {
         })
     }
     #[doc = "Bits 4:6 - Master mode selection"]
-    #[inline(always)]
+    #[inline]
     pub fn mms(&self) -> MMSR {
         MMSR::_from({
             const MASK: u8 = 7;
@@ -1415,7 +1404,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Capture/compare DMA selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ccds(&self) -> CCDSR {
         CCDSR::_from({
             const MASK: bool = true;
@@ -1424,7 +1413,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Capture/compare control update selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ccus(&self) -> CCUSR {
         CCUSR::_from({
             const MASK: bool = true;
@@ -1433,7 +1422,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Capture/compare preloaded control"]
-    #[inline(always)]
+    #[inline]
     pub fn ccpc(&self) -> CCPCR {
         CCPCR::_from({
             const MASK: bool = true;
@@ -1444,73 +1433,73 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 14 - Output Idle state 4"]
-    #[inline(always)]
+    #[inline]
     pub fn ois4(&mut self) -> _OIS4W {
         _OIS4W { w: self }
     }
     #[doc = "Bit 13 - Output Idle state 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ois3n(&mut self) -> _OIS3NW {
         _OIS3NW { w: self }
     }
     #[doc = "Bit 12 - Output Idle state 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ois3(&mut self) -> _OIS3W {
         _OIS3W { w: self }
     }
     #[doc = "Bit 11 - Output Idle state 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ois2n(&mut self) -> _OIS2NW {
         _OIS2NW { w: self }
     }
     #[doc = "Bit 10 - Output Idle state 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ois2(&mut self) -> _OIS2W {
         _OIS2W { w: self }
     }
     #[doc = "Bit 9 - Output Idle state 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ois1n(&mut self) -> _OIS1NW {
         _OIS1NW { w: self }
     }
     #[doc = "Bit 8 - Output Idle state 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ois1(&mut self) -> _OIS1W {
         _OIS1W { w: self }
     }
     #[doc = "Bit 7 - TI1 selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ti1s(&mut self) -> _TI1SW {
         _TI1SW { w: self }
     }
     #[doc = "Bits 4:6 - Master mode selection"]
-    #[inline(always)]
+    #[inline]
     pub fn mms(&mut self) -> _MMSW {
         _MMSW { w: self }
     }
     #[doc = "Bit 3 - Capture/compare DMA selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ccds(&mut self) -> _CCDSW {
         _CCDSW { w: self }
     }
     #[doc = "Bit 2 - Capture/compare control update selection"]
-    #[inline(always)]
+    #[inline]
     pub fn ccus(&mut self) -> _CCUSW {
         _CCUSW { w: self }
     }
     #[doc = "Bit 0 - Capture/compare preloaded control"]
-    #[inline(always)]
+    #[inline]
     pub fn ccpc(&mut self) -> _CCPCW {
         _CCPCW { w: self }
     }

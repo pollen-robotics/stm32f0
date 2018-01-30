@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CSR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum LSIONR {
 }
 impl LSIONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             LSIONR::DISABLED => false,
@@ -69,7 +69,7 @@ impl LSIONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> LSIONR {
         match value {
             false => LSIONR::DISABLED,
@@ -77,12 +77,12 @@ impl LSIONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == LSIONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == LSIONR::ENABLED
     }
@@ -93,17 +93,17 @@ pub struct LSIRDYR {
 }
 impl LSIRDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -116,17 +116,17 @@ pub enum RMVFR {
 }
 impl RMVFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             RMVFR::CLEARED => true,
@@ -135,7 +135,7 @@ impl RMVFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> RMVFR {
         match value {
             true => RMVFR::CLEARED,
@@ -143,7 +143,7 @@ impl RMVFR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cleared(&self) -> bool {
         *self == RMVFR::CLEARED
     }
@@ -154,17 +154,17 @@ pub struct OBLRSTFR {
 }
 impl OBLRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -175,17 +175,17 @@ pub struct PINRSTFR {
 }
 impl PINRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -196,17 +196,17 @@ pub struct PORRSTFR {
 }
 impl PORRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -217,17 +217,17 @@ pub struct SFTRSTFR {
 }
 impl SFTRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -238,17 +238,17 @@ pub struct IWDGRSTFR {
 }
 impl IWDGRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -259,17 +259,17 @@ pub struct WWDGRSTFR {
 }
 impl WWDGRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -280,17 +280,17 @@ pub struct LPWRRSTFR {
 }
 impl LPWRRSTFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -303,7 +303,7 @@ pub enum LSIONW {
 impl LSIONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSIONW::DISABLED => false,
@@ -317,19 +317,19 @@ pub struct _LSIONW<'a> {
 }
 impl<'a> _LSIONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSIONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "LSI oscillator OFF."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(LSIONW::DISABLED)
     }
     #[doc = "LSI oscillator ON."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(LSIONW::ENABLED)
     }
@@ -342,7 +342,7 @@ impl<'a> _LSIONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -358,7 +358,7 @@ pub enum RMVFW {
 impl RMVFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             RMVFW::CLEARED => true,
@@ -371,14 +371,14 @@ pub struct _RMVFW<'a> {
 }
 impl<'a> _RMVFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: RMVFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clear the reset flags."]
-    #[inline(always)]
+    #[inline]
     pub fn cleared(self) -> &'a mut W {
         self.variant(RMVFW::CLEARED)
     }
@@ -391,7 +391,7 @@ impl<'a> _RMVFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -414,7 +414,7 @@ impl<'a> _PINRSTFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 26;
@@ -425,12 +425,12 @@ impl<'a> _PINRSTFW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Internal low speed oscillator enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lsion(&self) -> LSIONR {
         LSIONR::_from({
             const MASK: bool = true;
@@ -439,7 +439,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Internal low speed oscillator ready"]
-    #[inline(always)]
+    #[inline]
     pub fn lsirdy(&self) -> LSIRDYR {
         let bits = {
             const MASK: bool = true;
@@ -449,7 +449,7 @@ impl R {
         LSIRDYR { bits }
     }
     #[doc = "Bit 24 - Remove reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn rmvf(&self) -> RMVFR {
         RMVFR::_from({
             const MASK: bool = true;
@@ -458,7 +458,7 @@ impl R {
         })
     }
     #[doc = "Bit 25 - Option byte loader reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn oblrstf(&self) -> OBLRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -468,7 +468,7 @@ impl R {
         OBLRSTFR { bits }
     }
     #[doc = "Bit 26 - PIN reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn pinrstf(&self) -> PINRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -478,7 +478,7 @@ impl R {
         PINRSTFR { bits }
     }
     #[doc = "Bit 27 - POR/PDR reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn porrstf(&self) -> PORRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -488,7 +488,7 @@ impl R {
         PORRSTFR { bits }
     }
     #[doc = "Bit 28 - Software reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn sftrstf(&self) -> SFTRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -498,7 +498,7 @@ impl R {
         SFTRSTFR { bits }
     }
     #[doc = "Bit 29 - Independent watchdog reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn iwdgrstf(&self) -> IWDGRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -508,7 +508,7 @@ impl R {
         IWDGRSTFR { bits }
     }
     #[doc = "Bit 30 - Window watchdog reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn wwdgrstf(&self) -> WWDGRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -518,7 +518,7 @@ impl R {
         WWDGRSTFR { bits }
     }
     #[doc = "Bit 31 - Low-power reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn lpwrrstf(&self) -> LPWRRSTFR {
         let bits = {
             const MASK: bool = true;
@@ -530,28 +530,28 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 201326592 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Internal low speed oscillator enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lsion(&mut self) -> _LSIONW {
         _LSIONW { w: self }
     }
     #[doc = "Bit 24 - Remove reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn rmvf(&mut self) -> _RMVFW {
         _RMVFW { w: self }
     }
     #[doc = "Bit 26 - PIN reset flag"]
-    #[inline(always)]
+    #[inline]
     pub fn pinrstf(&mut self) -> _PINRSTFW {
         _PINRSTFW { w: self }
     }

@@ -2,21 +2,32 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - control register 1"] pub cr1: CR1,
+    #[doc = "0x00 - control register 1"]
+    pub cr1: CR1,
     _reserved0: [u8; 8usize],
-    #[doc = "0x0c - DMA/Interrupt enable register"] pub dier: DIER,
-    #[doc = "0x10 - status register"] pub sr: SR,
-    #[doc = "0x14 - event generation register"] pub egr: EGR,
-    #[doc = "0x18 - capture/compare mode register (output mode)"] pub ccmr1_output: CCMR1_OUTPUT,
+    #[doc = "0x0c - DMA/Interrupt enable register"]
+    pub dier: DIER,
+    #[doc = "0x10 - status register"]
+    pub sr: SR,
+    #[doc = "0x14 - event generation register"]
+    pub egr: EGR,
+    #[doc = "0x18 - capture/compare mode register (output mode)"]
+    pub ccmr1_output: CCMR1_OUTPUT,
     _reserved1: [u8; 4usize],
-    #[doc = "0x20 - capture/compare enable register"] pub ccer: CCER,
-    #[doc = "0x24 - counter"] pub cnt: CNT,
-    #[doc = "0x28 - prescaler"] pub psc: PSC,
-    #[doc = "0x2c - auto-reload register"] pub arr: ARR,
+    #[doc = "0x20 - capture/compare enable register"]
+    pub ccer: CCER,
+    #[doc = "0x24 - counter"]
+    pub cnt: CNT,
+    #[doc = "0x28 - prescaler"]
+    pub psc: PSC,
+    #[doc = "0x2c - auto-reload register"]
+    pub arr: ARR,
     _reserved2: [u8; 4usize],
-    #[doc = "0x34 - capture/compare register 1"] pub ccr1: CCR1,
+    #[doc = "0x34 - capture/compare register 1"]
+    pub ccr1: CCR1,
     _reserved3: [u8; 24usize],
-    #[doc = "0x50 - option register"] pub or: OR,
+    #[doc = "0x50 - option register"]
+    pub or: OR,
 }
 #[doc = "control register 1"]
 pub struct CR1 {

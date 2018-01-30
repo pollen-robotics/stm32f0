@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -52,7 +52,7 @@ pub enum SWR {
 }
 impl SWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             SWR::HSI => 0,
@@ -63,7 +63,7 @@ impl SWR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> SWR {
         match value {
             0 => SWR::HSI,
@@ -74,22 +74,22 @@ impl SWR {
         }
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == SWR::HSI
     }
     #[doc = "Checks if the value of the field is `HSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hse(&self) -> bool {
         *self == SWR::HSE
     }
     #[doc = "Checks if the value of the field is `PLL`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pll(&self) -> bool {
         *self == SWR::PLL
     }
     #[doc = "Checks if the value of the field is `HSI48`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi48(&self) -> bool {
         *self == SWR::HSI48
     }
@@ -100,7 +100,7 @@ pub struct SWSR {
 }
 impl SWSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -121,7 +121,7 @@ pub enum HPRER {
 }
 impl HPRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             HPRER::DIV1 => 0,
@@ -138,7 +138,7 @@ impl HPRER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> HPRER {
         match value {
             0 => HPRER::DIV1,
@@ -154,47 +154,47 @@ impl HPRER {
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div1(&self) -> bool {
         *self == HPRER::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == HPRER::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div4(&self) -> bool {
         *self == HPRER::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div8(&self) -> bool {
         *self == HPRER::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div16(&self) -> bool {
         *self == HPRER::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div64(&self) -> bool {
         *self == HPRER::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div128(&self) -> bool {
         *self == HPRER::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div256(&self) -> bool {
         *self == HPRER::DIV256
     }
     #[doc = "Checks if the value of the field is `DIV512`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div512(&self) -> bool {
         *self == HPRER::DIV512
     }
@@ -211,7 +211,7 @@ pub enum PPRER {
 }
 impl PPRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             PPRER::DIV1 => 0,
@@ -224,7 +224,7 @@ impl PPRER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> PPRER {
         match value {
             0 => PPRER::DIV1,
@@ -236,27 +236,27 @@ impl PPRER {
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div1(&self) -> bool {
         *self == PPRER::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == PPRER::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div4(&self) -> bool {
         *self == PPRER::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div8(&self) -> bool {
         *self == PPRER::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div16(&self) -> bool {
         *self == PPRER::DIV16
     }
@@ -267,32 +267,27 @@ pub struct ADCPRER {
 }
 impl ADCPRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 #[doc = "Possible values of the field `PLLSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLLSRCR {
-    #[doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)"] HSIDIV2,
-    #[doc = "HSI/PREDIV selected as PLL input clock"] HSI,
-    #[doc = "HSE/PREDIV selected as PLL input clock"] HSE,
-    #[doc = "HSI48/PREDIV selected as PLL input clock"] HSI48,
-}
+pub enum PLLSRCR {# [ doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)" ] HSIDIV2 , # [ doc = "HSI/PREDIV selected as PLL input clock" ] HSI , # [ doc = "HSE/PREDIV selected as PLL input clock" ] HSE , # [ doc = "HSI48/PREDIV selected as PLL input clock" ] HSI48 ,}
 impl PLLSRCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             PLLSRCR::HSIDIV2 => 0,
@@ -303,7 +298,7 @@ impl PLLSRCR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> PLLSRCR {
         match value {
             0 => PLLSRCR::HSIDIV2,
@@ -314,22 +309,22 @@ impl PLLSRCR {
         }
     }
     #[doc = "Checks if the value of the field is `HSIDIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsidiv2(&self) -> bool {
         *self == PLLSRCR::HSIDIV2
     }
     #[doc = "Checks if the value of the field is `HSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi(&self) -> bool {
         *self == PLLSRCR::HSI
     }
     #[doc = "Checks if the value of the field is `HSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hse(&self) -> bool {
         *self == PLLSRCR::HSE
     }
     #[doc = "Checks if the value of the field is `HSI48`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi48(&self) -> bool {
         *self == PLLSRCR::HSI48
     }
@@ -342,17 +337,17 @@ pub enum PLLXTPRER {
 }
 impl PLLXTPRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PLLXTPRER::DIV1 => false,
@@ -361,7 +356,7 @@ impl PLLXTPRER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PLLXTPRER {
         match value {
             false => PLLXTPRER::DIV1,
@@ -369,12 +364,12 @@ impl PLLXTPRER {
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div1(&self) -> bool {
         *self == PLLXTPRER::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == PLLXTPRER::DIV2
     }
@@ -401,7 +396,7 @@ pub enum PLLMULR {
 }
 impl PLLMULR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             PLLMULR::MUL2 => 0,
@@ -424,7 +419,7 @@ impl PLLMULR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> PLLMULR {
         match value {
             0 => PLLMULR::MUL2,
@@ -446,77 +441,77 @@ impl PLLMULR {
         }
     }
     #[doc = "Checks if the value of the field is `MUL2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul2(&self) -> bool {
         *self == PLLMULR::MUL2
     }
     #[doc = "Checks if the value of the field is `MUL3`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul3(&self) -> bool {
         *self == PLLMULR::MUL3
     }
     #[doc = "Checks if the value of the field is `MUL4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul4(&self) -> bool {
         *self == PLLMULR::MUL4
     }
     #[doc = "Checks if the value of the field is `MUL5`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul5(&self) -> bool {
         *self == PLLMULR::MUL5
     }
     #[doc = "Checks if the value of the field is `MUL6`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul6(&self) -> bool {
         *self == PLLMULR::MUL6
     }
     #[doc = "Checks if the value of the field is `MUL7`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul7(&self) -> bool {
         *self == PLLMULR::MUL7
     }
     #[doc = "Checks if the value of the field is `MUL8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul8(&self) -> bool {
         *self == PLLMULR::MUL8
     }
     #[doc = "Checks if the value of the field is `MUL9`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul9(&self) -> bool {
         *self == PLLMULR::MUL9
     }
     #[doc = "Checks if the value of the field is `MUL10`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul10(&self) -> bool {
         *self == PLLMULR::MUL10
     }
     #[doc = "Checks if the value of the field is `MUL11`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul11(&self) -> bool {
         *self == PLLMULR::MUL11
     }
     #[doc = "Checks if the value of the field is `MUL12`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul12(&self) -> bool {
         *self == PLLMULR::MUL12
     }
     #[doc = "Checks if the value of the field is `MUL13`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul13(&self) -> bool {
         *self == PLLMULR::MUL13
     }
     #[doc = "Checks if the value of the field is `MUL14`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul14(&self) -> bool {
         *self == PLLMULR::MUL14
     }
     #[doc = "Checks if the value of the field is `MUL15`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul15(&self) -> bool {
         *self == PLLMULR::MUL15
     }
     #[doc = "Checks if the value of the field is `MUL16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_mul16(&self) -> bool {
         *self == PLLMULR::MUL16
     }
@@ -537,7 +532,7 @@ pub enum MCOR {
 }
 impl MCOR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             MCOR::NOCLOCK => 0,
@@ -554,7 +549,7 @@ impl MCOR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> MCOR {
         match value {
             0 => MCOR::NOCLOCK,
@@ -570,47 +565,47 @@ impl MCOR {
         }
     }
     #[doc = "Checks if the value of the field is `NOCLOCK`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_clock(&self) -> bool {
         *self == MCOR::NOCLOCK
     }
     #[doc = "Checks if the value of the field is `INTERNALRC`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_internal_rc(&self) -> bool {
         *self == MCOR::INTERNALRC
     }
     #[doc = "Checks if the value of the field is `INTERNALLSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_internal_lsi(&self) -> bool {
         *self == MCOR::INTERNALLSI
     }
     #[doc = "Checks if the value of the field is `LSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lse(&self) -> bool {
         *self == MCOR::LSE
     }
     #[doc = "Checks if the value of the field is `SYSTEM`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_system(&self) -> bool {
         *self == MCOR::SYSTEM
     }
     #[doc = "Checks if the value of the field is `INTERNALHSI`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_internal_hsi(&self) -> bool {
         *self == MCOR::INTERNALHSI
     }
     #[doc = "Checks if the value of the field is `EXTERNALHSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_external_hse(&self) -> bool {
         *self == MCOR::EXTERNALHSE
     }
     #[doc = "Checks if the value of the field is `PLL`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pll(&self) -> bool {
         *self == MCOR::PLL
     }
     #[doc = "Checks if the value of the field is `HSI48`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_hsi48(&self) -> bool {
         *self == MCOR::HSI48
     }
@@ -629,7 +624,7 @@ pub enum MCOPRER {
 }
 impl MCOPRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             MCOPRER::DIV1 => 0,
@@ -644,7 +639,7 @@ impl MCOPRER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> MCOPRER {
         match value {
             0 => MCOPRER::DIV1,
@@ -659,42 +654,42 @@ impl MCOPRER {
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div1(&self) -> bool {
         *self == MCOPRER::DIV1
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == MCOPRER::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div4(&self) -> bool {
         *self == MCOPRER::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div8(&self) -> bool {
         *self == MCOPRER::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div16(&self) -> bool {
         *self == MCOPRER::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div32(&self) -> bool {
         *self == MCOPRER::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div64(&self) -> bool {
         *self == MCOPRER::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div128(&self) -> bool {
         *self == MCOPRER::DIV128
     }
@@ -707,17 +702,17 @@ pub enum PLLNODIVR {
 }
 impl PLLNODIVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PLLNODIVR::DIV2 => false,
@@ -726,7 +721,7 @@ impl PLLNODIVR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PLLNODIVR {
         match value {
             false => PLLNODIVR::DIV2,
@@ -734,12 +729,12 @@ impl PLLNODIVR {
         }
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == PLLNODIVR::DIV2
     }
     #[doc = "Checks if the value of the field is `NODIV`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_div(&self) -> bool {
         *self == PLLNODIVR::NODIV
     }
@@ -754,7 +749,7 @@ pub enum SWW {
 impl SWW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             SWW::HSI => 0,
@@ -770,34 +765,34 @@ pub struct _SWW<'a> {
 }
 impl<'a> _SWW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SWW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "HSI selected as system clock"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(SWW::HSI)
     }
     #[doc = "HSE selected as system clock"]
-    #[inline(always)]
+    #[inline]
     pub fn hse(self) -> &'a mut W {
         self.variant(SWW::HSE)
     }
     #[doc = "PLL selected as system clock"]
-    #[inline(always)]
+    #[inline]
     pub fn pll(self) -> &'a mut W {
         self.variant(SWW::PLL)
     }
     #[doc = "HSI48 selected as system clock (when available)"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48(self) -> &'a mut W {
         self.variant(SWW::HSI48)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
@@ -821,7 +816,7 @@ pub enum HPREW {
 impl HPREW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             HPREW::DIV1 => 0,
@@ -842,57 +837,57 @@ pub struct _HPREW<'a> {
 }
 impl<'a> _HPREW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HPREW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "SYSCLK not divided"]
-    #[inline(always)]
+    #[inline]
     pub fn div1(self) -> &'a mut W {
         self.variant(HPREW::DIV1)
     }
     #[doc = "SYSCLK divided by 2"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(HPREW::DIV2)
     }
     #[doc = "SYSCLK divided by 4"]
-    #[inline(always)]
+    #[inline]
     pub fn div4(self) -> &'a mut W {
         self.variant(HPREW::DIV4)
     }
     #[doc = "SYSCLK divided by 8"]
-    #[inline(always)]
+    #[inline]
     pub fn div8(self) -> &'a mut W {
         self.variant(HPREW::DIV8)
     }
     #[doc = "SYSCLK divided by 16"]
-    #[inline(always)]
+    #[inline]
     pub fn div16(self) -> &'a mut W {
         self.variant(HPREW::DIV16)
     }
     #[doc = "SYSCLK divided by 64"]
-    #[inline(always)]
+    #[inline]
     pub fn div64(self) -> &'a mut W {
         self.variant(HPREW::DIV64)
     }
     #[doc = "SYSCLK divided by 128"]
-    #[inline(always)]
+    #[inline]
     pub fn div128(self) -> &'a mut W {
         self.variant(HPREW::DIV128)
     }
     #[doc = "SYSCLK divided by 256"]
-    #[inline(always)]
+    #[inline]
     pub fn div256(self) -> &'a mut W {
         self.variant(HPREW::DIV256)
     }
     #[doc = "SYSCLK divided by 512"]
-    #[inline(always)]
+    #[inline]
     pub fn div512(self) -> &'a mut W {
         self.variant(HPREW::DIV512)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 4;
@@ -912,7 +907,7 @@ pub enum PPREW {
 impl PPREW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             PPREW::DIV1 => 0,
@@ -929,37 +924,37 @@ pub struct _PPREW<'a> {
 }
 impl<'a> _PPREW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PPREW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "HCLK not divided"]
-    #[inline(always)]
+    #[inline]
     pub fn div1(self) -> &'a mut W {
         self.variant(PPREW::DIV1)
     }
     #[doc = "HCLK divided by 2"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(PPREW::DIV2)
     }
     #[doc = "HCLK divided by 4"]
-    #[inline(always)]
+    #[inline]
     pub fn div4(self) -> &'a mut W {
         self.variant(PPREW::DIV4)
     }
     #[doc = "HCLK divided by 8"]
-    #[inline(always)]
+    #[inline]
     pub fn div8(self) -> &'a mut W {
         self.variant(PPREW::DIV8)
     }
     #[doc = "HCLK divided by 16"]
-    #[inline(always)]
+    #[inline]
     pub fn div16(self) -> &'a mut W {
         self.variant(PPREW::DIV16)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 8;
@@ -982,7 +977,7 @@ impl<'a> _ADCPREW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -992,16 +987,11 @@ impl<'a> _ADCPREW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `PLLSRC`"]
-pub enum PLLSRCW {
-    #[doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)"] HSIDIV2,
-    #[doc = "HSI/PREDIV selected as PLL input clock"] HSI,
-    #[doc = "HSE/PREDIV selected as PLL input clock"] HSE,
-    #[doc = "HSI48/PREDIV selected as PLL input clock"] HSI48,
-}
+pub enum PLLSRCW {# [ doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)" ] HSIDIV2 , # [ doc = "HSI/PREDIV selected as PLL input clock" ] HSI , # [ doc = "HSE/PREDIV selected as PLL input clock" ] HSE , # [ doc = "HSI48/PREDIV selected as PLL input clock" ] HSI48 ,}
 impl PLLSRCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             PLLSRCW::HSIDIV2 => 0,
@@ -1017,34 +1007,33 @@ pub struct _PLLSRCW<'a> {
 }
 impl<'a> _PLLSRCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLSRCW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
-    #[doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)"]
-    #[inline(always)]
+    # [ doc = "HSI/2 selected as PLL input clock (PREDIV forced to divide by 2 on STM32F04x, STM32F07x and STM32F09x devices)" ] # [ inline ]
     pub fn hsidiv2(self) -> &'a mut W {
         self.variant(PLLSRCW::HSIDIV2)
     }
     #[doc = "HSI/PREDIV selected as PLL input clock"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi(self) -> &'a mut W {
         self.variant(PLLSRCW::HSI)
     }
     #[doc = "HSE/PREDIV selected as PLL input clock"]
-    #[inline(always)]
+    #[inline]
     pub fn hse(self) -> &'a mut W {
         self.variant(PLLSRCW::HSE)
     }
     #[doc = "HSI48/PREDIV selected as PLL input clock"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48(self) -> &'a mut W {
         self.variant(PLLSRCW::HSI48)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 15;
@@ -1061,7 +1050,7 @@ pub enum PLLXTPREW {
 impl PLLXTPREW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PLLXTPREW::DIV1 => false,
@@ -1075,19 +1064,19 @@ pub struct _PLLXTPREW<'a> {
 }
 impl<'a> _PLLXTPREW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLXTPREW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSE not divided"]
-    #[inline(always)]
+    #[inline]
     pub fn div1(self) -> &'a mut W {
         self.variant(PLLXTPREW::DIV1)
     }
     #[doc = "HSE divided by 2"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(PLLXTPREW::DIV2)
     }
@@ -1100,7 +1089,7 @@ impl<'a> _PLLXTPREW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -1130,7 +1119,7 @@ pub enum PLLMULW {
 impl PLLMULW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             PLLMULW::MUL2 => 0,
@@ -1157,87 +1146,87 @@ pub struct _PLLMULW<'a> {
 }
 impl<'a> _PLLMULW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLMULW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "PLL input clock x 2"]
-    #[inline(always)]
+    #[inline]
     pub fn mul2(self) -> &'a mut W {
         self.variant(PLLMULW::MUL2)
     }
     #[doc = "PLL input clock x 3"]
-    #[inline(always)]
+    #[inline]
     pub fn mul3(self) -> &'a mut W {
         self.variant(PLLMULW::MUL3)
     }
     #[doc = "PLL input clock x 4"]
-    #[inline(always)]
+    #[inline]
     pub fn mul4(self) -> &'a mut W {
         self.variant(PLLMULW::MUL4)
     }
     #[doc = "PLL input clock x 5"]
-    #[inline(always)]
+    #[inline]
     pub fn mul5(self) -> &'a mut W {
         self.variant(PLLMULW::MUL5)
     }
     #[doc = "PLL input clock x 6"]
-    #[inline(always)]
+    #[inline]
     pub fn mul6(self) -> &'a mut W {
         self.variant(PLLMULW::MUL6)
     }
     #[doc = "PLL input clock x 7"]
-    #[inline(always)]
+    #[inline]
     pub fn mul7(self) -> &'a mut W {
         self.variant(PLLMULW::MUL7)
     }
     #[doc = "PLL input clock x 8"]
-    #[inline(always)]
+    #[inline]
     pub fn mul8(self) -> &'a mut W {
         self.variant(PLLMULW::MUL8)
     }
     #[doc = "PLL input clock x 9"]
-    #[inline(always)]
+    #[inline]
     pub fn mul9(self) -> &'a mut W {
         self.variant(PLLMULW::MUL9)
     }
     #[doc = "PLL input clock x 10"]
-    #[inline(always)]
+    #[inline]
     pub fn mul10(self) -> &'a mut W {
         self.variant(PLLMULW::MUL10)
     }
     #[doc = "PLL input clock x 11"]
-    #[inline(always)]
+    #[inline]
     pub fn mul11(self) -> &'a mut W {
         self.variant(PLLMULW::MUL11)
     }
     #[doc = "PLL input clock x 12"]
-    #[inline(always)]
+    #[inline]
     pub fn mul12(self) -> &'a mut W {
         self.variant(PLLMULW::MUL12)
     }
     #[doc = "PLL input clock x 13"]
-    #[inline(always)]
+    #[inline]
     pub fn mul13(self) -> &'a mut W {
         self.variant(PLLMULW::MUL13)
     }
     #[doc = "PLL input clock x 14"]
-    #[inline(always)]
+    #[inline]
     pub fn mul14(self) -> &'a mut W {
         self.variant(PLLMULW::MUL14)
     }
     #[doc = "PLL input clock x 15"]
-    #[inline(always)]
+    #[inline]
     pub fn mul15(self) -> &'a mut W {
         self.variant(PLLMULW::MUL15)
     }
     #[doc = "PLL input clock x 16"]
-    #[inline(always)]
+    #[inline]
     pub fn mul16(self) -> &'a mut W {
         self.variant(PLLMULW::MUL16)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 18;
@@ -1261,7 +1250,7 @@ pub enum MCOW {
 impl MCOW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             MCOW::NOCLOCK => 0,
@@ -1282,57 +1271,57 @@ pub struct _MCOW<'a> {
 }
 impl<'a> _MCOW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MCOW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "MCO output disabled, no clock on MCO"]
-    #[inline(always)]
+    #[inline]
     pub fn no_clock(self) -> &'a mut W {
         self.variant(MCOW::NOCLOCK)
     }
     #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn internal_rc(self) -> &'a mut W {
         self.variant(MCOW::INTERNALRC)
     }
     #[doc = "Internal low speed (LSI) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn internal_lsi(self) -> &'a mut W {
         self.variant(MCOW::INTERNALLSI)
     }
     #[doc = "External low speed (LSE) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn lse(self) -> &'a mut W {
         self.variant(MCOW::LSE)
     }
     #[doc = "System clock select"]
-    #[inline(always)]
+    #[inline]
     pub fn system(self) -> &'a mut W {
         self.variant(MCOW::SYSTEM)
     }
     #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn internal_hsi(self) -> &'a mut W {
         self.variant(MCOW::INTERNALHSI)
     }
     #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn external_hse(self) -> &'a mut W {
         self.variant(MCOW::EXTERNALHSE)
     }
     #[doc = "PLL clock selected (divided by 1 or 2, depending on PLLNODIV)"]
-    #[inline(always)]
+    #[inline]
     pub fn pll(self) -> &'a mut W {
         self.variant(MCOW::PLL)
     }
     #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48(self) -> &'a mut W {
         self.variant(MCOW::HSI48)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 24;
@@ -1355,7 +1344,7 @@ pub enum MCOPREW {
 impl MCOPREW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             MCOPREW::DIV1 => 0,
@@ -1375,54 +1364,54 @@ pub struct _MCOPREW<'a> {
 }
 impl<'a> _MCOPREW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MCOPREW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "MCO is divided by 1"]
-    #[inline(always)]
+    #[inline]
     pub fn div1(self) -> &'a mut W {
         self.variant(MCOPREW::DIV1)
     }
     #[doc = "MCO is divided by 2"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(MCOPREW::DIV2)
     }
     #[doc = "MCO is divided by 4"]
-    #[inline(always)]
+    #[inline]
     pub fn div4(self) -> &'a mut W {
         self.variant(MCOPREW::DIV4)
     }
     #[doc = "MCO is divided by 8"]
-    #[inline(always)]
+    #[inline]
     pub fn div8(self) -> &'a mut W {
         self.variant(MCOPREW::DIV8)
     }
     #[doc = "MCO is divided by 16"]
-    #[inline(always)]
+    #[inline]
     pub fn div16(self) -> &'a mut W {
         self.variant(MCOPREW::DIV16)
     }
     #[doc = "MCO is divided by 32"]
-    #[inline(always)]
+    #[inline]
     pub fn div32(self) -> &'a mut W {
         self.variant(MCOPREW::DIV32)
     }
     #[doc = "MCO is divided by 64"]
-    #[inline(always)]
+    #[inline]
     pub fn div64(self) -> &'a mut W {
         self.variant(MCOPREW::DIV64)
     }
     #[doc = "MCO is divided by 128"]
-    #[inline(always)]
+    #[inline]
     pub fn div128(self) -> &'a mut W {
         self.variant(MCOPREW::DIV128)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 28;
@@ -1439,7 +1428,7 @@ pub enum PLLNODIVW {
 impl PLLNODIVW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PLLNODIVW::DIV2 => false,
@@ -1453,19 +1442,19 @@ pub struct _PLLNODIVW<'a> {
 }
 impl<'a> _PLLNODIVW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLNODIVW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "PLL is divided by 2 for MCO"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(PLLNODIVW::DIV2)
     }
     #[doc = "PLL is not divided for MCO"]
-    #[inline(always)]
+    #[inline]
     pub fn no_div(self) -> &'a mut W {
         self.variant(PLLNODIVW::NODIV)
     }
@@ -1478,7 +1467,7 @@ impl<'a> _PLLNODIVW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -1489,12 +1478,12 @@ impl<'a> _PLLNODIVW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:1 - System clock Switch"]
-    #[inline(always)]
+    #[inline]
     pub fn sw(&self) -> SWR {
         SWR::_from({
             const MASK: u8 = 3;
@@ -1503,7 +1492,7 @@ impl R {
         })
     }
     #[doc = "Bits 2:3 - System Clock Switch Status"]
-    #[inline(always)]
+    #[inline]
     pub fn sws(&self) -> SWSR {
         let bits = {
             const MASK: u8 = 3;
@@ -1513,7 +1502,7 @@ impl R {
         SWSR { bits }
     }
     #[doc = "Bits 4:7 - AHB prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn hpre(&self) -> HPRER {
         HPRER::_from({
             const MASK: u8 = 15;
@@ -1522,7 +1511,7 @@ impl R {
         })
     }
     #[doc = "Bits 8:10 - APB Low speed prescaler (APB1)"]
-    #[inline(always)]
+    #[inline]
     pub fn ppre(&self) -> PPRER {
         PPRER::_from({
             const MASK: u8 = 7;
@@ -1531,7 +1520,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - ADC prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn adcpre(&self) -> ADCPRER {
         let bits = {
             const MASK: bool = true;
@@ -1541,7 +1530,7 @@ impl R {
         ADCPRER { bits }
     }
     #[doc = "Bits 15:16 - PLL input clock source"]
-    #[inline(always)]
+    #[inline]
     pub fn pllsrc(&self) -> PLLSRCR {
         PLLSRCR::_from({
             const MASK: u8 = 3;
@@ -1550,7 +1539,7 @@ impl R {
         })
     }
     #[doc = "Bit 17 - HSE divider for PLL entry"]
-    #[inline(always)]
+    #[inline]
     pub fn pllxtpre(&self) -> PLLXTPRER {
         PLLXTPRER::_from({
             const MASK: bool = true;
@@ -1559,7 +1548,7 @@ impl R {
         })
     }
     #[doc = "Bits 18:21 - PLL Multiplication Factor"]
-    #[inline(always)]
+    #[inline]
     pub fn pllmul(&self) -> PLLMULR {
         PLLMULR::_from({
             const MASK: u8 = 15;
@@ -1568,7 +1557,7 @@ impl R {
         })
     }
     #[doc = "Bits 24:26 - Microcontroller clock output"]
-    #[inline(always)]
+    #[inline]
     pub fn mco(&self) -> MCOR {
         MCOR::_from({
             const MASK: u8 = 7;
@@ -1577,7 +1566,7 @@ impl R {
         })
     }
     #[doc = "Bits 28:30 - Microcontroller Clock Output Prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn mcopre(&self) -> MCOPRER {
         MCOPRER::_from({
             const MASK: u8 = 7;
@@ -1586,7 +1575,7 @@ impl R {
         })
     }
     #[doc = "Bit 31 - PLL clock not divided for MCO"]
-    #[inline(always)]
+    #[inline]
     pub fn pllnodiv(&self) -> PLLNODIVR {
         PLLNODIVR::_from({
             const MASK: bool = true;
@@ -1597,63 +1586,63 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:1 - System clock Switch"]
-    #[inline(always)]
+    #[inline]
     pub fn sw(&mut self) -> _SWW {
         _SWW { w: self }
     }
     #[doc = "Bits 4:7 - AHB prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn hpre(&mut self) -> _HPREW {
         _HPREW { w: self }
     }
     #[doc = "Bits 8:10 - APB Low speed prescaler (APB1)"]
-    #[inline(always)]
+    #[inline]
     pub fn ppre(&mut self) -> _PPREW {
         _PPREW { w: self }
     }
     #[doc = "Bit 14 - ADC prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn adcpre(&mut self) -> _ADCPREW {
         _ADCPREW { w: self }
     }
     #[doc = "Bits 15:16 - PLL input clock source"]
-    #[inline(always)]
+    #[inline]
     pub fn pllsrc(&mut self) -> _PLLSRCW {
         _PLLSRCW { w: self }
     }
     #[doc = "Bit 17 - HSE divider for PLL entry"]
-    #[inline(always)]
+    #[inline]
     pub fn pllxtpre(&mut self) -> _PLLXTPREW {
         _PLLXTPREW { w: self }
     }
     #[doc = "Bits 18:21 - PLL Multiplication Factor"]
-    #[inline(always)]
+    #[inline]
     pub fn pllmul(&mut self) -> _PLLMULW {
         _PLLMULW { w: self }
     }
     #[doc = "Bits 24:26 - Microcontroller clock output"]
-    #[inline(always)]
+    #[inline]
     pub fn mco(&mut self) -> _MCOW {
         _MCOW { w: self }
     }
     #[doc = "Bits 28:30 - Microcontroller Clock Output Prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn mcopre(&mut self) -> _MCOPREW {
         _MCOPREW { w: self }
     }
     #[doc = "Bit 31 - PLL clock not divided for MCO"]
-    #[inline(always)]
+    #[inline]
     pub fn pllnodiv(&mut self) -> _PLLNODIVW {
         _PLLNODIVW { w: self }
     }

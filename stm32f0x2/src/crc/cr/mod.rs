@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -50,17 +50,17 @@ pub enum RESETR {
 }
 impl RESETR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             RESETR::RESET => true,
@@ -69,7 +69,7 @@ impl RESETR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> RESETR {
         match value {
             true => RESETR::RESET,
@@ -77,7 +77,7 @@ impl RESETR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == RESETR::RESET
     }
@@ -92,7 +92,7 @@ pub enum POLYSIZER {
 }
 impl POLYSIZER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             POLYSIZER::_32BITS => 0,
@@ -103,7 +103,7 @@ impl POLYSIZER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> POLYSIZER {
         match value {
             0 => POLYSIZER::_32BITS,
@@ -114,22 +114,22 @@ impl POLYSIZER {
         }
     }
     #[doc = "Checks if the value of the field is `_32BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_32bits(&self) -> bool {
         *self == POLYSIZER::_32BITS
     }
     #[doc = "Checks if the value of the field is `_16BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_16bits(&self) -> bool {
         *self == POLYSIZER::_16BITS
     }
     #[doc = "Checks if the value of the field is `_8BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_8bits(&self) -> bool {
         *self == POLYSIZER::_8BITS
     }
     #[doc = "Checks if the value of the field is `_7BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_7bits(&self) -> bool {
         *self == POLYSIZER::_7BITS
     }
@@ -144,7 +144,7 @@ pub enum REV_INR {
 }
 impl REV_INR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             REV_INR::NOREVERSE => 0,
@@ -155,7 +155,7 @@ impl REV_INR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> REV_INR {
         match value {
             0 => REV_INR::NOREVERSE,
@@ -166,22 +166,22 @@ impl REV_INR {
         }
     }
     #[doc = "Checks if the value of the field is `NOREVERSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_reverse(&self) -> bool {
         *self == REV_INR::NOREVERSE
     }
     #[doc = "Checks if the value of the field is `BYTE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_byte(&self) -> bool {
         *self == REV_INR::BYTE
     }
     #[doc = "Checks if the value of the field is `HALFWORD`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_half_word(&self) -> bool {
         *self == REV_INR::HALFWORD
     }
     #[doc = "Checks if the value of the field is `_7BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_7bits(&self) -> bool {
         *self == REV_INR::_7BITS
     }
@@ -194,17 +194,17 @@ pub enum REV_OUTR {
 }
 impl REV_OUTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             REV_OUTR::NOREVERSE => false,
@@ -213,7 +213,7 @@ impl REV_OUTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> REV_OUTR {
         match value {
             false => REV_OUTR::NOREVERSE,
@@ -221,12 +221,12 @@ impl REV_OUTR {
         }
     }
     #[doc = "Checks if the value of the field is `NOREVERSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_reverse(&self) -> bool {
         *self == REV_OUTR::NOREVERSE
     }
     #[doc = "Checks if the value of the field is `REVERSE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reverse(&self) -> bool {
         *self == REV_OUTR::REVERSE
     }
@@ -238,7 +238,7 @@ pub enum RESETW {
 impl RESETW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             RESETW::RESET => true,
@@ -251,14 +251,14 @@ pub struct _RESETW<'a> {
 }
 impl<'a> _RESETW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: RESETW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Resets the CRC calculation unit"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(RESETW::RESET)
     }
@@ -271,7 +271,7 @@ impl<'a> _RESETW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -290,7 +290,7 @@ pub enum POLYSIZEW {
 impl POLYSIZEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             POLYSIZEW::_32BITS => 0,
@@ -306,34 +306,34 @@ pub struct _POLYSIZEW<'a> {
 }
 impl<'a> _POLYSIZEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: POLYSIZEW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "32 bit polynomial."]
-    #[inline(always)]
+    #[inline]
     pub fn _32bits(self) -> &'a mut W {
         self.variant(POLYSIZEW::_32BITS)
     }
     #[doc = "16 bit polynomial."]
-    #[inline(always)]
+    #[inline]
     pub fn _16bits(self) -> &'a mut W {
         self.variant(POLYSIZEW::_16BITS)
     }
     #[doc = "8 bit polynomial."]
-    #[inline(always)]
+    #[inline]
     pub fn _8bits(self) -> &'a mut W {
         self.variant(POLYSIZEW::_8BITS)
     }
     #[doc = "7 bit polynomial."]
-    #[inline(always)]
+    #[inline]
     pub fn _7bits(self) -> &'a mut W {
         self.variant(POLYSIZEW::_7BITS)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 3;
@@ -352,7 +352,7 @@ pub enum REV_INW {
 impl REV_INW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             REV_INW::NOREVERSE => 0,
@@ -368,34 +368,34 @@ pub struct _REV_INW<'a> {
 }
 impl<'a> _REV_INW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: REV_INW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "Bit order not affected."]
-    #[inline(always)]
+    #[inline]
     pub fn no_reverse(self) -> &'a mut W {
         self.variant(REV_INW::NOREVERSE)
     }
     #[doc = "Bit reversal done by byte."]
-    #[inline(always)]
+    #[inline]
     pub fn byte(self) -> &'a mut W {
         self.variant(REV_INW::BYTE)
     }
     #[doc = "Bit reversal done by half-word."]
-    #[inline(always)]
+    #[inline]
     pub fn half_word(self) -> &'a mut W {
         self.variant(REV_INW::HALFWORD)
     }
     #[doc = "Bit reversal done by word."]
-    #[inline(always)]
+    #[inline]
     pub fn _7bits(self) -> &'a mut W {
         self.variant(REV_INW::_7BITS)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 5;
@@ -412,7 +412,7 @@ pub enum REV_OUTW {
 impl REV_OUTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             REV_OUTW::NOREVERSE => false,
@@ -426,19 +426,19 @@ pub struct _REV_OUTW<'a> {
 }
 impl<'a> _REV_OUTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: REV_OUTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Bit order not affected."]
-    #[inline(always)]
+    #[inline]
     pub fn no_reverse(self) -> &'a mut W {
         self.variant(REV_OUTW::NOREVERSE)
     }
     #[doc = "Bit-reversed output format."]
-    #[inline(always)]
+    #[inline]
     pub fn reverse(self) -> &'a mut W {
         self.variant(REV_OUTW::REVERSE)
     }
@@ -451,7 +451,7 @@ impl<'a> _REV_OUTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -462,12 +462,12 @@ impl<'a> _REV_OUTW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - reset bit"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) -> RESETR {
         RESETR::_from({
             const MASK: bool = true;
@@ -476,7 +476,7 @@ impl R {
         })
     }
     #[doc = "Bits 3:4 - Polynomial size"]
-    #[inline(always)]
+    #[inline]
     pub fn polysize(&self) -> POLYSIZER {
         POLYSIZER::_from({
             const MASK: u8 = 3;
@@ -485,7 +485,7 @@ impl R {
         })
     }
     #[doc = "Bits 5:6 - Reverse input data"]
-    #[inline(always)]
+    #[inline]
     pub fn rev_in(&self) -> REV_INR {
         REV_INR::_from({
             const MASK: u8 = 3;
@@ -494,7 +494,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - Reverse output data"]
-    #[inline(always)]
+    #[inline]
     pub fn rev_out(&self) -> REV_OUTR {
         REV_OUTR::_from({
             const MASK: bool = true;
@@ -505,33 +505,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - reset bit"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&mut self) -> _RESETW {
         _RESETW { w: self }
     }
     #[doc = "Bits 3:4 - Polynomial size"]
-    #[inline(always)]
+    #[inline]
     pub fn polysize(&mut self) -> _POLYSIZEW {
         _POLYSIZEW { w: self }
     }
     #[doc = "Bits 5:6 - Reverse input data"]
-    #[inline(always)]
+    #[inline]
     pub fn rev_in(&mut self) -> _REV_INW {
         _REV_INW { w: self }
     }
     #[doc = "Bit 7 - Reverse output data"]
-    #[inline(always)]
+    #[inline]
     pub fn rev_out(&mut self) -> _REV_OUTW {
         _REV_OUTW { w: self }
     }

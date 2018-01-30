@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::OAR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::OAR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::OAR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct OA1_0R {
 }
 impl OA1_0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,7 +69,7 @@ pub struct OA1_1R {
 }
 impl OA1_1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -80,7 +80,7 @@ pub struct OA1_8R {
 }
 impl OA1_8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -91,17 +91,17 @@ pub struct OA1MODER {
 }
 impl OA1MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -112,17 +112,17 @@ pub struct OA1ENR {
 }
 impl OA1ENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -141,7 +141,7 @@ impl<'a> _OA1_0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -156,7 +156,7 @@ pub struct _OA1_1W<'a> {
 }
 impl<'a> _OA1_1W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 127;
         const OFFSET: u8 = 1;
@@ -171,7 +171,7 @@ pub struct _OA1_8W<'a> {
 }
 impl<'a> _OA1_8W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 8;
@@ -194,7 +194,7 @@ impl<'a> _OA1MODEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -217,7 +217,7 @@ impl<'a> _OA1ENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -228,12 +228,12 @@ impl<'a> _OA1ENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_0(&self) -> OA1_0R {
         let bits = {
             const MASK: bool = true;
@@ -243,7 +243,7 @@ impl R {
         OA1_0R { bits }
     }
     #[doc = "Bits 1:7 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_1(&self) -> OA1_1R {
         let bits = {
             const MASK: u8 = 127;
@@ -253,7 +253,7 @@ impl R {
         OA1_1R { bits }
     }
     #[doc = "Bits 8:9 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_8(&self) -> OA1_8R {
         let bits = {
             const MASK: u8 = 3;
@@ -263,7 +263,7 @@ impl R {
         OA1_8R { bits }
     }
     #[doc = "Bit 10 - Own Address 1 10-bit mode"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1mode(&self) -> OA1MODER {
         let bits = {
             const MASK: bool = true;
@@ -273,7 +273,7 @@ impl R {
         OA1MODER { bits }
     }
     #[doc = "Bit 15 - Own Address 1 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1en(&self) -> OA1ENR {
         let bits = {
             const MASK: bool = true;
@@ -285,38 +285,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_0(&mut self) -> _OA1_0W {
         _OA1_0W { w: self }
     }
     #[doc = "Bits 1:7 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_1(&mut self) -> _OA1_1W {
         _OA1_1W { w: self }
     }
     #[doc = "Bits 8:9 - Interface address"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1_8(&mut self) -> _OA1_8W {
         _OA1_8W { w: self }
     }
     #[doc = "Bit 10 - Own Address 1 10-bit mode"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1mode(&mut self) -> _OA1MODEW {
         _OA1MODEW { w: self }
     }
     #[doc = "Bit 15 - Own Address 1 enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oa1en(&mut self) -> _OA1ENW {
         _OA1ENW { w: self }
     }

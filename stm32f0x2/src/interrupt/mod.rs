@@ -10,7 +10,7 @@ pub unsafe extern "C" fn DH_TRAMPOLINE() {
     DEFAULT_HANDLER();
 }
 #[cfg(feature = "rt")]
-global_asm!("\n.weak WWDG\nWWDG = DH_TRAMPOLINE\n.weak PVD\nPVD = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak FLASH\nFLASH = DH_TRAMPOLINE\n.weak RCC_CRS\nRCC_CRS = DH_TRAMPOLINE\n.weak EXTI0_1\nEXTI0_1 = DH_TRAMPOLINE\n.weak EXTI2_3\nEXTI2_3 = DH_TRAMPOLINE\n.weak EXTI4_15\nEXTI4_15 = DH_TRAMPOLINE\n.weak TSC\nTSC = DH_TRAMPOLINE\n.weak DMA1_CH1\nDMA1_CH1 = DH_TRAMPOLINE\n.weak ADC_COMP\nADC_COMP = DH_TRAMPOLINE\n.weak TIM1_BRK_UP_TRG_COM\nTIM1_BRK_UP_TRG_COM = DH_TRAMPOLINE\n.weak TIM1_CC\nTIM1_CC = DH_TRAMPOLINE\n.weak TIM2\nTIM2 = DH_TRAMPOLINE\n.weak TIM3\nTIM3 = DH_TRAMPOLINE\n.weak TIM6_DAC\nTIM6_DAC = DH_TRAMPOLINE\n.weak TIM7\nTIM7 = DH_TRAMPOLINE\n.weak TIM14\nTIM14 = DH_TRAMPOLINE\n.weak TIM15\nTIM15 = DH_TRAMPOLINE\n.weak TIM16\nTIM16 = DH_TRAMPOLINE\n.weak TIM17\nTIM17 = DH_TRAMPOLINE\n.weak I2C1\nI2C1 = DH_TRAMPOLINE\n.weak I2C2\nI2C2 = DH_TRAMPOLINE\n.weak SPI1\nSPI1 = DH_TRAMPOLINE\n.weak SPI2\nSPI2 = DH_TRAMPOLINE\n.weak USART1\nUSART1 = DH_TRAMPOLINE\n.weak USART2\nUSART2 = DH_TRAMPOLINE\n.weak USART3_4\nUSART3_4 = DH_TRAMPOLINE\n.weak CEC_CAN\nCEC_CAN = DH_TRAMPOLINE\n.weak USB\nUSB = DH_TRAMPOLINE");
+global_asm ! ( "\n.weak WWDG\nWWDG = DH_TRAMPOLINE\n.weak PVD\nPVD = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak FLASH\nFLASH = DH_TRAMPOLINE\n.weak RCC_CRS\nRCC_CRS = DH_TRAMPOLINE\n.weak EXTI0_1\nEXTI0_1 = DH_TRAMPOLINE\n.weak EXTI2_3\nEXTI2_3 = DH_TRAMPOLINE\n.weak EXTI4_15\nEXTI4_15 = DH_TRAMPOLINE\n.weak TSC\nTSC = DH_TRAMPOLINE\n.weak DMA1_CH1\nDMA1_CH1 = DH_TRAMPOLINE\n.weak ADC_COMP\nADC_COMP = DH_TRAMPOLINE\n.weak TIM1_BRK_UP_TRG_COM\nTIM1_BRK_UP_TRG_COM = DH_TRAMPOLINE\n.weak TIM1_CC\nTIM1_CC = DH_TRAMPOLINE\n.weak TIM2\nTIM2 = DH_TRAMPOLINE\n.weak TIM3\nTIM3 = DH_TRAMPOLINE\n.weak TIM6_DAC\nTIM6_DAC = DH_TRAMPOLINE\n.weak TIM7\nTIM7 = DH_TRAMPOLINE\n.weak TIM14\nTIM14 = DH_TRAMPOLINE\n.weak TIM15\nTIM15 = DH_TRAMPOLINE\n.weak TIM16\nTIM16 = DH_TRAMPOLINE\n.weak TIM17\nTIM17 = DH_TRAMPOLINE\n.weak I2C1\nI2C1 = DH_TRAMPOLINE\n.weak I2C2\nI2C2 = DH_TRAMPOLINE\n.weak SPI1\nSPI1 = DH_TRAMPOLINE\n.weak SPI2\nSPI2 = DH_TRAMPOLINE\n.weak USART1\nUSART1 = DH_TRAMPOLINE\n.weak USART2\nUSART2 = DH_TRAMPOLINE\n.weak USART3_4\nUSART3_4 = DH_TRAMPOLINE\n.weak CEC_CAN\nCEC_CAN = DH_TRAMPOLINE\n.weak USB\nUSB = DH_TRAMPOLINE" ) ;
 #[cfg(feature = "rt")]
 extern "C" {
     fn WWDG();
@@ -118,7 +118,7 @@ pub enum Interrupt {
     #[doc = "31 - USB global interrupt"] USB,
 }
 unsafe impl Nr for Interrupt {
-    #[inline(always)]
+    #[inline]
     fn nr(&self) -> u8 {
         match *self {
             Interrupt::WWDG => 0,
@@ -156,4 +156,4 @@ unsafe impl Nr for Interrupt {
 }
 #[cfg(feature = "rt")]
 #[macro_export]
-macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
+macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ty = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
