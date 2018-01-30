@@ -113,7 +113,8 @@ impl Pwm {
             let tim3 = TIM3.borrow(cs);
 
             // Set Prescaler Register - 16 bits
-            tim3.psc.write(|w| w.psc().bits((FREQUENCY / (1_000_000 * 2)) - 1)); // Counter clock Frequency = (fCK_PSC / (PSC[15:0] + 1)
+            const PRE_SCALER: u16 = ((FREQUENCY / (1_000_000 * 2)) - 1) as u16;
+            tim3.psc.write(|w| w.psc().bits(PRE_SCALER)); // Counter clock Frequency = (fCK_PSC / (PSC[15:0] + 1)
 
             // Set Auto-Reload register - 16 bits
             let arr = 1000000 / frequency; //1000000
