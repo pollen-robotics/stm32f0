@@ -1,5 +1,4 @@
 use pwm;
-pub use pwm::Pin;
 
 pub struct Servo {
     servo: pwm::Pwm,

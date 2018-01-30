@@ -3,11 +3,12 @@
 extern crate stm32f0_hal as hal;
 
 use hal::servo;
+use hal::pwm;
 use hal::rcc;
 
 fn main() {
     rcc::init();
-    let servo1 = servo::Servo::init(servo::Pin::PB4);
+    let servo1 = servo::Servo::init(pwm::Pin::PB4);
     servo1.set_position(0.0);
     loop {
         // increase position of 0.5° each 20 ms
