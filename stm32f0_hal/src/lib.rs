@@ -21,6 +21,7 @@ pub mod pwm;
 pub mod rcc;
 pub mod uart;
 pub mod timer;
+pub mod servo;
 
 #[cfg(feature = "use_alloc")]
 extern crate alloc_cortex_m as heap;
