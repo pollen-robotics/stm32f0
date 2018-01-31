@@ -17,6 +17,10 @@ version = "0.2.0"
 [badges.travis-ci]
 repository = "pollen-robotics/stm32f0"
 
+[features]
+default = []
+use_alloc = ["alloc-cortex-m"]
+
 [dependencies]
 bare-metal = "0.1.1"
 cortex-m = "0.4.3"
@@ -35,3 +39,7 @@ path = "../stm32f0x2"
 [dev-dependencies.cortex-m-rt]
 features = ["abort-on-panic"]
 version = "0.3.12"
+
+[dependencies.alloc-cortex-m]
+git = "https://github.com/pollen-robotics/alloc-cortex-m"
+optional = true

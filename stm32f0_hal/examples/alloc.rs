@@ -3,41 +3,32 @@
 
 extern crate cortex_m;
 extern crate stm32f0_hal as hal;
-#[macro_use(interrupt)]
-extern crate stm32f0x2;
+
+use hal::gpio::{InputPin, GpioExt};
+use hal::rcc::RccExt;
 
 extern crate alloc;
 use alloc::Vec;
 
-use stm32f0x2::EXTI;
-use hal::{gpio, rcc};
-
-static mut V: Option<Vec<u8>> = None;
-
 fn main() {
     hal::allocator::setup(5000);
-    unsafe {
-        V = Some(Vec::new());
-    }
 
-    let p0 = gpio::Input::setup(gpio::Pin::PA0);
-    rcc::init(); // Full Speed 48Mhz
-    p0.init_interrupt();
-    loop {}
-}
+    let mut v = Vec::new();
 
-interrupt!(EXTI0_1, pa0_cb);
+    let p = hal::stm32f0x2::Peripherals::take().unwrap();
+    let mut rcc = p.RCC.constrain();
+    let mut gpioa = p.GPIOA.split(&mut rcc.ahb);
+    let button = gpioa
+        .pa0
+        .into_floating_input(&mut gpioa.moder, &mut gpioa.pupdr);
 
-fn pa0_cb() {
-    cortex_m::interrupt::free(|cs| {
-        let exti = EXTI.borrow(cs);
-        exti.pr.write(|w| w.pif0().set_bit());
-
-        unsafe {
-            if let Some(ref mut v) = V {
-                let l = v.len();
-                v.push(l as u8);
-            }
+    loop {
+        // Warning: you should add a breakpoint here
+        // to check that it works correctly
+        // Otherwise, you may explode the heap pretty quickly :-)
+        if button.is_high() {
+            let l = v.len();
+            v.push(l);
         }
-    })
+    }
 }
