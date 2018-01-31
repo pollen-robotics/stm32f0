@@ -4,7 +4,7 @@
 extern crate cortex_m;
 extern crate stm32f0_hal as hal;
 
-use hal::gpio::{InputPin, GpioExt};
+use hal::gpio::{GpioExt, InputPin};
 use hal::rcc::RccExt;
 
 extern crate alloc;
