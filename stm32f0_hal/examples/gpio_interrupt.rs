@@ -6,7 +6,7 @@ use hal::{gpio, rcc};
 
 #[macro_use(interrupt)]
 extern crate stm32f0x2;
-use stm32f0x2::{EXTI, Interrupt};
+use stm32f0x2::{Interrupt, EXTI};
 
 use hal::gpio::GpioExt;
 use hal::rcc::RccExt;
