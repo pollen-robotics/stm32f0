@@ -1,4 +1,5 @@
 #![no_std]
+#![feature(never_type)]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
 
 extern crate cortex_m;
@@ -6,10 +7,13 @@ extern crate embedded_hal as hal;
 
 pub extern crate stm32f0x2;
 
+extern crate nb;
+
 pub mod delay;
 pub mod gpio;
 pub mod flash;
 pub mod rcc;
+pub mod serial;
 pub mod time;
 
 #[cfg(feature = "use_alloc")]
