@@ -40,20 +40,34 @@ pub struct Alternate<MODE> {
     _mode: PhantomData<MODE>,
 }
 
+pub enum AlternateFunction {
+    AF0,
+    AF1,
+    AF2,
+    AF3,
+    AF4,
+    AF5,
+    AF6,
+    AF7,
+}
+
 pub trait InputPin {
     fn is_high(&self) -> bool;
     fn is_low(&self) -> bool;
 }
 
 macro_rules! gpio {
-    ($GPIOX:ident, $gpiox:ident, $gpioy:ident, $iopxenr:ident, $iopxrst:ident, $PXx:ident, [
-        $($PXi:ident: (
-            $pxi:ident,
-            $idr:ident, $odr:ident, $bs:ident, $br:ident,
-            $moderx:ident, $otyperx:ident, $ospeedrx:ident, $pupdrx:ident,
-            $MODE:ty,
-            $MODER:ident, $OTYPER:ident, $PUPDR:ident),)+
-    ]) => {
+    ($GPIOX:ident, $gpiox:ident, $gpioy:ident, $iopxenr:ident, $iopxrst:ident, $PXx:ident,
+            [$($PXi:ident: (
+                    $pxi:ident,
+                    $idr:ident, $odr:ident, $bs:ident, $br:ident,
+                    $moderx:ident, $otyperx:ident, $ospeedrx:ident, $pupdrx:ident,
+                    $afrx:ident, $afrxx:ident,
+                    $MODE:ty,
+                    $MODER:ident, $OTYPER:ident, $PUPDR:ident,
+                    $AFRX:ident
+                ),)+]
+    ) => {
         /// GPIO
         pub mod $gpiox {
             use core::marker::PhantomData;
@@ -63,7 +77,8 @@ macro_rules! gpio {
 
             use rcc::AHB;
             use super::{
-                // Alternate,
+                Alternate,
+                AlternateFunction,
                 Floating, GpioExt, Input,
                 // OpenDrain,
                 Output,
@@ -77,6 +92,7 @@ macro_rules! gpio {
                 pub moder: MODER,
                 pub otyper: OTYPER,
                 pub pupdr: PUPDR,
+                pub afr: AFR,
 
                 $(
                     /// Pin
@@ -96,6 +112,7 @@ macro_rules! gpio {
                         moder: MODER { _0: () },
                         otyper: OTYPER { _0: () },
                         pupdr: PUPDR { _0: () },
+                        afr: AFR { _0: () },
                         $(
                             $pxi: $PXi { _mode: PhantomData },
                         )+
@@ -128,13 +145,26 @@ macro_rules! gpio {
               }
           }
 
-          /// Output type register
+          /// Pull-Up Pull-Down register
          pub struct PUPDR {
              _0: (),
          }
          impl PUPDR {
              pub(crate) fn pupdr(&mut self) -> &$gpioy::PUPDR {
                  unsafe { &(*$GPIOX::ptr()).pupdr }
+             }
+         }
+
+         // Alternate Function Register
+         pub struct AFR {
+            _0: (),
+         }
+         impl AFR {
+             pub(crate) fn afrh(&mut self) -> &$gpioy::AFRH {
+                 unsafe { &(*$GPIOX::ptr()).afrh }
+             }
+             pub(crate) fn afrl(&mut self) -> &$gpioy::AFRL {
+                 unsafe { &(*$GPIOX::ptr()).afrl }
              }
          }
 
@@ -145,25 +175,29 @@ macro_rules! gpio {
                 }
 
                 impl<MODE> $PXi<MODE> {
-                    // /// Configures the pin to operate as an alternate function push pull output pin
-                    // pub fn into_alternate_push_pull(
-                    //     self,
-                    //     moder: &mut $MODER,
-                    //     pupdr: &mut $PUPDR,
-                    // ) -> $PXi<Alternate<PushPull>> {
-                    //
-                    //     moder
-                    //         .moder()
-                    //         .modify(|_, w| {
-                    //             w.$moderx().alternate()
-                    //         });
-                    //
-                    //     pupdr.pupdr().modify(|_, w| {
-                    //         w.$pupdrx().$afr().
-                    //     });
-                    //
-                    //     $PXi { _mode: PhantomData }
-                    // }
+                    /// Configures the pin to operate as an alternate function push pull output pin
+                    pub fn into_alternate_push_pull(
+                        self,
+                        moder: &mut $MODER,
+                        // pupdr: &mut $PUPDR,
+                        afr: &mut AFR,
+                        af: AlternateFunction,
+                    ) -> $PXi<Alternate<PushPull>> {
+
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().alternate()
+                            });
+
+                        afr.$afrx().modify(|_, w| {
+                            unsafe {
+                                w.$afrxx().bits(af as u8)
+                            }
+                        });
+
+                        $PXi { _mode: PhantomData }
+                    }
 
                     /// Configures the pin to operate as a floating input pin
                     pub fn into_floating_input(
@@ -301,8 +335,8 @@ macro_rules! gpio {
 gpio!(
     GPIOC, gpioc, gpiof, iopcen, iopcrst, PCx,
     [
-        PC7: (pc7, idr7, odr7, bs7, br7, moder7, ot7, ospeedr7, pupdr7, Output<PushPull>, MODER, OTYPER, PUPDR),
-        PC8: (pc8, idr8, odr8, bs8, br8, moder8, ot8, ospeedr8, pupdr8, Output<PushPull>, MODER, OTYPER, PUPDR),
+        PC7: (pc7, idr7, odr7, bs7, br7, moder7, ot7, ospeedr7, pupdr7, afrl, afrl7, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
+        PC8: (pc8, idr8, odr8, bs8, br8, moder8, ot8, ospeedr8, pupdr8, afrh, afrh8, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),
     ]
 );
 
@@ -310,7 +344,10 @@ gpio!(
 gpio!(
     GPIOA, gpioa, gpioa, iopaen, ioparst, PAx,
     [
-        PA0: (pa0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, Input<Floating>, MODER, OTYPER, PUPDR),
-        PA1: (pa1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, Input<Floating>, MODER, OTYPER, PUPDR),
+        PA0: (pa0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PA1: (pa1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, afrl, afrl1, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        
+        PA9: (pa9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PA10: (pa10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
     ]
 );
