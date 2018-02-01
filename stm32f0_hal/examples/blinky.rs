@@ -7,33 +7,35 @@ extern crate embedded_hal;
 extern crate stm32f0_hal as hal;
 use hal::stm32f0x2;
 
+use hal::delay::Delay;
 use hal::gpio::GpioExt;
 use hal::rcc::RccExt;
+use hal::flash::FlashExt;
 
 use embedded_hal::digital::OutputPin;
-use hal::gpio::InputPin;
+use embedded_hal::blocking::delay::DelayMs;
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();
+    let cp = cortex_m::Peripherals::take().unwrap();
 
     let mut rcc = p.RCC.constrain();
 
-    let mut gpioa = p.GPIOA.split(&mut rcc.ahb);
     let mut gpioc = p.GPIOC.split(&mut rcc.ahb);
 
     let mut led = gpioc
         .pc7
         .into_push_pull_output(&mut gpioc.moder, &mut gpioc.otyper);
 
-    let button = gpioa
-        .pa0
-        .into_floating_input(&mut gpioa.moder, &mut gpioa.pupdr);
+    let mut flash = p.FLASH.constrain();
+    let clocks = rcc.cfgr.freeze(&mut flash.acr);
+
+    let mut delay = Delay::new(cp.SYST, clocks);
 
     loop {
-        if button.is_high() {
-            led.set_high();
-        } else {
-            led.set_low();
-        }
+        led.set_high();
+        delay.delay_ms(200_u16);
+        led.set_low();
+        delay.delay_ms(200_u16);
     }
 }
