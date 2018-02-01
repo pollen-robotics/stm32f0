@@ -335,8 +335,10 @@ macro_rules! gpio {
 gpio!(
     GPIOC, gpioc, gpiof, iopcen, iopcrst, PCx,
     [
+        PC6: (pc6, idr6, odr6, bs6, br6, moder6, ot6, ospeedr6, pupdr6, afrl, afrl6, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
         PC7: (pc7, idr7, odr7, bs7, br7, moder7, ot7, ospeedr7, pupdr7, afrl, afrl7, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
         PC8: (pc8, idr8, odr8, bs8, br8, moder8, ot8, ospeedr8, pupdr8, afrh, afrh8, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),
+        PC9: (pc9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),
     ]
 );
 
@@ -346,7 +348,7 @@ gpio!(
     [
         PA0: (pa0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
         PA1: (pa1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, afrl, afrl1, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
-        
+
         PA9: (pa9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
         PA10: (pa10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
     ]
