@@ -1,58 +1,50 @@
-//use core;
+use hal::timer::CountDown;
+use nb::Result;
 
-use cortex_m;
-use stm32f0x2::{TIM7 as TIMER7, GPIOC, NVIC, RCC};
-use stm32f0x2::interrupt::*;
+use time::Hertz;
+use stm32f0x2::TIM7;
 
-pub fn setup(timeout: u16) {
-    cortex_m::interrupt::free(|cs| {
-        let gpio = GPIOC.borrow(cs);
-        let rcc = RCC.borrow(cs);
-        let timer = TIMER7.borrow(cs);
-        let nvic = NVIC.borrow(cs);
+use rcc::APB1;
 
-        // LED Test
-        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
-        gpio.moder.modify(|_, w| w.moder7().output());
-
-        //Enable TIM7 clock
-        rcc.apb1enr.modify(|_, w| w.tim7en().enabled());
-
-        // configure Time Out
-        // Set Prescaler Register - 16 bits
-        timer.psc.modify(|_, w| w.psc().bits(47));
-        // Set Auto-Reload register - 32 bits
-        timer.arr.modify(|_, w| w.arr().bits(timeout - 1));
-
-        timer.cr1.modify(|_, w| w.opm().continuous());
-        // Enable interrupt
-        timer.dier.modify(|_, w| w.uie().enabled());
-        // Interrupt activated
-        nvic.enable(Interrupt::TIM7);
-        nvic.clear_pending(Interrupt::TIM7);
-    });
+pub struct Timer<TIM> {
+    tim: TIM,
 }
 
-pub fn pause() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Disable counter
-        timer.cr1.modify(|_, w| w.cen().disabled());
-    });
+macro_rules! timer {
+    ($($TIMX:ident: ($timx:ident, $APBX:ident, $timxen:ident, $timxrst:ident), )+) => {
+        $(
+        impl Timer<$TIMX> {
+            pub fn $timx<T>(tim: $TIMX, timeout: T, apb: &mut $APBX) -> Self
+            where T: Into<Hertz> {
+                apb.enr().modify(|_, w| w.$timxen().enabled());
+                apb.rstr().modify(|_, w| w.$timxrst().set_bit());
+                apb.rstr().modify(|_, w| w.$timxrst().clear_bit());
+
+                let mut timer = Timer { tim };
+                timer.configure(timeout);
+                timer
+            }
+            fn configure<T>(&mut self, _timeout: T)
+            where T: Into<Hertz> {
+                self.tim.cr1.modify(|_, w| w.cen().disabled());
+                // TODO: WIP
+            }
+        }
+        impl CountDown for Timer<$TIMX> {
+            type Time = Hertz;
+            fn start<T>(&mut self, timeout: T)
+            where
+                T: Into<Hertz> {
+                self.configure(timeout);
+                // TODO: WIP
+            }
+            fn wait(&mut self) -> Result<(), !> {
+                // TODO: WIP
+                Ok(())
+            }
+        }
+        )+
+    }
 }
 
-pub fn restart() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Reset counter
-        timer.cnt.write(|w| w.cnt().bits(0));
-    });
-}
-
-pub fn resume() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Enable counter
-        timer.cr1.modify(|_, w| w.cen().enabled());
-    });
-}
+timer!(TIM7: (tim7, APB1, tim7en, tim7rst),);

@@ -15,6 +15,7 @@ pub mod flash;
 pub mod rcc;
 pub mod serial;
 pub mod time;
+pub mod timer;
 
 #[cfg(feature = "use_alloc")]
 extern crate alloc_cortex_m as heap;
