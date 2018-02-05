@@ -184,20 +184,62 @@ fn setup_pin(pin: &Pin, mode: Mode) {
         let mode = mode as u8;
 
         match *pin {
-            Pin::PA0 => gpioa.moder.modify(|_, w| w.moder0().bits(mode)),
-            Pin::PA1 => gpioa.moder.modify(|_, w| w.moder1().bits(mode)),
-            Pin::PA5 => gpioa.moder.modify(|_, w| w.moder5().bits(mode)),
-            Pin::PB0 => gpiob.moder.modify(|_, w| w.moder0().bits(mode)),
-            Pin::PB1 => gpiob.moder.modify(|_, w| w.moder1().bits(mode)),
-            Pin::PB3 => gpiob.moder.modify(|_, w| w.moder3().bits(mode)),
-            Pin::PB4 => gpiob.moder.modify(|_, w| w.moder4().bits(mode)),
-            Pin::PB5 => gpiob.moder.modify(|_, w| w.moder5().bits(mode)),
-            Pin::PB10 => gpiob.moder.modify(|_, w| w.moder10().bits(mode)),
-            Pin::PB11 => gpiob.moder.modify(|_, w| w.moder11().bits(mode)),
-            Pin::PC6 => gpioc.moder.modify(|_, w| w.moder6().bits(mode)),
-            Pin::PC7 => gpioc.moder.modify(|_, w| w.moder7().bits(mode)),
-            Pin::PC8 => gpioc.moder.modify(|_, w| w.moder8().bits(mode)),
-            Pin::PC9 => gpioc.moder.modify(|_, w| w.moder9().bits(mode)),
+            Pin::PA0 => {
+                gpioa.moder.modify(|_, w| w.moder0().bits(mode));
+                gpioa.pupdr.modify(|_, w| w.pupdr0().pull_down());
+            }
+            Pin::PA1 => {
+                gpioa.moder.modify(|_, w| w.moder1().bits(mode));
+                gpioa.pupdr.modify(|_, w| w.pupdr1().pull_down());
+            }
+            Pin::PA5 => {
+                gpioa.moder.modify(|_, w| w.moder5().bits(mode));
+                gpioa.pupdr.modify(|_, w| w.pupdr5().pull_down());
+            }
+            Pin::PB0 => {
+                gpiob.moder.modify(|_, w| w.moder0().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr0().pull_down());
+            }
+            Pin::PB1 => {
+                gpiob.moder.modify(|_, w| w.moder1().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr1().pull_down());
+            }
+            Pin::PB3 => {
+                gpiob.moder.modify(|_, w| w.moder3().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr3().pull_down());
+            }
+            Pin::PB4 => {
+                gpiob.moder.modify(|_, w| w.moder4().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr4().pull_down());
+            }
+            Pin::PB5 => {
+                gpiob.moder.modify(|_, w| w.moder5().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr5().pull_down());
+            }
+            Pin::PB10 => {
+                gpiob.moder.modify(|_, w| w.moder10().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr10().pull_down());
+            }
+            Pin::PB11 => {
+                gpiob.moder.modify(|_, w| w.moder11().bits(mode));
+                gpiob.pupdr.modify(|_, w| w.pupdr11().pull_down());
+            }
+            Pin::PC6 => {
+                gpioc.moder.modify(|_, w| w.moder6().bits(mode));
+                gpioc.pupdr.modify(|_, w| w.pupdr6().pull_down());
+            }
+            Pin::PC7 => {
+                gpioc.moder.modify(|_, w| w.moder7().bits(mode));
+                gpioc.pupdr.modify(|_, w| w.pupdr7().pull_down());
+            }
+            Pin::PC8 => {
+                gpioc.moder.modify(|_, w| w.moder8().bits(mode));
+                gpioc.pupdr.modify(|_, w| w.pupdr8().pull_down());
+            }
+            Pin::PC9 => {
+                gpioc.moder.modify(|_, w| w.moder9().bits(mode));
+                gpioc.pupdr.modify(|_, w| w.pupdr9().pull_down());
+            }
         }
     });
 }
