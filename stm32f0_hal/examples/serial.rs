@@ -1,19 +1,15 @@
 #![no_std]
 
 extern crate stm32f0_hal as hal;
-
+use hal::prelude::*;
 use hal::serial::Serial;
-use hal::flash::FlashExt;
-use hal::gpio::GpioExt;
-use hal::rcc::RccExt;
-use hal::time::U32Ext;
 
 extern crate cortex_m;
 extern crate embedded_hal;
 #[macro_use(block)]
 extern crate nb;
 
-use embedded_hal::serial::{Read, Write};
+use embedded_hal::prelude::*;
 
 fn main() {
     let p = hal::stm32f0x2::Peripherals::take().unwrap();

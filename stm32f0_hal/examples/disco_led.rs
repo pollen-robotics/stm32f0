@@ -1,18 +1,14 @@
 #![no_std]
 
 extern crate cortex_m;
-extern crate embedded_hal;
 
 extern crate stm32f0_hal;
 use stm32f0_hal::stm32f0x2;
-
-use embedded_hal::blocking::delay::DelayMs;
-use embedded_hal::digital::OutputPin;
-
 use stm32f0_hal::delay::Delay;
-use stm32f0_hal::flash::FlashExt;
-use stm32f0_hal::gpio::GpioExt;
-use stm32f0_hal::rcc::RccExt;
+use stm32f0_hal::prelude::*;
+
+extern crate embedded_hal;
+use embedded_hal::prelude::*;
 
 fn main() {
     let persist: u16 = 250;

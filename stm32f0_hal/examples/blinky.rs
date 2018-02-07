@@ -5,15 +5,11 @@ extern crate cortex_m;
 extern crate embedded_hal;
 
 extern crate stm32f0_hal as hal;
+use hal::delay::Delay;
+use hal::prelude::*;
 use hal::stm32f0x2;
 
-use hal::delay::Delay;
-use hal::gpio::GpioExt;
-use hal::rcc::RccExt;
-use hal::flash::FlashExt;
-
-use embedded_hal::digital::OutputPin;
-use embedded_hal::blocking::delay::DelayMs;
+use embedded_hal::prelude::*;
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();

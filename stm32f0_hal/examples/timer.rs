@@ -2,12 +2,10 @@
 
 extern crate cortex_m;
 
-extern crate stm32f0_hal;
-use stm32f0_hal::stm32f0x2;
-use stm32f0_hal::timer::Timer;
-
-use stm32f0_hal::rcc::RccExt;
-use stm32f0_hal::time::U32Ext;
+extern crate stm32f0_hal as hal;
+use hal::stm32f0x2;
+use hal::timer::Timer;
+use hal::prelude::*;
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();

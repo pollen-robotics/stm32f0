@@ -2,14 +2,12 @@
 
 extern crate cortex_m;
 extern crate stm32f0_hal as hal;
-use hal::{gpio, rcc};
 
 #[macro_use(interrupt)]
 extern crate stm32f0x2;
 use stm32f0x2::{Interrupt, EXTI};
 
-use hal::gpio::GpioExt;
-use hal::rcc::RccExt;
+use hal::prelude::*;
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();
@@ -20,10 +18,12 @@ fn main() {
     let mut gpioa = p.GPIOA.split(&mut rcc.ahb);
     let mut gpioc = p.GPIOC.split(&mut rcc.ahb);
 
-    let mut led = gpioc
+    #[allow(unused_variables)]
+    let led = gpioc
         .pc7
         .into_push_pull_output(&mut gpioc.moder, &mut gpioc.otyper);
 
+    #[allow(unused_variables)]
     let button = gpioa
         .pa0
         .into_floating_input(&mut gpioa.moder, &mut gpioa.pupdr);

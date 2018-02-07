@@ -2,15 +2,13 @@
 #![deny(unsafe_code)]
 
 extern crate cortex_m;
+
 extern crate embedded_hal;
+use embedded_hal::prelude::*;
 
 extern crate stm32f0_hal as hal;
 use hal::stm32f0x2;
-
-use hal::gpio::GpioExt;
-use hal::rcc::RccExt;
-
-use embedded_hal::digital::{InputPin, OutputPin};
+use hal::prelude::*;
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();
