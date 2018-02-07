@@ -9,6 +9,7 @@ pub extern crate stm32f0x2;
 
 extern crate nb;
 
+pub mod adc;
 pub mod delay;
 pub mod gpio;
 pub mod flash;

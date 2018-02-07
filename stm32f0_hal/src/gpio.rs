@@ -24,6 +24,8 @@ pub struct Floating;
 pub struct PullDown;
 /// Pulled up input (type state)
 pub struct PullUp;
+/// Analog input (type state)
+pub struct Analog;
 
 /// Output mode (type state)
 pub struct Output<MODE> {
@@ -74,6 +76,7 @@ macro_rules! gpio {
             use super::{
                 Alternate,
                 AlternateFunction,
+                Analog,
                 Floating, GpioExt, Input,
                 // OpenDrain,
                 Output,
@@ -244,6 +247,17 @@ macro_rules! gpio {
                         $PXi { _mode: PhantomData }
                     }
 
+                    pub fn into_analog(
+                        self,
+                        moder: &mut MODER
+                    ) -> $PXi<Input<Analog>> {
+                        moder.moder().modify(|_, w| {
+                            w.$moderx().analog()
+                        });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
                     // /// Configures the pin to operate as an open drain output pin
                     // pub fn into_open_drain_output(
                     //     self,
@@ -329,6 +343,7 @@ macro_rules! gpio {
 gpio!(
     GPIOC, gpioc, gpiof, iopcen, iopcrst, PCx,
     [
+        PC3: (pc3, idr3, odr3, bs3, br3, moder3, ot3, ospeedr3, pupdr3, afrl, afrl3, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
         PC6: (pc6, idr6, odr6, bs6, br6, moder6, ot6, ospeedr6, pupdr6, afrl, afrl6, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
         PC7: (pc7, idr7, odr7, bs7, br7, moder7, ot7, ospeedr7, pupdr7, afrl, afrl7, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
         PC8: (pc8, idr8, odr8, bs8, br8, moder8, ot8, ospeedr8, pupdr8, afrh, afrh8, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),

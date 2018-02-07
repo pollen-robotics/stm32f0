@@ -1,3 +1,4 @@
+pub use adc::Adc;
 pub use flash::FlashExt;
 pub use gpio::GpioExt;
 pub use rcc::RccExt;
