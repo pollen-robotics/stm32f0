@@ -1,6 +1,7 @@
 //! General Purpose Input / Output
+//!
+//! GPIO Configuration: cf. Reference manual p.149
 
-// GPIO Configuration : cf. Reference manual p.149
 use core::marker::PhantomData;
 
 use rcc::AHB;
