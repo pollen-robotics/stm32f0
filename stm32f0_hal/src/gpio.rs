@@ -1,6 +1,6 @@
 //! General Purpose Input / Output
 //!
-//! GPIO Configuration: cf. Reference manual p.149
+//! GPIO Configuration: cf. Reference manual p.149 ( http://www.st.com/resource/en/reference_manual/dm00031936.pdf )
 
 use core::marker::PhantomData;
 
