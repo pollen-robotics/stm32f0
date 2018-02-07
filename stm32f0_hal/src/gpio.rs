@@ -1,4 +1,6 @@
 //! General Purpose Input / Output
+//!
+//! GPIO Configuration: cf. Reference manual p.149 ( http://www.st.com/resource/en/reference_manual/dm00031936.pdf )
 
 use core::marker::PhantomData;
 
@@ -78,7 +80,7 @@ macro_rules! gpio {
                 AlternateFunction,
                 Analog,
                 Floating, GpioExt, Input,
-                // OpenDrain,
+                OpenDrain,
                 Output,
                 PullDown, PullUp,
                 PushPull,
@@ -152,7 +154,7 @@ macro_rules! gpio {
              }
          }
 
-         // Alternate Function Register
+         /// Alternate Function Register
          pub struct AFR {
             _0: (),
          }
@@ -176,7 +178,6 @@ macro_rules! gpio {
                     pub fn into_alternate_push_pull(
                         self,
                         moder: &mut $MODER,
-                        // pupdr: &mut $PUPDR,
                         afr: &mut AFR,
                         af: AlternateFunction,
                     ) -> $PXi<Alternate<PushPull>> {
@@ -258,27 +259,26 @@ macro_rules! gpio {
                         $PXi { _mode: PhantomData }
                     }
 
-                    // /// Configures the pin to operate as an open drain output pin
-                    // pub fn into_open_drain_output(
-                    //     self,
-                    //     moder: &mut MODER,
-                    //     otyper: &mut OTYPER,
-                    // ) -> $PXi<Output<OpenDrain>> {
-                    //     let offset = 2 * $i;
+                    /// Configures the pin to operate as an open drain output pin
+                    pub fn into_open_drain_output(
+                         self,
+                         moder: &mut MODER,
+                         otyper: &mut OTYPER,
+                     ) -> $PXi<Output<OpenDrain>> {
+                         moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().output()
+                            });
 
-                    //     // general purpose output mode
-                    //     let mode = 0b01;
-                    //     moder.moder().modify(|r, w| unsafe {
-                    //         w.bits((r.bits() & !(0b11 << offset)) | (mode << offset))
-                    //     });
+                        otyper
+                                .otyper()
+                                .modify(|_, w| {
+                                w.$otyperx().open_drain()
+                        });
 
-                    //     // open drain output
-                    //     otyper
-                    //         .otyper()
-                    //         .modify(|r, w| unsafe { w.bits(r.bits() | (0b1 << $i)) });
-
-                    //     $PXi { _mode: PhantomData }
-                    // }
+                         $PXi { _mode: PhantomData }
+                     }
 
                     /// Configures the pin to operate as an push pull output pin
                     pub fn into_push_pull_output(
