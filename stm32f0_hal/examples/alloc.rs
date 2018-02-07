@@ -4,11 +4,14 @@
 extern crate cortex_m;
 extern crate stm32f0_hal as hal;
 
-use hal::gpio::{GpioExt, InputPin};
+use hal::gpio::GpioExt;
 use hal::rcc::RccExt;
 
 extern crate alloc;
 use alloc::Vec;
+
+extern crate embedded_hal;
+use embedded_hal::digital::InputPin;
 
 fn main() {
     hal::allocator::setup(5000);

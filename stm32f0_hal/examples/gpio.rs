@@ -10,8 +10,7 @@ use hal::stm32f0x2;
 use hal::gpio::GpioExt;
 use hal::rcc::RccExt;
 
-use embedded_hal::digital::OutputPin;
-use hal::gpio::InputPin;
+use embedded_hal::digital::{InputPin, OutputPin};
 
 fn main() {
     let p = stm32f0x2::Peripherals::take().unwrap();

@@ -51,11 +51,6 @@ pub enum AlternateFunction {
     AF7,
 }
 
-pub trait InputPin {
-    fn is_high(&self) -> bool;
-    fn is_low(&self) -> bool;
-}
-
 macro_rules! gpio {
     ($GPIOX:ident, $gpiox:ident, $gpioy:ident, $iopxenr:ident, $iopxrst:ident, $PXx:ident,
             [$($PXi:ident: (
@@ -72,7 +67,7 @@ macro_rules! gpio {
         pub mod $gpiox {
             use core::marker::PhantomData;
 
-            use hal::digital::OutputPin;
+            use hal::digital::{InputPin, OutputPin};
             use stm32f0x2::{$gpioy, $GPIOX};
 
             use rcc::AHB;
@@ -84,7 +79,6 @@ macro_rules! gpio {
                 Output,
                 PullDown, PullUp,
                 PushPull,
-                InputPin,
             };
 
             /// GPIO parts
