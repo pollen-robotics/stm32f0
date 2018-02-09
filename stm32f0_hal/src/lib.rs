@@ -14,6 +14,7 @@ pub mod delay;
 pub mod gpio;
 pub mod flash;
 pub mod prelude;
+pub mod pwm;
 pub mod rcc;
 pub mod serial;
 pub mod time;
