@@ -45,8 +45,10 @@ impl super::AHBRSTR {
 #[doc = "Possible values of the field `IOPARST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPARSTR {
-    #[doc = "Reset I/O port A."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port A."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPARSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl IOPARSTR {
 #[doc = "Possible values of the field `IOPBRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPBRSTR {
-    #[doc = "Reset I/O port B."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port B."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPBRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl IOPBRSTR {
 #[doc = "Possible values of the field `IOPCRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPCRSTR {
-    #[doc = "Reset I/O port C."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port C."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl IOPCRSTR {
 #[doc = "Possible values of the field `IOPDRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPDRSTR {
-    #[doc = "Reset I/O port D."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port D."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPDRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +213,10 @@ impl IOPDRSTR {
 #[doc = "Possible values of the field `IOPFRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPFRSTR {
-    #[doc = "Reset I/O port F."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port F."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPFRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,8 +255,10 @@ impl IOPFRSTR {
 #[doc = "Possible values of the field `TSCRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCRSTR {
-    #[doc = "Reset TSC."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TSC."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TSCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -284,7 +296,8 @@ impl TSCRSTR {
 }
 #[doc = "Values that can be written to the field `IOPARST`"]
 pub enum IOPARSTW {
-    #[doc = "Reset I/O port A."] RESET,
+    #[doc = "Reset I/O port A."]
+    RESET,
 }
 impl IOPARSTW {
     #[allow(missing_docs)]
@@ -333,7 +346,8 @@ impl<'a> _IOPARSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPBRST`"]
 pub enum IOPBRSTW {
-    #[doc = "Reset I/O port B."] RESET,
+    #[doc = "Reset I/O port B."]
+    RESET,
 }
 impl IOPBRSTW {
     #[allow(missing_docs)]
@@ -382,7 +396,8 @@ impl<'a> _IOPBRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPCRST`"]
 pub enum IOPCRSTW {
-    #[doc = "Reset I/O port C."] RESET,
+    #[doc = "Reset I/O port C."]
+    RESET,
 }
 impl IOPCRSTW {
     #[allow(missing_docs)]
@@ -431,7 +446,8 @@ impl<'a> _IOPCRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPDRST`"]
 pub enum IOPDRSTW {
-    #[doc = "Reset I/O port D."] RESET,
+    #[doc = "Reset I/O port D."]
+    RESET,
 }
 impl IOPDRSTW {
     #[allow(missing_docs)]
@@ -480,7 +496,8 @@ impl<'a> _IOPDRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPFRST`"]
 pub enum IOPFRSTW {
-    #[doc = "Reset I/O port F."] RESET,
+    #[doc = "Reset I/O port F."]
+    RESET,
 }
 impl IOPFRSTW {
     #[allow(missing_docs)]
@@ -529,7 +546,8 @@ impl<'a> _IOPFRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TSCRST`"]
 pub enum TSCRSTW {
-    #[doc = "Reset TSC."] RESET,
+    #[doc = "Reset TSC."]
+    RESET,
 }
 impl TSCRSTW {
     #[allow(missing_docs)]

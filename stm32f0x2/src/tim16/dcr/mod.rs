@@ -45,25 +45,44 @@ impl super::DCR {
 #[doc = "Possible values of the field `DBL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBLR {
-    #[doc = "1 transfert."] _1TRANSFERT,
-    #[doc = "2 transferts."] _2TRANSFERTS,
-    #[doc = "3 transferts."] _3TRANSFERTS,
-    #[doc = "4 transferts."] _4TRANSFERTS,
-    #[doc = "5 transferts."] _5TRANSFERTS,
-    #[doc = "6 transferts."] _6TRANSFERTS,
-    #[doc = "7 transferts."] _7TRANSFERTS,
-    #[doc = "8 transferts."] _8TRANSFERTS,
-    #[doc = "9 transferts."] _9TRANSFERTS,
-    #[doc = "10 transferts."] _10TRANSFERTS,
-    #[doc = "11 transferts."] _11TRANSFERTS,
-    #[doc = "12 transferts."] _12TRANSFERTS,
-    #[doc = "13 transferts."] _13TRANSFERTS,
-    #[doc = "14 transferts."] _14TRANSFERTS,
-    #[doc = "15 transferts."] _15TRANSFERTS,
-    #[doc = "16 transferts."] _16TRANSFERTS,
-    #[doc = "17 transferts."] _17TRANSFERTS,
-    #[doc = "18 transferts."] _18TRANSFERTS,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "1 transfert."]
+    _1TRANSFERT,
+    #[doc = "2 transferts."]
+    _2TRANSFERTS,
+    #[doc = "3 transferts."]
+    _3TRANSFERTS,
+    #[doc = "4 transferts."]
+    _4TRANSFERTS,
+    #[doc = "5 transferts."]
+    _5TRANSFERTS,
+    #[doc = "6 transferts."]
+    _6TRANSFERTS,
+    #[doc = "7 transferts."]
+    _7TRANSFERTS,
+    #[doc = "8 transferts."]
+    _8TRANSFERTS,
+    #[doc = "9 transferts."]
+    _9TRANSFERTS,
+    #[doc = "10 transferts."]
+    _10TRANSFERTS,
+    #[doc = "11 transferts."]
+    _11TRANSFERTS,
+    #[doc = "12 transferts."]
+    _12TRANSFERTS,
+    #[doc = "13 transferts."]
+    _13TRANSFERTS,
+    #[doc = "14 transferts."]
+    _14TRANSFERTS,
+    #[doc = "15 transferts."]
+    _15TRANSFERTS,
+    #[doc = "16 transferts."]
+    _16TRANSFERTS,
+    #[doc = "17 transferts."]
+    _17TRANSFERTS,
+    #[doc = "18 transferts."]
+    _18TRANSFERTS,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl DBLR {
     #[doc = r" Value of the field as raw bits"]
@@ -221,24 +240,42 @@ impl DBAR {
 }
 #[doc = "Values that can be written to the field `DBL`"]
 pub enum DBLW {
-    #[doc = "1 transfert."] _1TRANSFERT,
-    #[doc = "2 transferts."] _2TRANSFERTS,
-    #[doc = "3 transferts."] _3TRANSFERTS,
-    #[doc = "4 transferts."] _4TRANSFERTS,
-    #[doc = "5 transferts."] _5TRANSFERTS,
-    #[doc = "6 transferts."] _6TRANSFERTS,
-    #[doc = "7 transferts."] _7TRANSFERTS,
-    #[doc = "8 transferts."] _8TRANSFERTS,
-    #[doc = "9 transferts."] _9TRANSFERTS,
-    #[doc = "10 transferts."] _10TRANSFERTS,
-    #[doc = "11 transferts."] _11TRANSFERTS,
-    #[doc = "12 transferts."] _12TRANSFERTS,
-    #[doc = "13 transferts."] _13TRANSFERTS,
-    #[doc = "14 transferts."] _14TRANSFERTS,
-    #[doc = "15 transferts."] _15TRANSFERTS,
-    #[doc = "16 transferts."] _16TRANSFERTS,
-    #[doc = "17 transferts."] _17TRANSFERTS,
-    #[doc = "18 transferts."] _18TRANSFERTS,
+    #[doc = "1 transfert."]
+    _1TRANSFERT,
+    #[doc = "2 transferts."]
+    _2TRANSFERTS,
+    #[doc = "3 transferts."]
+    _3TRANSFERTS,
+    #[doc = "4 transferts."]
+    _4TRANSFERTS,
+    #[doc = "5 transferts."]
+    _5TRANSFERTS,
+    #[doc = "6 transferts."]
+    _6TRANSFERTS,
+    #[doc = "7 transferts."]
+    _7TRANSFERTS,
+    #[doc = "8 transferts."]
+    _8TRANSFERTS,
+    #[doc = "9 transferts."]
+    _9TRANSFERTS,
+    #[doc = "10 transferts."]
+    _10TRANSFERTS,
+    #[doc = "11 transferts."]
+    _11TRANSFERTS,
+    #[doc = "12 transferts."]
+    _12TRANSFERTS,
+    #[doc = "13 transferts."]
+    _13TRANSFERTS,
+    #[doc = "14 transferts."]
+    _14TRANSFERTS,
+    #[doc = "15 transferts."]
+    _15TRANSFERTS,
+    #[doc = "16 transferts."]
+    _16TRANSFERTS,
+    #[doc = "17 transferts."]
+    _17TRANSFERTS,
+    #[doc = "18 transferts."]
+    _18TRANSFERTS,
 }
 impl DBLW {
     #[allow(missing_docs)]

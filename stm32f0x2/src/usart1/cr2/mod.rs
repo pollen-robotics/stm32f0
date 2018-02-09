@@ -67,8 +67,10 @@ impl ADD0R {
 #[doc = "Possible values of the field `RTOEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTOENR {
-    #[doc = "Receiver timeout feature disabled."] DISABLED,
-    #[doc = "Receiver timeout feature enabled."] ENABLED,
+    #[doc = "Receiver timeout feature disabled."]
+    DISABLED,
+    #[doc = "Receiver timeout feature enabled."]
+    ENABLED,
 }
 impl RTOENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -112,10 +114,14 @@ impl RTOENR {
 #[doc = "Possible values of the field `ABRMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ABRMODR {
-    #[doc = "Measurement of the start bit is used to detect the baud rate."] STARTBIT,
-    #[doc = "Falling edge to falling edge measurement."] FALLINGEDGE,
-    #[doc = "0x7F frame detection.."] _0X7F,
-    #[doc = "0x55 frame detection."] _0X55,
+    #[doc = "Measurement of the start bit is used to detect the baud rate."]
+    STARTBIT,
+    #[doc = "Falling edge to falling edge measurement."]
+    FALLINGEDGE,
+    #[doc = "0x7F frame detection.."]
+    _0X7F,
+    #[doc = "0x55 frame detection."]
+    _0X55,
 }
 impl ABRMODR {
     #[doc = r" Value of the field as raw bits"]
@@ -164,8 +170,10 @@ impl ABRMODR {
 #[doc = "Possible values of the field `ABREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ABRENR {
-    #[doc = "Auto baud rate detection disabled."] DISABLED,
-    #[doc = "Auto baud rate detection enabled."] ENABLED,
+    #[doc = "Auto baud rate detection disabled."]
+    DISABLED,
+    #[doc = "Auto baud rate detection enabled."]
+    ENABLED,
 }
 impl ABRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -209,7 +217,8 @@ impl ABRENR {
 #[doc = "Possible values of the field `MSBFIRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSBFIRSTR {
-    #[doc = "Data is transmitted/received with data bit 0 first, following the start bit."] LSB,
+    #[doc = "Data is transmitted/received with data bit 0 first, following the start bit."]
+    LSB,
     #[doc = "Data is transmitted/received with the MSB (bit 7/8/9) first, following the start bit."]
     MSB,
 }
@@ -302,8 +311,10 @@ impl DATAINVR {
 #[doc = "Possible values of the field `TXINV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXINVR {
-    #[doc = "TX pin signal works using the standard logic levels"] NORMAL,
-    #[doc = "TX pin signal values are inverted."] INVERTED,
+    #[doc = "TX pin signal works using the standard logic levels"]
+    NORMAL,
+    #[doc = "TX pin signal values are inverted."]
+    INVERTED,
 }
 impl TXINVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -347,8 +358,10 @@ impl TXINVR {
 #[doc = "Possible values of the field `RXINV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXINVR {
-    #[doc = "RX pin signal works using the standard logic levels"] NORMAL,
-    #[doc = "RX pin signal values are inverted."] INVERTED,
+    #[doc = "RX pin signal works using the standard logic levels"]
+    NORMAL,
+    #[doc = "RX pin signal values are inverted."]
+    INVERTED,
 }
 impl RXINVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -392,8 +405,10 @@ impl RXINVR {
 #[doc = "Possible values of the field `SWAP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWAPR {
-    #[doc = "TX/RX pins are used as defined in standard pinout."] STANDARD,
-    #[doc = "The TX and RX pins functions are swapped."] SWAPPED,
+    #[doc = "TX/RX pins are used as defined in standard pinout."]
+    STANDARD,
+    #[doc = "The TX and RX pins functions are swapped."]
+    SWAPPED,
 }
 impl SWAPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -437,8 +452,10 @@ impl SWAPR {
 #[doc = "Possible values of the field `LINEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINENR {
-    #[doc = "LIN mode disabled."] DISABLED,
-    #[doc = "LIN mode enabled."] ENABLED,
+    #[doc = "LIN mode disabled."]
+    DISABLED,
+    #[doc = "LIN mode enabled."]
+    ENABLED,
 }
 impl LINENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -482,10 +499,14 @@ impl LINENR {
 #[doc = "Possible values of the field `STOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPR {
-    #[doc = "1 stop bit."] _1STOP,
-    #[doc = "0.5 stop bit."] HALFSTOP,
-    #[doc = "2 stop bits."] _2STOP,
-    #[doc = "1.5 stop bits."] _1HALFSTOP,
+    #[doc = "1 stop bit."]
+    _1STOP,
+    #[doc = "0.5 stop bit."]
+    HALFSTOP,
+    #[doc = "2 stop bits."]
+    _2STOP,
+    #[doc = "1.5 stop bits."]
+    _1HALFSTOP,
 }
 impl STOPR {
     #[doc = r" Value of the field as raw bits"]
@@ -534,8 +555,10 @@ impl STOPR {
 #[doc = "Possible values of the field `CLKEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKENR {
-    #[doc = "CK pin disabled."] DISABLED,
-    #[doc = "CK pin enabled."] ENABLED,
+    #[doc = "CK pin disabled."]
+    DISABLED,
+    #[doc = "CK pin enabled."]
+    ENABLED,
 }
 impl CLKENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -579,8 +602,10 @@ impl CLKENR {
 #[doc = "Possible values of the field `CPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOLR {
-    #[doc = "Steady low value on CK pin outside transmission window."] LOW,
-    #[doc = "Steady high value on CK pin outside transmission window."] HIGH,
+    #[doc = "Steady low value on CK pin outside transmission window."]
+    LOW,
+    #[doc = "Steady high value on CK pin outside transmission window."]
+    HIGH,
 }
 impl CPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -624,8 +649,10 @@ impl CPOLR {
 #[doc = "Possible values of the field `CPHA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPHAR {
-    #[doc = "The first clock transition is the first data capture edge."] FIRST,
-    #[doc = "The second clock transition is the first data capture edge."] SECOND,
+    #[doc = "The first clock transition is the first data capture edge."]
+    FIRST,
+    #[doc = "The second clock transition is the first data capture edge."]
+    SECOND,
 }
 impl CPHAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -669,8 +696,10 @@ impl CPHAR {
 #[doc = "Possible values of the field `LBCL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBCLR {
-    #[doc = "The clock pulse of the last data bit is not output to the CK pin."] NOOUTPUT,
-    #[doc = "The clock pulse of the last data bit is output to the CK pin."] OUTPUT,
+    #[doc = "The clock pulse of the last data bit is not output to the CK pin."]
+    NOOUTPUT,
+    #[doc = "The clock pulse of the last data bit is output to the CK pin."]
+    OUTPUT,
 }
 impl LBCLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -714,8 +743,10 @@ impl LBCLR {
 #[doc = "Possible values of the field `LBDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBDIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An interrupt is generated whenever LBDF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An interrupt is generated whenever LBDF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl LBDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -759,8 +790,10 @@ impl LBDIER {
 #[doc = "Possible values of the field `LBDL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBDLR {
-    #[doc = "10-bit break detection."] _10BITS,
-    #[doc = "11-bit break detection."] _11BITS,
+    #[doc = "10-bit break detection."]
+    _10BITS,
+    #[doc = "11-bit break detection."]
+    _11BITS,
 }
 impl LBDLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -804,8 +837,10 @@ impl LBDLR {
 #[doc = "Possible values of the field `ADDM7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDM7R {
-    #[doc = "4-bit address detection."] _4BITS,
-    #[doc = "7-bit address detection (in 8-bit data mode)."] _7BITS,
+    #[doc = "4-bit address detection."]
+    _4BITS,
+    #[doc = "7-bit address detection (in 8-bit data mode)."]
+    _7BITS,
 }
 impl ADDM7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -878,8 +913,10 @@ impl<'a> _ADD0W<'a> {
 }
 #[doc = "Values that can be written to the field `RTOEN`"]
 pub enum RTOENW {
-    #[doc = "Receiver timeout feature disabled."] DISABLED,
-    #[doc = "Receiver timeout feature enabled."] ENABLED,
+    #[doc = "Receiver timeout feature disabled."]
+    DISABLED,
+    #[doc = "Receiver timeout feature enabled."]
+    ENABLED,
 }
 impl RTOENW {
     #[allow(missing_docs)]
@@ -934,10 +971,14 @@ impl<'a> _RTOENW<'a> {
 }
 #[doc = "Values that can be written to the field `ABRMOD`"]
 pub enum ABRMODW {
-    #[doc = "Measurement of the start bit is used to detect the baud rate."] STARTBIT,
-    #[doc = "Falling edge to falling edge measurement."] FALLINGEDGE,
-    #[doc = "0x7F frame detection.."] _0X7F,
-    #[doc = "0x55 frame detection."] _0X55,
+    #[doc = "Measurement of the start bit is used to detect the baud rate."]
+    STARTBIT,
+    #[doc = "Falling edge to falling edge measurement."]
+    FALLINGEDGE,
+    #[doc = "0x7F frame detection.."]
+    _0X7F,
+    #[doc = "0x55 frame detection."]
+    _0X55,
 }
 impl ABRMODW {
     #[allow(missing_docs)]
@@ -996,8 +1037,10 @@ impl<'a> _ABRMODW<'a> {
 }
 #[doc = "Values that can be written to the field `ABREN`"]
 pub enum ABRENW {
-    #[doc = "Auto baud rate detection disabled."] DISABLED,
-    #[doc = "Auto baud rate detection enabled."] ENABLED,
+    #[doc = "Auto baud rate detection disabled."]
+    DISABLED,
+    #[doc = "Auto baud rate detection enabled."]
+    ENABLED,
 }
 impl ABRENW {
     #[allow(missing_docs)]
@@ -1052,7 +1095,8 @@ impl<'a> _ABRENW<'a> {
 }
 #[doc = "Values that can be written to the field `MSBFIRST`"]
 pub enum MSBFIRSTW {
-    #[doc = "Data is transmitted/received with data bit 0 first, following the start bit."] LSB,
+    #[doc = "Data is transmitted/received with data bit 0 first, following the start bit."]
+    LSB,
     #[doc = "Data is transmitted/received with the MSB (bit 7/8/9) first, following the start bit."]
     MSB,
 }
@@ -1167,8 +1211,10 @@ impl<'a> _DATAINVW<'a> {
 }
 #[doc = "Values that can be written to the field `TXINV`"]
 pub enum TXINVW {
-    #[doc = "TX pin signal works using the standard logic levels"] NORMAL,
-    #[doc = "TX pin signal values are inverted."] INVERTED,
+    #[doc = "TX pin signal works using the standard logic levels"]
+    NORMAL,
+    #[doc = "TX pin signal values are inverted."]
+    INVERTED,
 }
 impl TXINVW {
     #[allow(missing_docs)]
@@ -1223,8 +1269,10 @@ impl<'a> _TXINVW<'a> {
 }
 #[doc = "Values that can be written to the field `RXINV`"]
 pub enum RXINVW {
-    #[doc = "RX pin signal works using the standard logic levels"] NORMAL,
-    #[doc = "RX pin signal values are inverted."] INVERTED,
+    #[doc = "RX pin signal works using the standard logic levels"]
+    NORMAL,
+    #[doc = "RX pin signal values are inverted."]
+    INVERTED,
 }
 impl RXINVW {
     #[allow(missing_docs)]
@@ -1279,8 +1327,10 @@ impl<'a> _RXINVW<'a> {
 }
 #[doc = "Values that can be written to the field `SWAP`"]
 pub enum SWAPW {
-    #[doc = "TX/RX pins are used as defined in standard pinout."] STANDARD,
-    #[doc = "The TX and RX pins functions are swapped."] SWAPPED,
+    #[doc = "TX/RX pins are used as defined in standard pinout."]
+    STANDARD,
+    #[doc = "The TX and RX pins functions are swapped."]
+    SWAPPED,
 }
 impl SWAPW {
     #[allow(missing_docs)]
@@ -1335,8 +1385,10 @@ impl<'a> _SWAPW<'a> {
 }
 #[doc = "Values that can be written to the field `LINEN`"]
 pub enum LINENW {
-    #[doc = "LIN mode disabled."] DISABLED,
-    #[doc = "LIN mode enabled."] ENABLED,
+    #[doc = "LIN mode disabled."]
+    DISABLED,
+    #[doc = "LIN mode enabled."]
+    ENABLED,
 }
 impl LINENW {
     #[allow(missing_docs)]
@@ -1391,10 +1443,14 @@ impl<'a> _LINENW<'a> {
 }
 #[doc = "Values that can be written to the field `STOP`"]
 pub enum STOPW {
-    #[doc = "1 stop bit."] _1STOP,
-    #[doc = "0.5 stop bit."] HALFSTOP,
-    #[doc = "2 stop bits."] _2STOP,
-    #[doc = "1.5 stop bits."] _1HALFSTOP,
+    #[doc = "1 stop bit."]
+    _1STOP,
+    #[doc = "0.5 stop bit."]
+    HALFSTOP,
+    #[doc = "2 stop bits."]
+    _2STOP,
+    #[doc = "1.5 stop bits."]
+    _1HALFSTOP,
 }
 impl STOPW {
     #[allow(missing_docs)]
@@ -1453,8 +1509,10 @@ impl<'a> _STOPW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKEN`"]
 pub enum CLKENW {
-    #[doc = "CK pin disabled."] DISABLED,
-    #[doc = "CK pin enabled."] ENABLED,
+    #[doc = "CK pin disabled."]
+    DISABLED,
+    #[doc = "CK pin enabled."]
+    ENABLED,
 }
 impl CLKENW {
     #[allow(missing_docs)]
@@ -1509,8 +1567,10 @@ impl<'a> _CLKENW<'a> {
 }
 #[doc = "Values that can be written to the field `CPOL`"]
 pub enum CPOLW {
-    #[doc = "Steady low value on CK pin outside transmission window."] LOW,
-    #[doc = "Steady high value on CK pin outside transmission window."] HIGH,
+    #[doc = "Steady low value on CK pin outside transmission window."]
+    LOW,
+    #[doc = "Steady high value on CK pin outside transmission window."]
+    HIGH,
 }
 impl CPOLW {
     #[allow(missing_docs)]
@@ -1565,8 +1625,10 @@ impl<'a> _CPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `CPHA`"]
 pub enum CPHAW {
-    #[doc = "The first clock transition is the first data capture edge."] FIRST,
-    #[doc = "The second clock transition is the first data capture edge."] SECOND,
+    #[doc = "The first clock transition is the first data capture edge."]
+    FIRST,
+    #[doc = "The second clock transition is the first data capture edge."]
+    SECOND,
 }
 impl CPHAW {
     #[allow(missing_docs)]
@@ -1621,8 +1683,10 @@ impl<'a> _CPHAW<'a> {
 }
 #[doc = "Values that can be written to the field `LBCL`"]
 pub enum LBCLW {
-    #[doc = "The clock pulse of the last data bit is not output to the CK pin."] NOOUTPUT,
-    #[doc = "The clock pulse of the last data bit is output to the CK pin."] OUTPUT,
+    #[doc = "The clock pulse of the last data bit is not output to the CK pin."]
+    NOOUTPUT,
+    #[doc = "The clock pulse of the last data bit is output to the CK pin."]
+    OUTPUT,
 }
 impl LBCLW {
     #[allow(missing_docs)]
@@ -1677,8 +1741,10 @@ impl<'a> _LBCLW<'a> {
 }
 #[doc = "Values that can be written to the field `LBDIE`"]
 pub enum LBDIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An interrupt is generated whenever LBDF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An interrupt is generated whenever LBDF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl LBDIEW {
     #[allow(missing_docs)]
@@ -1733,8 +1799,10 @@ impl<'a> _LBDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LBDL`"]
 pub enum LBDLW {
-    #[doc = "10-bit break detection."] _10BITS,
-    #[doc = "11-bit break detection."] _11BITS,
+    #[doc = "10-bit break detection."]
+    _10BITS,
+    #[doc = "11-bit break detection."]
+    _11BITS,
 }
 impl LBDLW {
     #[allow(missing_docs)]
@@ -1789,8 +1857,10 @@ impl<'a> _LBDLW<'a> {
 }
 #[doc = "Values that can be written to the field `ADDM7`"]
 pub enum ADDM7W {
-    #[doc = "4-bit address detection."] _4BITS,
-    #[doc = "7-bit address detection (in 8-bit data mode)."] _7BITS,
+    #[doc = "4-bit address detection."]
+    _4BITS,
+    #[doc = "7-bit address detection (in 8-bit data mode)."]
+    _7BITS,
 }
 impl ADDM7W {
     #[allow(missing_docs)]

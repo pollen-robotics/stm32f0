@@ -45,8 +45,10 @@ impl super::I2SPR {
 #[doc = "Possible values of the field `MCKOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCKOER {
-    #[doc = "Master clock output is disabled"] DISABLED,
-    #[doc = "Master clock output is enabled"] ENABLED,
+    #[doc = "Master clock output is disabled"]
+    DISABLED,
+    #[doc = "Master clock output is enabled"]
+    ENABLED,
 }
 impl MCKOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl MCKOER {
 #[doc = "Possible values of the field `ODD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODDR {
-    #[doc = "Real divider value is = I2SDIV *2"] EVEN,
-    #[doc = "Real divider value is = (I2SDIV * 2)+1"] ODD,
+    #[doc = "Real divider value is = I2SDIV *2"]
+    EVEN,
+    #[doc = "Real divider value is = (I2SDIV * 2)+1"]
+    ODD,
 }
 impl ODDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -145,8 +149,10 @@ impl I2SDIVR {
 }
 #[doc = "Values that can be written to the field `MCKOE`"]
 pub enum MCKOEW {
-    #[doc = "Master clock output is disabled"] DISABLED,
-    #[doc = "Master clock output is enabled"] ENABLED,
+    #[doc = "Master clock output is disabled"]
+    DISABLED,
+    #[doc = "Master clock output is enabled"]
+    ENABLED,
 }
 impl MCKOEW {
     #[allow(missing_docs)]
@@ -201,8 +207,10 @@ impl<'a> _MCKOEW<'a> {
 }
 #[doc = "Values that can be written to the field `ODD`"]
 pub enum ODDW {
-    #[doc = "Real divider value is = I2SDIV *2"] EVEN,
-    #[doc = "Real divider value is = (I2SDIV * 2)+1"] ODD,
+    #[doc = "Real divider value is = I2SDIV *2"]
+    EVEN,
+    #[doc = "Real divider value is = (I2SDIV * 2)+1"]
+    ODD,
 }
 impl ODDW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::RQR {
 #[doc = "Possible values of the field `TXFRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFRQR {
-    #[doc = "sets the TXE flag."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the TXE flag."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TXFRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl TXFRQR {
 #[doc = "Possible values of the field `RXFRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFRQR {
-    #[doc = "clears the RXNE flag."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the RXNE flag."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RXFRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl RXFRQR {
 #[doc = "Possible values of the field `MMRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMRQR {
-    #[doc = "sets the RWU flag and puts the USART in mute mode."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the RWU flag and puts the USART in mute mode."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl MMRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl MMRQR {
 #[doc = "Possible values of the field `SBKRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBKRQR {
-    #[doc = "sets the SBKF flag and request to send a BREAK on the line."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SBKRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -241,7 +249,8 @@ impl ABRRQR {
 }
 #[doc = "Values that can be written to the field `TXFRQ`"]
 pub enum TXFRQW {
-    #[doc = "sets the TXE flag."] SET,
+    #[doc = "sets the TXE flag."]
+    SET,
 }
 impl TXFRQW {
     #[allow(missing_docs)]
@@ -290,7 +299,8 @@ impl<'a> _TXFRQW<'a> {
 }
 #[doc = "Values that can be written to the field `RXFRQ`"]
 pub enum RXFRQW {
-    #[doc = "clears the RXNE flag."] CLEAR,
+    #[doc = "clears the RXNE flag."]
+    CLEAR,
 }
 impl RXFRQW {
     #[allow(missing_docs)]
@@ -339,7 +349,8 @@ impl<'a> _RXFRQW<'a> {
 }
 #[doc = "Values that can be written to the field `MMRQ`"]
 pub enum MMRQW {
-    #[doc = "sets the RWU flag and puts the USART in mute mode."] SET,
+    #[doc = "sets the RWU flag and puts the USART in mute mode."]
+    SET,
 }
 impl MMRQW {
     #[allow(missing_docs)]
@@ -388,7 +399,8 @@ impl<'a> _MMRQW<'a> {
 }
 #[doc = "Values that can be written to the field `SBKRQ`"]
 pub enum SBKRQW {
-    #[doc = "sets the SBKF flag and request to send a BREAK on the line."] SET,
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line."]
+    SET,
 }
 impl SBKRQW {
     #[allow(missing_docs)]

@@ -45,9 +45,12 @@ impl super::ACR {
 #[doc = "Possible values of the field `LATENCY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LATENCYR {
-    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."] _0WAITSTATE,
-    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."] _1WAITSTATE,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."]
+    _0WAITSTATE,
+    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."]
+    _1WAITSTATE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl LATENCYR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,8 +86,10 @@ impl LATENCYR {
 #[doc = "Possible values of the field `PRFTBE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRFTBER {
-    #[doc = "Prefetch is disabled."] DISABLED,
-    #[doc = "Prefetch is enabled."] ENABLED,
+    #[doc = "Prefetch is disabled."]
+    DISABLED,
+    #[doc = "Prefetch is enabled."]
+    ENABLED,
 }
 impl PRFTBER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -148,8 +153,10 @@ impl PRFTBSR {
 }
 #[doc = "Values that can be written to the field `LATENCY`"]
 pub enum LATENCYW {
-    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."] _0WAITSTATE,
-    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."] _1WAITSTATE,
+    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."]
+    _0WAITSTATE,
+    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."]
+    _1WAITSTATE,
 }
 impl LATENCYW {
     #[allow(missing_docs)]
@@ -194,8 +201,10 @@ impl<'a> _LATENCYW<'a> {
 }
 #[doc = "Values that can be written to the field `PRFTBE`"]
 pub enum PRFTBEW {
-    #[doc = "Prefetch is disabled."] DISABLED,
-    #[doc = "Prefetch is enabled."] ENABLED,
+    #[doc = "Prefetch is disabled."]
+    DISABLED,
+    #[doc = "Prefetch is enabled."]
+    ENABLED,
 }
 impl PRFTBEW {
     #[allow(missing_docs)]

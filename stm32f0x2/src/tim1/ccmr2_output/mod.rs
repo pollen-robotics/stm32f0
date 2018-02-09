@@ -45,8 +45,10 @@ impl super::CCMR2_OUTPUT {
 #[doc = "Possible values of the field `OC4CE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OC4CER {
-    #[doc = "OC4Ref is not affected by the ETRF Input"] DISABLED,
-    #[doc = "OC4Ref is cleared as soon as a High level is detected on ETRF input"] ENABLED,
+    #[doc = "OC4Ref is not affected by the ETRF Input"]
+    DISABLED,
+    #[doc = "OC4Ref is cleared as soon as a High level is detected on ETRF input"]
+    ENABLED,
 }
 impl OC4CER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -176,10 +178,14 @@ impl OC4FER {
 #[doc = "Possible values of the field `CC4S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4SR {
-    #[doc = "CC4 channel is configured as output"] CC4OUTPUT,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI4"] IC4MAPPEDTI4,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI3"] IC4MAPPEDTI3,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TRC"] IC4MAPPEDTRC,
+    #[doc = "CC4 channel is configured as output"]
+    CC4OUTPUT,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI4"]
+    IC4MAPPEDTI4,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI3"]
+    IC4MAPPEDTI3,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TRC"]
+    IC4MAPPEDTRC,
 }
 impl CC4SR {
     #[doc = r" Value of the field as raw bits"]
@@ -228,8 +234,10 @@ impl CC4SR {
 #[doc = "Possible values of the field `OC3CE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OC3CER {
-    #[doc = "OC3Ref is not affected by the ETRF Input"] DISABLED,
-    #[doc = "OC3Ref is cleared as soon as a High level is detected on ETRF input"] ENABLED,
+    #[doc = "OC3Ref is not affected by the ETRF Input"]
+    DISABLED,
+    #[doc = "OC3Ref is cleared as soon as a High level is detected on ETRF input"]
+    ENABLED,
 }
 impl OC3CER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -359,10 +367,14 @@ impl OC3FER {
 #[doc = "Possible values of the field `CC3S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3SR {
-    #[doc = "CC3 channel is configured as output"] CC3OUTPUT,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI3"] IC3MAPPEDTI3,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI4"] IC3MAPPEDTI4,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TRC"] IC3MAPPEDTRC,
+    #[doc = "CC3 channel is configured as output"]
+    CC3OUTPUT,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI3"]
+    IC3MAPPEDTI3,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI4"]
+    IC3MAPPEDTI4,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TRC"]
+    IC3MAPPEDTRC,
 }
 impl CC3SR {
     #[doc = r" Value of the field as raw bits"]
@@ -410,8 +422,10 @@ impl CC3SR {
 }
 #[doc = "Values that can be written to the field `OC4CE`"]
 pub enum OC4CEW {
-    #[doc = "OC4Ref is not affected by the ETRF Input"] DISABLED,
-    #[doc = "OC4Ref is cleared as soon as a High level is detected on ETRF input"] ENABLED,
+    #[doc = "OC4Ref is not affected by the ETRF Input"]
+    DISABLED,
+    #[doc = "OC4Ref is cleared as soon as a High level is detected on ETRF input"]
+    ENABLED,
 }
 impl OC4CEW {
     #[allow(missing_docs)]
@@ -629,10 +643,14 @@ impl<'a> _OC4FEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC4S`"]
 pub enum CC4SW {
-    #[doc = "CC4 channel is configured as output"] CC4OUTPUT,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI4"] IC4MAPPEDTI4,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI3"] IC4MAPPEDTI3,
-    #[doc = "CC4 channel is configured as input, IC4 is mapped on TRC"] IC4MAPPEDTRC,
+    #[doc = "CC4 channel is configured as output"]
+    CC4OUTPUT,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI4"]
+    IC4MAPPEDTI4,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TI3"]
+    IC4MAPPEDTI3,
+    #[doc = "CC4 channel is configured as input, IC4 is mapped on TRC"]
+    IC4MAPPEDTRC,
 }
 impl CC4SW {
     #[allow(missing_docs)]
@@ -691,8 +709,10 @@ impl<'a> _CC4SW<'a> {
 }
 #[doc = "Values that can be written to the field `OC3CE`"]
 pub enum OC3CEW {
-    #[doc = "OC3Ref is not affected by the ETRF Input"] DISABLED,
-    #[doc = "OC3Ref is cleared as soon as a High level is detected on ETRF input"] ENABLED,
+    #[doc = "OC3Ref is not affected by the ETRF Input"]
+    DISABLED,
+    #[doc = "OC3Ref is cleared as soon as a High level is detected on ETRF input"]
+    ENABLED,
 }
 impl OC3CEW {
     #[allow(missing_docs)]
@@ -910,10 +930,14 @@ impl<'a> _OC3FEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3S`"]
 pub enum CC3SW {
-    #[doc = "CC3 channel is configured as output"] CC3OUTPUT,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI3"] IC3MAPPEDTI3,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI4"] IC3MAPPEDTI4,
-    #[doc = "CC3 channel is configured as input, IC3 is mapped on TRC"] IC3MAPPEDTRC,
+    #[doc = "CC3 channel is configured as output"]
+    CC3OUTPUT,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI3"]
+    IC3MAPPEDTI3,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TI4"]
+    IC3MAPPEDTI4,
+    #[doc = "CC3 channel is configured as input, IC3 is mapped on TRC"]
+    IC3MAPPEDTRC,
 }
 impl CC3SW {
     #[allow(missing_docs)]

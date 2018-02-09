@@ -45,8 +45,10 @@ impl super::I2SCFGR {
 #[doc = "Possible values of the field `I2SMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SMODR {
-    #[doc = "SPI mode is selected"] SPI,
-    #[doc = "I2S mode is selected"] I2S,
+    #[doc = "SPI mode is selected"]
+    SPI,
+    #[doc = "I2S mode is selected"]
+    I2S,
 }
 impl I2SMODR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl I2SMODR {
 #[doc = "Possible values of the field `I2SE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SER {
-    #[doc = "I2S peripheral is disabled"] DISABLE,
-    #[doc = "I2S peripheral is enabled"] ENABLE,
+    #[doc = "I2S peripheral is disabled"]
+    DISABLE,
+    #[doc = "I2S peripheral is enabled"]
+    ENABLE,
 }
 impl I2SER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,10 +139,14 @@ impl I2SER {
 #[doc = "Possible values of the field `I2SCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SCFGR {
-    #[doc = "Slave - transmit"] SLAVE_TRANSMIT,
-    #[doc = "Slave - receive"] SLAVE_RECEIVE,
-    #[doc = "Master - transmit"] MASTER_TRANSMIT,
-    #[doc = "Master - receive"] MASTER_RECEIVE,
+    #[doc = "Slave - transmit"]
+    SLAVE_TRANSMIT,
+    #[doc = "Slave - receive"]
+    SLAVE_RECEIVE,
+    #[doc = "Master - transmit"]
+    MASTER_TRANSMIT,
+    #[doc = "Master - receive"]
+    MASTER_RECEIVE,
 }
 impl I2SCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -187,8 +195,10 @@ impl I2SCFGR {
 #[doc = "Possible values of the field `PCMSYNC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCMSYNCR {
-    #[doc = "Short frame synchronization"] SHORT,
-    #[doc = "Long frame synchronization"] LONG,
+    #[doc = "Short frame synchronization"]
+    SHORT,
+    #[doc = "Long frame synchronization"]
+    LONG,
 }
 impl PCMSYNCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -232,10 +242,14 @@ impl PCMSYNCR {
 #[doc = "Possible values of the field `I2SSTD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SSTDR {
-    #[doc = "I2S Philips standard."] I2S,
-    #[doc = "MSB justified standard (left justified)"] MSB,
-    #[doc = "LSB justified standard (right justified)"] LSB,
-    #[doc = "PCM standard"] PCM,
+    #[doc = "I2S Philips standard."]
+    I2S,
+    #[doc = "MSB justified standard (left justified)"]
+    MSB,
+    #[doc = "LSB justified standard (right justified)"]
+    LSB,
+    #[doc = "PCM standard"]
+    PCM,
 }
 impl I2SSTDR {
     #[doc = r" Value of the field as raw bits"]
@@ -284,8 +298,10 @@ impl I2SSTDR {
 #[doc = "Possible values of the field `CKPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CKPOLR {
-    #[doc = "I2S clock inactive state is low level"] IDLELOW,
-    #[doc = "I2S clock inactive state is high level"] IDLEHIGH,
+    #[doc = "I2S clock inactive state is low level"]
+    IDLELOW,
+    #[doc = "I2S clock inactive state is high level"]
+    IDLEHIGH,
 }
 impl CKPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -329,10 +345,14 @@ impl CKPOLR {
 #[doc = "Possible values of the field `DATLEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATLENR {
-    #[doc = "16-bit data length"] _16BITS,
-    #[doc = "24-bit data length"] _24BITS,
-    #[doc = "32-bit data length"] _32BITS,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "16-bit data length"]
+    _16BITS,
+    #[doc = "24-bit data length"]
+    _24BITS,
+    #[doc = "32-bit data length"]
+    _32BITS,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl DATLENR {
     #[doc = r" Value of the field as raw bits"]
@@ -375,8 +395,10 @@ impl DATLENR {
 #[doc = "Possible values of the field `CHLEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHLENR {
-    #[doc = "16-bit wide"] _16BITS,
-    #[doc = "32-bit wide"] _32BITS,
+    #[doc = "16-bit wide"]
+    _16BITS,
+    #[doc = "32-bit wide"]
+    _32BITS,
 }
 impl CHLENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,8 +441,10 @@ impl CHLENR {
 }
 #[doc = "Values that can be written to the field `I2SMOD`"]
 pub enum I2SMODW {
-    #[doc = "SPI mode is selected"] SPI,
-    #[doc = "I2S mode is selected"] I2S,
+    #[doc = "SPI mode is selected"]
+    SPI,
+    #[doc = "I2S mode is selected"]
+    I2S,
 }
 impl I2SMODW {
     #[allow(missing_docs)]
@@ -475,8 +499,10 @@ impl<'a> _I2SMODW<'a> {
 }
 #[doc = "Values that can be written to the field `I2SE`"]
 pub enum I2SEW {
-    #[doc = "I2S peripheral is disabled"] DISABLE,
-    #[doc = "I2S peripheral is enabled"] ENABLE,
+    #[doc = "I2S peripheral is disabled"]
+    DISABLE,
+    #[doc = "I2S peripheral is enabled"]
+    ENABLE,
 }
 impl I2SEW {
     #[allow(missing_docs)]
@@ -531,10 +557,14 @@ impl<'a> _I2SEW<'a> {
 }
 #[doc = "Values that can be written to the field `I2SCFG`"]
 pub enum I2SCFGW {
-    #[doc = "Slave - transmit"] SLAVE_TRANSMIT,
-    #[doc = "Slave - receive"] SLAVE_RECEIVE,
-    #[doc = "Master - transmit"] MASTER_TRANSMIT,
-    #[doc = "Master - receive"] MASTER_RECEIVE,
+    #[doc = "Slave - transmit"]
+    SLAVE_TRANSMIT,
+    #[doc = "Slave - receive"]
+    SLAVE_RECEIVE,
+    #[doc = "Master - transmit"]
+    MASTER_TRANSMIT,
+    #[doc = "Master - receive"]
+    MASTER_RECEIVE,
 }
 impl I2SCFGW {
     #[allow(missing_docs)]
@@ -593,8 +623,10 @@ impl<'a> _I2SCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `PCMSYNC`"]
 pub enum PCMSYNCW {
-    #[doc = "Short frame synchronization"] SHORT,
-    #[doc = "Long frame synchronization"] LONG,
+    #[doc = "Short frame synchronization"]
+    SHORT,
+    #[doc = "Long frame synchronization"]
+    LONG,
 }
 impl PCMSYNCW {
     #[allow(missing_docs)]
@@ -649,10 +681,14 @@ impl<'a> _PCMSYNCW<'a> {
 }
 #[doc = "Values that can be written to the field `I2SSTD`"]
 pub enum I2SSTDW {
-    #[doc = "I2S Philips standard."] I2S,
-    #[doc = "MSB justified standard (left justified)"] MSB,
-    #[doc = "LSB justified standard (right justified)"] LSB,
-    #[doc = "PCM standard"] PCM,
+    #[doc = "I2S Philips standard."]
+    I2S,
+    #[doc = "MSB justified standard (left justified)"]
+    MSB,
+    #[doc = "LSB justified standard (right justified)"]
+    LSB,
+    #[doc = "PCM standard"]
+    PCM,
 }
 impl I2SSTDW {
     #[allow(missing_docs)]
@@ -711,8 +747,10 @@ impl<'a> _I2SSTDW<'a> {
 }
 #[doc = "Values that can be written to the field `CKPOL`"]
 pub enum CKPOLW {
-    #[doc = "I2S clock inactive state is low level"] IDLELOW,
-    #[doc = "I2S clock inactive state is high level"] IDLEHIGH,
+    #[doc = "I2S clock inactive state is low level"]
+    IDLELOW,
+    #[doc = "I2S clock inactive state is high level"]
+    IDLEHIGH,
 }
 impl CKPOLW {
     #[allow(missing_docs)]
@@ -767,9 +805,12 @@ impl<'a> _CKPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `DATLEN`"]
 pub enum DATLENW {
-    #[doc = "16-bit data length"] _16BITS,
-    #[doc = "24-bit data length"] _24BITS,
-    #[doc = "32-bit data length"] _32BITS,
+    #[doc = "16-bit data length"]
+    _16BITS,
+    #[doc = "24-bit data length"]
+    _24BITS,
+    #[doc = "32-bit data length"]
+    _32BITS,
 }
 impl DATLENW {
     #[allow(missing_docs)]
@@ -820,8 +861,10 @@ impl<'a> _DATLENW<'a> {
 }
 #[doc = "Values that can be written to the field `CHLEN`"]
 pub enum CHLENW {
-    #[doc = "16-bit wide"] _16BITS,
-    #[doc = "32-bit wide"] _32BITS,
+    #[doc = "16-bit wide"]
+    _16BITS,
+    #[doc = "32-bit wide"]
+    _32BITS,
 }
 impl CHLENW {
     #[allow(missing_docs)]

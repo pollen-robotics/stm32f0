@@ -45,10 +45,14 @@ impl super::MODER {
 #[doc = "Possible values of the field `MODER15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODER15R {
-    #[doc = "Input mode (reset state)"] INPUT,
-    #[doc = "General purpose output mode"] OUTPUT,
-    #[doc = "Alternate function mode"] ALTERNATE,
-    #[doc = "Analog mode"] ANALOG,
+    #[doc = "Input mode (reset state)"]
+    INPUT,
+    #[doc = "General purpose output mode"]
+    OUTPUT,
+    #[doc = "Alternate function mode"]
+    ALTERNATE,
+    #[doc = "Analog mode"]
+    ANALOG,
 }
 impl MODER15R {
     #[doc = r" Value of the field as raw bits"]
@@ -126,10 +130,14 @@ pub type MODER1R = MODER15R;
 pub type MODER0R = MODER15R;
 #[doc = "Values that can be written to the field `MODER15`"]
 pub enum MODER15W {
-    #[doc = "Input mode (reset state)"] INPUT,
-    #[doc = "General purpose output mode"] OUTPUT,
-    #[doc = "Alternate function mode"] ALTERNATE,
-    #[doc = "Analog mode"] ANALOG,
+    #[doc = "Input mode (reset state)"]
+    INPUT,
+    #[doc = "General purpose output mode"]
+    OUTPUT,
+    #[doc = "Alternate function mode"]
+    ALTERNATE,
+    #[doc = "Analog mode"]
+    ANALOG,
 }
 impl MODER15W {
     #[allow(missing_docs)]

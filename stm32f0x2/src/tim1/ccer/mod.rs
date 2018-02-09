@@ -45,8 +45,10 @@ impl super::CCER {
 #[doc = "Possible values of the field `CC4P`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4PR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC4PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,8 +134,10 @@ impl CC4ER {
 #[doc = "Possible values of the field `CC3NP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3NPR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC3NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -177,8 +181,10 @@ impl CC3NPR {
 #[doc = "Possible values of the field `CC3NE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3NER {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC3NER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -222,8 +228,10 @@ impl CC3NER {
 #[doc = "Possible values of the field `CC3P`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3PR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC3PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -309,8 +317,10 @@ impl CC3ER {
 #[doc = "Possible values of the field `CC2NP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2NPR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC2NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -354,8 +364,10 @@ impl CC2NPR {
 #[doc = "Possible values of the field `CC2NE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2NER {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC2NER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -399,8 +411,10 @@ impl CC2NER {
 #[doc = "Possible values of the field `CC2P`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2PR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC2PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -486,8 +500,10 @@ impl CC2ER {
 #[doc = "Possible values of the field `CC1NP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1NPR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -531,8 +547,10 @@ impl CC1NPR {
 #[doc = "Possible values of the field `CC1NE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1NER {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC1NER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -576,8 +594,10 @@ impl CC1NER {
 #[doc = "Possible values of the field `CC1P`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1PR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -662,8 +682,10 @@ impl CC1ER {
 }
 #[doc = "Values that can be written to the field `CC4P`"]
 pub enum CC4PW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC4PW {
     #[allow(missing_docs)]
@@ -770,8 +792,10 @@ impl<'a> _CC4EW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3NP`"]
 pub enum CC3NPW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC3NPW {
     #[allow(missing_docs)]
@@ -826,8 +850,10 @@ impl<'a> _CC3NPW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3NE`"]
 pub enum CC3NEW {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC3NEW {
     #[allow(missing_docs)]
@@ -882,8 +908,10 @@ impl<'a> _CC3NEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3P`"]
 pub enum CC3PW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC3PW {
     #[allow(missing_docs)]
@@ -990,8 +1018,10 @@ impl<'a> _CC3EW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2NP`"]
 pub enum CC2NPW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC2NPW {
     #[allow(missing_docs)]
@@ -1046,8 +1076,10 @@ impl<'a> _CC2NPW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2NE`"]
 pub enum CC2NEW {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC2NEW {
     #[allow(missing_docs)]
@@ -1102,8 +1134,10 @@ impl<'a> _CC2NEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2P`"]
 pub enum CC2PW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC2PW {
     #[allow(missing_docs)]
@@ -1210,8 +1244,10 @@ impl<'a> _CC2EW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1NP`"]
 pub enum CC1NPW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1NPW {
     #[allow(missing_docs)]
@@ -1266,8 +1302,10 @@ impl<'a> _CC1NPW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1NE`"]
 pub enum CC1NEW {
-    #[doc = "Off"] DISABLED,
-    #[doc = "On"] ENABLED,
+    #[doc = "Off"]
+    DISABLED,
+    #[doc = "On"]
+    ENABLED,
 }
 impl CC1NEW {
     #[allow(missing_docs)]
@@ -1322,8 +1360,10 @@ impl<'a> _CC1NEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1P`"]
 pub enum CC1PW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1PW {
     #[allow(missing_docs)]

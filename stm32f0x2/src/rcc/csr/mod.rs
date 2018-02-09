@@ -45,8 +45,10 @@ impl super::CSR {
 #[doc = "Possible values of the field `LSION`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSIONR {
-    #[doc = "LSI oscillator OFF."] DISABLED,
-    #[doc = "LSI oscillator ON."] ENABLED,
+    #[doc = "LSI oscillator OFF."]
+    DISABLED,
+    #[doc = "LSI oscillator ON."]
+    ENABLED,
 }
 impl LSIONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -111,8 +113,10 @@ impl LSIRDYR {
 #[doc = "Possible values of the field `RMVF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RMVFR {
-    #[doc = "Clear the reset flags."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear the reset flags."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RMVFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -297,8 +301,10 @@ impl LPWRRSTFR {
 }
 #[doc = "Values that can be written to the field `LSION`"]
 pub enum LSIONW {
-    #[doc = "LSI oscillator OFF."] DISABLED,
-    #[doc = "LSI oscillator ON."] ENABLED,
+    #[doc = "LSI oscillator OFF."]
+    DISABLED,
+    #[doc = "LSI oscillator ON."]
+    ENABLED,
 }
 impl LSIONW {
     #[allow(missing_docs)]
@@ -353,7 +359,8 @@ impl<'a> _LSIONW<'a> {
 }
 #[doc = "Values that can be written to the field `RMVF`"]
 pub enum RMVFW {
-    #[doc = "Clear the reset flags."] CLEARED,
+    #[doc = "Clear the reset flags."]
+    CLEARED,
 }
 impl RMVFW {
     #[allow(missing_docs)]

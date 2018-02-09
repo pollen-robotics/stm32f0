@@ -45,8 +45,10 @@ impl super::CR {
 #[doc = "Possible values of the field `RESET`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESETR {
-    #[doc = "Resets the CRC calculation unit"] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Resets the CRC calculation unit"]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RESETR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,10 +87,14 @@ impl RESETR {
 #[doc = "Possible values of the field `POLYSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POLYSIZER {
-    #[doc = "32 bit polynomial."] _32BITS,
-    #[doc = "16 bit polynomial."] _16BITS,
-    #[doc = "8 bit polynomial."] _8BITS,
-    #[doc = "7 bit polynomial."] _7BITS,
+    #[doc = "32 bit polynomial."]
+    _32BITS,
+    #[doc = "16 bit polynomial."]
+    _16BITS,
+    #[doc = "8 bit polynomial."]
+    _8BITS,
+    #[doc = "7 bit polynomial."]
+    _7BITS,
 }
 impl POLYSIZER {
     #[doc = r" Value of the field as raw bits"]
@@ -137,10 +143,14 @@ impl POLYSIZER {
 #[doc = "Possible values of the field `REV_IN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV_INR {
-    #[doc = "Bit order not affected."] NOREVERSE,
-    #[doc = "Bit reversal done by byte."] BYTE,
-    #[doc = "Bit reversal done by half-word."] HALFWORD,
-    #[doc = "Bit reversal done by word."] _7BITS,
+    #[doc = "Bit order not affected."]
+    NOREVERSE,
+    #[doc = "Bit reversal done by byte."]
+    BYTE,
+    #[doc = "Bit reversal done by half-word."]
+    HALFWORD,
+    #[doc = "Bit reversal done by word."]
+    _7BITS,
 }
 impl REV_INR {
     #[doc = r" Value of the field as raw bits"]
@@ -189,8 +199,10 @@ impl REV_INR {
 #[doc = "Possible values of the field `REV_OUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV_OUTR {
-    #[doc = "Bit order not affected."] NOREVERSE,
-    #[doc = "Bit-reversed output format."] REVERSE,
+    #[doc = "Bit order not affected."]
+    NOREVERSE,
+    #[doc = "Bit-reversed output format."]
+    REVERSE,
 }
 impl REV_OUTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -233,7 +245,8 @@ impl REV_OUTR {
 }
 #[doc = "Values that can be written to the field `RESET`"]
 pub enum RESETW {
-    #[doc = "Resets the CRC calculation unit"] RESET,
+    #[doc = "Resets the CRC calculation unit"]
+    RESET,
 }
 impl RESETW {
     #[allow(missing_docs)]
@@ -282,10 +295,14 @@ impl<'a> _RESETW<'a> {
 }
 #[doc = "Values that can be written to the field `POLYSIZE`"]
 pub enum POLYSIZEW {
-    #[doc = "32 bit polynomial."] _32BITS,
-    #[doc = "16 bit polynomial."] _16BITS,
-    #[doc = "8 bit polynomial."] _8BITS,
-    #[doc = "7 bit polynomial."] _7BITS,
+    #[doc = "32 bit polynomial."]
+    _32BITS,
+    #[doc = "16 bit polynomial."]
+    _16BITS,
+    #[doc = "8 bit polynomial."]
+    _8BITS,
+    #[doc = "7 bit polynomial."]
+    _7BITS,
 }
 impl POLYSIZEW {
     #[allow(missing_docs)]
@@ -344,10 +361,14 @@ impl<'a> _POLYSIZEW<'a> {
 }
 #[doc = "Values that can be written to the field `REV_IN`"]
 pub enum REV_INW {
-    #[doc = "Bit order not affected."] NOREVERSE,
-    #[doc = "Bit reversal done by byte."] BYTE,
-    #[doc = "Bit reversal done by half-word."] HALFWORD,
-    #[doc = "Bit reversal done by word."] _7BITS,
+    #[doc = "Bit order not affected."]
+    NOREVERSE,
+    #[doc = "Bit reversal done by byte."]
+    BYTE,
+    #[doc = "Bit reversal done by half-word."]
+    HALFWORD,
+    #[doc = "Bit reversal done by word."]
+    _7BITS,
 }
 impl REV_INW {
     #[allow(missing_docs)]
@@ -406,8 +427,10 @@ impl<'a> _REV_INW<'a> {
 }
 #[doc = "Values that can be written to the field `REV_OUT`"]
 pub enum REV_OUTW {
-    #[doc = "Bit order not affected."] NOREVERSE,
-    #[doc = "Bit-reversed output format."] REVERSE,
+    #[doc = "Bit order not affected."]
+    NOREVERSE,
+    #[doc = "Bit-reversed output format."]
+    REVERSE,
 }
 impl REV_OUTW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::DIER {
 #[doc = "Possible values of the field `TDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDER {
-    #[doc = "Trigger DMA request disabled."] DISABLED,
-    #[doc = "Trigger DMA request enabled."] ENABLED,
+    #[doc = "Trigger DMA request disabled."]
+    DISABLED,
+    #[doc = "Trigger DMA request enabled."]
+    ENABLED,
 }
 impl TDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TDER {
 #[doc = "Possible values of the field `COMDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMDER {
-    #[doc = "COM DMA request disabled."] DISABLED,
-    #[doc = "COM DMA request enabled."] ENABLED,
+    #[doc = "COM DMA request disabled."]
+    DISABLED,
+    #[doc = "COM DMA request enabled."]
+    ENABLED,
 }
 impl COMDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl COMDER {
 #[doc = "Possible values of the field `CC4DE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4DER {
-    #[doc = "CC4 DMA request disabled."] DISABLED,
-    #[doc = "CC4 DMA request enabled."] ENABLED,
+    #[doc = "CC4 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC4 DMA request enabled."]
+    ENABLED,
 }
 impl CC4DER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl CC4DER {
 #[doc = "Possible values of the field `CC3DE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3DER {
-    #[doc = "CC3 DMA request disabled."] DISABLED,
-    #[doc = "CC3 DMA request enabled."] ENABLED,
+    #[doc = "CC3 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC3 DMA request enabled."]
+    ENABLED,
 }
 impl CC3DER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CC3DER {
 #[doc = "Possible values of the field `CC2DE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2DER {
-    #[doc = "CC2 DMA request disabled."] DISABLED,
-    #[doc = "CC2 DMA request enabled."] ENABLED,
+    #[doc = "CC2 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC2 DMA request enabled."]
+    ENABLED,
 }
 impl CC2DER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl CC2DER {
 #[doc = "Possible values of the field `CC1DE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1DER {
-    #[doc = "CC1 DMA request disabled."] DISABLED,
-    #[doc = "CC1 DMA request enabled."] ENABLED,
+    #[doc = "CC1 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC1 DMA request enabled."]
+    ENABLED,
 }
 impl CC1DER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl CC1DER {
 #[doc = "Possible values of the field `UDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UDER {
-    #[doc = "Update DMA request disabled."] DISABLED,
-    #[doc = "Update DMA request enabled."] ENABLED,
+    #[doc = "Update DMA request disabled."]
+    DISABLED,
+    #[doc = "Update DMA request enabled."]
+    ENABLED,
 }
 impl UDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl UDER {
 #[doc = "Possible values of the field `TIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIER {
-    #[doc = "Trigger interrupt disabled."] DISABLED,
-    #[doc = "Trigger interrupt enabled."] ENABLED,
+    #[doc = "Trigger interrupt disabled."]
+    DISABLED,
+    #[doc = "Trigger interrupt enabled."]
+    ENABLED,
 }
 impl TIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl TIER {
 #[doc = "Possible values of the field `CC4IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4IER {
-    #[doc = "CC4 interrupt disabled."] DISABLED,
-    #[doc = "CC4 interrupt enabled."] ENABLED,
+    #[doc = "CC4 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC4 interrupt enabled."]
+    ENABLED,
 }
 impl CC4IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl CC4IER {
 #[doc = "Possible values of the field `CC3IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3IER {
-    #[doc = "CC3 interrupt disabled."] DISABLED,
-    #[doc = "CC3 interrupt enabled."] ENABLED,
+    #[doc = "CC3 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC3 interrupt enabled."]
+    ENABLED,
 }
 impl CC3IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,8 +515,10 @@ impl CC3IER {
 #[doc = "Possible values of the field `CC2IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2IER {
-    #[doc = "CC2 interrupt disabled."] DISABLED,
-    #[doc = "CC2 interrupt enabled."] ENABLED,
+    #[doc = "CC2 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC2 interrupt enabled."]
+    ENABLED,
 }
 impl CC2IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -540,8 +562,10 @@ impl CC2IER {
 #[doc = "Possible values of the field `CC1IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1IER {
-    #[doc = "CC1 interrupt disabled."] DISABLED,
-    #[doc = "CC1 interrupt enabled."] ENABLED,
+    #[doc = "CC1 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC1 interrupt enabled."]
+    ENABLED,
 }
 impl CC1IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -585,8 +609,10 @@ impl CC1IER {
 #[doc = "Possible values of the field `UIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIER {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -629,8 +655,10 @@ impl UIER {
 }
 #[doc = "Values that can be written to the field `TDE`"]
 pub enum TDEW {
-    #[doc = "Trigger DMA request disabled."] DISABLED,
-    #[doc = "Trigger DMA request enabled."] ENABLED,
+    #[doc = "Trigger DMA request disabled."]
+    DISABLED,
+    #[doc = "Trigger DMA request enabled."]
+    ENABLED,
 }
 impl TDEW {
     #[allow(missing_docs)]
@@ -685,8 +713,10 @@ impl<'a> _TDEW<'a> {
 }
 #[doc = "Values that can be written to the field `COMDE`"]
 pub enum COMDEW {
-    #[doc = "COM DMA request disabled."] DISABLED,
-    #[doc = "COM DMA request enabled."] ENABLED,
+    #[doc = "COM DMA request disabled."]
+    DISABLED,
+    #[doc = "COM DMA request enabled."]
+    ENABLED,
 }
 impl COMDEW {
     #[allow(missing_docs)]
@@ -741,8 +771,10 @@ impl<'a> _COMDEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC4DE`"]
 pub enum CC4DEW {
-    #[doc = "CC4 DMA request disabled."] DISABLED,
-    #[doc = "CC4 DMA request enabled."] ENABLED,
+    #[doc = "CC4 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC4 DMA request enabled."]
+    ENABLED,
 }
 impl CC4DEW {
     #[allow(missing_docs)]
@@ -797,8 +829,10 @@ impl<'a> _CC4DEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3DE`"]
 pub enum CC3DEW {
-    #[doc = "CC3 DMA request disabled."] DISABLED,
-    #[doc = "CC3 DMA request enabled."] ENABLED,
+    #[doc = "CC3 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC3 DMA request enabled."]
+    ENABLED,
 }
 impl CC3DEW {
     #[allow(missing_docs)]
@@ -853,8 +887,10 @@ impl<'a> _CC3DEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2DE`"]
 pub enum CC2DEW {
-    #[doc = "CC2 DMA request disabled."] DISABLED,
-    #[doc = "CC2 DMA request enabled."] ENABLED,
+    #[doc = "CC2 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC2 DMA request enabled."]
+    ENABLED,
 }
 impl CC2DEW {
     #[allow(missing_docs)]
@@ -909,8 +945,10 @@ impl<'a> _CC2DEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1DE`"]
 pub enum CC1DEW {
-    #[doc = "CC1 DMA request disabled."] DISABLED,
-    #[doc = "CC1 DMA request enabled."] ENABLED,
+    #[doc = "CC1 DMA request disabled."]
+    DISABLED,
+    #[doc = "CC1 DMA request enabled."]
+    ENABLED,
 }
 impl CC1DEW {
     #[allow(missing_docs)]
@@ -965,8 +1003,10 @@ impl<'a> _CC1DEW<'a> {
 }
 #[doc = "Values that can be written to the field `UDE`"]
 pub enum UDEW {
-    #[doc = "Update DMA request disabled."] DISABLED,
-    #[doc = "Update DMA request enabled."] ENABLED,
+    #[doc = "Update DMA request disabled."]
+    DISABLED,
+    #[doc = "Update DMA request enabled."]
+    ENABLED,
 }
 impl UDEW {
     #[allow(missing_docs)]
@@ -1021,8 +1061,10 @@ impl<'a> _UDEW<'a> {
 }
 #[doc = "Values that can be written to the field `TIE`"]
 pub enum TIEW {
-    #[doc = "Trigger interrupt disabled."] DISABLED,
-    #[doc = "Trigger interrupt enabled."] ENABLED,
+    #[doc = "Trigger interrupt disabled."]
+    DISABLED,
+    #[doc = "Trigger interrupt enabled."]
+    ENABLED,
 }
 impl TIEW {
     #[allow(missing_docs)]
@@ -1077,8 +1119,10 @@ impl<'a> _TIEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC4IE`"]
 pub enum CC4IEW {
-    #[doc = "CC4 interrupt disabled."] DISABLED,
-    #[doc = "CC4 interrupt enabled."] ENABLED,
+    #[doc = "CC4 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC4 interrupt enabled."]
+    ENABLED,
 }
 impl CC4IEW {
     #[allow(missing_docs)]
@@ -1133,8 +1177,10 @@ impl<'a> _CC4IEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3IE`"]
 pub enum CC3IEW {
-    #[doc = "CC3 interrupt disabled."] DISABLED,
-    #[doc = "CC3 interrupt enabled."] ENABLED,
+    #[doc = "CC3 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC3 interrupt enabled."]
+    ENABLED,
 }
 impl CC3IEW {
     #[allow(missing_docs)]
@@ -1189,8 +1235,10 @@ impl<'a> _CC3IEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2IE`"]
 pub enum CC2IEW {
-    #[doc = "CC2 interrupt disabled."] DISABLED,
-    #[doc = "CC2 interrupt enabled."] ENABLED,
+    #[doc = "CC2 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC2 interrupt enabled."]
+    ENABLED,
 }
 impl CC2IEW {
     #[allow(missing_docs)]
@@ -1245,8 +1293,10 @@ impl<'a> _CC2IEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1IE`"]
 pub enum CC1IEW {
-    #[doc = "CC1 interrupt disabled."] DISABLED,
-    #[doc = "CC1 interrupt enabled."] ENABLED,
+    #[doc = "CC1 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC1 interrupt enabled."]
+    ENABLED,
 }
 impl CC1IEW {
     #[allow(missing_docs)]
@@ -1301,8 +1351,10 @@ impl<'a> _CC1IEW<'a> {
 }
 #[doc = "Values that can be written to the field `UIE`"]
 pub enum UIEW {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIEW {
     #[allow(missing_docs)]

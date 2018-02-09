@@ -45,8 +45,10 @@ impl super::ODR {
 #[doc = "Possible values of the field `ODR15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODR15R {
-    #[doc = "Reset output value"] RESET,
-    #[doc = "Set output value"] SET,
+    #[doc = "Reset output value"]
+    RESET,
+    #[doc = "Set output value"]
+    SET,
 }
 impl ODR15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -119,8 +121,10 @@ pub type ODR1R = ODR15R;
 pub type ODR0R = ODR15R;
 #[doc = "Values that can be written to the field `ODR15`"]
 pub enum ODR15W {
-    #[doc = "Reset output value"] RESET,
-    #[doc = "Set output value"] SET,
+    #[doc = "Reset output value"]
+    RESET,
+    #[doc = "Set output value"]
+    SET,
 }
 impl ODR15W {
     #[allow(missing_docs)]

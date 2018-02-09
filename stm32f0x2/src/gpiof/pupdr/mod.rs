@@ -45,9 +45,12 @@ impl super::PUPDR {
 #[doc = "Possible values of the field `PUPDR15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PUPDR15R {
-    #[doc = "No pull-up, pull-down"] NOPULL,
-    #[doc = "Pull-up"] PULLUP,
-    #[doc = "Pull-down"] PULLDOWN,
+    #[doc = "No pull-up, pull-down"]
+    NOPULL,
+    #[doc = "Pull-up"]
+    PULLUP,
+    #[doc = "Pull-down"]
+    PULLDOWN,
 }
 impl PUPDR15R {
     #[doc = r" Value of the field as raw bits"]
@@ -118,9 +121,12 @@ pub type PUPDR1R = PUPDR15R;
 pub type PUPDR0R = PUPDR15R;
 #[doc = "Values that can be written to the field `PUPDR15`"]
 pub enum PUPDR15W {
-    #[doc = "No pull-up, pull-down"] NOPULL,
-    #[doc = "Pull-up"] PULLUP,
-    #[doc = "Pull-down"] PULLDOWN,
+    #[doc = "No pull-up, pull-down"]
+    NOPULL,
+    #[doc = "Pull-up"]
+    PULLUP,
+    #[doc = "Pull-down"]
+    PULLDOWN,
 }
 impl PUPDR15W {
     #[allow(missing_docs)]

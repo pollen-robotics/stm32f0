@@ -45,10 +45,14 @@ impl super::OSPEEDR {
 #[doc = "Possible values of the field `OSPEEDR15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSPEEDR15R {
-    #[doc = "Low Speed"] LOWSPEED,
-    #[doc = "Medium Speed"] MEDIUMSPEED,
-    #[doc = "High Speed"] HIGHSPEED,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Low Speed"]
+    LOWSPEED,
+    #[doc = "Medium Speed"]
+    MEDIUMSPEED,
+    #[doc = "High Speed"]
+    HIGHSPEED,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl OSPEEDR15R {
     #[doc = r" Value of the field as raw bits"]
@@ -120,9 +124,12 @@ pub type OSPEEDR1R = OSPEEDR15R;
 pub type OSPEEDR0R = OSPEEDR15R;
 #[doc = "Values that can be written to the field `OSPEEDR15`"]
 pub enum OSPEEDR15W {
-    #[doc = "Low Speed"] LOWSPEED,
-    #[doc = "Medium Speed"] MEDIUMSPEED,
-    #[doc = "High Speed"] HIGHSPEED,
+    #[doc = "Low Speed"]
+    LOWSPEED,
+    #[doc = "Medium Speed"]
+    MEDIUMSPEED,
+    #[doc = "High Speed"]
+    HIGHSPEED,
 }
 impl OSPEEDR15W {
     #[allow(missing_docs)]

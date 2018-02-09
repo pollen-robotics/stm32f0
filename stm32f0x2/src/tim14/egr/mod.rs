@@ -16,7 +16,8 @@ impl super::EGR {
 }
 #[doc = "Values that can be written to the field `CC1G`"]
 pub enum CC1GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC1GW {
     #[allow(missing_docs)]
@@ -65,7 +66,8 @@ impl<'a> _CC1GW<'a> {
 }
 #[doc = "Values that can be written to the field `UG`"]
 pub enum UGW {
-    #[doc = "Reinitialize the counter and generates an update of the registers."] RST_UPDATE,
+    #[doc = "Reinitialize the counter and generates an update of the registers."]
+    RST_UPDATE,
 }
 impl UGW {
     #[allow(missing_docs)]

@@ -129,8 +129,10 @@ impl UDRR {
 #[doc = "Possible values of the field `CRCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCERRR {
-    #[doc = "Flag cleared"] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Flag cleared"]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CRCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -274,7 +276,8 @@ impl FTLVLR {
 }
 #[doc = "Values that can be written to the field `CRCERR`"]
 pub enum CRCERRW {
-    #[doc = "Flag cleared"] CLEAR,
+    #[doc = "Flag cleared"]
+    CLEAR,
 }
 impl CRCERRW {
     #[allow(missing_docs)]

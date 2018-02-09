@@ -45,8 +45,10 @@ impl super::CR1 {
 #[doc = "Possible values of the field `BIDIMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIDIMODER {
-    #[doc = "2-line unidirectional data mode selected"] _2LINE,
-    #[doc = "1-line bidirectional data mode selected"] _1LINE,
+    #[doc = "2-line unidirectional data mode selected"]
+    _2LINE,
+    #[doc = "1-line bidirectional data mode selected"]
+    _1LINE,
 }
 impl BIDIMODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl BIDIMODER {
 #[doc = "Possible values of the field `BIDIOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIDIOER {
-    #[doc = "Output disabled (receive-only mode)"] DISABLE,
-    #[doc = "Output enabled (transmit-only mode)"] ENABLE,
+    #[doc = "Output disabled (receive-only mode)"]
+    DISABLE,
+    #[doc = "Output enabled (transmit-only mode)"]
+    ENABLE,
 }
 impl BIDIOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl BIDIOER {
 #[doc = "Possible values of the field `CRCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCENR {
-    #[doc = "CRC calculation disabled"] DISABLE,
-    #[doc = "CRC calculation Enabled"] ENABLE,
+    #[doc = "CRC calculation disabled"]
+    DISABLE,
+    #[doc = "CRC calculation Enabled"]
+    ENABLE,
 }
 impl CRCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl CRCENR {
 #[doc = "Possible values of the field `CRCNEXT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCNEXTR {
-    #[doc = "Next transmit value is from Tx buffer"] TX,
-    #[doc = "Next transmit value is from Tx CRC register"] TXCRC,
+    #[doc = "Next transmit value is from Tx buffer"]
+    TX,
+    #[doc = "Next transmit value is from Tx CRC register"]
+    TXCRC,
 }
 impl CRCNEXTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CRCNEXTR {
 #[doc = "Possible values of the field `DFF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFFR {
-    #[doc = "8-bit CRC length"] _8BITS,
-    #[doc = "16-bit CRC length"] _16BITS,
+    #[doc = "8-bit CRC length"]
+    _8BITS,
+    #[doc = "16-bit CRC length"]
+    _16BITS,
 }
 impl DFFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl DFFR {
 #[doc = "Possible values of the field `RXONLY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXONLYR {
-    #[doc = "Full-duplex (Transmit and receive)"] FULLDUPLEX,
-    #[doc = "Output disabled (Receive-only mode)"] RECEIVEONLY,
+    #[doc = "Full-duplex (Transmit and receive)"]
+    FULLDUPLEX,
+    #[doc = "Output disabled (Receive-only mode)"]
+    RECEIVEONLY,
 }
 impl RXONLYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl RXONLYR {
 #[doc = "Possible values of the field `SSM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSMR {
-    #[doc = "Software slave management disabled"] DISABLED,
-    #[doc = "Software slave management enabled"] ENABLED,
+    #[doc = "Software slave management disabled"]
+    DISABLED,
+    #[doc = "Software slave management enabled"]
+    ENABLED,
 }
 impl SSMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl SSMR {
 #[doc = "Possible values of the field `SSI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSIR {
-    #[doc = "NSS = 1"] NSSDISABLE,
-    #[doc = "NSS = 0"] NSSENABLE,
+    #[doc = "NSS = 1"]
+    NSSDISABLE,
+    #[doc = "NSS = 0"]
+    NSSENABLE,
 }
 impl SSIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl SSIR {
 #[doc = "Possible values of the field `LSBFIRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSBFIRSTR {
-    #[doc = "data is transmitted / received with the MSB first"] MSBFIRST,
-    #[doc = "data is transmitted / received with the LSB first"] LSBFIRST,
+    #[doc = "data is transmitted / received with the MSB first"]
+    MSBFIRST,
+    #[doc = "data is transmitted / received with the LSB first"]
+    LSBFIRST,
 }
 impl LSBFIRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl LSBFIRSTR {
 #[doc = "Possible values of the field `SPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPER {
-    #[doc = "Peripheral disabled"] DISABLED,
-    #[doc = "Peripheral enabled"] ENABLED,
+    #[doc = "Peripheral disabled"]
+    DISABLED,
+    #[doc = "Peripheral enabled"]
+    ENABLED,
 }
 impl SPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,14 +515,22 @@ impl SPER {
 #[doc = "Possible values of the field `BR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRR {
-    #[doc = "fPCLK/2"] DIV2,
-    #[doc = "fPCLK/4"] DIV4,
-    #[doc = "fPCLK/8"] DIV8,
-    #[doc = "fPCLK/16"] DIV16,
-    #[doc = "fPCLK/32"] DIV32,
-    #[doc = "fPCLK/64"] DIV64,
-    #[doc = "fPCLK/128"] DIV128,
-    #[doc = "fPCLK/256"] DIV256,
+    #[doc = "fPCLK/2"]
+    DIV2,
+    #[doc = "fPCLK/4"]
+    DIV4,
+    #[doc = "fPCLK/8"]
+    DIV8,
+    #[doc = "fPCLK/16"]
+    DIV16,
+    #[doc = "fPCLK/32"]
+    DIV32,
+    #[doc = "fPCLK/64"]
+    DIV64,
+    #[doc = "fPCLK/128"]
+    DIV128,
+    #[doc = "fPCLK/256"]
+    DIV256,
 }
 impl BRR {
     #[doc = r" Value of the field as raw bits"]
@@ -579,8 +607,10 @@ impl BRR {
 #[doc = "Possible values of the field `MSTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTRR {
-    #[doc = "Slave Configuration"] SLAVE,
-    #[doc = "Master Configuration"] MASTER,
+    #[doc = "Slave Configuration"]
+    SLAVE,
+    #[doc = "Master Configuration"]
+    MASTER,
 }
 impl MSTRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -624,8 +654,10 @@ impl MSTRR {
 #[doc = "Possible values of the field `CPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOLR {
-    #[doc = "CK to 0 when idle"] IDLELOW,
-    #[doc = "CK to 1 when idle"] IDLEHIGH,
+    #[doc = "CK to 0 when idle"]
+    IDLELOW,
+    #[doc = "CK to 1 when idle"]
+    IDLEHIGH,
 }
 impl CPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -669,8 +701,10 @@ impl CPOLR {
 #[doc = "Possible values of the field `CPHA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPHAR {
-    #[doc = "The first clock transition is the first data capture edge"] FIRSTEDGE,
-    #[doc = "The second clock transition is the first data capture edge"] SECONDEDGE,
+    #[doc = "The first clock transition is the first data capture edge"]
+    FIRSTEDGE,
+    #[doc = "The second clock transition is the first data capture edge"]
+    SECONDEDGE,
 }
 impl CPHAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -713,8 +747,10 @@ impl CPHAR {
 }
 #[doc = "Values that can be written to the field `BIDIMODE`"]
 pub enum BIDIMODEW {
-    #[doc = "2-line unidirectional data mode selected"] _2LINE,
-    #[doc = "1-line bidirectional data mode selected"] _1LINE,
+    #[doc = "2-line unidirectional data mode selected"]
+    _2LINE,
+    #[doc = "1-line bidirectional data mode selected"]
+    _1LINE,
 }
 impl BIDIMODEW {
     #[allow(missing_docs)]
@@ -769,8 +805,10 @@ impl<'a> _BIDIMODEW<'a> {
 }
 #[doc = "Values that can be written to the field `BIDIOE`"]
 pub enum BIDIOEW {
-    #[doc = "Output disabled (receive-only mode)"] DISABLE,
-    #[doc = "Output enabled (transmit-only mode)"] ENABLE,
+    #[doc = "Output disabled (receive-only mode)"]
+    DISABLE,
+    #[doc = "Output enabled (transmit-only mode)"]
+    ENABLE,
 }
 impl BIDIOEW {
     #[allow(missing_docs)]
@@ -825,8 +863,10 @@ impl<'a> _BIDIOEW<'a> {
 }
 #[doc = "Values that can be written to the field `CRCEN`"]
 pub enum CRCENW {
-    #[doc = "CRC calculation disabled"] DISABLE,
-    #[doc = "CRC calculation Enabled"] ENABLE,
+    #[doc = "CRC calculation disabled"]
+    DISABLE,
+    #[doc = "CRC calculation Enabled"]
+    ENABLE,
 }
 impl CRCENW {
     #[allow(missing_docs)]
@@ -881,8 +921,10 @@ impl<'a> _CRCENW<'a> {
 }
 #[doc = "Values that can be written to the field `CRCNEXT`"]
 pub enum CRCNEXTW {
-    #[doc = "Next transmit value is from Tx buffer"] TX,
-    #[doc = "Next transmit value is from Tx CRC register"] TXCRC,
+    #[doc = "Next transmit value is from Tx buffer"]
+    TX,
+    #[doc = "Next transmit value is from Tx CRC register"]
+    TXCRC,
 }
 impl CRCNEXTW {
     #[allow(missing_docs)]
@@ -937,8 +979,10 @@ impl<'a> _CRCNEXTW<'a> {
 }
 #[doc = "Values that can be written to the field `DFF`"]
 pub enum DFFW {
-    #[doc = "8-bit CRC length"] _8BITS,
-    #[doc = "16-bit CRC length"] _16BITS,
+    #[doc = "8-bit CRC length"]
+    _8BITS,
+    #[doc = "16-bit CRC length"]
+    _16BITS,
 }
 impl DFFW {
     #[allow(missing_docs)]
@@ -993,8 +1037,10 @@ impl<'a> _DFFW<'a> {
 }
 #[doc = "Values that can be written to the field `RXONLY`"]
 pub enum RXONLYW {
-    #[doc = "Full-duplex (Transmit and receive)"] FULLDUPLEX,
-    #[doc = "Output disabled (Receive-only mode)"] RECEIVEONLY,
+    #[doc = "Full-duplex (Transmit and receive)"]
+    FULLDUPLEX,
+    #[doc = "Output disabled (Receive-only mode)"]
+    RECEIVEONLY,
 }
 impl RXONLYW {
     #[allow(missing_docs)]
@@ -1049,8 +1095,10 @@ impl<'a> _RXONLYW<'a> {
 }
 #[doc = "Values that can be written to the field `SSM`"]
 pub enum SSMW {
-    #[doc = "Software slave management disabled"] DISABLED,
-    #[doc = "Software slave management enabled"] ENABLED,
+    #[doc = "Software slave management disabled"]
+    DISABLED,
+    #[doc = "Software slave management enabled"]
+    ENABLED,
 }
 impl SSMW {
     #[allow(missing_docs)]
@@ -1105,8 +1153,10 @@ impl<'a> _SSMW<'a> {
 }
 #[doc = "Values that can be written to the field `SSI`"]
 pub enum SSIW {
-    #[doc = "NSS = 1"] NSSDISABLE,
-    #[doc = "NSS = 0"] NSSENABLE,
+    #[doc = "NSS = 1"]
+    NSSDISABLE,
+    #[doc = "NSS = 0"]
+    NSSENABLE,
 }
 impl SSIW {
     #[allow(missing_docs)]
@@ -1161,8 +1211,10 @@ impl<'a> _SSIW<'a> {
 }
 #[doc = "Values that can be written to the field `LSBFIRST`"]
 pub enum LSBFIRSTW {
-    #[doc = "data is transmitted / received with the MSB first"] MSBFIRST,
-    #[doc = "data is transmitted / received with the LSB first"] LSBFIRST,
+    #[doc = "data is transmitted / received with the MSB first"]
+    MSBFIRST,
+    #[doc = "data is transmitted / received with the LSB first"]
+    LSBFIRST,
 }
 impl LSBFIRSTW {
     #[allow(missing_docs)]
@@ -1217,8 +1269,10 @@ impl<'a> _LSBFIRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `SPE`"]
 pub enum SPEW {
-    #[doc = "Peripheral disabled"] DISABLED,
-    #[doc = "Peripheral enabled"] ENABLED,
+    #[doc = "Peripheral disabled"]
+    DISABLED,
+    #[doc = "Peripheral enabled"]
+    ENABLED,
 }
 impl SPEW {
     #[allow(missing_docs)]
@@ -1273,14 +1327,22 @@ impl<'a> _SPEW<'a> {
 }
 #[doc = "Values that can be written to the field `BR`"]
 pub enum BRW {
-    #[doc = "fPCLK/2"] DIV2,
-    #[doc = "fPCLK/4"] DIV4,
-    #[doc = "fPCLK/8"] DIV8,
-    #[doc = "fPCLK/16"] DIV16,
-    #[doc = "fPCLK/32"] DIV32,
-    #[doc = "fPCLK/64"] DIV64,
-    #[doc = "fPCLK/128"] DIV128,
-    #[doc = "fPCLK/256"] DIV256,
+    #[doc = "fPCLK/2"]
+    DIV2,
+    #[doc = "fPCLK/4"]
+    DIV4,
+    #[doc = "fPCLK/8"]
+    DIV8,
+    #[doc = "fPCLK/16"]
+    DIV16,
+    #[doc = "fPCLK/32"]
+    DIV32,
+    #[doc = "fPCLK/64"]
+    DIV64,
+    #[doc = "fPCLK/128"]
+    DIV128,
+    #[doc = "fPCLK/256"]
+    DIV256,
 }
 impl BRW {
     #[allow(missing_docs)]
@@ -1363,8 +1425,10 @@ impl<'a> _BRW<'a> {
 }
 #[doc = "Values that can be written to the field `MSTR`"]
 pub enum MSTRW {
-    #[doc = "Slave Configuration"] SLAVE,
-    #[doc = "Master Configuration"] MASTER,
+    #[doc = "Slave Configuration"]
+    SLAVE,
+    #[doc = "Master Configuration"]
+    MASTER,
 }
 impl MSTRW {
     #[allow(missing_docs)]
@@ -1419,8 +1483,10 @@ impl<'a> _MSTRW<'a> {
 }
 #[doc = "Values that can be written to the field `CPOL`"]
 pub enum CPOLW {
-    #[doc = "CK to 0 when idle"] IDLELOW,
-    #[doc = "CK to 1 when idle"] IDLEHIGH,
+    #[doc = "CK to 0 when idle"]
+    IDLELOW,
+    #[doc = "CK to 1 when idle"]
+    IDLEHIGH,
 }
 impl CPOLW {
     #[allow(missing_docs)]
@@ -1475,8 +1541,10 @@ impl<'a> _CPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `CPHA`"]
 pub enum CPHAW {
-    #[doc = "The first clock transition is the first data capture edge"] FIRSTEDGE,
-    #[doc = "The second clock transition is the first data capture edge"] SECONDEDGE,
+    #[doc = "The first clock transition is the first data capture edge"]
+    FIRSTEDGE,
+    #[doc = "The second clock transition is the first data capture edge"]
+    SECONDEDGE,
 }
 impl CPHAW {
     #[allow(missing_docs)]

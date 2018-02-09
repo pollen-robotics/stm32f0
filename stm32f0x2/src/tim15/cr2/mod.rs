@@ -45,8 +45,10 @@ impl super::CR2 {
 #[doc = "Possible values of the field `OIS2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS2R {
-    #[doc = "OC2=0 (after a dead-time if OC2N is implemented) when MOE=0"] RESET,
-    #[doc = "OC2=1 (after a dead-time if OC2N is implemented) when MOE=0"] SET,
+    #[doc = "OC2=0 (after a dead-time if OC2N is implemented) when MOE=0"]
+    RESET,
+    #[doc = "OC2=1 (after a dead-time if OC2N is implemented) when MOE=0"]
+    SET,
 }
 impl OIS2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl OIS2R {
 #[doc = "Possible values of the field `OIS1N`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1NR {
-    #[doc = "OC1N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC1N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC1N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC1N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS1NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl OIS1NR {
 #[doc = "Possible values of the field `OIS1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1R {
-    #[doc = "OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"] RESET,
-    #[doc = "OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"] SET,
+    #[doc = "OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"]
+    RESET,
+    #[doc = "OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"]
+    SET,
 }
 impl OIS1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -255,8 +261,10 @@ impl MMSR {
 #[doc = "Possible values of the field `CCDS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCDSR {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -383,8 +391,10 @@ impl CCPCR {
 }
 #[doc = "Values that can be written to the field `OIS2`"]
 pub enum OIS2W {
-    #[doc = "OC2=0 (after a dead-time if OC2N is implemented) when MOE=0"] RESET,
-    #[doc = "OC2=1 (after a dead-time if OC2N is implemented) when MOE=0"] SET,
+    #[doc = "OC2=0 (after a dead-time if OC2N is implemented) when MOE=0"]
+    RESET,
+    #[doc = "OC2=1 (after a dead-time if OC2N is implemented) when MOE=0"]
+    SET,
 }
 impl OIS2W {
     #[allow(missing_docs)]
@@ -439,8 +449,10 @@ impl<'a> _OIS2W<'a> {
 }
 #[doc = "Values that can be written to the field `OIS1N`"]
 pub enum OIS1NW {
-    #[doc = "OC1N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC1N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC1N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC1N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS1NW {
     #[allow(missing_docs)]
@@ -495,8 +507,10 @@ impl<'a> _OIS1NW<'a> {
 }
 #[doc = "Values that can be written to the field `OIS1`"]
 pub enum OIS1W {
-    #[doc = "OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"] RESET,
-    #[doc = "OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"] SET,
+    #[doc = "OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"]
+    RESET,
+    #[doc = "OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"]
+    SET,
 }
 impl OIS1W {
     #[allow(missing_docs)]
@@ -630,8 +644,10 @@ impl<'a> _MMSW<'a> {
 }
 #[doc = "Values that can be written to the field `CCDS`"]
 pub enum CCDSW {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSW {
     #[allow(missing_docs)]

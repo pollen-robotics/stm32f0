@@ -45,8 +45,10 @@ impl super::SMCR {
 #[doc = "Possible values of the field `ETP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETPR {
-    #[doc = "ETR is non-inverted, active at high level or rising edge."] NONINVERTED,
-    #[doc = "ETR is inverted, active at low level or falling edge."] INVERTED,
+    #[doc = "ETR is non-inverted, active at high level or rising edge."]
+    NONINVERTED,
+    #[doc = "ETR is inverted, active at low level or falling edge."]
+    INVERTED,
 }
 impl ETPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl ETPR {
 #[doc = "Possible values of the field `ECE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECER {
-    #[doc = "External clock mode 2 disabled."] DISABLED,
-    #[doc = "External clock mode 2 enabled.."] ENABLED,
+    #[doc = "External clock mode 2 disabled."]
+    DISABLED,
+    #[doc = "External clock mode 2 enabled.."]
+    ENABLED,
 }
 impl ECER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,10 +139,14 @@ impl ECER {
 #[doc = "Possible values of the field `ETPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETPSR {
-    #[doc = "Prescaler OFF."] OFF,
-    #[doc = "ETRP frequency divided by 2."] ETRPDIV2,
-    #[doc = "ETRP frequency divided by 4."] ETRPDIV4,
-    #[doc = "ETRP frequency divided by 8."] ETRPDIV8,
+    #[doc = "Prescaler OFF."]
+    OFF,
+    #[doc = "ETRP frequency divided by 2."]
+    ETRPDIV2,
+    #[doc = "ETRP frequency divided by 4."]
+    ETRPDIV4,
+    #[doc = "ETRP frequency divided by 8."]
+    ETRPDIV8,
 }
 impl ETPSR {
     #[doc = r" Value of the field as raw bits"]
@@ -187,22 +195,38 @@ impl ETPSR {
 #[doc = "Possible values of the field `ETF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETFR {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl ETFR {
     #[doc = r" Value of the field as raw bits"]
@@ -377,14 +401,22 @@ impl MSMR {
 #[doc = "Possible values of the field `TS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSR {
-    #[doc = "Internal Trigger 0 (ITR0)"] ITR0,
-    #[doc = "Internal Trigger 1 (ITR1)"] ITR1,
-    #[doc = "Internal Trigger 2 (ITR2)"] ITR2,
-    #[doc = "Internal Trigger 3 (ITR3)"] ITR3,
-    #[doc = "TI1 Edge Detector"] TI1F_ED,
-    #[doc = "Filtered Timer Input 1"] TI1FP1,
-    #[doc = "Filtered Timer Input 2"] TI2FP2,
-    #[doc = "External Trigger input"] ETRF,
+    #[doc = "Internal Trigger 0 (ITR0)"]
+    ITR0,
+    #[doc = "Internal Trigger 1 (ITR1)"]
+    ITR1,
+    #[doc = "Internal Trigger 2 (ITR2)"]
+    ITR2,
+    #[doc = "Internal Trigger 3 (ITR3)"]
+    ITR3,
+    #[doc = "TI1 Edge Detector"]
+    TI1F_ED,
+    #[doc = "Filtered Timer Input 1"]
+    TI1FP1,
+    #[doc = "Filtered Timer Input 2"]
+    TI2FP2,
+    #[doc = "External Trigger input"]
+    ETRF,
 }
 impl TSR {
     #[doc = r" Value of the field as raw bits"]
@@ -461,14 +493,22 @@ impl TSR {
 #[doc = "Possible values of the field `SMS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMSR {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Encoder mode, count up/down on TI2FP1"] ENCODERTI2,
-    #[doc = "Encoder mode, count up/down on TI1FP2"] ENCODERTI1,
-    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"] ENCODERTI1TI2,
-    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"] RESET,
-    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"] GATED,
-    #[doc = "The counter starts at a rising edge of the trigger TRGI "] TRIGGER,
-    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"] EXTERNAL,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Encoder mode, count up/down on TI2FP1"]
+    ENCODERTI2,
+    #[doc = "Encoder mode, count up/down on TI1FP2"]
+    ENCODERTI1,
+    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"]
+    ENCODERTI1TI2,
+    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"]
+    RESET,
+    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"]
+    GATED,
+    #[doc = "The counter starts at a rising edge of the trigger TRGI "]
+    TRIGGER,
+    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"]
+    EXTERNAL,
 }
 impl SMSR {
     #[doc = r" Value of the field as raw bits"]
@@ -544,8 +584,10 @@ impl SMSR {
 }
 #[doc = "Values that can be written to the field `ETP`"]
 pub enum ETPW {
-    #[doc = "ETR is non-inverted, active at high level or rising edge."] NONINVERTED,
-    #[doc = "ETR is inverted, active at low level or falling edge."] INVERTED,
+    #[doc = "ETR is non-inverted, active at high level or rising edge."]
+    NONINVERTED,
+    #[doc = "ETR is inverted, active at low level or falling edge."]
+    INVERTED,
 }
 impl ETPW {
     #[allow(missing_docs)]
@@ -600,8 +642,10 @@ impl<'a> _ETPW<'a> {
 }
 #[doc = "Values that can be written to the field `ECE`"]
 pub enum ECEW {
-    #[doc = "External clock mode 2 disabled."] DISABLED,
-    #[doc = "External clock mode 2 enabled.."] ENABLED,
+    #[doc = "External clock mode 2 disabled."]
+    DISABLED,
+    #[doc = "External clock mode 2 enabled.."]
+    ENABLED,
 }
 impl ECEW {
     #[allow(missing_docs)]
@@ -656,10 +700,14 @@ impl<'a> _ECEW<'a> {
 }
 #[doc = "Values that can be written to the field `ETPS`"]
 pub enum ETPSW {
-    #[doc = "Prescaler OFF."] OFF,
-    #[doc = "ETRP frequency divided by 2."] ETRPDIV2,
-    #[doc = "ETRP frequency divided by 4."] ETRPDIV4,
-    #[doc = "ETRP frequency divided by 8."] ETRPDIV8,
+    #[doc = "Prescaler OFF."]
+    OFF,
+    #[doc = "ETRP frequency divided by 2."]
+    ETRPDIV2,
+    #[doc = "ETRP frequency divided by 4."]
+    ETRPDIV4,
+    #[doc = "ETRP frequency divided by 8."]
+    ETRPDIV8,
 }
 impl ETPSW {
     #[allow(missing_docs)]
@@ -718,22 +766,38 @@ impl<'a> _ETPSW<'a> {
 }
 #[doc = "Values that can be written to the field `ETF`"]
 pub enum ETFW {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl ETFW {
     #[allow(missing_docs)]
@@ -916,14 +980,22 @@ impl<'a> _MSMW<'a> {
 }
 #[doc = "Values that can be written to the field `TS`"]
 pub enum TSW {
-    #[doc = "Internal Trigger 0 (ITR0)"] ITR0,
-    #[doc = "Internal Trigger 1 (ITR1)"] ITR1,
-    #[doc = "Internal Trigger 2 (ITR2)"] ITR2,
-    #[doc = "Internal Trigger 3 (ITR3)"] ITR3,
-    #[doc = "TI1 Edge Detector"] TI1F_ED,
-    #[doc = "Filtered Timer Input 1"] TI1FP1,
-    #[doc = "Filtered Timer Input 2"] TI2FP2,
-    #[doc = "External Trigger input"] ETRF,
+    #[doc = "Internal Trigger 0 (ITR0)"]
+    ITR0,
+    #[doc = "Internal Trigger 1 (ITR1)"]
+    ITR1,
+    #[doc = "Internal Trigger 2 (ITR2)"]
+    ITR2,
+    #[doc = "Internal Trigger 3 (ITR3)"]
+    ITR3,
+    #[doc = "TI1 Edge Detector"]
+    TI1F_ED,
+    #[doc = "Filtered Timer Input 1"]
+    TI1FP1,
+    #[doc = "Filtered Timer Input 2"]
+    TI2FP2,
+    #[doc = "External Trigger input"]
+    ETRF,
 }
 impl TSW {
     #[allow(missing_docs)]
@@ -1006,14 +1078,22 @@ impl<'a> _TSW<'a> {
 }
 #[doc = "Values that can be written to the field `SMS`"]
 pub enum SMSW {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Encoder mode, count up/down on TI2FP1"] ENCODERTI2,
-    #[doc = "Encoder mode, count up/down on TI1FP2"] ENCODERTI1,
-    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"] ENCODERTI1TI2,
-    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"] RESET,
-    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"] GATED,
-    #[doc = "The counter starts at a rising edge of the trigger TRGI "] TRIGGER,
-    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"] EXTERNAL,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Encoder mode, count up/down on TI2FP1"]
+    ENCODERTI2,
+    #[doc = "Encoder mode, count up/down on TI1FP2"]
+    ENCODERTI1,
+    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"]
+    ENCODERTI1TI2,
+    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"]
+    RESET,
+    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"]
+    GATED,
+    #[doc = "The counter starts at a rising edge of the trigger TRGI "]
+    TRIGGER,
+    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"]
+    EXTERNAL,
 }
 impl SMSW {
     #[allow(missing_docs)]

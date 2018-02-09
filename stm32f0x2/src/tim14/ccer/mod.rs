@@ -45,8 +45,10 @@ impl super::CCER {
 #[doc = "Possible values of the field `CC1NP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1NPR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1NPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CC1NPR {
 #[doc = "Possible values of the field `CC1P`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1PR {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1PR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -176,8 +180,10 @@ impl CC1ER {
 }
 #[doc = "Values that can be written to the field `CC1NP`"]
 pub enum CC1NPW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1NPW {
     #[allow(missing_docs)]
@@ -232,8 +238,10 @@ impl<'a> _CC1NPW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1P`"]
 pub enum CC1PW {
-    #[doc = "active high"] HIGH,
-    #[doc = "active low"] LOW,
+    #[doc = "active high"]
+    HIGH,
+    #[doc = "active low"]
+    LOW,
 }
 impl CC1PW {
     #[allow(missing_docs)]

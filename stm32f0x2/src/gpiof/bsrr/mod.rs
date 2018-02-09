@@ -16,7 +16,8 @@ impl super::BSRR {
 }
 #[doc = "Values that can be written to the field `BR15`"]
 pub enum BR15W {
-    #[doc = "Resets the corresponding ODRx bit"] RESET,
+    #[doc = "Resets the corresponding ODRx bit"]
+    RESET,
 }
 impl BR15W {
     #[allow(missing_docs)]
@@ -620,7 +621,8 @@ impl<'a> _BR0W<'a> {
 }
 #[doc = "Values that can be written to the field `BS15`"]
 pub enum BS15W {
-    #[doc = "Sets the corresponding ODRx bit"] SET,
+    #[doc = "Sets the corresponding ODRx bit"]
+    SET,
 }
 impl BS15W {
     #[allow(missing_docs)]

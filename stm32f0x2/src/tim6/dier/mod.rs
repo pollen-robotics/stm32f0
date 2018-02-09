@@ -45,8 +45,10 @@ impl super::DIER {
 #[doc = "Possible values of the field `UDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UDER {
-    #[doc = "Update DMA request disabled."] DISABLED,
-    #[doc = "Update DMA request enabled."] ENABLED,
+    #[doc = "Update DMA request disabled."]
+    DISABLED,
+    #[doc = "Update DMA request enabled."]
+    ENABLED,
 }
 impl UDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl UDER {
 #[doc = "Possible values of the field `UIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIER {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -134,8 +138,10 @@ impl UIER {
 }
 #[doc = "Values that can be written to the field `UDE`"]
 pub enum UDEW {
-    #[doc = "Update DMA request disabled."] DISABLED,
-    #[doc = "Update DMA request enabled."] ENABLED,
+    #[doc = "Update DMA request disabled."]
+    DISABLED,
+    #[doc = "Update DMA request enabled."]
+    ENABLED,
 }
 impl UDEW {
     #[allow(missing_docs)]
@@ -190,8 +196,10 @@ impl<'a> _UDEW<'a> {
 }
 #[doc = "Values that can be written to the field `UIE`"]
 pub enum UIEW {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIEW {
     #[allow(missing_docs)]

@@ -45,10 +45,14 @@ impl super::CFGR {
 #[doc = "Possible values of the field `SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWR {
-    #[doc = "HSI selected as system clock"] HSI,
-    #[doc = "HSE selected as system clock"] HSE,
-    #[doc = "PLL selected as system clock"] PLL,
-    #[doc = "HSI48 selected as system clock (when available)"] HSI48,
+    #[doc = "HSI selected as system clock"]
+    HSI,
+    #[doc = "HSE selected as system clock"]
+    HSE,
+    #[doc = "PLL selected as system clock"]
+    PLL,
+    #[doc = "HSI48 selected as system clock (when available)"]
+    HSI48,
 }
 impl SWR {
     #[doc = r" Value of the field as raw bits"]
@@ -108,16 +112,26 @@ impl SWSR {
 #[doc = "Possible values of the field `HPRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HPRER {
-    #[doc = "SYSCLK not divided"] DIV1,
-    #[doc = "SYSCLK divided by 2"] DIV2,
-    #[doc = "SYSCLK divided by 4"] DIV4,
-    #[doc = "SYSCLK divided by 8"] DIV8,
-    #[doc = "SYSCLK divided by 16"] DIV16,
-    #[doc = "SYSCLK divided by 64"] DIV64,
-    #[doc = "SYSCLK divided by 128"] DIV128,
-    #[doc = "SYSCLK divided by 256"] DIV256,
-    #[doc = "SYSCLK divided by 512"] DIV512,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "SYSCLK not divided"]
+    DIV1,
+    #[doc = "SYSCLK divided by 2"]
+    DIV2,
+    #[doc = "SYSCLK divided by 4"]
+    DIV4,
+    #[doc = "SYSCLK divided by 8"]
+    DIV8,
+    #[doc = "SYSCLK divided by 16"]
+    DIV16,
+    #[doc = "SYSCLK divided by 64"]
+    DIV64,
+    #[doc = "SYSCLK divided by 128"]
+    DIV128,
+    #[doc = "SYSCLK divided by 256"]
+    DIV256,
+    #[doc = "SYSCLK divided by 512"]
+    DIV512,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl HPRER {
     #[doc = r" Value of the field as raw bits"]
@@ -202,12 +216,18 @@ impl HPRER {
 #[doc = "Possible values of the field `PPRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPRER {
-    #[doc = "HCLK not divided"] DIV1,
-    #[doc = "HCLK divided by 2"] DIV2,
-    #[doc = "HCLK divided by 4"] DIV4,
-    #[doc = "HCLK divided by 8"] DIV8,
-    #[doc = "HCLK divided by 16"] DIV16,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "HCLK not divided"]
+    DIV1,
+    #[doc = "HCLK divided by 2"]
+    DIV2,
+    #[doc = "HCLK divided by 4"]
+    DIV4,
+    #[doc = "HCLK divided by 8"]
+    DIV8,
+    #[doc = "HCLK divided by 16"]
+    DIV16,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PPRER {
     #[doc = r" Value of the field as raw bits"]
@@ -332,8 +352,10 @@ impl PLLSRCR {
 #[doc = "Possible values of the field `PLLXTPRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLXTPRER {
-    #[doc = "HSE not divided"] DIV1,
-    #[doc = "HSE divided by 2"] DIV2,
+    #[doc = "HSE not divided"]
+    DIV1,
+    #[doc = "HSE divided by 2"]
+    DIV2,
 }
 impl PLLXTPRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -377,22 +399,38 @@ impl PLLXTPRER {
 #[doc = "Possible values of the field `PLLMUL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLMULR {
-    #[doc = "PLL input clock x 2"] MUL2,
-    #[doc = "PLL input clock x 3"] MUL3,
-    #[doc = "PLL input clock x 4"] MUL4,
-    #[doc = "PLL input clock x 5"] MUL5,
-    #[doc = "PLL input clock x 6"] MUL6,
-    #[doc = "PLL input clock x 7"] MUL7,
-    #[doc = "PLL input clock x 8"] MUL8,
-    #[doc = "PLL input clock x 9"] MUL9,
-    #[doc = "PLL input clock x 10"] MUL10,
-    #[doc = "PLL input clock x 11"] MUL11,
-    #[doc = "PLL input clock x 12"] MUL12,
-    #[doc = "PLL input clock x 13"] MUL13,
-    #[doc = "PLL input clock x 14"] MUL14,
-    #[doc = "PLL input clock x 15"] MUL15,
-    #[doc = "PLL input clock x 16"] MUL16,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "PLL input clock x 2"]
+    MUL2,
+    #[doc = "PLL input clock x 3"]
+    MUL3,
+    #[doc = "PLL input clock x 4"]
+    MUL4,
+    #[doc = "PLL input clock x 5"]
+    MUL5,
+    #[doc = "PLL input clock x 6"]
+    MUL6,
+    #[doc = "PLL input clock x 7"]
+    MUL7,
+    #[doc = "PLL input clock x 8"]
+    MUL8,
+    #[doc = "PLL input clock x 9"]
+    MUL9,
+    #[doc = "PLL input clock x 10"]
+    MUL10,
+    #[doc = "PLL input clock x 11"]
+    MUL11,
+    #[doc = "PLL input clock x 12"]
+    MUL12,
+    #[doc = "PLL input clock x 13"]
+    MUL13,
+    #[doc = "PLL input clock x 14"]
+    MUL14,
+    #[doc = "PLL input clock x 15"]
+    MUL15,
+    #[doc = "PLL input clock x 16"]
+    MUL16,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PLLMULR {
     #[doc = r" Value of the field as raw bits"]
@@ -519,16 +557,26 @@ impl PLLMULR {
 #[doc = "Possible values of the field `MCO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCOR {
-    #[doc = "MCO output disabled, no clock on MCO"] NOCLOCK,
-    #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"] INTERNALRC,
-    #[doc = "Internal low speed (LSI) oscillator clock selected"] INTERNALLSI,
-    #[doc = "External low speed (LSE) oscillator clock selected"] LSE,
-    #[doc = "System clock select"] SYSTEM,
-    #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"] INTERNALHSI,
-    #[doc = "External 4-32 MHz (HSE) oscillator clock selected"] EXTERNALHSE,
-    #[doc = "PLL clock selected (divided by 1 or 2, depending on PLLNODIV)"] PLL,
-    #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"] HSI48,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "MCO output disabled, no clock on MCO"]
+    NOCLOCK,
+    #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"]
+    INTERNALRC,
+    #[doc = "Internal low speed (LSI) oscillator clock selected"]
+    INTERNALLSI,
+    #[doc = "External low speed (LSE) oscillator clock selected"]
+    LSE,
+    #[doc = "System clock select"]
+    SYSTEM,
+    #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
+    INTERNALHSI,
+    #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
+    EXTERNALHSE,
+    #[doc = "PLL clock selected (divided by 1 or 2, depending on PLLNODIV)"]
+    PLL,
+    #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"]
+    HSI48,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl MCOR {
     #[doc = r" Value of the field as raw bits"]
@@ -613,14 +661,22 @@ impl MCOR {
 #[doc = "Possible values of the field `MCOPRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCOPRER {
-    #[doc = "MCO is divided by 1"] DIV1,
-    #[doc = "MCO is divided by 2"] DIV2,
-    #[doc = "MCO is divided by 4"] DIV4,
-    #[doc = "MCO is divided by 8"] DIV8,
-    #[doc = "MCO is divided by 16"] DIV16,
-    #[doc = "MCO is divided by 32"] DIV32,
-    #[doc = "MCO is divided by 64"] DIV64,
-    #[doc = "MCO is divided by 128"] DIV128,
+    #[doc = "MCO is divided by 1"]
+    DIV1,
+    #[doc = "MCO is divided by 2"]
+    DIV2,
+    #[doc = "MCO is divided by 4"]
+    DIV4,
+    #[doc = "MCO is divided by 8"]
+    DIV8,
+    #[doc = "MCO is divided by 16"]
+    DIV16,
+    #[doc = "MCO is divided by 32"]
+    DIV32,
+    #[doc = "MCO is divided by 64"]
+    DIV64,
+    #[doc = "MCO is divided by 128"]
+    DIV128,
 }
 impl MCOPRER {
     #[doc = r" Value of the field as raw bits"]
@@ -697,8 +753,10 @@ impl MCOPRER {
 #[doc = "Possible values of the field `PLLNODIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLNODIVR {
-    #[doc = "PLL is divided by 2 for MCO"] DIV2,
-    #[doc = "PLL is not divided for MCO"] NODIV,
+    #[doc = "PLL is divided by 2 for MCO"]
+    DIV2,
+    #[doc = "PLL is not divided for MCO"]
+    NODIV,
 }
 impl PLLNODIVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -741,10 +799,14 @@ impl PLLNODIVR {
 }
 #[doc = "Values that can be written to the field `SW`"]
 pub enum SWW {
-    #[doc = "HSI selected as system clock"] HSI,
-    #[doc = "HSE selected as system clock"] HSE,
-    #[doc = "PLL selected as system clock"] PLL,
-    #[doc = "HSI48 selected as system clock (when available)"] HSI48,
+    #[doc = "HSI selected as system clock"]
+    HSI,
+    #[doc = "HSE selected as system clock"]
+    HSE,
+    #[doc = "PLL selected as system clock"]
+    PLL,
+    #[doc = "HSI48 selected as system clock (when available)"]
+    HSI48,
 }
 impl SWW {
     #[allow(missing_docs)]
@@ -803,15 +865,24 @@ impl<'a> _SWW<'a> {
 }
 #[doc = "Values that can be written to the field `HPRE`"]
 pub enum HPREW {
-    #[doc = "SYSCLK not divided"] DIV1,
-    #[doc = "SYSCLK divided by 2"] DIV2,
-    #[doc = "SYSCLK divided by 4"] DIV4,
-    #[doc = "SYSCLK divided by 8"] DIV8,
-    #[doc = "SYSCLK divided by 16"] DIV16,
-    #[doc = "SYSCLK divided by 64"] DIV64,
-    #[doc = "SYSCLK divided by 128"] DIV128,
-    #[doc = "SYSCLK divided by 256"] DIV256,
-    #[doc = "SYSCLK divided by 512"] DIV512,
+    #[doc = "SYSCLK not divided"]
+    DIV1,
+    #[doc = "SYSCLK divided by 2"]
+    DIV2,
+    #[doc = "SYSCLK divided by 4"]
+    DIV4,
+    #[doc = "SYSCLK divided by 8"]
+    DIV8,
+    #[doc = "SYSCLK divided by 16"]
+    DIV16,
+    #[doc = "SYSCLK divided by 64"]
+    DIV64,
+    #[doc = "SYSCLK divided by 128"]
+    DIV128,
+    #[doc = "SYSCLK divided by 256"]
+    DIV256,
+    #[doc = "SYSCLK divided by 512"]
+    DIV512,
 }
 impl HPREW {
     #[allow(missing_docs)]
@@ -898,11 +969,16 @@ impl<'a> _HPREW<'a> {
 }
 #[doc = "Values that can be written to the field `PPRE`"]
 pub enum PPREW {
-    #[doc = "HCLK not divided"] DIV1,
-    #[doc = "HCLK divided by 2"] DIV2,
-    #[doc = "HCLK divided by 4"] DIV4,
-    #[doc = "HCLK divided by 8"] DIV8,
-    #[doc = "HCLK divided by 16"] DIV16,
+    #[doc = "HCLK not divided"]
+    DIV1,
+    #[doc = "HCLK divided by 2"]
+    DIV2,
+    #[doc = "HCLK divided by 4"]
+    DIV4,
+    #[doc = "HCLK divided by 8"]
+    DIV8,
+    #[doc = "HCLK divided by 16"]
+    DIV16,
 }
 impl PPREW {
     #[allow(missing_docs)]
@@ -1044,8 +1120,10 @@ impl<'a> _PLLSRCW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLXTPRE`"]
 pub enum PLLXTPREW {
-    #[doc = "HSE not divided"] DIV1,
-    #[doc = "HSE divided by 2"] DIV2,
+    #[doc = "HSE not divided"]
+    DIV1,
+    #[doc = "HSE divided by 2"]
+    DIV2,
 }
 impl PLLXTPREW {
     #[allow(missing_docs)]
@@ -1100,21 +1178,36 @@ impl<'a> _PLLXTPREW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLMUL`"]
 pub enum PLLMULW {
-    #[doc = "PLL input clock x 2"] MUL2,
-    #[doc = "PLL input clock x 3"] MUL3,
-    #[doc = "PLL input clock x 4"] MUL4,
-    #[doc = "PLL input clock x 5"] MUL5,
-    #[doc = "PLL input clock x 6"] MUL6,
-    #[doc = "PLL input clock x 7"] MUL7,
-    #[doc = "PLL input clock x 8"] MUL8,
-    #[doc = "PLL input clock x 9"] MUL9,
-    #[doc = "PLL input clock x 10"] MUL10,
-    #[doc = "PLL input clock x 11"] MUL11,
-    #[doc = "PLL input clock x 12"] MUL12,
-    #[doc = "PLL input clock x 13"] MUL13,
-    #[doc = "PLL input clock x 14"] MUL14,
-    #[doc = "PLL input clock x 15"] MUL15,
-    #[doc = "PLL input clock x 16"] MUL16,
+    #[doc = "PLL input clock x 2"]
+    MUL2,
+    #[doc = "PLL input clock x 3"]
+    MUL3,
+    #[doc = "PLL input clock x 4"]
+    MUL4,
+    #[doc = "PLL input clock x 5"]
+    MUL5,
+    #[doc = "PLL input clock x 6"]
+    MUL6,
+    #[doc = "PLL input clock x 7"]
+    MUL7,
+    #[doc = "PLL input clock x 8"]
+    MUL8,
+    #[doc = "PLL input clock x 9"]
+    MUL9,
+    #[doc = "PLL input clock x 10"]
+    MUL10,
+    #[doc = "PLL input clock x 11"]
+    MUL11,
+    #[doc = "PLL input clock x 12"]
+    MUL12,
+    #[doc = "PLL input clock x 13"]
+    MUL13,
+    #[doc = "PLL input clock x 14"]
+    MUL14,
+    #[doc = "PLL input clock x 15"]
+    MUL15,
+    #[doc = "PLL input clock x 16"]
+    MUL16,
 }
 impl PLLMULW {
     #[allow(missing_docs)]
@@ -1237,15 +1330,24 @@ impl<'a> _PLLMULW<'a> {
 }
 #[doc = "Values that can be written to the field `MCO`"]
 pub enum MCOW {
-    #[doc = "MCO output disabled, no clock on MCO"] NOCLOCK,
-    #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"] INTERNALRC,
-    #[doc = "Internal low speed (LSI) oscillator clock selected"] INTERNALLSI,
-    #[doc = "External low speed (LSE) oscillator clock selected"] LSE,
-    #[doc = "System clock select"] SYSTEM,
-    #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"] INTERNALHSI,
-    #[doc = "External 4-32 MHz (HSE) oscillator clock selected"] EXTERNALHSE,
-    #[doc = "PLL clock selected (divided by 1 or 2, depending on PLLNODIV)"] PLL,
-    #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"] HSI48,
+    #[doc = "MCO output disabled, no clock on MCO"]
+    NOCLOCK,
+    #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"]
+    INTERNALRC,
+    #[doc = "Internal low speed (LSI) oscillator clock selected"]
+    INTERNALLSI,
+    #[doc = "External low speed (LSE) oscillator clock selected"]
+    LSE,
+    #[doc = "System clock select"]
+    SYSTEM,
+    #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
+    INTERNALHSI,
+    #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
+    EXTERNALHSE,
+    #[doc = "PLL clock selected (divided by 1 or 2, depending on PLLNODIV)"]
+    PLL,
+    #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"]
+    HSI48,
 }
 impl MCOW {
     #[allow(missing_docs)]
@@ -1332,14 +1434,22 @@ impl<'a> _MCOW<'a> {
 }
 #[doc = "Values that can be written to the field `MCOPRE`"]
 pub enum MCOPREW {
-    #[doc = "MCO is divided by 1"] DIV1,
-    #[doc = "MCO is divided by 2"] DIV2,
-    #[doc = "MCO is divided by 4"] DIV4,
-    #[doc = "MCO is divided by 8"] DIV8,
-    #[doc = "MCO is divided by 16"] DIV16,
-    #[doc = "MCO is divided by 32"] DIV32,
-    #[doc = "MCO is divided by 64"] DIV64,
-    #[doc = "MCO is divided by 128"] DIV128,
+    #[doc = "MCO is divided by 1"]
+    DIV1,
+    #[doc = "MCO is divided by 2"]
+    DIV2,
+    #[doc = "MCO is divided by 4"]
+    DIV4,
+    #[doc = "MCO is divided by 8"]
+    DIV8,
+    #[doc = "MCO is divided by 16"]
+    DIV16,
+    #[doc = "MCO is divided by 32"]
+    DIV32,
+    #[doc = "MCO is divided by 64"]
+    DIV64,
+    #[doc = "MCO is divided by 128"]
+    DIV128,
 }
 impl MCOPREW {
     #[allow(missing_docs)]
@@ -1422,8 +1532,10 @@ impl<'a> _MCOPREW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLNODIV`"]
 pub enum PLLNODIVW {
-    #[doc = "PLL is divided by 2 for MCO"] DIV2,
-    #[doc = "PLL is not divided for MCO"] NODIV,
+    #[doc = "PLL is divided by 2 for MCO"]
+    DIV2,
+    #[doc = "PLL is not divided for MCO"]
+    NODIV,
 }
 impl PLLNODIVW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::CR2 {
 #[doc = "Possible values of the field `RXDMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDMAENR {
-    #[doc = "Rx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Rx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl RXDMAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl RXDMAENR {
 #[doc = "Possible values of the field `TXDMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDMAENR {
-    #[doc = "Tx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Tx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl TXDMAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -177,8 +181,10 @@ impl SSOER {
 #[doc = "Possible values of the field `NSSP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NSSPR {
-    #[doc = "No NSS pulse"] NOPULSE,
-    #[doc = "NSS pulse generated"] PULSE,
+    #[doc = "No NSS pulse"]
+    NOPULSE,
+    #[doc = "NSS pulse generated"]
+    PULSE,
 }
 impl NSSPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -222,8 +228,10 @@ impl NSSPR {
 #[doc = "Possible values of the field `FRF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRFR {
-    #[doc = "SPI Motorola mode"] SPI_MOTO,
-    #[doc = "SPI TI mode"] SPI_TI,
+    #[doc = "SPI Motorola mode"]
+    SPI_MOTO,
+    #[doc = "SPI TI mode"]
+    SPI_TI,
 }
 impl FRFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -267,8 +275,10 @@ impl FRFR {
 #[doc = "Possible values of the field `ERRIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRIER {
-    #[doc = "Error interrupt is masked"] DISABLED,
-    #[doc = "Error interrupt is enabled"] ENABLED,
+    #[doc = "Error interrupt is masked"]
+    DISABLED,
+    #[doc = "Error interrupt is enabled"]
+    ENABLED,
 }
 impl ERRIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -396,20 +406,34 @@ impl TXEIER {
 #[doc = "Possible values of the field `DS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSR {
-    #[doc = "4-bits"] _4BITS,
-    #[doc = "5-bits"] _5BITS,
-    #[doc = "6-bits"] _6BITS,
-    #[doc = "7-bits"] _7BITS,
-    #[doc = "8-bits"] _8BITS,
-    #[doc = "9-bits"] _9BITS,
-    #[doc = "10-bits"] _10BITS,
-    #[doc = "11-bits"] _11BITS,
-    #[doc = "12-bits"] _12BITS,
-    #[doc = "13-bits"] _13BITS,
-    #[doc = "14-bits"] _14BITS,
-    #[doc = "15-bits"] _15BITS,
-    #[doc = "16-bits"] _16BITS,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "4-bits"]
+    _4BITS,
+    #[doc = "5-bits"]
+    _5BITS,
+    #[doc = "6-bits"]
+    _6BITS,
+    #[doc = "7-bits"]
+    _7BITS,
+    #[doc = "8-bits"]
+    _8BITS,
+    #[doc = "9-bits"]
+    _9BITS,
+    #[doc = "10-bits"]
+    _10BITS,
+    #[doc = "11-bits"]
+    _11BITS,
+    #[doc = "12-bits"]
+    _12BITS,
+    #[doc = "13-bits"]
+    _13BITS,
+    #[doc = "14-bits"]
+    _14BITS,
+    #[doc = "15-bits"]
+    _15BITS,
+    #[doc = "16-bits"]
+    _16BITS,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl DSR {
     #[doc = r" Value of the field as raw bits"]
@@ -569,8 +593,10 @@ impl FRXTHR {
 #[doc = "Possible values of the field `LDMA_RX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDMA_RXR {
-    #[doc = "Number of data to receive is even"] EVEN,
-    #[doc = "Number of data to receive is odd"] ODD,
+    #[doc = "Number of data to receive is even"]
+    EVEN,
+    #[doc = "Number of data to receive is odd"]
+    ODD,
 }
 impl LDMA_RXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -614,8 +640,10 @@ impl LDMA_RXR {
 #[doc = "Possible values of the field `LDMA_TX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDMA_TXR {
-    #[doc = "Number of data to transfer is even"] EVEN,
-    #[doc = "Number of data to transfer is odd"] ODD,
+    #[doc = "Number of data to transfer is even"]
+    EVEN,
+    #[doc = "Number of data to transfer is odd"]
+    ODD,
 }
 impl LDMA_TXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -658,8 +686,10 @@ impl LDMA_TXR {
 }
 #[doc = "Values that can be written to the field `RXDMAEN`"]
 pub enum RXDMAENW {
-    #[doc = "Rx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Rx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl RXDMAENW {
     #[allow(missing_docs)]
@@ -714,8 +744,10 @@ impl<'a> _RXDMAENW<'a> {
 }
 #[doc = "Values that can be written to the field `TXDMAEN`"]
 pub enum TXDMAENW {
-    #[doc = "Tx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Tx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl TXDMAENW {
     #[allow(missing_docs)]
@@ -821,8 +853,10 @@ impl<'a> _SSOEW<'a> {
 }
 #[doc = "Values that can be written to the field `NSSP`"]
 pub enum NSSPW {
-    #[doc = "No NSS pulse"] NOPULSE,
-    #[doc = "NSS pulse generated"] PULSE,
+    #[doc = "No NSS pulse"]
+    NOPULSE,
+    #[doc = "NSS pulse generated"]
+    PULSE,
 }
 impl NSSPW {
     #[allow(missing_docs)]
@@ -877,8 +911,10 @@ impl<'a> _NSSPW<'a> {
 }
 #[doc = "Values that can be written to the field `FRF`"]
 pub enum FRFW {
-    #[doc = "SPI Motorola mode"] SPI_MOTO,
-    #[doc = "SPI TI mode"] SPI_TI,
+    #[doc = "SPI Motorola mode"]
+    SPI_MOTO,
+    #[doc = "SPI TI mode"]
+    SPI_TI,
 }
 impl FRFW {
     #[allow(missing_docs)]
@@ -933,8 +969,10 @@ impl<'a> _FRFW<'a> {
 }
 #[doc = "Values that can be written to the field `ERRIE`"]
 pub enum ERRIEW {
-    #[doc = "Error interrupt is masked"] DISABLED,
-    #[doc = "Error interrupt is enabled"] ENABLED,
+    #[doc = "Error interrupt is masked"]
+    DISABLED,
+    #[doc = "Error interrupt is enabled"]
+    ENABLED,
 }
 impl ERRIEW {
     #[allow(missing_docs)]
@@ -1093,19 +1131,32 @@ impl<'a> _TXEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `DS`"]
 pub enum DSW {
-    #[doc = "4-bits"] _4BITS,
-    #[doc = "5-bits"] _5BITS,
-    #[doc = "6-bits"] _6BITS,
-    #[doc = "7-bits"] _7BITS,
-    #[doc = "8-bits"] _8BITS,
-    #[doc = "9-bits"] _9BITS,
-    #[doc = "10-bits"] _10BITS,
-    #[doc = "11-bits"] _11BITS,
-    #[doc = "12-bits"] _12BITS,
-    #[doc = "13-bits"] _13BITS,
-    #[doc = "14-bits"] _14BITS,
-    #[doc = "15-bits"] _15BITS,
-    #[doc = "16-bits"] _16BITS,
+    #[doc = "4-bits"]
+    _4BITS,
+    #[doc = "5-bits"]
+    _5BITS,
+    #[doc = "6-bits"]
+    _6BITS,
+    #[doc = "7-bits"]
+    _7BITS,
+    #[doc = "8-bits"]
+    _8BITS,
+    #[doc = "9-bits"]
+    _9BITS,
+    #[doc = "10-bits"]
+    _10BITS,
+    #[doc = "11-bits"]
+    _11BITS,
+    #[doc = "12-bits"]
+    _12BITS,
+    #[doc = "13-bits"]
+    _13BITS,
+    #[doc = "14-bits"]
+    _14BITS,
+    #[doc = "15-bits"]
+    _15BITS,
+    #[doc = "16-bits"]
+    _16BITS,
 }
 impl DSW {
     #[allow(missing_docs)]
@@ -1274,8 +1325,10 @@ impl<'a> _FRXTHW<'a> {
 }
 #[doc = "Values that can be written to the field `LDMA_RX`"]
 pub enum LDMA_RXW {
-    #[doc = "Number of data to receive is even"] EVEN,
-    #[doc = "Number of data to receive is odd"] ODD,
+    #[doc = "Number of data to receive is even"]
+    EVEN,
+    #[doc = "Number of data to receive is odd"]
+    ODD,
 }
 impl LDMA_RXW {
     #[allow(missing_docs)]
@@ -1330,8 +1383,10 @@ impl<'a> _LDMA_RXW<'a> {
 }
 #[doc = "Values that can be written to the field `LDMA_TX`"]
 pub enum LDMA_TXW {
-    #[doc = "Number of data to transfer is even"] EVEN,
-    #[doc = "Number of data to transfer is odd"] ODD,
+    #[doc = "Number of data to transfer is even"]
+    EVEN,
+    #[doc = "Number of data to transfer is odd"]
+    ODD,
 }
 impl LDMA_TXW {
     #[allow(missing_docs)]

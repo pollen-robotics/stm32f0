@@ -45,8 +45,10 @@ impl super::CR3 {
 #[doc = "Possible values of the field `WUFIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUFIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever WUF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever WUF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl WUFIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,9 +92,12 @@ impl WUFIER {
 #[doc = "Possible values of the field `WUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUSR {
-    #[doc = "WUF active on address match."] ADDRESS,
-    #[doc = "WuF active on Start bit detection."] STARTBIT,
-    #[doc = "WUF active on RXNE."] RXNE,
+    #[doc = "WUF active on address match."]
+    ADDRESS,
+    #[doc = "WuF active on Start bit detection."]
+    STARTBIT,
+    #[doc = "WUF active on RXNE."]
+    RXNE,
 }
 impl WUSR {
     #[doc = r" Value of the field as raw bits"]
@@ -145,8 +150,10 @@ impl SCARCNTR {
 #[doc = "Possible values of the field `DEP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEPR {
-    #[doc = "DE signal is active high."] HIGH,
-    #[doc = "DE signal is active low."] LOW,
+    #[doc = "DE signal is active high."]
+    HIGH,
+    #[doc = "DE signal is active low."]
+    LOW,
 }
 impl DEPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -190,8 +197,10 @@ impl DEPR {
 #[doc = "Possible values of the field `DEM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEMR {
-    #[doc = "DE function is disabled."] DISABLED,
-    #[doc = "DE function is enabled."] ENABLED,
+    #[doc = "DE function is disabled."]
+    DISABLED,
+    #[doc = "DE function is enabled."]
+    ENABLED,
 }
 impl DEMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -235,8 +244,10 @@ impl DEMR {
 #[doc = "Possible values of the field `DDRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDRER {
-    #[doc = "DMA is not disabled in case of reception error."] NOTDISABLED,
-    #[doc = "DMA is disabled following a reception error."] DISABLED,
+    #[doc = "DMA is not disabled in case of reception error."]
+    NOTDISABLED,
+    #[doc = "DMA is disabled following a reception error."]
+    DISABLED,
 }
 impl DDRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -322,8 +333,10 @@ impl OVRDISR {
 #[doc = "Possible values of the field `ONEBIT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONEBITR {
-    #[doc = "Three sample bit method."] THREESAMPLES,
-    #[doc = "One sample bit method."] ONESAMPLE,
+    #[doc = "Three sample bit method."]
+    THREESAMPLES,
+    #[doc = "One sample bit method."]
+    ONESAMPLE,
 }
 impl ONEBITR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -367,8 +380,10 @@ impl ONEBITR {
 #[doc = "Possible values of the field `CTSIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An interrupt is generated whenever CTSIF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An interrupt is generated whenever CTSIF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl CTSIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -454,7 +469,8 @@ impl CTSER {
 #[doc = "Possible values of the field `RTSE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTSER {
-    #[doc = "RTS hardware flow control disabled."] DISABLED,
+    #[doc = "RTS hardware flow control disabled."]
+    DISABLED,
     #[doc = "RTS output enabled, data is only requested when there is space in the receive buffer."]
     ENABLED,
 }
@@ -500,8 +516,10 @@ impl RTSER {
 #[doc = "Possible values of the field `DMAT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMATR {
-    #[doc = "DMA mode is disabled for transmission."] DISABLED,
-    #[doc = "DMA mode is enabled for transmission."] ENABLED,
+    #[doc = "DMA mode is disabled for transmission."]
+    DISABLED,
+    #[doc = "DMA mode is enabled for transmission."]
+    ENABLED,
 }
 impl DMATR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -545,8 +563,10 @@ impl DMATR {
 #[doc = "Possible values of the field `DMAR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMARR {
-    #[doc = "DMA mode is disabled for reception."] DISABLED,
-    #[doc = "DMA mode is enabled for reception."] ENABLED,
+    #[doc = "DMA mode is disabled for reception."]
+    DISABLED,
+    #[doc = "DMA mode is enabled for reception."]
+    ENABLED,
 }
 impl DMARR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -590,8 +610,10 @@ impl DMARR {
 #[doc = "Possible values of the field `SCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCENR {
-    #[doc = "Smartcard Mode disabled."] DISABLED,
-    #[doc = "Smartcard Mode enabled."] ENABLED,
+    #[doc = "Smartcard Mode disabled."]
+    DISABLED,
+    #[doc = "Smartcard Mode enabled."]
+    ENABLED,
 }
 impl SCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -635,8 +657,10 @@ impl SCENR {
 #[doc = "Possible values of the field `NACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NACKR {
-    #[doc = "NACK transmission in case of parity error is disabled."] DISABLED,
-    #[doc = "NACK transmission during parity error is enabled."] ENABLED,
+    #[doc = "NACK transmission in case of parity error is disabled."]
+    DISABLED,
+    #[doc = "NACK transmission during parity error is enabled."]
+    ENABLED,
 }
 impl NACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -680,8 +704,10 @@ impl NACKR {
 #[doc = "Possible values of the field `HDSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDSELR {
-    #[doc = "Half duplex mode is not selected."] DISABLED,
-    #[doc = "Half duplex mode is selected."] ENABLED,
+    #[doc = "Half duplex mode is not selected."]
+    DISABLED,
+    #[doc = "Half duplex mode is selected."]
+    ENABLED,
 }
 impl HDSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -725,8 +751,10 @@ impl HDSELR {
 #[doc = "Possible values of the field `IRLP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IRLPR {
-    #[doc = "Normal mode."] NORMAL,
-    #[doc = "Low-power mode."] LOWPOWER,
+    #[doc = "Normal mode."]
+    NORMAL,
+    #[doc = "Low-power mode."]
+    LOWPOWER,
 }
 impl IRLPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -770,8 +798,10 @@ impl IRLPR {
 #[doc = "Possible values of the field `IREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IRENR {
-    #[doc = "IrDA disabled."] DISABLED,
-    #[doc = "IrDA enabled."] ENABLED,
+    #[doc = "IrDA disabled."]
+    DISABLED,
+    #[doc = "IrDA enabled."]
+    ENABLED,
 }
 impl IRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -815,7 +845,8 @@ impl IRENR {
 #[doc = "Possible values of the field `EIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An interrupt is generated when FE=1 or ORE=1 or NF=1 in the USART_ISR register."]
     ENABLED,
 }
@@ -860,8 +891,10 @@ impl EIER {
 }
 #[doc = "Values that can be written to the field `WUFIE`"]
 pub enum WUFIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever WUF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever WUF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl WUFIEW {
     #[allow(missing_docs)]
@@ -916,9 +949,12 @@ impl<'a> _WUFIEW<'a> {
 }
 #[doc = "Values that can be written to the field `WUS`"]
 pub enum WUSW {
-    #[doc = "WUF active on address match."] ADDRESS,
-    #[doc = "WuF active on Start bit detection."] STARTBIT,
-    #[doc = "WUF active on RXNE."] RXNE,
+    #[doc = "WUF active on address match."]
+    ADDRESS,
+    #[doc = "WuF active on Start bit detection."]
+    STARTBIT,
+    #[doc = "WUF active on RXNE."]
+    RXNE,
 }
 impl WUSW {
     #[allow(missing_docs)]
@@ -984,8 +1020,10 @@ impl<'a> _SCARCNTW<'a> {
 }
 #[doc = "Values that can be written to the field `DEP`"]
 pub enum DEPW {
-    #[doc = "DE signal is active high."] HIGH,
-    #[doc = "DE signal is active low."] LOW,
+    #[doc = "DE signal is active high."]
+    HIGH,
+    #[doc = "DE signal is active low."]
+    LOW,
 }
 impl DEPW {
     #[allow(missing_docs)]
@@ -1040,8 +1078,10 @@ impl<'a> _DEPW<'a> {
 }
 #[doc = "Values that can be written to the field `DEM`"]
 pub enum DEMW {
-    #[doc = "DE function is disabled."] DISABLED,
-    #[doc = "DE function is enabled."] ENABLED,
+    #[doc = "DE function is disabled."]
+    DISABLED,
+    #[doc = "DE function is enabled."]
+    ENABLED,
 }
 impl DEMW {
     #[allow(missing_docs)]
@@ -1096,8 +1136,10 @@ impl<'a> _DEMW<'a> {
 }
 #[doc = "Values that can be written to the field `DDRE`"]
 pub enum DDREW {
-    #[doc = "DMA is not disabled in case of reception error."] NOTDISABLED,
-    #[doc = "DMA is disabled following a reception error."] DISABLED,
+    #[doc = "DMA is not disabled in case of reception error."]
+    NOTDISABLED,
+    #[doc = "DMA is disabled following a reception error."]
+    DISABLED,
 }
 impl DDREW {
     #[allow(missing_docs)]
@@ -1204,8 +1246,10 @@ impl<'a> _OVRDISW<'a> {
 }
 #[doc = "Values that can be written to the field `ONEBIT`"]
 pub enum ONEBITW {
-    #[doc = "Three sample bit method."] THREESAMPLES,
-    #[doc = "One sample bit method."] ONESAMPLE,
+    #[doc = "Three sample bit method."]
+    THREESAMPLES,
+    #[doc = "One sample bit method."]
+    ONESAMPLE,
 }
 impl ONEBITW {
     #[allow(missing_docs)]
@@ -1260,8 +1304,10 @@ impl<'a> _ONEBITW<'a> {
 }
 #[doc = "Values that can be written to the field `CTSIE`"]
 pub enum CTSIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An interrupt is generated whenever CTSIF=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An interrupt is generated whenever CTSIF=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl CTSIEW {
     #[allow(missing_docs)]
@@ -1369,7 +1415,8 @@ impl<'a> _CTSEW<'a> {
 }
 #[doc = "Values that can be written to the field `RTSE`"]
 pub enum RTSEW {
-    #[doc = "RTS hardware flow control disabled."] DISABLED,
+    #[doc = "RTS hardware flow control disabled."]
+    DISABLED,
     #[doc = "RTS output enabled, data is only requested when there is space in the receive buffer."]
     ENABLED,
 }
@@ -1426,8 +1473,10 @@ impl<'a> _RTSEW<'a> {
 }
 #[doc = "Values that can be written to the field `DMAT`"]
 pub enum DMATW {
-    #[doc = "DMA mode is disabled for transmission."] DISABLED,
-    #[doc = "DMA mode is enabled for transmission."] ENABLED,
+    #[doc = "DMA mode is disabled for transmission."]
+    DISABLED,
+    #[doc = "DMA mode is enabled for transmission."]
+    ENABLED,
 }
 impl DMATW {
     #[allow(missing_docs)]
@@ -1482,8 +1531,10 @@ impl<'a> _DMATW<'a> {
 }
 #[doc = "Values that can be written to the field `DMAR`"]
 pub enum DMARW {
-    #[doc = "DMA mode is disabled for reception."] DISABLED,
-    #[doc = "DMA mode is enabled for reception."] ENABLED,
+    #[doc = "DMA mode is disabled for reception."]
+    DISABLED,
+    #[doc = "DMA mode is enabled for reception."]
+    ENABLED,
 }
 impl DMARW {
     #[allow(missing_docs)]
@@ -1538,8 +1589,10 @@ impl<'a> _DMARW<'a> {
 }
 #[doc = "Values that can be written to the field `SCEN`"]
 pub enum SCENW {
-    #[doc = "Smartcard Mode disabled."] DISABLED,
-    #[doc = "Smartcard Mode enabled."] ENABLED,
+    #[doc = "Smartcard Mode disabled."]
+    DISABLED,
+    #[doc = "Smartcard Mode enabled."]
+    ENABLED,
 }
 impl SCENW {
     #[allow(missing_docs)]
@@ -1594,8 +1647,10 @@ impl<'a> _SCENW<'a> {
 }
 #[doc = "Values that can be written to the field `NACK`"]
 pub enum NACKW {
-    #[doc = "NACK transmission in case of parity error is disabled."] DISABLED,
-    #[doc = "NACK transmission during parity error is enabled."] ENABLED,
+    #[doc = "NACK transmission in case of parity error is disabled."]
+    DISABLED,
+    #[doc = "NACK transmission during parity error is enabled."]
+    ENABLED,
 }
 impl NACKW {
     #[allow(missing_docs)]
@@ -1650,8 +1705,10 @@ impl<'a> _NACKW<'a> {
 }
 #[doc = "Values that can be written to the field `HDSEL`"]
 pub enum HDSELW {
-    #[doc = "Half duplex mode is not selected."] DISABLED,
-    #[doc = "Half duplex mode is selected."] ENABLED,
+    #[doc = "Half duplex mode is not selected."]
+    DISABLED,
+    #[doc = "Half duplex mode is selected."]
+    ENABLED,
 }
 impl HDSELW {
     #[allow(missing_docs)]
@@ -1706,8 +1763,10 @@ impl<'a> _HDSELW<'a> {
 }
 #[doc = "Values that can be written to the field `IRLP`"]
 pub enum IRLPW {
-    #[doc = "Normal mode."] NORMAL,
-    #[doc = "Low-power mode."] LOWPOWER,
+    #[doc = "Normal mode."]
+    NORMAL,
+    #[doc = "Low-power mode."]
+    LOWPOWER,
 }
 impl IRLPW {
     #[allow(missing_docs)]
@@ -1762,8 +1821,10 @@ impl<'a> _IRLPW<'a> {
 }
 #[doc = "Values that can be written to the field `IREN`"]
 pub enum IRENW {
-    #[doc = "IrDA disabled."] DISABLED,
-    #[doc = "IrDA enabled."] ENABLED,
+    #[doc = "IrDA disabled."]
+    DISABLED,
+    #[doc = "IrDA enabled."]
+    ENABLED,
 }
 impl IRENW {
     #[allow(missing_docs)]
@@ -1818,7 +1879,8 @@ impl<'a> _IRENW<'a> {
 }
 #[doc = "Values that can be written to the field `EIE`"]
 pub enum EIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An interrupt is generated when FE=1 or ORE=1 or NF=1 in the USART_ISR register."]
     ENABLED,
 }

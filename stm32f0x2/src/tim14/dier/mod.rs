@@ -45,8 +45,10 @@ impl super::DIER {
 #[doc = "Possible values of the field `CC1IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1IER {
-    #[doc = "CC1 interrupt disabled."] DISABLED,
-    #[doc = "CC1 interrupt enabled."] ENABLED,
+    #[doc = "CC1 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC1 interrupt enabled."]
+    ENABLED,
 }
 impl CC1IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CC1IER {
 #[doc = "Possible values of the field `UIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIER {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -134,8 +138,10 @@ impl UIER {
 }
 #[doc = "Values that can be written to the field `CC1IE`"]
 pub enum CC1IEW {
-    #[doc = "CC1 interrupt disabled."] DISABLED,
-    #[doc = "CC1 interrupt enabled."] ENABLED,
+    #[doc = "CC1 interrupt disabled."]
+    DISABLED,
+    #[doc = "CC1 interrupt enabled."]
+    ENABLED,
 }
 impl CC1IEW {
     #[allow(missing_docs)]
@@ -190,8 +196,10 @@ impl<'a> _CC1IEW<'a> {
 }
 #[doc = "Values that can be written to the field `UIE`"]
 pub enum UIEW {
-    #[doc = "Update interrupt disabled."] DISABLED,
-    #[doc = "Update interrupt enabled."] ENABLED,
+    #[doc = "Update interrupt disabled."]
+    DISABLED,
+    #[doc = "Update interrupt enabled."]
+    ENABLED,
 }
 impl UIEW {
     #[allow(missing_docs)]

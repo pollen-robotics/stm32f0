@@ -86,36 +86,66 @@ pub static INTERRUPTS: [Option<unsafe extern "C" fn()>; 32] = [
 ];
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
-    #[doc = "0 - Window Watchdog interrupt"] WWDG,
-    #[doc = "1 - PVD and VDDIO2 supply comparator interrupt"] PVD,
-    #[doc = "2 - RTC interrupts"] RTC,
-    #[doc = "3 - Flash global interrupt"] FLASH,
-    #[doc = "4 - RCC and CRS global interrupts"] RCC_CRS,
-    #[doc = "5 - EXTI Line[1:0] interrupts"] EXTI0_1,
-    #[doc = "6 - EXTI Line[3:2] interrupts"] EXTI2_3,
-    #[doc = "7 - EXTI Line15 and EXTI4 interrupts"] EXTI4_15,
-    #[doc = "8 - Touch sensing interrupt"] TSC,
-    #[doc = "9 - DMA1 channel 1 interrupt"] DMA1_CH1,
-    #[doc = "12 - ADC and comparator interrupts"] ADC_COMP,
-    #[doc = "13 - TIM1 break, update, trigger and commutation interrupt"] TIM1_BRK_UP_TRG_COM,
-    #[doc = "14 - TIM1 Capture Compare interrupt"] TIM1_CC,
-    #[doc = "15 - TIM2 global interrupt"] TIM2,
-    #[doc = "16 - TIM3 global interrupt"] TIM3,
-    #[doc = "17 - TIM6 global interrupt and DAC underrun interrupt"] TIM6_DAC,
-    #[doc = "18 - TIM7 global interrupt"] TIM7,
-    #[doc = "19 - TIM14 global interrupt"] TIM14,
-    #[doc = "20 - TIM15 global interrupt"] TIM15,
-    #[doc = "21 - TIM16 global interrupt"] TIM16,
-    #[doc = "22 - TIM17 global interrupt"] TIM17,
-    #[doc = "23 - I2C1 global interrupt"] I2C1,
-    #[doc = "24 - I2C2 global interrupt"] I2C2,
-    #[doc = "25 - SPI1_global_interrupt"] SPI1,
-    #[doc = "26 - SPI2 global interrupt"] SPI2,
-    #[doc = "27 - USART1 global interrupt"] USART1,
-    #[doc = "28 - USART2 global interrupt"] USART2,
-    #[doc = "29 - USART3 and USART4 global interrupt"] USART3_4,
-    #[doc = "30 - CEC and CAN global interrupt"] CEC_CAN,
-    #[doc = "31 - USB global interrupt"] USB,
+    #[doc = "0 - Window Watchdog interrupt"]
+    WWDG,
+    #[doc = "1 - PVD and VDDIO2 supply comparator interrupt"]
+    PVD,
+    #[doc = "2 - RTC interrupts"]
+    RTC,
+    #[doc = "3 - Flash global interrupt"]
+    FLASH,
+    #[doc = "4 - RCC and CRS global interrupts"]
+    RCC_CRS,
+    #[doc = "5 - EXTI Line[1:0] interrupts"]
+    EXTI0_1,
+    #[doc = "6 - EXTI Line[3:2] interrupts"]
+    EXTI2_3,
+    #[doc = "7 - EXTI Line15 and EXTI4 interrupts"]
+    EXTI4_15,
+    #[doc = "8 - Touch sensing interrupt"]
+    TSC,
+    #[doc = "9 - DMA1 channel 1 interrupt"]
+    DMA1_CH1,
+    #[doc = "12 - ADC and comparator interrupts"]
+    ADC_COMP,
+    #[doc = "13 - TIM1 break, update, trigger and commutation interrupt"]
+    TIM1_BRK_UP_TRG_COM,
+    #[doc = "14 - TIM1 Capture Compare interrupt"]
+    TIM1_CC,
+    #[doc = "15 - TIM2 global interrupt"]
+    TIM2,
+    #[doc = "16 - TIM3 global interrupt"]
+    TIM3,
+    #[doc = "17 - TIM6 global interrupt and DAC underrun interrupt"]
+    TIM6_DAC,
+    #[doc = "18 - TIM7 global interrupt"]
+    TIM7,
+    #[doc = "19 - TIM14 global interrupt"]
+    TIM14,
+    #[doc = "20 - TIM15 global interrupt"]
+    TIM15,
+    #[doc = "21 - TIM16 global interrupt"]
+    TIM16,
+    #[doc = "22 - TIM17 global interrupt"]
+    TIM17,
+    #[doc = "23 - I2C1 global interrupt"]
+    I2C1,
+    #[doc = "24 - I2C2 global interrupt"]
+    I2C2,
+    #[doc = "25 - SPI1_global_interrupt"]
+    SPI1,
+    #[doc = "26 - SPI2 global interrupt"]
+    SPI2,
+    #[doc = "27 - USART1 global interrupt"]
+    USART1,
+    #[doc = "28 - USART2 global interrupt"]
+    USART2,
+    #[doc = "29 - USART3 and USART4 global interrupt"]
+    USART3_4,
+    #[doc = "30 - CEC and CAN global interrupt"]
+    CEC_CAN,
+    #[doc = "31 - USB global interrupt"]
+    USB,
 }
 unsafe impl Nr for Interrupt {
     #[inline]

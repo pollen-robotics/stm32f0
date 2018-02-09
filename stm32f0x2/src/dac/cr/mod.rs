@@ -45,8 +45,10 @@ impl super::CR {
 #[doc = "Possible values of the field `EN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN1R {
-    #[doc = "DAC channel1 disabled"] DISABLED,
-    #[doc = "DAC channel1 enabled"] ENABLED,
+    #[doc = "DAC channel1 disabled"]
+    DISABLED,
+    #[doc = "DAC channel1 enabled"]
+    ENABLED,
 }
 impl EN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl EN1R {
 #[doc = "Possible values of the field `BOFF1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFF1R {
-    #[doc = "DAC channel1 output buffer enabled"] DISABLED,
-    #[doc = "DAC channel1 output buffer disabled"] ENABLED,
+    #[doc = "DAC channel1 output buffer enabled"]
+    DISABLED,
+    #[doc = "DAC channel1 output buffer disabled"]
+    ENABLED,
 }
 impl BOFF1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -177,13 +181,20 @@ impl TEN1R {
 #[doc = "Possible values of the field `TSEL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSEL1R {
-    #[doc = "Timer 6 TRGO event"] TIMER6TRIG,
-    #[doc = "Timer 3 TRGO event"] TIMER3TRIG,
-    #[doc = "Timer 7 TRGO event"] TIMER7TRIG,
-    #[doc = "Timer 15 TRGO event"] TIMER15TRIG,
-    #[doc = "Timer 2 TRGO event"] TIMER2TRIG,
-    #[doc = "EXTI line9"] EXTI9_TRIG,
-    #[doc = "Software trigger"] SOFT,
+    #[doc = "Timer 6 TRGO event"]
+    TIMER6TRIG,
+    #[doc = "Timer 3 TRGO event"]
+    TIMER3TRIG,
+    #[doc = "Timer 7 TRGO event"]
+    TIMER7TRIG,
+    #[doc = "Timer 15 TRGO event"]
+    TIMER15TRIG,
+    #[doc = "Timer 2 TRGO event"]
+    TIMER2TRIG,
+    #[doc = "EXTI line9"]
+    EXTI9_TRIG,
+    #[doc = "Software trigger"]
+    SOFT,
 }
 impl TSEL1R {
     #[doc = r" Value of the field as raw bits"]
@@ -454,8 +465,10 @@ impl DMAUDRIE2R {
 }
 #[doc = "Values that can be written to the field `EN1`"]
 pub enum EN1W {
-    #[doc = "DAC channel1 disabled"] DISABLED,
-    #[doc = "DAC channel1 enabled"] ENABLED,
+    #[doc = "DAC channel1 disabled"]
+    DISABLED,
+    #[doc = "DAC channel1 enabled"]
+    ENABLED,
 }
 impl EN1W {
     #[allow(missing_docs)]
@@ -510,8 +523,10 @@ impl<'a> _EN1W<'a> {
 }
 #[doc = "Values that can be written to the field `BOFF1`"]
 pub enum BOFF1W {
-    #[doc = "DAC channel1 output buffer enabled"] DISABLED,
-    #[doc = "DAC channel1 output buffer disabled"] ENABLED,
+    #[doc = "DAC channel1 output buffer enabled"]
+    DISABLED,
+    #[doc = "DAC channel1 output buffer disabled"]
+    ENABLED,
 }
 impl BOFF1W {
     #[allow(missing_docs)]
@@ -617,13 +632,20 @@ impl<'a> _TEN1W<'a> {
 }
 #[doc = "Values that can be written to the field `TSEL1`"]
 pub enum TSEL1W {
-    #[doc = "Timer 6 TRGO event"] TIMER6TRIG,
-    #[doc = "Timer 3 TRGO event"] TIMER3TRIG,
-    #[doc = "Timer 7 TRGO event"] TIMER7TRIG,
-    #[doc = "Timer 15 TRGO event"] TIMER15TRIG,
-    #[doc = "Timer 2 TRGO event"] TIMER2TRIG,
-    #[doc = "EXTI line9"] EXTI9_TRIG,
-    #[doc = "Software trigger"] SOFT,
+    #[doc = "Timer 6 TRGO event"]
+    TIMER6TRIG,
+    #[doc = "Timer 3 TRGO event"]
+    TIMER3TRIG,
+    #[doc = "Timer 7 TRGO event"]
+    TIMER7TRIG,
+    #[doc = "Timer 15 TRGO event"]
+    TIMER15TRIG,
+    #[doc = "Timer 2 TRGO event"]
+    TIMER2TRIG,
+    #[doc = "EXTI line9"]
+    EXTI9_TRIG,
+    #[doc = "Software trigger"]
+    SOFT,
 }
 impl TSEL1W {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::LCKR {
 #[doc = "Possible values of the field `LCKK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCKKR {
-    #[doc = "Port configuration lock key not active"] INACTIVE,
-    #[doc = "Port configuration lock key active"] ACTIVE,
+    #[doc = "Port configuration lock key not active"]
+    INACTIVE,
+    #[doc = "Port configuration lock key active"]
+    ACTIVE,
 }
 impl LCKKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl LCKKR {
 #[doc = "Possible values of the field `LCK15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCK15R {
-    #[doc = "Port configuration not locked"] UNLOCK,
-    #[doc = "Port configuration locked"] LOCK,
+    #[doc = "Port configuration not locked"]
+    UNLOCK,
+    #[doc = "Port configuration locked"]
+    LOCK,
 }
 impl LCK15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -164,8 +168,10 @@ pub type LCK1R = LCK15R;
 pub type LCK0R = LCK15R;
 #[doc = "Values that can be written to the field `LCKK`"]
 pub enum LCKKW {
-    #[doc = "Port configuration lock key not active"] INACTIVE,
-    #[doc = "Port configuration lock key active"] ACTIVE,
+    #[doc = "Port configuration lock key not active"]
+    INACTIVE,
+    #[doc = "Port configuration lock key active"]
+    ACTIVE,
 }
 impl LCKKW {
     #[allow(missing_docs)]
@@ -220,8 +226,10 @@ impl<'a> _LCKKW<'a> {
 }
 #[doc = "Values that can be written to the field `LCK15`"]
 pub enum LCK15W {
-    #[doc = "Port configuration not locked"] UNLOCK,
-    #[doc = "Port configuration locked"] LOCK,
+    #[doc = "Port configuration not locked"]
+    UNLOCK,
+    #[doc = "Port configuration locked"]
+    LOCK,
 }
 impl LCK15W {
     #[allow(missing_docs)]

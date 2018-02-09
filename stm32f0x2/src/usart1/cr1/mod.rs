@@ -45,8 +45,10 @@ impl super::CR1 {
 #[doc = "Possible values of the field `UE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UER {
-    #[doc = "USART Disabled."] DISABLED,
-    #[doc = "USART Enabled."] ENABLED,
+    #[doc = "USART Disabled."]
+    DISABLED,
+    #[doc = "USART Enabled."]
+    ENABLED,
 }
 impl UER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl UER {
 #[doc = "Possible values of the field `UESM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UESMR {
-    #[doc = "USART not able to wake up the MCU from Stop mode."] NOTABLE,
-    #[doc = "USART able to wake up the MCU from Stop mode."] ABLE,
+    #[doc = "USART not able to wake up the MCU from Stop mode."]
+    NOTABLE,
+    #[doc = "USART able to wake up the MCU from Stop mode."]
+    ABLE,
 }
 impl UESMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl UESMR {
 #[doc = "Possible values of the field `RE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RER {
-    #[doc = "Receiver is disabled."] DISABLED,
-    #[doc = "Receiver is enabled and begins searching for a start bit."] ENABLED,
+    #[doc = "Receiver is disabled."]
+    DISABLED,
+    #[doc = "Receiver is enabled and begins searching for a start bit."]
+    ENABLED,
 }
 impl RER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl RER {
 #[doc = "Possible values of the field `TE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TER {
-    #[doc = "Transmitter is disabled."] DISABLED,
-    #[doc = "Transmitter is enabled."] ENABLED,
+    #[doc = "Transmitter is disabled."]
+    DISABLED,
+    #[doc = "Transmitter is enabled."]
+    ENABLED,
 }
 impl TER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl TER {
 #[doc = "Possible values of the field `IDLEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLEIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever IDLE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever IDLE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl IDLEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,7 +280,8 @@ impl IDLEIER {
 #[doc = "Possible values of the field `RXNEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXNEIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated whenever ORE=1 or RXNE=1 in the USART_ISR register."]
     ENABLED,
 }
@@ -316,8 +327,10 @@ impl RXNEIER {
 #[doc = "Possible values of the field `TCIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever TC=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever TC=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl TCIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -361,8 +374,10 @@ impl TCIER {
 #[doc = "Possible values of the field `TXEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever TXE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever TXE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl TXEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -406,8 +421,10 @@ impl TXEIER {
 #[doc = "Possible values of the field `PEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever PE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever PE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl PEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -451,8 +468,10 @@ impl PEIER {
 #[doc = "Possible values of the field `PS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSR {
-    #[doc = "Even parity."] EVEN,
-    #[doc = "Odd parity."] ODD,
+    #[doc = "Even parity."]
+    EVEN,
+    #[doc = "Odd parity."]
+    ODD,
 }
 impl PSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -496,8 +515,10 @@ impl PSR {
 #[doc = "Possible values of the field `PCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCER {
-    #[doc = "Parity control disabled."] DISABLED,
-    #[doc = "Parity control enabled."] ENABLED,
+    #[doc = "Parity control disabled."]
+    DISABLED,
+    #[doc = "Parity control enabled."]
+    ENABLED,
 }
 impl PCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -541,8 +562,10 @@ impl PCER {
 #[doc = "Possible values of the field `WAKE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKER {
-    #[doc = "Idle line."] IDLE,
-    #[doc = "Address mark."] ADDRESS,
+    #[doc = "Idle line."]
+    IDLE,
+    #[doc = "Address mark."]
+    ADDRESS,
 }
 impl WAKER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -586,8 +609,10 @@ impl WAKER {
 #[doc = "Possible values of the field `M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MR {
-    #[doc = "1 Start bit, 8 data bits, n stop bits (Do not miss M1 bit = 0)."] _8BITS,
-    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M1 bit = 0)."] _9BITS,
+    #[doc = "1 Start bit, 8 data bits, n stop bits (Do not miss M1 bit = 0)."]
+    _8BITS,
+    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M1 bit = 0)."]
+    _9BITS,
 }
 impl MR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -631,8 +656,10 @@ impl MR {
 #[doc = "Possible values of the field `MME`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMER {
-    #[doc = "Receiver in active mode permanently."] DISABLED,
-    #[doc = "Receiver can switch between mute mode and active mode."] ENABLED,
+    #[doc = "Receiver in active mode permanently."]
+    DISABLED,
+    #[doc = "Receiver can switch between mute mode and active mode."]
+    ENABLED,
 }
 impl MMER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -676,7 +703,8 @@ impl MMER {
 #[doc = "Possible values of the field `CMIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the CMF bit is set in the USART_ISR register."]
     ENABLED,
 }
@@ -722,8 +750,10 @@ impl CMIER {
 #[doc = "Possible values of the field `OVER8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVER8R {
-    #[doc = "Oversampling by 16."] OVER16,
-    #[doc = "Oversampling by 8."] OVER8,
+    #[doc = "Oversampling by 16."]
+    OVER16,
+    #[doc = "Oversampling by 8."]
+    OVER8,
 }
 impl OVER8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -789,7 +819,8 @@ impl DEATR {
 #[doc = "Possible values of the field `RTOIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTOIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the RTOF bit is set in the USART_ISR register."]
     ENABLED,
 }
@@ -835,7 +866,8 @@ impl RTOIER {
 #[doc = "Possible values of the field `EOBIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOBIER {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the EOBF flag is set in the USART_ISR register."]
     ENABLED,
 }
@@ -881,8 +913,10 @@ impl EOBIER {
 #[doc = "Possible values of the field `M1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum M1R {
-    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M0 bit = 1)."] _9BITS,
-    #[doc = "1 Start bit, 7 data bits, n stop bits (Do not miss M0 bit = 0)."] _7BITS,
+    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M0 bit = 1)."]
+    _9BITS,
+    #[doc = "1 Start bit, 7 data bits, n stop bits (Do not miss M0 bit = 0)."]
+    _7BITS,
 }
 impl M1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -925,8 +959,10 @@ impl M1R {
 }
 #[doc = "Values that can be written to the field `UE`"]
 pub enum UEW {
-    #[doc = "USART Disabled."] DISABLED,
-    #[doc = "USART Enabled."] ENABLED,
+    #[doc = "USART Disabled."]
+    DISABLED,
+    #[doc = "USART Enabled."]
+    ENABLED,
 }
 impl UEW {
     #[allow(missing_docs)]
@@ -981,8 +1017,10 @@ impl<'a> _UEW<'a> {
 }
 #[doc = "Values that can be written to the field `UESM`"]
 pub enum UESMW {
-    #[doc = "USART not able to wake up the MCU from Stop mode."] NOTABLE,
-    #[doc = "USART able to wake up the MCU from Stop mode."] ABLE,
+    #[doc = "USART not able to wake up the MCU from Stop mode."]
+    NOTABLE,
+    #[doc = "USART able to wake up the MCU from Stop mode."]
+    ABLE,
 }
 impl UESMW {
     #[allow(missing_docs)]
@@ -1037,8 +1075,10 @@ impl<'a> _UESMW<'a> {
 }
 #[doc = "Values that can be written to the field `RE`"]
 pub enum REW {
-    #[doc = "Receiver is disabled."] DISABLED,
-    #[doc = "Receiver is enabled and begins searching for a start bit."] ENABLED,
+    #[doc = "Receiver is disabled."]
+    DISABLED,
+    #[doc = "Receiver is enabled and begins searching for a start bit."]
+    ENABLED,
 }
 impl REW {
     #[allow(missing_docs)]
@@ -1093,8 +1133,10 @@ impl<'a> _REW<'a> {
 }
 #[doc = "Values that can be written to the field `TE`"]
 pub enum TEW {
-    #[doc = "Transmitter is disabled."] DISABLED,
-    #[doc = "Transmitter is enabled."] ENABLED,
+    #[doc = "Transmitter is disabled."]
+    DISABLED,
+    #[doc = "Transmitter is enabled."]
+    ENABLED,
 }
 impl TEW {
     #[allow(missing_docs)]
@@ -1149,8 +1191,10 @@ impl<'a> _TEW<'a> {
 }
 #[doc = "Values that can be written to the field `IDLEIE`"]
 pub enum IDLEIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever IDLE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever IDLE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl IDLEIEW {
     #[allow(missing_docs)]
@@ -1205,7 +1249,8 @@ impl<'a> _IDLEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `RXNEIE`"]
 pub enum RXNEIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated whenever ORE=1 or RXNE=1 in the USART_ISR register."]
     ENABLED,
 }
@@ -1262,8 +1307,10 @@ impl<'a> _RXNEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TCIE`"]
 pub enum TCIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever TC=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever TC=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl TCIEW {
     #[allow(missing_docs)]
@@ -1318,8 +1365,10 @@ impl<'a> _TCIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXEIE`"]
 pub enum TXEIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever TXE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever TXE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl TXEIEW {
     #[allow(missing_docs)]
@@ -1374,8 +1423,10 @@ impl<'a> _TXEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PEIE`"]
 pub enum PEIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
-    #[doc = "An USART interrupt is generated whenever PE=1 in the USART_ISR register."] ENABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
+    #[doc = "An USART interrupt is generated whenever PE=1 in the USART_ISR register."]
+    ENABLED,
 }
 impl PEIEW {
     #[allow(missing_docs)]
@@ -1430,8 +1481,10 @@ impl<'a> _PEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PS`"]
 pub enum PSW {
-    #[doc = "Even parity."] EVEN,
-    #[doc = "Odd parity."] ODD,
+    #[doc = "Even parity."]
+    EVEN,
+    #[doc = "Odd parity."]
+    ODD,
 }
 impl PSW {
     #[allow(missing_docs)]
@@ -1486,8 +1539,10 @@ impl<'a> _PSW<'a> {
 }
 #[doc = "Values that can be written to the field `PCE`"]
 pub enum PCEW {
-    #[doc = "Parity control disabled."] DISABLED,
-    #[doc = "Parity control enabled."] ENABLED,
+    #[doc = "Parity control disabled."]
+    DISABLED,
+    #[doc = "Parity control enabled."]
+    ENABLED,
 }
 impl PCEW {
     #[allow(missing_docs)]
@@ -1542,8 +1597,10 @@ impl<'a> _PCEW<'a> {
 }
 #[doc = "Values that can be written to the field `WAKE`"]
 pub enum WAKEW {
-    #[doc = "Idle line."] IDLE,
-    #[doc = "Address mark."] ADDRESS,
+    #[doc = "Idle line."]
+    IDLE,
+    #[doc = "Address mark."]
+    ADDRESS,
 }
 impl WAKEW {
     #[allow(missing_docs)]
@@ -1598,8 +1655,10 @@ impl<'a> _WAKEW<'a> {
 }
 #[doc = "Values that can be written to the field `M`"]
 pub enum MW {
-    #[doc = "1 Start bit, 8 data bits, n stop bits (Do not miss M1 bit = 0)."] _8BITS,
-    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M1 bit = 0)."] _9BITS,
+    #[doc = "1 Start bit, 8 data bits, n stop bits (Do not miss M1 bit = 0)."]
+    _8BITS,
+    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M1 bit = 0)."]
+    _9BITS,
 }
 impl MW {
     #[allow(missing_docs)]
@@ -1654,8 +1713,10 @@ impl<'a> _MW<'a> {
 }
 #[doc = "Values that can be written to the field `MME`"]
 pub enum MMEW {
-    #[doc = "Receiver in active mode permanently."] DISABLED,
-    #[doc = "Receiver can switch between mute mode and active mode."] ENABLED,
+    #[doc = "Receiver in active mode permanently."]
+    DISABLED,
+    #[doc = "Receiver can switch between mute mode and active mode."]
+    ENABLED,
 }
 impl MMEW {
     #[allow(missing_docs)]
@@ -1710,7 +1771,8 @@ impl<'a> _MMEW<'a> {
 }
 #[doc = "Values that can be written to the field `CMIE`"]
 pub enum CMIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the CMF bit is set in the USART_ISR register."]
     ENABLED,
 }
@@ -1767,8 +1829,10 @@ impl<'a> _CMIEW<'a> {
 }
 #[doc = "Values that can be written to the field `OVER8`"]
 pub enum OVER8W {
-    #[doc = "Oversampling by 16."] OVER16,
-    #[doc = "Oversampling by 8."] OVER8,
+    #[doc = "Oversampling by 16."]
+    OVER16,
+    #[doc = "Oversampling by 8."]
+    OVER8,
 }
 impl OVER8W {
     #[allow(missing_docs)]
@@ -1853,7 +1917,8 @@ impl<'a> _DEATW<'a> {
 }
 #[doc = "Values that can be written to the field `RTOIE`"]
 pub enum RTOIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the RTOF bit is set in the USART_ISR register."]
     ENABLED,
 }
@@ -1910,7 +1975,8 @@ impl<'a> _RTOIEW<'a> {
 }
 #[doc = "Values that can be written to the field `EOBIE`"]
 pub enum EOBIEW {
-    #[doc = "Interrupt is inhibited."] DISABLED,
+    #[doc = "Interrupt is inhibited."]
+    DISABLED,
     #[doc = "An USART interrupt is generated when the EOBF flag is set in the USART_ISR register."]
     ENABLED,
 }
@@ -1967,8 +2033,10 @@ impl<'a> _EOBIEW<'a> {
 }
 #[doc = "Values that can be written to the field `M1`"]
 pub enum M1W {
-    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M0 bit = 1)."] _9BITS,
-    #[doc = "1 Start bit, 7 data bits, n stop bits (Do not miss M0 bit = 0)."] _7BITS,
+    #[doc = "1 Start bit, 9 data bits, n stop bits (Do not miss M0 bit = 1)."]
+    _9BITS,
+    #[doc = "1 Start bit, 7 data bits, n stop bits (Do not miss M0 bit = 0)."]
+    _7BITS,
 }
 impl M1W {
     #[allow(missing_docs)]

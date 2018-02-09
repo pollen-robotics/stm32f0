@@ -45,8 +45,10 @@ impl super::SR {
 #[doc = "Possible values of the field `CC4OF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4OFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC4OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl CC4OFR {
 #[doc = "Possible values of the field `CC3OF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3OFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC3OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl CC3OFR {
 #[doc = "Possible values of the field `CC2OF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2OFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC2OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl CC2OFR {
 #[doc = "Possible values of the field `CC1OF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1OFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC1OFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +213,10 @@ impl CC1OFR {
 #[doc = "Possible values of the field `TIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,8 +255,10 @@ impl TIFR {
 #[doc = "Possible values of the field `CC4IF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC4IFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC4IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,8 +297,10 @@ impl CC4IFR {
 #[doc = "Possible values of the field `CC3IF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC3IFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC3IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,8 +339,10 @@ impl CC3IFR {
 #[doc = "Possible values of the field `CC2IF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2IFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC2IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -365,8 +381,10 @@ impl CC2IFR {
 #[doc = "Possible values of the field `CC1IF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1IFR {
-    #[doc = "Clear overcapture flag."] CLEARED,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CC1IFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +423,10 @@ impl CC1IFR {
 #[doc = "Possible values of the field `UIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIFR {
-    #[doc = "No update occurred"] NOUPDATE,
-    #[doc = "Update interrupt pending"] PENDING,
+    #[doc = "No update occurred"]
+    NOUPDATE,
+    #[doc = "Update interrupt pending"]
+    PENDING,
 }
 impl UIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -449,7 +469,8 @@ impl UIFR {
 }
 #[doc = "Values that can be written to the field `CC4OF`"]
 pub enum CC4OFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC4OFW {
     #[allow(missing_docs)]
@@ -498,7 +519,8 @@ impl<'a> _CC4OFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3OF`"]
 pub enum CC3OFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC3OFW {
     #[allow(missing_docs)]
@@ -547,7 +569,8 @@ impl<'a> _CC3OFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2OF`"]
 pub enum CC2OFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC2OFW {
     #[allow(missing_docs)]
@@ -596,7 +619,8 @@ impl<'a> _CC2OFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1OF`"]
 pub enum CC1OFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC1OFW {
     #[allow(missing_docs)]
@@ -645,7 +669,8 @@ impl<'a> _CC1OFW<'a> {
 }
 #[doc = "Values that can be written to the field `TIF`"]
 pub enum TIFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl TIFW {
     #[allow(missing_docs)]
@@ -694,7 +719,8 @@ impl<'a> _TIFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC4IF`"]
 pub enum CC4IFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC4IFW {
     #[allow(missing_docs)]
@@ -743,7 +769,8 @@ impl<'a> _CC4IFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3IF`"]
 pub enum CC3IFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC3IFW {
     #[allow(missing_docs)]
@@ -792,7 +819,8 @@ impl<'a> _CC3IFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2IF`"]
 pub enum CC2IFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC2IFW {
     #[allow(missing_docs)]
@@ -841,7 +869,8 @@ impl<'a> _CC2IFW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1IF`"]
 pub enum CC1IFW {
-    #[doc = "Clear overcapture flag."] CLEARED,
+    #[doc = "Clear overcapture flag."]
+    CLEARED,
 }
 impl CC1IFW {
     #[allow(missing_docs)]
@@ -890,7 +919,8 @@ impl<'a> _CC1IFW<'a> {
 }
 #[doc = "Values that can be written to the field `UIF`"]
 pub enum UIFW {
-    #[doc = "Clears the update interrupt flag"] CLEAR,
+    #[doc = "Clears the update interrupt flag"]
+    CLEAR,
 }
 impl UIFW {
     #[allow(missing_docs)]

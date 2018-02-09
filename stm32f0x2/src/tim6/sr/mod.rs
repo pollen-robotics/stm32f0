@@ -45,8 +45,10 @@ impl super::SR {
 #[doc = "Possible values of the field `UIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIFR {
-    #[doc = "No update occurred"] NOUPDATE,
-    #[doc = "Update interrupt pending"] PENDING,
+    #[doc = "No update occurred"]
+    NOUPDATE,
+    #[doc = "Update interrupt pending"]
+    PENDING,
 }
 impl UIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,7 +91,8 @@ impl UIFR {
 }
 #[doc = "Values that can be written to the field `UIF`"]
 pub enum UIFW {
-    #[doc = "Clears the update interrupt flag"] CLEAR,
+    #[doc = "Clears the update interrupt flag"]
+    CLEAR,
 }
 impl UIFW {
     #[allow(missing_docs)]

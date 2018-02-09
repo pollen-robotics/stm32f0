@@ -45,8 +45,10 @@ impl super::BDCR {
 #[doc = "Possible values of the field `LSEON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSEONR {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl LSEONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -111,8 +113,10 @@ impl LSERDYR {
 #[doc = "Possible values of the field `LSEBYP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSEBYPR {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl LSEBYPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -156,10 +160,14 @@ impl LSEBYPR {
 #[doc = "Possible values of the field `LSEDRV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSEDRVR {
-    #[doc = "Xtal mode low drive capability."] LOW,
-    #[doc = "Xtal mode medium high drive capability."] MEDIUMHIGH,
-    #[doc = "Xtal mode medium low drive capability."] MEDIUMLOW,
-    #[doc = "Xtal mode high drive capability."] HIGH,
+    #[doc = "Xtal mode low drive capability."]
+    LOW,
+    #[doc = "Xtal mode medium high drive capability."]
+    MEDIUMHIGH,
+    #[doc = "Xtal mode medium low drive capability."]
+    MEDIUMLOW,
+    #[doc = "Xtal mode high drive capability."]
+    HIGH,
 }
 impl LSEDRVR {
     #[doc = r" Value of the field as raw bits"]
@@ -208,10 +216,14 @@ impl LSEDRVR {
 #[doc = "Possible values of the field `RTCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCSELR {
-    #[doc = "No Clock."] NOCLOCK,
-    #[doc = "LSE oscillator clock used as RTC clock."] LSE,
-    #[doc = "LSI oscillator clock used as RTC clock."] LSI,
-    #[doc = "HSE oscillator clock divided by 32 used as RTC clock."] HSE,
+    #[doc = "No Clock."]
+    NOCLOCK,
+    #[doc = "LSE oscillator clock used as RTC clock."]
+    LSE,
+    #[doc = "LSI oscillator clock used as RTC clock."]
+    LSI,
+    #[doc = "HSE oscillator clock divided by 32 used as RTC clock."]
+    HSE,
 }
 impl RTCSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -260,8 +272,10 @@ impl RTCSELR {
 #[doc = "Possible values of the field `RTCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCENR {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl RTCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -305,8 +319,10 @@ impl RTCENR {
 #[doc = "Possible values of the field `BDRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BDRSTR {
-    #[doc = "Reset not activated."] NORESET,
-    #[doc = "Resets the entire RTC domain."] RESET,
+    #[doc = "Reset not activated."]
+    NORESET,
+    #[doc = "Resets the entire RTC domain."]
+    RESET,
 }
 impl BDRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -349,8 +365,10 @@ impl BDRSTR {
 }
 #[doc = "Values that can be written to the field `LSEON`"]
 pub enum LSEONW {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl LSEONW {
     #[allow(missing_docs)]
@@ -405,8 +423,10 @@ impl<'a> _LSEONW<'a> {
 }
 #[doc = "Values that can be written to the field `LSEBYP`"]
 pub enum LSEBYPW {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl LSEBYPW {
     #[allow(missing_docs)]
@@ -461,10 +481,14 @@ impl<'a> _LSEBYPW<'a> {
 }
 #[doc = "Values that can be written to the field `LSEDRV`"]
 pub enum LSEDRVW {
-    #[doc = "Xtal mode low drive capability."] LOW,
-    #[doc = "Xtal mode medium high drive capability."] MEDIUMHIGH,
-    #[doc = "Xtal mode medium low drive capability."] MEDIUMLOW,
-    #[doc = "Xtal mode high drive capability."] HIGH,
+    #[doc = "Xtal mode low drive capability."]
+    LOW,
+    #[doc = "Xtal mode medium high drive capability."]
+    MEDIUMHIGH,
+    #[doc = "Xtal mode medium low drive capability."]
+    MEDIUMLOW,
+    #[doc = "Xtal mode high drive capability."]
+    HIGH,
 }
 impl LSEDRVW {
     #[allow(missing_docs)]
@@ -523,10 +547,14 @@ impl<'a> _LSEDRVW<'a> {
 }
 #[doc = "Values that can be written to the field `RTCSEL`"]
 pub enum RTCSELW {
-    #[doc = "No Clock."] NOCLOCK,
-    #[doc = "LSE oscillator clock used as RTC clock."] LSE,
-    #[doc = "LSI oscillator clock used as RTC clock."] LSI,
-    #[doc = "HSE oscillator clock divided by 32 used as RTC clock."] HSE,
+    #[doc = "No Clock."]
+    NOCLOCK,
+    #[doc = "LSE oscillator clock used as RTC clock."]
+    LSE,
+    #[doc = "LSI oscillator clock used as RTC clock."]
+    LSI,
+    #[doc = "HSE oscillator clock divided by 32 used as RTC clock."]
+    HSE,
 }
 impl RTCSELW {
     #[allow(missing_docs)]
@@ -585,8 +613,10 @@ impl<'a> _RTCSELW<'a> {
 }
 #[doc = "Values that can be written to the field `RTCEN`"]
 pub enum RTCENW {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl RTCENW {
     #[allow(missing_docs)]
@@ -641,8 +671,10 @@ impl<'a> _RTCENW<'a> {
 }
 #[doc = "Values that can be written to the field `BDRST`"]
 pub enum BDRSTW {
-    #[doc = "Reset not activated."] NORESET,
-    #[doc = "Resets the entire RTC domain."] RESET,
+    #[doc = "Reset not activated."]
+    NORESET,
+    #[doc = "Resets the entire RTC domain."]
+    RESET,
 }
 impl BDRSTW {
     #[allow(missing_docs)]

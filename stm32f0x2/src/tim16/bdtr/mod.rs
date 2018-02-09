@@ -45,8 +45,10 @@ impl super::BDTR {
 #[doc = "Possible values of the field `MOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MOER {
-    #[doc = "OC and OCN outputs are disabled or forced to idle state"] DISABLED,
-    #[doc = "OC and OCN outputs are enabled if their respective enable bits are set"] ENABLED,
+    #[doc = "OC and OCN outputs are disabled or forced to idle state"]
+    DISABLED,
+    #[doc = "OC and OCN outputs are enabled if their respective enable bits are set"]
+    ENABLED,
 }
 impl MOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl MOER {
 #[doc = "Possible values of the field `AOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AOER {
-    #[doc = "MOE can be set only by software"] DISABLED,
-    #[doc = "MOE can be set by software or automatically at the next update event"] ENABLED,
+    #[doc = "MOE can be set only by software"]
+    DISABLED,
+    #[doc = "MOE can be set by software or automatically at the next update event"]
+    ENABLED,
 }
 impl AOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl AOER {
 #[doc = "Possible values of the field `BKP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BKPR {
-    #[doc = "Break input BRK is active low"] ACTIVELOW,
-    #[doc = "Break input BRK is active high"] ACTIVEHIGH,
+    #[doc = "Break input BRK is active low"]
+    ACTIVELOW,
+    #[doc = "Break input BRK is active high"]
+    ACTIVEHIGH,
 }
 impl BKPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl BKPR {
 #[doc = "Possible values of the field `BKE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BKER {
-    #[doc = "Break inputs (BRK and CCS clock failure event) disabled"] DISABLED,
-    #[doc = "Break inputs (BRK and CCS clock failure event) enabled"] ENABLED,
+    #[doc = "Break inputs (BRK and CCS clock failure event) disabled"]
+    DISABLED,
+    #[doc = "Break inputs (BRK and CCS clock failure event) enabled"]
+    ENABLED,
 }
 impl BKER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl BKER {
 #[doc = "Possible values of the field `OSSR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSSRR {
-    #[doc = "When inactive, OC/OCN outputs are disabled"] DISABLED,
-    #[doc = "When inactive, OC/OCN outputs are enabled"] ENABLED,
+    #[doc = "When inactive, OC/OCN outputs are disabled"]
+    DISABLED,
+    #[doc = "When inactive, OC/OCN outputs are enabled"]
+    ENABLED,
 }
 impl OSSRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -369,8 +379,10 @@ impl DTGR {
 }
 #[doc = "Values that can be written to the field `MOE`"]
 pub enum MOEW {
-    #[doc = "OC and OCN outputs are disabled or forced to idle state"] DISABLED,
-    #[doc = "OC and OCN outputs are enabled if their respective enable bits are set"] ENABLED,
+    #[doc = "OC and OCN outputs are disabled or forced to idle state"]
+    DISABLED,
+    #[doc = "OC and OCN outputs are enabled if their respective enable bits are set"]
+    ENABLED,
 }
 impl MOEW {
     #[allow(missing_docs)]
@@ -425,8 +437,10 @@ impl<'a> _MOEW<'a> {
 }
 #[doc = "Values that can be written to the field `AOE`"]
 pub enum AOEW {
-    #[doc = "MOE can be set only by software"] DISABLED,
-    #[doc = "MOE can be set by software or automatically at the next update event"] ENABLED,
+    #[doc = "MOE can be set only by software"]
+    DISABLED,
+    #[doc = "MOE can be set by software or automatically at the next update event"]
+    ENABLED,
 }
 impl AOEW {
     #[allow(missing_docs)]
@@ -481,8 +495,10 @@ impl<'a> _AOEW<'a> {
 }
 #[doc = "Values that can be written to the field `BKP`"]
 pub enum BKPW {
-    #[doc = "Break input BRK is active low"] ACTIVELOW,
-    #[doc = "Break input BRK is active high"] ACTIVEHIGH,
+    #[doc = "Break input BRK is active low"]
+    ACTIVELOW,
+    #[doc = "Break input BRK is active high"]
+    ACTIVEHIGH,
 }
 impl BKPW {
     #[allow(missing_docs)]
@@ -537,8 +553,10 @@ impl<'a> _BKPW<'a> {
 }
 #[doc = "Values that can be written to the field `BKE`"]
 pub enum BKEW {
-    #[doc = "Break inputs (BRK and CCS clock failure event) disabled"] DISABLED,
-    #[doc = "Break inputs (BRK and CCS clock failure event) enabled"] ENABLED,
+    #[doc = "Break inputs (BRK and CCS clock failure event) disabled"]
+    DISABLED,
+    #[doc = "Break inputs (BRK and CCS clock failure event) enabled"]
+    ENABLED,
 }
 impl BKEW {
     #[allow(missing_docs)]
@@ -593,8 +611,10 @@ impl<'a> _BKEW<'a> {
 }
 #[doc = "Values that can be written to the field `OSSR`"]
 pub enum OSSRW {
-    #[doc = "When inactive, OC/OCN outputs are disabled"] DISABLED,
-    #[doc = "When inactive, OC/OCN outputs are enabled"] ENABLED,
+    #[doc = "When inactive, OC/OCN outputs are disabled"]
+    DISABLED,
+    #[doc = "When inactive, OC/OCN outputs are enabled"]
+    ENABLED,
 }
 impl OSSRW {
     #[allow(missing_docs)]

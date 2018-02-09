@@ -45,7 +45,8 @@ impl super::CR2 {
 #[doc = "Possible values of the field `TI1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TI1SR {
-    #[doc = "The TIMx_CH1 pin is connected to TI1 input"] TI1INPUT,
+    #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
+    TI1INPUT,
     #[doc = "The TIMx_CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
     ALLTI1INPUT,
 }
@@ -166,8 +167,10 @@ impl MMSR {
 #[doc = "Possible values of the field `CCDS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCDSR {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -210,7 +213,8 @@ impl CCDSR {
 }
 #[doc = "Values that can be written to the field `TI1S`"]
 pub enum TI1SW {
-    #[doc = "The TIMx_CH1 pin is connected to TI1 input"] TI1INPUT,
+    #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
+    TI1INPUT,
     #[doc = "The TIMx_CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
     ALLTI1INPUT,
 }
@@ -346,8 +350,10 @@ impl<'a> _MMSW<'a> {
 }
 #[doc = "Values that can be written to the field `CCDS`"]
 pub enum CCDSW {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSW {
     #[allow(missing_docs)]

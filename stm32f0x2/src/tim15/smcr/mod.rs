@@ -87,14 +87,22 @@ impl MSMR {
 #[doc = "Possible values of the field `TS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSR {
-    #[doc = "Internal Trigger 0 (ITR0)"] ITR0,
-    #[doc = "Internal Trigger 1 (ITR1)"] ITR1,
-    #[doc = "Internal Trigger 2 (ITR2)"] ITR2,
-    #[doc = "Internal Trigger 3 (ITR3)"] ITR3,
-    #[doc = "TI1 Edge Detector"] TI1F_ED,
-    #[doc = "Filtered Timer Input 1"] TI1FP1,
-    #[doc = "Filtered Timer Input 2"] TI2FP2,
-    #[doc = "External Trigger input"] ETRF,
+    #[doc = "Internal Trigger 0 (ITR0)"]
+    ITR0,
+    #[doc = "Internal Trigger 1 (ITR1)"]
+    ITR1,
+    #[doc = "Internal Trigger 2 (ITR2)"]
+    ITR2,
+    #[doc = "Internal Trigger 3 (ITR3)"]
+    ITR3,
+    #[doc = "TI1 Edge Detector"]
+    TI1F_ED,
+    #[doc = "Filtered Timer Input 1"]
+    TI1FP1,
+    #[doc = "Filtered Timer Input 2"]
+    TI2FP2,
+    #[doc = "External Trigger input"]
+    ETRF,
 }
 impl TSR {
     #[doc = r" Value of the field as raw bits"]
@@ -171,14 +179,22 @@ impl TSR {
 #[doc = "Possible values of the field `SMS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMSR {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Encoder mode, count up/down on TI2FP1"] ENCODERTI2,
-    #[doc = "Encoder mode, count up/down on TI1FP2"] ENCODERTI1,
-    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"] ENCODERTI1TI2,
-    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"] RESET,
-    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"] GATED,
-    #[doc = "The counter starts at a rising edge of the trigger TRGI "] TRIGGER,
-    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"] EXTERNAL,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Encoder mode, count up/down on TI2FP1"]
+    ENCODERTI2,
+    #[doc = "Encoder mode, count up/down on TI1FP2"]
+    ENCODERTI1,
+    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"]
+    ENCODERTI1TI2,
+    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"]
+    RESET,
+    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"]
+    GATED,
+    #[doc = "The counter starts at a rising edge of the trigger TRGI "]
+    TRIGGER,
+    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"]
+    EXTERNAL,
 }
 impl SMSR {
     #[doc = r" Value of the field as raw bits"]
@@ -306,14 +322,22 @@ impl<'a> _MSMW<'a> {
 }
 #[doc = "Values that can be written to the field `TS`"]
 pub enum TSW {
-    #[doc = "Internal Trigger 0 (ITR0)"] ITR0,
-    #[doc = "Internal Trigger 1 (ITR1)"] ITR1,
-    #[doc = "Internal Trigger 2 (ITR2)"] ITR2,
-    #[doc = "Internal Trigger 3 (ITR3)"] ITR3,
-    #[doc = "TI1 Edge Detector"] TI1F_ED,
-    #[doc = "Filtered Timer Input 1"] TI1FP1,
-    #[doc = "Filtered Timer Input 2"] TI2FP2,
-    #[doc = "External Trigger input"] ETRF,
+    #[doc = "Internal Trigger 0 (ITR0)"]
+    ITR0,
+    #[doc = "Internal Trigger 1 (ITR1)"]
+    ITR1,
+    #[doc = "Internal Trigger 2 (ITR2)"]
+    ITR2,
+    #[doc = "Internal Trigger 3 (ITR3)"]
+    ITR3,
+    #[doc = "TI1 Edge Detector"]
+    TI1F_ED,
+    #[doc = "Filtered Timer Input 1"]
+    TI1FP1,
+    #[doc = "Filtered Timer Input 2"]
+    TI2FP2,
+    #[doc = "External Trigger input"]
+    ETRF,
 }
 impl TSW {
     #[allow(missing_docs)]
@@ -396,14 +420,22 @@ impl<'a> _TSW<'a> {
 }
 #[doc = "Values that can be written to the field `SMS`"]
 pub enum SMSW {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Encoder mode, count up/down on TI2FP1"] ENCODERTI2,
-    #[doc = "Encoder mode, count up/down on TI1FP2"] ENCODERTI1,
-    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"] ENCODERTI1TI2,
-    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"] RESET,
-    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"] GATED,
-    #[doc = "The counter starts at a rising edge of the trigger TRGI "] TRIGGER,
-    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"] EXTERNAL,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Encoder mode, count up/down on TI2FP1"]
+    ENCODERTI2,
+    #[doc = "Encoder mode, count up/down on TI1FP2"]
+    ENCODERTI1,
+    #[doc = "Encoder mode, count up/down on both TI1FP1 and TI2FP2"]
+    ENCODERTI1TI2,
+    #[doc = "Rising edge of the selected trigger input (TRGI) reinitializes the counter"]
+    RESET,
+    #[doc = " The counter clock is enabled when the trigger input (TRGI) is high"]
+    GATED,
+    #[doc = "The counter starts at a rising edge of the trigger TRGI "]
+    TRIGGER,
+    #[doc = " Rising edges of the selected trigger (TRGI) clock the counter"]
+    EXTERNAL,
 }
 impl SMSW {
     #[allow(missing_docs)]

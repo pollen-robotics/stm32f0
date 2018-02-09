@@ -45,8 +45,10 @@ impl super::CR2 {
 #[doc = "Possible values of the field `OIS4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS4R {
-    #[doc = "OC4=0 when MOE=0"] RESET,
-    #[doc = "OC4=1 when MOE=0"] SET,
+    #[doc = "OC4=0 when MOE=0"]
+    RESET,
+    #[doc = "OC4=1 when MOE=0"]
+    SET,
 }
 impl OIS4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl OIS4R {
 #[doc = "Possible values of the field `OIS3N`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS3NR {
-    #[doc = "OC3N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC3N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC3N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC3N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS3NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl OIS3NR {
 #[doc = "Possible values of the field `OIS3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS3R {
-    #[doc = "OC3=0 when MOE=0"] RESET,
-    #[doc = "OC3=1 when MOE=0"] SET,
+    #[doc = "OC3=0 when MOE=0"]
+    RESET,
+    #[doc = "OC3=1 when MOE=0"]
+    SET,
 }
 impl OIS3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl OIS3R {
 #[doc = "Possible values of the field `OIS2N`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS2NR {
-    #[doc = "OC2N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC2N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC2N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC2N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS2NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl OIS2NR {
 #[doc = "Possible values of the field `OIS2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS2R {
-    #[doc = "OC2=0 when MOE=0"] RESET,
-    #[doc = "OC2=1 when MOE=0"] SET,
+    #[doc = "OC2=0 when MOE=0"]
+    RESET,
+    #[doc = "OC2=1 when MOE=0"]
+    SET,
 }
 impl OIS2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl OIS2R {
 #[doc = "Possible values of the field `OIS1N`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1NR {
-    #[doc = "OC1N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC1N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC1N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC1N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS1NR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl OIS1NR {
 #[doc = "Possible values of the field `OIS1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1R {
-    #[doc = "OC1=0 when MOE=0"] RESET,
-    #[doc = "OC1=1 when MOE=0"] SET,
+    #[doc = "OC1=0 when MOE=0"]
+    RESET,
+    #[doc = "OC1=1 when MOE=0"]
+    SET,
 }
 impl OIS1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,7 +374,8 @@ impl OIS1R {
 #[doc = "Possible values of the field `TI1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TI1SR {
-    #[doc = "The TIMx CH1 pin is connected to TI1 input"] TI1INPUT,
+    #[doc = "The TIMx CH1 pin is connected to TI1 input"]
+    TI1INPUT,
     #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
     ALLTI1INPUT,
 }
@@ -406,15 +421,22 @@ impl TI1SR {
 #[doc = "Possible values of the field `MMS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMSR {
-    #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."] RESET,
-    #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."] ENABLE,
-    #[doc = "The update event is selected as trigger output (TRGO)."] UPDATE,
+    #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."]
+    RESET,
+    #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."]
+    ENABLE,
+    #[doc = "The update event is selected as trigger output (TRGO)."]
+    UPDATE,
     #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."]
     COMPAREPULSE,
-    #[doc = "OC1REF signal is used as trigger output (TRGO)"] COMPAREOC1REF,
-    #[doc = "OC2REF signal is used as trigger output (TRGO)"] COMPAREOC2REF,
-    #[doc = "OC3REF signal is used as trigger output (TRGO)"] COMPAREOC3REF,
-    #[doc = "OC4REF signal is used as trigger output (TRGO)"] COMPAREOC4REF,
+    #[doc = "OC1REF signal is used as trigger output (TRGO)"]
+    COMPAREOC1REF,
+    #[doc = "OC2REF signal is used as trigger output (TRGO)"]
+    COMPAREOC2REF,
+    #[doc = "OC3REF signal is used as trigger output (TRGO)"]
+    COMPAREOC3REF,
+    #[doc = "OC4REF signal is used as trigger output (TRGO)"]
+    COMPAREOC4REF,
 }
 impl MMSR {
     #[doc = r" Value of the field as raw bits"]
@@ -491,8 +513,10 @@ impl MMSR {
 #[doc = "Possible values of the field `CCDS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCDSR {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -619,8 +643,10 @@ impl CCPCR {
 }
 #[doc = "Values that can be written to the field `OIS4`"]
 pub enum OIS4W {
-    #[doc = "OC4=0 when MOE=0"] RESET,
-    #[doc = "OC4=1 when MOE=0"] SET,
+    #[doc = "OC4=0 when MOE=0"]
+    RESET,
+    #[doc = "OC4=1 when MOE=0"]
+    SET,
 }
 impl OIS4W {
     #[allow(missing_docs)]
@@ -675,8 +701,10 @@ impl<'a> _OIS4W<'a> {
 }
 #[doc = "Values that can be written to the field `OIS3N`"]
 pub enum OIS3NW {
-    #[doc = "OC3N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC3N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC3N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC3N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS3NW {
     #[allow(missing_docs)]
@@ -731,8 +759,10 @@ impl<'a> _OIS3NW<'a> {
 }
 #[doc = "Values that can be written to the field `OIS3`"]
 pub enum OIS3W {
-    #[doc = "OC3=0 when MOE=0"] RESET,
-    #[doc = "OC3=1 when MOE=0"] SET,
+    #[doc = "OC3=0 when MOE=0"]
+    RESET,
+    #[doc = "OC3=1 when MOE=0"]
+    SET,
 }
 impl OIS3W {
     #[allow(missing_docs)]
@@ -787,8 +817,10 @@ impl<'a> _OIS3W<'a> {
 }
 #[doc = "Values that can be written to the field `OIS2N`"]
 pub enum OIS2NW {
-    #[doc = "OC2N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC2N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC2N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC2N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS2NW {
     #[allow(missing_docs)]
@@ -843,8 +875,10 @@ impl<'a> _OIS2NW<'a> {
 }
 #[doc = "Values that can be written to the field `OIS2`"]
 pub enum OIS2W {
-    #[doc = "OC2=0 when MOE=0"] RESET,
-    #[doc = "OC2=1 when MOE=0"] SET,
+    #[doc = "OC2=0 when MOE=0"]
+    RESET,
+    #[doc = "OC2=1 when MOE=0"]
+    SET,
 }
 impl OIS2W {
     #[allow(missing_docs)]
@@ -899,8 +933,10 @@ impl<'a> _OIS2W<'a> {
 }
 #[doc = "Values that can be written to the field `OIS1N`"]
 pub enum OIS1NW {
-    #[doc = "OC1N=0 after a dead-time when MOE=0"] RESET,
-    #[doc = "OC1N=1 after a dead-time when MOE=0"] SET,
+    #[doc = "OC1N=0 after a dead-time when MOE=0"]
+    RESET,
+    #[doc = "OC1N=1 after a dead-time when MOE=0"]
+    SET,
 }
 impl OIS1NW {
     #[allow(missing_docs)]
@@ -955,8 +991,10 @@ impl<'a> _OIS1NW<'a> {
 }
 #[doc = "Values that can be written to the field `OIS1`"]
 pub enum OIS1W {
-    #[doc = "OC1=0 when MOE=0"] RESET,
-    #[doc = "OC1=1 when MOE=0"] SET,
+    #[doc = "OC1=0 when MOE=0"]
+    RESET,
+    #[doc = "OC1=1 when MOE=0"]
+    SET,
 }
 impl OIS1W {
     #[allow(missing_docs)]
@@ -1011,7 +1049,8 @@ impl<'a> _OIS1W<'a> {
 }
 #[doc = "Values that can be written to the field `TI1S`"]
 pub enum TI1SW {
-    #[doc = "The TIMx CH1 pin is connected to TI1 input"] TI1INPUT,
+    #[doc = "The TIMx CH1 pin is connected to TI1 input"]
+    TI1INPUT,
     #[doc = "The TIMx CH1, CH2 and CH3 pins are connected to the TI1 input (XOR combination)"]
     ALLTI1INPUT,
 }
@@ -1068,15 +1107,22 @@ impl<'a> _TI1SW<'a> {
 }
 #[doc = "Values that can be written to the field `MMS`"]
 pub enum MMSW {
-    #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."] RESET,
-    #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."] ENABLE,
-    #[doc = "The update event is selected as trigger output (TRGO)."] UPDATE,
+    #[doc = "the UG bit from the TIMx_EGR register is used as trigger output (TRGO)."]
+    RESET,
+    #[doc = "the Counter Enable signal CNT_EN is used as trigger output (TRGO)."]
+    ENABLE,
+    #[doc = "The update event is selected as trigger output (TRGO)."]
+    UPDATE,
     #[doc = "The trigger output send a positive pulse when the CC1IF flag is to be set."]
     COMPAREPULSE,
-    #[doc = "OC1REF signal is used as trigger output (TRGO)"] COMPAREOC1REF,
-    #[doc = "OC2REF signal is used as trigger output (TRGO)"] COMPAREOC2REF,
-    #[doc = "OC3REF signal is used as trigger output (TRGO)"] COMPAREOC3REF,
-    #[doc = "OC4REF signal is used as trigger output (TRGO)"] COMPAREOC4REF,
+    #[doc = "OC1REF signal is used as trigger output (TRGO)"]
+    COMPAREOC1REF,
+    #[doc = "OC2REF signal is used as trigger output (TRGO)"]
+    COMPAREOC2REF,
+    #[doc = "OC3REF signal is used as trigger output (TRGO)"]
+    COMPAREOC3REF,
+    #[doc = "OC4REF signal is used as trigger output (TRGO)"]
+    COMPAREOC4REF,
 }
 impl MMSW {
     #[allow(missing_docs)]
@@ -1159,8 +1205,10 @@ impl<'a> _MMSW<'a> {
 }
 #[doc = "Values that can be written to the field `CCDS`"]
 pub enum CCDSW {
-    #[doc = "CCx DMA request sent when CCx event occurs"] CCXEVENT,
-    #[doc = "CCx DMA requests sent when update event occurs"] UPDATE,
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    CCXEVENT,
+    #[doc = "CCx DMA requests sent when update event occurs"]
+    UPDATE,
 }
 impl CCDSW {
     #[allow(missing_docs)]

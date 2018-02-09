@@ -213,8 +213,10 @@ impl CSSFR {
 #[doc = "Possible values of the field `LSIRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSIRDYIER {
-    #[doc = "LSI ready interrupt disabled."] DISABLED,
-    #[doc = "LSI ready interrupt enabled."] ENABLED,
+    #[doc = "LSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSI ready interrupt enabled."]
+    ENABLED,
 }
 impl LSIRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -258,8 +260,10 @@ impl LSIRDYIER {
 #[doc = "Possible values of the field `LSERDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSERDYIER {
-    #[doc = "LSE ready interrupt disabled."] DISABLED,
-    #[doc = "LSE ready interrupt enabled."] ENABLED,
+    #[doc = "LSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSE ready interrupt enabled."]
+    ENABLED,
 }
 impl LSERDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -303,8 +307,10 @@ impl LSERDYIER {
 #[doc = "Possible values of the field `HSIRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSIRDYIER {
-    #[doc = "HSI ready interrupt disabled."] DISABLED,
-    #[doc = "HSI ready interrupt enabled."] ENABLED,
+    #[doc = "HSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI ready interrupt enabled."]
+    ENABLED,
 }
 impl HSIRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -348,8 +354,10 @@ impl HSIRDYIER {
 #[doc = "Possible values of the field `HSERDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSERDYIER {
-    #[doc = "HSE ready interrupt disabled."] DISABLED,
-    #[doc = "HSE ready interrupt enabled."] ENABLED,
+    #[doc = "HSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSE ready interrupt enabled."]
+    ENABLED,
 }
 impl HSERDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -393,8 +401,10 @@ impl HSERDYIER {
 #[doc = "Possible values of the field `PLLRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLRDYIER {
-    #[doc = "PLL lock interrupt disabled."] DISABLED,
-    #[doc = "PLL lock interrupt enabled."] ENABLED,
+    #[doc = "PLL lock interrupt disabled."]
+    DISABLED,
+    #[doc = "PLL lock interrupt enabled."]
+    ENABLED,
 }
 impl PLLRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -438,8 +448,10 @@ impl PLLRDYIER {
 #[doc = "Possible values of the field `HSI14RDYE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14RDYER {
-    #[doc = "HSI14 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI14 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI14 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI14 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI14RDYER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -483,8 +495,10 @@ impl HSI14RDYER {
 #[doc = "Possible values of the field `HSI48RDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI48RDYIER {
-    #[doc = "HSI48 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI48 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI48 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI48 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI48RDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -527,8 +541,10 @@ impl HSI48RDYIER {
 }
 #[doc = "Values that can be written to the field `LSIRDYIE`"]
 pub enum LSIRDYIEW {
-    #[doc = "LSI ready interrupt disabled."] DISABLED,
-    #[doc = "LSI ready interrupt enabled."] ENABLED,
+    #[doc = "LSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSI ready interrupt enabled."]
+    ENABLED,
 }
 impl LSIRDYIEW {
     #[allow(missing_docs)]
@@ -583,8 +599,10 @@ impl<'a> _LSIRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LSERDYIE`"]
 pub enum LSERDYIEW {
-    #[doc = "LSE ready interrupt disabled."] DISABLED,
-    #[doc = "LSE ready interrupt enabled."] ENABLED,
+    #[doc = "LSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSE ready interrupt enabled."]
+    ENABLED,
 }
 impl LSERDYIEW {
     #[allow(missing_docs)]
@@ -639,8 +657,10 @@ impl<'a> _LSERDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSIRDYIE`"]
 pub enum HSIRDYIEW {
-    #[doc = "HSI ready interrupt disabled."] DISABLED,
-    #[doc = "HSI ready interrupt enabled."] ENABLED,
+    #[doc = "HSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI ready interrupt enabled."]
+    ENABLED,
 }
 impl HSIRDYIEW {
     #[allow(missing_docs)]
@@ -695,8 +715,10 @@ impl<'a> _HSIRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSERDYIE`"]
 pub enum HSERDYIEW {
-    #[doc = "HSE ready interrupt disabled."] DISABLED,
-    #[doc = "HSE ready interrupt enabled."] ENABLED,
+    #[doc = "HSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSE ready interrupt enabled."]
+    ENABLED,
 }
 impl HSERDYIEW {
     #[allow(missing_docs)]
@@ -751,8 +773,10 @@ impl<'a> _HSERDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLRDYIE`"]
 pub enum PLLRDYIEW {
-    #[doc = "PLL lock interrupt disabled."] DISABLED,
-    #[doc = "PLL lock interrupt enabled."] ENABLED,
+    #[doc = "PLL lock interrupt disabled."]
+    DISABLED,
+    #[doc = "PLL lock interrupt enabled."]
+    ENABLED,
 }
 impl PLLRDYIEW {
     #[allow(missing_docs)]
@@ -807,8 +831,10 @@ impl<'a> _PLLRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14RDYE`"]
 pub enum HSI14RDYEW {
-    #[doc = "HSI14 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI14 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI14 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI14 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI14RDYEW {
     #[allow(missing_docs)]
@@ -863,8 +889,10 @@ impl<'a> _HSI14RDYEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48RDYIE`"]
 pub enum HSI48RDYIEW {
-    #[doc = "HSI48 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI48 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI48 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI48 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI48RDYIEW {
     #[allow(missing_docs)]
@@ -919,7 +947,8 @@ impl<'a> _HSI48RDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LSIRDYC`"]
 pub enum LSIRDYCW {
-    #[doc = "LSIRDYF Cleared."] RESET,
+    #[doc = "LSIRDYF Cleared."]
+    RESET,
 }
 impl LSIRDYCW {
     #[allow(missing_docs)]
@@ -968,7 +997,8 @@ impl<'a> _LSIRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `LSERDYC`"]
 pub enum LSERDYCW {
-    #[doc = "LSERDYF Cleared."] RESET,
+    #[doc = "LSERDYF Cleared."]
+    RESET,
 }
 impl LSERDYCW {
     #[allow(missing_docs)]
@@ -1017,7 +1047,8 @@ impl<'a> _LSERDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSIRDYC`"]
 pub enum HSIRDYCW {
-    #[doc = "HSIRDYF Cleared."] RESET,
+    #[doc = "HSIRDYF Cleared."]
+    RESET,
 }
 impl HSIRDYCW {
     #[allow(missing_docs)]
@@ -1066,7 +1097,8 @@ impl<'a> _HSIRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSERDYC`"]
 pub enum HSERDYCW {
-    #[doc = "HSERDYF Cleared."] RESET,
+    #[doc = "HSERDYF Cleared."]
+    RESET,
 }
 impl HSERDYCW {
     #[allow(missing_docs)]
@@ -1115,7 +1147,8 @@ impl<'a> _HSERDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLRDYC`"]
 pub enum PLLRDYCW {
-    #[doc = "PLLRDYF Cleared."] RESET,
+    #[doc = "PLLRDYF Cleared."]
+    RESET,
 }
 impl PLLRDYCW {
     #[allow(missing_docs)]
@@ -1164,7 +1197,8 @@ impl<'a> _PLLRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14RDYC`"]
 pub enum HSI14RDYCW {
-    #[doc = "HSI14RDYF Cleared."] RESET,
+    #[doc = "HSI14RDYF Cleared."]
+    RESET,
 }
 impl HSI14RDYCW {
     #[allow(missing_docs)]
@@ -1213,7 +1247,8 @@ impl<'a> _HSI14RDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48RDYC`"]
 pub enum HSI48RDYCW {
-    #[doc = "HSI48RDYF Cleared."] RESET,
+    #[doc = "HSI48RDYF Cleared."]
+    RESET,
 }
 impl HSI48RDYCW {
     #[allow(missing_docs)]
@@ -1262,7 +1297,8 @@ impl<'a> _HSI48RDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `CSSC`"]
 pub enum CSSCW {
-    #[doc = "CSSF Cleared."] RESET,
+    #[doc = "CSSF Cleared."]
+    RESET,
 }
 impl CSSCW {
     #[allow(missing_docs)]

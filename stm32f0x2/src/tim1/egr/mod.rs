@@ -114,7 +114,8 @@ impl<'a> _TGW<'a> {
 }
 #[doc = "Values that can be written to the field `COMG`"]
 pub enum COMGW {
-    #[doc = "When CCPC bit is set, it allows to update CCxE, CCxNE and OCxM bits."] CCUPDATE,
+    #[doc = "When CCPC bit is set, it allows to update CCxE, CCxNE and OCxM bits."]
+    CCUPDATE,
 }
 impl COMGW {
     #[allow(missing_docs)]
@@ -163,7 +164,8 @@ impl<'a> _COMGW<'a> {
 }
 #[doc = "Values that can be written to the field `CC4G`"]
 pub enum CC4GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC4GW {
     #[allow(missing_docs)]
@@ -212,7 +214,8 @@ impl<'a> _CC4GW<'a> {
 }
 #[doc = "Values that can be written to the field `CC3G`"]
 pub enum CC3GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC3GW {
     #[allow(missing_docs)]
@@ -261,7 +264,8 @@ impl<'a> _CC3GW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2G`"]
 pub enum CC2GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC2GW {
     #[allow(missing_docs)]
@@ -310,7 +314,8 @@ impl<'a> _CC2GW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1G`"]
 pub enum CC1GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC1GW {
     #[allow(missing_docs)]
@@ -359,7 +364,8 @@ impl<'a> _CC1GW<'a> {
 }
 #[doc = "Values that can be written to the field `UG`"]
 pub enum UGW {
-    #[doc = "Reinitialize the counter and generates an update of the registers."] RST_UPDATE,
+    #[doc = "Reinitialize the counter and generates an update of the registers."]
+    RST_UPDATE,
 }
 impl UGW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::CR {
 #[doc = "Possible values of the field `HSION`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSIONR {
-    #[doc = "HSI oscillator OFF"] DISABLED,
-    #[doc = "HSI oscillator ON"] ENABLED,
+    #[doc = "HSI oscillator OFF"]
+    DISABLED,
+    #[doc = "HSI oscillator ON"]
+    ENABLED,
 }
 impl HSIONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -133,8 +135,10 @@ impl HSICALR {
 #[doc = "Possible values of the field `HSEON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSEONR {
-    #[doc = "HSE oscillator OFF"] DISABLED,
-    #[doc = "HSE oscillator ON"] ENABLED,
+    #[doc = "HSE oscillator OFF"]
+    DISABLED,
+    #[doc = "HSE oscillator ON"]
+    ENABLED,
 }
 impl HSEONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -199,8 +203,10 @@ impl HSERDYR {
 #[doc = "Possible values of the field `HSEBYP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSEBYPR {
-    #[doc = "HSE crystal oscillator not bypassed"] NOTBYPASSED,
-    #[doc = "HSE crystal oscillator bypassed with external clock"] BYPASSED,
+    #[doc = "HSE crystal oscillator not bypassed"]
+    NOTBYPASSED,
+    #[doc = "HSE crystal oscillator bypassed with external clock"]
+    BYPASSED,
 }
 impl HSEBYPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -244,7 +250,8 @@ impl HSEBYPR {
 #[doc = "Possible values of the field `CSSON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSSONR {
-    #[doc = "Clock security system disabled (clock detector OFF)."] DISABLED,
+    #[doc = "Clock security system disabled (clock detector OFF)."]
+    DISABLED,
     #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."]
     ENABLED,
 }
@@ -290,8 +297,10 @@ impl CSSONR {
 #[doc = "Possible values of the field `PLLON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLONR {
-    #[doc = "PLL Off."] DISABLED,
-    #[doc = "PLL On."] ENABLED,
+    #[doc = "PLL Off."]
+    DISABLED,
+    #[doc = "PLL On."]
+    ENABLED,
 }
 impl PLLONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -355,8 +364,10 @@ impl PLLRDYR {
 }
 #[doc = "Values that can be written to the field `HSION`"]
 pub enum HSIONW {
-    #[doc = "HSI oscillator OFF"] DISABLED,
-    #[doc = "HSI oscillator ON"] ENABLED,
+    #[doc = "HSI oscillator OFF"]
+    DISABLED,
+    #[doc = "HSI oscillator ON"]
+    ENABLED,
 }
 impl HSIONW {
     #[allow(missing_docs)]
@@ -426,8 +437,10 @@ impl<'a> _HSITRIMW<'a> {
 }
 #[doc = "Values that can be written to the field `HSEON`"]
 pub enum HSEONW {
-    #[doc = "HSE oscillator OFF"] DISABLED,
-    #[doc = "HSE oscillator ON"] ENABLED,
+    #[doc = "HSE oscillator OFF"]
+    DISABLED,
+    #[doc = "HSE oscillator ON"]
+    ENABLED,
 }
 impl HSEONW {
     #[allow(missing_docs)]
@@ -482,8 +495,10 @@ impl<'a> _HSEONW<'a> {
 }
 #[doc = "Values that can be written to the field `HSEBYP`"]
 pub enum HSEBYPW {
-    #[doc = "HSE crystal oscillator not bypassed"] NOTBYPASSED,
-    #[doc = "HSE crystal oscillator bypassed with external clock"] BYPASSED,
+    #[doc = "HSE crystal oscillator not bypassed"]
+    NOTBYPASSED,
+    #[doc = "HSE crystal oscillator bypassed with external clock"]
+    BYPASSED,
 }
 impl HSEBYPW {
     #[allow(missing_docs)]
@@ -538,7 +553,8 @@ impl<'a> _HSEBYPW<'a> {
 }
 #[doc = "Values that can be written to the field `CSSON`"]
 pub enum CSSONW {
-    #[doc = "Clock security system disabled (clock detector OFF)."] DISABLED,
+    #[doc = "Clock security system disabled (clock detector OFF)."]
+    DISABLED,
     #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."]
     ENABLED,
 }
@@ -595,8 +611,10 @@ impl<'a> _CSSONW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLON`"]
 pub enum PLLONW {
-    #[doc = "PLL Off."] DISABLED,
-    #[doc = "PLL On."] ENABLED,
+    #[doc = "PLL Off."]
+    DISABLED,
+    #[doc = "PLL On."]
+    ENABLED,
 }
 impl PLLONW {
     #[allow(missing_docs)]

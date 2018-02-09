@@ -45,22 +45,38 @@ impl super::CCMR1_INPUT {
 #[doc = "Possible values of the field `IC2F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IC2FR {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl IC2FR {
     #[doc = r" Value of the field as raw bits"]
@@ -193,10 +209,14 @@ impl IC2FR {
 #[doc = "Possible values of the field `IC2PSC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IC2PSCR {
-    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"] NO,
-    #[doc = "capture is done once every 2 events"] _2EVENTS,
-    #[doc = "capture is done once every 4 events"] _4EVENTS,
-    #[doc = "capture is done once every 8 events"] _8EVENTS,
+    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"]
+    NO,
+    #[doc = "capture is done once every 2 events"]
+    _2EVENTS,
+    #[doc = "capture is done once every 4 events"]
+    _4EVENTS,
+    #[doc = "capture is done once every 8 events"]
+    _8EVENTS,
 }
 impl IC2PSCR {
     #[doc = r" Value of the field as raw bits"]
@@ -245,10 +265,14 @@ impl IC2PSCR {
 #[doc = "Possible values of the field `CC2S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC2SR {
-    #[doc = "CC2 channel is configured as output"] CC2OUTPUT,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI2"] IC2MAPPEDTI2,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI1"] IC2MAPPEDTI1,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TRC"] IC2MAPPEDTRC,
+    #[doc = "CC2 channel is configured as output"]
+    CC2OUTPUT,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI2"]
+    IC2MAPPEDTI2,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI1"]
+    IC2MAPPEDTI1,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TRC"]
+    IC2MAPPEDTRC,
 }
 impl CC2SR {
     #[doc = r" Value of the field as raw bits"]
@@ -297,22 +321,38 @@ impl CC2SR {
 #[doc = "Possible values of the field `IC1F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IC1FR {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl IC1FR {
     #[doc = r" Value of the field as raw bits"]
@@ -445,10 +485,14 @@ impl IC1FR {
 #[doc = "Possible values of the field `IC1PSC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IC1PSCR {
-    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"] NO,
-    #[doc = "capture is done once every 2 events"] _2EVENTS,
-    #[doc = "capture is done once every 4 events"] _4EVENTS,
-    #[doc = "capture is done once every 8 events"] _8EVENTS,
+    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"]
+    NO,
+    #[doc = "capture is done once every 2 events"]
+    _2EVENTS,
+    #[doc = "capture is done once every 4 events"]
+    _4EVENTS,
+    #[doc = "capture is done once every 8 events"]
+    _8EVENTS,
 }
 impl IC1PSCR {
     #[doc = r" Value of the field as raw bits"]
@@ -497,10 +541,14 @@ impl IC1PSCR {
 #[doc = "Possible values of the field `CC1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1SR {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SR {
     #[doc = r" Value of the field as raw bits"]
@@ -548,22 +596,38 @@ impl CC1SR {
 }
 #[doc = "Values that can be written to the field `IC2F`"]
 pub enum IC2FW {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl IC2FW {
     #[allow(missing_docs)]
@@ -694,10 +758,14 @@ impl<'a> _IC2FW<'a> {
 }
 #[doc = "Values that can be written to the field `IC2PSC`"]
 pub enum IC2PSCW {
-    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"] NO,
-    #[doc = "capture is done once every 2 events"] _2EVENTS,
-    #[doc = "capture is done once every 4 events"] _4EVENTS,
-    #[doc = "capture is done once every 8 events"] _8EVENTS,
+    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"]
+    NO,
+    #[doc = "capture is done once every 2 events"]
+    _2EVENTS,
+    #[doc = "capture is done once every 4 events"]
+    _4EVENTS,
+    #[doc = "capture is done once every 8 events"]
+    _8EVENTS,
 }
 impl IC2PSCW {
     #[allow(missing_docs)]
@@ -756,10 +824,14 @@ impl<'a> _IC2PSCW<'a> {
 }
 #[doc = "Values that can be written to the field `CC2S`"]
 pub enum CC2SW {
-    #[doc = "CC2 channel is configured as output"] CC2OUTPUT,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI2"] IC2MAPPEDTI2,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI1"] IC2MAPPEDTI1,
-    #[doc = "CC2 channel is configured as input, IC2 is mapped on TRC"] IC2MAPPEDTRC,
+    #[doc = "CC2 channel is configured as output"]
+    CC2OUTPUT,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI2"]
+    IC2MAPPEDTI2,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TI1"]
+    IC2MAPPEDTI1,
+    #[doc = "CC2 channel is configured as input, IC2 is mapped on TRC"]
+    IC2MAPPEDTRC,
 }
 impl CC2SW {
     #[allow(missing_docs)]
@@ -818,22 +890,38 @@ impl<'a> _CC2SW<'a> {
 }
 #[doc = "Values that can be written to the field `IC1F`"]
 pub enum IC1FW {
-    #[doc = "No filter, sampling is done at fDTS"] NOFILTER,
-    #[doc = "fSAMPLING = fCK_INT, N = 2"] FCK_INT_N2,
-    #[doc = "fSAMPLING = fCK_INT, N = 4"] FCK_INT_N4,
-    #[doc = "fSAMPLING = fCK_INT, N = 8"] FCK_INT_N8,
-    #[doc = "fSAMPLING = fDTS / 2, N = 6"] FDTSDIV2_N6,
-    #[doc = "fSAMPLING = fDTS / 2, N = 8"] FDTSDIV2_N8,
-    #[doc = "fSAMPLING = fDTS / 4, N = 6"] FDTSDIV4_N6,
-    #[doc = "fSAMPLING = fDTS / 4, N = 8"] FDTSDIV4_N8,
-    #[doc = "fSAMPLING = fDTS / 8, N = 6"] FDTSDIV8_N6,
-    #[doc = "fSAMPLING = fDTS / 8, N = 8"] FDTSDIV8_N8,
-    #[doc = "fSAMPLING = fDTS / 16, N = 5"] FDTSDIV16_N5,
-    #[doc = "fSAMPLING = fDTS / 16, N = 6"] FDTSDIV16_N6,
-    #[doc = "fSAMPLING = fDTS / 16, N = 8"] FDTSDIV16_N8,
-    #[doc = "fSAMPLING = fDTS / 32, N = 5"] FDTSDIV32_N5,
-    #[doc = "fSAMPLING = fDTS / 32, N = 6"] FDTSDIV32_N6,
-    #[doc = "fSAMPLING = fDTS / 32, N = 8"] FDTSDIV32_N8,
+    #[doc = "No filter, sampling is done at fDTS"]
+    NOFILTER,
+    #[doc = "fSAMPLING = fCK_INT, N = 2"]
+    FCK_INT_N2,
+    #[doc = "fSAMPLING = fCK_INT, N = 4"]
+    FCK_INT_N4,
+    #[doc = "fSAMPLING = fCK_INT, N = 8"]
+    FCK_INT_N8,
+    #[doc = "fSAMPLING = fDTS / 2, N = 6"]
+    FDTSDIV2_N6,
+    #[doc = "fSAMPLING = fDTS / 2, N = 8"]
+    FDTSDIV2_N8,
+    #[doc = "fSAMPLING = fDTS / 4, N = 6"]
+    FDTSDIV4_N6,
+    #[doc = "fSAMPLING = fDTS / 4, N = 8"]
+    FDTSDIV4_N8,
+    #[doc = "fSAMPLING = fDTS / 8, N = 6"]
+    FDTSDIV8_N6,
+    #[doc = "fSAMPLING = fDTS / 8, N = 8"]
+    FDTSDIV8_N8,
+    #[doc = "fSAMPLING = fDTS / 16, N = 5"]
+    FDTSDIV16_N5,
+    #[doc = "fSAMPLING = fDTS / 16, N = 6"]
+    FDTSDIV16_N6,
+    #[doc = "fSAMPLING = fDTS / 16, N = 8"]
+    FDTSDIV16_N8,
+    #[doc = "fSAMPLING = fDTS / 32, N = 5"]
+    FDTSDIV32_N5,
+    #[doc = "fSAMPLING = fDTS / 32, N = 6"]
+    FDTSDIV32_N6,
+    #[doc = "fSAMPLING = fDTS / 32, N = 8"]
+    FDTSDIV32_N8,
 }
 impl IC1FW {
     #[allow(missing_docs)]
@@ -964,10 +1052,14 @@ impl<'a> _IC1FW<'a> {
 }
 #[doc = "Values that can be written to the field `IC1PSC`"]
 pub enum IC1PSCW {
-    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"] NO,
-    #[doc = "capture is done once every 2 events"] _2EVENTS,
-    #[doc = "capture is done once every 4 events"] _4EVENTS,
-    #[doc = "capture is done once every 8 events"] _8EVENTS,
+    #[doc = "no prescaler, capture is done each time an edge is detected on the capture input"]
+    NO,
+    #[doc = "capture is done once every 2 events"]
+    _2EVENTS,
+    #[doc = "capture is done once every 4 events"]
+    _4EVENTS,
+    #[doc = "capture is done once every 8 events"]
+    _8EVENTS,
 }
 impl IC1PSCW {
     #[allow(missing_docs)]
@@ -1026,10 +1118,14 @@ impl<'a> _IC1PSCW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1S`"]
 pub enum CC1SW {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SW {
     #[allow(missing_docs)]

@@ -204,10 +204,14 @@ impl OC1FER {
 #[doc = "Possible values of the field `CC1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1SR {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SR {
     #[doc = r" Value of the field as raw bits"]
@@ -435,10 +439,14 @@ impl<'a> _OC1FEW<'a> {
 }
 #[doc = "Values that can be written to the field `CC1S`"]
 pub enum CC1SW {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SW {
     #[allow(missing_docs)]

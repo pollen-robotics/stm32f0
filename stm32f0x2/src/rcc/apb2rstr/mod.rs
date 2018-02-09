@@ -45,8 +45,10 @@ impl super::APB2RSTR {
 #[doc = "Possible values of the field `SYSCFGRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSCFGRSTR {
-    #[doc = "Reset SYSCFG."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset SYSCFG."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SYSCFGRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl SYSCFGRSTR {
 #[doc = "Possible values of the field `ADCRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCRSTR {
-    #[doc = "Reset ADC."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset ADC."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl ADCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl ADCRSTR {
 #[doc = "Possible values of the field `TIM1RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM1RSTR {
-    #[doc = "Reset TIM1 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM1 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl TIM1RSTR {
 #[doc = "Possible values of the field `SPI1RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPI1RSTR {
-    #[doc = "Reset SPI1."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset SPI1."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SPI1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +213,10 @@ impl SPI1RSTR {
 #[doc = "Possible values of the field `USART1RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART1RSTR {
-    #[doc = "Reset USART1."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset USART1."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl USART1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,8 +255,10 @@ impl USART1RSTR {
 #[doc = "Possible values of the field `TIM15RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM15RSTR {
-    #[doc = "Reset TIM15 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM15 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM15RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,8 +297,10 @@ impl TIM15RSTR {
 #[doc = "Possible values of the field `TIM16RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM16RSTR {
-    #[doc = "Reset TIM16 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM16 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM16RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,8 +339,10 @@ impl TIM16RSTR {
 #[doc = "Possible values of the field `TIM17RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM17RSTR {
-    #[doc = "Reset TIM17 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM17 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM17RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -365,8 +381,10 @@ impl TIM17RSTR {
 #[doc = "Possible values of the field `DBGMCURST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGMCURSTR {
-    #[doc = "Reset Debug MCU."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset Debug MCU."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl DBGMCURSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -404,7 +422,8 @@ impl DBGMCURSTR {
 }
 #[doc = "Values that can be written to the field `SYSCFGRST`"]
 pub enum SYSCFGRSTW {
-    #[doc = "Reset SYSCFG."] RESET,
+    #[doc = "Reset SYSCFG."]
+    RESET,
 }
 impl SYSCFGRSTW {
     #[allow(missing_docs)]
@@ -453,7 +472,8 @@ impl<'a> _SYSCFGRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `ADCRST`"]
 pub enum ADCRSTW {
-    #[doc = "Reset ADC."] RESET,
+    #[doc = "Reset ADC."]
+    RESET,
 }
 impl ADCRSTW {
     #[allow(missing_docs)]
@@ -502,7 +522,8 @@ impl<'a> _ADCRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM1RST`"]
 pub enum TIM1RSTW {
-    #[doc = "Reset TIM1 timer."] RESET,
+    #[doc = "Reset TIM1 timer."]
+    RESET,
 }
 impl TIM1RSTW {
     #[allow(missing_docs)]
@@ -551,7 +572,8 @@ impl<'a> _TIM1RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `SPI1RST`"]
 pub enum SPI1RSTW {
-    #[doc = "Reset SPI1."] RESET,
+    #[doc = "Reset SPI1."]
+    RESET,
 }
 impl SPI1RSTW {
     #[allow(missing_docs)]
@@ -600,7 +622,8 @@ impl<'a> _SPI1RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `USART1RST`"]
 pub enum USART1RSTW {
-    #[doc = "Reset USART1."] RESET,
+    #[doc = "Reset USART1."]
+    RESET,
 }
 impl USART1RSTW {
     #[allow(missing_docs)]
@@ -649,7 +672,8 @@ impl<'a> _USART1RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM15RST`"]
 pub enum TIM15RSTW {
-    #[doc = "Reset TIM15 timer."] RESET,
+    #[doc = "Reset TIM15 timer."]
+    RESET,
 }
 impl TIM15RSTW {
     #[allow(missing_docs)]
@@ -698,7 +722,8 @@ impl<'a> _TIM15RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM16RST`"]
 pub enum TIM16RSTW {
-    #[doc = "Reset TIM16 timer."] RESET,
+    #[doc = "Reset TIM16 timer."]
+    RESET,
 }
 impl TIM16RSTW {
     #[allow(missing_docs)]
@@ -747,7 +772,8 @@ impl<'a> _TIM16RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM17RST`"]
 pub enum TIM17RSTW {
-    #[doc = "Reset TIM17 timer."] RESET,
+    #[doc = "Reset TIM17 timer."]
+    RESET,
 }
 impl TIM17RSTW {
     #[allow(missing_docs)]
@@ -796,7 +822,8 @@ impl<'a> _TIM17RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `DBGMCURST`"]
 pub enum DBGMCURSTW {
-    #[doc = "Reset Debug MCU."] RESET,
+    #[doc = "Reset Debug MCU."]
+    RESET,
 }
 impl DBGMCURSTW {
     #[allow(missing_docs)]

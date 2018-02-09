@@ -45,22 +45,38 @@ impl super::CFGR2 {
 #[doc = "Possible values of the field `PREDIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREDIVR {
-    #[doc = "PREDIV input clock not divided."] DIV1,
-    #[doc = "PREDIV input clock divided by 2."] DIV2,
-    #[doc = "PREDIV input clock divided by 3."] DIV3,
-    #[doc = "PREDIV input clock divided by 4."] DIV4,
-    #[doc = "PREDIV input clock divided by 5."] DIV5,
-    #[doc = "PREDIV input clock divided by 6."] DIV6,
-    #[doc = "PREDIV input clock divided by 7."] DIV7,
-    #[doc = "PREDIV input clock divided by 8."] DIV8,
-    #[doc = "PREDIV input clock divided by 9."] DIV9,
-    #[doc = "PREDIV input clock divided by 10."] DIV10,
-    #[doc = "PREDIV input clock divided by 11."] DIV11,
-    #[doc = "PREDIV input clock divided by 12."] DIV12,
-    #[doc = "PREDIV input clock divided by 13."] DIV13,
-    #[doc = "PREDIV input clock divided by 14."] DIV14,
-    #[doc = "PREDIV input clock divided by 15."] DIV15,
-    #[doc = "PREDIV input clock divided by 16."] DIV16,
+    #[doc = "PREDIV input clock not divided."]
+    DIV1,
+    #[doc = "PREDIV input clock divided by 2."]
+    DIV2,
+    #[doc = "PREDIV input clock divided by 3."]
+    DIV3,
+    #[doc = "PREDIV input clock divided by 4."]
+    DIV4,
+    #[doc = "PREDIV input clock divided by 5."]
+    DIV5,
+    #[doc = "PREDIV input clock divided by 6."]
+    DIV6,
+    #[doc = "PREDIV input clock divided by 7."]
+    DIV7,
+    #[doc = "PREDIV input clock divided by 8."]
+    DIV8,
+    #[doc = "PREDIV input clock divided by 9."]
+    DIV9,
+    #[doc = "PREDIV input clock divided by 10."]
+    DIV10,
+    #[doc = "PREDIV input clock divided by 11."]
+    DIV11,
+    #[doc = "PREDIV input clock divided by 12."]
+    DIV12,
+    #[doc = "PREDIV input clock divided by 13."]
+    DIV13,
+    #[doc = "PREDIV input clock divided by 14."]
+    DIV14,
+    #[doc = "PREDIV input clock divided by 15."]
+    DIV15,
+    #[doc = "PREDIV input clock divided by 16."]
+    DIV16,
 }
 impl PREDIVR {
     #[doc = r" Value of the field as raw bits"]
@@ -192,22 +208,38 @@ impl PREDIVR {
 }
 #[doc = "Values that can be written to the field `PREDIV`"]
 pub enum PREDIVW {
-    #[doc = "PREDIV input clock not divided."] DIV1,
-    #[doc = "PREDIV input clock divided by 2."] DIV2,
-    #[doc = "PREDIV input clock divided by 3."] DIV3,
-    #[doc = "PREDIV input clock divided by 4."] DIV4,
-    #[doc = "PREDIV input clock divided by 5."] DIV5,
-    #[doc = "PREDIV input clock divided by 6."] DIV6,
-    #[doc = "PREDIV input clock divided by 7."] DIV7,
-    #[doc = "PREDIV input clock divided by 8."] DIV8,
-    #[doc = "PREDIV input clock divided by 9."] DIV9,
-    #[doc = "PREDIV input clock divided by 10."] DIV10,
-    #[doc = "PREDIV input clock divided by 11."] DIV11,
-    #[doc = "PREDIV input clock divided by 12."] DIV12,
-    #[doc = "PREDIV input clock divided by 13."] DIV13,
-    #[doc = "PREDIV input clock divided by 14."] DIV14,
-    #[doc = "PREDIV input clock divided by 15."] DIV15,
-    #[doc = "PREDIV input clock divided by 16."] DIV16,
+    #[doc = "PREDIV input clock not divided."]
+    DIV1,
+    #[doc = "PREDIV input clock divided by 2."]
+    DIV2,
+    #[doc = "PREDIV input clock divided by 3."]
+    DIV3,
+    #[doc = "PREDIV input clock divided by 4."]
+    DIV4,
+    #[doc = "PREDIV input clock divided by 5."]
+    DIV5,
+    #[doc = "PREDIV input clock divided by 6."]
+    DIV6,
+    #[doc = "PREDIV input clock divided by 7."]
+    DIV7,
+    #[doc = "PREDIV input clock divided by 8."]
+    DIV8,
+    #[doc = "PREDIV input clock divided by 9."]
+    DIV9,
+    #[doc = "PREDIV input clock divided by 10."]
+    DIV10,
+    #[doc = "PREDIV input clock divided by 11."]
+    DIV11,
+    #[doc = "PREDIV input clock divided by 12."]
+    DIV12,
+    #[doc = "PREDIV input clock divided by 13."]
+    DIV13,
+    #[doc = "PREDIV input clock divided by 14."]
+    DIV14,
+    #[doc = "PREDIV input clock divided by 15."]
+    DIV15,
+    #[doc = "PREDIV input clock divided by 16."]
+    DIV16,
 }
 impl PREDIVW {
     #[allow(missing_docs)]

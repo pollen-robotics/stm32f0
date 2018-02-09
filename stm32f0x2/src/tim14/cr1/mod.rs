@@ -45,10 +45,14 @@ impl super::CR1 {
 #[doc = "Possible values of the field `CKD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CKDR {
-    #[doc = "Clock is not divided"] DIV1,
-    #[doc = "Clock is divided by 2"] DIV2,
-    #[doc = "Clock is divided by 4"] DIV4,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Clock is not divided"]
+    DIV1,
+    #[doc = "Clock is divided by 2"]
+    DIV2,
+    #[doc = "Clock is divided by 4"]
+    DIV4,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl CKDR {
     #[doc = r" Value of the field as raw bits"]
@@ -91,8 +95,10 @@ impl CKDR {
 #[doc = "Possible values of the field `ARPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARPER {
-    #[doc = "TIMx_ARR register is not buffered"] NOTBUFFERED,
-    #[doc = "TIMx_ARR register is buffered"] BUFFERED,
+    #[doc = "TIMx_ARR register is not buffered"]
+    NOTBUFFERED,
+    #[doc = "TIMx_ARR register is buffered"]
+    BUFFERED,
 }
 impl ARPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -178,8 +184,10 @@ impl URSR {
 #[doc = "Possible values of the field `UDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UDISR {
-    #[doc = "UEV enabled."] ENABLED,
-    #[doc = "UEV disabled."] DISABLED,
+    #[doc = "UEV enabled."]
+    ENABLED,
+    #[doc = "UEV disabled."]
+    DISABLED,
 }
 impl UDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -223,8 +231,10 @@ impl UDISR {
 #[doc = "Possible values of the field `CEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CENR {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Counter enabled"] ENABLED,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Counter enabled"]
+    ENABLED,
 }
 impl CENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -267,9 +277,12 @@ impl CENR {
 }
 #[doc = "Values that can be written to the field `CKD`"]
 pub enum CKDW {
-    #[doc = "Clock is not divided"] DIV1,
-    #[doc = "Clock is divided by 2"] DIV2,
-    #[doc = "Clock is divided by 4"] DIV4,
+    #[doc = "Clock is not divided"]
+    DIV1,
+    #[doc = "Clock is divided by 2"]
+    DIV2,
+    #[doc = "Clock is divided by 4"]
+    DIV4,
 }
 impl CKDW {
     #[allow(missing_docs)]
@@ -320,8 +333,10 @@ impl<'a> _CKDW<'a> {
 }
 #[doc = "Values that can be written to the field `ARPE`"]
 pub enum ARPEW {
-    #[doc = "TIMx_ARR register is not buffered"] NOTBUFFERED,
-    #[doc = "TIMx_ARR register is buffered"] BUFFERED,
+    #[doc = "TIMx_ARR register is not buffered"]
+    NOTBUFFERED,
+    #[doc = "TIMx_ARR register is buffered"]
+    BUFFERED,
 }
 impl ARPEW {
     #[allow(missing_docs)]
@@ -428,8 +443,10 @@ impl<'a> _URSW<'a> {
 }
 #[doc = "Values that can be written to the field `UDIS`"]
 pub enum UDISW {
-    #[doc = "UEV enabled."] ENABLED,
-    #[doc = "UEV disabled."] DISABLED,
+    #[doc = "UEV enabled."]
+    ENABLED,
+    #[doc = "UEV disabled."]
+    DISABLED,
 }
 impl UDISW {
     #[allow(missing_docs)]
@@ -484,8 +501,10 @@ impl<'a> _UDISW<'a> {
 }
 #[doc = "Values that can be written to the field `CEN`"]
 pub enum CENW {
-    #[doc = "Counter disabled"] DISABLED,
-    #[doc = "Counter enabled"] ENABLED,
+    #[doc = "Counter disabled"]
+    DISABLED,
+    #[doc = "Counter enabled"]
+    ENABLED,
 }
 impl CENW {
     #[allow(missing_docs)]

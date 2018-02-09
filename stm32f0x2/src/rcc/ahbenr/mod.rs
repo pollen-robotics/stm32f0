@@ -45,8 +45,10 @@ impl super::AHBENR {
 #[doc = "Possible values of the field `DMA1EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1ENR {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl DMA1ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -107,8 +109,10 @@ pub type IOPFENR = DMA1ENR;
 pub type TSCENR = DMA1ENR;
 #[doc = "Values that can be written to the field `DMA1EN`"]
 pub enum DMA1ENW {
-    #[doc = "Disabled."] DISABLED,
-    #[doc = "Enabled."] ENABLED,
+    #[doc = "Disabled."]
+    DISABLED,
+    #[doc = "Enabled."]
+    ENABLED,
 }
 impl DMA1ENW {
     #[allow(missing_docs)]

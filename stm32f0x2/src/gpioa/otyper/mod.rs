@@ -45,8 +45,10 @@ impl super::OTYPER {
 #[doc = "Possible values of the field `OT15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OT15R {
-    #[doc = "Output push-pull (reset state)"] PUSHPULL,
-    #[doc = "Output open-drain"] OPENDRAIN,
+    #[doc = "Output push-pull (reset state)"]
+    PUSHPULL,
+    #[doc = "Output open-drain"]
+    OPENDRAIN,
 }
 impl OT15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -119,8 +121,10 @@ pub type OT1R = OT15R;
 pub type OT0R = OT15R;
 #[doc = "Values that can be written to the field `OT15`"]
 pub enum OT15W {
-    #[doc = "Output push-pull (reset state)"] PUSHPULL,
-    #[doc = "Output open-drain"] OPENDRAIN,
+    #[doc = "Output push-pull (reset state)"]
+    PUSHPULL,
+    #[doc = "Output open-drain"]
+    OPENDRAIN,
 }
 impl OT15W {
     #[allow(missing_docs)]

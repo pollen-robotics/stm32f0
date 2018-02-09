@@ -45,8 +45,10 @@ impl super::CR2 {
 #[doc = "Possible values of the field `HSI14ON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14ONR {
-    #[doc = "HSI14 oscillator OFF."] DISABLED,
-    #[doc = "HSI14 oscillator ON."] ENABLED,
+    #[doc = "HSI14 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI14 oscillator ON."]
+    ENABLED,
 }
 impl HSI14ONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -111,8 +113,10 @@ impl HSI14RDYR {
 #[doc = "Possible values of the field `HSI14DIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14DISR {
-    #[doc = "ADC interface can turn on the HSI14 oscillator."] ENABLED,
-    #[doc = "ADC interface can not turn on the HSI14 oscillator."] DISABLED,
+    #[doc = "ADC interface can turn on the HSI14 oscillator."]
+    ENABLED,
+    #[doc = "ADC interface can not turn on the HSI14 oscillator."]
+    DISABLED,
 }
 impl HSI14DISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -178,8 +182,10 @@ impl HSI14CALR {
 #[doc = "Possible values of the field `HSI48ON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI48ONR {
-    #[doc = "HSI48 oscillator OFF."] DISABLED,
-    #[doc = "HSI48 oscillator ON."] ENABLED,
+    #[doc = "HSI48 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI48 oscillator ON."]
+    ENABLED,
 }
 impl HSI48ONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -264,8 +270,10 @@ impl HSI48CALR {
 }
 #[doc = "Values that can be written to the field `HSI14ON`"]
 pub enum HSI14ONW {
-    #[doc = "HSI14 oscillator OFF."] DISABLED,
-    #[doc = "HSI14 oscillator ON."] ENABLED,
+    #[doc = "HSI14 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI14 oscillator ON."]
+    ENABLED,
 }
 impl HSI14ONW {
     #[allow(missing_docs)]
@@ -320,8 +328,10 @@ impl<'a> _HSI14ONW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14DIS`"]
 pub enum HSI14DISW {
-    #[doc = "ADC interface can turn on the HSI14 oscillator."] ENABLED,
-    #[doc = "ADC interface can not turn on the HSI14 oscillator."] DISABLED,
+    #[doc = "ADC interface can turn on the HSI14 oscillator."]
+    ENABLED,
+    #[doc = "ADC interface can not turn on the HSI14 oscillator."]
+    DISABLED,
 }
 impl HSI14DISW {
     #[allow(missing_docs)]
@@ -391,8 +401,10 @@ impl<'a> _HSI14TRIMW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48ON`"]
 pub enum HSI48ONW {
-    #[doc = "HSI48 oscillator OFF."] DISABLED,
-    #[doc = "HSI48 oscillator ON."] ENABLED,
+    #[doc = "HSI48 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI48 oscillator ON."]
+    ENABLED,
 }
 impl HSI48ONW {
     #[allow(missing_docs)]

@@ -45,14 +45,22 @@ impl super::AFRL {
 #[doc = "Possible values of the field `AFRL7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AFRL7R {
-    #[doc = "Alternate Function 0"] AF0,
-    #[doc = "Alternate Function 1"] AF1,
-    #[doc = "Alternate Function 2"] AF2,
-    #[doc = "Alternate Function 3"] AF3,
-    #[doc = "Alternate Function 4"] AF4,
-    #[doc = "Alternate Function 5"] AF5,
-    #[doc = "Alternate Function 6"] AF6,
-    #[doc = "Alternate Function 7"] AF7,
+    #[doc = "Alternate Function 0"]
+    AF0,
+    #[doc = "Alternate Function 1"]
+    AF1,
+    #[doc = "Alternate Function 2"]
+    AF2,
+    #[doc = "Alternate Function 3"]
+    AF3,
+    #[doc = "Alternate Function 4"]
+    AF4,
+    #[doc = "Alternate Function 5"]
+    AF5,
+    #[doc = "Alternate Function 6"]
+    AF6,
+    #[doc = "Alternate Function 7"]
+    AF7,
 }
 impl AFRL7R {
     #[doc = r" Value of the field as raw bits"]
@@ -142,14 +150,22 @@ pub type AFRL1R = AFRL7R;
 pub type AFRL0R = AFRL7R;
 #[doc = "Values that can be written to the field `AFRL7`"]
 pub enum AFRL7W {
-    #[doc = "Alternate Function 0"] AF0,
-    #[doc = "Alternate Function 1"] AF1,
-    #[doc = "Alternate Function 2"] AF2,
-    #[doc = "Alternate Function 3"] AF3,
-    #[doc = "Alternate Function 4"] AF4,
-    #[doc = "Alternate Function 5"] AF5,
-    #[doc = "Alternate Function 6"] AF6,
-    #[doc = "Alternate Function 7"] AF7,
+    #[doc = "Alternate Function 0"]
+    AF0,
+    #[doc = "Alternate Function 1"]
+    AF1,
+    #[doc = "Alternate Function 2"]
+    AF2,
+    #[doc = "Alternate Function 3"]
+    AF3,
+    #[doc = "Alternate Function 4"]
+    AF4,
+    #[doc = "Alternate Function 5"]
+    AF5,
+    #[doc = "Alternate Function 6"]
+    AF6,
+    #[doc = "Alternate Function 7"]
+    AF7,
 }
 impl AFRL7W {
     #[allow(missing_docs)]

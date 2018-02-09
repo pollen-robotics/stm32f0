@@ -45,8 +45,10 @@ impl super::APB1RSTR {
 #[doc = "Possible values of the field `TIM2RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM2RSTR {
-    #[doc = "Reset TIM2 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM2 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM2RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl TIM2RSTR {
 #[doc = "Possible values of the field `TIM3RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM3RSTR {
-    #[doc = "Reset TIM3 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM3 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM3RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl TIM3RSTR {
 #[doc = "Possible values of the field `TIM6RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM6RSTR {
-    #[doc = "Reset TIM6 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM6 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM6RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl TIM6RSTR {
 #[doc = "Possible values of the field `TIM7RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM7RSTR {
-    #[doc = "Reset TIM7 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM7 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM7RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +213,10 @@ impl TIM7RSTR {
 #[doc = "Possible values of the field `TIM14RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM14RSTR {
-    #[doc = "Reset TIM14 timer."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TIM14 timer."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TIM14RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,8 +255,10 @@ impl TIM14RSTR {
 #[doc = "Possible values of the field `WWDGRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WWDGRSTR {
-    #[doc = "Reset window watchdog."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset window watchdog."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl WWDGRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,8 +297,10 @@ impl WWDGRSTR {
 #[doc = "Possible values of the field `SPI2RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPI2RSTR {
-    #[doc = "Reset SPI2."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset SPI2."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SPI2RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,8 +339,10 @@ impl SPI2RSTR {
 #[doc = "Possible values of the field `USART2RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART2RSTR {
-    #[doc = "Reset USART2."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset USART2."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl USART2RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -365,8 +381,10 @@ impl USART2RSTR {
 #[doc = "Possible values of the field `USART3RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART3RSTR {
-    #[doc = "Reset USART3."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset USART3."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl USART3RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +423,10 @@ impl USART3RSTR {
 #[doc = "Possible values of the field `USART4RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART4RSTR {
-    #[doc = "Reset USART4."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset USART4."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl USART4RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -445,8 +465,10 @@ impl USART4RSTR {
 #[doc = "Possible values of the field `I2C1RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2C1RSTR {
-    #[doc = "Reset I2C1."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I2C1."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl I2C1RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -485,8 +507,10 @@ impl I2C1RSTR {
 #[doc = "Possible values of the field `I2C2RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2C2RSTR {
-    #[doc = "Reset I2C2."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I2C2."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl I2C2RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -525,8 +549,10 @@ impl I2C2RSTR {
 #[doc = "Possible values of the field `USBRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBRSTR {
-    #[doc = "Reset USB interface."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset USB interface."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl USBRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -565,8 +591,10 @@ impl USBRSTR {
 #[doc = "Possible values of the field `CANRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CANRSTR {
-    #[doc = "Reset CAN interface."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset CAN interface."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CANRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -605,8 +633,10 @@ impl CANRSTR {
 #[doc = "Possible values of the field `CRSRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRSRSTR {
-    #[doc = "Reset CRS interface."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset CRS interface."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CRSRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -645,8 +675,10 @@ impl CRSRSTR {
 #[doc = "Possible values of the field `PWRRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWRRSTR {
-    #[doc = "Reset power interface."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset power interface."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl PWRRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -685,8 +717,10 @@ impl PWRRSTR {
 #[doc = "Possible values of the field `DACRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACRSTR {
-    #[doc = "Reset DAC."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset DAC."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl DACRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -725,8 +759,10 @@ impl DACRSTR {
 #[doc = "Possible values of the field `CECRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CECRSTR {
-    #[doc = "Reset HDMI CEC."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset HDMI CEC."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CECRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -764,7 +800,8 @@ impl CECRSTR {
 }
 #[doc = "Values that can be written to the field `TIM2RST`"]
 pub enum TIM2RSTW {
-    #[doc = "Reset TIM2 timer."] RESET,
+    #[doc = "Reset TIM2 timer."]
+    RESET,
 }
 impl TIM2RSTW {
     #[allow(missing_docs)]
@@ -813,7 +850,8 @@ impl<'a> _TIM2RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM3RST`"]
 pub enum TIM3RSTW {
-    #[doc = "Reset TIM3 timer."] RESET,
+    #[doc = "Reset TIM3 timer."]
+    RESET,
 }
 impl TIM3RSTW {
     #[allow(missing_docs)]
@@ -862,7 +900,8 @@ impl<'a> _TIM3RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM6RST`"]
 pub enum TIM6RSTW {
-    #[doc = "Reset TIM6 timer."] RESET,
+    #[doc = "Reset TIM6 timer."]
+    RESET,
 }
 impl TIM6RSTW {
     #[allow(missing_docs)]
@@ -911,7 +950,8 @@ impl<'a> _TIM6RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM7RST`"]
 pub enum TIM7RSTW {
-    #[doc = "Reset TIM7 timer."] RESET,
+    #[doc = "Reset TIM7 timer."]
+    RESET,
 }
 impl TIM7RSTW {
     #[allow(missing_docs)]
@@ -960,7 +1000,8 @@ impl<'a> _TIM7RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIM14RST`"]
 pub enum TIM14RSTW {
-    #[doc = "Reset TIM14 timer."] RESET,
+    #[doc = "Reset TIM14 timer."]
+    RESET,
 }
 impl TIM14RSTW {
     #[allow(missing_docs)]
@@ -1009,7 +1050,8 @@ impl<'a> _TIM14RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `WWDGRST`"]
 pub enum WWDGRSTW {
-    #[doc = "Reset window watchdog."] RESET,
+    #[doc = "Reset window watchdog."]
+    RESET,
 }
 impl WWDGRSTW {
     #[allow(missing_docs)]
@@ -1058,7 +1100,8 @@ impl<'a> _WWDGRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `SPI2RST`"]
 pub enum SPI2RSTW {
-    #[doc = "Reset SPI2."] RESET,
+    #[doc = "Reset SPI2."]
+    RESET,
 }
 impl SPI2RSTW {
     #[allow(missing_docs)]
@@ -1107,7 +1150,8 @@ impl<'a> _SPI2RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `USART2RST`"]
 pub enum USART2RSTW {
-    #[doc = "Reset USART2."] RESET,
+    #[doc = "Reset USART2."]
+    RESET,
 }
 impl USART2RSTW {
     #[allow(missing_docs)]
@@ -1156,7 +1200,8 @@ impl<'a> _USART2RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `USART3RST`"]
 pub enum USART3RSTW {
-    #[doc = "Reset USART3."] RESET,
+    #[doc = "Reset USART3."]
+    RESET,
 }
 impl USART3RSTW {
     #[allow(missing_docs)]
@@ -1205,7 +1250,8 @@ impl<'a> _USART3RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `USART4RST`"]
 pub enum USART4RSTW {
-    #[doc = "Reset USART4."] RESET,
+    #[doc = "Reset USART4."]
+    RESET,
 }
 impl USART4RSTW {
     #[allow(missing_docs)]
@@ -1254,7 +1300,8 @@ impl<'a> _USART4RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `I2C1RST`"]
 pub enum I2C1RSTW {
-    #[doc = "Reset I2C1."] RESET,
+    #[doc = "Reset I2C1."]
+    RESET,
 }
 impl I2C1RSTW {
     #[allow(missing_docs)]
@@ -1303,7 +1350,8 @@ impl<'a> _I2C1RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `I2C2RST`"]
 pub enum I2C2RSTW {
-    #[doc = "Reset I2C2."] RESET,
+    #[doc = "Reset I2C2."]
+    RESET,
 }
 impl I2C2RSTW {
     #[allow(missing_docs)]
@@ -1352,7 +1400,8 @@ impl<'a> _I2C2RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `USBRST`"]
 pub enum USBRSTW {
-    #[doc = "Reset USB interface."] RESET,
+    #[doc = "Reset USB interface."]
+    RESET,
 }
 impl USBRSTW {
     #[allow(missing_docs)]
@@ -1401,7 +1450,8 @@ impl<'a> _USBRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `CANRST`"]
 pub enum CANRSTW {
-    #[doc = "Reset CAN interface."] RESET,
+    #[doc = "Reset CAN interface."]
+    RESET,
 }
 impl CANRSTW {
     #[allow(missing_docs)]
@@ -1450,7 +1500,8 @@ impl<'a> _CANRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `CRSRST`"]
 pub enum CRSRSTW {
-    #[doc = "Reset CRS interface."] RESET,
+    #[doc = "Reset CRS interface."]
+    RESET,
 }
 impl CRSRSTW {
     #[allow(missing_docs)]
@@ -1499,7 +1550,8 @@ impl<'a> _CRSRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `PWRRST`"]
 pub enum PWRRSTW {
-    #[doc = "Reset power interface."] RESET,
+    #[doc = "Reset power interface."]
+    RESET,
 }
 impl PWRRSTW {
     #[allow(missing_docs)]
@@ -1548,7 +1600,8 @@ impl<'a> _PWRRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `DACRST`"]
 pub enum DACRSTW {
-    #[doc = "Reset DAC."] RESET,
+    #[doc = "Reset DAC."]
+    RESET,
 }
 impl DACRSTW {
     #[allow(missing_docs)]
@@ -1597,7 +1650,8 @@ impl<'a> _DACRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `CECRST`"]
 pub enum CECRSTW {
-    #[doc = "Reset HDMI CEC."] RESET,
+    #[doc = "Reset HDMI CEC."]
+    RESET,
 }
 impl CECRSTW {
     #[allow(missing_docs)]

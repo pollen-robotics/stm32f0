@@ -266,8 +266,10 @@ impl TXDMAENR {
 #[doc = "Possible values of the field `RXDMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDMAENR {
-    #[doc = "Rx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Rx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl RXDMAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -746,8 +748,10 @@ impl<'a> _TXDMAENW<'a> {
 }
 #[doc = "Values that can be written to the field `RXDMAEN`"]
 pub enum RXDMAENW {
-    #[doc = "Rx buffer DMA disabled"] DISABLED,
-    #[doc = "Rx buffer DMA enabled"] ENABLED,
+    #[doc = "Rx buffer DMA disabled"]
+    DISABLED,
+    #[doc = "Rx buffer DMA enabled"]
+    ENABLED,
 }
 impl RXDMAENW {
     #[allow(missing_docs)]

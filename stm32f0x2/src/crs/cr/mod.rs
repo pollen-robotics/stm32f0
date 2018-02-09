@@ -98,8 +98,10 @@ impl AUTOTRIMENR {
 #[doc = "Possible values of the field `CEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CENR {
-    #[doc = "Frequency error counter disabled"] DISABLED,
-    #[doc = "Frequency error counter enabled"] ENABLED,
+    #[doc = "Frequency error counter disabled"]
+    DISABLED,
+    #[doc = "Frequency error counter enabled"]
+    ENABLED,
 }
 impl CENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -287,8 +289,10 @@ impl<'a> _AUTOTRIMENW<'a> {
 }
 #[doc = "Values that can be written to the field `CEN`"]
 pub enum CENW {
-    #[doc = "Frequency error counter disabled"] DISABLED,
-    #[doc = "Frequency error counter enabled"] ENABLED,
+    #[doc = "Frequency error counter disabled"]
+    DISABLED,
+    #[doc = "Frequency error counter enabled"]
+    ENABLED,
 }
 impl CENW {
     #[allow(missing_docs)]

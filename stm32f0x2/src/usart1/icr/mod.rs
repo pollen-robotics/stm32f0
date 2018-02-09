@@ -45,8 +45,10 @@ impl super::ICR {
 #[doc = "Possible values of the field `WUCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUCFR {
-    #[doc = "clears the WUF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the WUF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl WUCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,8 +87,10 @@ impl WUCFR {
 #[doc = "Possible values of the field `CMCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMCFR {
-    #[doc = "clears the CMF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the CMF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CMCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -125,8 +129,10 @@ impl CMCFR {
 #[doc = "Possible values of the field `EOBCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOBCFR {
-    #[doc = "clears the EOBF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the EOBF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl EOBCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -165,8 +171,10 @@ impl EOBCFR {
 #[doc = "Possible values of the field `RTOCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTOCFR {
-    #[doc = "clears the RTOF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the RTOF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RTOCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +213,10 @@ impl RTOCFR {
 #[doc = "Possible values of the field `CTSCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSCFR {
-    #[doc = "clears the CTSIF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the CTSIF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CTSCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,8 +255,10 @@ impl CTSCFR {
 #[doc = "Possible values of the field `LBDCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBDCFR {
-    #[doc = "clears the LBDF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the LBDF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl LBDCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,8 +297,10 @@ impl LBDCFR {
 #[doc = "Possible values of the field `TCCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCFR {
-    #[doc = "clears the TC flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the TC flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TCCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,8 +339,10 @@ impl TCCFR {
 #[doc = "Possible values of the field `IDLECF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECFR {
-    #[doc = "clears the IDLE flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the IDLE flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IDLECFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -365,8 +381,10 @@ impl IDLECFR {
 #[doc = "Possible values of the field `ORECF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ORECFR {
-    #[doc = "clears the ORE flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the ORE flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl ORECFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +423,10 @@ impl ORECFR {
 #[doc = "Possible values of the field `NCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCFR {
-    #[doc = "clears the NF flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the NF flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl NCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -445,8 +465,10 @@ impl NCFR {
 #[doc = "Possible values of the field `FECF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FECFR {
-    #[doc = "clears the FE flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the FE flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl FECFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -485,8 +507,10 @@ impl FECFR {
 #[doc = "Possible values of the field `PECF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PECFR {
-    #[doc = "clears the PE flag in the USART_ISR register."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the PE flag in the USART_ISR register."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl PECFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -524,7 +548,8 @@ impl PECFR {
 }
 #[doc = "Values that can be written to the field `WUCF`"]
 pub enum WUCFW {
-    #[doc = "clears the WUF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the WUF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl WUCFW {
     #[allow(missing_docs)]
@@ -573,7 +598,8 @@ impl<'a> _WUCFW<'a> {
 }
 #[doc = "Values that can be written to the field `CMCF`"]
 pub enum CMCFW {
-    #[doc = "clears the CMF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the CMF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl CMCFW {
     #[allow(missing_docs)]
@@ -622,7 +648,8 @@ impl<'a> _CMCFW<'a> {
 }
 #[doc = "Values that can be written to the field `EOBCF`"]
 pub enum EOBCFW {
-    #[doc = "clears the EOBF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the EOBF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl EOBCFW {
     #[allow(missing_docs)]
@@ -671,7 +698,8 @@ impl<'a> _EOBCFW<'a> {
 }
 #[doc = "Values that can be written to the field `RTOCF`"]
 pub enum RTOCFW {
-    #[doc = "clears the RTOF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the RTOF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl RTOCFW {
     #[allow(missing_docs)]
@@ -720,7 +748,8 @@ impl<'a> _RTOCFW<'a> {
 }
 #[doc = "Values that can be written to the field `CTSCF`"]
 pub enum CTSCFW {
-    #[doc = "clears the CTSIF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the CTSIF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl CTSCFW {
     #[allow(missing_docs)]
@@ -769,7 +798,8 @@ impl<'a> _CTSCFW<'a> {
 }
 #[doc = "Values that can be written to the field `LBDCF`"]
 pub enum LBDCFW {
-    #[doc = "clears the LBDF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the LBDF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl LBDCFW {
     #[allow(missing_docs)]
@@ -818,7 +848,8 @@ impl<'a> _LBDCFW<'a> {
 }
 #[doc = "Values that can be written to the field `TCCF`"]
 pub enum TCCFW {
-    #[doc = "clears the TC flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the TC flag in the USART_ISR register."]
+    CLEAR,
 }
 impl TCCFW {
     #[allow(missing_docs)]
@@ -867,7 +898,8 @@ impl<'a> _TCCFW<'a> {
 }
 #[doc = "Values that can be written to the field `IDLECF`"]
 pub enum IDLECFW {
-    #[doc = "clears the IDLE flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the IDLE flag in the USART_ISR register."]
+    CLEAR,
 }
 impl IDLECFW {
     #[allow(missing_docs)]
@@ -916,7 +948,8 @@ impl<'a> _IDLECFW<'a> {
 }
 #[doc = "Values that can be written to the field `ORECF`"]
 pub enum ORECFW {
-    #[doc = "clears the ORE flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the ORE flag in the USART_ISR register."]
+    CLEAR,
 }
 impl ORECFW {
     #[allow(missing_docs)]
@@ -965,7 +998,8 @@ impl<'a> _ORECFW<'a> {
 }
 #[doc = "Values that can be written to the field `NCF`"]
 pub enum NCFW {
-    #[doc = "clears the NF flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the NF flag in the USART_ISR register."]
+    CLEAR,
 }
 impl NCFW {
     #[allow(missing_docs)]
@@ -1014,7 +1048,8 @@ impl<'a> _NCFW<'a> {
 }
 #[doc = "Values that can be written to the field `FECF`"]
 pub enum FECFW {
-    #[doc = "clears the FE flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the FE flag in the USART_ISR register."]
+    CLEAR,
 }
 impl FECFW {
     #[allow(missing_docs)]
@@ -1063,7 +1098,8 @@ impl<'a> _FECFW<'a> {
 }
 #[doc = "Values that can be written to the field `PECF`"]
 pub enum PECFW {
-    #[doc = "clears the PE flag in the USART_ISR register."] CLEAR,
+    #[doc = "clears the PE flag in the USART_ISR register."]
+    CLEAR,
 }
 impl PECFW {
     #[allow(missing_docs)]

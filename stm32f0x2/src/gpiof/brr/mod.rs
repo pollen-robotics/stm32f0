@@ -16,7 +16,8 @@ impl super::BRR {
 }
 #[doc = "Values that can be written to the field `BR0`"]
 pub enum BR0W {
-    #[doc = "Resets the corresponding ODx bit"] RESET,
+    #[doc = "Resets the corresponding ODx bit"]
+    RESET,
 }
 impl BR0W {
     #[allow(missing_docs)]

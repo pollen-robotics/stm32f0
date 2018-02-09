@@ -45,10 +45,14 @@ impl super::CFGR3 {
 #[doc = "Possible values of the field `USART1SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART1SWR {
-    #[doc = "PCLK selected as USART3 clock source (default)."] PCLK,
-    #[doc = "System clock (SYSCLK) selected as USART3 clock."] SYSTEMCLOCK,
-    #[doc = "LSE clock selected as USART3 clock."] LSE,
-    #[doc = "HSI clock selected as USART3 clock."] HSI,
+    #[doc = "PCLK selected as USART3 clock source (default)."]
+    PCLK,
+    #[doc = "System clock (SYSCLK) selected as USART3 clock."]
+    SYSTEMCLOCK,
+    #[doc = "LSE clock selected as USART3 clock."]
+    LSE,
+    #[doc = "HSI clock selected as USART3 clock."]
+    HSI,
 }
 impl USART1SWR {
     #[doc = r" Value of the field as raw bits"]
@@ -97,8 +101,10 @@ impl USART1SWR {
 #[doc = "Possible values of the field `I2C1SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2C1SWR {
-    #[doc = "HSI clock selected as I2C1 clock source (default)."] HSI,
-    #[doc = "System clock (SYSCLK) selected as I2C1 clock."] SYSCLK,
+    #[doc = "HSI clock selected as I2C1 clock source (default)."]
+    HSI,
+    #[doc = "System clock (SYSCLK) selected as I2C1 clock."]
+    SYSCLK,
 }
 impl I2C1SWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -142,8 +148,10 @@ impl I2C1SWR {
 #[doc = "Possible values of the field `CECSW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CECSWR {
-    #[doc = "HSI clock, divided by 244, selected as CEC clock (default)."] HSI,
-    #[doc = "LSE clock selected as CEC clock."] LSE,
+    #[doc = "HSI clock, divided by 244, selected as CEC clock (default)."]
+    HSI,
+    #[doc = "LSE clock selected as CEC clock."]
+    LSE,
 }
 impl CECSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -187,8 +195,10 @@ impl CECSWR {
 #[doc = "Possible values of the field `USBSW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBSWR {
-    #[doc = "HSI48 clock selected as USB clock source (default)."] HSI48,
-    #[doc = "PLL clock (PLLCLK) selected as USB clock."] PLLCLOCK,
+    #[doc = "HSI48 clock selected as USB clock source (default)."]
+    HSI48,
+    #[doc = "PLL clock (PLLCLK) selected as USB clock."]
+    PLLCLOCK,
 }
 impl USBSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -253,10 +263,14 @@ impl ADCSWR {
 #[doc = "Possible values of the field `USART2SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USART2SWR {
-    #[doc = "PCLK selected as USART3 clock source (default)."] PCLK,
-    #[doc = "System clock (SYSCLK) selected as USART3 clock."] SYSTEMCLOCK,
-    #[doc = "LSE clock selected as USART3 clock."] LSE,
-    #[doc = "HSI clock selected as USART3 clock."] HSI,
+    #[doc = "PCLK selected as USART3 clock source (default)."]
+    PCLK,
+    #[doc = "System clock (SYSCLK) selected as USART3 clock."]
+    SYSTEMCLOCK,
+    #[doc = "LSE clock selected as USART3 clock."]
+    LSE,
+    #[doc = "HSI clock selected as USART3 clock."]
+    HSI,
 }
 impl USART2SWR {
     #[doc = r" Value of the field as raw bits"]
@@ -304,10 +318,14 @@ impl USART2SWR {
 }
 #[doc = "Values that can be written to the field `USART1SW`"]
 pub enum USART1SWW {
-    #[doc = "PCLK selected as USART3 clock source (default)."] PCLK,
-    #[doc = "System clock (SYSCLK) selected as USART3 clock."] SYSTEMCLOCK,
-    #[doc = "LSE clock selected as USART3 clock."] LSE,
-    #[doc = "HSI clock selected as USART3 clock."] HSI,
+    #[doc = "PCLK selected as USART3 clock source (default)."]
+    PCLK,
+    #[doc = "System clock (SYSCLK) selected as USART3 clock."]
+    SYSTEMCLOCK,
+    #[doc = "LSE clock selected as USART3 clock."]
+    LSE,
+    #[doc = "HSI clock selected as USART3 clock."]
+    HSI,
 }
 impl USART1SWW {
     #[allow(missing_docs)]
@@ -366,8 +384,10 @@ impl<'a> _USART1SWW<'a> {
 }
 #[doc = "Values that can be written to the field `I2C1SW`"]
 pub enum I2C1SWW {
-    #[doc = "HSI clock selected as I2C1 clock source (default)."] HSI,
-    #[doc = "System clock (SYSCLK) selected as I2C1 clock."] SYSCLK,
+    #[doc = "HSI clock selected as I2C1 clock source (default)."]
+    HSI,
+    #[doc = "System clock (SYSCLK) selected as I2C1 clock."]
+    SYSCLK,
 }
 impl I2C1SWW {
     #[allow(missing_docs)]
@@ -422,8 +442,10 @@ impl<'a> _I2C1SWW<'a> {
 }
 #[doc = "Values that can be written to the field `CECSW`"]
 pub enum CECSWW {
-    #[doc = "HSI clock, divided by 244, selected as CEC clock (default)."] HSI,
-    #[doc = "LSE clock selected as CEC clock."] LSE,
+    #[doc = "HSI clock, divided by 244, selected as CEC clock (default)."]
+    HSI,
+    #[doc = "LSE clock selected as CEC clock."]
+    LSE,
 }
 impl CECSWW {
     #[allow(missing_docs)]
@@ -478,8 +500,10 @@ impl<'a> _CECSWW<'a> {
 }
 #[doc = "Values that can be written to the field `USBSW`"]
 pub enum USBSWW {
-    #[doc = "HSI48 clock selected as USB clock source (default)."] HSI48,
-    #[doc = "PLL clock (PLLCLK) selected as USB clock."] PLLCLOCK,
+    #[doc = "HSI48 clock selected as USB clock source (default)."]
+    HSI48,
+    #[doc = "PLL clock (PLLCLK) selected as USB clock."]
+    PLLCLOCK,
 }
 impl USBSWW {
     #[allow(missing_docs)]
@@ -557,10 +581,14 @@ impl<'a> _ADCSWW<'a> {
 }
 #[doc = "Values that can be written to the field `USART2SW`"]
 pub enum USART2SWW {
-    #[doc = "PCLK selected as USART3 clock source (default)."] PCLK,
-    #[doc = "System clock (SYSCLK) selected as USART3 clock."] SYSTEMCLOCK,
-    #[doc = "LSE clock selected as USART3 clock."] LSE,
-    #[doc = "HSI clock selected as USART3 clock."] HSI,
+    #[doc = "PCLK selected as USART3 clock source (default)."]
+    PCLK,
+    #[doc = "System clock (SYSCLK) selected as USART3 clock."]
+    SYSTEMCLOCK,
+    #[doc = "LSE clock selected as USART3 clock."]
+    LSE,
+    #[doc = "HSI clock selected as USART3 clock."]
+    HSI,
 }
 impl USART2SWW {
     #[allow(missing_docs)]
