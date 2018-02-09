@@ -40,20 +40,27 @@ pub struct PushPull;
 pub struct OpenDrain;
 
 /// Alternate function
-pub struct Alternate<MODE> {
+pub struct Alternate<MODE, AF> {
     _mode: PhantomData<MODE>,
+    _af: PhantomData<AF>,
 }
 
-pub enum AlternateFunction {
-    AF0,
-    AF1,
-    AF2,
-    AF3,
-    AF4,
-    AF5,
-    AF6,
-    AF7,
+pub trait AlternateFunction {
+    fn bit_id(&self) -> u8;
 }
+macro_rules! AF {
+    ([$($AFX:ident : $i:expr)+]) => {
+        $(
+            pub struct $AFX;
+            impl AlternateFunction for $AFX {
+                fn bit_id(&self) -> u8 {
+                    $i
+                }
+            }
+        )+
+    }
+}
+AF!([AF0:0 AF1:1 AF2:2 AF3:3 AF4:4 AF5:5 AF6:6 AF7:7]);
 
 macro_rules! gpio {
     ($GPIOX:ident, $gpiox:ident, $gpioy:ident, $iopxenr:ident, $iopxrst:ident, $PXx:ident,
@@ -175,13 +182,14 @@ macro_rules! gpio {
 
                 impl<MODE> $PXi<MODE> {
                     /// Configures the pin to operate as an alternate function push pull output pin
-                    pub fn into_alternate_push_pull(
+                    pub fn into_alternate_push_pull<AF>(
                         self,
                         moder: &mut $MODER,
                         afr: &mut AFR,
-                        af: AlternateFunction,
-                    ) -> $PXi<Alternate<PushPull>> {
-
+                        af: AF,
+                    ) -> $PXi<Alternate<PushPull, AF>>
+                    where AF: AlternateFunction
+                    {
                         moder
                             .moder()
                             .modify(|_, w| {
@@ -190,7 +198,7 @@ macro_rules! gpio {
 
                         afr.$afrx().modify(|_, w| {
                             unsafe {
-                                w.$afrxx().bits(af as u8)
+                                w.$afrxx().bits(af.bit_id())
                             }
                         });
 

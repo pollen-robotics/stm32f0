@@ -1,5 +1,5 @@
 use hal;
-use gpio::{Alternate, PushPull};
+use gpio::{AF0, Alternate, PushPull};
 use gpio::gpioc::{PC6, PC9};
 use rcc::{APB1, Clocks};
 use time::Hertz;
@@ -127,7 +127,7 @@ pub trait Pins<TIM> {
     fn channels(&self) -> (bool, bool, bool, bool);
 }
 
-impl Pins<TIM3> for (PC6<Alternate<PushPull>>, PC9<Alternate<PushPull>>) {
+impl Pins<TIM3> for (PC6<Alternate<PushPull, AF0>>, PC9<Alternate<PushPull, AF0>>) {
     fn channels(&self) -> (bool, bool, bool, bool) {
         (true, false, false, true)
     }

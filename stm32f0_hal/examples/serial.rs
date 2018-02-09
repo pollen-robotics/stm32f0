@@ -20,16 +20,12 @@ fn main() {
 
     let mut gpioa = p.GPIOA.split(&mut rcc.ahb);
 
-    let tx = gpioa.pa9.into_alternate_push_pull(
-        &mut gpioa.moder,
-        &mut gpioa.afr,
-        hal::gpio::AlternateFunction::AF1,
-    );
-    let rx = gpioa.pa10.into_alternate_push_pull(
-        &mut gpioa.moder,
-        &mut gpioa.afr,
-        hal::gpio::AlternateFunction::AF1,
-    );
+    let tx = gpioa
+        .pa9
+        .into_alternate_push_pull(&mut gpioa.moder, &mut gpioa.afr, hal::gpio::AF1);
+    let rx = gpioa
+        .pa10
+        .into_alternate_push_pull(&mut gpioa.moder, &mut gpioa.afr, hal::gpio::AF1);
 
     // let cp = cortex_m::Peripherals::take().unwrap();
     // let mut nvic = cp.NVIC;

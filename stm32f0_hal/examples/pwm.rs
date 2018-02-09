@@ -14,16 +14,12 @@ fn main() {
     let clocks = rcc.cfgr.freeze(&mut flash.acr);
 
     let mut gpioc = p.GPIOC.split(&mut rcc.ahb);
-    let pc6 = gpioc.pc6.into_alternate_push_pull(
-        &mut gpioc.moder,
-        &mut gpioc.afr,
-        hal::gpio::AlternateFunction::AF0,
-    );
-    let pc9 = gpioc.pc9.into_alternate_push_pull(
-        &mut gpioc.moder,
-        &mut gpioc.afr,
-        hal::gpio::AlternateFunction::AF0,
-    );
+    let pc6 = gpioc
+        .pc6
+        .into_alternate_push_pull(&mut gpioc.moder, &mut gpioc.afr, hal::gpio::AF0);
+    let pc9 = gpioc
+        .pc9
+        .into_alternate_push_pull(&mut gpioc.moder, &mut gpioc.afr, hal::gpio::AF0);
 
     let mut pwm = hal::pwm::Pwm::tim3(p.TIM3, (pc6, pc9), 50.hz(), clocks, &mut rcc.apb1);
     let duty = 9 * pwm.get_max_duty() / 10;

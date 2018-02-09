@@ -7,14 +7,19 @@ use stm32f0x2::{USART1, USART3};
 use nb::{Error, Result};
 
 use gpio::gpioa::{PA10, PA9};
-use gpio::{Alternate, PushPull};
+use gpio::{AF1, Alternate, PushPull};
 use hal;
 use rcc::{APB1, APB2, Clocks};
 
 use time::Bps;
 
 pub trait Pins<USART> {}
-impl Pins<USART1> for (PA9<Alternate<PushPull>>, PA10<Alternate<PushPull>>) {}
+impl Pins<USART1>
+    for (
+        PA9<Alternate<PushPull, AF1>>,
+        PA10<Alternate<PushPull, AF1>>,
+    ) {
+}
 
 pub struct Serial<USART, PINS> {
     _usart: USART,
