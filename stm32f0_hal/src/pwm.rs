@@ -4,7 +4,7 @@ use gpio::gpioc::{PC6, PC9};
 use rcc::{APB1, Clocks};
 use time::Hertz;
 
-use stm32f0x2::TIM3;
+use stm32f0x2::{TIM2, TIM3};
 
 pub struct Pwm<TIM> {
     tim: TIM,
@@ -134,6 +134,7 @@ impl Pins<TIM3> for (PC6<Alternate<PushPull>>, PC9<Alternate<PushPull>>) {
 }
 
 // Ou d'autres variantes genre 32bits & 2 channels ?
+pwm!(TIM2: (tim2, APB1, tim2en, tim2rst));
 pwm!(TIM3: (tim3, APB1, tim3en, tim3rst));
 // pwm_32!(TIM3: (tim3, APB1, tim3en, tim3rst));
 // pwm_16!(TIM15: (tim15, APB2, tim15en, tim15rst));
