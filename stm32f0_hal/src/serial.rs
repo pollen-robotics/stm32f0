@@ -97,7 +97,7 @@ macro_rules! usart {
                 if uart.isr.read().tc().bit_is_set() {
                     uart.icr.write(|w| w.tccf().clear_bit());
                     unsafe {
-                        ptr::write_volatile(&uart.tdr as *const _ as *mut _, byte as u32);
+                        ptr::write_volatile(&uart.tdr as *const _ as *mut _, u32::from(byte))
                     }
 
                     Ok(())

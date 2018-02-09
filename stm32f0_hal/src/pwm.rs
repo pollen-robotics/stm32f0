@@ -1,10 +1,10 @@
 use hal;
 use gpio::{Alternate, PushPull};
 use gpio::gpioc::{PC6, PC9};
-use rcc::{APB1, APB2, Clocks};
+use rcc::{APB1, Clocks};
 use time::Hertz;
 
-use stm32f0x2::{TIM15, TIM3};
+use stm32f0x2::TIM3;
 
 pub struct Pwm<TIM> {
     tim: TIM,
@@ -96,12 +96,12 @@ macro_rules! pwm {
                 }
             }
             fn get_duty(&self) -> Self::Duty {
-                (self.tim.ccr2.read().ccr2_h().bits() as u32) << 16
-                    | self.tim.ccr2.read().ccr2_l().bits() as u32
+                u32::from(self.tim.ccr2.read().ccr2_h().bits()) << 16
+                    | u32::from(self.tim.ccr2.read().ccr2_l().bits())
             }
             fn get_max_duty(&self) -> Self::Duty {
-                (self.tim.arr.read().arr_h().bits() as u32) << 16
-                    | self.tim.arr.read().arr_l().bits() as u32
+                u32::from(self.tim.arr.read().arr_h().bits()) << 16
+                    | u32::from(self.tim.arr.read().arr_l().bits())
             }
             fn set_duty(&mut self, duty: Self::Duty) {
                 let h = (duty >> 16) as u16;
@@ -133,8 +133,10 @@ impl Pins<TIM3> for (PC6<Alternate<PushPull>>, PC9<Alternate<PushPull>>) {
     }
 }
 
+// Ou d'autres variantes genre 32bits & 2 channels ?
 pwm!(TIM3: (tim3, APB1, tim3en, tim3rst));
-// pwm!(TIM15: (tim15, APB2, tim15en, tim15rst));
+// pwm_32!(TIM3: (tim3, APB1, tim3en, tim3rst));
+// pwm_16!(TIM15: (tim15, APB2, tim15en, tim15rst));
 
 // pwm!(tim3: (APB1, tim3en, tim3rst, [PA6-AF0, PB4, PC6], [PA7, PB5, PC7], [PB0, PC8], [PB1, PC9]))
 // C1, C2, C3, C4, C1-C2, C1-C3, C1-C4, C2-C3, C2-C4, C3-C4, C1-C2-C3, C1-C2-C4, C1-C3-C4, C2-*-*, C3-*-*, C4-*-*, C1-C2-C3-C4

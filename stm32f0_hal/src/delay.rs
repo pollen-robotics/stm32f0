@@ -4,21 +4,21 @@ use cortex_m::peripheral::syst::SystClkSource;
 use hal::blocking::delay::{DelayMs, DelayUs};
 use rcc::Clocks;
 
-/// System timer (SysTick) as a delay provider
+/// System timer (`SysTick`) as a delay provider
 pub struct Delay {
     clocks: Clocks,
     syst: SYST,
 }
 
 impl Delay {
-    /// Configures the system timer (SysTick) as a delay provider
+    /// Configures the system timer (`SysTick`) as a delay provider
     pub fn new(mut syst: SYST, clocks: Clocks) -> Self {
         syst.set_clock_source(SystClkSource::Core);
 
         Delay { syst, clocks }
     }
 
-    /// Releases the system timer (SysTick) resource
+    /// Releases the system timer (`SysTick`) resource
     pub fn free(self) -> SYST {
         self.syst
     }
@@ -32,13 +32,13 @@ impl DelayMs<u32> for Delay {
 
 impl DelayMs<u16> for Delay {
     fn delay_ms(&mut self, ms: u16) {
-        self.delay_ms(ms as u32);
+        self.delay_ms(u32::from(ms));
     }
 }
 
 impl DelayMs<u8> for Delay {
     fn delay_ms(&mut self, ms: u8) {
-        self.delay_ms(ms as u32);
+        self.delay_ms(u32::from(ms));
     }
 }
 
@@ -59,12 +59,12 @@ impl DelayUs<u32> for Delay {
 
 impl DelayUs<u16> for Delay {
     fn delay_us(&mut self, us: u16) {
-        self.delay_us(us as u32)
+        self.delay_us(u32::from(us));
     }
 }
 
 impl DelayUs<u8> for Delay {
     fn delay_us(&mut self, us: u8) {
-        self.delay_us(us as u32)
+        self.delay_us(u32::from(us));
     }
 }

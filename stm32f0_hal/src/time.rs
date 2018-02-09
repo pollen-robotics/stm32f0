@@ -2,15 +2,15 @@
 #[derive(Clone, Copy)]
 pub struct Bps(pub u32);
 
-/// Hertz
+/// `Hertz`
 #[derive(Clone, Copy)]
 pub struct Hertz(pub u32);
 
-/// KiloHertz
+/// `KiloHertz`
 #[derive(Clone, Copy)]
 pub struct KiloHertz(pub u32);
 
-/// MegaHertz
+/// `MegaHertz`
 #[derive(Clone, Copy)]
 pub struct MegaHertz(pub u32);
 
