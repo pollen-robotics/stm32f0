@@ -35,7 +35,6 @@ features = ["rt"]
 path = "../stm32f0x2"
 
 [dependencies.cortex-m-rt]
-features = ["abort-on-panic"]
 version = "0.3.12"
 
 [dev-dependencies.cortex-m-semihosting]
@@ -44,3 +43,4 @@ version = "0.2.0"
 [features]
 default = []
 use_alloc = ["alloc-cortex-m"]
+serial_panic = ["use_alloc"]
