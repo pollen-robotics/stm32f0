@@ -7,7 +7,8 @@ use stm32f0x2::{USART1, USART3};
 use nb::{Error, Result};
 
 use gpio::gpioa::{PA10, PA9};
-use gpio::{AF1, Alternate, PushPull};
+use gpio::gpiob::{PB10, PB11};
+use gpio::{AF1, AF4, Alternate, PushPull};
 use hal;
 use rcc::{APB1, APB2, Clocks};
 
@@ -18,6 +19,13 @@ impl Pins<USART1>
     for (
         PA9<Alternate<PushPull, AF1>>,
         PA10<Alternate<PushPull, AF1>>,
+    ) {
+}
+
+impl Pins<USART3>
+    for (
+        PB10<Alternate<PushPull, AF4>>,
+        PB11<Alternate<PushPull, AF4>>,
     ) {
 }
 
