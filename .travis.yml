@@ -10,9 +10,6 @@ addons:
     packages:
       - binutils-arm-none-eabi
 
-env:
-  - TARGET=thumbv6m-none-eabi
-
 before_script:
   - export PATH="$PATH:$HOME/.cargo/bin"
   - cargo install --force rustfmt-nightly
@@ -22,8 +19,8 @@ before_script:
 
 script:
   - cargo clean
-  - xargo check --target $TARGET
-  - xargo build --target $TARGET --examples --all-features
+  - xargo build --target thumbv6m-none-eabi
+  - xargo build --target thumbv6m-none-eabi --examples --all-features
   - cargo fmt -- --write-mode=diff
 
 after_script:
