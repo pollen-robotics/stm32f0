@@ -15,7 +15,7 @@ pub unsafe extern "C" fn panic_fmt(
         if let Some(ref mut tx) = serial_panic::TX {
             writeln!(
                 tx,
-                "'main' panicked at '{}', {}:{}:{}",
+                "*** PANIC *** 'main' panicked at '{}', {}:{}:{}",
                 msg, file, line, column
             ).unwrap();
         }
@@ -26,28 +26,23 @@ pub unsafe extern "C" fn panic_fmt(
 
 #[cfg(feature = "serial_panic")]
 mod serial_panic {
-    use alloc::boxed::Box;
-    use core::fmt;
+    use core::fmt::{Error, Write};
 
     use hal;
 
     /// Setup a serial TX where the panic will be sent
-    ///
-    /// Beware that the panic message is a fmt and will thus require to have setup dynamic allocation before.
-    pub fn log_on_serial<W: 'static>(tx: W)
+    pub unsafe fn log_on_serial<W>(tx: &'static mut W)
     where
         W: hal::serial::Write<u8, Error = !>,
     {
-        unsafe {
-            TX = Some(SerialLog(Box::new(tx)));
-        }
+        TX = Some(SerialLog(tx));
     }
 
     pub(crate) static mut TX: Option<SerialLog> = None;
 
-    pub(crate) struct SerialLog(Box<hal::serial::Write<u8, Error = !>>);
-    impl fmt::Write for SerialLog {
-        fn write_str(&mut self, s: &str) -> Result<(), fmt::Error> {
+    pub(crate) struct SerialLog(&'static mut hal::serial::Write<u8, Error = !>);
+    impl Write for SerialLog {
+        fn write_str(&mut self, s: &str) -> Result<(), Error> {
             for &b in s.as_bytes() {
                 block!(self.0.write(b)).ok();
             }

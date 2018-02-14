@@ -4,7 +4,6 @@
 #![feature(core_intrinsics)]
 #![feature(use_extern_macros)]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
-#![cfg_attr(feature = "serial_panic", feature(alloc))]
 
 extern crate cortex_m;
 extern crate embedded_hal as hal;
@@ -25,9 +24,6 @@ pub mod rcc;
 pub mod serial;
 pub mod time;
 pub mod timer;
-
-#[cfg(feature = "serial_panic")]
-extern crate alloc;
 
 #[cfg(feature = "use_alloc")]
 extern crate alloc_cortex_m as heap;
