@@ -375,6 +375,7 @@ gpio!(
 gpio!(
     GPIOB, gpiob, gpiof, iopben, iopbrst, PBx,
     [
+        PB0: (pb0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
         PB9: (pb9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
         PB10: (pb10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
         PB11: (pb11, idr11, odr11, bs11, br11, moder11, ot11, ospeedr11, pupdr11, afrh, afrh11, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
