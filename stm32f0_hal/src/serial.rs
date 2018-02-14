@@ -1,9 +1,9 @@
 use core::marker::PhantomData;
 use core::ptr;
 
-// use stm32f0x2::{Interrupt};
+use stm32f0x2::{Interrupt};
 use stm32f0x2::{USART1, USART3};
-// use cortex_m::peripheral::NVIC;
+use cortex_m::peripheral::NVIC;
 use nb::{Error, Result};
 
 use gpio::gpioa::{PA10, PA9};
@@ -89,9 +89,6 @@ macro_rules! usart {
                     );
                     usart.cr1.modify(|_, w| w.ue().enabled());
 
-                    // // If interrupt
-                    // nvic.enable(Interrupt::$usart_inter);
-                    // nvic.clear_pending(Interrupt::$usart_inter);
 
                     Serial { _usart: usart, _pins: pins }
                 }
@@ -122,9 +119,18 @@ macro_rules! usart {
                 Ok(())
             }
         }
+        impl Tx<$USARTX> {
+            pub fn interrupt_enable(&mut self, nvic: &mut NVIC,) {
+                let uart = unsafe { &(*$USARTX::ptr()) };
+                uart.cr1.modify(|_, w| {w.tcie().enabled()});
+
+                // If interrupt
+                nvic.enable(Interrupt::$usart_inter);
+                nvic.clear_pending(Interrupt::$usart_inter);
+            }
+        }
         impl hal::serial::Read<u8> for Rx<$USARTX> {
             type Error = !;
-
             fn read(&mut self) -> Result<u8, Self::Error> {
                 let uart = unsafe { &(*$USARTX::ptr()) };
 
@@ -133,6 +139,16 @@ macro_rules! usart {
                 } else {
                     Err(Error::WouldBlock)
                 }
+            }
+        }
+        impl Rx<$USARTX> {
+            pub fn interrupt_enable(&mut self, nvic: &mut NVIC,) {
+                let uart = unsafe { &(*$USARTX::ptr()) };
+                uart.cr1.modify(|_, w| {w.rxneie().enabled()});
+
+                // If interrupt
+                nvic.enable(Interrupt::$usart_inter);
+                nvic.clear_pending(Interrupt::$usart_inter);
             }
         }
         )+
