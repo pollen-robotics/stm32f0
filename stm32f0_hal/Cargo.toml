@@ -37,6 +37,9 @@ path = "../stm32f0x2"
 [dependencies.cortex-m-rt]
 version = "0.3.12"
 
+[dev-dependencies.as_static]
+git = "https://github.com/pollen-robotics/as_static"
+
 [dev-dependencies.cortex-m-semihosting]
 version = "0.2.0"
 
