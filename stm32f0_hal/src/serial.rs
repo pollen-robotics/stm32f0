@@ -10,6 +10,7 @@ use gpio::gpioa::{PA10, PA9};
 use gpio::gpiob::{PB10, PB11};
 use gpio::{AF1, AF4, Alternate, PushPull};
 use hal;
+use hal::serial::Write;
 use rcc::{APB1, APB2, Clocks};
 
 use time::Bps;
@@ -99,6 +100,14 @@ macro_rules! usart {
                     )
                 }
             }
+            impl Tx<$USARTX> {
+                pub fn write_str(&mut self, s: &str)  -> Result<(), !> {
+                    for &b in s.as_bytes() {
+                        block!(self.write(b)).ok();
+                    }
+                    Ok(())
+                }
+            }
         impl hal::serial::Write<u8> for Tx<$USARTX> {
             type Error = !;
             fn write(&mut self, byte: u8) -> Result<(), !> {
@@ -117,16 +126,6 @@ macro_rules! usart {
             }
             fn flush(&mut self) -> Result<(), !> {
                 Ok(())
-            }
-        }
-        impl Tx<$USARTX> {
-            pub fn interrupt_enable(&mut self, nvic: &mut NVIC,) {
-                let uart = unsafe { &(*$USARTX::ptr()) };
-                uart.cr1.modify(|_, w| {w.tcie().enabled()});
-
-                // If interrupt
-                nvic.enable(Interrupt::$usart_inter);
-                nvic.clear_pending(Interrupt::$usart_inter);
             }
         }
         impl hal::serial::Read<u8> for Rx<$USARTX> {

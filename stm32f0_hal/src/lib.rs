@@ -10,7 +10,7 @@ extern crate embedded_hal as hal;
 
 pub extern crate stm32f0x2;
 
-#[cfg_attr(feature = "serial_panic", macro_use(block))]
+#[macro_use(block)]
 extern crate nb;
 
 pub mod adc;
