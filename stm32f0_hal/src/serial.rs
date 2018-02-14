@@ -1,7 +1,7 @@
 use core::marker::PhantomData;
 use core::ptr;
 
-use stm32f0x2::{Interrupt};
+use stm32f0x2::Interrupt;
 use stm32f0x2::{USART1, USART3};
 use cortex_m::peripheral::NVIC;
 use nb::{Error, Result};
@@ -62,9 +62,6 @@ macro_rules! usart {
                     // TODO: configure nbits, parity, stop bit
                     usart.cr1.modify(|_, w| {
                         w.te().enabled().re().enabled().over8().over8()
-                        // If using Interrupt
-                        // .rxneie()
-                        // .enabled()
                     });
                     usart.cr3.modify(|_, w| {
                         w.rtse()
@@ -141,9 +138,9 @@ macro_rules! usart {
             }
         }
         impl Rx<$USARTX> {
-            pub fn interrupt_enable(&mut self, nvic: &mut NVIC,) {
+            pub fn listen_interrupt(&mut self, nvic: &mut NVIC) {
                 let uart = unsafe { &(*$USARTX::ptr()) };
-                uart.cr1.modify(|_, w| {w.rxneie().enabled()});
+                uart.cr1.modify(|_, w| { w.rxneie().enabled() });
 
                 // If interrupt
                 nvic.enable(Interrupt::$usart_inter);
