@@ -376,6 +376,11 @@ gpio!(
     GPIOB, gpiob, gpiof, iopben, iopbrst, PBx,
     [
         PB0: (pb0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB1: (pb1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, afrl, afrl1, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB3: (pb3, idr3, odr3, bs3, br3, moder3, ot3, ospeedr3, pupdr3, afrl, afrl3, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB4: (pb4, idr4, odr4, bs4, br4, moder4, ot4, ospeedr4, pupdr4, afrl, afrl4, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB5: (pb5, idr5, odr5, bs5, br5, moder5, ot5, ospeedr5, pupdr5, afrl, afrl5, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+
         PB9: (pb9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
         PB10: (pb10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
         PB11: (pb11, idr11, odr11, bs11, br11, moder11, ot11, ospeedr11, pupdr11, afrh, afrh11, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
