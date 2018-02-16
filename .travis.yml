@@ -11,8 +11,8 @@ addons:
       - binutils-arm-none-eabi
 
 before_script:
-  - export PATH="$PATH:$HOME/.cargo/bin"
-  - cargo install --force rustfmt-nightly
+  - rustup component add --toolchain nightly rustfmt-preview
+  - which rustfmt || cargo install --force rustfmt-nightly
   - which xargo || cargo install xargo
   - rustup component list | grep 'rust-src.*installed' || rustup component add rust-src
   - set -e
@@ -21,7 +21,7 @@ script:
   - cargo clean
   - xargo build --target thumbv6m-none-eabi
   - xargo build --target thumbv6m-none-eabi --examples --all-features
-  - cargo fmt -- --write-mode=diff
+  - cargo +nightly fmt --all -- --write-mode=diff
 
 after_script:
   - set +e
