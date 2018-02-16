@@ -8,6 +8,7 @@ description = "Rust API for the STM32F0 micro controller"
 keywords = [
     "embedded",
     "STM32",
+    "embedded-hal-impl",
 ]
 license = "Apache-2.0"
 name = "stm32f0_hal"
@@ -27,6 +28,7 @@ git = "https://github.com/pollen-robotics/alloc-cortex-m"
 optional = true
 
 [dependencies.embedded-hal]
+git = "https://github.com/pollen-robotics/embedded-hal"
 features = ["unproven"]
 version = "0.1.0"
 
