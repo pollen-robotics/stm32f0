@@ -28,9 +28,6 @@ fn main() {
     let mut rcc = p.RCC.constrain();
     let clocks = rcc.cfgr.freeze(&mut flash.acr);
 
-    let cp = cortex_m::Peripherals::take().unwrap();
-    let mut nvic = cp.NVIC;
-
     let mut gpioa = p.GPIOA.split(&mut rcc.ahb);
     let tx = gpioa
         .pa9
@@ -42,7 +39,7 @@ fn main() {
         hal::serial::Serial::usart1(p.USART1, (tx, rx), 57_600_u32.bps(), clocks, &mut rcc.apb2);
 
     let (tx, mut rx) = serial.split();
-    rx.listen_interrupt(&mut nvic);
+    rx.listen();
 
     unsafe {
         RX.lazy_init(rx);

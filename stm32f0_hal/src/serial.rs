@@ -1,9 +1,9 @@
 use core::marker::PhantomData;
 use core::ptr;
 
-use stm32f0x2::Interrupt;
-use stm32f0x2::{USART1, USART3};
-use cortex_m::peripheral::NVIC;
+use cortex_m;
+
+use stm32f0x2::{Interrupt, USART1, USART3};
 use nb::{Error, Result};
 
 use gpio::gpioa::{PA10, PA9};
@@ -14,6 +14,10 @@ use hal::serial::Write;
 use rcc::{APB1, APB2, Clocks};
 
 use time::Bps;
+
+pub enum Event {
+    Rxe,
+}
 
 pub trait Pins<USART> {}
 impl Pins<USART1>
@@ -137,12 +141,15 @@ macro_rules! usart {
                 }
             }
         }
-        impl Rx<$USARTX> {
-            pub fn listen_interrupt(&mut self, nvic: &mut NVIC) {
+        impl hal::serial::AsyncRead<u8> for Rx<$USARTX> {
+            fn listen(&mut self) {
                 let uart = unsafe { &(*$USARTX::ptr()) };
                 uart.cr1.modify(|_, w| { w.rxneie().enabled() });
 
-                // If interrupt
+                // TODO: That's a really really unsafe way of accessing NVIC...
+                // We probably should expose a NVIC trait as a parameter instead.
+                // As we don't want to have any cortex_m object in the trait signature.
+                let mut nvic = unsafe { cortex_m::Peripherals::steal().NVIC };
                 nvic.enable(Interrupt::$usart_inter);
                 nvic.clear_pending(Interrupt::$usart_inter);
             }
