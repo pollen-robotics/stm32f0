@@ -47,7 +47,7 @@ macro_rules! timer {
                 if self.tim.sr.read().uif().bit_is_clear() {
                     Err(Error::WouldBlock)
                 } else {
-                    // Clean event flat
+                    // Clear event flag
                     self.tim.sr.modify(|_, w| w.uif().clear());
                     Ok(())
                 }
