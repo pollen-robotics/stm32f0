@@ -129,9 +129,8 @@ macro_rules! usart {
                 Ok(())
             }
         }
-        impl hal::serial::Read<u8> for Rx<$USARTX> {
-            type Error = !;
-            fn read(&mut self) -> Result<u8, Self::Error> {
+        impl Rx<$USARTX> {
+            fn _read(&mut self) -> Result<u8, !> {
                 let uart = unsafe { &(*$USARTX::ptr()) };
 
                 if uart.isr.read().rxne().bit_is_set() {
@@ -141,7 +140,19 @@ macro_rules! usart {
                 }
             }
         }
+        impl hal::serial::Read<u8> for Rx<$USARTX> {
+            type Error = !;
+            fn read(&mut self) -> Result<u8, Self::Error> {
+                self._read()
+            }
+        }
         impl hal::serial::AsyncRead<u8> for Rx<$USARTX> {
+            type Error = !;
+
+            fn async_read(&mut self) -> u8 {
+                self._read().unwrap()
+            }
+
             fn listen(&mut self) {
                 let uart = unsafe { &(*$USARTX::ptr()) };
                 uart.cr1.modify(|_, w| { w.rxneie().enabled() });
