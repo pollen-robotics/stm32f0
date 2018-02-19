@@ -147,8 +147,6 @@ macro_rules! usart {
             }
         }
         impl hal::serial::AsyncRead<u8> for Rx<$USARTX> {
-            type Error = !;
-
             fn async_read(&mut self) -> u8 {
                 self._read().unwrap()
             }
@@ -161,6 +159,7 @@ macro_rules! usart {
                 // We probably should expose a NVIC trait as a parameter instead.
                 // As we don't want to have any cortex_m object in the trait signature.
                 let mut nvic = unsafe { cortex_m::Peripherals::steal().NVIC };
+
                 nvic.enable(Interrupt::$usart_inter);
                 nvic.clear_pending(Interrupt::$usart_inter);
             }
