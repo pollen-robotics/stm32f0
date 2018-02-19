@@ -48,4 +48,4 @@ version = "0.2.0"
 [features]
 default = []
 use_alloc = ["alloc-cortex-m"]
-serial_panic = ["use_alloc"]
+serial_panic = []
