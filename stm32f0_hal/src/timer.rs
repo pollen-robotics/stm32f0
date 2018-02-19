@@ -48,10 +48,10 @@ macro_rules! timer {
             }
         }
         impl Timeout for Timer<$TIMX> {
-            type Time = Hertz;
+            type Time = u32;
 
-            fn start(&mut self, timeout: Hertz) {
-                self._start(timeout);
+            fn start(&mut self, timeout: u32) {
+                self._start(Hertz(timeout));
             }
             fn listen(&mut self, event: Event) {
 
