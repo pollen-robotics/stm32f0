@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::TXCRCR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,19 +17,19 @@ pub struct TXCRCR {
 }
 impl TXCRCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:15 - Tx CRC register"]
-    #[inline(always)]
+    #[inline]
     pub fn tx_crc(&self) -> TXCRCR {
         let bits = {
             const MASK: u16 = 65535;

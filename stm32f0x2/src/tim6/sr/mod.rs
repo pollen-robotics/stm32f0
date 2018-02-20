@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +45,24 @@ impl super::SR {
 #[doc = "Possible values of the field `UIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIFR {
-    #[doc = "No update occurred"] NOUPDATE,
-    #[doc = "Update interrupt pending"] PENDING,
+    #[doc = "No update occurred"]
+    NOUPDATE,
+    #[doc = "Update interrupt pending"]
+    PENDING,
 }
 impl UIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             UIFR::NOUPDATE => false,
@@ -69,7 +71,7 @@ impl UIFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> UIFR {
         match value {
             false => UIFR::NOUPDATE,
@@ -77,24 +79,25 @@ impl UIFR {
         }
     }
     #[doc = "Checks if the value of the field is `NOUPDATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_no_update(&self) -> bool {
         *self == UIFR::NOUPDATE
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pending(&self) -> bool {
         *self == UIFR::PENDING
     }
 }
 #[doc = "Values that can be written to the field `UIF`"]
 pub enum UIFW {
-    #[doc = "Clears the update interrupt flag"] CLEAR,
+    #[doc = "Clears the update interrupt flag"]
+    CLEAR,
 }
 impl UIFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UIFW::CLEAR => false,
@@ -107,14 +110,14 @@ pub struct _UIFW<'a> {
 }
 impl<'a> _UIFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UIFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clears the update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn clear(self) -> &'a mut W {
         self.variant(UIFW::CLEAR)
     }
@@ -127,7 +130,7 @@ impl<'a> _UIFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -138,12 +141,12 @@ impl<'a> _UIFW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn uif(&self) -> UIFR {
         UIFR::_from({
             const MASK: bool = true;
@@ -154,18 +157,18 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Update interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn uif(&mut self) -> _UIFW {
         _UIFW { w: self }
     }

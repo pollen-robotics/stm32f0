@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct CTPHR {
 }
 impl CTPHR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct CTPLR {
 }
 impl CTPLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct SSDR {
 }
 impl SSDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -81,17 +81,17 @@ pub struct SSER {
 }
 impl SSER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -102,17 +102,17 @@ pub struct SSPSCR {
 }
 impl SSPSCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -123,7 +123,7 @@ pub struct PGPSCR {
 }
 impl PGPSCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -134,7 +134,7 @@ pub struct MCVR {
 }
 impl MCVR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -145,17 +145,17 @@ pub struct IODEFR {
 }
 impl IODEFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -166,17 +166,17 @@ pub struct SYNCPOLR {
 }
 impl SYNCPOLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -187,17 +187,17 @@ pub struct AMR {
 }
 impl AMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -208,17 +208,17 @@ pub struct STARTR {
 }
 impl STARTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -229,17 +229,17 @@ pub struct TSCER {
 }
 impl TSCER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -250,7 +250,7 @@ pub struct _CTPHW<'a> {
 }
 impl<'a> _CTPHW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 28;
@@ -265,7 +265,7 @@ pub struct _CTPLW<'a> {
 }
 impl<'a> _CTPLW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 24;
@@ -280,7 +280,7 @@ pub struct _SSDW<'a> {
 }
 impl<'a> _SSDW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 127;
         const OFFSET: u8 = 17;
@@ -303,7 +303,7 @@ impl<'a> _SSEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -326,7 +326,7 @@ impl<'a> _SSPSCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -341,7 +341,7 @@ pub struct _PGPSCW<'a> {
 }
 impl<'a> _PGPSCW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 12;
@@ -356,7 +356,7 @@ pub struct _MCVW<'a> {
 }
 impl<'a> _MCVW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 5;
@@ -379,7 +379,7 @@ impl<'a> _IODEFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -402,7 +402,7 @@ impl<'a> _SYNCPOLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -425,7 +425,7 @@ impl<'a> _AMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -448,7 +448,7 @@ impl<'a> _STARTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -471,7 +471,7 @@ impl<'a> _TSCEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -482,12 +482,12 @@ impl<'a> _TSCEW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 28:31 - Charge transfer pulse high"]
-    #[inline(always)]
+    #[inline]
     pub fn ctph(&self) -> CTPHR {
         let bits = {
             const MASK: u8 = 15;
@@ -497,7 +497,7 @@ impl R {
         CTPHR { bits }
     }
     #[doc = "Bits 24:27 - Charge transfer pulse low"]
-    #[inline(always)]
+    #[inline]
     pub fn ctpl(&self) -> CTPLR {
         let bits = {
             const MASK: u8 = 15;
@@ -507,7 +507,7 @@ impl R {
         CTPLR { bits }
     }
     #[doc = "Bits 17:23 - Spread spectrum deviation"]
-    #[inline(always)]
+    #[inline]
     pub fn ssd(&self) -> SSDR {
         let bits = {
             const MASK: u8 = 127;
@@ -517,7 +517,7 @@ impl R {
         SSDR { bits }
     }
     #[doc = "Bit 16 - Spread spectrum enable"]
-    #[inline(always)]
+    #[inline]
     pub fn sse(&self) -> SSER {
         let bits = {
             const MASK: bool = true;
@@ -527,7 +527,7 @@ impl R {
         SSER { bits }
     }
     #[doc = "Bit 15 - Spread spectrum prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn sspsc(&self) -> SSPSCR {
         let bits = {
             const MASK: bool = true;
@@ -537,7 +537,7 @@ impl R {
         SSPSCR { bits }
     }
     #[doc = "Bits 12:14 - pulse generator prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn pgpsc(&self) -> PGPSCR {
         let bits = {
             const MASK: u8 = 7;
@@ -547,7 +547,7 @@ impl R {
         PGPSCR { bits }
     }
     #[doc = "Bits 5:7 - Max count value"]
-    #[inline(always)]
+    #[inline]
     pub fn mcv(&self) -> MCVR {
         let bits = {
             const MASK: u8 = 7;
@@ -557,7 +557,7 @@ impl R {
         MCVR { bits }
     }
     #[doc = "Bit 4 - I/O Default mode"]
-    #[inline(always)]
+    #[inline]
     pub fn iodef(&self) -> IODEFR {
         let bits = {
             const MASK: bool = true;
@@ -567,7 +567,7 @@ impl R {
         IODEFR { bits }
     }
     #[doc = "Bit 3 - Synchronization pin polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn syncpol(&self) -> SYNCPOLR {
         let bits = {
             const MASK: bool = true;
@@ -577,7 +577,7 @@ impl R {
         SYNCPOLR { bits }
     }
     #[doc = "Bit 2 - Acquisition mode"]
-    #[inline(always)]
+    #[inline]
     pub fn am(&self) -> AMR {
         let bits = {
             const MASK: bool = true;
@@ -587,7 +587,7 @@ impl R {
         AMR { bits }
     }
     #[doc = "Bit 1 - Start a new acquisition"]
-    #[inline(always)]
+    #[inline]
     pub fn start(&self) -> STARTR {
         let bits = {
             const MASK: bool = true;
@@ -597,7 +597,7 @@ impl R {
         STARTR { bits }
     }
     #[doc = "Bit 0 - Touch sensing controller enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tsce(&self) -> TSCER {
         let bits = {
             const MASK: bool = true;
@@ -609,73 +609,73 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 28:31 - Charge transfer pulse high"]
-    #[inline(always)]
+    #[inline]
     pub fn ctph(&mut self) -> _CTPHW {
         _CTPHW { w: self }
     }
     #[doc = "Bits 24:27 - Charge transfer pulse low"]
-    #[inline(always)]
+    #[inline]
     pub fn ctpl(&mut self) -> _CTPLW {
         _CTPLW { w: self }
     }
     #[doc = "Bits 17:23 - Spread spectrum deviation"]
-    #[inline(always)]
+    #[inline]
     pub fn ssd(&mut self) -> _SSDW {
         _SSDW { w: self }
     }
     #[doc = "Bit 16 - Spread spectrum enable"]
-    #[inline(always)]
+    #[inline]
     pub fn sse(&mut self) -> _SSEW {
         _SSEW { w: self }
     }
     #[doc = "Bit 15 - Spread spectrum prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn sspsc(&mut self) -> _SSPSCW {
         _SSPSCW { w: self }
     }
     #[doc = "Bits 12:14 - pulse generator prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn pgpsc(&mut self) -> _PGPSCW {
         _PGPSCW { w: self }
     }
     #[doc = "Bits 5:7 - Max count value"]
-    #[inline(always)]
+    #[inline]
     pub fn mcv(&mut self) -> _MCVW {
         _MCVW { w: self }
     }
     #[doc = "Bit 4 - I/O Default mode"]
-    #[inline(always)]
+    #[inline]
     pub fn iodef(&mut self) -> _IODEFW {
         _IODEFW { w: self }
     }
     #[doc = "Bit 3 - Synchronization pin polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn syncpol(&mut self) -> _SYNCPOLW {
         _SYNCPOLW { w: self }
     }
     #[doc = "Bit 2 - Acquisition mode"]
-    #[inline(always)]
+    #[inline]
     pub fn am(&mut self) -> _AMW {
         _AMW { w: self }
     }
     #[doc = "Bit 1 - Start a new acquisition"]
-    #[inline(always)]
+    #[inline]
     pub fn start(&mut self) -> _STARTW {
         _STARTW { w: self }
     }
     #[doc = "Bit 0 - Touch sensing controller enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tsce(&mut self) -> _TSCEW {
         _TSCEW { w: self }
     }

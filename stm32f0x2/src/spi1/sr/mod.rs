@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::SR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct RXNER {
 }
 impl RXNER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct TXER {
 }
 impl TXER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct CHSIDER {
 }
 impl CHSIDER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct UDRR {
 }
 impl UDRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -129,22 +129,24 @@ impl UDRR {
 #[doc = "Possible values of the field `CRCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCERRR {
-    #[doc = "Flag cleared"] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Flag cleared"]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CRCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CRCERRR::CLEAR => false,
@@ -153,7 +155,7 @@ impl CRCERRR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CRCERRR {
         match value {
             false => CRCERRR::CLEAR,
@@ -161,7 +163,7 @@ impl CRCERRR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_clear(&self) -> bool {
         *self == CRCERRR::CLEAR
     }
@@ -172,17 +174,17 @@ pub struct MODFR {
 }
 impl MODFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -193,17 +195,17 @@ pub struct OVRR {
 }
 impl OVRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -214,17 +216,17 @@ pub struct BSYR {
 }
 impl BSYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -235,17 +237,17 @@ pub struct TIFRFER {
 }
 impl TIFRFER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -256,7 +258,7 @@ pub struct FRLVLR {
 }
 impl FRLVLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -267,19 +269,20 @@ pub struct FTLVLR {
 }
 impl FTLVLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
 }
 #[doc = "Values that can be written to the field `CRCERR`"]
 pub enum CRCERRW {
-    #[doc = "Flag cleared"] CLEAR,
+    #[doc = "Flag cleared"]
+    CLEAR,
 }
 impl CRCERRW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CRCERRW::CLEAR => false,
@@ -292,14 +295,14 @@ pub struct _CRCERRW<'a> {
 }
 impl<'a> _CRCERRW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CRCERRW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Flag cleared"]
-    #[inline(always)]
+    #[inline]
     pub fn clear(self) -> &'a mut W {
         self.variant(CRCERRW::CLEAR)
     }
@@ -312,7 +315,7 @@ impl<'a> _CRCERRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -323,12 +326,12 @@ impl<'a> _CRCERRW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Receive buffer not empty"]
-    #[inline(always)]
+    #[inline]
     pub fn rxne(&self) -> RXNER {
         let bits = {
             const MASK: bool = true;
@@ -338,7 +341,7 @@ impl R {
         RXNER { bits }
     }
     #[doc = "Bit 1 - Transmit buffer empty"]
-    #[inline(always)]
+    #[inline]
     pub fn txe(&self) -> TXER {
         let bits = {
             const MASK: bool = true;
@@ -348,7 +351,7 @@ impl R {
         TXER { bits }
     }
     #[doc = "Bit 2 - Channel side"]
-    #[inline(always)]
+    #[inline]
     pub fn chside(&self) -> CHSIDER {
         let bits = {
             const MASK: bool = true;
@@ -358,7 +361,7 @@ impl R {
         CHSIDER { bits }
     }
     #[doc = "Bit 3 - Underrun flag"]
-    #[inline(always)]
+    #[inline]
     pub fn udr(&self) -> UDRR {
         let bits = {
             const MASK: bool = true;
@@ -368,7 +371,7 @@ impl R {
         UDRR { bits }
     }
     #[doc = "Bit 4 - CRC error flag"]
-    #[inline(always)]
+    #[inline]
     pub fn crcerr(&self) -> CRCERRR {
         CRCERRR::_from({
             const MASK: bool = true;
@@ -377,7 +380,7 @@ impl R {
         })
     }
     #[doc = "Bit 5 - Mode fault"]
-    #[inline(always)]
+    #[inline]
     pub fn modf(&self) -> MODFR {
         let bits = {
             const MASK: bool = true;
@@ -387,7 +390,7 @@ impl R {
         MODFR { bits }
     }
     #[doc = "Bit 6 - Overrun flag"]
-    #[inline(always)]
+    #[inline]
     pub fn ovr(&self) -> OVRR {
         let bits = {
             const MASK: bool = true;
@@ -397,7 +400,7 @@ impl R {
         OVRR { bits }
     }
     #[doc = "Bit 7 - Busy flag"]
-    #[inline(always)]
+    #[inline]
     pub fn bsy(&self) -> BSYR {
         let bits = {
             const MASK: bool = true;
@@ -407,7 +410,7 @@ impl R {
         BSYR { bits }
     }
     #[doc = "Bit 8 - TI frame format error"]
-    #[inline(always)]
+    #[inline]
     pub fn tifrfe(&self) -> TIFRFER {
         let bits = {
             const MASK: bool = true;
@@ -417,7 +420,7 @@ impl R {
         TIFRFER { bits }
     }
     #[doc = "Bits 9:10 - FIFO reception level"]
-    #[inline(always)]
+    #[inline]
     pub fn frlvl(&self) -> FRLVLR {
         let bits = {
             const MASK: u8 = 3;
@@ -427,7 +430,7 @@ impl R {
         FRLVLR { bits }
     }
     #[doc = "Bits 11:12 - FIFO transmission level"]
-    #[inline(always)]
+    #[inline]
     pub fn ftlvl(&self) -> FTLVLR {
         let bits = {
             const MASK: u8 = 3;
@@ -439,18 +442,18 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 2 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 4 - CRC error flag"]
-    #[inline(always)]
+    #[inline]
     pub fn crcerr(&mut self) -> _CRCERRW {
         _CRCERRW { w: self }
     }

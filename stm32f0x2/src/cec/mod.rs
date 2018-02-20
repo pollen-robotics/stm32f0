@@ -2,12 +2,18 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - control register"] pub cr: CR,
-    #[doc = "0x04 - configuration register"] pub cfgr: CFGR,
-    #[doc = "0x08 - Tx data register"] pub txdr: TXDR,
-    #[doc = "0x0c - Rx Data Register"] pub rxdr: RXDR,
-    #[doc = "0x10 - Interrupt and Status Register"] pub isr: ISR,
-    #[doc = "0x14 - interrupt enable register"] pub ier: IER,
+    #[doc = "0x00 - control register"]
+    pub cr: CR,
+    #[doc = "0x04 - configuration register"]
+    pub cfgr: CFGR,
+    #[doc = "0x08 - Tx data register"]
+    pub txdr: TXDR,
+    #[doc = "0x0c - Rx Data Register"]
+    pub rxdr: RXDR,
+    #[doc = "0x10 - Interrupt and Status Register"]
+    pub isr: ISR,
+    #[doc = "0x14 - interrupt enable register"]
+    pub ier: IER,
 }
 #[doc = "control register"]
 pub struct CR {

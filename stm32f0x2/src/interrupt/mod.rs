@@ -10,7 +10,7 @@ pub unsafe extern "C" fn DH_TRAMPOLINE() {
     DEFAULT_HANDLER();
 }
 #[cfg(feature = "rt")]
-global_asm!("\n.weak WWDG\nWWDG = DH_TRAMPOLINE\n.weak PVD\nPVD = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak FLASH\nFLASH = DH_TRAMPOLINE\n.weak RCC_CRS\nRCC_CRS = DH_TRAMPOLINE\n.weak EXTI0_1\nEXTI0_1 = DH_TRAMPOLINE\n.weak EXTI2_3\nEXTI2_3 = DH_TRAMPOLINE\n.weak EXTI4_15\nEXTI4_15 = DH_TRAMPOLINE\n.weak TSC\nTSC = DH_TRAMPOLINE\n.weak DMA1_CH1\nDMA1_CH1 = DH_TRAMPOLINE\n.weak ADC_COMP\nADC_COMP = DH_TRAMPOLINE\n.weak TIM1_BRK_UP_TRG_COM\nTIM1_BRK_UP_TRG_COM = DH_TRAMPOLINE\n.weak TIM1_CC\nTIM1_CC = DH_TRAMPOLINE\n.weak TIM2\nTIM2 = DH_TRAMPOLINE\n.weak TIM3\nTIM3 = DH_TRAMPOLINE\n.weak TIM6_DAC\nTIM6_DAC = DH_TRAMPOLINE\n.weak TIM7\nTIM7 = DH_TRAMPOLINE\n.weak TIM14\nTIM14 = DH_TRAMPOLINE\n.weak TIM15\nTIM15 = DH_TRAMPOLINE\n.weak TIM16\nTIM16 = DH_TRAMPOLINE\n.weak TIM17\nTIM17 = DH_TRAMPOLINE\n.weak I2C1\nI2C1 = DH_TRAMPOLINE\n.weak I2C2\nI2C2 = DH_TRAMPOLINE\n.weak SPI1\nSPI1 = DH_TRAMPOLINE\n.weak SPI2\nSPI2 = DH_TRAMPOLINE\n.weak USART1\nUSART1 = DH_TRAMPOLINE\n.weak USART2\nUSART2 = DH_TRAMPOLINE\n.weak USART3_4\nUSART3_4 = DH_TRAMPOLINE\n.weak CEC_CAN\nCEC_CAN = DH_TRAMPOLINE\n.weak USB\nUSB = DH_TRAMPOLINE");
+global_asm ! ( "\n.weak WWDG\nWWDG = DH_TRAMPOLINE\n.weak PVD\nPVD = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak FLASH\nFLASH = DH_TRAMPOLINE\n.weak RCC_CRS\nRCC_CRS = DH_TRAMPOLINE\n.weak EXTI0_1\nEXTI0_1 = DH_TRAMPOLINE\n.weak EXTI2_3\nEXTI2_3 = DH_TRAMPOLINE\n.weak EXTI4_15\nEXTI4_15 = DH_TRAMPOLINE\n.weak TSC\nTSC = DH_TRAMPOLINE\n.weak DMA1_CH1\nDMA1_CH1 = DH_TRAMPOLINE\n.weak ADC_COMP\nADC_COMP = DH_TRAMPOLINE\n.weak TIM1_BRK_UP_TRG_COM\nTIM1_BRK_UP_TRG_COM = DH_TRAMPOLINE\n.weak TIM1_CC\nTIM1_CC = DH_TRAMPOLINE\n.weak TIM2\nTIM2 = DH_TRAMPOLINE\n.weak TIM3\nTIM3 = DH_TRAMPOLINE\n.weak TIM6_DAC\nTIM6_DAC = DH_TRAMPOLINE\n.weak TIM7\nTIM7 = DH_TRAMPOLINE\n.weak TIM14\nTIM14 = DH_TRAMPOLINE\n.weak TIM15\nTIM15 = DH_TRAMPOLINE\n.weak TIM16\nTIM16 = DH_TRAMPOLINE\n.weak TIM17\nTIM17 = DH_TRAMPOLINE\n.weak I2C1\nI2C1 = DH_TRAMPOLINE\n.weak I2C2\nI2C2 = DH_TRAMPOLINE\n.weak SPI1\nSPI1 = DH_TRAMPOLINE\n.weak SPI2\nSPI2 = DH_TRAMPOLINE\n.weak USART1\nUSART1 = DH_TRAMPOLINE\n.weak USART2\nUSART2 = DH_TRAMPOLINE\n.weak USART3_4\nUSART3_4 = DH_TRAMPOLINE\n.weak CEC_CAN\nCEC_CAN = DH_TRAMPOLINE\n.weak USB\nUSB = DH_TRAMPOLINE" ) ;
 #[cfg(feature = "rt")]
 extern "C" {
     fn WWDG();
@@ -86,39 +86,69 @@ pub static INTERRUPTS: [Option<unsafe extern "C" fn()>; 32] = [
 ];
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
-    #[doc = "0 - Window Watchdog interrupt"] WWDG,
-    #[doc = "1 - PVD and VDDIO2 supply comparator interrupt"] PVD,
-    #[doc = "2 - RTC interrupts"] RTC,
-    #[doc = "3 - Flash global interrupt"] FLASH,
-    #[doc = "4 - RCC and CRS global interrupts"] RCC_CRS,
-    #[doc = "5 - EXTI Line[1:0] interrupts"] EXTI0_1,
-    #[doc = "6 - EXTI Line[3:2] interrupts"] EXTI2_3,
-    #[doc = "7 - EXTI Line15 and EXTI4 interrupts"] EXTI4_15,
-    #[doc = "8 - Touch sensing interrupt"] TSC,
-    #[doc = "9 - DMA1 channel 1 interrupt"] DMA1_CH1,
-    #[doc = "12 - ADC and comparator interrupts"] ADC_COMP,
-    #[doc = "13 - TIM1 break, update, trigger and commutation interrupt"] TIM1_BRK_UP_TRG_COM,
-    #[doc = "14 - TIM1 Capture Compare interrupt"] TIM1_CC,
-    #[doc = "15 - TIM2 global interrupt"] TIM2,
-    #[doc = "16 - TIM3 global interrupt"] TIM3,
-    #[doc = "17 - TIM6 global interrupt and DAC underrun interrupt"] TIM6_DAC,
-    #[doc = "18 - TIM7 global interrupt"] TIM7,
-    #[doc = "19 - TIM14 global interrupt"] TIM14,
-    #[doc = "20 - TIM15 global interrupt"] TIM15,
-    #[doc = "21 - TIM16 global interrupt"] TIM16,
-    #[doc = "22 - TIM17 global interrupt"] TIM17,
-    #[doc = "23 - I2C1 global interrupt"] I2C1,
-    #[doc = "24 - I2C2 global interrupt"] I2C2,
-    #[doc = "25 - SPI1_global_interrupt"] SPI1,
-    #[doc = "26 - SPI2 global interrupt"] SPI2,
-    #[doc = "27 - USART1 global interrupt"] USART1,
-    #[doc = "28 - USART2 global interrupt"] USART2,
-    #[doc = "29 - USART3 and USART4 global interrupt"] USART3_4,
-    #[doc = "30 - CEC and CAN global interrupt"] CEC_CAN,
-    #[doc = "31 - USB global interrupt"] USB,
+    #[doc = "0 - Window Watchdog interrupt"]
+    WWDG,
+    #[doc = "1 - PVD and VDDIO2 supply comparator interrupt"]
+    PVD,
+    #[doc = "2 - RTC interrupts"]
+    RTC,
+    #[doc = "3 - Flash global interrupt"]
+    FLASH,
+    #[doc = "4 - RCC and CRS global interrupts"]
+    RCC_CRS,
+    #[doc = "5 - EXTI Line[1:0] interrupts"]
+    EXTI0_1,
+    #[doc = "6 - EXTI Line[3:2] interrupts"]
+    EXTI2_3,
+    #[doc = "7 - EXTI Line15 and EXTI4 interrupts"]
+    EXTI4_15,
+    #[doc = "8 - Touch sensing interrupt"]
+    TSC,
+    #[doc = "9 - DMA1 channel 1 interrupt"]
+    DMA1_CH1,
+    #[doc = "12 - ADC and comparator interrupts"]
+    ADC_COMP,
+    #[doc = "13 - TIM1 break, update, trigger and commutation interrupt"]
+    TIM1_BRK_UP_TRG_COM,
+    #[doc = "14 - TIM1 Capture Compare interrupt"]
+    TIM1_CC,
+    #[doc = "15 - TIM2 global interrupt"]
+    TIM2,
+    #[doc = "16 - TIM3 global interrupt"]
+    TIM3,
+    #[doc = "17 - TIM6 global interrupt and DAC underrun interrupt"]
+    TIM6_DAC,
+    #[doc = "18 - TIM7 global interrupt"]
+    TIM7,
+    #[doc = "19 - TIM14 global interrupt"]
+    TIM14,
+    #[doc = "20 - TIM15 global interrupt"]
+    TIM15,
+    #[doc = "21 - TIM16 global interrupt"]
+    TIM16,
+    #[doc = "22 - TIM17 global interrupt"]
+    TIM17,
+    #[doc = "23 - I2C1 global interrupt"]
+    I2C1,
+    #[doc = "24 - I2C2 global interrupt"]
+    I2C2,
+    #[doc = "25 - SPI1_global_interrupt"]
+    SPI1,
+    #[doc = "26 - SPI2 global interrupt"]
+    SPI2,
+    #[doc = "27 - USART1 global interrupt"]
+    USART1,
+    #[doc = "28 - USART2 global interrupt"]
+    USART2,
+    #[doc = "29 - USART3 and USART4 global interrupt"]
+    USART3_4,
+    #[doc = "30 - CEC and CAN global interrupt"]
+    CEC_CAN,
+    #[doc = "31 - USB global interrupt"]
+    USB,
 }
 unsafe impl Nr for Interrupt {
-    #[inline(always)]
+    #[inline]
     fn nr(&self) -> u8 {
         match *self {
             Interrupt::WWDG => 0,
@@ -156,4 +186,4 @@ unsafe impl Nr for Interrupt {
 }
 #[cfg(feature = "rt")]
 #[macro_export]
-macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
+macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ty = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }

@@ -4,7 +4,7 @@ pub struct W {
 }
 impl super::EGR {
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -16,12 +16,13 @@ impl super::EGR {
 }
 #[doc = "Values that can be written to the field `CC1G`"]
 pub enum CC1GW {
-    #[doc = "generate an event."] GENERATED,
+    #[doc = "generate an event."]
+    GENERATED,
 }
 impl CC1GW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CC1GW::GENERATED => true,
@@ -34,14 +35,14 @@ pub struct _CC1GW<'a> {
 }
 impl<'a> _CC1GW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1GW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "generate an event."]
-    #[inline(always)]
+    #[inline]
     pub fn generated(self) -> &'a mut W {
         self.variant(CC1GW::GENERATED)
     }
@@ -54,7 +55,7 @@ impl<'a> _CC1GW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -65,12 +66,13 @@ impl<'a> _CC1GW<'a> {
 }
 #[doc = "Values that can be written to the field `UG`"]
 pub enum UGW {
-    #[doc = "Reinitialize the counter and generates an update of the registers."] RST_UPDATE,
+    #[doc = "Reinitialize the counter and generates an update of the registers."]
+    RST_UPDATE,
 }
 impl UGW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             UGW::RST_UPDATE => true,
@@ -83,14 +85,14 @@ pub struct _UGW<'a> {
 }
 impl<'a> _UGW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: UGW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reinitialize the counter and generates an update of the registers."]
-    #[inline(always)]
+    #[inline]
     pub fn rst_update(self) -> &'a mut W {
         self.variant(UGW::RST_UPDATE)
     }
@@ -103,7 +105,7 @@ impl<'a> _UGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -114,23 +116,23 @@ impl<'a> _UGW<'a> {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 1 - Capture/compare 1 generation"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1g(&mut self) -> _CC1GW {
         _CC1GW { w: self }
     }
     #[doc = "Bit 0 - Update generation"]
-    #[inline(always)]
+    #[inline]
     pub fn ug(&mut self) -> _UGW {
         _UGW { w: self }
     }

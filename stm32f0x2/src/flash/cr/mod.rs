@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct FORCE_OPTLOADR {
 }
 impl FORCE_OPTLOADR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct EOPIER {
 }
 impl EOPIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct ERRIER {
 }
 impl ERRIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct OPTWRER {
 }
 impl OPTWRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +132,17 @@ pub struct LOCKR {
 }
 impl LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +153,17 @@ pub struct STRTR {
 }
 impl STRTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +174,17 @@ pub struct OPTERR {
 }
 impl OPTERR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +195,17 @@ pub struct OPTPGR {
 }
 impl OPTPGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +216,17 @@ pub struct MERR {
 }
 impl MERR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +237,17 @@ pub struct PERR {
 }
 impl PERR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +258,17 @@ pub struct PGR {
 }
 impl PGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -287,7 +287,7 @@ impl<'a> _FORCE_OPTLOADW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -310,7 +310,7 @@ impl<'a> _EOPIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -333,7 +333,7 @@ impl<'a> _ERRIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -356,7 +356,7 @@ impl<'a> _OPTWREW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -379,7 +379,7 @@ impl<'a> _LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -402,7 +402,7 @@ impl<'a> _STRTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -425,7 +425,7 @@ impl<'a> _OPTERW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -448,7 +448,7 @@ impl<'a> _OPTPGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -471,7 +471,7 @@ impl<'a> _MERW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -494,7 +494,7 @@ impl<'a> _PERW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -517,7 +517,7 @@ impl<'a> _PGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -528,12 +528,12 @@ impl<'a> _PGW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 13 - Force option byte loading"]
-    #[inline(always)]
+    #[inline]
     pub fn force_optload(&self) -> FORCE_OPTLOADR {
         let bits = {
             const MASK: bool = true;
@@ -543,7 +543,7 @@ impl R {
         FORCE_OPTLOADR { bits }
     }
     #[doc = "Bit 12 - End of operation interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn eopie(&self) -> EOPIER {
         let bits = {
             const MASK: bool = true;
@@ -553,7 +553,7 @@ impl R {
         EOPIER { bits }
     }
     #[doc = "Bit 10 - Error interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn errie(&self) -> ERRIER {
         let bits = {
             const MASK: bool = true;
@@ -563,7 +563,7 @@ impl R {
         ERRIER { bits }
     }
     #[doc = "Bit 9 - Option bytes write enable"]
-    #[inline(always)]
+    #[inline]
     pub fn optwre(&self) -> OPTWRER {
         let bits = {
             const MASK: bool = true;
@@ -573,7 +573,7 @@ impl R {
         OPTWRER { bits }
     }
     #[doc = "Bit 7 - Lock"]
-    #[inline(always)]
+    #[inline]
     pub fn lock(&self) -> LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -583,7 +583,7 @@ impl R {
         LOCKR { bits }
     }
     #[doc = "Bit 6 - Start"]
-    #[inline(always)]
+    #[inline]
     pub fn strt(&self) -> STRTR {
         let bits = {
             const MASK: bool = true;
@@ -593,7 +593,7 @@ impl R {
         STRTR { bits }
     }
     #[doc = "Bit 5 - Option byte erase"]
-    #[inline(always)]
+    #[inline]
     pub fn opter(&self) -> OPTERR {
         let bits = {
             const MASK: bool = true;
@@ -603,7 +603,7 @@ impl R {
         OPTERR { bits }
     }
     #[doc = "Bit 4 - Option byte programming"]
-    #[inline(always)]
+    #[inline]
     pub fn optpg(&self) -> OPTPGR {
         let bits = {
             const MASK: bool = true;
@@ -613,7 +613,7 @@ impl R {
         OPTPGR { bits }
     }
     #[doc = "Bit 2 - Mass erase"]
-    #[inline(always)]
+    #[inline]
     pub fn mer(&self) -> MERR {
         let bits = {
             const MASK: bool = true;
@@ -623,7 +623,7 @@ impl R {
         MERR { bits }
     }
     #[doc = "Bit 1 - Page erase"]
-    #[inline(always)]
+    #[inline]
     pub fn per(&self) -> PERR {
         let bits = {
             const MASK: bool = true;
@@ -633,7 +633,7 @@ impl R {
         PERR { bits }
     }
     #[doc = "Bit 0 - Programming"]
-    #[inline(always)]
+    #[inline]
     pub fn pg(&self) -> PGR {
         let bits = {
             const MASK: bool = true;
@@ -645,68 +645,68 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 128 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 13 - Force option byte loading"]
-    #[inline(always)]
+    #[inline]
     pub fn force_optload(&mut self) -> _FORCE_OPTLOADW {
         _FORCE_OPTLOADW { w: self }
     }
     #[doc = "Bit 12 - End of operation interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn eopie(&mut self) -> _EOPIEW {
         _EOPIEW { w: self }
     }
     #[doc = "Bit 10 - Error interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn errie(&mut self) -> _ERRIEW {
         _ERRIEW { w: self }
     }
     #[doc = "Bit 9 - Option bytes write enable"]
-    #[inline(always)]
+    #[inline]
     pub fn optwre(&mut self) -> _OPTWREW {
         _OPTWREW { w: self }
     }
     #[doc = "Bit 7 - Lock"]
-    #[inline(always)]
+    #[inline]
     pub fn lock(&mut self) -> _LOCKW {
         _LOCKW { w: self }
     }
     #[doc = "Bit 6 - Start"]
-    #[inline(always)]
+    #[inline]
     pub fn strt(&mut self) -> _STRTW {
         _STRTW { w: self }
     }
     #[doc = "Bit 5 - Option byte erase"]
-    #[inline(always)]
+    #[inline]
     pub fn opter(&mut self) -> _OPTERW {
         _OPTERW { w: self }
     }
     #[doc = "Bit 4 - Option byte programming"]
-    #[inline(always)]
+    #[inline]
     pub fn optpg(&mut self) -> _OPTPGW {
         _OPTPGW { w: self }
     }
     #[doc = "Bit 2 - Mass erase"]
-    #[inline(always)]
+    #[inline]
     pub fn mer(&mut self) -> _MERW {
         _MERW { w: self }
     }
     #[doc = "Bit 1 - Page erase"]
-    #[inline(always)]
+    #[inline]
     pub fn per(&mut self) -> _PERW {
         _PERW { w: self }
     }
     #[doc = "Bit 0 - Programming"]
-    #[inline(always)]
+    #[inline]
     pub fn pg(&mut self) -> _PGW {
         _PGW { w: self }
     }

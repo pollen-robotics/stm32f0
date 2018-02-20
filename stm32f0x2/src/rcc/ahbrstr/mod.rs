@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::AHBRSTR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::AHBRSTR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::AHBRSTR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +45,24 @@ impl super::AHBRSTR {
 #[doc = "Possible values of the field `IOPARST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPARSTR {
-    #[doc = "Reset I/O port A."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port A."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPARSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             IOPARSTR::RESET => true,
@@ -69,7 +71,7 @@ impl IOPARSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> IOPARSTR {
         match value {
             true => IOPARSTR::RESET,
@@ -77,7 +79,7 @@ impl IOPARSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == IOPARSTR::RESET
     }
@@ -85,22 +87,24 @@ impl IOPARSTR {
 #[doc = "Possible values of the field `IOPBRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPBRSTR {
-    #[doc = "Reset I/O port B."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port B."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPBRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             IOPBRSTR::RESET => true,
@@ -109,7 +113,7 @@ impl IOPBRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> IOPBRSTR {
         match value {
             true => IOPBRSTR::RESET,
@@ -117,7 +121,7 @@ impl IOPBRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == IOPBRSTR::RESET
     }
@@ -125,22 +129,24 @@ impl IOPBRSTR {
 #[doc = "Possible values of the field `IOPCRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPCRSTR {
-    #[doc = "Reset I/O port C."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port C."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             IOPCRSTR::RESET => true,
@@ -149,7 +155,7 @@ impl IOPCRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> IOPCRSTR {
         match value {
             true => IOPCRSTR::RESET,
@@ -157,7 +163,7 @@ impl IOPCRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == IOPCRSTR::RESET
     }
@@ -165,22 +171,24 @@ impl IOPCRSTR {
 #[doc = "Possible values of the field `IOPDRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPDRSTR {
-    #[doc = "Reset I/O port D."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port D."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPDRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             IOPDRSTR::RESET => true,
@@ -189,7 +197,7 @@ impl IOPDRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> IOPDRSTR {
         match value {
             true => IOPDRSTR::RESET,
@@ -197,7 +205,7 @@ impl IOPDRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == IOPDRSTR::RESET
     }
@@ -205,22 +213,24 @@ impl IOPDRSTR {
 #[doc = "Possible values of the field `IOPFRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOPFRSTR {
-    #[doc = "Reset I/O port F."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset I/O port F."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl IOPFRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             IOPFRSTR::RESET => true,
@@ -229,7 +239,7 @@ impl IOPFRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> IOPFRSTR {
         match value {
             true => IOPFRSTR::RESET,
@@ -237,7 +247,7 @@ impl IOPFRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == IOPFRSTR::RESET
     }
@@ -245,22 +255,24 @@ impl IOPFRSTR {
 #[doc = "Possible values of the field `TSCRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCRSTR {
-    #[doc = "Reset TSC."] RESET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "Reset TSC."]
+    RESET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TSCRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TSCRSTR::RESET => true,
@@ -269,7 +281,7 @@ impl TSCRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TSCRSTR {
         match value {
             true => TSCRSTR::RESET,
@@ -277,19 +289,20 @@ impl TSCRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == TSCRSTR::RESET
     }
 }
 #[doc = "Values that can be written to the field `IOPARST`"]
 pub enum IOPARSTW {
-    #[doc = "Reset I/O port A."] RESET,
+    #[doc = "Reset I/O port A."]
+    RESET,
 }
 impl IOPARSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             IOPARSTW::RESET => true,
@@ -302,14 +315,14 @@ pub struct _IOPARSTW<'a> {
 }
 impl<'a> _IOPARSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: IOPARSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset I/O port A."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(IOPARSTW::RESET)
     }
@@ -322,7 +335,7 @@ impl<'a> _IOPARSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -333,12 +346,13 @@ impl<'a> _IOPARSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPBRST`"]
 pub enum IOPBRSTW {
-    #[doc = "Reset I/O port B."] RESET,
+    #[doc = "Reset I/O port B."]
+    RESET,
 }
 impl IOPBRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             IOPBRSTW::RESET => true,
@@ -351,14 +365,14 @@ pub struct _IOPBRSTW<'a> {
 }
 impl<'a> _IOPBRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: IOPBRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset I/O port B."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(IOPBRSTW::RESET)
     }
@@ -371,7 +385,7 @@ impl<'a> _IOPBRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -382,12 +396,13 @@ impl<'a> _IOPBRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPCRST`"]
 pub enum IOPCRSTW {
-    #[doc = "Reset I/O port C."] RESET,
+    #[doc = "Reset I/O port C."]
+    RESET,
 }
 impl IOPCRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             IOPCRSTW::RESET => true,
@@ -400,14 +415,14 @@ pub struct _IOPCRSTW<'a> {
 }
 impl<'a> _IOPCRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: IOPCRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset I/O port C."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(IOPCRSTW::RESET)
     }
@@ -420,7 +435,7 @@ impl<'a> _IOPCRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -431,12 +446,13 @@ impl<'a> _IOPCRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPDRST`"]
 pub enum IOPDRSTW {
-    #[doc = "Reset I/O port D."] RESET,
+    #[doc = "Reset I/O port D."]
+    RESET,
 }
 impl IOPDRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             IOPDRSTW::RESET => true,
@@ -449,14 +465,14 @@ pub struct _IOPDRSTW<'a> {
 }
 impl<'a> _IOPDRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: IOPDRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset I/O port D."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(IOPDRSTW::RESET)
     }
@@ -469,7 +485,7 @@ impl<'a> _IOPDRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -480,12 +496,13 @@ impl<'a> _IOPDRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `IOPFRST`"]
 pub enum IOPFRSTW {
-    #[doc = "Reset I/O port F."] RESET,
+    #[doc = "Reset I/O port F."]
+    RESET,
 }
 impl IOPFRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             IOPFRSTW::RESET => true,
@@ -498,14 +515,14 @@ pub struct _IOPFRSTW<'a> {
 }
 impl<'a> _IOPFRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: IOPFRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset I/O port F."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(IOPFRSTW::RESET)
     }
@@ -518,7 +535,7 @@ impl<'a> _IOPFRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -529,12 +546,13 @@ impl<'a> _IOPFRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TSCRST`"]
 pub enum TSCRSTW {
-    #[doc = "Reset TSC."] RESET,
+    #[doc = "Reset TSC."]
+    RESET,
 }
 impl TSCRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TSCRSTW::RESET => true,
@@ -547,14 +565,14 @@ pub struct _TSCRSTW<'a> {
 }
 impl<'a> _TSCRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TSCRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset TSC."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(TSCRSTW::RESET)
     }
@@ -567,7 +585,7 @@ impl<'a> _TSCRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -578,12 +596,12 @@ impl<'a> _TSCRSTW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 17 - I/O port A reset"]
-    #[inline(always)]
+    #[inline]
     pub fn ioparst(&self) -> IOPARSTR {
         IOPARSTR::_from({
             const MASK: bool = true;
@@ -592,7 +610,7 @@ impl R {
         })
     }
     #[doc = "Bit 18 - I/O port B reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopbrst(&self) -> IOPBRSTR {
         IOPBRSTR::_from({
             const MASK: bool = true;
@@ -601,7 +619,7 @@ impl R {
         })
     }
     #[doc = "Bit 19 - I/O port C reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopcrst(&self) -> IOPCRSTR {
         IOPCRSTR::_from({
             const MASK: bool = true;
@@ -610,7 +628,7 @@ impl R {
         })
     }
     #[doc = "Bit 20 - I/O port D reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopdrst(&self) -> IOPDRSTR {
         IOPDRSTR::_from({
             const MASK: bool = true;
@@ -619,7 +637,7 @@ impl R {
         })
     }
     #[doc = "Bit 22 - I/O port F reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopfrst(&self) -> IOPFRSTR {
         IOPFRSTR::_from({
             const MASK: bool = true;
@@ -628,7 +646,7 @@ impl R {
         })
     }
     #[doc = "Bit 24 - Touch sensing controller reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tscrst(&self) -> TSCRSTR {
         TSCRSTR::_from({
             const MASK: bool = true;
@@ -639,43 +657,43 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 17 - I/O port A reset"]
-    #[inline(always)]
+    #[inline]
     pub fn ioparst(&mut self) -> _IOPARSTW {
         _IOPARSTW { w: self }
     }
     #[doc = "Bit 18 - I/O port B reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopbrst(&mut self) -> _IOPBRSTW {
         _IOPBRSTW { w: self }
     }
     #[doc = "Bit 19 - I/O port C reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopcrst(&mut self) -> _IOPCRSTW {
         _IOPCRSTW { w: self }
     }
     #[doc = "Bit 20 - I/O port D reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopdrst(&mut self) -> _IOPDRSTW {
         _IOPDRSTW { w: self }
     }
     #[doc = "Bit 22 - I/O port F reset"]
-    #[inline(always)]
+    #[inline]
     pub fn iopfrst(&mut self) -> _IOPFRSTW {
         _IOPFRSTW { w: self }
     }
     #[doc = "Bit 24 - Touch sensing controller reset"]
-    #[inline(always)]
+    #[inline]
     pub fn tscrst(&mut self) -> _TSCRSTW {
         _TSCRSTW { w: self }
     }

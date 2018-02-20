@@ -2,17 +2,28 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control register 1"] pub cr1: CR1,
-    #[doc = "0x04 - Control register 2"] pub cr2: CR2,
-    #[doc = "0x08 - Control register 3"] pub cr3: CR3,
-    #[doc = "0x0c - Baud rate register"] pub brr: BRR,
-    #[doc = "0x10 - Guard time and prescaler register"] pub gtpr: GTPR,
-    #[doc = "0x14 - Receiver timeout register"] pub rtor: RTOR,
-    #[doc = "0x18 - Request register"] pub rqr: RQR,
-    #[doc = "0x1c - Interrupt & status register"] pub isr: ISR,
-    #[doc = "0x20 - Interrupt flag clear register"] pub icr: ICR,
-    #[doc = "0x24 - Receive data register"] pub rdr: RDR,
-    #[doc = "0x28 - Transmit data register"] pub tdr: TDR,
+    #[doc = "0x00 - Control register 1"]
+    pub cr1: CR1,
+    #[doc = "0x04 - Control register 2"]
+    pub cr2: CR2,
+    #[doc = "0x08 - Control register 3"]
+    pub cr3: CR3,
+    #[doc = "0x0c - Baud rate register"]
+    pub brr: BRR,
+    #[doc = "0x10 - Guard time and prescaler register"]
+    pub gtpr: GTPR,
+    #[doc = "0x14 - Receiver timeout register"]
+    pub rtor: RTOR,
+    #[doc = "0x18 - Request register"]
+    pub rqr: RQR,
+    #[doc = "0x1c - Interrupt & status register"]
+    pub isr: ISR,
+    #[doc = "0x20 - Interrupt flag clear register"]
+    pub icr: ICR,
+    #[doc = "0x24 - Receive data register"]
+    pub rdr: RDR,
+    #[doc = "0x28 - Transmit data register"]
+    pub tdr: TDR,
 }
 #[doc = "Control register 1"]
 pub struct CR1 {

@@ -2,25 +2,40 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - control register"] pub cr: CR,
-    #[doc = "0x04 - interrupt enable register"] pub ier: IER,
-    #[doc = "0x08 - interrupt clear register"] pub icr: ICR,
-    #[doc = "0x0c - interrupt status register"] pub isr: ISR,
-    #[doc = "0x10 - I/O hysteresis control register"] pub iohcr: IOHCR,
+    #[doc = "0x00 - control register"]
+    pub cr: CR,
+    #[doc = "0x04 - interrupt enable register"]
+    pub ier: IER,
+    #[doc = "0x08 - interrupt clear register"]
+    pub icr: ICR,
+    #[doc = "0x0c - interrupt status register"]
+    pub isr: ISR,
+    #[doc = "0x10 - I/O hysteresis control register"]
+    pub iohcr: IOHCR,
     _reserved0: [u8; 4usize],
-    #[doc = "0x18 - I/O analog switch control register"] pub ioascr: IOASCR,
+    #[doc = "0x18 - I/O analog switch control register"]
+    pub ioascr: IOASCR,
     _reserved1: [u8; 4usize],
-    #[doc = "0x20 - I/O sampling control register"] pub ioscr: IOSCR,
+    #[doc = "0x20 - I/O sampling control register"]
+    pub ioscr: IOSCR,
     _reserved2: [u8; 4usize],
-    #[doc = "0x28 - I/O channel control register"] pub ioccr: IOCCR,
+    #[doc = "0x28 - I/O channel control register"]
+    pub ioccr: IOCCR,
     _reserved3: [u8; 4usize],
-    #[doc = "0x30 - I/O group control status register"] pub iogcsr: IOGCSR,
-    #[doc = "0x34 - I/O group x counter register"] pub iog1cr: IOG1CR,
-    #[doc = "0x38 - I/O group x counter register"] pub iog2cr: IOG2CR,
-    #[doc = "0x3c - I/O group x counter register"] pub iog3cr: IOG3CR,
-    #[doc = "0x40 - I/O group x counter register"] pub iog4cr: IOG4CR,
-    #[doc = "0x44 - I/O group x counter register"] pub iog5cr: IOG5CR,
-    #[doc = "0x48 - I/O group x counter register"] pub iog6cr: IOG6CR,
+    #[doc = "0x30 - I/O group control status register"]
+    pub iogcsr: IOGCSR,
+    #[doc = "0x34 - I/O group x counter register"]
+    pub iog1cr: IOG1CR,
+    #[doc = "0x38 - I/O group x counter register"]
+    pub iog2cr: IOG2CR,
+    #[doc = "0x3c - I/O group x counter register"]
+    pub iog3cr: IOG3CR,
+    #[doc = "0x40 - I/O group x counter register"]
+    pub iog4cr: IOG4CR,
+    #[doc = "0x44 - I/O group x counter register"]
+    pub iog5cr: IOG5CR,
+    #[doc = "0x48 - I/O group x counter register"]
+    pub iog6cr: IOG6CR,
 }
 #[doc = "control register"]
 pub struct CR {

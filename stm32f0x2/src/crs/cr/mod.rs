@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct TRIMR {
 }
 impl TRIMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,17 +59,17 @@ pub struct SWSYNCR {
 }
 impl SWSYNCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,17 +80,17 @@ pub struct AUTOTRIMENR {
 }
 impl AUTOTRIMENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -98,22 +98,24 @@ impl AUTOTRIMENR {
 #[doc = "Possible values of the field `CEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CENR {
-    #[doc = "Frequency error counter disabled"] DISABLED,
-    #[doc = "Frequency error counter enabled"] ENABLED,
+    #[doc = "Frequency error counter disabled"]
+    DISABLED,
+    #[doc = "Frequency error counter enabled"]
+    ENABLED,
 }
 impl CENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CENR::DISABLED => false,
@@ -122,7 +124,7 @@ impl CENR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CENR {
         match value {
             false => CENR::DISABLED,
@@ -130,12 +132,12 @@ impl CENR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == CENR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == CENR::ENABLED
     }
@@ -146,17 +148,17 @@ pub struct ESYNCIER {
 }
 impl ESYNCIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -167,17 +169,17 @@ pub struct ERRIER {
 }
 impl ERRIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -188,17 +190,17 @@ pub struct SYNCWARNIER {
 }
 impl SYNCWARNIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -209,17 +211,17 @@ pub struct SYNCOKIER {
 }
 impl SYNCOKIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -230,7 +232,7 @@ pub struct _TRIMW<'a> {
 }
 impl<'a> _TRIMW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 63;
         const OFFSET: u8 = 8;
@@ -253,7 +255,7 @@ impl<'a> _SWSYNCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -276,7 +278,7 @@ impl<'a> _AUTOTRIMENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -287,13 +289,15 @@ impl<'a> _AUTOTRIMENW<'a> {
 }
 #[doc = "Values that can be written to the field `CEN`"]
 pub enum CENW {
-    #[doc = "Frequency error counter disabled"] DISABLED,
-    #[doc = "Frequency error counter enabled"] ENABLED,
+    #[doc = "Frequency error counter disabled"]
+    DISABLED,
+    #[doc = "Frequency error counter enabled"]
+    ENABLED,
 }
 impl CENW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CENW::DISABLED => false,
@@ -307,19 +311,19 @@ pub struct _CENW<'a> {
 }
 impl<'a> _CENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Frequency error counter disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(CENW::DISABLED)
     }
     #[doc = "Frequency error counter enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CENW::ENABLED)
     }
@@ -332,7 +336,7 @@ impl<'a> _CENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -355,7 +359,7 @@ impl<'a> _ESYNCIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -378,7 +382,7 @@ impl<'a> _ERRIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -401,7 +405,7 @@ impl<'a> _SYNCWARNIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -424,7 +428,7 @@ impl<'a> _SYNCOKIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -435,12 +439,12 @@ impl<'a> _SYNCOKIEW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 8:13 - HSI48 oscillator smooth trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn trim(&self) -> TRIMR {
         let bits = {
             const MASK: u8 = 63;
@@ -450,7 +454,7 @@ impl R {
         TRIMR { bits }
     }
     #[doc = "Bit 7 - Generate software SYNC event"]
-    #[inline(always)]
+    #[inline]
     pub fn swsync(&self) -> SWSYNCR {
         let bits = {
             const MASK: bool = true;
@@ -460,7 +464,7 @@ impl R {
         SWSYNCR { bits }
     }
     #[doc = "Bit 6 - Automatic trimming enable"]
-    #[inline(always)]
+    #[inline]
     pub fn autotrimen(&self) -> AUTOTRIMENR {
         let bits = {
             const MASK: bool = true;
@@ -470,7 +474,7 @@ impl R {
         AUTOTRIMENR { bits }
     }
     #[doc = "Bit 5 - Frequency error counter enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cen(&self) -> CENR {
         CENR::_from({
             const MASK: bool = true;
@@ -479,7 +483,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Expected SYNC interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn esyncie(&self) -> ESYNCIER {
         let bits = {
             const MASK: bool = true;
@@ -489,7 +493,7 @@ impl R {
         ESYNCIER { bits }
     }
     #[doc = "Bit 2 - Synchronization or trimming error interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn errie(&self) -> ERRIER {
         let bits = {
             const MASK: bool = true;
@@ -499,7 +503,7 @@ impl R {
         ERRIER { bits }
     }
     #[doc = "Bit 1 - SYNC warning interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syncwarnie(&self) -> SYNCWARNIER {
         let bits = {
             const MASK: bool = true;
@@ -509,7 +513,7 @@ impl R {
         SYNCWARNIER { bits }
     }
     #[doc = "Bit 0 - SYNC event OK interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syncokie(&self) -> SYNCOKIER {
         let bits = {
             const MASK: bool = true;
@@ -521,53 +525,53 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 8192 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 8:13 - HSI48 oscillator smooth trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn trim(&mut self) -> _TRIMW {
         _TRIMW { w: self }
     }
     #[doc = "Bit 7 - Generate software SYNC event"]
-    #[inline(always)]
+    #[inline]
     pub fn swsync(&mut self) -> _SWSYNCW {
         _SWSYNCW { w: self }
     }
     #[doc = "Bit 6 - Automatic trimming enable"]
-    #[inline(always)]
+    #[inline]
     pub fn autotrimen(&mut self) -> _AUTOTRIMENW {
         _AUTOTRIMENW { w: self }
     }
     #[doc = "Bit 5 - Frequency error counter enable"]
-    #[inline(always)]
+    #[inline]
     pub fn cen(&mut self) -> _CENW {
         _CENW { w: self }
     }
     #[doc = "Bit 3 - Expected SYNC interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn esyncie(&mut self) -> _ESYNCIEW {
         _ESYNCIEW { w: self }
     }
     #[doc = "Bit 2 - Synchronization or trimming error interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn errie(&mut self) -> _ERRIEW {
         _ERRIEW { w: self }
     }
     #[doc = "Bit 1 - SYNC warning interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syncwarnie(&mut self) -> _SYNCWARNIEW {
         _SYNCWARNIEW { w: self }
     }
     #[doc = "Bit 0 - SYNC event OK interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn syncokie(&mut self) -> _SYNCOKIEW {
         _SYNCOKIEW { w: self }
     }

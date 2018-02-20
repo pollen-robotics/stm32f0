@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::ACR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::ACR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::ACR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,13 +45,16 @@ impl super::ACR {
 #[doc = "Possible values of the field `LATENCY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LATENCYR {
-    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."] _0WAITSTATE,
-    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."] _1WAITSTATE,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."]
+    _0WAITSTATE,
+    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."]
+    _1WAITSTATE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl LATENCYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             LATENCYR::_0WAITSTATE => 0,
@@ -61,7 +64,7 @@ impl LATENCYR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> LATENCYR {
         match value {
             0 => LATENCYR::_0WAITSTATE,
@@ -70,12 +73,12 @@ impl LATENCYR {
         }
     }
     #[doc = "Checks if the value of the field is `_0WAITSTATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_0wait_state(&self) -> bool {
         *self == LATENCYR::_0WAITSTATE
     }
     #[doc = "Checks if the value of the field is `_1WAITSTATE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_1wait_state(&self) -> bool {
         *self == LATENCYR::_1WAITSTATE
     }
@@ -83,22 +86,24 @@ impl LATENCYR {
 #[doc = "Possible values of the field `PRFTBE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRFTBER {
-    #[doc = "Prefetch is disabled."] DISABLED,
-    #[doc = "Prefetch is enabled."] ENABLED,
+    #[doc = "Prefetch is disabled."]
+    DISABLED,
+    #[doc = "Prefetch is enabled."]
+    ENABLED,
 }
 impl PRFTBER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PRFTBER::DISABLED => false,
@@ -107,7 +112,7 @@ impl PRFTBER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PRFTBER {
         match value {
             false => PRFTBER::DISABLED,
@@ -115,12 +120,12 @@ impl PRFTBER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == PRFTBER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == PRFTBER::ENABLED
     }
@@ -131,30 +136,32 @@ pub struct PRFTBSR {
 }
 impl PRFTBSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 #[doc = "Values that can be written to the field `LATENCY`"]
 pub enum LATENCYW {
-    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."] _0WAITSTATE,
-    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."] _1WAITSTATE,
+    #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."]
+    _0WAITSTATE,
+    #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."]
+    _1WAITSTATE,
 }
 impl LATENCYW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             LATENCYW::_0WAITSTATE => 0,
@@ -168,22 +175,22 @@ pub struct _LATENCYW<'a> {
 }
 impl<'a> _LATENCYW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LATENCYW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Zero wait state, if SYSCLK is below or equal to 24 MHz."]
-    #[inline(always)]
+    #[inline]
     pub fn _0wait_state(self) -> &'a mut W {
         self.variant(LATENCYW::_0WAITSTATE)
     }
     #[doc = "One wait state, if SYSCLK is greater 24MHz and below or equal to 48 MHz."]
-    #[inline(always)]
+    #[inline]
     pub fn _1wait_state(self) -> &'a mut W {
         self.variant(LATENCYW::_1WAITSTATE)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 0;
@@ -194,13 +201,15 @@ impl<'a> _LATENCYW<'a> {
 }
 #[doc = "Values that can be written to the field `PRFTBE`"]
 pub enum PRFTBEW {
-    #[doc = "Prefetch is disabled."] DISABLED,
-    #[doc = "Prefetch is enabled."] ENABLED,
+    #[doc = "Prefetch is disabled."]
+    DISABLED,
+    #[doc = "Prefetch is enabled."]
+    ENABLED,
 }
 impl PRFTBEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PRFTBEW::DISABLED => false,
@@ -214,19 +223,19 @@ pub struct _PRFTBEW<'a> {
 }
 impl<'a> _PRFTBEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PRFTBEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Prefetch is disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(PRFTBEW::DISABLED)
     }
     #[doc = "Prefetch is enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(PRFTBEW::ENABLED)
     }
@@ -239,7 +248,7 @@ impl<'a> _PRFTBEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -250,12 +259,12 @@ impl<'a> _PRFTBEW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:2 - LATENCY"]
-    #[inline(always)]
+    #[inline]
     pub fn latency(&self) -> LATENCYR {
         LATENCYR::_from({
             const MASK: u8 = 7;
@@ -264,7 +273,7 @@ impl R {
         })
     }
     #[doc = "Bit 4 - PRFTBE"]
-    #[inline(always)]
+    #[inline]
     pub fn prftbe(&self) -> PRFTBER {
         PRFTBER::_from({
             const MASK: bool = true;
@@ -273,7 +282,7 @@ impl R {
         })
     }
     #[doc = "Bit 5 - PRFTBS"]
-    #[inline(always)]
+    #[inline]
     pub fn prftbs(&self) -> PRFTBSR {
         let bits = {
             const MASK: bool = true;
@@ -285,23 +294,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 48 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:2 - LATENCY"]
-    #[inline(always)]
+    #[inline]
     pub fn latency(&mut self) -> _LATENCYW {
         _LATENCYW { w: self }
     }
     #[doc = "Bit 4 - PRFTBE"]
-    #[inline(always)]
+    #[inline]
     pub fn prftbe(&mut self) -> _PRFTBEW {
         _PRFTBEW { w: self }
     }

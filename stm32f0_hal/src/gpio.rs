@@ -1,245 +1,390 @@
-//! # gpio module
+//! General Purpose Input / Output
 //!
-//! This module provides access to the GPIO of the stm32f0 board.
-//! You can:
-//!
-//! * configure a PIN in Input or Output
-//! * read or write the PIN depending on its configuration
-//!
-//! ## Examples
-//!
-//! ```
-//! extern crate stm32f0_hal;
-//!
-//! use stm32f0_hal::gpio;
-//!
-// ! let p_in = gpio::Input::setup(gpio::Pin::PA1);
-// ! let b = p_in.read();
-// !
-// ! let p_out = gpio::Output::setup(gpio::Pin::PA5);
-// ! p_out.write(true);
-//! ```
+//! GPIO Configuration: cf. [Reference manual p.149](http://www.st.com/resource/en/reference_manual/dm00031936.pdf)
 
-use cortex_m;
+use core::marker::PhantomData;
 
-use stm32f0x2::{EXTI, GPIOA, GPIOB, GPIOC, NVIC, RCC};
-use stm32f0x2::interrupt::Interrupt;
+use rcc::AHB;
 
-enum Mode {
-    Input = 0b00,
-    Output = 0b01,
+/// Extension trait to split a GPIO peripheral in independent pins and registers
+pub trait GpioExt {
+    /// The to split the GPIO into
+    type Parts;
+
+    /// Splits the GPIO block into independent pins and registers
+    fn split(self, ahb: &mut AHB) -> Self::Parts;
 }
 
-/// GPIO Pin available
-pub enum Pin {
-    PA0,
-    PA1,
-    PA5,
-    PB0,
-    PB1,
-    PB3,
-    PB4,
-    PB5,
-    PB10,
-    PB11,
-    PC6,
-    PC7,
-    PC8,
-    PC9,
+/// Input mode (type state)
+pub struct Input<MODE> {
+    _mode: PhantomData<MODE>,
 }
 
-/// Input Mode Pin
-pub struct Input {
-    pin: Pin,
+/// Floating input (type state)
+pub struct Floating;
+/// Pulled down input (type state)
+pub struct PullDown;
+/// Pulled up input (type state)
+pub struct PullUp;
+/// Analog input (type state)
+pub struct Analog;
+
+/// Output mode (type state)
+pub struct Output<MODE> {
+    _mode: PhantomData<MODE>,
 }
 
-impl Input {
-    /// Setup a PIN in Input Mode
-    pub fn setup(pin: Pin) -> Input {
-        setup_pin(&pin, Mode::Input);
-        Input { pin }
-    }
+/// Push pull output (type state)
+pub struct PushPull;
+/// Open drain output (type state)
+pub struct OpenDrain;
 
-    /// Read the state of a PIN
-    pub fn read(&self) -> bool {
-        unsafe {
-            match self.pin {
-                Pin::PA0 => (*GPIOA.get()).idr.read().idr0().bit(),
-                Pin::PA1 => (*GPIOA.get()).idr.read().idr1().bit(),
-                Pin::PA5 => (*GPIOA.get()).idr.read().idr5().bit(),
-                Pin::PB0 => (*GPIOB.get()).idr.read().idr0().bit(),
-                Pin::PB1 => (*GPIOB.get()).idr.read().idr1().bit(),
-                Pin::PB3 => (*GPIOB.get()).idr.read().idr3().bit(),
-                Pin::PB4 => (*GPIOB.get()).idr.read().idr4().bit(),
-                Pin::PB5 => (*GPIOB.get()).idr.read().idr5().bit(),
-                Pin::PB10 => (*GPIOB.get()).idr.read().idr10().bit(),
-                Pin::PB11 => (*GPIOB.get()).idr.read().idr11().bit(),
-                Pin::PC6 => (*GPIOC.get()).idr.read().idr6().bit(),
-                Pin::PC7 => (*GPIOC.get()).idr.read().idr7().bit(),
-                Pin::PC8 => (*GPIOC.get()).idr.read().idr8().bit(),
-                Pin::PC9 => (*GPIOC.get()).idr.read().idr9().bit(),
+/// Alternate function
+pub struct Alternate<MODE, AF> {
+    _mode: PhantomData<MODE>,
+    _af: PhantomData<AF>,
+}
+
+pub trait AlternateFunction {
+    fn bit_id(&self) -> u8;
+}
+macro_rules! AF {
+    ([$($AFX:ident : $i:expr)+]) => {
+        $(
+            pub struct $AFX;
+            impl AlternateFunction for $AFX {
+                fn bit_id(&self) -> u8 {
+                    $i
+                }
             }
+        )+
+    }
+}
+AF!([AF0:0 AF1:1 AF2:2 AF3:3 AF4:4 AF5:5 AF6:6 AF7:7]);
+
+macro_rules! gpio {
+    ($GPIOX:ident, $gpiox:ident, $gpioy:ident, $iopxenr:ident, $iopxrst:ident, $PXx:ident,
+            [$($PXi:ident: (
+                    $pxi:ident,
+                    $idr:ident, $odr:ident, $bs:ident, $br:ident,
+                    $moderx:ident, $otyperx:ident, $ospeedrx:ident, $pupdrx:ident,
+                    $afrx:ident, $afrxx:ident,
+                    $MODE:ty,
+                    $MODER:ident, $OTYPER:ident, $PUPDR:ident,
+                    $AFRX:ident
+                ),)+]
+    ) => {
+        /// GPIO
+        pub mod $gpiox {
+            use core::marker::PhantomData;
+
+            use hal::digital::{InputPin, OutputPin};
+            use stm32f0x2::{$gpioy, $GPIOX};
+
+            use rcc::AHB;
+            use super::{
+                Alternate,
+                AlternateFunction,
+                Analog,
+                Floating, GpioExt, Input,
+                OpenDrain,
+                Output,
+                PullDown, PullUp,
+                PushPull,
+            };
+
+            /// GPIO parts
+            pub struct Parts {
+                pub moder: MODER,
+                pub otyper: OTYPER,
+                pub pupdr: PUPDR,
+                pub afr: AFR,
+
+                $(
+                    /// Pin
+                    pub $pxi: $PXi<$MODE>,
+                )+
+            }
+
+            impl GpioExt for $GPIOX {
+                type Parts = Parts;
+
+                fn split(self, ahb: &mut AHB) -> Parts {
+                    ahb.enr().modify(|_, w| w.$iopxenr().enabled());
+                    ahb.rstr().modify(|_, w| w.$iopxrst().set_bit());
+                    ahb.rstr().modify(|_, w| w.$iopxrst().clear_bit());
+
+                    Parts {
+                        moder: MODER { _0: () },
+                        otyper: OTYPER { _0: () },
+                        pupdr: PUPDR { _0: () },
+                        afr: AFR { _0: () },
+                        $(
+                            $pxi: $PXi { _mode: PhantomData },
+                        )+
+                    }
+                }
+            }
+
+            /// Partially erased pin
+            pub struct $PXx<MODE> {
+                _mode: PhantomData<MODE>,
+            }
+
+            /// Output mode register
+           pub struct MODER {
+               _0: (),
+           }
+           impl MODER {
+               pub(crate) fn moder(&mut self) -> &$gpioy::MODER {
+                   unsafe { &(*$GPIOX::ptr()).moder }
+               }
+           }
+
+           /// Output type register
+          pub struct OTYPER {
+              _0: (),
+          }
+          impl OTYPER {
+              pub(crate) fn otyper(&mut self) -> &$gpioy::OTYPER {
+                  unsafe { &(*$GPIOX::ptr()).otyper }
+              }
+          }
+
+          /// Pull-Up Pull-Down register
+         pub struct PUPDR {
+             _0: (),
+         }
+         impl PUPDR {
+             pub(crate) fn pupdr(&mut self) -> &$gpioy::PUPDR {
+                 unsafe { &(*$GPIOX::ptr()).pupdr }
+             }
+         }
+
+         /// Alternate Function Register
+         pub struct AFR {
+            _0: (),
+         }
+         impl AFR {
+             pub(crate) fn afrh(&mut self) -> &$gpioy::AFRH {
+                 unsafe { &(*$GPIOX::ptr()).afrh }
+             }
+             pub(crate) fn afrl(&mut self) -> &$gpioy::AFRL {
+                 unsafe { &(*$GPIOX::ptr()).afrl }
+             }
+         }
+
+            $(
+                /// Pin
+                pub struct $PXi<MODE> {
+                    _mode: PhantomData<MODE>,
+                }
+
+                impl<MODE> $PXi<MODE> {
+                    /// Configures the pin to operate as an alternate function push pull output pin
+                    pub fn into_alternate_push_pull<AF>(
+                        self,
+                        moder: &mut $MODER,
+                        afr: &mut AFR,
+                        af: AF,
+                    ) -> $PXi<Alternate<PushPull, AF>>
+                    where AF: AlternateFunction
+                    {
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().alternate()
+                            });
+
+                        afr.$afrx().modify(|_, w| {
+                            unsafe {
+                                w.$afrxx().bits(af.bit_id())
+                            }
+                        });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
+                    /// Configures the pin to operate as a floating input pin
+                    pub fn into_floating_input(
+                        self,
+                        moder: &mut $MODER,
+                        pupdr: &mut $PUPDR,
+                    ) -> $PXi<Input<Floating>> {
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().input()
+                            });
+
+                        pupdr.pupdr().modify(|_, w| { w.$pupdrx().no_pull() });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
+                    /// Configures the pin to operate as a pulled down input pin
+                    pub fn into_pull_down_input(
+                        self,
+                        moder: &mut MODER,
+                        pupdr: &mut PUPDR,
+                    ) -> $PXi<Input<PullDown>> {
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().input()
+                            });
+
+                        pupdr.pupdr().modify(|_, w| { w.$pupdrx().pull_down() });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
+                    /// Configures the pin to operate as a pulled up input pin
+                    pub fn into_pull_up_input(
+                        self,
+                        moder: &mut MODER,
+                        pupdr: &mut PUPDR,
+                    ) -> $PXi<Input<PullUp>> {
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().input()
+                            });
+
+                        pupdr.pupdr().modify(|_, w| { w.$pupdrx().pull_up() });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
+                    pub fn into_analog(
+                        self,
+                        moder: &mut MODER
+                    ) -> $PXi<Input<Analog>> {
+                        moder.moder().modify(|_, w| {
+                            w.$moderx().analog()
+                        });
+
+                        $PXi { _mode: PhantomData }
+                    }
+
+                    /// Configures the pin to operate as an open drain output pin
+                    pub fn into_open_drain_output(
+                         self,
+                         moder: &mut MODER,
+                         otyper: &mut OTYPER,
+                     ) -> $PXi<Output<OpenDrain>> {
+                         moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().output()
+                            });
+
+                        otyper
+                                .otyper()
+                                .modify(|_, w| {
+                                w.$otyperx().open_drain()
+                        });
+
+                         $PXi { _mode: PhantomData }
+                     }
+
+                    /// Configures the pin to operate as an push pull output pin
+                    pub fn into_push_pull_output(
+                        self,
+                        moder: &mut $MODER,
+                        otyper: &mut $OTYPER,
+                    ) -> $PXi<Output<PushPull>> {
+
+                        moder
+                            .moder()
+                            .modify(|_, w| {
+                                w.$moderx().output()
+                            });
+
+                        otyper
+                            .otyper()
+                            .modify(|_, w| {
+                                w.$otyperx().push_pull()
+                            });
+
+                        $PXi { _mode: PhantomData }
+                    }
+                }
+
+                impl<MODE> InputPin for $PXi<Input<MODE>> {
+                    fn is_low(&self) -> bool {
+                        !self.is_high()
+                    }
+
+                    fn is_high(&self) -> bool {
+                        // NOTE(unsafe) atomic read with no side effects
+                        unsafe { (*$GPIOX::ptr()).idr.read().$idr().bit_is_set() }
+                    }
+                }
+
+                impl<MODE> OutputPin for $PXi<Output<MODE>> {
+                    fn is_high(&self) -> bool {
+                        !self.is_low()
+                    }
+
+                    fn is_low(&self) -> bool {
+                        // NOTE(unsafe) atomic read with no side effects
+                        unsafe { (*$GPIOX::ptr()).odr.read().$odr().bit_is_clear() }
+                    }
+
+                    fn set_high(&mut self) {
+                        // NOTE(unsafe) atomic write to a stateless register
+                        unsafe { (*$GPIOX::ptr()).bsrr.write(|w| w.$bs().set_bit()) }
+                    }
+
+                    fn set_low(&mut self) {
+                        // NOTE(unsafe) atomic write to a stateless register
+                        unsafe { (*$GPIOX::ptr()).bsrr.write(|w| w.$br().set_bit()) }
+                    }
+                }
+            )+
         }
     }
-
-    pub fn init_interrupt(&self) {
-        match self.pin {
-            Pin::PA0 => cortex_m::interrupt::free(|cs| {
-                let exti = EXTI.borrow(cs);
-                let nvic = NVIC.borrow(cs);
-                exti.rtsr.modify(|_, w| w.tr0().set_bit());
-                exti.imr.modify(|_, w| w.mr0().set_bit());
-                nvic.enable(Interrupt::EXTI0_1);
-            }),
-            Pin::PA1 => cortex_m::interrupt::free(|cs| {
-                let exti = EXTI.borrow(cs);
-                let nvic = NVIC.borrow(cs);
-                exti.rtsr.modify(|_, w| w.tr1().set_bit());
-                exti.imr.modify(|_, w| w.mr1().set_bit());
-                nvic.enable(Interrupt::EXTI0_1);
-            }),
-            Pin::PA5 => cortex_m::interrupt::free(|cs| {
-                let exti = EXTI.borrow(cs);
-                let nvic = NVIC.borrow(cs);
-                exti.rtsr.modify(|_, w| w.tr5().set_bit());
-                exti.imr.modify(|_, w| w.mr5().set_bit());
-                nvic.enable(Interrupt::EXTI4_15);
-            }),
-            Pin::PC7 => cortex_m::interrupt::free(|cs| {
-                let exti = EXTI.borrow(cs);
-                let nvic = NVIC.borrow(cs);
-                exti.rtsr.modify(|_, w| w.tr7().set_bit());
-                exti.imr.modify(|_, w| w.mr7().set_bit());
-                nvic.enable(Interrupt::EXTI4_15);
-            }),
-            _ => panic!("Unsupported PIN!"),
-        }
-    }
 }
 
-/// Output Mode Pin
-pub struct Output {
-    pin: Pin,
-}
+#[rustfmt_skip]
+gpio!(
+    GPIOC, gpioc, gpiof, iopcen, iopcrst, PCx,
+    [
+        PC3: (pc3, idr3, odr3, bs3, br3, moder3, ot3, ospeedr3, pupdr3, afrl, afrl3, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
+        PC6: (pc6, idr6, odr6, bs6, br6, moder6, ot6, ospeedr6, pupdr6, afrl, afrl6, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
+        PC7: (pc7, idr7, odr7, bs7, br7, moder7, ot7, ospeedr7, pupdr7, afrl, afrl7, Output<PushPull>, MODER, OTYPER, PUPDR, AFRL),
+        PC8: (pc8, idr8, odr8, bs8, br8, moder8, ot8, ospeedr8, pupdr8, afrh, afrh8, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),
+        PC9: (pc9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Output<PushPull>, MODER, OTYPER, PUPDR, AFRH),
+    ]
+);
 
-impl Output {
-    /// Setup a PIN in Output Mode
-    pub fn setup(pin: Pin) -> Output {
-        setup_pin(&pin, Mode::Output);
-        Output { pin }
-    }
-    /// Set the PIN to high
-    pub fn high(&mut self) {
-        unsafe {
-            match self.pin {
-                Pin::PA0 => (*GPIOA.get()).bsrr.write(|w| w.bs0().bit(true)),
-                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.bs1().bit(true)),
-                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.bs5().bit(true)),
-                Pin::PB0 => (*GPIOB.get()).bsrr.write(|w| w.bs0().bit(true)),
-                Pin::PB1 => (*GPIOB.get()).bsrr.write(|w| w.bs1().bit(true)),
-                Pin::PB3 => (*GPIOB.get()).bsrr.write(|w| w.bs3().bit(true)),
-                Pin::PB4 => (*GPIOB.get()).bsrr.write(|w| w.bs4().bit(true)),
-                Pin::PB5 => (*GPIOB.get()).bsrr.write(|w| w.bs5().bit(true)),
-                Pin::PB10 => (*GPIOB.get()).bsrr.write(|w| w.bs10().bit(true)),
-                Pin::PB11 => (*GPIOB.get()).bsrr.write(|w| w.bs11().bit(true)),
-                Pin::PC6 => (*GPIOC.get()).bsrr.write(|w| w.bs6().bit(true)),
-                Pin::PC7 => (*GPIOC.get()).bsrr.write(|w| w.bs7().bit(true)),
-                Pin::PC8 => (*GPIOC.get()).bsrr.write(|w| w.bs8().bit(true)),
-                Pin::PC9 => (*GPIOC.get()).bsrr.write(|w| w.bs9().bit(true)),
-            }
-        }
-    }
-    /// Set the PIN to low
-    pub fn low(&mut self) {
-        unsafe {
-            match self.pin {
-                Pin::PA0 => (*GPIOA.get()).bsrr.write(|w| w.br0().bit(true)),
-                Pin::PA1 => (*GPIOA.get()).bsrr.write(|w| w.br1().bit(true)),
-                Pin::PA5 => (*GPIOA.get()).bsrr.write(|w| w.br5().bit(true)),
-                Pin::PB0 => (*GPIOB.get()).bsrr.write(|w| w.br0().bit(true)),
-                Pin::PB1 => (*GPIOB.get()).bsrr.write(|w| w.br1().bit(true)),
-                Pin::PB3 => (*GPIOB.get()).bsrr.write(|w| w.br3().bit(true)),
-                Pin::PB4 => (*GPIOB.get()).bsrr.write(|w| w.br4().bit(true)),
-                Pin::PB5 => (*GPIOB.get()).bsrr.write(|w| w.br5().bit(true)),
-                Pin::PB10 => (*GPIOB.get()).bsrr.write(|w| w.br10().bit(true)),
-                Pin::PB11 => (*GPIOB.get()).bsrr.write(|w| w.br11().bit(true)),
-                Pin::PC6 => (*GPIOC.get()).bsrr.write(|w| w.br6().bit(true)),
-                Pin::PC7 => (*GPIOC.get()).bsrr.write(|w| w.br7().bit(true)),
-                Pin::PC8 => (*GPIOC.get()).bsrr.write(|w| w.br8().bit(true)),
-                Pin::PC9 => (*GPIOC.get()).bsrr.write(|w| w.br9().bit(true)),
-            }
-        }
-    }
-}
+#[rustfmt_skip]
+gpio!(
+    GPIOA, gpioa, gpioa, iopaen, ioparst, PAx,
+    [
+        PA0: (pa0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PA1: (pa1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, afrl, afrl1, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
 
-fn setup_pin(pin: &Pin, mode: Mode) {
-    cortex_m::interrupt::free(|cs| {
-        let rcc = RCC.borrow(cs);
+        PA9: (pa9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PA10: (pa10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+    ]
+);
 
-        let gpioa = GPIOA.borrow(cs);
-        let gpiob = GPIOB.borrow(cs);
-        let gpioc = GPIOC.borrow(cs);
-        rcc.ahbenr
-            .modify(|_, w| w.iopaen().enabled().iopben().enabled().iopcen().enabled());
-        let mode = mode as u8;
+#[rustfmt_skip]
+gpio!(
+    GPIOB, gpiob, gpiof, iopben, iopbrst, PBx,
+    [
+        PB0: (pb0, idr0, odr0, bs0, br0, moder0, ot0, ospeedr0, pupdr0, afrl, afrl0, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB1: (pb1, idr1, odr1, bs1, br1, moder1, ot1, ospeedr1, pupdr1, afrl, afrl1, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB3: (pb3, idr3, odr3, bs3, br3, moder3, ot3, ospeedr3, pupdr3, afrl, afrl3, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB4: (pb4, idr4, odr4, bs4, br4, moder4, ot4, ospeedr4, pupdr4, afrl, afrl4, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
+        PB5: (pb5, idr5, odr5, bs5, br5, moder5, ot5, ospeedr5, pupdr5, afrl, afrl5, Input<Floating>, MODER, OTYPER, PUPDR, AFRL),
 
-        match *pin {
-            Pin::PA0 => {
-                gpioa.moder.modify(|_, w| w.moder0().bits(mode));
-                gpioa.pupdr.modify(|_, w| w.pupdr0().pull_down());
-            }
-            Pin::PA1 => {
-                gpioa.moder.modify(|_, w| w.moder1().bits(mode));
-                gpioa.pupdr.modify(|_, w| w.pupdr1().pull_down());
-            }
-            Pin::PA5 => {
-                gpioa.moder.modify(|_, w| w.moder5().bits(mode));
-                gpioa.pupdr.modify(|_, w| w.pupdr5().pull_down());
-            }
-            Pin::PB0 => {
-                gpiob.moder.modify(|_, w| w.moder0().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr0().pull_down());
-            }
-            Pin::PB1 => {
-                gpiob.moder.modify(|_, w| w.moder1().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr1().pull_down());
-            }
-            Pin::PB3 => {
-                gpiob.moder.modify(|_, w| w.moder3().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr3().pull_down());
-            }
-            Pin::PB4 => {
-                gpiob.moder.modify(|_, w| w.moder4().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr4().pull_down());
-            }
-            Pin::PB5 => {
-                gpiob.moder.modify(|_, w| w.moder5().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr5().pull_down());
-            }
-            Pin::PB10 => {
-                gpiob.moder.modify(|_, w| w.moder10().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr10().pull_down());
-            }
-            Pin::PB11 => {
-                gpiob.moder.modify(|_, w| w.moder11().bits(mode));
-                gpiob.pupdr.modify(|_, w| w.pupdr11().pull_down());
-            }
-            Pin::PC6 => {
-                gpioc.moder.modify(|_, w| w.moder6().bits(mode));
-                gpioc.pupdr.modify(|_, w| w.pupdr6().pull_down());
-            }
-            Pin::PC7 => {
-                gpioc.moder.modify(|_, w| w.moder7().bits(mode));
-                gpioc.pupdr.modify(|_, w| w.pupdr7().pull_down());
-            }
-            Pin::PC8 => {
-                gpioc.moder.modify(|_, w| w.moder8().bits(mode));
-                gpioc.pupdr.modify(|_, w| w.pupdr8().pull_down());
-            }
-            Pin::PC9 => {
-                gpioc.moder.modify(|_, w| w.moder9().bits(mode));
-                gpioc.pupdr.modify(|_, w| w.pupdr9().pull_down());
-            }
-        }
-    });
-}
+        PB9: (pb9, idr9, odr9, bs9, br9, moder9, ot9, ospeedr9, pupdr9, afrh, afrh9, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PB10: (pb10, idr10, odr10, bs10, br10, moder10, ot10, ospeedr10, pupdr10, afrh, afrh10, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PB11: (pb11, idr11, odr11, bs11, br11, moder11, ot11, ospeedr11, pupdr11, afrh, afrh11, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PB14: (pb14, idr14, odr14, bs14, br14, moder14, ot14, ospeedr14, pupdr14, afrh, afrh14, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+        PB15: (pb15, idr15, odr15, bs15, br15, moder15, ot15, ospeedr15, pupdr15, afrh, afrh15, Input<Floating>, MODER, OTYPER, PUPDR, AFRH),
+    ]
+);

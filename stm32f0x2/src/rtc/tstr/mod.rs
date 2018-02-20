@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::TSTR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,17 +17,17 @@ pub struct PMR {
 }
 impl PMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -38,7 +38,7 @@ pub struct HTR {
 }
 impl HTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -49,7 +49,7 @@ pub struct HUR {
 }
 impl HUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -60,7 +60,7 @@ pub struct MNTR {
 }
 impl MNTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -71,7 +71,7 @@ pub struct MNUR {
 }
 impl MNUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -82,7 +82,7 @@ pub struct STR {
 }
 impl STR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -93,19 +93,19 @@ pub struct SUR {
 }
 impl SUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 22 - AM/PM notation"]
-    #[inline(always)]
+    #[inline]
     pub fn pm(&self) -> PMR {
         let bits = {
             const MASK: bool = true;
@@ -115,7 +115,7 @@ impl R {
         PMR { bits }
     }
     #[doc = "Bits 20:21 - Hour tens in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn ht(&self) -> HTR {
         let bits = {
             const MASK: u8 = 3;
@@ -125,7 +125,7 @@ impl R {
         HTR { bits }
     }
     #[doc = "Bits 16:19 - Hour units in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn hu(&self) -> HUR {
         let bits = {
             const MASK: u8 = 15;
@@ -135,7 +135,7 @@ impl R {
         HUR { bits }
     }
     #[doc = "Bits 12:14 - Minute tens in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn mnt(&self) -> MNTR {
         let bits = {
             const MASK: u8 = 7;
@@ -145,7 +145,7 @@ impl R {
         MNTR { bits }
     }
     #[doc = "Bits 8:11 - Minute units in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn mnu(&self) -> MNUR {
         let bits = {
             const MASK: u8 = 15;
@@ -155,7 +155,7 @@ impl R {
         MNUR { bits }
     }
     #[doc = "Bits 4:6 - Second tens in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn st(&self) -> STR {
         let bits = {
             const MASK: u8 = 7;
@@ -165,7 +165,7 @@ impl R {
         STR { bits }
     }
     #[doc = "Bits 0:3 - Second units in BCD format."]
-    #[inline(always)]
+    #[inline]
     pub fn su(&self) -> SUR {
         let bits = {
             const MASK: u8 = 15;

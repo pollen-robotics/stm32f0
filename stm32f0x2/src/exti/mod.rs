@@ -2,12 +2,18 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Interrupt mask register (EXTI_IMR)"] pub imr: IMR,
-    #[doc = "0x04 - Event mask register (EXTI_EMR)"] pub emr: EMR,
-    #[doc = "0x08 - Rising Trigger selection register (EXTI_RTSR)"] pub rtsr: RTSR,
-    #[doc = "0x0c - Falling Trigger selection register (EXTI_FTSR)"] pub ftsr: FTSR,
-    #[doc = "0x10 - Software interrupt event register (EXTI_SWIER)"] pub swier: SWIER,
-    #[doc = "0x14 - Pending register (EXTI_PR)"] pub pr: PR,
+    #[doc = "0x00 - Interrupt mask register (EXTI_IMR)"]
+    pub imr: IMR,
+    #[doc = "0x04 - Event mask register (EXTI_EMR)"]
+    pub emr: EMR,
+    #[doc = "0x08 - Rising Trigger selection register (EXTI_RTSR)"]
+    pub rtsr: RTSR,
+    #[doc = "0x0c - Falling Trigger selection register (EXTI_FTSR)"]
+    pub ftsr: FTSR,
+    #[doc = "0x10 - Software interrupt event register (EXTI_SWIER)"]
+    pub swier: SWIER,
+    #[doc = "0x14 - Pending register (EXTI_PR)"]
+    pub pr: PR,
 }
 #[doc = "Interrupt mask register (EXTI_IMR)"]
 pub struct IMR {

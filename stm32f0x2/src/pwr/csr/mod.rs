@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CSR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CSR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct WUFR {
 }
 impl WUFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct SBFR {
 }
 impl SBFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct PVDOR {
 }
 impl PVDOR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct VREFINTRDYR {
 }
 impl VREFINTRDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +132,17 @@ pub struct EWUP1R {
 }
 impl EWUP1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +153,17 @@ pub struct EWUP2R {
 }
 impl EWUP2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +174,17 @@ pub struct EWUP3R {
 }
 impl EWUP3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +195,17 @@ pub struct EWUP4R {
 }
 impl EWUP4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +216,17 @@ pub struct EWUP5R {
 }
 impl EWUP5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +237,17 @@ pub struct EWUP6R {
 }
 impl EWUP6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +258,17 @@ pub struct EWUP7R {
 }
 impl EWUP7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +279,17 @@ pub struct EWUP8R {
 }
 impl EWUP8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -308,7 +308,7 @@ impl<'a> _EWUP1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -331,7 +331,7 @@ impl<'a> _EWUP2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -354,7 +354,7 @@ impl<'a> _EWUP3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -377,7 +377,7 @@ impl<'a> _EWUP4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -400,7 +400,7 @@ impl<'a> _EWUP5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -423,7 +423,7 @@ impl<'a> _EWUP6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -446,7 +446,7 @@ impl<'a> _EWUP7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -469,7 +469,7 @@ impl<'a> _EWUP8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -480,12 +480,12 @@ impl<'a> _EWUP8W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Wakeup flag"]
-    #[inline(always)]
+    #[inline]
     pub fn wuf(&self) -> WUFR {
         let bits = {
             const MASK: bool = true;
@@ -495,7 +495,7 @@ impl R {
         WUFR { bits }
     }
     #[doc = "Bit 1 - Standby flag"]
-    #[inline(always)]
+    #[inline]
     pub fn sbf(&self) -> SBFR {
         let bits = {
             const MASK: bool = true;
@@ -505,7 +505,7 @@ impl R {
         SBFR { bits }
     }
     #[doc = "Bit 2 - PVD output"]
-    #[inline(always)]
+    #[inline]
     pub fn pvdo(&self) -> PVDOR {
         let bits = {
             const MASK: bool = true;
@@ -515,7 +515,7 @@ impl R {
         PVDOR { bits }
     }
     #[doc = "Bit 3 - VREFINT reference voltage ready"]
-    #[inline(always)]
+    #[inline]
     pub fn vrefintrdy(&self) -> VREFINTRDYR {
         let bits = {
             const MASK: bool = true;
@@ -525,7 +525,7 @@ impl R {
         VREFINTRDYR { bits }
     }
     #[doc = "Bit 8 - Enable WKUP pin 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup1(&self) -> EWUP1R {
         let bits = {
             const MASK: bool = true;
@@ -535,7 +535,7 @@ impl R {
         EWUP1R { bits }
     }
     #[doc = "Bit 9 - Enable WKUP pin 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup2(&self) -> EWUP2R {
         let bits = {
             const MASK: bool = true;
@@ -545,7 +545,7 @@ impl R {
         EWUP2R { bits }
     }
     #[doc = "Bit 10 - Enable WKUP pin 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup3(&self) -> EWUP3R {
         let bits = {
             const MASK: bool = true;
@@ -555,7 +555,7 @@ impl R {
         EWUP3R { bits }
     }
     #[doc = "Bit 11 - Enable WKUP pin 4"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup4(&self) -> EWUP4R {
         let bits = {
             const MASK: bool = true;
@@ -565,7 +565,7 @@ impl R {
         EWUP4R { bits }
     }
     #[doc = "Bit 12 - Enable WKUP pin 5"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup5(&self) -> EWUP5R {
         let bits = {
             const MASK: bool = true;
@@ -575,7 +575,7 @@ impl R {
         EWUP5R { bits }
     }
     #[doc = "Bit 13 - Enable WKUP pin 6"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup6(&self) -> EWUP6R {
         let bits = {
             const MASK: bool = true;
@@ -585,7 +585,7 @@ impl R {
         EWUP6R { bits }
     }
     #[doc = "Bit 14 - Enable WKUP pin 7"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup7(&self) -> EWUP7R {
         let bits = {
             const MASK: bool = true;
@@ -595,7 +595,7 @@ impl R {
         EWUP7R { bits }
     }
     #[doc = "Bit 15 - Enable WKUP pin 8"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup8(&self) -> EWUP8R {
         let bits = {
             const MASK: bool = true;
@@ -607,53 +607,53 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 8 - Enable WKUP pin 1"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup1(&mut self) -> _EWUP1W {
         _EWUP1W { w: self }
     }
     #[doc = "Bit 9 - Enable WKUP pin 2"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup2(&mut self) -> _EWUP2W {
         _EWUP2W { w: self }
     }
     #[doc = "Bit 10 - Enable WKUP pin 3"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup3(&mut self) -> _EWUP3W {
         _EWUP3W { w: self }
     }
     #[doc = "Bit 11 - Enable WKUP pin 4"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup4(&mut self) -> _EWUP4W {
         _EWUP4W { w: self }
     }
     #[doc = "Bit 12 - Enable WKUP pin 5"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup5(&mut self) -> _EWUP5W {
         _EWUP5W { w: self }
     }
     #[doc = "Bit 13 - Enable WKUP pin 6"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup6(&mut self) -> _EWUP6W {
         _EWUP6W { w: self }
     }
     #[doc = "Bit 14 - Enable WKUP pin 7"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup7(&mut self) -> _EWUP7W {
         _EWUP7W { w: self }
     }
     #[doc = "Bit 15 - Enable WKUP pin 8"]
-    #[inline(always)]
+    #[inline]
     pub fn ewup8(&mut self) -> _EWUP8W {
         _EWUP8W { w: self }
     }

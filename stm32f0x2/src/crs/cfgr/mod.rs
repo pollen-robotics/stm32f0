@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct SYNCPOLR {
 }
 impl SYNCPOLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,7 +69,7 @@ pub struct SYNCSRCR {
 }
 impl SYNCSRCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -80,7 +80,7 @@ pub struct SYNCDIVR {
 }
 impl SYNCDIVR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -91,7 +91,7 @@ pub struct FELIMR {
 }
 impl FELIMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -102,7 +102,7 @@ pub struct RELOADR {
 }
 impl RELOADR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -121,7 +121,7 @@ impl<'a> _SYNCPOLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -136,7 +136,7 @@ pub struct _SYNCSRCW<'a> {
 }
 impl<'a> _SYNCSRCW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 28;
@@ -151,7 +151,7 @@ pub struct _SYNCDIVW<'a> {
 }
 impl<'a> _SYNCDIVW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 24;
@@ -166,7 +166,7 @@ pub struct _FELIMW<'a> {
 }
 impl<'a> _FELIMW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 16;
@@ -181,7 +181,7 @@ pub struct _RELOADW<'a> {
 }
 impl<'a> _RELOADW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -192,12 +192,12 @@ impl<'a> _RELOADW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 31 - SYNC polarity selection"]
-    #[inline(always)]
+    #[inline]
     pub fn syncpol(&self) -> SYNCPOLR {
         let bits = {
             const MASK: bool = true;
@@ -207,7 +207,7 @@ impl R {
         SYNCPOLR { bits }
     }
     #[doc = "Bits 28:29 - SYNC signal source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn syncsrc(&self) -> SYNCSRCR {
         let bits = {
             const MASK: u8 = 3;
@@ -217,7 +217,7 @@ impl R {
         SYNCSRCR { bits }
     }
     #[doc = "Bits 24:26 - SYNC divider"]
-    #[inline(always)]
+    #[inline]
     pub fn syncdiv(&self) -> SYNCDIVR {
         let bits = {
             const MASK: u8 = 7;
@@ -227,7 +227,7 @@ impl R {
         SYNCDIVR { bits }
     }
     #[doc = "Bits 16:23 - Frequency error limit"]
-    #[inline(always)]
+    #[inline]
     pub fn felim(&self) -> FELIMR {
         let bits = {
             const MASK: u8 = 255;
@@ -237,7 +237,7 @@ impl R {
         FELIMR { bits }
     }
     #[doc = "Bits 0:15 - Counter reload value"]
-    #[inline(always)]
+    #[inline]
     pub fn reload(&self) -> RELOADR {
         let bits = {
             const MASK: u16 = 65535;
@@ -249,38 +249,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 539147135 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 31 - SYNC polarity selection"]
-    #[inline(always)]
+    #[inline]
     pub fn syncpol(&mut self) -> _SYNCPOLW {
         _SYNCPOLW { w: self }
     }
     #[doc = "Bits 28:29 - SYNC signal source selection"]
-    #[inline(always)]
+    #[inline]
     pub fn syncsrc(&mut self) -> _SYNCSRCW {
         _SYNCSRCW { w: self }
     }
     #[doc = "Bits 24:26 - SYNC divider"]
-    #[inline(always)]
+    #[inline]
     pub fn syncdiv(&mut self) -> _SYNCDIVW {
         _SYNCDIVW { w: self }
     }
     #[doc = "Bits 16:23 - Frequency error limit"]
-    #[inline(always)]
+    #[inline]
     pub fn felim(&mut self) -> _FELIMW {
         _FELIMW { w: self }
     }
     #[doc = "Bits 0:15 - Counter reload value"]
-    #[inline(always)]
+    #[inline]
     pub fn reload(&mut self) -> _RELOADW {
         _RELOADW { w: self }
     }

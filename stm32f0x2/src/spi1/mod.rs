@@ -2,15 +2,24 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - control register 1"] pub cr1: CR1,
-    #[doc = "0x04 - control register 2"] pub cr2: CR2,
-    #[doc = "0x08 - status register"] pub sr: SR,
-    #[doc = "0x0c - data register"] pub dr: DR,
-    #[doc = "0x10 - CRC polynomial register"] pub crcpr: CRCPR,
-    #[doc = "0x14 - RX CRC register"] pub rxcrcr: RXCRCR,
-    #[doc = "0x18 - TX CRC register"] pub txcrcr: TXCRCR,
-    #[doc = "0x1c - I2S configuration register"] pub i2scfgr: I2SCFGR,
-    #[doc = "0x20 - I2S prescaler register"] pub i2spr: I2SPR,
+    #[doc = "0x00 - control register 1"]
+    pub cr1: CR1,
+    #[doc = "0x04 - control register 2"]
+    pub cr2: CR2,
+    #[doc = "0x08 - status register"]
+    pub sr: SR,
+    #[doc = "0x0c - data register"]
+    pub dr: DR,
+    #[doc = "0x10 - CRC polynomial register"]
+    pub crcpr: CRCPR,
+    #[doc = "0x14 - RX CRC register"]
+    pub rxcrcr: RXCRCR,
+    #[doc = "0x18 - TX CRC register"]
+    pub txcrcr: TXCRCR,
+    #[doc = "0x1c - I2S configuration register"]
+    pub i2scfgr: I2SCFGR,
+    #[doc = "0x20 - I2S prescaler register"]
+    pub i2spr: I2SPR,
 }
 #[doc = "control register 1"]
 pub struct CR1 {

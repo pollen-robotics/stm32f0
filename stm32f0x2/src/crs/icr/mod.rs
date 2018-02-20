@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::ICR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::ICR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::ICR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct ESYNCCR {
 }
 impl ESYNCCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct ERRCR {
 }
 impl ERRCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct SYNCWARNCR {
 }
 impl SYNCWARNCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct SYNCOKCR {
 }
 impl SYNCOKCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -140,7 +140,7 @@ impl<'a> _ESYNCCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -163,7 +163,7 @@ impl<'a> _ERRCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -186,7 +186,7 @@ impl<'a> _SYNCWARNCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -209,7 +209,7 @@ impl<'a> _SYNCOKCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -220,12 +220,12 @@ impl<'a> _SYNCOKCW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 3 - Expected SYNC clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn esyncc(&self) -> ESYNCCR {
         let bits = {
             const MASK: bool = true;
@@ -235,7 +235,7 @@ impl R {
         ESYNCCR { bits }
     }
     #[doc = "Bit 2 - Error clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn errc(&self) -> ERRCR {
         let bits = {
             const MASK: bool = true;
@@ -245,7 +245,7 @@ impl R {
         ERRCR { bits }
     }
     #[doc = "Bit 1 - SYNC warning clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn syncwarnc(&self) -> SYNCWARNCR {
         let bits = {
             const MASK: bool = true;
@@ -255,7 +255,7 @@ impl R {
         SYNCWARNCR { bits }
     }
     #[doc = "Bit 0 - SYNC event OK clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn syncokc(&self) -> SYNCOKCR {
         let bits = {
             const MASK: bool = true;
@@ -267,33 +267,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 3 - Expected SYNC clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn esyncc(&mut self) -> _ESYNCCW {
         _ESYNCCW { w: self }
     }
     #[doc = "Bit 2 - Error clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn errc(&mut self) -> _ERRCW {
         _ERRCW { w: self }
     }
     #[doc = "Bit 1 - SYNC warning clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn syncwarnc(&mut self) -> _SYNCWARNCW {
         _SYNCWARNCW { w: self }
     }
     #[doc = "Bit 0 - SYNC event OK clear flag"]
-    #[inline(always)]
+    #[inline]
     pub fn syncokc(&mut self) -> _SYNCOKCW {
         _SYNCOKCW { w: self }
     }

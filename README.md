@@ -13,8 +13,6 @@ First you need to setup your environment to cross compile it for armv6. You can 
 
 Then you can build both workspaces directly from the root using ```xargo build --target thumbv6m-none-eabi```.
 
->**Warning: due to some recent APIs break, you should use the nightly 25-12-2017! We will fix that real soon.**
-
 ## Usage
 
 You can find examples in the [stm32f0_hal/examples](./stm32f0_hal/examples) folder. They can be built directly.
@@ -23,10 +21,7 @@ For instance, to build the *blinky* example: ```xargo build --target thumbv6m-no
 
 You can generate the doc via ```xargo doc``` for a complete API.
 
-## Troubleshoot
+## How to generate stm32f0x2
 
-### Xargo version
-
-If you encounter an error such as: ```error: no matching version = 0.0.0 found for package compiler_builtins (required by sysroot)```
-
-Make sure you downgrade your xargo version to 0.3.8: ```cargo install xargo --vers 0.3.8 -f```
+* ```svd2rust -i STM32F0x2.svd | rustfmt | tee -a src/lib.rs```
+* ```form -i src/lib.rs -o ./src```

@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::WRPR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,19 +17,19 @@ pub struct WRPR {
 }
 impl WRPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:31 - Write protect"]
-    #[inline(always)]
+    #[inline]
     pub fn wrp(&self) -> WRPR {
         let bits = {
             const MASK: u32 = 4294967295;

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_TDT1R {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CAN_TDT1R {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CAN_TDT1R {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct TIMER {
 }
 impl TIMER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,17 +59,17 @@ pub struct TGTR {
 }
 impl TGTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,7 +80,7 @@ pub struct DLCR {
 }
 impl DLCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -91,7 +91,7 @@ pub struct _TIMEW<'a> {
 }
 impl<'a> _TIMEW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 16;
@@ -114,7 +114,7 @@ impl<'a> _TGTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -129,7 +129,7 @@ pub struct _DLCW<'a> {
 }
 impl<'a> _DLCW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
@@ -140,12 +140,12 @@ impl<'a> _DLCW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - TIME"]
-    #[inline(always)]
+    #[inline]
     pub fn time(&self) -> TIMER {
         let bits = {
             const MASK: u16 = 65535;
@@ -155,7 +155,7 @@ impl R {
         TIMER { bits }
     }
     #[doc = "Bit 8 - TGT"]
-    #[inline(always)]
+    #[inline]
     pub fn tgt(&self) -> TGTR {
         let bits = {
             const MASK: bool = true;
@@ -165,7 +165,7 @@ impl R {
         TGTR { bits }
     }
     #[doc = "Bits 0:3 - DLC"]
-    #[inline(always)]
+    #[inline]
     pub fn dlc(&self) -> DLCR {
         let bits = {
             const MASK: u8 = 15;
@@ -177,28 +177,28 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:31 - TIME"]
-    #[inline(always)]
+    #[inline]
     pub fn time(&mut self) -> _TIMEW {
         _TIMEW { w: self }
     }
     #[doc = "Bit 8 - TGT"]
-    #[inline(always)]
+    #[inline]
     pub fn tgt(&mut self) -> _TGTW {
         _TGTW { w: self }
     }
     #[doc = "Bits 0:3 - DLC"]
-    #[inline(always)]
+    #[inline]
     pub fn dlc(&mut self) -> _DLCW {
         _DLCW { w: self }
     }

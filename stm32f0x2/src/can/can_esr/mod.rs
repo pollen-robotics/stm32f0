@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_ESR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CAN_ESR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CAN_ESR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct RECR {
 }
 impl RECR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct TECR {
 }
 impl TECR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct LECR {
 }
 impl LECR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -81,17 +81,17 @@ pub struct BOFFR {
 }
 impl BOFFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -102,17 +102,17 @@ pub struct EPVFR {
 }
 impl EPVFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -123,17 +123,17 @@ pub struct EWGFR {
 }
 impl EWGFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -144,7 +144,7 @@ pub struct _LECW<'a> {
 }
 impl<'a> _LECW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 4;
@@ -155,12 +155,12 @@ impl<'a> _LECW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 24:31 - REC"]
-    #[inline(always)]
+    #[inline]
     pub fn rec(&self) -> RECR {
         let bits = {
             const MASK: u8 = 255;
@@ -170,7 +170,7 @@ impl R {
         RECR { bits }
     }
     #[doc = "Bits 16:23 - TEC"]
-    #[inline(always)]
+    #[inline]
     pub fn tec(&self) -> TECR {
         let bits = {
             const MASK: u8 = 255;
@@ -180,7 +180,7 @@ impl R {
         TECR { bits }
     }
     #[doc = "Bits 4:6 - LEC"]
-    #[inline(always)]
+    #[inline]
     pub fn lec(&self) -> LECR {
         let bits = {
             const MASK: u8 = 7;
@@ -190,7 +190,7 @@ impl R {
         LECR { bits }
     }
     #[doc = "Bit 2 - BOFF"]
-    #[inline(always)]
+    #[inline]
     pub fn boff(&self) -> BOFFR {
         let bits = {
             const MASK: bool = true;
@@ -200,7 +200,7 @@ impl R {
         BOFFR { bits }
     }
     #[doc = "Bit 1 - EPVF"]
-    #[inline(always)]
+    #[inline]
     pub fn epvf(&self) -> EPVFR {
         let bits = {
             const MASK: bool = true;
@@ -210,7 +210,7 @@ impl R {
         EPVFR { bits }
     }
     #[doc = "Bit 0 - EWGF"]
-    #[inline(always)]
+    #[inline]
     pub fn ewgf(&self) -> EWGFR {
         let bits = {
             const MASK: bool = true;
@@ -222,18 +222,18 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 4:6 - LEC"]
-    #[inline(always)]
+    #[inline]
     pub fn lec(&mut self) -> _LECW {
         _LECW { w: self }
     }

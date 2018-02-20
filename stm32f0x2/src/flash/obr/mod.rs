@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::OBR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,17 +17,17 @@ pub struct OPTERRR {
 }
 impl OPTERRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -38,7 +38,7 @@ pub struct RDPRTR {
 }
 impl RDPRTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -49,17 +49,17 @@ pub struct WDG_SWR {
 }
 impl WDG_SWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -70,17 +70,17 @@ pub struct NRST_STOPR {
 }
 impl NRST_STOPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -91,17 +91,17 @@ pub struct NRST_STDBYR {
 }
 impl NRST_STDBYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -112,17 +112,17 @@ pub struct NBOOT0R {
 }
 impl NBOOT0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -133,17 +133,17 @@ pub struct NBOOT1R {
 }
 impl NBOOT1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -154,17 +154,17 @@ pub struct VDDA_MONITORR {
 }
 impl VDDA_MONITORR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -175,17 +175,17 @@ pub struct RAM_PARITY_CHECKR {
 }
 impl RAM_PARITY_CHECKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -196,17 +196,17 @@ pub struct BOOT_SELR {
 }
 impl BOOT_SELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -217,7 +217,7 @@ pub struct DATA0R {
 }
 impl DATA0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -228,19 +228,19 @@ pub struct DATA1R {
 }
 impl DATA1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Option byte error"]
-    #[inline(always)]
+    #[inline]
     pub fn opterr(&self) -> OPTERRR {
         let bits = {
             const MASK: bool = true;
@@ -250,7 +250,7 @@ impl R {
         OPTERRR { bits }
     }
     #[doc = "Bits 1:2 - Read protection level status"]
-    #[inline(always)]
+    #[inline]
     pub fn rdprt(&self) -> RDPRTR {
         let bits = {
             const MASK: u8 = 3;
@@ -260,7 +260,7 @@ impl R {
         RDPRTR { bits }
     }
     #[doc = "Bit 8 - WDG_SW"]
-    #[inline(always)]
+    #[inline]
     pub fn wdg_sw(&self) -> WDG_SWR {
         let bits = {
             const MASK: bool = true;
@@ -270,7 +270,7 @@ impl R {
         WDG_SWR { bits }
     }
     #[doc = "Bit 9 - nRST_STOP"]
-    #[inline(always)]
+    #[inline]
     pub fn n_rst_stop(&self) -> NRST_STOPR {
         let bits = {
             const MASK: bool = true;
@@ -280,7 +280,7 @@ impl R {
         NRST_STOPR { bits }
     }
     #[doc = "Bit 10 - nRST_STDBY"]
-    #[inline(always)]
+    #[inline]
     pub fn n_rst_stdby(&self) -> NRST_STDBYR {
         let bits = {
             const MASK: bool = true;
@@ -290,7 +290,7 @@ impl R {
         NRST_STDBYR { bits }
     }
     #[doc = "Bit 11 - nBOOT0"]
-    #[inline(always)]
+    #[inline]
     pub fn n_boot0(&self) -> NBOOT0R {
         let bits = {
             const MASK: bool = true;
@@ -300,7 +300,7 @@ impl R {
         NBOOT0R { bits }
     }
     #[doc = "Bit 12 - BOOT1"]
-    #[inline(always)]
+    #[inline]
     pub fn n_boot1(&self) -> NBOOT1R {
         let bits = {
             const MASK: bool = true;
@@ -310,7 +310,7 @@ impl R {
         NBOOT1R { bits }
     }
     #[doc = "Bit 13 - VDDA_MONITOR"]
-    #[inline(always)]
+    #[inline]
     pub fn vdda_monitor(&self) -> VDDA_MONITORR {
         let bits = {
             const MASK: bool = true;
@@ -320,7 +320,7 @@ impl R {
         VDDA_MONITORR { bits }
     }
     #[doc = "Bit 14 - RAM_PARITY_CHECK"]
-    #[inline(always)]
+    #[inline]
     pub fn ram_parity_check(&self) -> RAM_PARITY_CHECKR {
         let bits = {
             const MASK: bool = true;
@@ -330,7 +330,7 @@ impl R {
         RAM_PARITY_CHECKR { bits }
     }
     #[doc = "Bit 15 - BOOT_SEL"]
-    #[inline(always)]
+    #[inline]
     pub fn boot_sel(&self) -> BOOT_SELR {
         let bits = {
             const MASK: bool = true;
@@ -340,7 +340,7 @@ impl R {
         BOOT_SELR { bits }
     }
     #[doc = "Bits 16:23 - Data0"]
-    #[inline(always)]
+    #[inline]
     pub fn data0(&self) -> DATA0R {
         let bits = {
             const MASK: u8 = 255;
@@ -350,7 +350,7 @@ impl R {
         DATA0R { bits }
     }
     #[doc = "Bits 24:31 - Data1"]
-    #[inline(always)]
+    #[inline]
     pub fn data1(&self) -> DATA1R {
         let bits = {
             const MASK: u8 = 255;

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::TIMINGR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::TIMINGR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::TIMINGR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct SCLLR {
 }
 impl SCLLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct SCLHR {
 }
 impl SCLHR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct SDADELR {
 }
 impl SDADELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -81,7 +81,7 @@ pub struct SCLDELR {
 }
 impl SCLDELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -92,7 +92,7 @@ pub struct PRESCR {
 }
 impl PRESCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -103,7 +103,7 @@ pub struct _SCLLW<'a> {
 }
 impl<'a> _SCLLW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
@@ -118,7 +118,7 @@ pub struct _SCLHW<'a> {
 }
 impl<'a> _SCLHW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 8;
@@ -133,7 +133,7 @@ pub struct _SDADELW<'a> {
 }
 impl<'a> _SDADELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 16;
@@ -148,7 +148,7 @@ pub struct _SCLDELW<'a> {
 }
 impl<'a> _SCLDELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 20;
@@ -163,7 +163,7 @@ pub struct _PRESCW<'a> {
 }
 impl<'a> _PRESCW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 28;
@@ -174,12 +174,12 @@ impl<'a> _PRESCW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:7 - SCL low period (master mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn scll(&self) -> SCLLR {
         let bits = {
             const MASK: u8 = 255;
@@ -189,7 +189,7 @@ impl R {
         SCLLR { bits }
     }
     #[doc = "Bits 8:15 - SCL high period (master mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn sclh(&self) -> SCLHR {
         let bits = {
             const MASK: u8 = 255;
@@ -199,7 +199,7 @@ impl R {
         SCLHR { bits }
     }
     #[doc = "Bits 16:19 - Data hold time"]
-    #[inline(always)]
+    #[inline]
     pub fn sdadel(&self) -> SDADELR {
         let bits = {
             const MASK: u8 = 15;
@@ -209,7 +209,7 @@ impl R {
         SDADELR { bits }
     }
     #[doc = "Bits 20:23 - Data setup time"]
-    #[inline(always)]
+    #[inline]
     pub fn scldel(&self) -> SCLDELR {
         let bits = {
             const MASK: u8 = 15;
@@ -219,7 +219,7 @@ impl R {
         SCLDELR { bits }
     }
     #[doc = "Bits 28:31 - Timing prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn presc(&self) -> PRESCR {
         let bits = {
             const MASK: u8 = 15;
@@ -231,38 +231,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:7 - SCL low period (master mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn scll(&mut self) -> _SCLLW {
         _SCLLW { w: self }
     }
     #[doc = "Bits 8:15 - SCL high period (master mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn sclh(&mut self) -> _SCLHW {
         _SCLHW { w: self }
     }
     #[doc = "Bits 16:19 - Data hold time"]
-    #[inline(always)]
+    #[inline]
     pub fn sdadel(&mut self) -> _SDADELW {
         _SDADELW { w: self }
     }
     #[doc = "Bits 20:23 - Data setup time"]
-    #[inline(always)]
+    #[inline]
     pub fn scldel(&mut self) -> _SCLDELW {
         _SCLDELW { w: self }
     }
     #[doc = "Bits 28:31 - Timing prescaler"]
-    #[inline(always)]
+    #[inline]
     pub fn presc(&mut self) -> _PRESCW {
         _PRESCW { w: self }
     }

@@ -4,7 +4,7 @@ pub struct R {
 }
 impl super::DOR1 {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
@@ -17,19 +17,19 @@ pub struct DACC1DORR {
 }
 impl DACC1DORR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:11 - DAC channel1 data output"]
-    #[inline(always)]
+    #[inline]
     pub fn dacc1dor(&self) -> DACC1DORR {
         let bits = {
             const MASK: u16 = 4095;

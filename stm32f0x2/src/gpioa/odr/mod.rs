@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::ODR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::ODR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::ODR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +45,24 @@ impl super::ODR {
 #[doc = "Possible values of the field `ODR15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODR15R {
-    #[doc = "Reset output value"] RESET,
-    #[doc = "Set output value"] SET,
+    #[doc = "Reset output value"]
+    RESET,
+    #[doc = "Set output value"]
+    SET,
 }
 impl ODR15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             ODR15R::RESET => false,
@@ -69,7 +71,7 @@ impl ODR15R {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> ODR15R {
         match value {
             false => ODR15R::RESET,
@@ -77,12 +79,12 @@ impl ODR15R {
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_reset(&self) -> bool {
         *self == ODR15R::RESET
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == ODR15R::SET
     }
@@ -119,13 +121,15 @@ pub type ODR1R = ODR15R;
 pub type ODR0R = ODR15R;
 #[doc = "Values that can be written to the field `ODR15`"]
 pub enum ODR15W {
-    #[doc = "Reset output value"] RESET,
-    #[doc = "Set output value"] SET,
+    #[doc = "Reset output value"]
+    RESET,
+    #[doc = "Set output value"]
+    SET,
 }
 impl ODR15W {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             ODR15W::RESET => false,
@@ -139,19 +143,19 @@ pub struct _ODR15W<'a> {
 }
 impl<'a> _ODR15W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR15W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -164,7 +168,7 @@ impl<'a> _ODR15W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -181,19 +185,19 @@ pub struct _ODR14W<'a> {
 }
 impl<'a> _ODR14W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR14W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -206,7 +210,7 @@ impl<'a> _ODR14W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -223,19 +227,19 @@ pub struct _ODR13W<'a> {
 }
 impl<'a> _ODR13W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR13W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -248,7 +252,7 @@ impl<'a> _ODR13W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -265,19 +269,19 @@ pub struct _ODR12W<'a> {
 }
 impl<'a> _ODR12W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR12W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -290,7 +294,7 @@ impl<'a> _ODR12W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -307,19 +311,19 @@ pub struct _ODR11W<'a> {
 }
 impl<'a> _ODR11W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR11W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -332,7 +336,7 @@ impl<'a> _ODR11W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -349,19 +353,19 @@ pub struct _ODR10W<'a> {
 }
 impl<'a> _ODR10W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR10W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -374,7 +378,7 @@ impl<'a> _ODR10W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -391,19 +395,19 @@ pub struct _ODR9W<'a> {
 }
 impl<'a> _ODR9W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR9W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -416,7 +420,7 @@ impl<'a> _ODR9W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -433,19 +437,19 @@ pub struct _ODR8W<'a> {
 }
 impl<'a> _ODR8W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR8W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -458,7 +462,7 @@ impl<'a> _ODR8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -475,19 +479,19 @@ pub struct _ODR7W<'a> {
 }
 impl<'a> _ODR7W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR7W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -500,7 +504,7 @@ impl<'a> _ODR7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -517,19 +521,19 @@ pub struct _ODR6W<'a> {
 }
 impl<'a> _ODR6W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR6W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -542,7 +546,7 @@ impl<'a> _ODR6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -559,19 +563,19 @@ pub struct _ODR5W<'a> {
 }
 impl<'a> _ODR5W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR5W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -584,7 +588,7 @@ impl<'a> _ODR5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -601,19 +605,19 @@ pub struct _ODR4W<'a> {
 }
 impl<'a> _ODR4W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR4W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -626,7 +630,7 @@ impl<'a> _ODR4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -643,19 +647,19 @@ pub struct _ODR3W<'a> {
 }
 impl<'a> _ODR3W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR3W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -668,7 +672,7 @@ impl<'a> _ODR3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -685,19 +689,19 @@ pub struct _ODR2W<'a> {
 }
 impl<'a> _ODR2W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR2W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -710,7 +714,7 @@ impl<'a> _ODR2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -727,19 +731,19 @@ pub struct _ODR1W<'a> {
 }
 impl<'a> _ODR1W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR1W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -752,7 +756,7 @@ impl<'a> _ODR1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -769,19 +773,19 @@ pub struct _ODR0W<'a> {
 }
 impl<'a> _ODR0W<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ODR0W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Reset output value"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(ODR15W::RESET)
     }
     #[doc = "Set output value"]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ODR15W::SET)
     }
@@ -794,7 +798,7 @@ impl<'a> _ODR0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -805,12 +809,12 @@ impl<'a> _ODR0W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 15 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr15(&self) -> ODR15R {
         ODR15R::_from({
             const MASK: bool = true;
@@ -819,7 +823,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr14(&self) -> ODR14R {
         ODR14R::_from({
             const MASK: bool = true;
@@ -828,7 +832,7 @@ impl R {
         })
     }
     #[doc = "Bit 13 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr13(&self) -> ODR13R {
         ODR13R::_from({
             const MASK: bool = true;
@@ -837,7 +841,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr12(&self) -> ODR12R {
         ODR12R::_from({
             const MASK: bool = true;
@@ -846,7 +850,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr11(&self) -> ODR11R {
         ODR11R::_from({
             const MASK: bool = true;
@@ -855,7 +859,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr10(&self) -> ODR10R {
         ODR10R::_from({
             const MASK: bool = true;
@@ -864,7 +868,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr9(&self) -> ODR9R {
         ODR9R::_from({
             const MASK: bool = true;
@@ -873,7 +877,7 @@ impl R {
         })
     }
     #[doc = "Bit 8 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr8(&self) -> ODR8R {
         ODR8R::_from({
             const MASK: bool = true;
@@ -882,7 +886,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr7(&self) -> ODR7R {
         ODR7R::_from({
             const MASK: bool = true;
@@ -891,7 +895,7 @@ impl R {
         })
     }
     #[doc = "Bit 6 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr6(&self) -> ODR6R {
         ODR6R::_from({
             const MASK: bool = true;
@@ -900,7 +904,7 @@ impl R {
         })
     }
     #[doc = "Bit 5 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr5(&self) -> ODR5R {
         ODR5R::_from({
             const MASK: bool = true;
@@ -909,7 +913,7 @@ impl R {
         })
     }
     #[doc = "Bit 4 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr4(&self) -> ODR4R {
         ODR4R::_from({
             const MASK: bool = true;
@@ -918,7 +922,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr3(&self) -> ODR3R {
         ODR3R::_from({
             const MASK: bool = true;
@@ -927,7 +931,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr2(&self) -> ODR2R {
         ODR2R::_from({
             const MASK: bool = true;
@@ -936,7 +940,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr1(&self) -> ODR1R {
         ODR1R::_from({
             const MASK: bool = true;
@@ -945,7 +949,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr0(&self) -> ODR0R {
         ODR0R::_from({
             const MASK: bool = true;
@@ -956,93 +960,93 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 15 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr15(&mut self) -> _ODR15W {
         _ODR15W { w: self }
     }
     #[doc = "Bit 14 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr14(&mut self) -> _ODR14W {
         _ODR14W { w: self }
     }
     #[doc = "Bit 13 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr13(&mut self) -> _ODR13W {
         _ODR13W { w: self }
     }
     #[doc = "Bit 12 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr12(&mut self) -> _ODR12W {
         _ODR12W { w: self }
     }
     #[doc = "Bit 11 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr11(&mut self) -> _ODR11W {
         _ODR11W { w: self }
     }
     #[doc = "Bit 10 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr10(&mut self) -> _ODR10W {
         _ODR10W { w: self }
     }
     #[doc = "Bit 9 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr9(&mut self) -> _ODR9W {
         _ODR9W { w: self }
     }
     #[doc = "Bit 8 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr8(&mut self) -> _ODR8W {
         _ODR8W { w: self }
     }
     #[doc = "Bit 7 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr7(&mut self) -> _ODR7W {
         _ODR7W { w: self }
     }
     #[doc = "Bit 6 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr6(&mut self) -> _ODR6W {
         _ODR6W { w: self }
     }
     #[doc = "Bit 5 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr5(&mut self) -> _ODR5W {
         _ODR5W { w: self }
     }
     #[doc = "Bit 4 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr4(&mut self) -> _ODR4W {
         _ODR4W { w: self }
     }
     #[doc = "Bit 3 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr3(&mut self) -> _ODR3W {
         _ODR3W { w: self }
     }
     #[doc = "Bit 2 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr2(&mut self) -> _ODR2W {
         _ODR2W { w: self }
     }
     #[doc = "Bit 1 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr1(&mut self) -> _ODR1W {
         _ODR1W { w: self }
     }
     #[doc = "Bit 0 - Port output data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn odr0(&mut self) -> _ODR0W {
         _ODR0W { w: self }
     }

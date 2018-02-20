@@ -1,27 +1,29 @@
-//! # STM32F0 HAL
-//!
-//! Provides high-level API to the STM32F0 board functionalities. At the moment the following features are available:
-//!
-//! * GPIO
-//! * ADC
-//! * PWM
-//! * RCC
-
 #![no_std]
+#![feature(lang_items)]
+#![feature(never_type)]
+#![feature(core_intrinsics)]
+#![feature(use_extern_macros)]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
 
 extern crate cortex_m;
-#[macro_use(exception)]
-extern crate cortex_m_rt;
-extern crate stm32f0x2;
+extern crate embedded_hal as hal;
 
-pub mod gpio;
+pub extern crate stm32f0x2;
+
+#[macro_use(block)]
+extern crate nb;
+
 pub mod adc;
+pub mod delay;
+pub mod gpio;
+pub mod flash;
+pub mod panic;
+pub mod prelude;
 pub mod pwm;
 pub mod rcc;
-pub mod uart;
+pub mod serial;
+pub mod time;
 pub mod timer;
-pub mod servo;
 
 #[cfg(feature = "use_alloc")]
 extern crate alloc_cortex_m as heap;

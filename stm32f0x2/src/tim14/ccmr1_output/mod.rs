@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CCMR1_OUTPUT {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CCMR1_OUTPUT {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CCMR1_OUTPUT {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,14 +45,18 @@ impl super::CCMR1_OUTPUT {
 #[doc = "Possible values of the field `CC1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1SR {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             CC1SR::CC1OUTPUT => 0,
@@ -63,7 +67,7 @@ impl CC1SR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> CC1SR {
         match value {
             0 => CC1SR::CC1OUTPUT,
@@ -74,45 +78,42 @@ impl CC1SR {
         }
     }
     #[doc = "Checks if the value of the field is `CC1OUTPUT`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_cc1output(&self) -> bool {
         *self == CC1SR::CC1OUTPUT
     }
     #[doc = "Checks if the value of the field is `IC1MAPPEDTI1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_ic1mapped_ti1(&self) -> bool {
         *self == CC1SR::IC1MAPPEDTI1
     }
     #[doc = "Checks if the value of the field is `IC1MAPPEDTI2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_ic1mapped_ti2(&self) -> bool {
         *self == CC1SR::IC1MAPPEDTI2
     }
     #[doc = "Checks if the value of the field is `IC1MAPPEDTRC`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_ic1mapped_trc(&self) -> bool {
         *self == CC1SR::IC1MAPPEDTRC
     }
 }
 #[doc = "Possible values of the field `OC1FE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1FER {
-    #[doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles."] DISABLED,
-    #[doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode."] ENABLED,
-}
+pub enum OC1FER {# [ doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles." ] DISABLED , # [ doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode." ] ENABLED ,}
 impl OC1FER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OC1FER::DISABLED => false,
@@ -121,7 +122,7 @@ impl OC1FER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OC1FER {
         match value {
             false => OC1FER::DISABLED,
@@ -129,35 +130,32 @@ impl OC1FER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == OC1FER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == OC1FER::ENABLED
     }
 }
 #[doc = "Possible values of the field `OC1PE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1PER {
-    #[doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately"] DISABLED,
-    #[doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event."] ENABLED,
-}
+pub enum OC1PER {# [ doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately" ] DISABLED , # [ doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event." ] ENABLED ,}
 impl OC1PER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             OC1PER::DISABLED => false,
@@ -166,7 +164,7 @@ impl OC1PER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> OC1PER {
         match value {
             false => OC1PER::DISABLED,
@@ -174,31 +172,22 @@ impl OC1PER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == OC1PER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == OC1PER::ENABLED
     }
 }
 #[doc = "Possible values of the field `OC1M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1MR {
-    #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs("] FROZEN,
-    #[doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."] SETACTIVE,
-    #[doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."] SETINACTIVE,
-    #[doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy."] TOGGLE,
-    #[doc = "OCyREF is forced low."] FORCEINACTIVE,
-    #[doc = "OCyREF is forced high."] FORCEACTIVE,
-    #[doc = "In upcounting, channel 1 is active."] PWMMODE1,
-    #[doc = "In upcounting, channel y is inactive."] PWMMODE2,
-}
+pub enum OC1MR {# [ doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs(" ] FROZEN , # [ doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] SETACTIVE , # [ doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] SETINACTIVE , # [ doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy." ] TOGGLE , # [ doc = "OCyREF is forced low." ] FORCEINACTIVE , # [ doc = "OCyREF is forced high." ] FORCEACTIVE , # [ doc = "In upcounting, channel 1 is active." ] PWMMODE1 , # [ doc = "In upcounting, channel y is inactive." ] PWMMODE2 ,}
 impl OC1MR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             OC1MR::FROZEN => 0,
@@ -213,7 +202,7 @@ impl OC1MR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> OC1MR {
         match value {
             0 => OC1MR::FROZEN,
@@ -228,57 +217,61 @@ impl OC1MR {
         }
     }
     #[doc = "Checks if the value of the field is `FROZEN`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_frozen(&self) -> bool {
         *self == OC1MR::FROZEN
     }
     #[doc = "Checks if the value of the field is `SETACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set_active(&self) -> bool {
         *self == OC1MR::SETACTIVE
     }
     #[doc = "Checks if the value of the field is `SETINACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set_inactive(&self) -> bool {
         *self == OC1MR::SETINACTIVE
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_toggle(&self) -> bool {
         *self == OC1MR::TOGGLE
     }
     #[doc = "Checks if the value of the field is `FORCEINACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_force_inactive(&self) -> bool {
         *self == OC1MR::FORCEINACTIVE
     }
     #[doc = "Checks if the value of the field is `FORCEACTIVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_force_active(&self) -> bool {
         *self == OC1MR::FORCEACTIVE
     }
     #[doc = "Checks if the value of the field is `PWMMODE1`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pwmmode1(&self) -> bool {
         *self == OC1MR::PWMMODE1
     }
     #[doc = "Checks if the value of the field is `PWMMODE2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_pwmmode2(&self) -> bool {
         *self == OC1MR::PWMMODE2
     }
 }
 #[doc = "Values that can be written to the field `CC1S`"]
 pub enum CC1SW {
-    #[doc = "CC1 channel is configured as output"] CC1OUTPUT,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"] IC1MAPPEDTI1,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"] IC1MAPPEDTI2,
-    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"] IC1MAPPEDTRC,
+    #[doc = "CC1 channel is configured as output"]
+    CC1OUTPUT,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
+    IC1MAPPEDTI1,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
+    IC1MAPPEDTI2,
+    #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
+    IC1MAPPEDTRC,
 }
 impl CC1SW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             CC1SW::CC1OUTPUT => 0,
@@ -294,34 +287,34 @@ pub struct _CC1SW<'a> {
 }
 impl<'a> _CC1SW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CC1SW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "CC1 channel is configured as output"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1output(self) -> &'a mut W {
         self.variant(CC1SW::CC1OUTPUT)
     }
     #[doc = "CC1 channel is configured as input, IC1 is mapped on TI1"]
-    #[inline(always)]
+    #[inline]
     pub fn ic1mapped_ti1(self) -> &'a mut W {
         self.variant(CC1SW::IC1MAPPEDTI1)
     }
     #[doc = "CC1 channel is configured as input, IC1 is mapped on TI2"]
-    #[inline(always)]
+    #[inline]
     pub fn ic1mapped_ti2(self) -> &'a mut W {
         self.variant(CC1SW::IC1MAPPEDTI2)
     }
     #[doc = "CC1 channel is configured as input, IC1 is mapped on TRC"]
-    #[inline(always)]
+    #[inline]
     pub fn ic1mapped_trc(self) -> &'a mut W {
         self.variant(CC1SW::IC1MAPPEDTRC)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 0;
@@ -331,14 +324,11 @@ impl<'a> _CC1SW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `OC1FE`"]
-pub enum OC1FEW {
-    #[doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles."] DISABLED,
-    #[doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode."] ENABLED,
-}
+pub enum OC1FEW {# [ doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles." ] DISABLED , # [ doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode." ] ENABLED ,}
 impl OC1FEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OC1FEW::DISABLED => false,
@@ -352,19 +342,17 @@ pub struct _OC1FEW<'a> {
 }
 impl<'a> _OC1FEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OC1FEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
-    #[doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles."]
-    #[inline(always)]
+    # [ doc = "CC1 behaves normally depending on counter and CCR1 values even when the trigger is ON. The minimum delay to activate CC1 output when an edge occurs on the trigger input is 5 clock cycles." ] # [ inline ]
     pub fn disabled(self) -> &'a mut W {
         self.variant(OC1FEW::DISABLED)
     }
-    #[doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode."]
-    #[inline(always)]
+    # [ doc = "An active edge on the trigger input acts like a compare match on CC1 output. Then, OC is set to the compare level independently from the result of the comparison. Delay to sample the trigger input and to activate CC1 output is reduced to 3 clock cycles. OCFE acts only if the channel is configured in PWM1 or PWM2 mode." ] # [ inline ]
     pub fn enabled(self) -> &'a mut W {
         self.variant(OC1FEW::ENABLED)
     }
@@ -377,7 +365,7 @@ impl<'a> _OC1FEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -387,14 +375,11 @@ impl<'a> _OC1FEW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `OC1PE`"]
-pub enum OC1PEW {
-    #[doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately"] DISABLED,
-    #[doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event."] ENABLED,
-}
+pub enum OC1PEW {# [ doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately" ] DISABLED , # [ doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event." ] ENABLED ,}
 impl OC1PEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             OC1PEW::DISABLED => false,
@@ -408,19 +393,17 @@ pub struct _OC1PEW<'a> {
 }
 impl<'a> _OC1PEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OC1PEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately"]
-    #[inline(always)]
+    # [ doc = "Preload register on TIMx_CCR1 disabled. TIMx_CCR1 can be written at anytime, the new value is taken in account immediately" ] # [ inline ]
     pub fn disabled(self) -> &'a mut W {
         self.variant(OC1PEW::DISABLED)
     }
-    #[doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event."]
-    #[inline(always)]
+    # [ doc = "Preload register on TIMx_CCR1 enabled. Read/Write operations access the preload register. TIMx_CCR1 preload value is loaded in the active register at each update event." ] # [ inline ]
     pub fn enabled(self) -> &'a mut W {
         self.variant(OC1PEW::ENABLED)
     }
@@ -433,7 +416,7 @@ impl<'a> _OC1PEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -443,20 +426,11 @@ impl<'a> _OC1PEW<'a> {
     }
 }
 #[doc = "Values that can be written to the field `OC1M`"]
-pub enum OC1MW {
-    #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs("] FROZEN,
-    #[doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."] SETACTIVE,
-    #[doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."] SETINACTIVE,
-    #[doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy."] TOGGLE,
-    #[doc = "OCyREF is forced low."] FORCEINACTIVE,
-    #[doc = "OCyREF is forced high."] FORCEACTIVE,
-    #[doc = "In upcounting, channel 1 is active."] PWMMODE1,
-    #[doc = "In upcounting, channel y is inactive."] PWMMODE2,
-}
+pub enum OC1MW {# [ doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs(" ] FROZEN , # [ doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] SETACTIVE , # [ doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] SETINACTIVE , # [ doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy." ] TOGGLE , # [ doc = "OCyREF is forced low." ] FORCEINACTIVE , # [ doc = "OCyREF is forced high." ] FORCEACTIVE , # [ doc = "In upcounting, channel 1 is active." ] PWMMODE1 , # [ doc = "In upcounting, channel y is inactive." ] PWMMODE2 ,}
 impl OC1MW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             OC1MW::FROZEN => 0,
@@ -476,54 +450,51 @@ pub struct _OC1MW<'a> {
 }
 impl<'a> _OC1MW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: OC1MW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
-    #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs("]
-    #[inline(always)]
+    # [ doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs(" ] # [ inline ]
     pub fn frozen(self) -> &'a mut W {
         self.variant(OC1MW::FROZEN)
     }
-    #[doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."]
-    #[inline(always)]
+    # [ doc = "Set channel y to active level on match. OCyREF signal is forced high when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] # [ inline ]
     pub fn set_active(self) -> &'a mut W {
         self.variant(OC1MW::SETACTIVE)
     }
-    #[doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)."]
-    #[inline(always)]
+    # [ doc = "Set channel y to inactive level on match. OCyREF signal is forced low when the counter TIMx_CNT matches the capture/compare register y (TIMx_CCRy)." ] # [ inline ]
     pub fn set_inactive(self) -> &'a mut W {
         self.variant(OC1MW::SETINACTIVE)
     }
     #[doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy."]
-    #[inline(always)]
+    #[inline]
     pub fn toggle(self) -> &'a mut W {
         self.variant(OC1MW::TOGGLE)
     }
     #[doc = "OCyREF is forced low."]
-    #[inline(always)]
+    #[inline]
     pub fn force_inactive(self) -> &'a mut W {
         self.variant(OC1MW::FORCEINACTIVE)
     }
     #[doc = "OCyREF is forced high."]
-    #[inline(always)]
+    #[inline]
     pub fn force_active(self) -> &'a mut W {
         self.variant(OC1MW::FORCEACTIVE)
     }
     #[doc = "In upcounting, channel 1 is active."]
-    #[inline(always)]
+    #[inline]
     pub fn pwmmode1(self) -> &'a mut W {
         self.variant(OC1MW::PWMMODE1)
     }
     #[doc = "In upcounting, channel y is inactive."]
-    #[inline(always)]
+    #[inline]
     pub fn pwmmode2(self) -> &'a mut W {
         self.variant(OC1MW::PWMMODE2)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 4;
@@ -534,12 +505,12 @@ impl<'a> _OC1MW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1s(&self) -> CC1SR {
         CC1SR::_from({
             const MASK: u8 = 3;
@@ -548,7 +519,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Output compare 1 fast enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1fe(&self) -> OC1FER {
         OC1FER::_from({
             const MASK: bool = true;
@@ -557,7 +528,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Output Compare 1 preload enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1pe(&self) -> OC1PER {
         OC1PER::_from({
             const MASK: bool = true;
@@ -566,7 +537,7 @@ impl R {
         })
     }
     #[doc = "Bits 4:6 - Output Compare 1 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1m(&self) -> OC1MR {
         OC1MR::_from({
             const MASK: u8 = 7;
@@ -577,33 +548,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
-    #[inline(always)]
+    #[inline]
     pub fn cc1s(&mut self) -> _CC1SW {
         _CC1SW { w: self }
     }
     #[doc = "Bit 2 - Output compare 1 fast enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1fe(&mut self) -> _OC1FEW {
         _OC1FEW { w: self }
     }
     #[doc = "Bit 3 - Output Compare 1 preload enable"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1pe(&mut self) -> _OC1PEW {
         _OC1PEW { w: self }
     }
     #[doc = "Bits 4:6 - Output Compare 1 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn oc1m(&mut self) -> _OC1MW {
         _OC1MW { w: self }
     }

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CHSELR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CHSELR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CHSELR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +48,17 @@ pub struct CHSEL18R {
 }
 impl CHSEL18R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +69,17 @@ pub struct CHSEL17R {
 }
 impl CHSEL17R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +90,17 @@ pub struct CHSEL16R {
 }
 impl CHSEL16R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +111,17 @@ pub struct CHSEL15R {
 }
 impl CHSEL15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +132,17 @@ pub struct CHSEL14R {
 }
 impl CHSEL14R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +153,17 @@ pub struct CHSEL13R {
 }
 impl CHSEL13R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +174,17 @@ pub struct CHSEL12R {
 }
 impl CHSEL12R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +195,17 @@ pub struct CHSEL11R {
 }
 impl CHSEL11R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +216,17 @@ pub struct CHSEL10R {
 }
 impl CHSEL10R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +237,17 @@ pub struct CHSEL9R {
 }
 impl CHSEL9R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +258,17 @@ pub struct CHSEL8R {
 }
 impl CHSEL8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +279,17 @@ pub struct CHSEL7R {
 }
 impl CHSEL7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +300,17 @@ pub struct CHSEL6R {
 }
 impl CHSEL6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -321,17 +321,17 @@ pub struct CHSEL5R {
 }
 impl CHSEL5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -342,17 +342,17 @@ pub struct CHSEL4R {
 }
 impl CHSEL4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -363,17 +363,17 @@ pub struct CHSEL3R {
 }
 impl CHSEL3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -384,17 +384,17 @@ pub struct CHSEL2R {
 }
 impl CHSEL2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -405,17 +405,17 @@ pub struct CHSEL1R {
 }
 impl CHSEL1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -426,17 +426,17 @@ pub struct CHSEL0R {
 }
 impl CHSEL0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -455,7 +455,7 @@ impl<'a> _CHSEL18W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -478,7 +478,7 @@ impl<'a> _CHSEL17W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -501,7 +501,7 @@ impl<'a> _CHSEL16W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -524,7 +524,7 @@ impl<'a> _CHSEL15W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -547,7 +547,7 @@ impl<'a> _CHSEL14W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -570,7 +570,7 @@ impl<'a> _CHSEL13W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -593,7 +593,7 @@ impl<'a> _CHSEL12W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -616,7 +616,7 @@ impl<'a> _CHSEL11W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -639,7 +639,7 @@ impl<'a> _CHSEL10W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -662,7 +662,7 @@ impl<'a> _CHSEL9W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -685,7 +685,7 @@ impl<'a> _CHSEL8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -708,7 +708,7 @@ impl<'a> _CHSEL7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -731,7 +731,7 @@ impl<'a> _CHSEL6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -754,7 +754,7 @@ impl<'a> _CHSEL5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -777,7 +777,7 @@ impl<'a> _CHSEL4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -800,7 +800,7 @@ impl<'a> _CHSEL3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -823,7 +823,7 @@ impl<'a> _CHSEL2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -846,7 +846,7 @@ impl<'a> _CHSEL1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -869,7 +869,7 @@ impl<'a> _CHSEL0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -880,12 +880,12 @@ impl<'a> _CHSEL0W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 18 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel18(&self) -> CHSEL18R {
         let bits = {
             const MASK: bool = true;
@@ -895,7 +895,7 @@ impl R {
         CHSEL18R { bits }
     }
     #[doc = "Bit 17 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel17(&self) -> CHSEL17R {
         let bits = {
             const MASK: bool = true;
@@ -905,7 +905,7 @@ impl R {
         CHSEL17R { bits }
     }
     #[doc = "Bit 16 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel16(&self) -> CHSEL16R {
         let bits = {
             const MASK: bool = true;
@@ -915,7 +915,7 @@ impl R {
         CHSEL16R { bits }
     }
     #[doc = "Bit 15 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel15(&self) -> CHSEL15R {
         let bits = {
             const MASK: bool = true;
@@ -925,7 +925,7 @@ impl R {
         CHSEL15R { bits }
     }
     #[doc = "Bit 14 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel14(&self) -> CHSEL14R {
         let bits = {
             const MASK: bool = true;
@@ -935,7 +935,7 @@ impl R {
         CHSEL14R { bits }
     }
     #[doc = "Bit 13 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel13(&self) -> CHSEL13R {
         let bits = {
             const MASK: bool = true;
@@ -945,7 +945,7 @@ impl R {
         CHSEL13R { bits }
     }
     #[doc = "Bit 12 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel12(&self) -> CHSEL12R {
         let bits = {
             const MASK: bool = true;
@@ -955,7 +955,7 @@ impl R {
         CHSEL12R { bits }
     }
     #[doc = "Bit 11 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel11(&self) -> CHSEL11R {
         let bits = {
             const MASK: bool = true;
@@ -965,7 +965,7 @@ impl R {
         CHSEL11R { bits }
     }
     #[doc = "Bit 10 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel10(&self) -> CHSEL10R {
         let bits = {
             const MASK: bool = true;
@@ -975,7 +975,7 @@ impl R {
         CHSEL10R { bits }
     }
     #[doc = "Bit 9 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel9(&self) -> CHSEL9R {
         let bits = {
             const MASK: bool = true;
@@ -985,7 +985,7 @@ impl R {
         CHSEL9R { bits }
     }
     #[doc = "Bit 8 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel8(&self) -> CHSEL8R {
         let bits = {
             const MASK: bool = true;
@@ -995,7 +995,7 @@ impl R {
         CHSEL8R { bits }
     }
     #[doc = "Bit 7 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel7(&self) -> CHSEL7R {
         let bits = {
             const MASK: bool = true;
@@ -1005,7 +1005,7 @@ impl R {
         CHSEL7R { bits }
     }
     #[doc = "Bit 6 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel6(&self) -> CHSEL6R {
         let bits = {
             const MASK: bool = true;
@@ -1015,7 +1015,7 @@ impl R {
         CHSEL6R { bits }
     }
     #[doc = "Bit 5 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel5(&self) -> CHSEL5R {
         let bits = {
             const MASK: bool = true;
@@ -1025,7 +1025,7 @@ impl R {
         CHSEL5R { bits }
     }
     #[doc = "Bit 4 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel4(&self) -> CHSEL4R {
         let bits = {
             const MASK: bool = true;
@@ -1035,7 +1035,7 @@ impl R {
         CHSEL4R { bits }
     }
     #[doc = "Bit 3 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel3(&self) -> CHSEL3R {
         let bits = {
             const MASK: bool = true;
@@ -1045,7 +1045,7 @@ impl R {
         CHSEL3R { bits }
     }
     #[doc = "Bit 2 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel2(&self) -> CHSEL2R {
         let bits = {
             const MASK: bool = true;
@@ -1055,7 +1055,7 @@ impl R {
         CHSEL2R { bits }
     }
     #[doc = "Bit 1 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel1(&self) -> CHSEL1R {
         let bits = {
             const MASK: bool = true;
@@ -1065,7 +1065,7 @@ impl R {
         CHSEL1R { bits }
     }
     #[doc = "Bit 0 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel0(&self) -> CHSEL0R {
         let bits = {
             const MASK: bool = true;
@@ -1077,108 +1077,108 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 18 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel18(&mut self) -> _CHSEL18W {
         _CHSEL18W { w: self }
     }
     #[doc = "Bit 17 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel17(&mut self) -> _CHSEL17W {
         _CHSEL17W { w: self }
     }
     #[doc = "Bit 16 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel16(&mut self) -> _CHSEL16W {
         _CHSEL16W { w: self }
     }
     #[doc = "Bit 15 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel15(&mut self) -> _CHSEL15W {
         _CHSEL15W { w: self }
     }
     #[doc = "Bit 14 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel14(&mut self) -> _CHSEL14W {
         _CHSEL14W { w: self }
     }
     #[doc = "Bit 13 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel13(&mut self) -> _CHSEL13W {
         _CHSEL13W { w: self }
     }
     #[doc = "Bit 12 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel12(&mut self) -> _CHSEL12W {
         _CHSEL12W { w: self }
     }
     #[doc = "Bit 11 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel11(&mut self) -> _CHSEL11W {
         _CHSEL11W { w: self }
     }
     #[doc = "Bit 10 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel10(&mut self) -> _CHSEL10W {
         _CHSEL10W { w: self }
     }
     #[doc = "Bit 9 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel9(&mut self) -> _CHSEL9W {
         _CHSEL9W { w: self }
     }
     #[doc = "Bit 8 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel8(&mut self) -> _CHSEL8W {
         _CHSEL8W { w: self }
     }
     #[doc = "Bit 7 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel7(&mut self) -> _CHSEL7W {
         _CHSEL7W { w: self }
     }
     #[doc = "Bit 6 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel6(&mut self) -> _CHSEL6W {
         _CHSEL6W { w: self }
     }
     #[doc = "Bit 5 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel5(&mut self) -> _CHSEL5W {
         _CHSEL5W { w: self }
     }
     #[doc = "Bit 4 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel4(&mut self) -> _CHSEL4W {
         _CHSEL4W { w: self }
     }
     #[doc = "Bit 3 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel3(&mut self) -> _CHSEL3W {
         _CHSEL3W { w: self }
     }
     #[doc = "Bit 2 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel2(&mut self) -> _CHSEL2W {
         _CHSEL2W { w: self }
     }
     #[doc = "Bit 1 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel1(&mut self) -> _CHSEL1W {
         _CHSEL1W { w: self }
     }
     #[doc = "Bit 0 - Channel-x selection"]
-    #[inline(always)]
+    #[inline]
     pub fn chsel0(&mut self) -> _CHSEL0W {
         _CHSEL0W { w: self }
     }

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CFGR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CFGR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct AWDCHR {
 }
 impl AWDCHR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,17 +59,17 @@ pub struct AWDENR {
 }
 impl AWDENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,17 +80,17 @@ pub struct AWDSGLR {
 }
 impl AWDSGLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -101,17 +101,17 @@ pub struct DISCENR {
 }
 impl DISCENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -122,17 +122,17 @@ pub struct AUTOFFR {
 }
 impl AUTOFFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -143,17 +143,17 @@ pub struct AUTDLYR {
 }
 impl AUTDLYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -164,17 +164,17 @@ pub struct CONTR {
 }
 impl CONTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -185,17 +185,17 @@ pub struct OVRMODR {
 }
 impl OVRMODR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -206,7 +206,7 @@ pub struct EXTENR {
 }
 impl EXTENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -217,7 +217,7 @@ pub struct EXTSELR {
 }
 impl EXTSELR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -228,17 +228,17 @@ pub struct ALIGNR {
 }
 impl ALIGNR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -249,7 +249,7 @@ pub struct RESR {
 }
 impl RESR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -260,17 +260,17 @@ pub struct SCANDIRR {
 }
 impl SCANDIRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -281,17 +281,17 @@ pub struct DMACFGR {
 }
 impl DMACFGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -302,17 +302,17 @@ pub struct DMAENR {
 }
 impl DMAENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -323,7 +323,7 @@ pub struct _AWDCHW<'a> {
 }
 impl<'a> _AWDCHW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 26;
@@ -346,7 +346,7 @@ impl<'a> _AWDENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -369,7 +369,7 @@ impl<'a> _AWDSGLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -392,7 +392,7 @@ impl<'a> _DISCENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -415,7 +415,7 @@ impl<'a> _AUTOFFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -438,7 +438,7 @@ impl<'a> _AUTDLYW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -461,7 +461,7 @@ impl<'a> _CONTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -484,7 +484,7 @@ impl<'a> _OVRMODW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -499,7 +499,7 @@ pub struct _EXTENW<'a> {
 }
 impl<'a> _EXTENW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 10;
@@ -514,7 +514,7 @@ pub struct _EXTSELW<'a> {
 }
 impl<'a> _EXTSELW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 6;
@@ -537,7 +537,7 @@ impl<'a> _ALIGNW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -552,7 +552,7 @@ pub struct _RESW<'a> {
 }
 impl<'a> _RESW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 3;
@@ -575,7 +575,7 @@ impl<'a> _SCANDIRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -598,7 +598,7 @@ impl<'a> _DMACFGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -621,7 +621,7 @@ impl<'a> _DMAENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -632,12 +632,12 @@ impl<'a> _DMAENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 26:30 - Analog watchdog channel selection"]
-    #[inline(always)]
+    #[inline]
     pub fn awdch(&self) -> AWDCHR {
         let bits = {
             const MASK: u8 = 31;
@@ -647,7 +647,7 @@ impl R {
         AWDCHR { bits }
     }
     #[doc = "Bit 23 - Analog watchdog enable"]
-    #[inline(always)]
+    #[inline]
     pub fn awden(&self) -> AWDENR {
         let bits = {
             const MASK: bool = true;
@@ -657,7 +657,7 @@ impl R {
         AWDENR { bits }
     }
     #[doc = "Bit 22 - Enable the watchdog on a single channel or on all channels"]
-    #[inline(always)]
+    #[inline]
     pub fn awdsgl(&self) -> AWDSGLR {
         let bits = {
             const MASK: bool = true;
@@ -667,7 +667,7 @@ impl R {
         AWDSGLR { bits }
     }
     #[doc = "Bit 16 - Discontinuous mode"]
-    #[inline(always)]
+    #[inline]
     pub fn discen(&self) -> DISCENR {
         let bits = {
             const MASK: bool = true;
@@ -677,7 +677,7 @@ impl R {
         DISCENR { bits }
     }
     #[doc = "Bit 15 - Auto-off mode"]
-    #[inline(always)]
+    #[inline]
     pub fn autoff(&self) -> AUTOFFR {
         let bits = {
             const MASK: bool = true;
@@ -687,7 +687,7 @@ impl R {
         AUTOFFR { bits }
     }
     #[doc = "Bit 14 - Auto-delayed conversion mode"]
-    #[inline(always)]
+    #[inline]
     pub fn autdly(&self) -> AUTDLYR {
         let bits = {
             const MASK: bool = true;
@@ -697,7 +697,7 @@ impl R {
         AUTDLYR { bits }
     }
     #[doc = "Bit 13 - Single / continuous conversion mode"]
-    #[inline(always)]
+    #[inline]
     pub fn cont(&self) -> CONTR {
         let bits = {
             const MASK: bool = true;
@@ -707,7 +707,7 @@ impl R {
         CONTR { bits }
     }
     #[doc = "Bit 12 - Overrun management mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ovrmod(&self) -> OVRMODR {
         let bits = {
             const MASK: bool = true;
@@ -717,7 +717,7 @@ impl R {
         OVRMODR { bits }
     }
     #[doc = "Bits 10:11 - External trigger enable and polarity selection"]
-    #[inline(always)]
+    #[inline]
     pub fn exten(&self) -> EXTENR {
         let bits = {
             const MASK: u8 = 3;
@@ -727,7 +727,7 @@ impl R {
         EXTENR { bits }
     }
     #[doc = "Bits 6:8 - External trigger selection"]
-    #[inline(always)]
+    #[inline]
     pub fn extsel(&self) -> EXTSELR {
         let bits = {
             const MASK: u8 = 7;
@@ -737,7 +737,7 @@ impl R {
         EXTSELR { bits }
     }
     #[doc = "Bit 5 - Data alignment"]
-    #[inline(always)]
+    #[inline]
     pub fn align(&self) -> ALIGNR {
         let bits = {
             const MASK: bool = true;
@@ -747,7 +747,7 @@ impl R {
         ALIGNR { bits }
     }
     #[doc = "Bits 3:4 - Data resolution"]
-    #[inline(always)]
+    #[inline]
     pub fn res(&self) -> RESR {
         let bits = {
             const MASK: u8 = 3;
@@ -757,7 +757,7 @@ impl R {
         RESR { bits }
     }
     #[doc = "Bit 2 - Scan sequence direction"]
-    #[inline(always)]
+    #[inline]
     pub fn scandir(&self) -> SCANDIRR {
         let bits = {
             const MASK: bool = true;
@@ -767,7 +767,7 @@ impl R {
         SCANDIRR { bits }
     }
     #[doc = "Bit 1 - Direct memery access configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn dmacfg(&self) -> DMACFGR {
         let bits = {
             const MASK: bool = true;
@@ -777,7 +777,7 @@ impl R {
         DMACFGR { bits }
     }
     #[doc = "Bit 0 - Direct memory access enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dmaen(&self) -> DMAENR {
         let bits = {
             const MASK: bool = true;
@@ -789,88 +789,88 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 26:30 - Analog watchdog channel selection"]
-    #[inline(always)]
+    #[inline]
     pub fn awdch(&mut self) -> _AWDCHW {
         _AWDCHW { w: self }
     }
     #[doc = "Bit 23 - Analog watchdog enable"]
-    #[inline(always)]
+    #[inline]
     pub fn awden(&mut self) -> _AWDENW {
         _AWDENW { w: self }
     }
     #[doc = "Bit 22 - Enable the watchdog on a single channel or on all channels"]
-    #[inline(always)]
+    #[inline]
     pub fn awdsgl(&mut self) -> _AWDSGLW {
         _AWDSGLW { w: self }
     }
     #[doc = "Bit 16 - Discontinuous mode"]
-    #[inline(always)]
+    #[inline]
     pub fn discen(&mut self) -> _DISCENW {
         _DISCENW { w: self }
     }
     #[doc = "Bit 15 - Auto-off mode"]
-    #[inline(always)]
+    #[inline]
     pub fn autoff(&mut self) -> _AUTOFFW {
         _AUTOFFW { w: self }
     }
     #[doc = "Bit 14 - Auto-delayed conversion mode"]
-    #[inline(always)]
+    #[inline]
     pub fn autdly(&mut self) -> _AUTDLYW {
         _AUTDLYW { w: self }
     }
     #[doc = "Bit 13 - Single / continuous conversion mode"]
-    #[inline(always)]
+    #[inline]
     pub fn cont(&mut self) -> _CONTW {
         _CONTW { w: self }
     }
     #[doc = "Bit 12 - Overrun management mode"]
-    #[inline(always)]
+    #[inline]
     pub fn ovrmod(&mut self) -> _OVRMODW {
         _OVRMODW { w: self }
     }
     #[doc = "Bits 10:11 - External trigger enable and polarity selection"]
-    #[inline(always)]
+    #[inline]
     pub fn exten(&mut self) -> _EXTENW {
         _EXTENW { w: self }
     }
     #[doc = "Bits 6:8 - External trigger selection"]
-    #[inline(always)]
+    #[inline]
     pub fn extsel(&mut self) -> _EXTSELW {
         _EXTSELW { w: self }
     }
     #[doc = "Bit 5 - Data alignment"]
-    #[inline(always)]
+    #[inline]
     pub fn align(&mut self) -> _ALIGNW {
         _ALIGNW { w: self }
     }
     #[doc = "Bits 3:4 - Data resolution"]
-    #[inline(always)]
+    #[inline]
     pub fn res(&mut self) -> _RESW {
         _RESW { w: self }
     }
     #[doc = "Bit 2 - Scan sequence direction"]
-    #[inline(always)]
+    #[inline]
     pub fn scandir(&mut self) -> _SCANDIRW {
         _SCANDIRW { w: self }
     }
     #[doc = "Bit 1 - Direct memery access configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn dmacfg(&mut self) -> _DMACFGW {
         _DMACFGW { w: self }
     }
     #[doc = "Bit 0 - Direct memory access enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dmaen(&mut self) -> _DMAENW {
         _DMAENW { w: self }
     }

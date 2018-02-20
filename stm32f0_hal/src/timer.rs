@@ -1,58 +1,109 @@
-//use core;
-
 use cortex_m;
-use stm32f0x2::{TIM7 as TIMER7, GPIOC, NVIC, RCC};
-use stm32f0x2::interrupt::*;
+use hal::timer::{CountDown, Event, Timeout};
+use nb::{Error, Result};
 
-pub fn setup(timeout: u16) {
-    cortex_m::interrupt::free(|cs| {
-        let gpio = GPIOC.borrow(cs);
-        let rcc = RCC.borrow(cs);
-        let timer = TIMER7.borrow(cs);
-        let nvic = NVIC.borrow(cs);
+use time::Hertz;
+use stm32f0x2::{Interrupt, TIM6, TIM7};
+use rcc::{APB1, Clocks};
 
-        // LED Test
-        rcc.ahbenr.modify(|_, w| w.iopcen().enabled());
-        gpio.moder.modify(|_, w| w.moder7().output());
-
-        //Enable TIM7 clock
-        rcc.apb1enr.modify(|_, w| w.tim7en().enabled());
-
-        // configure Time Out
-        // Set Prescaler Register - 16 bits
-        timer.psc.modify(|_, w| w.psc().bits(47));
-        // Set Auto-Reload register - 32 bits
-        timer.arr.modify(|_, w| w.arr().bits(timeout - 1));
-
-        timer.cr1.modify(|_, w| w.opm().continuous());
-        // Enable interrupt
-        timer.dier.modify(|_, w| w.uie().enabled());
-        // Interrupt activated
-        nvic.enable(Interrupt::TIM7);
-        nvic.clear_pending(Interrupt::TIM7);
-    });
+pub struct Timer<TIM> {
+    tim: TIM,
+    clocks: Clocks,
 }
 
-pub fn pause() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Disable counter
-        timer.cr1.modify(|_, w| w.cen().disabled());
-    });
+macro_rules! timer {
+    ($($TIMX:ident: ($timx:ident, $APBX:ident, $timxen:ident, $timxrst:ident, $TIMX_INTERRUPT:ident), )+) => {
+        $(
+        impl Timer<$TIMX> {
+            pub fn $timx(tim: $TIMX, clocks: Clocks, apb: &mut $APBX) -> Self
+            {
+                apb.enr().modify(|_, w| w.$timxen().enabled());
+                apb.rstr().modify(|_, w| w.$timxrst().set_bit());
+                apb.rstr().modify(|_, w| w.$timxrst().clear_bit());
+
+                Timer { clocks, tim }
+            }
+            pub fn _start(&mut self, frequency: Hertz) {
+                self.tim.cr1.modify(|_, w| w.cen().disabled());
+                self.tim.cnt.reset();
+
+                let ticks = self.clocks.pclk().0 / frequency.0;
+
+                let psc = (ticks - 1) / (1 << 16);
+                self.tim.psc.write(|w| w.psc().bits(psc as u16));
+
+                let arr = ticks / (psc + 1);
+                self.tim.arr.write(|w| w.arr().bits(arr as u16));
+
+                self.tim.cr1.modify(|_, w| w.cen().enabled());
+            }
+            pub unsafe fn enable_interrupt(&mut self) {
+                // TODO: That's a really really unsafe way of accessing NVIC...
+                // We probably should expose a NVIC trait as a parameter instead.
+                // As we don't want to have any cortex_m object in the trait signature.
+                let mut nvic = cortex_m::Peripherals::steal().NVIC;
+
+                nvic.enable(Interrupt::$TIMX_INTERRUPT);
+                nvic.clear_pending(Interrupt::$TIMX_INTERRUPT);
+            }
+            pub unsafe fn disable_interrupt(&mut self) {
+                // TODO: That's a really really unsafe way of accessing NVIC...
+                // We probably should expose a NVIC trait as a parameter instead.
+                // As we don't want to have any cortex_m object in the trait signature.
+                let mut nvic = cortex_m::Peripherals::steal().NVIC;
+                nvic.disable(Interrupt::$TIMX_INTERRUPT);
+            }
+        }
+        impl Timeout for Timer<$TIMX> {
+            type Time = u32;
+
+            fn start(&mut self, timeout: u32) {
+                self._start(Hertz(timeout));
+            }
+            fn listen(&mut self, event: Event) {
+                match event {
+                    Event::Fired => {
+                        self.tim.dier.modify(|_, w| w.uie().enabled());
+                        unsafe {
+                            self.enable_interrupt();
+                        }
+                    },
+                }
+            }
+            fn unlisten(&mut self, event: Event) {
+                match event {
+                    Event::Fired => {
+                        self.tim.dier.modify(|_, w| w.uie().disabled());
+                        unsafe {
+                            self.disable_interrupt();
+                        }
+                    }
+                }
+            }
+            fn clear_interrupt(&mut self) {
+                self.tim.sr.modify(|_, w| w.uif().clear());
+            }
+        }
+        impl CountDown for Timer<$TIMX> {
+            type Time = Hertz;
+            fn start<T>(&mut self, timeout: T)
+            where
+                T: Into<Hertz> {
+                self._start(timeout.into());
+            }
+            fn wait(&mut self) -> Result<(), !> {
+                if self.tim.sr.read().uif().bit_is_clear() {
+                    Err(Error::WouldBlock)
+                } else {
+                    // Clear event flag
+                    self.tim.sr.modify(|_, w| w.uif().clear());
+                    Ok(())
+                }
+            }
+        }
+        )+
+    }
 }
 
-pub fn restart() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Reset counter
-        timer.cnt.write(|w| w.cnt().bits(0));
-    });
-}
-
-pub fn resume() {
-    cortex_m::interrupt::free(|cs| {
-        let timer = TIMER7.borrow(cs);
-        // Enable counter
-        timer.cr1.modify(|_, w| w.cen().enabled());
-    });
-}
+timer!(TIM6: (tim6, APB1, tim6en, tim6rst, TIM6_DAC),);
+timer!(TIM7: (tim7, APB1, tim7en, tim7rst, TIM7),);

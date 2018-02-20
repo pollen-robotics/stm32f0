@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_TDL0R {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,14 @@ impl super::CAN_TDL0R {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
         R {
             bits: self.register.get(),
         }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +37,7 @@ impl super::CAN_TDL0R {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +48,7 @@ pub struct DATA3R {
 }
 impl DATA3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +59,7 @@ pub struct DATA2R {
 }
 impl DATA2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -70,7 +70,7 @@ pub struct DATA1R {
 }
 impl DATA1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -81,7 +81,7 @@ pub struct DATA0R {
 }
 impl DATA0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -92,7 +92,7 @@ pub struct _DATA3W<'a> {
 }
 impl<'a> _DATA3W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 24;
@@ -107,7 +107,7 @@ pub struct _DATA2W<'a> {
 }
 impl<'a> _DATA2W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 16;
@@ -122,7 +122,7 @@ pub struct _DATA1W<'a> {
 }
 impl<'a> _DATA1W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 8;
@@ -137,7 +137,7 @@ pub struct _DATA0W<'a> {
 }
 impl<'a> _DATA0W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
@@ -148,12 +148,12 @@ impl<'a> _DATA0W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 24:31 - DATA3"]
-    #[inline(always)]
+    #[inline]
     pub fn data3(&self) -> DATA3R {
         let bits = {
             const MASK: u8 = 255;
@@ -163,7 +163,7 @@ impl R {
         DATA3R { bits }
     }
     #[doc = "Bits 16:23 - DATA2"]
-    #[inline(always)]
+    #[inline]
     pub fn data2(&self) -> DATA2R {
         let bits = {
             const MASK: u8 = 255;
@@ -173,7 +173,7 @@ impl R {
         DATA2R { bits }
     }
     #[doc = "Bits 8:15 - DATA1"]
-    #[inline(always)]
+    #[inline]
     pub fn data1(&self) -> DATA1R {
         let bits = {
             const MASK: u8 = 255;
@@ -183,7 +183,7 @@ impl R {
         DATA1R { bits }
     }
     #[doc = "Bits 0:7 - DATA0"]
-    #[inline(always)]
+    #[inline]
     pub fn data0(&self) -> DATA0R {
         let bits = {
             const MASK: u8 = 255;
@@ -195,33 +195,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 24:31 - DATA3"]
-    #[inline(always)]
+    #[inline]
     pub fn data3(&mut self) -> _DATA3W {
         _DATA3W { w: self }
     }
     #[doc = "Bits 16:23 - DATA2"]
-    #[inline(always)]
+    #[inline]
     pub fn data2(&mut self) -> _DATA2W {
         _DATA2W { w: self }
     }
     #[doc = "Bits 8:15 - DATA1"]
-    #[inline(always)]
+    #[inline]
     pub fn data1(&mut self) -> _DATA1W {
         _DATA1W { w: self }
     }
     #[doc = "Bits 0:7 - DATA0"]
-    #[inline(always)]
+    #[inline]
     pub fn data0(&mut self) -> _DATA0W {
         _DATA0W { w: self }
     }

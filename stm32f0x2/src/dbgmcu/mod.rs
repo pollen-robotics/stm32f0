@@ -2,10 +2,14 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - MCU Device ID Code Register"] pub idcode: IDCODE,
-    #[doc = "0x04 - Debug MCU Configuration Register"] pub cr: CR,
-    #[doc = "0x08 - Debug MCU APB1 freeze register"] pub apb1_fz: APB1_FZ,
-    #[doc = "0x0c - Debug MCU APB2 freeze register"] pub apb2_fz: APB2_FZ,
+    #[doc = "0x00 - MCU Device ID Code Register"]
+    pub idcode: IDCODE,
+    #[doc = "0x04 - Debug MCU Configuration Register"]
+    pub cr: CR,
+    #[doc = "0x08 - Debug MCU APB1 freeze register"]
+    pub apb1_fz: APB1_FZ,
+    #[doc = "0x0c - Debug MCU APB2 freeze register"]
+    pub apb2_fz: APB2_FZ,
 }
 #[doc = "MCU Device ID Code Register"]
 pub struct IDCODE {

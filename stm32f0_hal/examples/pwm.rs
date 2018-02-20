@@ -1,24 +1,30 @@
 #![no_std]
 
 extern crate stm32f0_hal as hal;
+use hal::prelude::*;
 
-use hal::pwm;
-use hal::rcc;
+extern crate embedded_hal;
+use embedded_hal::prelude::*;
 
 fn main() {
-    rcc::init();
-    let channel1 = pwm::Pwm::init(pwm::Pin::PC6);
-    let channel2 = pwm::Pwm::init(pwm::Pin::PC7);
-    let channel3 = pwm::Pwm::init(pwm::Pin::PC8);
-    let channel4 = pwm::Pwm::init(pwm::Pin::PC9);
-    channel1.set_frequency(49);
-    channel1.set_duty(10.0);
-    channel2.set_duty(20.0);
-    channel3.set_duty(30.0);
-    channel4.set_duty(40.0);
-    channel1.enable();
-    channel2.enable();
-    channel3.enable();
-    channel4.enable();
+    let p = hal::stm32f0x2::Peripherals::take().unwrap();
+
+    let mut rcc = p.RCC.constrain();
+    let mut flash = p.FLASH.constrain();
+    let clocks = rcc.cfgr.freeze(&mut flash.acr);
+
+    let mut gpioc = p.GPIOC.split(&mut rcc.ahb);
+    let pc6 = gpioc
+        .pc6
+        .into_alternate_push_pull(&mut gpioc.moder, &mut gpioc.afr, hal::gpio::AF0);
+    let pc9 = gpioc
+        .pc9
+        .into_alternate_push_pull(&mut gpioc.moder, &mut gpioc.afr, hal::gpio::AF0);
+
+    let mut pwm = hal::pwm::Pwm::tim3(p.TIM3, (pc6, pc9), 50.hz(), clocks, &mut rcc.apb1);
+    let duty = 9 * pwm.get_max_duty() / 10;
+    pwm.set_duty(duty);
+    pwm.enable();
+
     loop {}
 }
