@@ -46,6 +46,13 @@ macro_rules! timer {
                 nvic.enable(Interrupt::$TIMX_INTERRUPT);
                 nvic.clear_pending(Interrupt::$TIMX_INTERRUPT);
             }
+            pub unsafe fn disable_interrupt(&mut self) {
+                // TODO: That's a really really unsafe way of accessing NVIC...
+                // We probably should expose a NVIC trait as a parameter instead.
+                // As we don't want to have any cortex_m object in the trait signature.
+                let mut nvic = cortex_m::Peripherals::steal().NVIC;
+                nvic.disable(Interrupt::$TIMX_INTERRUPT);
+            }
         }
         impl Timeout for Timer<$TIMX> {
             type Time = u32;
@@ -54,7 +61,6 @@ macro_rules! timer {
                 self._start(Hertz(timeout));
             }
             fn listen(&mut self, event: Event) {
-
                 match event {
                     Event::Fired => {
                         self.tim.dier.modify(|_, w| w.uie().enabled());
@@ -68,8 +74,14 @@ macro_rules! timer {
                 match event {
                     Event::Fired => {
                         self.tim.dier.modify(|_, w| w.uie().disabled());
+                        unsafe {
+                            self.disable_interrupt();
+                        }
                     }
                 }
+            }
+            fn clear_interrupt(&mut self) {
+                self.tim.sr.modify(|_, w| w.uif().clear());
             }
         }
         impl CountDown for Timer<$TIMX> {
