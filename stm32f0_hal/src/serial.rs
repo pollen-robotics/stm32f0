@@ -125,6 +125,14 @@ macro_rules! usart {
                     Err(Error::WouldBlock)
                 }
             }
+            fn complete(&self) -> Result<(), !> {
+                let uart = unsafe { &(*$USARTX::ptr()) };
+                if uart.isr.read().tc().bit_is_set() {
+                    Ok(())
+                } else {
+                    Err(Error::WouldBlock)
+                }
+            }
             fn flush(&mut self) -> Result<(), !> {
                 Ok(())
             }

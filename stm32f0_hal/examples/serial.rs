@@ -45,6 +45,7 @@ fn main() {
 
     loop {
         block!(tx.write(sent)).ok();
+        block!(tx.complete()).ok();
         let received = block!(rx.read()).unwrap();
 
         assert_eq!(received, sent);
