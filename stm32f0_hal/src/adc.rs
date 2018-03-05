@@ -13,17 +13,19 @@
 //!
 //! use stm32f0_hal::adc;
 //!
-//! let p = adc::Input::setup(adc::Pin::P4);
+//! let p = adc::Input::setup(adc::Pin::PB0);
 //! let b = p.read();
 //! ```
 
 use cortex_m;
-use stm32f0x2::{ADC, GPIOA, GPIOC, RCC};
+use stm32f0x2::{ADC, GPIOA, GPIOB, GPIOC, RCC};
 
 /// ADC Pin
 pub enum Pin {
     PA0,
     PA1,
+    PB0,
+    PB1,
     PC13,
     PC14,
 }
@@ -47,6 +49,8 @@ impl Analog {
             match self.pin {
                 Pin::PA0 => adc.chselr.write(|w| w.chsel0().set_bit()),
                 Pin::PA1 => adc.chselr.write(|w| w.chsel1().set_bit()),
+                Pin::PB0 => adc.chselr.write(|w| w.chsel8().set_bit()),
+                Pin::PB1 => adc.chselr.write(|w| w.chsel9().set_bit()),
                 Pin::PC13 => adc.chselr.write(|w| w.chsel13().set_bit()),
                 Pin::PC14 => adc.chselr.write(|w| w.chsel14().set_bit()),
             }
@@ -67,11 +71,14 @@ fn setup_pin(pin: &Pin) {
     cortex_m::interrupt::free(|cs| {
         let rcc = RCC.borrow(cs);
         let gpioa = GPIOA.borrow(cs);
+        let gpiob = GPIOB.borrow(cs);
         let gpioc = GPIOC.borrow(cs);
         // Clock Activation
         match *pin {
             Pin::PA0 => rcc.ahbenr.modify(|_, w| w.iopaen().enabled()),
             Pin::PA1 => rcc.ahbenr.modify(|_, w| w.iopaen().enabled()),
+            Pin::PB0 => rcc.ahbenr.modify(|_, w| w.iopben().enabled()),
+            Pin::PB1 => rcc.ahbenr.modify(|_, w| w.iopben().enabled()),
             Pin::PC13 => rcc.ahbenr.modify(|_, w| w.iopcen().enabled()),
             Pin::PC14 => rcc.ahbenr.modify(|_, w| w.iopcen().enabled()),
         }
@@ -83,6 +90,8 @@ fn setup_pin(pin: &Pin) {
         match *pin {
             Pin::PA0 => gpioa.moder.modify(|_, w| w.moder0().analog()),
             Pin::PA1 => gpioa.moder.modify(|_, w| w.moder1().analog()),
+            Pin::PB0 => gpiob.moder.modify(|_, w| w.moder0().analog()),
+            Pin::PB1 => gpiob.moder.modify(|_, w| w.moder1().analog()),
             Pin::PC13 => gpioc.moder.modify(|_, w| w.moder3().analog()),
             Pin::PC14 => gpioc.moder.modify(|_, w| w.moder4().analog()),
         }
