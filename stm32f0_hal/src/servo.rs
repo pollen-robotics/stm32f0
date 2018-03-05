@@ -12,7 +12,7 @@ impl Servo {
         servo.enable();
         Servo { servo }
     }
-    pub fn set_position(&self, mut degree: f32) {
+    pub fn set_position(&self, mut degree: f64) {
         // min 0° max 180°
         // for the MG90S
         // min 0.4ms max 2.4ms
