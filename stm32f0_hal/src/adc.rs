@@ -92,8 +92,8 @@ fn setup_pin(pin: &Pin) {
             Pin::PA1 => gpioa.moder.modify(|_, w| w.moder1().analog()),
             Pin::PB0 => gpiob.moder.modify(|_, w| w.moder0().analog()),
             Pin::PB1 => gpiob.moder.modify(|_, w| w.moder1().analog()),
-            Pin::PC13 => gpioc.moder.modify(|_, w| w.moder3().analog()),
-            Pin::PC14 => gpioc.moder.modify(|_, w| w.moder4().analog()),
+            Pin::PC13 => gpioc.moder.modify(|_, w| w.moder13().analog()),
+            Pin::PC14 => gpioc.moder.modify(|_, w| w.moder14().analog()),
         }
     });
 }
