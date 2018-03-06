@@ -15,7 +15,7 @@ pub unsafe extern "C" fn panic_fmt(
         if let Some(ref mut log) = serial_panic::LOG {
             writeln!(
                 log,
-                "*** PANIC *** 'main' panicked at '{}', {}:{}:{}",
+                "*** PANIC *** 'main' panicked at '{}', {}:{}:{}\n",
                 msg, file, line, column
             ).unwrap();
         }
@@ -31,7 +31,7 @@ mod serial_panic {
     use uart;
 
     /// Setup a serial TX where the panic will be sent
-    pub unsafe fn log_on_serial(uart: uart::Uarts) {
+    pub unsafe fn panic_on_serial(uart: uart::Uarts) {
         let uart = uart::Uart::setup(
             uart,
             57_600,
@@ -45,16 +45,27 @@ mod serial_panic {
     pub(crate) static mut LOG: Option<SerialLog> = None;
 
     pub(crate) struct SerialLog(uart::Uart);
-    impl Write for SerialLog {
-        fn write_str(&mut self, s: &str) -> Result<(), Error> {
+    impl SerialLog {
+        fn log(&mut self, s: &str) {
             for &b in s.as_bytes() {
                 while !self.0.transmit_complete() {}
                 self.0.send(b);
             }
-
+        }
+    }
+    impl Write for SerialLog {
+        fn write_str(&mut self, s: &str) -> Result<(), Error> {
+            self.log(s);
             Ok(())
+        }
+    }
+    pub unsafe fn trace(s: &str) {
+        if let Some(ref mut log) = LOG {
+            log.log("*** TRACE *** '");
+            log.log(s);
+            log.log("'\n");
         }
     }
 }
 #[cfg(feature = "serial_panic")]
-pub use self::serial_panic::log_on_serial;
+pub use self::serial_panic::{panic_on_serial, trace};

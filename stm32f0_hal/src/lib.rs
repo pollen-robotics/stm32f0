@@ -18,8 +18,8 @@ extern crate cortex_m_rt;
 extern crate stm32f0x2;
 
 pub mod adc;
+pub mod debug;
 pub mod gpio;
-pub mod panic;
 pub mod pwm;
 pub mod rcc;
 pub mod uart;
