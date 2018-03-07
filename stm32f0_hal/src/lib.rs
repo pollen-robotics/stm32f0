@@ -8,6 +8,8 @@
 //! * RCC
 
 #![no_std]
+#![feature(lang_items)]
+#![feature(core_intrinsics)]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
 
 extern crate cortex_m;
@@ -15,8 +17,9 @@ extern crate cortex_m;
 extern crate cortex_m_rt;
 extern crate stm32f0x2;
 
-pub mod gpio;
 pub mod adc;
+pub mod debug;
+pub mod gpio;
 pub mod pwm;
 pub mod rcc;
 pub mod uart;

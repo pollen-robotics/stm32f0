@@ -1,12 +1,13 @@
 use cortex_m;
-use stm32f0x2::{USART1 as UART1, USART3 as UART3, GPIOA, GPIOB, NVIC, RCC};
+use stm32f0x2::{USART1 as UART1, USART3 as UART3, USART4 as UART4, GPIOA, GPIOB, NVIC, RCC};
 use stm32f0x2::interrupt::Interrupt::{USART1, USART3_4};
 
-const FREQUENCY: u32 = 48000000;
+const FREQUENCY: u32 = 48_000_000;
 
 pub enum Uarts {
     Uart1,
     Uart3,
+    Uart4,
 }
 
 pub enum NBits {
@@ -267,6 +268,118 @@ impl Uart {
                 });
                 Uart { uart }
             }
+            Uarts::Uart4 => {
+                cortex_m::interrupt::free(|cs| {
+                    let rcc = RCC.borrow(cs);
+                    let nvic = NVIC.borrow(cs);
+                    let gpioa = GPIOA.borrow(cs);
+                    let uart = UART4.borrow(cs);
+                    // Enable GPIOA Clock into the Advanced High-performance Bus
+                    rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
+                    // Enable USART4 Clock into the Advanced Peripheral Bus 1
+                    rcc.apb1enr.modify(|_, w| w.usart4en().enabled());
+
+                    // Configure speed of PA0/PA1 (refer to the datasheet for the frequency, the power supply and load conditions)
+                    gpioa
+                        .ospeedr
+                        .modify(|_, w| w.ospeedr0().high_speed().ospeedr1().high_speed());
+                    // Use pull-up on PA0/1
+                    gpioa
+                        .pupdr
+                        .modify(|_, w| w.pupdr0().pull_up().pupdr1().pull_up());
+                    // Configure PA0/PA1 Alternate Function 4 -> USART4 (PA0 -> TX & PA1 -> RX)
+                    gpioa.afrl.modify(|_, w| w.afrl0().af4().afrl1().af4());
+                    // PA0 & PA1 as Alternate function (USART4 peripheral)
+                    gpioa
+                        .moder
+                        .modify(|_, w| w.moder0().alternate().moder1().alternate());
+                    // PA0 & PA1 push-pull configuration
+                    gpioa
+                        .otyper
+                        .modify(|_, w| w.ot0().push_pull().ot1().push_pull());
+
+                    // Configure UART1 : Word length
+                    match nbits {
+                        NBits::_8bits => {
+                            uart.cr1.modify(|_, w| w.m()._8bits());
+                        }
+                        NBits::_9bits => {
+                            uart.cr1.modify(|_, w| w.m()._9bits());
+                        }
+                    }
+                    // Configure UART1 : Parity
+                    match parity {
+                        Parity::None => {
+                            uart.cr1.modify(|_, w| w.pce().disabled());
+                        }
+                        Parity::Even => {
+                            uart.cr1.modify(|_, w| w.pce().enabled());
+                            uart.cr1.modify(|_, w| w.ps().even());
+                        }
+                        Parity::Odd => {
+                            uart.cr1.modify(|_, w| w.pce().enabled());
+                            uart.cr1.modify(|_, w| w.ps().odd());
+                        }
+                    }
+                    // Configure UART4: Transfert Direction - Oversampling - RX Interrupt
+                    uart.cr1.modify(|_, w| {
+                        w.te()
+                            .enabled()
+                            .re()
+                            .enabled()
+                            .over8()
+                            .over8()
+                            .rxneie()
+                            .enabled()
+                    });
+                    // Configure UART1 : stop bit
+                    match nbstopbits {
+                        StopBits::_0b5 => {
+                            uart.cr2.modify(|_, w| w.stop().half_stop());
+                        }
+                        StopBits::_1b => {
+                            uart.cr2.modify(|_, w| w.stop()._1stop());
+                        }
+                        StopBits::_1b5 => {
+                            uart.cr2.modify(|_, w| w.stop()._1half_stop());
+                        }
+                        StopBits::_2b => {
+                            uart.cr2.modify(|_, w| w.stop()._2stop());
+                        }
+                    }
+
+                    // Configure UART4: disable hardware flow control - Overrun interrupt
+                    uart.cr3.modify(|_, w| {
+                        w.rtse()
+                            .disabled()
+                            .ctse()
+                            .disabled()
+                            .ctsie()
+                            .disabled()
+                            .ovrdis()
+                            .disabled()
+                    });
+                    // Configure UART4: baudrate
+                    uart.brr.modify(|_, w| {
+                        w.div_fraction()
+                            .bits((FREQUENCY / (baudrate / 2)) as u8 & 0x0F)
+                    });
+                    uart.brr.modify(|_, w| {
+                        w.div_mantissa()
+                            .bits(((FREQUENCY / (baudrate / 2)) >> 4) as u16)
+                    });
+                    // Configure UART4: Asynchronous mode
+                    uart.cr2
+                        .modify(|_, w| w.linen().disabled().clken().disabled());
+                    // UART4 enabled
+                    uart.cr1.modify(|_, w| w.ue().enabled());
+
+                    // Interrupt UART4 activated into NVIC
+                    nvic.enable(USART3_4);
+                    nvic.clear_pending(USART3_4);
+                });
+                Uart { uart }
+            }
         }
     }
 
@@ -281,6 +394,11 @@ impl Uart {
                 let uart3 = UART3.borrow(cs);
                 // the byte is stored in the UART3 transmit register
                 uart3.tdr.write(|w| w.tdr().bits(byte as u16));
+            }),
+            Uarts::Uart4 => cortex_m::interrupt::free(|cs| {
+                let uart4 = UART4.borrow(cs);
+                // the byte is stored in the UART4 transmit register
+                uart4.tdr.write(|w| w.tdr().bits(byte as u16));
             }),
         }
     }
@@ -309,6 +427,17 @@ impl Uart {
                     false
                 }
             }),
+            Uarts::Uart4 => cortex_m::interrupt::free(|cs| {
+                let uart4 = UART4.borrow(cs);
+                // Check the Transmit Completed flag status
+                if uart4.isr.read().tc().bit_is_set() {
+                    // if transmit completed, clear the transmit completed flag and return true
+                    uart4.icr.write(|w| w.tccf().clear_bit());
+                    true
+                } else {
+                    false
+                }
+            }),
         }
     }
 
@@ -330,6 +459,16 @@ impl Uart {
                 if uart3.isr.read().rxne().bit_is_set() {
                     // if true, read the received data and finish the rxne flag cleared procedure
                     Some(uart3.rdr.read().rdr().bits() as u8)
+                } else {
+                    None
+                }
+            }),
+            Uarts::Uart4 => cortex_m::interrupt::free(|cs| {
+                let uart4 = UART4.borrow(cs);
+                // Check the Receive Not Empty flag flag status
+                if uart4.isr.read().rxne().bit_is_set() {
+                    // if true, read the received data and finish the rxne flag cleared procedure
+                    Some(uart4.rdr.read().rdr().bits() as u8)
                 } else {
                     None
                 }

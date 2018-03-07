@@ -5,9 +5,8 @@ members = [
 ]
 
 [profile.dev]
-opt-level = 0
-debug = true
 codegen-units = 1
+incremental = false
 
 [profile.release]
 lto = true
