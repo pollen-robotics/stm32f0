@@ -24,7 +24,7 @@ script:
   - cargo clean
   - xargo check --target $TARGET
   - xargo build --target $TARGET --examples --all-features
-  - cargo +nightly fmt --all -- --write-mode=diff
+  # - cargo +nightly fmt --all -- --write-mode=diff
 
 after_script:
   - set +e
