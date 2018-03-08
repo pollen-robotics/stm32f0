@@ -13,13 +13,10 @@ addons:
 env:
   - TARGET=thumbv6m-none-eabi
 
-before_install:
-  - rustup default nightly-2017-12-25
-
 before_script:
-  - export PATH="$PATH:$HOME/.cargo/bin"
-  - (cd .. && cargo install --force rustfmt-nightly --vers 0.3.4)
-  - which xargo || (cd .. && cargo install xargo -f --vers 0.3.8)
+  - rustup component add --toolchain nightly rustfmt-preview
+  - which rustfmt || cargo install --force rustfmt-nightly
+  - which xargo || cargo install xargo
   - rustup component list | grep 'rust-src.*installed' || rustup component add rust-src
   - set -e
 
@@ -27,7 +24,7 @@ script:
   - cargo clean
   - xargo check --target $TARGET
   - xargo build --target $TARGET --examples --all-features
-  - . ./ci/lint.sh
+  - cargo +nightly fmt --all -- --write-mode=diff
 
 after_script:
   - set +e
