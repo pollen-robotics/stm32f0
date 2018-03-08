@@ -186,6 +186,12 @@ impl Pwm {
             unsafe {
                 self.set_duty(DUTY);
             }
+
+            // Reset counter
+            tim2.cnt.write(|w| w.cnt_h().bits(0));
+            tim2.cnt.write(|w| w.cnt_l().bits(0));
+            tim3.cnt.write(|w| w.cnt_h().bits(0));
+            tim3.cnt.write(|w| w.cnt_l().bits(0));
         });
     }
 
