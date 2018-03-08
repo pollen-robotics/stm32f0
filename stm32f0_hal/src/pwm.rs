@@ -164,6 +164,9 @@ impl Pwm {
 
     // Be careful, after you have set frequency, it will be necessary to set all duty cycles of others PWMs
     pub fn set_frequency(&self, frequency: u32) {
+        assert!(frequency >= 50, "frequency too low!");
+        assert!(frequency <= 100_000, "frequency too high!");
+
         cortex_m::interrupt::free(|cs| {
             let tim2 = TIM2.borrow(cs);
             let tim3 = TIM3.borrow(cs);
@@ -174,7 +177,7 @@ impl Pwm {
             tim3.psc.write(|w| w.psc().bits(PRE_SCALER)); // Counter clock Frequency = (fCK_PSC / (PSC[15:0] + 1)
 
             // Set Auto-Reload register - 16 bits
-            let arr = 1000000 / frequency; //1000000
+            let arr = 1_000_000 / frequency; //1000000
             tim3.arr.write(|w| w.arr_h().bits((arr >> 16) as u16));
             tim3.arr.write(|w| w.arr_l().bits(arr as u16));
             tim2.arr.write(|w| w.arr_h().bits((arr >> 16) as u16));
