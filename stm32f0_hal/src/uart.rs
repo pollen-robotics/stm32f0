@@ -47,7 +47,6 @@ impl Uart {
             Uarts::Uart1 => {
                 cortex_m::interrupt::free(|cs| {
                     let rcc = RCC.borrow(cs);
-                    let nvic = NVIC.borrow(cs);
                     let gpioa = GPIOA.borrow(cs);
                     let uart1 = UART1.borrow(cs);
                     // Enable GPIOA Clock into the Advanced High-performance Bus
@@ -150,16 +149,12 @@ impl Uart {
                         .modify(|_, w| w.linen().disabled().clken().disabled());
                     // UART1 enabled
                     uart1.cr1.modify(|_, w| w.ue().enabled());
-                    // Interrupt UART1 activated into NVIC
-                    nvic.enable(USART1);
-                    nvic.clear_pending(USART1);
                 });
                 Uart { uart }
             }
             Uarts::Uart3 => {
                 cortex_m::interrupt::free(|cs| {
                     let rcc = RCC.borrow(cs);
-                    let nvic = NVIC.borrow(cs);
                     let gpiob = GPIOB.borrow(cs);
                     let uart3 = UART3.borrow(cs);
                     // Enable GPIOB Clock into the Advanced High-performance Bus
@@ -262,16 +257,12 @@ impl Uart {
                         .modify(|_, w| w.linen().disabled().clken().disabled());
                     // UART3 enabled
                     uart3.cr1.modify(|_, w| w.ue().enabled());
-                    // Interrupt UART3 (and USART4) activated into NVIC
-                    nvic.enable(USART3_4);
-                    nvic.clear_pending(USART3_4);
                 });
                 Uart { uart }
             }
             Uarts::Uart4 => {
                 cortex_m::interrupt::free(|cs| {
                     let rcc = RCC.borrow(cs);
-                    let nvic = NVIC.borrow(cs);
                     let gpioa = GPIOA.borrow(cs);
                     let uart = UART4.borrow(cs);
                     // Enable GPIOA Clock into the Advanced High-performance Bus
@@ -373,14 +364,29 @@ impl Uart {
                         .modify(|_, w| w.linen().disabled().clken().disabled());
                     // UART4 enabled
                     uart.cr1.modify(|_, w| w.ue().enabled());
-
-                    // Interrupt UART4 activated into NVIC
-                    nvic.enable(USART3_4);
-                    nvic.clear_pending(USART3_4);
                 });
                 Uart { uart }
             }
         }
+    }
+
+    pub fn enable_interrupt(&self) {
+        cortex_m::interrupt::free(|cs| {
+            let nvic = NVIC.borrow(cs);
+
+            match self.uart {
+                Uarts::Uart1 => {
+                    // Interrupt UART1 activated into NVIC
+                    nvic.enable(USART1);
+                    nvic.clear_pending(USART1);
+                }
+                Uarts::Uart3 | Uarts::Uart4 => {
+                    // Interrupt UART3 & USART4 share the same interrupt
+                    nvic.enable(USART3_4);
+                    nvic.clear_pending(USART3_4);
+                }
+            }
+        });
     }
 
     pub fn send(&self, byte: u8) {
