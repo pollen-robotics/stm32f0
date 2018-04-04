@@ -18,14 +18,14 @@ version = "1.0.0"
 repository = "pollen-robotics/stm32f0"
 
 [dependencies]
-cortex-m = "=0.3.1"
-embedded-hal = "0.1"
+cortex-m = "0.5.3"
+embedded-hal = "0.2.1"
 
 [dev-dependencies]
-cortex-m-semihosting = "0.2.0"
+cortex-m-semihosting = "0.3.0"
 
 [dependencies.cortex-m-rt]
-version = "=0.3.7"
+version = "0.5.1"
 
 [dependencies.stm32f0x2]
 features = ["rt"]
