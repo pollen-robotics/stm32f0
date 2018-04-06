@@ -37,4 +37,5 @@ serial_panic = []
 
 [dependencies.alloc-cortex-m]
 git = "https://github.com/pollen-robotics/alloc-cortex-m"
+rev = "39e643470caf5b036b633b13842d22fb9a22f9af"
 optional = true
