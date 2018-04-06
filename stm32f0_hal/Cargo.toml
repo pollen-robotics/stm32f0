@@ -12,13 +12,13 @@ keywords = [
 license = "Apache-2.0"
 name = "stm32f0_hal"
 repository = "https://github.com/pollen-robotics/stm32f0"
-version = "0.1.0"
+version = "1.0.0"
 
 [badges.travis-ci]
 repository = "pollen-robotics/stm32f0"
 
 [dependencies]
-cortex-m = "0.3.1"
+cortex-m = "=0.3.1"
 
 [dev-dependencies]
 cortex-m-semihosting = "0.2.0"
@@ -37,4 +37,5 @@ serial_panic = []
 
 [dependencies.alloc-cortex-m]
 git = "https://github.com/pollen-robotics/alloc-cortex-m"
+rev = "39e643470caf5b036b633b13842d22fb9a22f9af"
 optional = true
