@@ -20,6 +20,7 @@ extern crate stm32f0x2;
 pub mod adc;
 pub mod debug;
 pub mod gpio;
+pub mod i2c;
 pub mod pwm;
 pub mod rcc;
 pub mod uart;
