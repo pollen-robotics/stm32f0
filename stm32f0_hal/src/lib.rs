@@ -15,6 +15,7 @@
 extern crate cortex_m;
 #[macro_use(exception)]
 extern crate cortex_m_rt;
+extern crate embedded_hal;
 extern crate stm32f0x2;
 
 pub mod adc;

@@ -2,10 +2,12 @@
 
 
 extern crate cortex_m;
+extern crate embedded_hal;
 extern crate stm32f0x2;
 extern crate stm32f0_hal;
 
 
+use embedded_hal::prelude::*;
 use stm32f0x2::{
     GPIOB,
     I2C1,

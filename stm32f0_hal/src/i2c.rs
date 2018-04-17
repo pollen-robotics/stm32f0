@@ -1,3 +1,4 @@
+use embedded_hal::blocking::i2c;
 use stm32f0x2::{
     GPIOB,
     I2C1,
@@ -106,6 +107,10 @@ impl<'r> I2C<'r> {
             i2c: i2c,
         }
     }
+}
+
+impl<'r> i2c::Write for I2C<'r> {
+    type Error = WriteError;
 
     /// Write to the I2C bus
     ///
@@ -115,7 +120,7 @@ impl<'r> I2C<'r> {
     /// - It doesn't check for error conditions.
     /// - It only supports writing up to 255 bytes at a time.
     /// - Writing more than 1 byte should work, but hasn't been tested.
-    pub fn write(&mut self, address: u8, data: &[u8])
+    fn write(&mut self, address: u8, data: &[u8])
         -> Result<(), WriteError>
     {
         let nbytes = if data.len() <= u8::max_value() as usize {
@@ -158,6 +163,10 @@ impl<'r> I2C<'r> {
 
         Ok(())
     }
+}
+
+impl<'r> i2c::Read for I2C<'r> {
+    type Error = ReadError;
 
     /// Read from the I2C bus
     ///
@@ -168,7 +177,7 @@ impl<'r> I2C<'r> {
     /// - It doesn't check for error conditions.
     /// - It only supports reading up to 255 bytes at a time.
     /// - Reading more than 1 byte should work, but hasn't been tested.
-    pub fn read(&mut self, address: u8, buffer: &mut [u8])
+    fn read(&mut self, address: u8, buffer: &mut [u8])
         -> Result<(), ReadError>
     {
         let nbytes = if buffer.len() <= u8::max_value() as usize {
