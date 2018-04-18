@@ -1,21 +1,14 @@
 #![no_std]
 
-
 extern crate cortex_m;
 extern crate embedded_hal;
-extern crate stm32f0x2;
 extern crate stm32f0_hal;
-
+extern crate stm32f0x2;
 
 use embedded_hal::prelude::*;
-use stm32f0x2::{
-    GPIOB,
-    I2C1,
-    RCC,
-};
+use stm32f0x2::{I2C1, GPIOB, RCC};
 use stm32f0_hal::gpio;
 use stm32f0_hal::i2c::I2C;
-
 
 fn main() {
     // This example was developed and tested with the STM32F072B Discovery board
@@ -26,9 +19,9 @@ fn main() {
     // - SCL_I to PB6, SDA_I to PB7.
 
     cortex_m::interrupt::free(|cs| {
-        let rcc   = RCC.borrow(cs);
+        let rcc = RCC.borrow(cs);
         let gpiob = GPIOB.borrow(cs);
-        let i2c   = I2C1.borrow(cs);
+        let i2c = I2C1.borrow(cs);
 
         let mut i2c = I2C::init(rcc, gpiob, i2c);
 
@@ -39,9 +32,9 @@ fn main() {
         // names to PC6, PC8, and PC9 is not correct. It also mixes up the
         // colors of the LEDs. At least that's the case with the board I have in
         // front of me.
-        let mut led_init    = gpio::Output::setup(gpio::Pin::PC8); // orange
+        let mut led_init = gpio::Output::setup(gpio::Pin::PC8); // orange
         let mut led_success = gpio::Output::setup(gpio::Pin::PC9); // green
-        let mut led_error   = gpio::Output::setup(gpio::Pin::PC6); // red
+        let mut led_error = gpio::Output::setup(gpio::Pin::PC6); // red
 
         led_init.high();
         led_success.low();
@@ -64,8 +57,7 @@ fn main() {
         // we were reading.
         if buffer[0] == 0xEE {
             led_success.high();
-        }
-        else {
+        } else {
             led_error.high();
         }
     });

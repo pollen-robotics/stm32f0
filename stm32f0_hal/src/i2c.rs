@@ -1,10 +1,5 @@
 use embedded_hal::blocking::i2c;
-use stm32f0x2::{
-    GPIOB,
-    I2C1,
-    RCC,
-};
-
+use stm32f0x2::{I2C1, GPIOB, RCC};
 
 /// Interface to the I2C bus
 ///
@@ -39,10 +34,12 @@ impl<'r> I2C<'r> {
 
         // Select alternate I2C functions on pins
         // See data sheet, page 42 and reference manual, section 8.4.9.
-        gpiob.afrl.modify(|_, w|
-            w
+        gpiob.afrl.modify(
+            |_, w| {
+                w
                 .afrl6().af1() // I2C1_SCL on PB6
-                .afrl7().af1() // I2C1_SDA on PB7
+                .afrl7().af1()
+            }, // I2C1_SDA on PB7
         );
 
         // Configure the pins
@@ -55,21 +52,15 @@ impl<'r> I2C<'r> {
         //
         // Fact is, the pins need to be configured (there's no I2C signal
         // otherwise), and the following configuration works.
-        gpiob.moder.modify(|_, w|
-            w
-                .moder6().alternate()
-                .moder7().alternate()
-        );
-        gpiob.ospeedr.modify(|_, w|
-            w
-                .ospeedr6().low_speed()
-                .ospeedr7().low_speed()
-        );
-        gpiob.otyper.modify(|_, w|
-            w
-                .ot6().open_drain()
-                .ot7().open_drain()
-        );
+        gpiob
+            .moder
+            .modify(|_, w| w.moder6().alternate().moder7().alternate());
+        gpiob
+            .ospeedr
+            .modify(|_, w| w.ospeedr6().low_speed().ospeedr7().low_speed());
+        gpiob
+            .otyper
+            .modify(|_, w| w.ot6().open_drain().ot7().open_drain());
 
         // Select HSI as the clock source for I2C1
         // This is the default, so unless other code has changed this
@@ -89,23 +80,19 @@ impl<'r> I2C<'r> {
         // 26.4.10) in the reference manual. This is the right table because the
         // 8 MHz HSI clock has been selected above. Let's choose 100 kHz for the
         // I2C frequency.
-        i2c.timingr.modify(|_, w|
-            unsafe {
-                w
+        i2c.timingr.modify(|_, w| unsafe {
+            w
                     .presc().bits(1)
                     .scll().bits(0x13) // required because of master mode
                     .sclh().bits(0xf)  // required because of master mode
                     .sdadel().bits(0x2)
                     .scldel().bits(0x4)
-            }
-        );
+        });
 
         // Enable I2C peripheral
         i2c.cr1.modify(|_, w| w.pe().set_bit());
 
-        I2C {
-            i2c: i2c,
-        }
+        I2C { i2c: i2c }
     }
 }
 
@@ -120,20 +107,16 @@ impl<'r> i2c::Write for I2C<'r> {
     /// - It doesn't check for error conditions.
     /// - It only supports writing up to 255 bytes at a time.
     /// - Writing more than 1 byte should work, but hasn't been tested.
-    fn write(&mut self, address: u8, data: &[u8])
-        -> Result<(), WriteError>
-    {
+    fn write(&mut self, address: u8, data: &[u8]) -> Result<(), WriteError> {
         let nbytes = if data.len() <= u8::max_value() as usize {
             data.len() as u8
-        }
-        else {
+        } else {
             return Err(WriteError::DataTooLong);
         };
 
         // Configure and start I2C write
-        self.i2c.cr2.write(|w|
-            unsafe {
-                w
+        self.i2c.cr2.write(|w| unsafe {
+            w
                     // 7-bit addressing mode
                     .add10().clear_bit()
                     // slave address
@@ -144,9 +127,8 @@ impl<'r> i2c::Write for I2C<'r> {
                     .nbytes().bits(nbytes) // set number of bytes to send
                     .reload().clear_bit()  // only send <nbytes> bytes
                     .autoend().set_bit()   // automatically send STOP signal
-                    .start().set_bit()     // start transmission
-            }
-        );
+                    .start().set_bit() // start transmission
+        });
 
         for &b in data {
             // Wait for transmit register to be empty
@@ -177,20 +159,16 @@ impl<'r> i2c::Read for I2C<'r> {
     /// - It doesn't check for error conditions.
     /// - It only supports reading up to 255 bytes at a time.
     /// - Reading more than 1 byte should work, but hasn't been tested.
-    fn read(&mut self, address: u8, buffer: &mut [u8])
-        -> Result<(), ReadError>
-    {
+    fn read(&mut self, address: u8, buffer: &mut [u8]) -> Result<(), ReadError> {
         let nbytes = if buffer.len() <= u8::max_value() as usize {
             buffer.len() as u8
-        }
-        else {
-            return Err(ReadError::BufferTooLong)
+        } else {
+            return Err(ReadError::BufferTooLong);
         };
 
         // Configure and start I2C read
-        self.i2c.cr2.write(|w|
-            unsafe {
-                w
+        self.i2c.cr2.write(|w| unsafe {
+            w
                     // 7-bit addressing mode
                     .add10().clear_bit()
                     // slave address
@@ -201,9 +179,8 @@ impl<'r> i2c::Read for I2C<'r> {
                     .nbytes().bits(nbytes)     // receive 1 byte
                     .reload().clear_bit() // only receive <nbytes> bytes
                     .autoend().set_bit()  // automatically send STOP signal
-                    .start().set_bit()    // start signal to start transmission
-            }
-        );
+                    .start().set_bit() // start signal to start transmission
+        });
 
         for b in buffer {
             // Wait until byte has been received
@@ -216,7 +193,6 @@ impl<'r> i2c::Read for I2C<'r> {
         Ok(())
     }
 }
-
 
 pub enum WriteError {
     DataTooLong,
