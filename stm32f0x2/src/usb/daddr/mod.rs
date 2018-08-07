@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::DADDR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::DADDR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::DADDR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct ADDR {
 }
 impl ADDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,17 +57,17 @@ pub struct EFR {
 }
 impl EFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,7 +78,7 @@ pub struct _ADDW<'a> {
 }
 impl<'a> _ADDW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 127;
         const OFFSET: u8 = 0;
@@ -103,7 +101,7 @@ impl<'a> _EFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -114,12 +112,12 @@ impl<'a> _EFW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:6 - Device address"]
-    #[inline(always)]
+    #[inline]
     pub fn add(&self) -> ADDR {
         let bits = {
             const MASK: u8 = 127;
@@ -129,7 +127,7 @@ impl R {
         ADDR { bits }
     }
     #[doc = "Bit 7 - Enable function"]
-    #[inline(always)]
+    #[inline]
     pub fn ef(&self) -> EFR {
         let bits = {
             const MASK: bool = true;
@@ -141,23 +139,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:6 - Device address"]
-    #[inline(always)]
+    #[inline]
     pub fn add(&mut self) -> _ADDW {
         _ADDW { w: self }
     }
     #[doc = "Bit 7 - Enable function"]
-    #[inline(always)]
+    #[inline]
     pub fn ef(&mut self) -> _EFW {
         _EFW { w: self }
     }

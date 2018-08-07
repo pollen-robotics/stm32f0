@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR2 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +43,24 @@ impl super::CR2 {
 #[doc = "Possible values of the field `HSI14ON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14ONR {
-    #[doc = "HSI14 oscillator OFF."] DISABLED,
-    #[doc = "HSI14 oscillator ON."] ENABLED,
+    #[doc = "HSI14 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI14 oscillator ON."]
+    ENABLED,
 }
 impl HSI14ONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSI14ONR::DISABLED => false,
@@ -69,7 +69,7 @@ impl HSI14ONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSI14ONR {
         match value {
             false => HSI14ONR::DISABLED,
@@ -77,12 +77,12 @@ impl HSI14ONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSI14ONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSI14ONR::ENABLED
     }
@@ -93,17 +93,17 @@ pub struct HSI14RDYR {
 }
 impl HSI14RDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,22 +111,24 @@ impl HSI14RDYR {
 #[doc = "Possible values of the field `HSI14DIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14DISR {
-    #[doc = "ADC interface can turn on the HSI14 oscillator."] ENABLED,
-    #[doc = "ADC interface can not turn on the HSI14 oscillator."] DISABLED,
+    #[doc = "ADC interface can turn on the HSI14 oscillator."]
+    ENABLED,
+    #[doc = "ADC interface can not turn on the HSI14 oscillator."]
+    DISABLED,
 }
 impl HSI14DISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSI14DISR::ENABLED => false,
@@ -135,7 +137,7 @@ impl HSI14DISR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSI14DISR {
         match value {
             false => HSI14DISR::ENABLED,
@@ -143,12 +145,12 @@ impl HSI14DISR {
         }
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSI14DISR::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSI14DISR::DISABLED
     }
@@ -159,7 +161,7 @@ pub struct HSI14TRIMR {
 }
 impl HSI14TRIMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -170,7 +172,7 @@ pub struct HSI14CALR {
 }
 impl HSI14CALR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -178,22 +180,24 @@ impl HSI14CALR {
 #[doc = "Possible values of the field `HSI48ON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI48ONR {
-    #[doc = "HSI48 oscillator OFF."] DISABLED,
-    #[doc = "HSI48 oscillator ON."] ENABLED,
+    #[doc = "HSI48 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI48 oscillator ON."]
+    ENABLED,
 }
 impl HSI48ONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSI48ONR::DISABLED => false,
@@ -202,7 +206,7 @@ impl HSI48ONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSI48ONR {
         match value {
             false => HSI48ONR::DISABLED,
@@ -210,12 +214,12 @@ impl HSI48ONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSI48ONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSI48ONR::ENABLED
     }
@@ -226,17 +230,17 @@ pub struct HSI48RDYR {
 }
 impl HSI48RDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -247,30 +251,32 @@ pub struct HSI48CALR {
 }
 impl HSI48CALR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 #[doc = "Values that can be written to the field `HSI14ON`"]
 pub enum HSI14ONW {
-    #[doc = "HSI14 oscillator OFF."] DISABLED,
-    #[doc = "HSI14 oscillator ON."] ENABLED,
+    #[doc = "HSI14 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI14 oscillator ON."]
+    ENABLED,
 }
 impl HSI14ONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI14ONW::DISABLED => false,
@@ -284,19 +290,19 @@ pub struct _HSI14ONW<'a> {
 }
 impl<'a> _HSI14ONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI14ONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI14 oscillator OFF."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSI14ONW::DISABLED)
     }
     #[doc = "HSI14 oscillator ON."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSI14ONW::ENABLED)
     }
@@ -309,7 +315,7 @@ impl<'a> _HSI14ONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -320,13 +326,15 @@ impl<'a> _HSI14ONW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14DIS`"]
 pub enum HSI14DISW {
-    #[doc = "ADC interface can turn on the HSI14 oscillator."] ENABLED,
-    #[doc = "ADC interface can not turn on the HSI14 oscillator."] DISABLED,
+    #[doc = "ADC interface can turn on the HSI14 oscillator."]
+    ENABLED,
+    #[doc = "ADC interface can not turn on the HSI14 oscillator."]
+    DISABLED,
 }
 impl HSI14DISW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI14DISW::ENABLED => false,
@@ -340,19 +348,19 @@ pub struct _HSI14DISW<'a> {
 }
 impl<'a> _HSI14DISW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI14DISW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "ADC interface can turn on the HSI14 oscillator."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSI14DISW::ENABLED)
     }
     #[doc = "ADC interface can not turn on the HSI14 oscillator."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSI14DISW::DISABLED)
     }
@@ -365,7 +373,7 @@ impl<'a> _HSI14DISW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -380,7 +388,7 @@ pub struct _HSI14TRIMW<'a> {
 }
 impl<'a> _HSI14TRIMW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 3;
@@ -391,13 +399,15 @@ impl<'a> _HSI14TRIMW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48ON`"]
 pub enum HSI48ONW {
-    #[doc = "HSI48 oscillator OFF."] DISABLED,
-    #[doc = "HSI48 oscillator ON."] ENABLED,
+    #[doc = "HSI48 oscillator OFF."]
+    DISABLED,
+    #[doc = "HSI48 oscillator ON."]
+    ENABLED,
 }
 impl HSI48ONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI48ONW::DISABLED => false,
@@ -411,19 +421,19 @@ pub struct _HSI48ONW<'a> {
 }
 impl<'a> _HSI48ONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI48ONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI48 oscillator OFF."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSI48ONW::DISABLED)
     }
     #[doc = "HSI48 oscillator ON."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSI48ONW::ENABLED)
     }
@@ -436,7 +446,7 @@ impl<'a> _HSI48ONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -447,12 +457,12 @@ impl<'a> _HSI48ONW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - HSI14 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14on(&self) -> HSI14ONR {
         HSI14ONR::_from({
             const MASK: bool = true;
@@ -461,7 +471,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - HR14 clock ready flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14rdy(&self) -> HSI14RDYR {
         let bits = {
             const MASK: bool = true;
@@ -471,7 +481,7 @@ impl R {
         HSI14RDYR { bits }
     }
     #[doc = "Bit 2 - HSI14 clock request from ADC disable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14dis(&self) -> HSI14DISR {
         HSI14DISR::_from({
             const MASK: bool = true;
@@ -480,7 +490,7 @@ impl R {
         })
     }
     #[doc = "Bits 3:7 - HSI14 clock trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14trim(&self) -> HSI14TRIMR {
         let bits = {
             const MASK: u8 = 31;
@@ -490,7 +500,7 @@ impl R {
         HSI14TRIMR { bits }
     }
     #[doc = "Bits 8:15 - HSI14 clock calibration"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14cal(&self) -> HSI14CALR {
         let bits = {
             const MASK: u8 = 255;
@@ -500,7 +510,7 @@ impl R {
         HSI14CALR { bits }
     }
     #[doc = "Bit 16 - HSI48 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48on(&self) -> HSI48ONR {
         HSI48ONR::_from({
             const MASK: bool = true;
@@ -509,7 +519,7 @@ impl R {
         })
     }
     #[doc = "Bit 17 - HSI48 clock ready flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48rdy(&self) -> HSI48RDYR {
         let bits = {
             const MASK: bool = true;
@@ -519,7 +529,7 @@ impl R {
         HSI48RDYR { bits }
     }
     #[doc = "Bit 24 - HSI48 factory clock calibration"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48cal(&self) -> HSI48CALR {
         let bits = {
             const MASK: bool = true;
@@ -531,33 +541,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 128 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - HSI14 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14on(&mut self) -> _HSI14ONW {
         _HSI14ONW { w: self }
     }
     #[doc = "Bit 2 - HSI14 clock request from ADC disable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14dis(&mut self) -> _HSI14DISW {
         _HSI14DISW { w: self }
     }
     #[doc = "Bits 3:7 - HSI14 clock trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14trim(&mut self) -> _HSI14TRIMW {
         _HSI14TRIMW { w: self }
     }
     #[doc = "Bit 16 - HSI48 clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48on(&mut self) -> _HSI48ONW {
         _HSI48ONW { w: self }
     }

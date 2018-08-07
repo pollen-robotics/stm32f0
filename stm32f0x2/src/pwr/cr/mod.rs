@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct DBPR {
 }
 impl DBPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,7 +67,7 @@ pub struct PLSR {
 }
 impl PLSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -80,17 +78,17 @@ pub struct PVDER {
 }
 impl PVDER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -101,17 +99,17 @@ pub struct CSBFR {
 }
 impl CSBFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -122,17 +120,17 @@ pub struct CWUFR {
 }
 impl CWUFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -143,17 +141,17 @@ pub struct PDDSR {
 }
 impl PDDSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -164,17 +162,17 @@ pub struct LPDSR {
 }
 impl LPDSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -193,7 +191,7 @@ impl<'a> _DBPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -208,7 +206,7 @@ pub struct _PLSW<'a> {
 }
 impl<'a> _PLSW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 5;
@@ -231,7 +229,7 @@ impl<'a> _PVDEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -254,7 +252,7 @@ impl<'a> _CSBFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -277,7 +275,7 @@ impl<'a> _CWUFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -300,7 +298,7 @@ impl<'a> _PDDSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -323,7 +321,7 @@ impl<'a> _LPDSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -334,12 +332,12 @@ impl<'a> _LPDSW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 8 - Disable backup domain write protection"]
-    #[inline(always)]
+    #[inline]
     pub fn dbp(&self) -> DBPR {
         let bits = {
             const MASK: bool = true;
@@ -349,7 +347,7 @@ impl R {
         DBPR { bits }
     }
     #[doc = "Bits 5:7 - PVD level selection"]
-    #[inline(always)]
+    #[inline]
     pub fn pls(&self) -> PLSR {
         let bits = {
             const MASK: u8 = 7;
@@ -359,7 +357,7 @@ impl R {
         PLSR { bits }
     }
     #[doc = "Bit 4 - Power voltage detector enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pvde(&self) -> PVDER {
         let bits = {
             const MASK: bool = true;
@@ -369,7 +367,7 @@ impl R {
         PVDER { bits }
     }
     #[doc = "Bit 3 - Clear standby flag"]
-    #[inline(always)]
+    #[inline]
     pub fn csbf(&self) -> CSBFR {
         let bits = {
             const MASK: bool = true;
@@ -379,7 +377,7 @@ impl R {
         CSBFR { bits }
     }
     #[doc = "Bit 2 - Clear wakeup flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cwuf(&self) -> CWUFR {
         let bits = {
             const MASK: bool = true;
@@ -389,7 +387,7 @@ impl R {
         CWUFR { bits }
     }
     #[doc = "Bit 1 - Power down deepsleep"]
-    #[inline(always)]
+    #[inline]
     pub fn pdds(&self) -> PDDSR {
         let bits = {
             const MASK: bool = true;
@@ -399,7 +397,7 @@ impl R {
         PDDSR { bits }
     }
     #[doc = "Bit 0 - Low-power deep sleep"]
-    #[inline(always)]
+    #[inline]
     pub fn lpds(&self) -> LPDSR {
         let bits = {
             const MASK: bool = true;
@@ -411,48 +409,48 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 8 - Disable backup domain write protection"]
-    #[inline(always)]
+    #[inline]
     pub fn dbp(&mut self) -> _DBPW {
         _DBPW { w: self }
     }
     #[doc = "Bits 5:7 - PVD level selection"]
-    #[inline(always)]
+    #[inline]
     pub fn pls(&mut self) -> _PLSW {
         _PLSW { w: self }
     }
     #[doc = "Bit 4 - Power voltage detector enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pvde(&mut self) -> _PVDEW {
         _PVDEW { w: self }
     }
     #[doc = "Bit 3 - Clear standby flag"]
-    #[inline(always)]
+    #[inline]
     pub fn csbf(&mut self) -> _CSBFW {
         _CSBFW { w: self }
     }
     #[doc = "Bit 2 - Clear wakeup flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cwuf(&mut self) -> _CWUFW {
         _CWUFW { w: self }
     }
     #[doc = "Bit 1 - Power down deepsleep"]
-    #[inline(always)]
+    #[inline]
     pub fn pdds(&mut self) -> _PDDSW {
         _PDDSW { w: self }
     }
     #[doc = "Bit 0 - Low-power deep sleep"]
-    #[inline(always)]
+    #[inline]
     pub fn lpds(&mut self) -> _LPDSW {
         _LPDSW { w: self }
     }

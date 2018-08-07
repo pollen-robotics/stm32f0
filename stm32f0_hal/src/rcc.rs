@@ -68,7 +68,7 @@ pub fn systick() -> u32 {
     return unsafe { ptr::read_volatile(&TICKS) };
 }
 
-exception!(SYS_TICK, tick);
+interrupt!(SYSTICK, tick);
 
 fn tick() {
     unsafe {

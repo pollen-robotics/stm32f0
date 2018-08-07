@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::IDCODE {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,7 +15,7 @@ pub struct DEV_IDR {
 }
 impl DEV_IDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -28,7 +26,7 @@ pub struct DIV_IDR {
 }
 impl DIV_IDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -39,19 +37,19 @@ pub struct REV_IDR {
 }
 impl REV_IDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:11 - Device Identifier"]
-    #[inline(always)]
+    #[inline]
     pub fn dev_id(&self) -> DEV_IDR {
         let bits = {
             const MASK: u16 = 4095;
@@ -61,7 +59,7 @@ impl R {
         DEV_IDR { bits }
     }
     #[doc = "Bits 12:15 - Division Identifier"]
-    #[inline(always)]
+    #[inline]
     pub fn div_id(&self) -> DIV_IDR {
         let bits = {
             const MASK: u8 = 15;
@@ -71,7 +69,7 @@ impl R {
         DIV_IDR { bits }
     }
     #[doc = "Bits 16:31 - Revision Identifier"]
-    #[inline(always)]
+    #[inline]
     pub fn rev_id(&self) -> REV_IDR {
         let bits = {
             const MASK: u16 = 65535;

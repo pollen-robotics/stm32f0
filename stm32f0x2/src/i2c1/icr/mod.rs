@@ -4,7 +4,7 @@ pub struct W {
 }
 impl super::ICR {
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -28,7 +28,7 @@ impl<'a> _ALERTCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -51,7 +51,7 @@ impl<'a> _TIMOUTCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -74,7 +74,7 @@ impl<'a> _PECCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -97,7 +97,7 @@ impl<'a> _OVRCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -120,7 +120,7 @@ impl<'a> _ARLOCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -143,7 +143,7 @@ impl<'a> _BERRCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -166,7 +166,7 @@ impl<'a> _STOPCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -189,7 +189,7 @@ impl<'a> _NACKCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -212,7 +212,7 @@ impl<'a> _ADDRCFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -223,58 +223,58 @@ impl<'a> _ADDRCFW<'a> {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 13 - Alert flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn alertcf(&mut self) -> _ALERTCFW {
         _ALERTCFW { w: self }
     }
     #[doc = "Bit 12 - Timeout detection flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn timoutcf(&mut self) -> _TIMOUTCFW {
         _TIMOUTCFW { w: self }
     }
     #[doc = "Bit 11 - PEC Error flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn peccf(&mut self) -> _PECCFW {
         _PECCFW { w: self }
     }
     #[doc = "Bit 10 - Overrun/Underrun flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn ovrcf(&mut self) -> _OVRCFW {
         _OVRCFW { w: self }
     }
     #[doc = "Bit 9 - Arbitration lost flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn arlocf(&mut self) -> _ARLOCFW {
         _ARLOCFW { w: self }
     }
     #[doc = "Bit 8 - Bus error flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn berrcf(&mut self) -> _BERRCFW {
         _BERRCFW { w: self }
     }
     #[doc = "Bit 5 - Stop detection flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn stopcf(&mut self) -> _STOPCFW {
         _STOPCFW { w: self }
     }
     #[doc = "Bit 4 - Not Acknowledge flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn nackcf(&mut self) -> _NACKCFW {
         _NACKCFW { w: self }
     }
     #[doc = "Bit 3 - Address Matched flag clear"]
-    #[inline(always)]
+    #[inline]
     pub fn addrcf(&mut self) -> _ADDRCFW {
         _ADDRCFW { w: self }
     }

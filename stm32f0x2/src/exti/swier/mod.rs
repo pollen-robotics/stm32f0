@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SWIER {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::SWIER {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::SWIER {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct SWIER0R {
 }
 impl SWIER0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct SWIER1R {
 }
 impl SWIER1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct SWIER2R {
 }
 impl SWIER2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct SWIER3R {
 }
 impl SWIER3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct SWIER4R {
 }
 impl SWIER4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct SWIER5R {
 }
 impl SWIER5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct SWIER6R {
 }
 impl SWIER6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct SWIER7R {
 }
 impl SWIER7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct SWIER8R {
 }
 impl SWIER8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +235,17 @@ pub struct SWIER9R {
 }
 impl SWIER9R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +256,17 @@ pub struct SWIER10R {
 }
 impl SWIER10R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +277,17 @@ pub struct SWIER11R {
 }
 impl SWIER11R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +298,17 @@ pub struct SWIER12R {
 }
 impl SWIER12R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -321,17 +319,17 @@ pub struct SWIER13R {
 }
 impl SWIER13R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -342,17 +340,17 @@ pub struct SWIER14R {
 }
 impl SWIER14R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -363,17 +361,17 @@ pub struct SWIER15R {
 }
 impl SWIER15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -384,17 +382,17 @@ pub struct SWIER16R {
 }
 impl SWIER16R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -405,17 +403,17 @@ pub struct SWIER17R {
 }
 impl SWIER17R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -426,17 +424,17 @@ pub struct SWIER19R {
 }
 impl SWIER19R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -455,7 +453,7 @@ impl<'a> _SWIER0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -478,7 +476,7 @@ impl<'a> _SWIER1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -501,7 +499,7 @@ impl<'a> _SWIER2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -524,7 +522,7 @@ impl<'a> _SWIER3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -547,7 +545,7 @@ impl<'a> _SWIER4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -570,7 +568,7 @@ impl<'a> _SWIER5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -593,7 +591,7 @@ impl<'a> _SWIER6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -616,7 +614,7 @@ impl<'a> _SWIER7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -639,7 +637,7 @@ impl<'a> _SWIER8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -662,7 +660,7 @@ impl<'a> _SWIER9W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -685,7 +683,7 @@ impl<'a> _SWIER10W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -708,7 +706,7 @@ impl<'a> _SWIER11W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -731,7 +729,7 @@ impl<'a> _SWIER12W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -754,7 +752,7 @@ impl<'a> _SWIER13W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -777,7 +775,7 @@ impl<'a> _SWIER14W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -800,7 +798,7 @@ impl<'a> _SWIER15W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -823,7 +821,7 @@ impl<'a> _SWIER16W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -846,7 +844,7 @@ impl<'a> _SWIER17W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -869,7 +867,7 @@ impl<'a> _SWIER19W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -880,12 +878,12 @@ impl<'a> _SWIER19W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Software Interrupt on line 0"]
-    #[inline(always)]
+    #[inline]
     pub fn swier0(&self) -> SWIER0R {
         let bits = {
             const MASK: bool = true;
@@ -895,7 +893,7 @@ impl R {
         SWIER0R { bits }
     }
     #[doc = "Bit 1 - Software Interrupt on line 1"]
-    #[inline(always)]
+    #[inline]
     pub fn swier1(&self) -> SWIER1R {
         let bits = {
             const MASK: bool = true;
@@ -905,7 +903,7 @@ impl R {
         SWIER1R { bits }
     }
     #[doc = "Bit 2 - Software Interrupt on line 2"]
-    #[inline(always)]
+    #[inline]
     pub fn swier2(&self) -> SWIER2R {
         let bits = {
             const MASK: bool = true;
@@ -915,7 +913,7 @@ impl R {
         SWIER2R { bits }
     }
     #[doc = "Bit 3 - Software Interrupt on line 3"]
-    #[inline(always)]
+    #[inline]
     pub fn swier3(&self) -> SWIER3R {
         let bits = {
             const MASK: bool = true;
@@ -925,7 +923,7 @@ impl R {
         SWIER3R { bits }
     }
     #[doc = "Bit 4 - Software Interrupt on line 4"]
-    #[inline(always)]
+    #[inline]
     pub fn swier4(&self) -> SWIER4R {
         let bits = {
             const MASK: bool = true;
@@ -935,7 +933,7 @@ impl R {
         SWIER4R { bits }
     }
     #[doc = "Bit 5 - Software Interrupt on line 5"]
-    #[inline(always)]
+    #[inline]
     pub fn swier5(&self) -> SWIER5R {
         let bits = {
             const MASK: bool = true;
@@ -945,7 +943,7 @@ impl R {
         SWIER5R { bits }
     }
     #[doc = "Bit 6 - Software Interrupt on line 6"]
-    #[inline(always)]
+    #[inline]
     pub fn swier6(&self) -> SWIER6R {
         let bits = {
             const MASK: bool = true;
@@ -955,7 +953,7 @@ impl R {
         SWIER6R { bits }
     }
     #[doc = "Bit 7 - Software Interrupt on line 7"]
-    #[inline(always)]
+    #[inline]
     pub fn swier7(&self) -> SWIER7R {
         let bits = {
             const MASK: bool = true;
@@ -965,7 +963,7 @@ impl R {
         SWIER7R { bits }
     }
     #[doc = "Bit 8 - Software Interrupt on line 8"]
-    #[inline(always)]
+    #[inline]
     pub fn swier8(&self) -> SWIER8R {
         let bits = {
             const MASK: bool = true;
@@ -975,7 +973,7 @@ impl R {
         SWIER8R { bits }
     }
     #[doc = "Bit 9 - Software Interrupt on line 9"]
-    #[inline(always)]
+    #[inline]
     pub fn swier9(&self) -> SWIER9R {
         let bits = {
             const MASK: bool = true;
@@ -985,7 +983,7 @@ impl R {
         SWIER9R { bits }
     }
     #[doc = "Bit 10 - Software Interrupt on line 10"]
-    #[inline(always)]
+    #[inline]
     pub fn swier10(&self) -> SWIER10R {
         let bits = {
             const MASK: bool = true;
@@ -995,7 +993,7 @@ impl R {
         SWIER10R { bits }
     }
     #[doc = "Bit 11 - Software Interrupt on line 11"]
-    #[inline(always)]
+    #[inline]
     pub fn swier11(&self) -> SWIER11R {
         let bits = {
             const MASK: bool = true;
@@ -1005,7 +1003,7 @@ impl R {
         SWIER11R { bits }
     }
     #[doc = "Bit 12 - Software Interrupt on line 12"]
-    #[inline(always)]
+    #[inline]
     pub fn swier12(&self) -> SWIER12R {
         let bits = {
             const MASK: bool = true;
@@ -1015,7 +1013,7 @@ impl R {
         SWIER12R { bits }
     }
     #[doc = "Bit 13 - Software Interrupt on line 13"]
-    #[inline(always)]
+    #[inline]
     pub fn swier13(&self) -> SWIER13R {
         let bits = {
             const MASK: bool = true;
@@ -1025,7 +1023,7 @@ impl R {
         SWIER13R { bits }
     }
     #[doc = "Bit 14 - Software Interrupt on line 14"]
-    #[inline(always)]
+    #[inline]
     pub fn swier14(&self) -> SWIER14R {
         let bits = {
             const MASK: bool = true;
@@ -1035,7 +1033,7 @@ impl R {
         SWIER14R { bits }
     }
     #[doc = "Bit 15 - Software Interrupt on line 15"]
-    #[inline(always)]
+    #[inline]
     pub fn swier15(&self) -> SWIER15R {
         let bits = {
             const MASK: bool = true;
@@ -1045,7 +1043,7 @@ impl R {
         SWIER15R { bits }
     }
     #[doc = "Bit 16 - Software Interrupt on line 16"]
-    #[inline(always)]
+    #[inline]
     pub fn swier16(&self) -> SWIER16R {
         let bits = {
             const MASK: bool = true;
@@ -1055,7 +1053,7 @@ impl R {
         SWIER16R { bits }
     }
     #[doc = "Bit 17 - Software Interrupt on line 17"]
-    #[inline(always)]
+    #[inline]
     pub fn swier17(&self) -> SWIER17R {
         let bits = {
             const MASK: bool = true;
@@ -1065,7 +1063,7 @@ impl R {
         SWIER17R { bits }
     }
     #[doc = "Bit 19 - Software Interrupt on line 19"]
-    #[inline(always)]
+    #[inline]
     pub fn swier19(&self) -> SWIER19R {
         let bits = {
             const MASK: bool = true;
@@ -1077,108 +1075,108 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Software Interrupt on line 0"]
-    #[inline(always)]
+    #[inline]
     pub fn swier0(&mut self) -> _SWIER0W {
         _SWIER0W { w: self }
     }
     #[doc = "Bit 1 - Software Interrupt on line 1"]
-    #[inline(always)]
+    #[inline]
     pub fn swier1(&mut self) -> _SWIER1W {
         _SWIER1W { w: self }
     }
     #[doc = "Bit 2 - Software Interrupt on line 2"]
-    #[inline(always)]
+    #[inline]
     pub fn swier2(&mut self) -> _SWIER2W {
         _SWIER2W { w: self }
     }
     #[doc = "Bit 3 - Software Interrupt on line 3"]
-    #[inline(always)]
+    #[inline]
     pub fn swier3(&mut self) -> _SWIER3W {
         _SWIER3W { w: self }
     }
     #[doc = "Bit 4 - Software Interrupt on line 4"]
-    #[inline(always)]
+    #[inline]
     pub fn swier4(&mut self) -> _SWIER4W {
         _SWIER4W { w: self }
     }
     #[doc = "Bit 5 - Software Interrupt on line 5"]
-    #[inline(always)]
+    #[inline]
     pub fn swier5(&mut self) -> _SWIER5W {
         _SWIER5W { w: self }
     }
     #[doc = "Bit 6 - Software Interrupt on line 6"]
-    #[inline(always)]
+    #[inline]
     pub fn swier6(&mut self) -> _SWIER6W {
         _SWIER6W { w: self }
     }
     #[doc = "Bit 7 - Software Interrupt on line 7"]
-    #[inline(always)]
+    #[inline]
     pub fn swier7(&mut self) -> _SWIER7W {
         _SWIER7W { w: self }
     }
     #[doc = "Bit 8 - Software Interrupt on line 8"]
-    #[inline(always)]
+    #[inline]
     pub fn swier8(&mut self) -> _SWIER8W {
         _SWIER8W { w: self }
     }
     #[doc = "Bit 9 - Software Interrupt on line 9"]
-    #[inline(always)]
+    #[inline]
     pub fn swier9(&mut self) -> _SWIER9W {
         _SWIER9W { w: self }
     }
     #[doc = "Bit 10 - Software Interrupt on line 10"]
-    #[inline(always)]
+    #[inline]
     pub fn swier10(&mut self) -> _SWIER10W {
         _SWIER10W { w: self }
     }
     #[doc = "Bit 11 - Software Interrupt on line 11"]
-    #[inline(always)]
+    #[inline]
     pub fn swier11(&mut self) -> _SWIER11W {
         _SWIER11W { w: self }
     }
     #[doc = "Bit 12 - Software Interrupt on line 12"]
-    #[inline(always)]
+    #[inline]
     pub fn swier12(&mut self) -> _SWIER12W {
         _SWIER12W { w: self }
     }
     #[doc = "Bit 13 - Software Interrupt on line 13"]
-    #[inline(always)]
+    #[inline]
     pub fn swier13(&mut self) -> _SWIER13W {
         _SWIER13W { w: self }
     }
     #[doc = "Bit 14 - Software Interrupt on line 14"]
-    #[inline(always)]
+    #[inline]
     pub fn swier14(&mut self) -> _SWIER14W {
         _SWIER14W { w: self }
     }
     #[doc = "Bit 15 - Software Interrupt on line 15"]
-    #[inline(always)]
+    #[inline]
     pub fn swier15(&mut self) -> _SWIER15W {
         _SWIER15W { w: self }
     }
     #[doc = "Bit 16 - Software Interrupt on line 16"]
-    #[inline(always)]
+    #[inline]
     pub fn swier16(&mut self) -> _SWIER16W {
         _SWIER16W { w: self }
     }
     #[doc = "Bit 17 - Software Interrupt on line 17"]
-    #[inline(always)]
+    #[inline]
     pub fn swier17(&mut self) -> _SWIER17W {
         _SWIER17W { w: self }
     }
     #[doc = "Bit 19 - Software Interrupt on line 19"]
-    #[inline(always)]
+    #[inline]
     pub fn swier19(&mut self) -> _SWIER19W {
         _SWIER19W { w: self }
     }

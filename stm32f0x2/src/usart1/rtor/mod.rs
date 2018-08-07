@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::RTOR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::RTOR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::RTOR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct BLENR {
 }
 impl BLENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -59,7 +57,7 @@ pub struct RTOR {
 }
 impl RTOR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
@@ -70,7 +68,7 @@ pub struct _BLENW<'a> {
 }
 impl<'a> _BLENW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 24;
@@ -85,7 +83,7 @@ pub struct _RTOW<'a> {
 }
 impl<'a> _RTOW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u32) -> &'a mut W {
         const MASK: u32 = 16777215;
         const OFFSET: u8 = 0;
@@ -96,12 +94,12 @@ impl<'a> _RTOW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 24:31 - Block Length"]
-    #[inline(always)]
+    #[inline]
     pub fn blen(&self) -> BLENR {
         let bits = {
             const MASK: u8 = 255;
@@ -111,7 +109,7 @@ impl R {
         BLENR { bits }
     }
     #[doc = "Bits 0:23 - Receiver timeout value"]
-    #[inline(always)]
+    #[inline]
     pub fn rto(&self) -> RTOR {
         let bits = {
             const MASK: u32 = 16777215;
@@ -123,23 +121,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 24:31 - Block Length"]
-    #[inline(always)]
+    #[inline]
     pub fn blen(&mut self) -> _BLENW {
         _BLENW { w: self }
     }
     #[doc = "Bits 0:23 - Receiver timeout value"]
-    #[inline(always)]
+    #[inline]
     pub fn rto(&mut self) -> _RTOW {
         _RTOW { w: self }
     }

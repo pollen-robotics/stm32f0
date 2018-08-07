@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::IOHCR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::IOHCR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::IOHCR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct G6_IO4R {
 }
 impl G6_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct G6_IO3R {
 }
 impl G6_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct G6_IO2R {
 }
 impl G6_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct G6_IO1R {
 }
 impl G6_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct G5_IO4R {
 }
 impl G5_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct G5_IO3R {
 }
 impl G5_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct G5_IO2R {
 }
 impl G5_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct G5_IO1R {
 }
 impl G5_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct G4_IO4R {
 }
 impl G4_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +235,17 @@ pub struct G4_IO3R {
 }
 impl G4_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +256,17 @@ pub struct G4_IO2R {
 }
 impl G4_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +277,17 @@ pub struct G4_IO1R {
 }
 impl G4_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +298,17 @@ pub struct G3_IO4R {
 }
 impl G3_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -321,17 +319,17 @@ pub struct G3_IO3R {
 }
 impl G3_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -342,17 +340,17 @@ pub struct G3_IO2R {
 }
 impl G3_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -363,17 +361,17 @@ pub struct G3_IO1R {
 }
 impl G3_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -384,17 +382,17 @@ pub struct G2_IO4R {
 }
 impl G2_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -405,17 +403,17 @@ pub struct G2_IO3R {
 }
 impl G2_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -426,17 +424,17 @@ pub struct G2_IO2R {
 }
 impl G2_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -447,17 +445,17 @@ pub struct G2_IO1R {
 }
 impl G2_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -468,17 +466,17 @@ pub struct G1_IO4R {
 }
 impl G1_IO4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -489,17 +487,17 @@ pub struct G1_IO3R {
 }
 impl G1_IO3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -510,17 +508,17 @@ pub struct G1_IO2R {
 }
 impl G1_IO2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -531,17 +529,17 @@ pub struct G1_IO1R {
 }
 impl G1_IO1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -560,7 +558,7 @@ impl<'a> _G6_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -583,7 +581,7 @@ impl<'a> _G6_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -606,7 +604,7 @@ impl<'a> _G6_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -629,7 +627,7 @@ impl<'a> _G6_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -652,7 +650,7 @@ impl<'a> _G5_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -675,7 +673,7 @@ impl<'a> _G5_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -698,7 +696,7 @@ impl<'a> _G5_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -721,7 +719,7 @@ impl<'a> _G5_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -744,7 +742,7 @@ impl<'a> _G4_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -767,7 +765,7 @@ impl<'a> _G4_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -790,7 +788,7 @@ impl<'a> _G4_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -813,7 +811,7 @@ impl<'a> _G4_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -836,7 +834,7 @@ impl<'a> _G3_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -859,7 +857,7 @@ impl<'a> _G3_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -882,7 +880,7 @@ impl<'a> _G3_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -905,7 +903,7 @@ impl<'a> _G3_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -928,7 +926,7 @@ impl<'a> _G2_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -951,7 +949,7 @@ impl<'a> _G2_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -974,7 +972,7 @@ impl<'a> _G2_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -997,7 +995,7 @@ impl<'a> _G2_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -1020,7 +1018,7 @@ impl<'a> _G1_IO4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -1043,7 +1041,7 @@ impl<'a> _G1_IO3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -1066,7 +1064,7 @@ impl<'a> _G1_IO2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -1089,7 +1087,7 @@ impl<'a> _G1_IO1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -1100,12 +1098,12 @@ impl<'a> _G1_IO1W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 23 - G6_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io4(&self) -> G6_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1115,7 +1113,7 @@ impl R {
         G6_IO4R { bits }
     }
     #[doc = "Bit 22 - G6_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io3(&self) -> G6_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1125,7 +1123,7 @@ impl R {
         G6_IO3R { bits }
     }
     #[doc = "Bit 21 - G6_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io2(&self) -> G6_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1135,7 +1133,7 @@ impl R {
         G6_IO2R { bits }
     }
     #[doc = "Bit 20 - G6_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io1(&self) -> G6_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1145,7 +1143,7 @@ impl R {
         G6_IO1R { bits }
     }
     #[doc = "Bit 19 - G5_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io4(&self) -> G5_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1155,7 +1153,7 @@ impl R {
         G5_IO4R { bits }
     }
     #[doc = "Bit 18 - G5_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io3(&self) -> G5_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1165,7 +1163,7 @@ impl R {
         G5_IO3R { bits }
     }
     #[doc = "Bit 17 - G5_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io2(&self) -> G5_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1175,7 +1173,7 @@ impl R {
         G5_IO2R { bits }
     }
     #[doc = "Bit 16 - G5_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io1(&self) -> G5_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1185,7 +1183,7 @@ impl R {
         G5_IO1R { bits }
     }
     #[doc = "Bit 15 - G4_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io4(&self) -> G4_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1195,7 +1193,7 @@ impl R {
         G4_IO4R { bits }
     }
     #[doc = "Bit 14 - G4_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io3(&self) -> G4_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1205,7 +1203,7 @@ impl R {
         G4_IO3R { bits }
     }
     #[doc = "Bit 13 - G4_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io2(&self) -> G4_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1215,7 +1213,7 @@ impl R {
         G4_IO2R { bits }
     }
     #[doc = "Bit 12 - G4_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io1(&self) -> G4_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1225,7 +1223,7 @@ impl R {
         G4_IO1R { bits }
     }
     #[doc = "Bit 11 - G3_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io4(&self) -> G3_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1235,7 +1233,7 @@ impl R {
         G3_IO4R { bits }
     }
     #[doc = "Bit 10 - G3_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io3(&self) -> G3_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1245,7 +1243,7 @@ impl R {
         G3_IO3R { bits }
     }
     #[doc = "Bit 9 - G3_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io2(&self) -> G3_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1255,7 +1253,7 @@ impl R {
         G3_IO2R { bits }
     }
     #[doc = "Bit 8 - G3_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io1(&self) -> G3_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1265,7 +1263,7 @@ impl R {
         G3_IO1R { bits }
     }
     #[doc = "Bit 7 - G2_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io4(&self) -> G2_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1275,7 +1273,7 @@ impl R {
         G2_IO4R { bits }
     }
     #[doc = "Bit 6 - G2_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io3(&self) -> G2_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1285,7 +1283,7 @@ impl R {
         G2_IO3R { bits }
     }
     #[doc = "Bit 5 - G2_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io2(&self) -> G2_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1295,7 +1293,7 @@ impl R {
         G2_IO2R { bits }
     }
     #[doc = "Bit 4 - G2_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io1(&self) -> G2_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1305,7 +1303,7 @@ impl R {
         G2_IO1R { bits }
     }
     #[doc = "Bit 3 - G1_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io4(&self) -> G1_IO4R {
         let bits = {
             const MASK: bool = true;
@@ -1315,7 +1313,7 @@ impl R {
         G1_IO4R { bits }
     }
     #[doc = "Bit 2 - G1_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io3(&self) -> G1_IO3R {
         let bits = {
             const MASK: bool = true;
@@ -1325,7 +1323,7 @@ impl R {
         G1_IO3R { bits }
     }
     #[doc = "Bit 1 - G1_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io2(&self) -> G1_IO2R {
         let bits = {
             const MASK: bool = true;
@@ -1335,7 +1333,7 @@ impl R {
         G1_IO2R { bits }
     }
     #[doc = "Bit 0 - G1_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io1(&self) -> G1_IO1R {
         let bits = {
             const MASK: bool = true;
@@ -1347,133 +1345,133 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 4294967295 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 23 - G6_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io4(&mut self) -> _G6_IO4W {
         _G6_IO4W { w: self }
     }
     #[doc = "Bit 22 - G6_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io3(&mut self) -> _G6_IO3W {
         _G6_IO3W { w: self }
     }
     #[doc = "Bit 21 - G6_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io2(&mut self) -> _G6_IO2W {
         _G6_IO2W { w: self }
     }
     #[doc = "Bit 20 - G6_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g6_io1(&mut self) -> _G6_IO1W {
         _G6_IO1W { w: self }
     }
     #[doc = "Bit 19 - G5_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io4(&mut self) -> _G5_IO4W {
         _G5_IO4W { w: self }
     }
     #[doc = "Bit 18 - G5_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io3(&mut self) -> _G5_IO3W {
         _G5_IO3W { w: self }
     }
     #[doc = "Bit 17 - G5_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io2(&mut self) -> _G5_IO2W {
         _G5_IO2W { w: self }
     }
     #[doc = "Bit 16 - G5_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g5_io1(&mut self) -> _G5_IO1W {
         _G5_IO1W { w: self }
     }
     #[doc = "Bit 15 - G4_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io4(&mut self) -> _G4_IO4W {
         _G4_IO4W { w: self }
     }
     #[doc = "Bit 14 - G4_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io3(&mut self) -> _G4_IO3W {
         _G4_IO3W { w: self }
     }
     #[doc = "Bit 13 - G4_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io2(&mut self) -> _G4_IO2W {
         _G4_IO2W { w: self }
     }
     #[doc = "Bit 12 - G4_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g4_io1(&mut self) -> _G4_IO1W {
         _G4_IO1W { w: self }
     }
     #[doc = "Bit 11 - G3_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io4(&mut self) -> _G3_IO4W {
         _G3_IO4W { w: self }
     }
     #[doc = "Bit 10 - G3_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io3(&mut self) -> _G3_IO3W {
         _G3_IO3W { w: self }
     }
     #[doc = "Bit 9 - G3_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io2(&mut self) -> _G3_IO2W {
         _G3_IO2W { w: self }
     }
     #[doc = "Bit 8 - G3_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g3_io1(&mut self) -> _G3_IO1W {
         _G3_IO1W { w: self }
     }
     #[doc = "Bit 7 - G2_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io4(&mut self) -> _G2_IO4W {
         _G2_IO4W { w: self }
     }
     #[doc = "Bit 6 - G2_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io3(&mut self) -> _G2_IO3W {
         _G2_IO3W { w: self }
     }
     #[doc = "Bit 5 - G2_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io2(&mut self) -> _G2_IO2W {
         _G2_IO2W { w: self }
     }
     #[doc = "Bit 4 - G2_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g2_io1(&mut self) -> _G2_IO1W {
         _G2_IO1W { w: self }
     }
     #[doc = "Bit 3 - G1_IO4 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io4(&mut self) -> _G1_IO4W {
         _G1_IO4W { w: self }
     }
     #[doc = "Bit 2 - G1_IO3 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io3(&mut self) -> _G1_IO3W {
         _G1_IO3W { w: self }
     }
     #[doc = "Bit 1 - G1_IO2 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io2(&mut self) -> _G1_IO2W {
         _G1_IO2W { w: self }
     }
     #[doc = "Bit 0 - G1_IO1 Schmitt trigger hysteresis mode"]
-    #[inline(always)]
+    #[inline]
     pub fn g1_io1(&mut self) -> _G1_IO1W {
         _G1_IO1W { w: self }
     }

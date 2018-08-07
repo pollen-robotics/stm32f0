@@ -1,15 +1,11 @@
+use core::panic::PanicInfo;
+
 #[cfg(feature = "serial_panic")]
 use core::fmt::Write;
 
-#[lang = "panic_fmt"]
-#[allow(unused_variables)]
+#[panic_implementation]
 #[no_mangle]
-pub unsafe extern "C" fn panic_fmt(
-    msg: ::core::fmt::Arguments,
-    file: &'static str,
-    line: u32,
-    column: u32,
-) -> ! {
+pub fn panic(_: &PanicInfo) -> ! {
     #[cfg(feature = "serial_panic")]
     {
         if let Some(ref mut log) = serial_panic::LOG {

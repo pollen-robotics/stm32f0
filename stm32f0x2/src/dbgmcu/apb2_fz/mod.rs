@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::APB2_FZ {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::APB2_FZ {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::APB2_FZ {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct DBG_TIM1_STOPR {
 }
 impl DBG_TIM1_STOPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct DBG_TIM15_STOPR {
 }
 impl DBG_TIM15_STOPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct DBG_TIM16_STOPR {
 }
 impl DBG_TIM16_STOPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct DBG_TIM17_STOPR {
 }
 impl DBG_TIM17_STOPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -140,7 +138,7 @@ impl<'a> _DBG_TIM1_STOPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -163,7 +161,7 @@ impl<'a> _DBG_TIM15_STOPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -186,7 +184,7 @@ impl<'a> _DBG_TIM16_STOPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -209,7 +207,7 @@ impl<'a> _DBG_TIM17_STOPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -220,12 +218,12 @@ impl<'a> _DBG_TIM17_STOPW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 11 - TIM1 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim1_stop(&self) -> DBG_TIM1_STOPR {
         let bits = {
             const MASK: bool = true;
@@ -235,7 +233,7 @@ impl R {
         DBG_TIM1_STOPR { bits }
     }
     #[doc = "Bit 16 - TIM15 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim15_stop(&self) -> DBG_TIM15_STOPR {
         let bits = {
             const MASK: bool = true;
@@ -245,7 +243,7 @@ impl R {
         DBG_TIM15_STOPR { bits }
     }
     #[doc = "Bit 17 - TIM16 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim16_stop(&self) -> DBG_TIM16_STOPR {
         let bits = {
             const MASK: bool = true;
@@ -255,7 +253,7 @@ impl R {
         DBG_TIM16_STOPR { bits }
     }
     #[doc = "Bit 18 - TIM17 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim17_stop(&self) -> DBG_TIM17_STOPR {
         let bits = {
             const MASK: bool = true;
@@ -267,33 +265,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 11 - TIM1 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim1_stop(&mut self) -> _DBG_TIM1_STOPW {
         _DBG_TIM1_STOPW { w: self }
     }
     #[doc = "Bit 16 - TIM15 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim15_stop(&mut self) -> _DBG_TIM15_STOPW {
         _DBG_TIM15_STOPW { w: self }
     }
     #[doc = "Bit 17 - TIM16 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim16_stop(&mut self) -> _DBG_TIM16_STOPW {
         _DBG_TIM16_STOPW { w: self }
     }
     #[doc = "Bit 18 - TIM17 counter stopped when core is halted"]
-    #[inline(always)]
+    #[inline]
     pub fn dbg_tim17_stop(&mut self) -> _DBG_TIM17_STOPW {
         _DBG_TIM17_STOPW { w: self }
     }

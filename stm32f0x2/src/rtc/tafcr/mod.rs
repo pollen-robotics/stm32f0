@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::TAFCR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::TAFCR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::TAFCR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct PC15MODER {
 }
 impl PC15MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct PC15VALUER {
 }
 impl PC15VALUER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct PC14MODER {
 }
 impl PC14MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct PC14VALUER {
 }
 impl PC14VALUER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct PC13MODER {
 }
 impl PC13MODER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct PC13VALUER {
 }
 impl PC13VALUER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct TAMP_PUDISR {
 }
 impl TAMP_PUDISR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,7 +193,7 @@ pub struct TAMP_PRCHR {
 }
 impl TAMP_PRCHR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -206,7 +204,7 @@ pub struct TAMPFLTR {
 }
 impl TAMPFLTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -217,7 +215,7 @@ pub struct TAMPFREQR {
 }
 impl TAMPFREQR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -228,17 +226,17 @@ pub struct TAMPTSR {
 }
 impl TAMPTSR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -249,17 +247,17 @@ pub struct TAMP2_TRGR {
 }
 impl TAMP2_TRGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -270,17 +268,17 @@ pub struct TAMP2ER {
 }
 impl TAMP2ER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -291,17 +289,17 @@ pub struct TAMPIER {
 }
 impl TAMPIER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -312,17 +310,17 @@ pub struct TAMP1TRGR {
 }
 impl TAMP1TRGR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -333,17 +331,17 @@ pub struct TAMP1ER {
 }
 impl TAMP1ER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -362,7 +360,7 @@ impl<'a> _PC15MODEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -385,7 +383,7 @@ impl<'a> _PC15VALUEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -408,7 +406,7 @@ impl<'a> _PC14MODEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -431,7 +429,7 @@ impl<'a> _PC14VALUEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -454,7 +452,7 @@ impl<'a> _PC13MODEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -477,7 +475,7 @@ impl<'a> _PC13VALUEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -500,7 +498,7 @@ impl<'a> _TAMP_PUDISW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -515,7 +513,7 @@ pub struct _TAMP_PRCHW<'a> {
 }
 impl<'a> _TAMP_PRCHW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 13;
@@ -530,7 +528,7 @@ pub struct _TAMPFLTW<'a> {
 }
 impl<'a> _TAMPFLTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 11;
@@ -545,7 +543,7 @@ pub struct _TAMPFREQW<'a> {
 }
 impl<'a> _TAMPFREQW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 8;
@@ -568,7 +566,7 @@ impl<'a> _TAMPTSW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -591,7 +589,7 @@ impl<'a> _TAMP2_TRGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -614,7 +612,7 @@ impl<'a> _TAMP2EW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -637,7 +635,7 @@ impl<'a> _TAMPIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -660,7 +658,7 @@ impl<'a> _TAMP1TRGW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -683,7 +681,7 @@ impl<'a> _TAMP1EW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -694,12 +692,12 @@ impl<'a> _TAMP1EW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 23 - PC15 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc15mode(&self) -> PC15MODER {
         let bits = {
             const MASK: bool = true;
@@ -709,7 +707,7 @@ impl R {
         PC15MODER { bits }
     }
     #[doc = "Bit 22 - PC15 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc15value(&self) -> PC15VALUER {
         let bits = {
             const MASK: bool = true;
@@ -719,7 +717,7 @@ impl R {
         PC15VALUER { bits }
     }
     #[doc = "Bit 21 - PC14 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc14mode(&self) -> PC14MODER {
         let bits = {
             const MASK: bool = true;
@@ -729,7 +727,7 @@ impl R {
         PC14MODER { bits }
     }
     #[doc = "Bit 20 - PC14 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc14value(&self) -> PC14VALUER {
         let bits = {
             const MASK: bool = true;
@@ -739,7 +737,7 @@ impl R {
         PC14VALUER { bits }
     }
     #[doc = "Bit 19 - PC13 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc13mode(&self) -> PC13MODER {
         let bits = {
             const MASK: bool = true;
@@ -749,7 +747,7 @@ impl R {
         PC13MODER { bits }
     }
     #[doc = "Bit 18 - RTC_ALARM output type/PC13 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc13value(&self) -> PC13VALUER {
         let bits = {
             const MASK: bool = true;
@@ -759,7 +757,7 @@ impl R {
         PC13VALUER { bits }
     }
     #[doc = "Bit 15 - RTC_TAMPx pull-up disable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp_pudis(&self) -> TAMP_PUDISR {
         let bits = {
             const MASK: bool = true;
@@ -769,7 +767,7 @@ impl R {
         TAMP_PUDISR { bits }
     }
     #[doc = "Bits 13:14 - RTC_TAMPx precharge duration"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp_prch(&self) -> TAMP_PRCHR {
         let bits = {
             const MASK: u8 = 3;
@@ -779,7 +777,7 @@ impl R {
         TAMP_PRCHR { bits }
     }
     #[doc = "Bits 11:12 - RTC_TAMPx filter count"]
-    #[inline(always)]
+    #[inline]
     pub fn tampflt(&self) -> TAMPFLTR {
         let bits = {
             const MASK: u8 = 3;
@@ -789,7 +787,7 @@ impl R {
         TAMPFLTR { bits }
     }
     #[doc = "Bits 8:10 - Tamper sampling frequency"]
-    #[inline(always)]
+    #[inline]
     pub fn tampfreq(&self) -> TAMPFREQR {
         let bits = {
             const MASK: u8 = 7;
@@ -799,7 +797,7 @@ impl R {
         TAMPFREQR { bits }
     }
     #[doc = "Bit 7 - Activate timestamp on tamper detection event"]
-    #[inline(always)]
+    #[inline]
     pub fn tampts(&self) -> TAMPTSR {
         let bits = {
             const MASK: bool = true;
@@ -809,7 +807,7 @@ impl R {
         TAMPTSR { bits }
     }
     #[doc = "Bit 4 - Active level for RTC_TAMP2 input"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp2_trg(&self) -> TAMP2_TRGR {
         let bits = {
             const MASK: bool = true;
@@ -819,7 +817,7 @@ impl R {
         TAMP2_TRGR { bits }
     }
     #[doc = "Bit 3 - RTC_TAMP2 input detection enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp2e(&self) -> TAMP2ER {
         let bits = {
             const MASK: bool = true;
@@ -829,7 +827,7 @@ impl R {
         TAMP2ER { bits }
     }
     #[doc = "Bit 2 - Tamper interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tampie(&self) -> TAMPIER {
         let bits = {
             const MASK: bool = true;
@@ -839,7 +837,7 @@ impl R {
         TAMPIER { bits }
     }
     #[doc = "Bit 1 - Active level for RTC_TAMP1 input"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp1trg(&self) -> TAMP1TRGR {
         let bits = {
             const MASK: bool = true;
@@ -849,7 +847,7 @@ impl R {
         TAMP1TRGR { bits }
     }
     #[doc = "Bit 0 - RTC_TAMP1 input detection enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp1e(&self) -> TAMP1ER {
         let bits = {
             const MASK: bool = true;
@@ -861,93 +859,93 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 23 - PC15 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc15mode(&mut self) -> _PC15MODEW {
         _PC15MODEW { w: self }
     }
     #[doc = "Bit 22 - PC15 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc15value(&mut self) -> _PC15VALUEW {
         _PC15VALUEW { w: self }
     }
     #[doc = "Bit 21 - PC14 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc14mode(&mut self) -> _PC14MODEW {
         _PC14MODEW { w: self }
     }
     #[doc = "Bit 20 - PC14 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc14value(&mut self) -> _PC14VALUEW {
         _PC14VALUEW { w: self }
     }
     #[doc = "Bit 19 - PC13 mode"]
-    #[inline(always)]
+    #[inline]
     pub fn pc13mode(&mut self) -> _PC13MODEW {
         _PC13MODEW { w: self }
     }
     #[doc = "Bit 18 - RTC_ALARM output type/PC13 value"]
-    #[inline(always)]
+    #[inline]
     pub fn pc13value(&mut self) -> _PC13VALUEW {
         _PC13VALUEW { w: self }
     }
     #[doc = "Bit 15 - RTC_TAMPx pull-up disable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp_pudis(&mut self) -> _TAMP_PUDISW {
         _TAMP_PUDISW { w: self }
     }
     #[doc = "Bits 13:14 - RTC_TAMPx precharge duration"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp_prch(&mut self) -> _TAMP_PRCHW {
         _TAMP_PRCHW { w: self }
     }
     #[doc = "Bits 11:12 - RTC_TAMPx filter count"]
-    #[inline(always)]
+    #[inline]
     pub fn tampflt(&mut self) -> _TAMPFLTW {
         _TAMPFLTW { w: self }
     }
     #[doc = "Bits 8:10 - Tamper sampling frequency"]
-    #[inline(always)]
+    #[inline]
     pub fn tampfreq(&mut self) -> _TAMPFREQW {
         _TAMPFREQW { w: self }
     }
     #[doc = "Bit 7 - Activate timestamp on tamper detection event"]
-    #[inline(always)]
+    #[inline]
     pub fn tampts(&mut self) -> _TAMPTSW {
         _TAMPTSW { w: self }
     }
     #[doc = "Bit 4 - Active level for RTC_TAMP2 input"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp2_trg(&mut self) -> _TAMP2_TRGW {
         _TAMP2_TRGW { w: self }
     }
     #[doc = "Bit 3 - RTC_TAMP2 input detection enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp2e(&mut self) -> _TAMP2EW {
         _TAMP2EW { w: self }
     }
     #[doc = "Bit 2 - Tamper interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tampie(&mut self) -> _TAMPIEW {
         _TAMPIEW { w: self }
     }
     #[doc = "Bit 1 - Active level for RTC_TAMP1 input"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp1trg(&mut self) -> _TAMP1TRGW {
         _TAMP1TRGW { w: self }
     }
     #[doc = "Bit 0 - RTC_TAMP1 input detection enable"]
-    #[inline(always)]
+    #[inline]
     pub fn tamp1e(&mut self) -> _TAMP1EW {
         _TAMP1EW { w: self }
     }

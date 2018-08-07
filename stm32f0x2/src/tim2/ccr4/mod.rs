@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CCR4 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CCR4 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CCR4 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct CCR4_HR {
 }
 impl CCR4_HR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +57,7 @@ pub struct CCR4_LR {
 }
 impl CCR4_LR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -70,7 +68,7 @@ pub struct _CCR4_HW<'a> {
 }
 impl<'a> _CCR4_HW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 16;
@@ -85,7 +83,7 @@ pub struct _CCR4_LW<'a> {
 }
 impl<'a> _CCR4_LW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -96,12 +94,12 @@ impl<'a> _CCR4_LW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - High Capture/Compare value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr4_h(&self) -> CCR4_HR {
         let bits = {
             const MASK: u16 = 65535;
@@ -111,7 +109,7 @@ impl R {
         CCR4_HR { bits }
     }
     #[doc = "Bits 0:15 - Low Capture/Compare value"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr4_l(&self) -> CCR4_LR {
         let bits = {
             const MASK: u16 = 65535;
@@ -123,23 +121,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:31 - High Capture/Compare value (TIM2 only)"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr4_h(&mut self) -> _CCR4_HW {
         _CCR4_HW { w: self }
     }
     #[doc = "Bits 0:15 - Low Capture/Compare value"]
-    #[inline(always)]
+    #[inline]
     pub fn ccr4_l(&mut self) -> _CCR4_LW {
         _CCR4_LW { w: self }
     }

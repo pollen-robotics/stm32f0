@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CFR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CFR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct EWIR {
 }
 impl EWIR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,7 +67,7 @@ pub struct WDGTBR {
 }
 impl WDGTBR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -80,7 +78,7 @@ pub struct WR {
 }
 impl WR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -99,7 +97,7 @@ impl<'a> _EWIW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -114,7 +112,7 @@ pub struct _WDGTBW<'a> {
 }
 impl<'a> _WDGTBW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 7;
@@ -129,7 +127,7 @@ pub struct _WW<'a> {
 }
 impl<'a> _WW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 127;
         const OFFSET: u8 = 0;
@@ -140,12 +138,12 @@ impl<'a> _WW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 9 - Early wakeup interrupt"]
-    #[inline(always)]
+    #[inline]
     pub fn ewi(&self) -> EWIR {
         let bits = {
             const MASK: bool = true;
@@ -155,7 +153,7 @@ impl R {
         EWIR { bits }
     }
     #[doc = "Bits 7:8 - Timer base"]
-    #[inline(always)]
+    #[inline]
     pub fn wdgtb(&self) -> WDGTBR {
         let bits = {
             const MASK: u8 = 3;
@@ -165,7 +163,7 @@ impl R {
         WDGTBR { bits }
     }
     #[doc = "Bits 0:6 - 7-bit window value"]
-    #[inline(always)]
+    #[inline]
     pub fn w(&self) -> WR {
         let bits = {
             const MASK: u8 = 127;
@@ -177,28 +175,28 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 127 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 9 - Early wakeup interrupt"]
-    #[inline(always)]
+    #[inline]
     pub fn ewi(&mut self) -> _EWIW {
         _EWIW { w: self }
     }
     #[doc = "Bits 7:8 - Timer base"]
-    #[inline(always)]
+    #[inline]
     pub fn wdgtb(&mut self) -> _WDGTBW {
         _WDGTBW { w: self }
     }
     #[doc = "Bits 0:6 - 7-bit window value"]
-    #[inline(always)]
+    #[inline]
     pub fn w(&mut self) -> _WW {
         _WW { w: self }
     }

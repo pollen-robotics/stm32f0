@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CIR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CIR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CIR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct LSIRDYFR {
 }
 impl LSIRDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct LSERDYFR {
 }
 impl LSERDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct HSIRDYFR {
 }
 impl HSIRDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct HSERDYFR {
 }
 impl HSERDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct PLLRDYFR {
 }
 impl PLLRDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct HSI14RDYFR {
 }
 impl HSI14RDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct HSI48RDYFR {
 }
 impl HSI48RDYFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct CSSFR {
 }
 impl CSSFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -213,22 +211,24 @@ impl CSSFR {
 #[doc = "Possible values of the field `LSIRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSIRDYIER {
-    #[doc = "LSI ready interrupt disabled."] DISABLED,
-    #[doc = "LSI ready interrupt enabled."] ENABLED,
+    #[doc = "LSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSI ready interrupt enabled."]
+    ENABLED,
 }
 impl LSIRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             LSIRDYIER::DISABLED => false,
@@ -237,7 +237,7 @@ impl LSIRDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> LSIRDYIER {
         match value {
             false => LSIRDYIER::DISABLED,
@@ -245,12 +245,12 @@ impl LSIRDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == LSIRDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == LSIRDYIER::ENABLED
     }
@@ -258,22 +258,24 @@ impl LSIRDYIER {
 #[doc = "Possible values of the field `LSERDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSERDYIER {
-    #[doc = "LSE ready interrupt disabled."] DISABLED,
-    #[doc = "LSE ready interrupt enabled."] ENABLED,
+    #[doc = "LSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSE ready interrupt enabled."]
+    ENABLED,
 }
 impl LSERDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             LSERDYIER::DISABLED => false,
@@ -282,7 +284,7 @@ impl LSERDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> LSERDYIER {
         match value {
             false => LSERDYIER::DISABLED,
@@ -290,12 +292,12 @@ impl LSERDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == LSERDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == LSERDYIER::ENABLED
     }
@@ -303,22 +305,24 @@ impl LSERDYIER {
 #[doc = "Possible values of the field `HSIRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSIRDYIER {
-    #[doc = "HSI ready interrupt disabled."] DISABLED,
-    #[doc = "HSI ready interrupt enabled."] ENABLED,
+    #[doc = "HSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI ready interrupt enabled."]
+    ENABLED,
 }
 impl HSIRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSIRDYIER::DISABLED => false,
@@ -327,7 +331,7 @@ impl HSIRDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSIRDYIER {
         match value {
             false => HSIRDYIER::DISABLED,
@@ -335,12 +339,12 @@ impl HSIRDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSIRDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSIRDYIER::ENABLED
     }
@@ -348,22 +352,24 @@ impl HSIRDYIER {
 #[doc = "Possible values of the field `HSERDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSERDYIER {
-    #[doc = "HSE ready interrupt disabled."] DISABLED,
-    #[doc = "HSE ready interrupt enabled."] ENABLED,
+    #[doc = "HSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSE ready interrupt enabled."]
+    ENABLED,
 }
 impl HSERDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSERDYIER::DISABLED => false,
@@ -372,7 +378,7 @@ impl HSERDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSERDYIER {
         match value {
             false => HSERDYIER::DISABLED,
@@ -380,12 +386,12 @@ impl HSERDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSERDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSERDYIER::ENABLED
     }
@@ -393,22 +399,24 @@ impl HSERDYIER {
 #[doc = "Possible values of the field `PLLRDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLRDYIER {
-    #[doc = "PLL lock interrupt disabled."] DISABLED,
-    #[doc = "PLL lock interrupt enabled."] ENABLED,
+    #[doc = "PLL lock interrupt disabled."]
+    DISABLED,
+    #[doc = "PLL lock interrupt enabled."]
+    ENABLED,
 }
 impl PLLRDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PLLRDYIER::DISABLED => false,
@@ -417,7 +425,7 @@ impl PLLRDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PLLRDYIER {
         match value {
             false => PLLRDYIER::DISABLED,
@@ -425,12 +433,12 @@ impl PLLRDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == PLLRDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == PLLRDYIER::ENABLED
     }
@@ -438,22 +446,24 @@ impl PLLRDYIER {
 #[doc = "Possible values of the field `HSI14RDYE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI14RDYER {
-    #[doc = "HSI14 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI14 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI14 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI14 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI14RDYER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSI14RDYER::DISABLED => false,
@@ -462,7 +472,7 @@ impl HSI14RDYER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSI14RDYER {
         match value {
             false => HSI14RDYER::DISABLED,
@@ -470,12 +480,12 @@ impl HSI14RDYER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSI14RDYER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSI14RDYER::ENABLED
     }
@@ -483,22 +493,24 @@ impl HSI14RDYER {
 #[doc = "Possible values of the field `HSI48RDYIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSI48RDYIER {
-    #[doc = "HSI48 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI48 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI48 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI48 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI48RDYIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSI48RDYIER::DISABLED => false,
@@ -507,7 +519,7 @@ impl HSI48RDYIER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSI48RDYIER {
         match value {
             false => HSI48RDYIER::DISABLED,
@@ -515,25 +527,27 @@ impl HSI48RDYIER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSI48RDYIER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSI48RDYIER::ENABLED
     }
 }
 #[doc = "Values that can be written to the field `LSIRDYIE`"]
 pub enum LSIRDYIEW {
-    #[doc = "LSI ready interrupt disabled."] DISABLED,
-    #[doc = "LSI ready interrupt enabled."] ENABLED,
+    #[doc = "LSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSI ready interrupt enabled."]
+    ENABLED,
 }
 impl LSIRDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSIRDYIEW::DISABLED => false,
@@ -547,19 +561,19 @@ pub struct _LSIRDYIEW<'a> {
 }
 impl<'a> _LSIRDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSIRDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "LSI ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(LSIRDYIEW::DISABLED)
     }
     #[doc = "LSI ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(LSIRDYIEW::ENABLED)
     }
@@ -572,7 +586,7 @@ impl<'a> _LSIRDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -583,13 +597,15 @@ impl<'a> _LSIRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LSERDYIE`"]
 pub enum LSERDYIEW {
-    #[doc = "LSE ready interrupt disabled."] DISABLED,
-    #[doc = "LSE ready interrupt enabled."] ENABLED,
+    #[doc = "LSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "LSE ready interrupt enabled."]
+    ENABLED,
 }
 impl LSERDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSERDYIEW::DISABLED => false,
@@ -603,19 +619,19 @@ pub struct _LSERDYIEW<'a> {
 }
 impl<'a> _LSERDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSERDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "LSE ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(LSERDYIEW::DISABLED)
     }
     #[doc = "LSE ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(LSERDYIEW::ENABLED)
     }
@@ -628,7 +644,7 @@ impl<'a> _LSERDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -639,13 +655,15 @@ impl<'a> _LSERDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSIRDYIE`"]
 pub enum HSIRDYIEW {
-    #[doc = "HSI ready interrupt disabled."] DISABLED,
-    #[doc = "HSI ready interrupt enabled."] ENABLED,
+    #[doc = "HSI ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI ready interrupt enabled."]
+    ENABLED,
 }
 impl HSIRDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSIRDYIEW::DISABLED => false,
@@ -659,19 +677,19 @@ pub struct _HSIRDYIEW<'a> {
 }
 impl<'a> _HSIRDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSIRDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSIRDYIEW::DISABLED)
     }
     #[doc = "HSI ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSIRDYIEW::ENABLED)
     }
@@ -684,7 +702,7 @@ impl<'a> _HSIRDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -695,13 +713,15 @@ impl<'a> _HSIRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSERDYIE`"]
 pub enum HSERDYIEW {
-    #[doc = "HSE ready interrupt disabled."] DISABLED,
-    #[doc = "HSE ready interrupt enabled."] ENABLED,
+    #[doc = "HSE ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSE ready interrupt enabled."]
+    ENABLED,
 }
 impl HSERDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSERDYIEW::DISABLED => false,
@@ -715,19 +735,19 @@ pub struct _HSERDYIEW<'a> {
 }
 impl<'a> _HSERDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSERDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSE ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSERDYIEW::DISABLED)
     }
     #[doc = "HSE ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSERDYIEW::ENABLED)
     }
@@ -740,7 +760,7 @@ impl<'a> _HSERDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -751,13 +771,15 @@ impl<'a> _HSERDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLRDYIE`"]
 pub enum PLLRDYIEW {
-    #[doc = "PLL lock interrupt disabled."] DISABLED,
-    #[doc = "PLL lock interrupt enabled."] ENABLED,
+    #[doc = "PLL lock interrupt disabled."]
+    DISABLED,
+    #[doc = "PLL lock interrupt enabled."]
+    ENABLED,
 }
 impl PLLRDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PLLRDYIEW::DISABLED => false,
@@ -771,19 +793,19 @@ pub struct _PLLRDYIEW<'a> {
 }
 impl<'a> _PLLRDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLRDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "PLL lock interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(PLLRDYIEW::DISABLED)
     }
     #[doc = "PLL lock interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(PLLRDYIEW::ENABLED)
     }
@@ -796,7 +818,7 @@ impl<'a> _PLLRDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -807,13 +829,15 @@ impl<'a> _PLLRDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14RDYE`"]
 pub enum HSI14RDYEW {
-    #[doc = "HSI14 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI14 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI14 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI14 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI14RDYEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI14RDYEW::DISABLED => false,
@@ -827,19 +851,19 @@ pub struct _HSI14RDYEW<'a> {
 }
 impl<'a> _HSI14RDYEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI14RDYEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI14 ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSI14RDYEW::DISABLED)
     }
     #[doc = "HSI14 ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSI14RDYEW::ENABLED)
     }
@@ -852,7 +876,7 @@ impl<'a> _HSI14RDYEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -863,13 +887,15 @@ impl<'a> _HSI14RDYEW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48RDYIE`"]
 pub enum HSI48RDYIEW {
-    #[doc = "HSI48 ready interrupt disabled."] DISABLED,
-    #[doc = "HSI48 ready interrupt enabled."] ENABLED,
+    #[doc = "HSI48 ready interrupt disabled."]
+    DISABLED,
+    #[doc = "HSI48 ready interrupt enabled."]
+    ENABLED,
 }
 impl HSI48RDYIEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI48RDYIEW::DISABLED => false,
@@ -883,19 +909,19 @@ pub struct _HSI48RDYIEW<'a> {
 }
 impl<'a> _HSI48RDYIEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI48RDYIEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI48 ready interrupt disabled."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSI48RDYIEW::DISABLED)
     }
     #[doc = "HSI48 ready interrupt enabled."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSI48RDYIEW::ENABLED)
     }
@@ -908,7 +934,7 @@ impl<'a> _HSI48RDYIEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -919,12 +945,13 @@ impl<'a> _HSI48RDYIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LSIRDYC`"]
 pub enum LSIRDYCW {
-    #[doc = "LSIRDYF Cleared."] RESET,
+    #[doc = "LSIRDYF Cleared."]
+    RESET,
 }
 impl LSIRDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSIRDYCW::RESET => true,
@@ -937,14 +964,14 @@ pub struct _LSIRDYCW<'a> {
 }
 impl<'a> _LSIRDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSIRDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "LSIRDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(LSIRDYCW::RESET)
     }
@@ -957,7 +984,7 @@ impl<'a> _LSIRDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -968,12 +995,13 @@ impl<'a> _LSIRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `LSERDYC`"]
 pub enum LSERDYCW {
-    #[doc = "LSERDYF Cleared."] RESET,
+    #[doc = "LSERDYF Cleared."]
+    RESET,
 }
 impl LSERDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSERDYCW::RESET => true,
@@ -986,14 +1014,14 @@ pub struct _LSERDYCW<'a> {
 }
 impl<'a> _LSERDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSERDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "LSERDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(LSERDYCW::RESET)
     }
@@ -1006,7 +1034,7 @@ impl<'a> _LSERDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -1017,12 +1045,13 @@ impl<'a> _LSERDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSIRDYC`"]
 pub enum HSIRDYCW {
-    #[doc = "HSIRDYF Cleared."] RESET,
+    #[doc = "HSIRDYF Cleared."]
+    RESET,
 }
 impl HSIRDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSIRDYCW::RESET => true,
@@ -1035,14 +1064,14 @@ pub struct _HSIRDYCW<'a> {
 }
 impl<'a> _HSIRDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSIRDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSIRDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(HSIRDYCW::RESET)
     }
@@ -1055,7 +1084,7 @@ impl<'a> _HSIRDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -1066,12 +1095,13 @@ impl<'a> _HSIRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSERDYC`"]
 pub enum HSERDYCW {
-    #[doc = "HSERDYF Cleared."] RESET,
+    #[doc = "HSERDYF Cleared."]
+    RESET,
 }
 impl HSERDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSERDYCW::RESET => true,
@@ -1084,14 +1114,14 @@ pub struct _HSERDYCW<'a> {
 }
 impl<'a> _HSERDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSERDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSERDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(HSERDYCW::RESET)
     }
@@ -1104,7 +1134,7 @@ impl<'a> _HSERDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -1115,12 +1145,13 @@ impl<'a> _HSERDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLRDYC`"]
 pub enum PLLRDYCW {
-    #[doc = "PLLRDYF Cleared."] RESET,
+    #[doc = "PLLRDYF Cleared."]
+    RESET,
 }
 impl PLLRDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PLLRDYCW::RESET => true,
@@ -1133,14 +1164,14 @@ pub struct _PLLRDYCW<'a> {
 }
 impl<'a> _PLLRDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLRDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "PLLRDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(PLLRDYCW::RESET)
     }
@@ -1153,7 +1184,7 @@ impl<'a> _PLLRDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -1164,12 +1195,13 @@ impl<'a> _PLLRDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI14RDYC`"]
 pub enum HSI14RDYCW {
-    #[doc = "HSI14RDYF Cleared."] RESET,
+    #[doc = "HSI14RDYF Cleared."]
+    RESET,
 }
 impl HSI14RDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI14RDYCW::RESET => true,
@@ -1182,14 +1214,14 @@ pub struct _HSI14RDYCW<'a> {
 }
 impl<'a> _HSI14RDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI14RDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI14RDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(HSI14RDYCW::RESET)
     }
@@ -1202,7 +1234,7 @@ impl<'a> _HSI14RDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -1213,12 +1245,13 @@ impl<'a> _HSI14RDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `HSI48RDYC`"]
 pub enum HSI48RDYCW {
-    #[doc = "HSI48RDYF Cleared."] RESET,
+    #[doc = "HSI48RDYF Cleared."]
+    RESET,
 }
 impl HSI48RDYCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSI48RDYCW::RESET => true,
@@ -1231,14 +1264,14 @@ pub struct _HSI48RDYCW<'a> {
 }
 impl<'a> _HSI48RDYCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSI48RDYCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI48RDYF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(HSI48RDYCW::RESET)
     }
@@ -1251,7 +1284,7 @@ impl<'a> _HSI48RDYCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -1262,12 +1295,13 @@ impl<'a> _HSI48RDYCW<'a> {
 }
 #[doc = "Values that can be written to the field `CSSC`"]
 pub enum CSSCW {
-    #[doc = "CSSF Cleared."] RESET,
+    #[doc = "CSSF Cleared."]
+    RESET,
 }
 impl CSSCW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CSSCW::RESET => true,
@@ -1280,14 +1314,14 @@ pub struct _CSSCW<'a> {
 }
 impl<'a> _CSSCW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CSSCW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "CSSF Cleared."]
-    #[inline(always)]
+    #[inline]
     pub fn reset(self) -> &'a mut W {
         self.variant(CSSCW::RESET)
     }
@@ -1300,7 +1334,7 @@ impl<'a> _CSSCW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -1311,12 +1345,12 @@ impl<'a> _CSSCW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - LSI Ready Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn lsirdyf(&self) -> LSIRDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1326,7 +1360,7 @@ impl R {
         LSIRDYFR { bits }
     }
     #[doc = "Bit 1 - LSE Ready Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn lserdyf(&self) -> LSERDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1336,7 +1370,7 @@ impl R {
         LSERDYFR { bits }
     }
     #[doc = "Bit 2 - HSI Ready Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsirdyf(&self) -> HSIRDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1346,7 +1380,7 @@ impl R {
         HSIRDYFR { bits }
     }
     #[doc = "Bit 3 - HSE Ready Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hserdyf(&self) -> HSERDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1356,7 +1390,7 @@ impl R {
         HSERDYFR { bits }
     }
     #[doc = "Bit 4 - PLL Ready Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn pllrdyf(&self) -> PLLRDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1366,7 +1400,7 @@ impl R {
         PLLRDYFR { bits }
     }
     #[doc = "Bit 5 - HSI14 ready interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14rdyf(&self) -> HSI14RDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1376,7 +1410,7 @@ impl R {
         HSI14RDYFR { bits }
     }
     #[doc = "Bit 6 - HSI48 ready interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48rdyf(&self) -> HSI48RDYFR {
         let bits = {
             const MASK: bool = true;
@@ -1386,7 +1420,7 @@ impl R {
         HSI48RDYFR { bits }
     }
     #[doc = "Bit 7 - Clock Security System Interrupt flag"]
-    #[inline(always)]
+    #[inline]
     pub fn cssf(&self) -> CSSFR {
         let bits = {
             const MASK: bool = true;
@@ -1396,7 +1430,7 @@ impl R {
         CSSFR { bits }
     }
     #[doc = "Bit 8 - LSI Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lsirdyie(&self) -> LSIRDYIER {
         LSIRDYIER::_from({
             const MASK: bool = true;
@@ -1405,7 +1439,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - LSE Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lserdyie(&self) -> LSERDYIER {
         LSERDYIER::_from({
             const MASK: bool = true;
@@ -1414,7 +1448,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - HSI Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsirdyie(&self) -> HSIRDYIER {
         HSIRDYIER::_from({
             const MASK: bool = true;
@@ -1423,7 +1457,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - HSE Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hserdyie(&self) -> HSERDYIER {
         HSERDYIER::_from({
             const MASK: bool = true;
@@ -1432,7 +1466,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - PLL Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pllrdyie(&self) -> PLLRDYIER {
         PLLRDYIER::_from({
             const MASK: bool = true;
@@ -1441,7 +1475,7 @@ impl R {
         })
     }
     #[doc = "Bit 13 - HSI14 ready interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14rdye(&self) -> HSI14RDYER {
         HSI14RDYER::_from({
             const MASK: bool = true;
@@ -1450,7 +1484,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - HSI48 ready interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48rdyie(&self) -> HSI48RDYIER {
         HSI48RDYIER::_from({
             const MASK: bool = true;
@@ -1461,88 +1495,88 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 8 - LSI Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lsirdyie(&mut self) -> _LSIRDYIEW {
         _LSIRDYIEW { w: self }
     }
     #[doc = "Bit 9 - LSE Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lserdyie(&mut self) -> _LSERDYIEW {
         _LSERDYIEW { w: self }
     }
     #[doc = "Bit 10 - HSI Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsirdyie(&mut self) -> _HSIRDYIEW {
         _HSIRDYIEW { w: self }
     }
     #[doc = "Bit 11 - HSE Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hserdyie(&mut self) -> _HSERDYIEW {
         _HSERDYIEW { w: self }
     }
     #[doc = "Bit 12 - PLL Ready Interrupt Enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pllrdyie(&mut self) -> _PLLRDYIEW {
         _PLLRDYIEW { w: self }
     }
     #[doc = "Bit 13 - HSI14 ready interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14rdye(&mut self) -> _HSI14RDYEW {
         _HSI14RDYEW { w: self }
     }
     #[doc = "Bit 14 - HSI48 ready interrupt enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48rdyie(&mut self) -> _HSI48RDYIEW {
         _HSI48RDYIEW { w: self }
     }
     #[doc = "Bit 16 - LSI Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn lsirdyc(&mut self) -> _LSIRDYCW {
         _LSIRDYCW { w: self }
     }
     #[doc = "Bit 17 - LSE Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn lserdyc(&mut self) -> _LSERDYCW {
         _LSERDYCW { w: self }
     }
     #[doc = "Bit 18 - HSI Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn hsirdyc(&mut self) -> _HSIRDYCW {
         _HSIRDYCW { w: self }
     }
     #[doc = "Bit 19 - HSE Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn hserdyc(&mut self) -> _HSERDYCW {
         _HSERDYCW { w: self }
     }
     #[doc = "Bit 20 - PLL Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn pllrdyc(&mut self) -> _PLLRDYCW {
         _PLLRDYCW { w: self }
     }
     #[doc = "Bit 21 - HSI 14 MHz Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi14rdyc(&mut self) -> _HSI14RDYCW {
         _HSI14RDYCW { w: self }
     }
     #[doc = "Bit 22 - HSI48 Ready Interrupt Clear"]
-    #[inline(always)]
+    #[inline]
     pub fn hsi48rdyc(&mut self) -> _HSI48RDYCW {
         _HSI48RDYCW { w: self }
     }
     #[doc = "Bit 23 - Clock security system interrupt clear"]
-    #[inline(always)]
+    #[inline]
     pub fn cssc(&mut self) -> _CSSCW {
         _CSSCW { w: self }
     }

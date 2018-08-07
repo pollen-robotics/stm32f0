@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR1 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CR1 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +43,24 @@ impl super::CR1 {
 #[doc = "Possible values of the field `BIDIMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIDIMODER {
-    #[doc = "2-line unidirectional data mode selected"] _2LINE,
-    #[doc = "1-line bidirectional data mode selected"] _1LINE,
+    #[doc = "2-line unidirectional data mode selected"]
+    _2LINE,
+    #[doc = "1-line bidirectional data mode selected"]
+    _1LINE,
 }
 impl BIDIMODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             BIDIMODER::_2LINE => false,
@@ -69,7 +69,7 @@ impl BIDIMODER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> BIDIMODER {
         match value {
             false => BIDIMODER::_2LINE,
@@ -77,12 +77,12 @@ impl BIDIMODER {
         }
     }
     #[doc = "Checks if the value of the field is `_2LINE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_2line(&self) -> bool {
         *self == BIDIMODER::_2LINE
     }
     #[doc = "Checks if the value of the field is `_1LINE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_1line(&self) -> bool {
         *self == BIDIMODER::_1LINE
     }
@@ -90,22 +90,24 @@ impl BIDIMODER {
 #[doc = "Possible values of the field `BIDIOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIDIOER {
-    #[doc = "Output disabled (receive-only mode)"] DISABLE,
-    #[doc = "Output enabled (transmit-only mode)"] ENABLE,
+    #[doc = "Output disabled (receive-only mode)"]
+    DISABLE,
+    #[doc = "Output enabled (transmit-only mode)"]
+    ENABLE,
 }
 impl BIDIOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             BIDIOER::DISABLE => false,
@@ -114,7 +116,7 @@ impl BIDIOER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> BIDIOER {
         match value {
             false => BIDIOER::DISABLE,
@@ -122,12 +124,12 @@ impl BIDIOER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disable(&self) -> bool {
         *self == BIDIOER::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enable(&self) -> bool {
         *self == BIDIOER::ENABLE
     }
@@ -135,22 +137,24 @@ impl BIDIOER {
 #[doc = "Possible values of the field `CRCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCENR {
-    #[doc = "CRC calculation disabled"] DISABLE,
-    #[doc = "CRC calculation Enabled"] ENABLE,
+    #[doc = "CRC calculation disabled"]
+    DISABLE,
+    #[doc = "CRC calculation Enabled"]
+    ENABLE,
 }
 impl CRCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CRCENR::DISABLE => false,
@@ -159,7 +163,7 @@ impl CRCENR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CRCENR {
         match value {
             false => CRCENR::DISABLE,
@@ -167,12 +171,12 @@ impl CRCENR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disable(&self) -> bool {
         *self == CRCENR::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enable(&self) -> bool {
         *self == CRCENR::ENABLE
     }
@@ -180,22 +184,24 @@ impl CRCENR {
 #[doc = "Possible values of the field `CRCNEXT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCNEXTR {
-    #[doc = "Next transmit value is from Tx buffer"] TX,
-    #[doc = "Next transmit value is from Tx CRC register"] TXCRC,
+    #[doc = "Next transmit value is from Tx buffer"]
+    TX,
+    #[doc = "Next transmit value is from Tx CRC register"]
+    TXCRC,
 }
 impl CRCNEXTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CRCNEXTR::TX => false,
@@ -204,7 +210,7 @@ impl CRCNEXTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CRCNEXTR {
         match value {
             false => CRCNEXTR::TX,
@@ -212,12 +218,12 @@ impl CRCNEXTR {
         }
     }
     #[doc = "Checks if the value of the field is `TX`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_tx(&self) -> bool {
         *self == CRCNEXTR::TX
     }
     #[doc = "Checks if the value of the field is `TXCRC`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_tx_crc(&self) -> bool {
         *self == CRCNEXTR::TXCRC
     }
@@ -225,22 +231,24 @@ impl CRCNEXTR {
 #[doc = "Possible values of the field `DFF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFFR {
-    #[doc = "8-bit CRC length"] _8BITS,
-    #[doc = "16-bit CRC length"] _16BITS,
+    #[doc = "8-bit CRC length"]
+    _8BITS,
+    #[doc = "16-bit CRC length"]
+    _16BITS,
 }
 impl DFFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             DFFR::_8BITS => false,
@@ -249,7 +257,7 @@ impl DFFR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> DFFR {
         match value {
             false => DFFR::_8BITS,
@@ -257,12 +265,12 @@ impl DFFR {
         }
     }
     #[doc = "Checks if the value of the field is `_8BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_8bits(&self) -> bool {
         *self == DFFR::_8BITS
     }
     #[doc = "Checks if the value of the field is `_16BITS`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_16bits(&self) -> bool {
         *self == DFFR::_16BITS
     }
@@ -270,22 +278,24 @@ impl DFFR {
 #[doc = "Possible values of the field `RXONLY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXONLYR {
-    #[doc = "Full-duplex (Transmit and receive)"] FULLDUPLEX,
-    #[doc = "Output disabled (Receive-only mode)"] RECEIVEONLY,
+    #[doc = "Full-duplex (Transmit and receive)"]
+    FULLDUPLEX,
+    #[doc = "Output disabled (Receive-only mode)"]
+    RECEIVEONLY,
 }
 impl RXONLYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             RXONLYR::FULLDUPLEX => false,
@@ -294,7 +304,7 @@ impl RXONLYR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> RXONLYR {
         match value {
             false => RXONLYR::FULLDUPLEX,
@@ -302,12 +312,12 @@ impl RXONLYR {
         }
     }
     #[doc = "Checks if the value of the field is `FULLDUPLEX`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_full_duplex(&self) -> bool {
         *self == RXONLYR::FULLDUPLEX
     }
     #[doc = "Checks if the value of the field is `RECEIVEONLY`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_receive_only(&self) -> bool {
         *self == RXONLYR::RECEIVEONLY
     }
@@ -315,22 +325,24 @@ impl RXONLYR {
 #[doc = "Possible values of the field `SSM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSMR {
-    #[doc = "Software slave management disabled"] DISABLED,
-    #[doc = "Software slave management enabled"] ENABLED,
+    #[doc = "Software slave management disabled"]
+    DISABLED,
+    #[doc = "Software slave management enabled"]
+    ENABLED,
 }
 impl SSMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SSMR::DISABLED => false,
@@ -339,7 +351,7 @@ impl SSMR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SSMR {
         match value {
             false => SSMR::DISABLED,
@@ -347,12 +359,12 @@ impl SSMR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == SSMR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == SSMR::ENABLED
     }
@@ -360,22 +372,24 @@ impl SSMR {
 #[doc = "Possible values of the field `SSI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSIR {
-    #[doc = "NSS = 1"] NSSDISABLE,
-    #[doc = "NSS = 0"] NSSENABLE,
+    #[doc = "NSS = 1"]
+    NSSDISABLE,
+    #[doc = "NSS = 0"]
+    NSSENABLE,
 }
 impl SSIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SSIR::NSSDISABLE => false,
@@ -384,7 +398,7 @@ impl SSIR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SSIR {
         match value {
             false => SSIR::NSSDISABLE,
@@ -392,12 +406,12 @@ impl SSIR {
         }
     }
     #[doc = "Checks if the value of the field is `NSSDISABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_nssdisable(&self) -> bool {
         *self == SSIR::NSSDISABLE
     }
     #[doc = "Checks if the value of the field is `NSSENABLE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_nssenable(&self) -> bool {
         *self == SSIR::NSSENABLE
     }
@@ -405,22 +419,24 @@ impl SSIR {
 #[doc = "Possible values of the field `LSBFIRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSBFIRSTR {
-    #[doc = "data is transmitted / received with the MSB first"] MSBFIRST,
-    #[doc = "data is transmitted / received with the LSB first"] LSBFIRST,
+    #[doc = "data is transmitted / received with the MSB first"]
+    MSBFIRST,
+    #[doc = "data is transmitted / received with the LSB first"]
+    LSBFIRST,
 }
 impl LSBFIRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             LSBFIRSTR::MSBFIRST => false,
@@ -429,7 +445,7 @@ impl LSBFIRSTR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> LSBFIRSTR {
         match value {
             false => LSBFIRSTR::MSBFIRST,
@@ -437,12 +453,12 @@ impl LSBFIRSTR {
         }
     }
     #[doc = "Checks if the value of the field is `MSBFIRST`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_msbfirst(&self) -> bool {
         *self == LSBFIRSTR::MSBFIRST
     }
     #[doc = "Checks if the value of the field is `LSBFIRST`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_lsbfirst(&self) -> bool {
         *self == LSBFIRSTR::LSBFIRST
     }
@@ -450,22 +466,24 @@ impl LSBFIRSTR {
 #[doc = "Possible values of the field `SPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPER {
-    #[doc = "Peripheral disabled"] DISABLED,
-    #[doc = "Peripheral enabled"] ENABLED,
+    #[doc = "Peripheral disabled"]
+    DISABLED,
+    #[doc = "Peripheral enabled"]
+    ENABLED,
 }
 impl SPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SPER::DISABLED => false,
@@ -474,7 +492,7 @@ impl SPER {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SPER {
         match value {
             false => SPER::DISABLED,
@@ -482,12 +500,12 @@ impl SPER {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == SPER::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == SPER::ENABLED
     }
@@ -495,18 +513,26 @@ impl SPER {
 #[doc = "Possible values of the field `BR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRR {
-    #[doc = "fPCLK/2"] DIV2,
-    #[doc = "fPCLK/4"] DIV4,
-    #[doc = "fPCLK/8"] DIV8,
-    #[doc = "fPCLK/16"] DIV16,
-    #[doc = "fPCLK/32"] DIV32,
-    #[doc = "fPCLK/64"] DIV64,
-    #[doc = "fPCLK/128"] DIV128,
-    #[doc = "fPCLK/256"] DIV256,
+    #[doc = "fPCLK/2"]
+    DIV2,
+    #[doc = "fPCLK/4"]
+    DIV4,
+    #[doc = "fPCLK/8"]
+    DIV8,
+    #[doc = "fPCLK/16"]
+    DIV16,
+    #[doc = "fPCLK/32"]
+    DIV32,
+    #[doc = "fPCLK/64"]
+    DIV64,
+    #[doc = "fPCLK/128"]
+    DIV128,
+    #[doc = "fPCLK/256"]
+    DIV256,
 }
 impl BRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
             BRR::DIV2 => 0,
@@ -521,7 +547,7 @@ impl BRR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: u8) -> BRR {
         match value {
             0 => BRR::DIV2,
@@ -536,42 +562,42 @@ impl BRR {
         }
     }
     #[doc = "Checks if the value of the field is `DIV2`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div2(&self) -> bool {
         *self == BRR::DIV2
     }
     #[doc = "Checks if the value of the field is `DIV4`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div4(&self) -> bool {
         *self == BRR::DIV4
     }
     #[doc = "Checks if the value of the field is `DIV8`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div8(&self) -> bool {
         *self == BRR::DIV8
     }
     #[doc = "Checks if the value of the field is `DIV16`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div16(&self) -> bool {
         *self == BRR::DIV16
     }
     #[doc = "Checks if the value of the field is `DIV32`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div32(&self) -> bool {
         *self == BRR::DIV32
     }
     #[doc = "Checks if the value of the field is `DIV64`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div64(&self) -> bool {
         *self == BRR::DIV64
     }
     #[doc = "Checks if the value of the field is `DIV128`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div128(&self) -> bool {
         *self == BRR::DIV128
     }
     #[doc = "Checks if the value of the field is `DIV256`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_div256(&self) -> bool {
         *self == BRR::DIV256
     }
@@ -579,22 +605,24 @@ impl BRR {
 #[doc = "Possible values of the field `MSTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTRR {
-    #[doc = "Slave Configuration"] SLAVE,
-    #[doc = "Master Configuration"] MASTER,
+    #[doc = "Slave Configuration"]
+    SLAVE,
+    #[doc = "Master Configuration"]
+    MASTER,
 }
 impl MSTRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             MSTRR::SLAVE => false,
@@ -603,7 +631,7 @@ impl MSTRR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> MSTRR {
         match value {
             false => MSTRR::SLAVE,
@@ -611,12 +639,12 @@ impl MSTRR {
         }
     }
     #[doc = "Checks if the value of the field is `SLAVE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_slave(&self) -> bool {
         *self == MSTRR::SLAVE
     }
     #[doc = "Checks if the value of the field is `MASTER`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_master(&self) -> bool {
         *self == MSTRR::MASTER
     }
@@ -624,22 +652,24 @@ impl MSTRR {
 #[doc = "Possible values of the field `CPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOLR {
-    #[doc = "CK to 0 when idle"] IDLELOW,
-    #[doc = "CK to 1 when idle"] IDLEHIGH,
+    #[doc = "CK to 0 when idle"]
+    IDLELOW,
+    #[doc = "CK to 1 when idle"]
+    IDLEHIGH,
 }
 impl CPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CPOLR::IDLELOW => false,
@@ -648,7 +678,7 @@ impl CPOLR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CPOLR {
         match value {
             false => CPOLR::IDLELOW,
@@ -656,12 +686,12 @@ impl CPOLR {
         }
     }
     #[doc = "Checks if the value of the field is `IDLELOW`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_idle_low(&self) -> bool {
         *self == CPOLR::IDLELOW
     }
     #[doc = "Checks if the value of the field is `IDLEHIGH`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_idle_high(&self) -> bool {
         *self == CPOLR::IDLEHIGH
     }
@@ -669,22 +699,24 @@ impl CPOLR {
 #[doc = "Possible values of the field `CPHA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPHAR {
-    #[doc = "The first clock transition is the first data capture edge"] FIRSTEDGE,
-    #[doc = "The second clock transition is the first data capture edge"] SECONDEDGE,
+    #[doc = "The first clock transition is the first data capture edge"]
+    FIRSTEDGE,
+    #[doc = "The second clock transition is the first data capture edge"]
+    SECONDEDGE,
 }
 impl CPHAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CPHAR::FIRSTEDGE => false,
@@ -693,7 +725,7 @@ impl CPHAR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CPHAR {
         match value {
             false => CPHAR::FIRSTEDGE,
@@ -701,25 +733,27 @@ impl CPHAR {
         }
     }
     #[doc = "Checks if the value of the field is `FIRSTEDGE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_first_edge(&self) -> bool {
         *self == CPHAR::FIRSTEDGE
     }
     #[doc = "Checks if the value of the field is `SECONDEDGE`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_second_edge(&self) -> bool {
         *self == CPHAR::SECONDEDGE
     }
 }
 #[doc = "Values that can be written to the field `BIDIMODE`"]
 pub enum BIDIMODEW {
-    #[doc = "2-line unidirectional data mode selected"] _2LINE,
-    #[doc = "1-line bidirectional data mode selected"] _1LINE,
+    #[doc = "2-line unidirectional data mode selected"]
+    _2LINE,
+    #[doc = "1-line bidirectional data mode selected"]
+    _1LINE,
 }
 impl BIDIMODEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             BIDIMODEW::_2LINE => false,
@@ -733,19 +767,19 @@ pub struct _BIDIMODEW<'a> {
 }
 impl<'a> _BIDIMODEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: BIDIMODEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "2-line unidirectional data mode selected"]
-    #[inline(always)]
+    #[inline]
     pub fn _2line(self) -> &'a mut W {
         self.variant(BIDIMODEW::_2LINE)
     }
     #[doc = "1-line bidirectional data mode selected"]
-    #[inline(always)]
+    #[inline]
     pub fn _1line(self) -> &'a mut W {
         self.variant(BIDIMODEW::_1LINE)
     }
@@ -758,7 +792,7 @@ impl<'a> _BIDIMODEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -769,13 +803,15 @@ impl<'a> _BIDIMODEW<'a> {
 }
 #[doc = "Values that can be written to the field `BIDIOE`"]
 pub enum BIDIOEW {
-    #[doc = "Output disabled (receive-only mode)"] DISABLE,
-    #[doc = "Output enabled (transmit-only mode)"] ENABLE,
+    #[doc = "Output disabled (receive-only mode)"]
+    DISABLE,
+    #[doc = "Output enabled (transmit-only mode)"]
+    ENABLE,
 }
 impl BIDIOEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             BIDIOEW::DISABLE => false,
@@ -789,19 +825,19 @@ pub struct _BIDIOEW<'a> {
 }
 impl<'a> _BIDIOEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: BIDIOEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Output disabled (receive-only mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn disable(self) -> &'a mut W {
         self.variant(BIDIOEW::DISABLE)
     }
     #[doc = "Output enabled (transmit-only mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn enable(self) -> &'a mut W {
         self.variant(BIDIOEW::ENABLE)
     }
@@ -814,7 +850,7 @@ impl<'a> _BIDIOEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -825,13 +861,15 @@ impl<'a> _BIDIOEW<'a> {
 }
 #[doc = "Values that can be written to the field `CRCEN`"]
 pub enum CRCENW {
-    #[doc = "CRC calculation disabled"] DISABLE,
-    #[doc = "CRC calculation Enabled"] ENABLE,
+    #[doc = "CRC calculation disabled"]
+    DISABLE,
+    #[doc = "CRC calculation Enabled"]
+    ENABLE,
 }
 impl CRCENW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CRCENW::DISABLE => false,
@@ -845,19 +883,19 @@ pub struct _CRCENW<'a> {
 }
 impl<'a> _CRCENW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CRCENW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "CRC calculation disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disable(self) -> &'a mut W {
         self.variant(CRCENW::DISABLE)
     }
     #[doc = "CRC calculation Enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enable(self) -> &'a mut W {
         self.variant(CRCENW::ENABLE)
     }
@@ -870,7 +908,7 @@ impl<'a> _CRCENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -881,13 +919,15 @@ impl<'a> _CRCENW<'a> {
 }
 #[doc = "Values that can be written to the field `CRCNEXT`"]
 pub enum CRCNEXTW {
-    #[doc = "Next transmit value is from Tx buffer"] TX,
-    #[doc = "Next transmit value is from Tx CRC register"] TXCRC,
+    #[doc = "Next transmit value is from Tx buffer"]
+    TX,
+    #[doc = "Next transmit value is from Tx CRC register"]
+    TXCRC,
 }
 impl CRCNEXTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CRCNEXTW::TX => false,
@@ -901,19 +941,19 @@ pub struct _CRCNEXTW<'a> {
 }
 impl<'a> _CRCNEXTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CRCNEXTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Next transmit value is from Tx buffer"]
-    #[inline(always)]
+    #[inline]
     pub fn tx(self) -> &'a mut W {
         self.variant(CRCNEXTW::TX)
     }
     #[doc = "Next transmit value is from Tx CRC register"]
-    #[inline(always)]
+    #[inline]
     pub fn tx_crc(self) -> &'a mut W {
         self.variant(CRCNEXTW::TXCRC)
     }
@@ -926,7 +966,7 @@ impl<'a> _CRCNEXTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -937,13 +977,15 @@ impl<'a> _CRCNEXTW<'a> {
 }
 #[doc = "Values that can be written to the field `DFF`"]
 pub enum DFFW {
-    #[doc = "8-bit CRC length"] _8BITS,
-    #[doc = "16-bit CRC length"] _16BITS,
+    #[doc = "8-bit CRC length"]
+    _8BITS,
+    #[doc = "16-bit CRC length"]
+    _16BITS,
 }
 impl DFFW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             DFFW::_8BITS => false,
@@ -957,19 +999,19 @@ pub struct _DFFW<'a> {
 }
 impl<'a> _DFFW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: DFFW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "8-bit CRC length"]
-    #[inline(always)]
+    #[inline]
     pub fn _8bits(self) -> &'a mut W {
         self.variant(DFFW::_8BITS)
     }
     #[doc = "16-bit CRC length"]
-    #[inline(always)]
+    #[inline]
     pub fn _16bits(self) -> &'a mut W {
         self.variant(DFFW::_16BITS)
     }
@@ -982,7 +1024,7 @@ impl<'a> _DFFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -993,13 +1035,15 @@ impl<'a> _DFFW<'a> {
 }
 #[doc = "Values that can be written to the field `RXONLY`"]
 pub enum RXONLYW {
-    #[doc = "Full-duplex (Transmit and receive)"] FULLDUPLEX,
-    #[doc = "Output disabled (Receive-only mode)"] RECEIVEONLY,
+    #[doc = "Full-duplex (Transmit and receive)"]
+    FULLDUPLEX,
+    #[doc = "Output disabled (Receive-only mode)"]
+    RECEIVEONLY,
 }
 impl RXONLYW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             RXONLYW::FULLDUPLEX => false,
@@ -1013,19 +1057,19 @@ pub struct _RXONLYW<'a> {
 }
 impl<'a> _RXONLYW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: RXONLYW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Full-duplex (Transmit and receive)"]
-    #[inline(always)]
+    #[inline]
     pub fn full_duplex(self) -> &'a mut W {
         self.variant(RXONLYW::FULLDUPLEX)
     }
     #[doc = "Output disabled (Receive-only mode)"]
-    #[inline(always)]
+    #[inline]
     pub fn receive_only(self) -> &'a mut W {
         self.variant(RXONLYW::RECEIVEONLY)
     }
@@ -1038,7 +1082,7 @@ impl<'a> _RXONLYW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -1049,13 +1093,15 @@ impl<'a> _RXONLYW<'a> {
 }
 #[doc = "Values that can be written to the field `SSM`"]
 pub enum SSMW {
-    #[doc = "Software slave management disabled"] DISABLED,
-    #[doc = "Software slave management enabled"] ENABLED,
+    #[doc = "Software slave management disabled"]
+    DISABLED,
+    #[doc = "Software slave management enabled"]
+    ENABLED,
 }
 impl SSMW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SSMW::DISABLED => false,
@@ -1069,19 +1115,19 @@ pub struct _SSMW<'a> {
 }
 impl<'a> _SSMW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SSMW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Software slave management disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(SSMW::DISABLED)
     }
     #[doc = "Software slave management enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(SSMW::ENABLED)
     }
@@ -1094,7 +1140,7 @@ impl<'a> _SSMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -1105,13 +1151,15 @@ impl<'a> _SSMW<'a> {
 }
 #[doc = "Values that can be written to the field `SSI`"]
 pub enum SSIW {
-    #[doc = "NSS = 1"] NSSDISABLE,
-    #[doc = "NSS = 0"] NSSENABLE,
+    #[doc = "NSS = 1"]
+    NSSDISABLE,
+    #[doc = "NSS = 0"]
+    NSSENABLE,
 }
 impl SSIW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SSIW::NSSDISABLE => false,
@@ -1125,19 +1173,19 @@ pub struct _SSIW<'a> {
 }
 impl<'a> _SSIW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SSIW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "NSS = 1"]
-    #[inline(always)]
+    #[inline]
     pub fn nssdisable(self) -> &'a mut W {
         self.variant(SSIW::NSSDISABLE)
     }
     #[doc = "NSS = 0"]
-    #[inline(always)]
+    #[inline]
     pub fn nssenable(self) -> &'a mut W {
         self.variant(SSIW::NSSENABLE)
     }
@@ -1150,7 +1198,7 @@ impl<'a> _SSIW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -1161,13 +1209,15 @@ impl<'a> _SSIW<'a> {
 }
 #[doc = "Values that can be written to the field `LSBFIRST`"]
 pub enum LSBFIRSTW {
-    #[doc = "data is transmitted / received with the MSB first"] MSBFIRST,
-    #[doc = "data is transmitted / received with the LSB first"] LSBFIRST,
+    #[doc = "data is transmitted / received with the MSB first"]
+    MSBFIRST,
+    #[doc = "data is transmitted / received with the LSB first"]
+    LSBFIRST,
 }
 impl LSBFIRSTW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             LSBFIRSTW::MSBFIRST => false,
@@ -1181,19 +1231,19 @@ pub struct _LSBFIRSTW<'a> {
 }
 impl<'a> _LSBFIRSTW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: LSBFIRSTW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "data is transmitted / received with the MSB first"]
-    #[inline(always)]
+    #[inline]
     pub fn msbfirst(self) -> &'a mut W {
         self.variant(LSBFIRSTW::MSBFIRST)
     }
     #[doc = "data is transmitted / received with the LSB first"]
-    #[inline(always)]
+    #[inline]
     pub fn lsbfirst(self) -> &'a mut W {
         self.variant(LSBFIRSTW::LSBFIRST)
     }
@@ -1206,7 +1256,7 @@ impl<'a> _LSBFIRSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -1217,13 +1267,15 @@ impl<'a> _LSBFIRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `SPE`"]
 pub enum SPEW {
-    #[doc = "Peripheral disabled"] DISABLED,
-    #[doc = "Peripheral enabled"] ENABLED,
+    #[doc = "Peripheral disabled"]
+    DISABLED,
+    #[doc = "Peripheral enabled"]
+    ENABLED,
 }
 impl SPEW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SPEW::DISABLED => false,
@@ -1237,19 +1289,19 @@ pub struct _SPEW<'a> {
 }
 impl<'a> _SPEW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SPEW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Peripheral disabled"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(SPEW::DISABLED)
     }
     #[doc = "Peripheral enabled"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(SPEW::ENABLED)
     }
@@ -1262,7 +1314,7 @@ impl<'a> _SPEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -1273,19 +1325,27 @@ impl<'a> _SPEW<'a> {
 }
 #[doc = "Values that can be written to the field `BR`"]
 pub enum BRW {
-    #[doc = "fPCLK/2"] DIV2,
-    #[doc = "fPCLK/4"] DIV4,
-    #[doc = "fPCLK/8"] DIV8,
-    #[doc = "fPCLK/16"] DIV16,
-    #[doc = "fPCLK/32"] DIV32,
-    #[doc = "fPCLK/64"] DIV64,
-    #[doc = "fPCLK/128"] DIV128,
-    #[doc = "fPCLK/256"] DIV256,
+    #[doc = "fPCLK/2"]
+    DIV2,
+    #[doc = "fPCLK/4"]
+    DIV4,
+    #[doc = "fPCLK/8"]
+    DIV8,
+    #[doc = "fPCLK/16"]
+    DIV16,
+    #[doc = "fPCLK/32"]
+    DIV32,
+    #[doc = "fPCLK/64"]
+    DIV64,
+    #[doc = "fPCLK/128"]
+    DIV128,
+    #[doc = "fPCLK/256"]
+    DIV256,
 }
 impl BRW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
             BRW::DIV2 => 0,
@@ -1305,54 +1365,54 @@ pub struct _BRW<'a> {
 }
 impl<'a> _BRW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: BRW) -> &'a mut W {
         {
             self.bits(variant._bits())
         }
     }
     #[doc = "fPCLK/2"]
-    #[inline(always)]
+    #[inline]
     pub fn div2(self) -> &'a mut W {
         self.variant(BRW::DIV2)
     }
     #[doc = "fPCLK/4"]
-    #[inline(always)]
+    #[inline]
     pub fn div4(self) -> &'a mut W {
         self.variant(BRW::DIV4)
     }
     #[doc = "fPCLK/8"]
-    #[inline(always)]
+    #[inline]
     pub fn div8(self) -> &'a mut W {
         self.variant(BRW::DIV8)
     }
     #[doc = "fPCLK/16"]
-    #[inline(always)]
+    #[inline]
     pub fn div16(self) -> &'a mut W {
         self.variant(BRW::DIV16)
     }
     #[doc = "fPCLK/32"]
-    #[inline(always)]
+    #[inline]
     pub fn div32(self) -> &'a mut W {
         self.variant(BRW::DIV32)
     }
     #[doc = "fPCLK/64"]
-    #[inline(always)]
+    #[inline]
     pub fn div64(self) -> &'a mut W {
         self.variant(BRW::DIV64)
     }
     #[doc = "fPCLK/128"]
-    #[inline(always)]
+    #[inline]
     pub fn div128(self) -> &'a mut W {
         self.variant(BRW::DIV128)
     }
     #[doc = "fPCLK/256"]
-    #[inline(always)]
+    #[inline]
     pub fn div256(self) -> &'a mut W {
         self.variant(BRW::DIV256)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 3;
@@ -1363,13 +1423,15 @@ impl<'a> _BRW<'a> {
 }
 #[doc = "Values that can be written to the field `MSTR`"]
 pub enum MSTRW {
-    #[doc = "Slave Configuration"] SLAVE,
-    #[doc = "Master Configuration"] MASTER,
+    #[doc = "Slave Configuration"]
+    SLAVE,
+    #[doc = "Master Configuration"]
+    MASTER,
 }
 impl MSTRW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             MSTRW::SLAVE => false,
@@ -1383,19 +1445,19 @@ pub struct _MSTRW<'a> {
 }
 impl<'a> _MSTRW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MSTRW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Slave Configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn slave(self) -> &'a mut W {
         self.variant(MSTRW::SLAVE)
     }
     #[doc = "Master Configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn master(self) -> &'a mut W {
         self.variant(MSTRW::MASTER)
     }
@@ -1408,7 +1470,7 @@ impl<'a> _MSTRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -1419,13 +1481,15 @@ impl<'a> _MSTRW<'a> {
 }
 #[doc = "Values that can be written to the field `CPOL`"]
 pub enum CPOLW {
-    #[doc = "CK to 0 when idle"] IDLELOW,
-    #[doc = "CK to 1 when idle"] IDLEHIGH,
+    #[doc = "CK to 0 when idle"]
+    IDLELOW,
+    #[doc = "CK to 1 when idle"]
+    IDLEHIGH,
 }
 impl CPOLW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CPOLW::IDLELOW => false,
@@ -1439,19 +1503,19 @@ pub struct _CPOLW<'a> {
 }
 impl<'a> _CPOLW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CPOLW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "CK to 0 when idle"]
-    #[inline(always)]
+    #[inline]
     pub fn idle_low(self) -> &'a mut W {
         self.variant(CPOLW::IDLELOW)
     }
     #[doc = "CK to 1 when idle"]
-    #[inline(always)]
+    #[inline]
     pub fn idle_high(self) -> &'a mut W {
         self.variant(CPOLW::IDLEHIGH)
     }
@@ -1464,7 +1528,7 @@ impl<'a> _CPOLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -1475,13 +1539,15 @@ impl<'a> _CPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `CPHA`"]
 pub enum CPHAW {
-    #[doc = "The first clock transition is the first data capture edge"] FIRSTEDGE,
-    #[doc = "The second clock transition is the first data capture edge"] SECONDEDGE,
+    #[doc = "The first clock transition is the first data capture edge"]
+    FIRSTEDGE,
+    #[doc = "The second clock transition is the first data capture edge"]
+    SECONDEDGE,
 }
 impl CPHAW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CPHAW::FIRSTEDGE => false,
@@ -1495,19 +1561,19 @@ pub struct _CPHAW<'a> {
 }
 impl<'a> _CPHAW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CPHAW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "The first clock transition is the first data capture edge"]
-    #[inline(always)]
+    #[inline]
     pub fn first_edge(self) -> &'a mut W {
         self.variant(CPHAW::FIRSTEDGE)
     }
     #[doc = "The second clock transition is the first data capture edge"]
-    #[inline(always)]
+    #[inline]
     pub fn second_edge(self) -> &'a mut W {
         self.variant(CPHAW::SECONDEDGE)
     }
@@ -1520,7 +1586,7 @@ impl<'a> _CPHAW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -1531,12 +1597,12 @@ impl<'a> _CPHAW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 15 - Bidirectional data mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bidimode(&self) -> BIDIMODER {
         BIDIMODER::_from({
             const MASK: bool = true;
@@ -1545,7 +1611,7 @@ impl R {
         })
     }
     #[doc = "Bit 14 - Output enable in bidirectional mode"]
-    #[inline(always)]
+    #[inline]
     pub fn bidioe(&self) -> BIDIOER {
         BIDIOER::_from({
             const MASK: bool = true;
@@ -1554,7 +1620,7 @@ impl R {
         })
     }
     #[doc = "Bit 13 - Hardware CRC calculation enable"]
-    #[inline(always)]
+    #[inline]
     pub fn crcen(&self) -> CRCENR {
         CRCENR::_from({
             const MASK: bool = true;
@@ -1563,7 +1629,7 @@ impl R {
         })
     }
     #[doc = "Bit 12 - CRC transfer next"]
-    #[inline(always)]
+    #[inline]
     pub fn crcnext(&self) -> CRCNEXTR {
         CRCNEXTR::_from({
             const MASK: bool = true;
@@ -1572,7 +1638,7 @@ impl R {
         })
     }
     #[doc = "Bit 11 - Data frame format"]
-    #[inline(always)]
+    #[inline]
     pub fn dff(&self) -> DFFR {
         DFFR::_from({
             const MASK: bool = true;
@@ -1581,7 +1647,7 @@ impl R {
         })
     }
     #[doc = "Bit 10 - Receive only"]
-    #[inline(always)]
+    #[inline]
     pub fn rxonly(&self) -> RXONLYR {
         RXONLYR::_from({
             const MASK: bool = true;
@@ -1590,7 +1656,7 @@ impl R {
         })
     }
     #[doc = "Bit 9 - Software slave management"]
-    #[inline(always)]
+    #[inline]
     pub fn ssm(&self) -> SSMR {
         SSMR::_from({
             const MASK: bool = true;
@@ -1599,7 +1665,7 @@ impl R {
         })
     }
     #[doc = "Bit 8 - Internal slave select"]
-    #[inline(always)]
+    #[inline]
     pub fn ssi(&self) -> SSIR {
         SSIR::_from({
             const MASK: bool = true;
@@ -1608,7 +1674,7 @@ impl R {
         })
     }
     #[doc = "Bit 7 - Frame format"]
-    #[inline(always)]
+    #[inline]
     pub fn lsbfirst(&self) -> LSBFIRSTR {
         LSBFIRSTR::_from({
             const MASK: bool = true;
@@ -1617,7 +1683,7 @@ impl R {
         })
     }
     #[doc = "Bit 6 - SPI enable"]
-    #[inline(always)]
+    #[inline]
     pub fn spe(&self) -> SPER {
         SPER::_from({
             const MASK: bool = true;
@@ -1626,7 +1692,7 @@ impl R {
         })
     }
     #[doc = "Bits 3:5 - Baud rate control"]
-    #[inline(always)]
+    #[inline]
     pub fn br(&self) -> BRR {
         BRR::_from({
             const MASK: u8 = 7;
@@ -1635,7 +1701,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Master selection"]
-    #[inline(always)]
+    #[inline]
     pub fn mstr(&self) -> MSTRR {
         MSTRR::_from({
             const MASK: bool = true;
@@ -1644,7 +1710,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Clock polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cpol(&self) -> CPOLR {
         CPOLR::_from({
             const MASK: bool = true;
@@ -1653,7 +1719,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Clock phase"]
-    #[inline(always)]
+    #[inline]
     pub fn cpha(&self) -> CPHAR {
         CPHAR::_from({
             const MASK: bool = true;
@@ -1664,83 +1730,83 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 15 - Bidirectional data mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bidimode(&mut self) -> _BIDIMODEW {
         _BIDIMODEW { w: self }
     }
     #[doc = "Bit 14 - Output enable in bidirectional mode"]
-    #[inline(always)]
+    #[inline]
     pub fn bidioe(&mut self) -> _BIDIOEW {
         _BIDIOEW { w: self }
     }
     #[doc = "Bit 13 - Hardware CRC calculation enable"]
-    #[inline(always)]
+    #[inline]
     pub fn crcen(&mut self) -> _CRCENW {
         _CRCENW { w: self }
     }
     #[doc = "Bit 12 - CRC transfer next"]
-    #[inline(always)]
+    #[inline]
     pub fn crcnext(&mut self) -> _CRCNEXTW {
         _CRCNEXTW { w: self }
     }
     #[doc = "Bit 11 - Data frame format"]
-    #[inline(always)]
+    #[inline]
     pub fn dff(&mut self) -> _DFFW {
         _DFFW { w: self }
     }
     #[doc = "Bit 10 - Receive only"]
-    #[inline(always)]
+    #[inline]
     pub fn rxonly(&mut self) -> _RXONLYW {
         _RXONLYW { w: self }
     }
     #[doc = "Bit 9 - Software slave management"]
-    #[inline(always)]
+    #[inline]
     pub fn ssm(&mut self) -> _SSMW {
         _SSMW { w: self }
     }
     #[doc = "Bit 8 - Internal slave select"]
-    #[inline(always)]
+    #[inline]
     pub fn ssi(&mut self) -> _SSIW {
         _SSIW { w: self }
     }
     #[doc = "Bit 7 - Frame format"]
-    #[inline(always)]
+    #[inline]
     pub fn lsbfirst(&mut self) -> _LSBFIRSTW {
         _LSBFIRSTW { w: self }
     }
     #[doc = "Bit 6 - SPI enable"]
-    #[inline(always)]
+    #[inline]
     pub fn spe(&mut self) -> _SPEW {
         _SPEW { w: self }
     }
     #[doc = "Bits 3:5 - Baud rate control"]
-    #[inline(always)]
+    #[inline]
     pub fn br(&mut self) -> _BRW {
         _BRW { w: self }
     }
     #[doc = "Bit 2 - Master selection"]
-    #[inline(always)]
+    #[inline]
     pub fn mstr(&mut self) -> _MSTRW {
         _MSTRW { w: self }
     }
     #[doc = "Bit 1 - Clock polarity"]
-    #[inline(always)]
+    #[inline]
     pub fn cpol(&mut self) -> _CPOLW {
         _CPOLW { w: self }
     }
     #[doc = "Bit 0 - Clock phase"]
-    #[inline(always)]
+    #[inline]
     pub fn cpha(&mut self) -> _CPHAW {
         _CPHAW { w: self }
     }

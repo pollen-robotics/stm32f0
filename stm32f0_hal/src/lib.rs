@@ -10,6 +10,7 @@
 #![no_std]
 #![feature(lang_items)]
 #![feature(core_intrinsics)]
+#![feature(panic_implementation)]
 #![cfg_attr(feature = "use_alloc", feature(global_allocator))]
 
 extern crate cortex_m;

@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::TIMEOUTR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::TIMEOUTR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::TIMEOUTR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct TIMEOUTAR {
 }
 impl TIMEOUTAR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,17 +57,17 @@ pub struct TIDLER {
 }
 impl TIDLER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,17 +78,17 @@ pub struct TIMOUTENR {
 }
 impl TIMOUTENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -101,7 +99,7 @@ pub struct TIMEOUTBR {
 }
 impl TIMEOUTBR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -112,17 +110,17 @@ pub struct TEXTENR {
 }
 impl TEXTENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -133,7 +131,7 @@ pub struct _TIMEOUTAW<'a> {
 }
 impl<'a> _TIMEOUTAW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 4095;
         const OFFSET: u8 = 0;
@@ -156,7 +154,7 @@ impl<'a> _TIDLEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -179,7 +177,7 @@ impl<'a> _TIMOUTENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -194,7 +192,7 @@ pub struct _TIMEOUTBW<'a> {
 }
 impl<'a> _TIMEOUTBW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 4095;
         const OFFSET: u8 = 16;
@@ -217,7 +215,7 @@ impl<'a> _TEXTENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -228,12 +226,12 @@ impl<'a> _TEXTENW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:11 - Bus timeout A"]
-    #[inline(always)]
+    #[inline]
     pub fn timeouta(&self) -> TIMEOUTAR {
         let bits = {
             const MASK: u16 = 4095;
@@ -243,7 +241,7 @@ impl R {
         TIMEOUTAR { bits }
     }
     #[doc = "Bit 12 - Idle clock timeout detection"]
-    #[inline(always)]
+    #[inline]
     pub fn tidle(&self) -> TIDLER {
         let bits = {
             const MASK: bool = true;
@@ -253,7 +251,7 @@ impl R {
         TIDLER { bits }
     }
     #[doc = "Bit 15 - Clock timeout enable"]
-    #[inline(always)]
+    #[inline]
     pub fn timouten(&self) -> TIMOUTENR {
         let bits = {
             const MASK: bool = true;
@@ -263,7 +261,7 @@ impl R {
         TIMOUTENR { bits }
     }
     #[doc = "Bits 16:27 - Bus timeout B"]
-    #[inline(always)]
+    #[inline]
     pub fn timeoutb(&self) -> TIMEOUTBR {
         let bits = {
             const MASK: u16 = 4095;
@@ -273,7 +271,7 @@ impl R {
         TIMEOUTBR { bits }
     }
     #[doc = "Bit 31 - Extended clock timeout enable"]
-    #[inline(always)]
+    #[inline]
     pub fn texten(&self) -> TEXTENR {
         let bits = {
             const MASK: bool = true;
@@ -285,38 +283,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:11 - Bus timeout A"]
-    #[inline(always)]
+    #[inline]
     pub fn timeouta(&mut self) -> _TIMEOUTAW {
         _TIMEOUTAW { w: self }
     }
     #[doc = "Bit 12 - Idle clock timeout detection"]
-    #[inline(always)]
+    #[inline]
     pub fn tidle(&mut self) -> _TIDLEW {
         _TIDLEW { w: self }
     }
     #[doc = "Bit 15 - Clock timeout enable"]
-    #[inline(always)]
+    #[inline]
     pub fn timouten(&mut self) -> _TIMOUTENW {
         _TIMOUTENW { w: self }
     }
     #[doc = "Bits 16:27 - Bus timeout B"]
-    #[inline(always)]
+    #[inline]
     pub fn timeoutb(&mut self) -> _TIMEOUTBW {
         _TIMEOUTBW { w: self }
     }
     #[doc = "Bit 31 - Extended clock timeout enable"]
-    #[inline(always)]
+    #[inline]
     pub fn texten(&mut self) -> _TEXTENW {
         _TEXTENW { w: self }
     }

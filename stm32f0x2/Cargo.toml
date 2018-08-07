@@ -13,13 +13,13 @@ exclude = ["*.svd"]
 travis-ci = { repository = "pollen-robotics/stm32f0" }
 
 [dependencies]
-bare-metal = "0.1.1"
-cortex-m = "=0.3.1"
+bare-metal = "0.2.1"
+cortex-m = "0.5.3"
 vcell = "0.1.0"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "=0.3.7"
+version = "0.5.1"
 
 [features]
 rt = ["cortex-m-rt"]

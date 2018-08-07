@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +43,24 @@ impl super::CR {
 #[doc = "Possible values of the field `HSION`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSIONR {
-    #[doc = "HSI oscillator OFF"] DISABLED,
-    #[doc = "HSI oscillator ON"] ENABLED,
+    #[doc = "HSI oscillator OFF"]
+    DISABLED,
+    #[doc = "HSI oscillator ON"]
+    ENABLED,
 }
 impl HSIONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSIONR::DISABLED => false,
@@ -69,7 +69,7 @@ impl HSIONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSIONR {
         match value {
             false => HSIONR::DISABLED,
@@ -77,12 +77,12 @@ impl HSIONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSIONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSIONR::ENABLED
     }
@@ -93,17 +93,17 @@ pub struct HSIRDYR {
 }
 impl HSIRDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -114,7 +114,7 @@ pub struct HSITRIMR {
 }
 impl HSITRIMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -125,7 +125,7 @@ pub struct HSICALR {
 }
 impl HSICALR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -133,22 +133,24 @@ impl HSICALR {
 #[doc = "Possible values of the field `HSEON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSEONR {
-    #[doc = "HSE oscillator OFF"] DISABLED,
-    #[doc = "HSE oscillator ON"] ENABLED,
+    #[doc = "HSE oscillator OFF"]
+    DISABLED,
+    #[doc = "HSE oscillator ON"]
+    ENABLED,
 }
 impl HSEONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSEONR::DISABLED => false,
@@ -157,7 +159,7 @@ impl HSEONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSEONR {
         match value {
             false => HSEONR::DISABLED,
@@ -165,12 +167,12 @@ impl HSEONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == HSEONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == HSEONR::ENABLED
     }
@@ -181,17 +183,17 @@ pub struct HSERDYR {
 }
 impl HSERDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -199,22 +201,24 @@ impl HSERDYR {
 #[doc = "Possible values of the field `HSEBYP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSEBYPR {
-    #[doc = "HSE crystal oscillator not bypassed"] NOTBYPASSED,
-    #[doc = "HSE crystal oscillator bypassed with external clock"] BYPASSED,
+    #[doc = "HSE crystal oscillator not bypassed"]
+    NOTBYPASSED,
+    #[doc = "HSE crystal oscillator bypassed with external clock"]
+    BYPASSED,
 }
 impl HSEBYPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             HSEBYPR::NOTBYPASSED => false,
@@ -223,7 +227,7 @@ impl HSEBYPR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> HSEBYPR {
         match value {
             false => HSEBYPR::NOTBYPASSED,
@@ -231,12 +235,12 @@ impl HSEBYPR {
         }
     }
     #[doc = "Checks if the value of the field is `NOTBYPASSED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_not_bypassed(&self) -> bool {
         *self == HSEBYPR::NOTBYPASSED
     }
     #[doc = "Checks if the value of the field is `BYPASSED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_bypassed(&self) -> bool {
         *self == HSEBYPR::BYPASSED
     }
@@ -244,22 +248,24 @@ impl HSEBYPR {
 #[doc = "Possible values of the field `CSSON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSSONR {
-    #[doc = "Clock security system disabled (clock detector OFF)."] DISABLED,
-    #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."] ENABLED,
+    #[doc = "Clock security system disabled (clock detector OFF)."]
+    DISABLED,
+    #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."]
+    ENABLED,
 }
 impl CSSONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             CSSONR::DISABLED => false,
@@ -268,7 +274,7 @@ impl CSSONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> CSSONR {
         match value {
             false => CSSONR::DISABLED,
@@ -276,12 +282,12 @@ impl CSSONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == CSSONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == CSSONR::ENABLED
     }
@@ -289,22 +295,24 @@ impl CSSONR {
 #[doc = "Possible values of the field `PLLON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLONR {
-    #[doc = "PLL Off."] DISABLED,
-    #[doc = "PLL On."] ENABLED,
+    #[doc = "PLL Off."]
+    DISABLED,
+    #[doc = "PLL On."]
+    ENABLED,
 }
 impl PLLONR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             PLLONR::DISABLED => false,
@@ -313,7 +321,7 @@ impl PLLONR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> PLLONR {
         match value {
             false => PLLONR::DISABLED,
@@ -321,12 +329,12 @@ impl PLLONR {
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_disabled(&self) -> bool {
         *self == PLLONR::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_enabled(&self) -> bool {
         *self == PLLONR::ENABLED
     }
@@ -337,30 +345,32 @@ pub struct PLLRDYR {
 }
 impl PLLRDYR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 #[doc = "Values that can be written to the field `HSION`"]
 pub enum HSIONW {
-    #[doc = "HSI oscillator OFF"] DISABLED,
-    #[doc = "HSI oscillator ON"] ENABLED,
+    #[doc = "HSI oscillator OFF"]
+    DISABLED,
+    #[doc = "HSI oscillator ON"]
+    ENABLED,
 }
 impl HSIONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSIONW::DISABLED => false,
@@ -374,19 +384,19 @@ pub struct _HSIONW<'a> {
 }
 impl<'a> _HSIONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSIONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSI oscillator OFF"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSIONW::DISABLED)
     }
     #[doc = "HSI oscillator ON"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSIONW::ENABLED)
     }
@@ -399,7 +409,7 @@ impl<'a> _HSIONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -414,7 +424,7 @@ pub struct _HSITRIMW<'a> {
 }
 impl<'a> _HSITRIMW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 3;
@@ -425,13 +435,15 @@ impl<'a> _HSITRIMW<'a> {
 }
 #[doc = "Values that can be written to the field `HSEON`"]
 pub enum HSEONW {
-    #[doc = "HSE oscillator OFF"] DISABLED,
-    #[doc = "HSE oscillator ON"] ENABLED,
+    #[doc = "HSE oscillator OFF"]
+    DISABLED,
+    #[doc = "HSE oscillator ON"]
+    ENABLED,
 }
 impl HSEONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSEONW::DISABLED => false,
@@ -445,19 +457,19 @@ pub struct _HSEONW<'a> {
 }
 impl<'a> _HSEONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSEONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSE oscillator OFF"]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(HSEONW::DISABLED)
     }
     #[doc = "HSE oscillator ON"]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HSEONW::ENABLED)
     }
@@ -470,7 +482,7 @@ impl<'a> _HSEONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -481,13 +493,15 @@ impl<'a> _HSEONW<'a> {
 }
 #[doc = "Values that can be written to the field `HSEBYP`"]
 pub enum HSEBYPW {
-    #[doc = "HSE crystal oscillator not bypassed"] NOTBYPASSED,
-    #[doc = "HSE crystal oscillator bypassed with external clock"] BYPASSED,
+    #[doc = "HSE crystal oscillator not bypassed"]
+    NOTBYPASSED,
+    #[doc = "HSE crystal oscillator bypassed with external clock"]
+    BYPASSED,
 }
 impl HSEBYPW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             HSEBYPW::NOTBYPASSED => false,
@@ -501,19 +515,19 @@ pub struct _HSEBYPW<'a> {
 }
 impl<'a> _HSEBYPW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: HSEBYPW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "HSE crystal oscillator not bypassed"]
-    #[inline(always)]
+    #[inline]
     pub fn not_bypassed(self) -> &'a mut W {
         self.variant(HSEBYPW::NOTBYPASSED)
     }
     #[doc = "HSE crystal oscillator bypassed with external clock"]
-    #[inline(always)]
+    #[inline]
     pub fn bypassed(self) -> &'a mut W {
         self.variant(HSEBYPW::BYPASSED)
     }
@@ -526,7 +540,7 @@ impl<'a> _HSEBYPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -537,13 +551,15 @@ impl<'a> _HSEBYPW<'a> {
 }
 #[doc = "Values that can be written to the field `CSSON`"]
 pub enum CSSONW {
-    #[doc = "Clock security system disabled (clock detector OFF)."] DISABLED,
-    #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."] ENABLED,
+    #[doc = "Clock security system disabled (clock detector OFF)."]
+    DISABLED,
+    #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."]
+    ENABLED,
 }
 impl CSSONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             CSSONW::DISABLED => false,
@@ -557,19 +573,19 @@ pub struct _CSSONW<'a> {
 }
 impl<'a> _CSSONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: CSSONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "Clock security system disabled (clock detector OFF)."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(CSSONW::DISABLED)
     }
     #[doc = "Clock security system enabled (clock detector ON if the HSE is ready, OFF if not)."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CSSONW::ENABLED)
     }
@@ -582,7 +598,7 @@ impl<'a> _CSSONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -593,13 +609,15 @@ impl<'a> _CSSONW<'a> {
 }
 #[doc = "Values that can be written to the field `PLLON`"]
 pub enum PLLONW {
-    #[doc = "PLL Off."] DISABLED,
-    #[doc = "PLL On."] ENABLED,
+    #[doc = "PLL Off."]
+    DISABLED,
+    #[doc = "PLL On."]
+    ENABLED,
 }
 impl PLLONW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             PLLONW::DISABLED => false,
@@ -613,19 +631,19 @@ pub struct _PLLONW<'a> {
 }
 impl<'a> _PLLONW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: PLLONW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "PLL Off."]
-    #[inline(always)]
+    #[inline]
     pub fn disabled(self) -> &'a mut W {
         self.variant(PLLONW::DISABLED)
     }
     #[doc = "PLL On."]
-    #[inline(always)]
+    #[inline]
     pub fn enabled(self) -> &'a mut W {
         self.variant(PLLONW::ENABLED)
     }
@@ -638,7 +656,7 @@ impl<'a> _PLLONW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -649,12 +667,12 @@ impl<'a> _PLLONW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Internal High Speed clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsion(&self) -> HSIONR {
         HSIONR::_from({
             const MASK: bool = true;
@@ -663,7 +681,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Internal High Speed clock ready flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hsirdy(&self) -> HSIRDYR {
         let bits = {
             const MASK: bool = true;
@@ -673,7 +691,7 @@ impl R {
         HSIRDYR { bits }
     }
     #[doc = "Bits 3:7 - Internal High Speed clock trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn hsitrim(&self) -> HSITRIMR {
         let bits = {
             const MASK: u8 = 31;
@@ -683,7 +701,7 @@ impl R {
         HSITRIMR { bits }
     }
     #[doc = "Bits 8:15 - Internal High Speed clock Calibration"]
-    #[inline(always)]
+    #[inline]
     pub fn hsical(&self) -> HSICALR {
         let bits = {
             const MASK: u8 = 255;
@@ -693,7 +711,7 @@ impl R {
         HSICALR { bits }
     }
     #[doc = "Bit 16 - External High Speed clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hseon(&self) -> HSEONR {
         HSEONR::_from({
             const MASK: bool = true;
@@ -702,7 +720,7 @@ impl R {
         })
     }
     #[doc = "Bit 17 - External High Speed clock ready flag"]
-    #[inline(always)]
+    #[inline]
     pub fn hserdy(&self) -> HSERDYR {
         let bits = {
             const MASK: bool = true;
@@ -712,7 +730,7 @@ impl R {
         HSERDYR { bits }
     }
     #[doc = "Bit 18 - External High Speed clock Bypass"]
-    #[inline(always)]
+    #[inline]
     pub fn hsebyp(&self) -> HSEBYPR {
         HSEBYPR::_from({
             const MASK: bool = true;
@@ -721,7 +739,7 @@ impl R {
         })
     }
     #[doc = "Bit 19 - Clock Security System enable"]
-    #[inline(always)]
+    #[inline]
     pub fn csson(&self) -> CSSONR {
         CSSONR::_from({
             const MASK: bool = true;
@@ -730,7 +748,7 @@ impl R {
         })
     }
     #[doc = "Bit 24 - PLL enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pllon(&self) -> PLLONR {
         PLLONR::_from({
             const MASK: bool = true;
@@ -739,7 +757,7 @@ impl R {
         })
     }
     #[doc = "Bit 25 - PLL clock ready flag"]
-    #[inline(always)]
+    #[inline]
     pub fn pllrdy(&self) -> PLLRDYR {
         let bits = {
             const MASK: bool = true;
@@ -751,43 +769,43 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 131 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Internal High Speed clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hsion(&mut self) -> _HSIONW {
         _HSIONW { w: self }
     }
     #[doc = "Bits 3:7 - Internal High Speed clock trimming"]
-    #[inline(always)]
+    #[inline]
     pub fn hsitrim(&mut self) -> _HSITRIMW {
         _HSITRIMW { w: self }
     }
     #[doc = "Bit 16 - External High Speed clock enable"]
-    #[inline(always)]
+    #[inline]
     pub fn hseon(&mut self) -> _HSEONW {
         _HSEONW { w: self }
     }
     #[doc = "Bit 18 - External High Speed clock Bypass"]
-    #[inline(always)]
+    #[inline]
     pub fn hsebyp(&mut self) -> _HSEBYPW {
         _HSEBYPW { w: self }
     }
     #[doc = "Bit 19 - Clock Security System enable"]
-    #[inline(always)]
+    #[inline]
     pub fn csson(&mut self) -> _CSSONW {
         _CSSONW { w: self }
     }
     #[doc = "Bit 24 - PLL enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pllon(&mut self) -> _PLLONW {
         _PLLONW { w: self }
     }

@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::IOG5CR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,19 +15,19 @@ pub struct CNTR {
 }
 impl CNTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:13 - Counter value"]
-    #[inline(always)]
+    #[inline]
     pub fn cnt(&self) -> CNTR {
         let bits = {
             const MASK: u16 = 16383;

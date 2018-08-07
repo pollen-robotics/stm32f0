@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::CAN_RDT0R {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,7 +15,7 @@ pub struct TIMER {
 }
 impl TIMER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -28,7 +26,7 @@ pub struct FMIR {
 }
 impl FMIR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -39,19 +37,19 @@ pub struct DLCR {
 }
 impl DLCR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:31 - TIME"]
-    #[inline(always)]
+    #[inline]
     pub fn time(&self) -> TIMER {
         let bits = {
             const MASK: u16 = 65535;
@@ -61,7 +59,7 @@ impl R {
         TIMER { bits }
     }
     #[doc = "Bits 8:15 - FMI"]
-    #[inline(always)]
+    #[inline]
     pub fn fmi(&self) -> FMIR {
         let bits = {
             const MASK: u8 = 255;
@@ -71,7 +69,7 @@ impl R {
         FMIR { bits }
     }
     #[doc = "Bits 0:3 - DLC"]
-    #[inline(always)]
+    #[inline]
     pub fn dlc(&self) -> DLCR {
         let bits = {
             const MASK: u8 = 15;

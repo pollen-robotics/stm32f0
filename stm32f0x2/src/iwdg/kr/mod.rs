@@ -4,7 +4,7 @@ pub struct W {
 }
 impl super::KR {
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -20,7 +20,7 @@ pub struct _KEYW<'a> {
 }
 impl<'a> _KEYW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
@@ -31,18 +31,18 @@ impl<'a> _KEYW<'a> {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:15 - Key value"]
-    #[inline(always)]
+    #[inline]
     pub fn key(&mut self) -> _KEYW {
         _KEYW { w: self }
     }
