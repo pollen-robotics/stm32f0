@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_BTR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CAN_BTR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CAN_BTR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct SILMR {
 }
 impl SILMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct LBKMR {
 }
 impl LBKMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,7 +88,7 @@ pub struct SJWR {
 }
 impl SJWR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -101,7 +99,7 @@ pub struct TS2R {
 }
 impl TS2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -112,7 +110,7 @@ pub struct TS1R {
 }
 impl TS1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -123,7 +121,7 @@ pub struct BRPR {
 }
 impl BRPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -142,7 +140,7 @@ impl<'a> _SILMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 31;
@@ -165,7 +163,7 @@ impl<'a> _LBKMW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 30;
@@ -180,7 +178,7 @@ pub struct _SJWW<'a> {
 }
 impl<'a> _SJWW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 24;
@@ -195,7 +193,7 @@ pub struct _TS2W<'a> {
 }
 impl<'a> _TS2W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 20;
@@ -210,7 +208,7 @@ pub struct _TS1W<'a> {
 }
 impl<'a> _TS1W<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 16;
@@ -225,7 +223,7 @@ pub struct _BRPW<'a> {
 }
 impl<'a> _BRPW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 1023;
         const OFFSET: u8 = 0;
@@ -236,12 +234,12 @@ impl<'a> _BRPW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 31 - SILM"]
-    #[inline(always)]
+    #[inline]
     pub fn silm(&self) -> SILMR {
         let bits = {
             const MASK: bool = true;
@@ -251,7 +249,7 @@ impl R {
         SILMR { bits }
     }
     #[doc = "Bit 30 - LBKM"]
-    #[inline(always)]
+    #[inline]
     pub fn lbkm(&self) -> LBKMR {
         let bits = {
             const MASK: bool = true;
@@ -261,7 +259,7 @@ impl R {
         LBKMR { bits }
     }
     #[doc = "Bits 24:25 - SJW"]
-    #[inline(always)]
+    #[inline]
     pub fn sjw(&self) -> SJWR {
         let bits = {
             const MASK: u8 = 3;
@@ -271,7 +269,7 @@ impl R {
         SJWR { bits }
     }
     #[doc = "Bits 20:22 - TS2"]
-    #[inline(always)]
+    #[inline]
     pub fn ts2(&self) -> TS2R {
         let bits = {
             const MASK: u8 = 7;
@@ -281,7 +279,7 @@ impl R {
         TS2R { bits }
     }
     #[doc = "Bits 16:19 - TS1"]
-    #[inline(always)]
+    #[inline]
     pub fn ts1(&self) -> TS1R {
         let bits = {
             const MASK: u8 = 15;
@@ -291,7 +289,7 @@ impl R {
         TS1R { bits }
     }
     #[doc = "Bits 0:9 - BRP"]
-    #[inline(always)]
+    #[inline]
     pub fn brp(&self) -> BRPR {
         let bits = {
             const MASK: u16 = 1023;
@@ -303,43 +301,43 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 31 - SILM"]
-    #[inline(always)]
+    #[inline]
     pub fn silm(&mut self) -> _SILMW {
         _SILMW { w: self }
     }
     #[doc = "Bit 30 - LBKM"]
-    #[inline(always)]
+    #[inline]
     pub fn lbkm(&mut self) -> _LBKMW {
         _LBKMW { w: self }
     }
     #[doc = "Bits 24:25 - SJW"]
-    #[inline(always)]
+    #[inline]
     pub fn sjw(&mut self) -> _SJWW {
         _SJWW { w: self }
     }
     #[doc = "Bits 20:22 - TS2"]
-    #[inline(always)]
+    #[inline]
     pub fn ts2(&mut self) -> _TS2W {
         _TS2W { w: self }
     }
     #[doc = "Bits 16:19 - TS1"]
-    #[inline(always)]
+    #[inline]
     pub fn ts1(&mut self) -> _TS1W {
         _TS1W { w: self }
     }
     #[doc = "Bits 0:9 - BRP"]
-    #[inline(always)]
+    #[inline]
     pub fn brp(&mut self) -> _BRPW {
         _BRPW { w: self }
     }

@@ -4,7 +4,7 @@ pub struct W {
 }
 impl super::TXDR {
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -20,7 +20,7 @@ pub struct _TXDW<'a> {
 }
 impl<'a> _TXDW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
@@ -31,18 +31,18 @@ impl<'a> _TXDW<'a> {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:7 - Tx Data register"]
-    #[inline(always)]
+    #[inline]
     pub fn txd(&mut self) -> _TXDW {
         _TXDW { w: self }
     }

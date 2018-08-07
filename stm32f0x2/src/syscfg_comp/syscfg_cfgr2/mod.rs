@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::SYSCFG_CFGR2 {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::SYSCFG_CFGR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::SYSCFG_CFGR2 {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct SRAM_PEFR {
 }
 impl SRAM_PEFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct PVD_LOCKR {
 }
 impl PVD_LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct SRAM_PARITY_LOCKR {
 }
 impl SRAM_PARITY_LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct LOCUP_LOCKR {
 }
 impl LOCUP_LOCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -140,7 +138,7 @@ impl<'a> _SRAM_PEFW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -163,7 +161,7 @@ impl<'a> _PVD_LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -186,7 +184,7 @@ impl<'a> _SRAM_PARITY_LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -209,7 +207,7 @@ impl<'a> _LOCUP_LOCKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -220,12 +218,12 @@ impl<'a> _LOCUP_LOCKW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 8 - SRAM parity flag"]
-    #[inline(always)]
+    #[inline]
     pub fn sram_pef(&self) -> SRAM_PEFR {
         let bits = {
             const MASK: bool = true;
@@ -235,7 +233,7 @@ impl R {
         SRAM_PEFR { bits }
     }
     #[doc = "Bit 2 - PVD lock enable bit"]
-    #[inline(always)]
+    #[inline]
     pub fn pvd_lock(&self) -> PVD_LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -245,7 +243,7 @@ impl R {
         PVD_LOCKR { bits }
     }
     #[doc = "Bit 1 - SRAM parity lock bit"]
-    #[inline(always)]
+    #[inline]
     pub fn sram_parity_lock(&self) -> SRAM_PARITY_LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -255,7 +253,7 @@ impl R {
         SRAM_PARITY_LOCKR { bits }
     }
     #[doc = "Bit 0 - Cortex-M0 LOCKUP bit enable bit"]
-    #[inline(always)]
+    #[inline]
     pub fn locup_lock(&self) -> LOCUP_LOCKR {
         let bits = {
             const MASK: bool = true;
@@ -267,33 +265,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 8 - SRAM parity flag"]
-    #[inline(always)]
+    #[inline]
     pub fn sram_pef(&mut self) -> _SRAM_PEFW {
         _SRAM_PEFW { w: self }
     }
     #[doc = "Bit 2 - PVD lock enable bit"]
-    #[inline(always)]
+    #[inline]
     pub fn pvd_lock(&mut self) -> _PVD_LOCKW {
         _PVD_LOCKW { w: self }
     }
     #[doc = "Bit 1 - SRAM parity lock bit"]
-    #[inline(always)]
+    #[inline]
     pub fn sram_parity_lock(&mut self) -> _SRAM_PARITY_LOCKW {
         _SRAM_PARITY_LOCKW { w: self }
     }
     #[doc = "Bit 0 - Cortex-M0 LOCKUP bit enable bit"]
-    #[inline(always)]
+    #[inline]
     pub fn locup_lock(&mut self) -> _LOCUP_LOCKW {
         _LOCUP_LOCKW { w: self }
     }

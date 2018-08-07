@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::RQR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::RQR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::RQR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -45,22 +43,24 @@ impl super::RQR {
 #[doc = "Possible values of the field `TXFRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFRQR {
-    #[doc = "sets the TXE flag."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the TXE flag."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl TXFRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             TXFRQR::SET => true,
@@ -69,7 +69,7 @@ impl TXFRQR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> TXFRQR {
         match value {
             true => TXFRQR::SET,
@@ -77,7 +77,7 @@ impl TXFRQR {
         }
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == TXFRQR::SET
     }
@@ -85,22 +85,24 @@ impl TXFRQR {
 #[doc = "Possible values of the field `RXFRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFRQR {
-    #[doc = "clears the RXNE flag."] CLEAR,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "clears the RXNE flag."]
+    CLEAR,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RXFRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             RXFRQR::CLEAR => true,
@@ -109,7 +111,7 @@ impl RXFRQR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> RXFRQR {
         match value {
             true => RXFRQR::CLEAR,
@@ -117,7 +119,7 @@ impl RXFRQR {
         }
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_clear(&self) -> bool {
         *self == RXFRQR::CLEAR
     }
@@ -125,22 +127,24 @@ impl RXFRQR {
 #[doc = "Possible values of the field `MMRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMRQR {
-    #[doc = "sets the RWU flag and puts the USART in mute mode."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the RWU flag and puts the USART in mute mode."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl MMRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             MMRQR::SET => true,
@@ -149,7 +153,7 @@ impl MMRQR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> MMRQR {
         match value {
             true => MMRQR::SET,
@@ -157,7 +161,7 @@ impl MMRQR {
         }
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == MMRQR::SET
     }
@@ -165,22 +169,24 @@ impl MMRQR {
 #[doc = "Possible values of the field `SBKRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBKRQR {
-    #[doc = "sets the SBKF flag and request to send a BREAK on the line."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SBKRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             SBKRQR::SET => true,
@@ -189,7 +195,7 @@ impl SBKRQR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> SBKRQR {
         match value {
             true => SBKRQR::SET,
@@ -197,7 +203,7 @@ impl SBKRQR {
         }
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == SBKRQR::SET
     }
@@ -205,22 +211,24 @@ impl SBKRQR {
 #[doc = "Possible values of the field `ABRRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ABRRQR {
-    #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud\nrate measurement on the next received data frame."] SET,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud\nrate measurement on the next received data frame."]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl ABRRQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         match *self {
             ABRRQR::SET => true,
@@ -229,7 +237,7 @@ impl ABRRQR {
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _from(value: bool) -> ABRRQR {
         match value {
             true => ABRRQR::SET,
@@ -237,19 +245,20 @@ impl ABRRQR {
         }
     }
     #[doc = "Checks if the value of the field is `SET`"]
-    #[inline(always)]
+    #[inline]
     pub fn is_set(&self) -> bool {
         *self == ABRRQR::SET
     }
 }
 #[doc = "Values that can be written to the field `TXFRQ`"]
 pub enum TXFRQW {
-    #[doc = "sets the TXE flag."] SET,
+    #[doc = "sets the TXE flag."]
+    SET,
 }
 impl TXFRQW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             TXFRQW::SET => true,
@@ -262,14 +271,14 @@ pub struct _TXFRQW<'a> {
 }
 impl<'a> _TXFRQW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: TXFRQW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "sets the TXE flag."]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(TXFRQW::SET)
     }
@@ -282,7 +291,7 @@ impl<'a> _TXFRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -293,12 +302,13 @@ impl<'a> _TXFRQW<'a> {
 }
 #[doc = "Values that can be written to the field `RXFRQ`"]
 pub enum RXFRQW {
-    #[doc = "clears the RXNE flag."] CLEAR,
+    #[doc = "clears the RXNE flag."]
+    CLEAR,
 }
 impl RXFRQW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             RXFRQW::CLEAR => true,
@@ -311,14 +321,14 @@ pub struct _RXFRQW<'a> {
 }
 impl<'a> _RXFRQW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: RXFRQW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "clears the RXNE flag."]
-    #[inline(always)]
+    #[inline]
     pub fn clear(self) -> &'a mut W {
         self.variant(RXFRQW::CLEAR)
     }
@@ -331,7 +341,7 @@ impl<'a> _RXFRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -342,12 +352,13 @@ impl<'a> _RXFRQW<'a> {
 }
 #[doc = "Values that can be written to the field `MMRQ`"]
 pub enum MMRQW {
-    #[doc = "sets the RWU flag and puts the USART in mute mode."] SET,
+    #[doc = "sets the RWU flag and puts the USART in mute mode."]
+    SET,
 }
 impl MMRQW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             MMRQW::SET => true,
@@ -360,14 +371,14 @@ pub struct _MMRQW<'a> {
 }
 impl<'a> _MMRQW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: MMRQW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "sets the RWU flag and puts the USART in mute mode."]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(MMRQW::SET)
     }
@@ -380,7 +391,7 @@ impl<'a> _MMRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -391,12 +402,13 @@ impl<'a> _MMRQW<'a> {
 }
 #[doc = "Values that can be written to the field `SBKRQ`"]
 pub enum SBKRQW {
-    #[doc = "sets the SBKF flag and request to send a BREAK on the line."] SET,
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line."]
+    SET,
 }
 impl SBKRQW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             SBKRQW::SET => true,
@@ -409,14 +421,14 @@ pub struct _SBKRQW<'a> {
 }
 impl<'a> _SBKRQW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: SBKRQW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "sets the SBKF flag and request to send a BREAK on the line."]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(SBKRQW::SET)
     }
@@ -429,7 +441,7 @@ impl<'a> _SBKRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -440,12 +452,13 @@ impl<'a> _SBKRQW<'a> {
 }
 #[doc = "Values that can be written to the field `ABRRQ`"]
 pub enum ABRRQW {
-    #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud\nrate measurement on the next received data frame."] SET,
+    #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud\nrate measurement on the next received data frame."]
+    SET,
 }
 impl ABRRQW {
     #[allow(missing_docs)]
     #[doc(hidden)]
-    #[inline(always)]
+    #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
             ABRRQW::SET => true,
@@ -458,14 +471,14 @@ pub struct _ABRRQW<'a> {
 }
 impl<'a> _ABRRQW<'a> {
     #[doc = r" Writes `variant` to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn variant(self, variant: ABRRQW) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
     }
     #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud rate measurement on the next received data frame."]
-    #[inline(always)]
+    #[inline]
     pub fn set(self) -> &'a mut W {
         self.variant(ABRRQW::SET)
     }
@@ -478,7 +491,7 @@ impl<'a> _ABRRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -489,12 +502,12 @@ impl<'a> _ABRRQW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 4 - Transmit data flush request"]
-    #[inline(always)]
+    #[inline]
     pub fn txfrq(&self) -> TXFRQR {
         TXFRQR::_from({
             const MASK: bool = true;
@@ -503,7 +516,7 @@ impl R {
         })
     }
     #[doc = "Bit 3 - Receive data flush request"]
-    #[inline(always)]
+    #[inline]
     pub fn rxfrq(&self) -> RXFRQR {
         RXFRQR::_from({
             const MASK: bool = true;
@@ -512,7 +525,7 @@ impl R {
         })
     }
     #[doc = "Bit 2 - Mute mode request"]
-    #[inline(always)]
+    #[inline]
     pub fn mmrq(&self) -> MMRQR {
         MMRQR::_from({
             const MASK: bool = true;
@@ -521,7 +534,7 @@ impl R {
         })
     }
     #[doc = "Bit 1 - Send break request"]
-    #[inline(always)]
+    #[inline]
     pub fn sbkrq(&self) -> SBKRQR {
         SBKRQR::_from({
             const MASK: bool = true;
@@ -530,7 +543,7 @@ impl R {
         })
     }
     #[doc = "Bit 0 - Auto baud rate request"]
-    #[inline(always)]
+    #[inline]
     pub fn abrrq(&self) -> ABRRQR {
         ABRRQR::_from({
             const MASK: bool = true;
@@ -541,38 +554,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 4 - Transmit data flush request"]
-    #[inline(always)]
+    #[inline]
     pub fn txfrq(&mut self) -> _TXFRQW {
         _TXFRQW { w: self }
     }
     #[doc = "Bit 3 - Receive data flush request"]
-    #[inline(always)]
+    #[inline]
     pub fn rxfrq(&mut self) -> _RXFRQW {
         _RXFRQW { w: self }
     }
     #[doc = "Bit 2 - Mute mode request"]
-    #[inline(always)]
+    #[inline]
     pub fn mmrq(&mut self) -> _MMRQW {
         _MMRQW { w: self }
     }
     #[doc = "Bit 1 - Send break request"]
-    #[inline(always)]
+    #[inline]
     pub fn sbkrq(&mut self) -> _SBKRQW {
         _SBKRQW { w: self }
     }
     #[doc = "Bit 0 - Auto baud rate request"]
-    #[inline(always)]
+    #[inline]
     pub fn abrrq(&mut self) -> _ABRRQW {
         _ABRRQW { w: self }
     }

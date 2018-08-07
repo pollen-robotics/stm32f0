@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CFGR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CFGR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct LBPEGENR {
 }
 impl LBPEGENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct BREGENR {
 }
 impl BREGENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct BRESTPR {
 }
 impl BRESTPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct RXTOLR {
 }
 impl RXTOLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,7 +130,7 @@ pub struct SFTR {
 }
 impl SFTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -143,17 +141,17 @@ pub struct LSTNR {
 }
 impl LSTNR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -164,7 +162,7 @@ pub struct OARR {
 }
 impl OARR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -183,7 +181,7 @@ impl<'a> _LBPEGENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -206,7 +204,7 @@ impl<'a> _BREGENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -229,7 +227,7 @@ impl<'a> _BRESTPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -252,7 +250,7 @@ impl<'a> _RXTOLW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -267,7 +265,7 @@ pub struct _SFTW<'a> {
 }
 impl<'a> _SFTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 5;
@@ -290,7 +288,7 @@ impl<'a> _LSTNW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -305,7 +303,7 @@ pub struct _OARW<'a> {
 }
 impl<'a> _OARW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
@@ -316,12 +314,12 @@ impl<'a> _OARW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 11 - Generate Error-Bit on Long Bit Period Error"]
-    #[inline(always)]
+    #[inline]
     pub fn lbpegen(&self) -> LBPEGENR {
         let bits = {
             const MASK: bool = true;
@@ -331,7 +329,7 @@ impl R {
         LBPEGENR { bits }
     }
     #[doc = "Bit 10 - Generate error-bit on bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn bregen(&self) -> BREGENR {
         let bits = {
             const MASK: bool = true;
@@ -341,7 +339,7 @@ impl R {
         BREGENR { bits }
     }
     #[doc = "Bit 9 - Rx-stop on bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn brestp(&self) -> BRESTPR {
         let bits = {
             const MASK: bool = true;
@@ -351,7 +349,7 @@ impl R {
         BRESTPR { bits }
     }
     #[doc = "Bit 8 - Rx-Tolerance"]
-    #[inline(always)]
+    #[inline]
     pub fn rxtol(&self) -> RXTOLR {
         let bits = {
             const MASK: bool = true;
@@ -361,7 +359,7 @@ impl R {
         RXTOLR { bits }
     }
     #[doc = "Bits 5:7 - Signal Free Time"]
-    #[inline(always)]
+    #[inline]
     pub fn sft(&self) -> SFTR {
         let bits = {
             const MASK: u8 = 7;
@@ -371,7 +369,7 @@ impl R {
         SFTR { bits }
     }
     #[doc = "Bit 4 - Listen mode"]
-    #[inline(always)]
+    #[inline]
     pub fn lstn(&self) -> LSTNR {
         let bits = {
             const MASK: bool = true;
@@ -381,7 +379,7 @@ impl R {
         LSTNR { bits }
     }
     #[doc = "Bits 0:3 - Own Address"]
-    #[inline(always)]
+    #[inline]
     pub fn oar(&self) -> OARR {
         let bits = {
             const MASK: u8 = 15;
@@ -393,48 +391,48 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 11 - Generate Error-Bit on Long Bit Period Error"]
-    #[inline(always)]
+    #[inline]
     pub fn lbpegen(&mut self) -> _LBPEGENW {
         _LBPEGENW { w: self }
     }
     #[doc = "Bit 10 - Generate error-bit on bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn bregen(&mut self) -> _BREGENW {
         _BREGENW { w: self }
     }
     #[doc = "Bit 9 - Rx-stop on bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn brestp(&mut self) -> _BRESTPW {
         _BRESTPW { w: self }
     }
     #[doc = "Bit 8 - Rx-Tolerance"]
-    #[inline(always)]
+    #[inline]
     pub fn rxtol(&mut self) -> _RXTOLW {
         _RXTOLW { w: self }
     }
     #[doc = "Bits 5:7 - Signal Free Time"]
-    #[inline(always)]
+    #[inline]
     pub fn sft(&mut self) -> _SFTW {
         _SFTW { w: self }
     }
     #[doc = "Bit 4 - Listen mode"]
-    #[inline(always)]
+    #[inline]
     pub fn lstn(&mut self) -> _LSTNW {
         _LSTNW { w: self }
     }
     #[doc = "Bits 0:3 - Own Address"]
-    #[inline(always)]
+    #[inline]
     pub fn oar(&mut self) -> _OARW {
         _OARW { w: self }
     }

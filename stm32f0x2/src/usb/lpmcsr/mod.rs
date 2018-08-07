@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::LPMCSR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::LPMCSR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::LPMCSR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct LPMENR {
 }
 impl LPMENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct LPMACKR {
 }
 impl LPMACKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct REMWAKER {
 }
 impl REMWAKER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,7 +109,7 @@ pub struct BESLR {
 }
 impl BESLR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -130,7 +128,7 @@ impl<'a> _LPMENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -153,7 +151,7 @@ impl<'a> _LPMACKW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -164,12 +162,12 @@ impl<'a> _LPMACKW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - LPM support enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lpmen(&self) -> LPMENR {
         let bits = {
             const MASK: bool = true;
@@ -179,7 +177,7 @@ impl R {
         LPMENR { bits }
     }
     #[doc = "Bit 1 - LPM Token acknowledge enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lpmack(&self) -> LPMACKR {
         let bits = {
             const MASK: bool = true;
@@ -189,7 +187,7 @@ impl R {
         LPMACKR { bits }
     }
     #[doc = "Bit 3 - bRemoteWake value"]
-    #[inline(always)]
+    #[inline]
     pub fn remwake(&self) -> REMWAKER {
         let bits = {
             const MASK: bool = true;
@@ -199,7 +197,7 @@ impl R {
         REMWAKER { bits }
     }
     #[doc = "Bits 4:7 - BESL value"]
-    #[inline(always)]
+    #[inline]
     pub fn besl(&self) -> BESLR {
         let bits = {
             const MASK: u8 = 15;
@@ -211,23 +209,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - LPM support enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lpmen(&mut self) -> _LPMENW {
         _LPMENW { w: self }
     }
     #[doc = "Bit 1 - LPM Token acknowledge enable"]
-    #[inline(always)]
+    #[inline]
     pub fn lpmack(&mut self) -> _LPMACKW {
         _LPMACKW { w: self }
     }

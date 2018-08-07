@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::FNR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,7 +15,7 @@ pub struct FNR {
 }
 impl FNR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -28,7 +26,7 @@ pub struct LSOFR {
 }
 impl LSOFR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
     }
@@ -39,17 +37,17 @@ pub struct LCKR {
 }
 impl LCKR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -60,17 +58,17 @@ pub struct RXDMR {
 }
 impl RXDMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -81,29 +79,29 @@ pub struct RXDPR {
 }
 impl RXDPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:10 - Frame number"]
-    #[inline(always)]
+    #[inline]
     pub fn fn_(&self) -> FNR {
         let bits = {
             const MASK: u16 = 2047;
@@ -113,7 +111,7 @@ impl R {
         FNR { bits }
     }
     #[doc = "Bits 11:12 - Lost SOF"]
-    #[inline(always)]
+    #[inline]
     pub fn lsof(&self) -> LSOFR {
         let bits = {
             const MASK: u8 = 3;
@@ -123,7 +121,7 @@ impl R {
         LSOFR { bits }
     }
     #[doc = "Bit 13 - Locked"]
-    #[inline(always)]
+    #[inline]
     pub fn lck(&self) -> LCKR {
         let bits = {
             const MASK: bool = true;
@@ -133,7 +131,7 @@ impl R {
         LCKR { bits }
     }
     #[doc = "Bit 14 - Receive data - line status"]
-    #[inline(always)]
+    #[inline]
     pub fn rxdm(&self) -> RXDMR {
         let bits = {
             const MASK: bool = true;
@@ -143,7 +141,7 @@ impl R {
         RXDMR { bits }
     }
     #[doc = "Bit 15 - Receive data + line status"]
-    #[inline(always)]
+    #[inline]
     pub fn rxdp(&self) -> RXDPR {
         let bits = {
             const MASK: bool = true;

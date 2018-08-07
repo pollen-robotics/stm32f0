@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_FA1R {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CAN_FA1R {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CAN_FA1R {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct FACT0R {
 }
 impl FACT0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct FACT1R {
 }
 impl FACT1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct FACT2R {
 }
 impl FACT2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct FACT3R {
 }
 impl FACT3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct FACT4R {
 }
 impl FACT4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct FACT5R {
 }
 impl FACT5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct FACT6R {
 }
 impl FACT6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct FACT7R {
 }
 impl FACT7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct FACT8R {
 }
 impl FACT8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +235,17 @@ pub struct FACT9R {
 }
 impl FACT9R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +256,17 @@ pub struct FACT10R {
 }
 impl FACT10R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +277,17 @@ pub struct FACT11R {
 }
 impl FACT11R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +298,17 @@ pub struct FACT12R {
 }
 impl FACT12R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -321,17 +319,17 @@ pub struct FACT13R {
 }
 impl FACT13R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -342,17 +340,17 @@ pub struct FACT14R {
 }
 impl FACT14R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -363,17 +361,17 @@ pub struct FACT15R {
 }
 impl FACT15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -384,17 +382,17 @@ pub struct FACT16R {
 }
 impl FACT16R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -405,17 +403,17 @@ pub struct FACT17R {
 }
 impl FACT17R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -426,17 +424,17 @@ pub struct FACT18R {
 }
 impl FACT18R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -447,17 +445,17 @@ pub struct FACT19R {
 }
 impl FACT19R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -468,17 +466,17 @@ pub struct FACT20R {
 }
 impl FACT20R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -489,17 +487,17 @@ pub struct FACT21R {
 }
 impl FACT21R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -510,17 +508,17 @@ pub struct FACT22R {
 }
 impl FACT22R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -531,17 +529,17 @@ pub struct FACT23R {
 }
 impl FACT23R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -552,17 +550,17 @@ pub struct FACT24R {
 }
 impl FACT24R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -573,17 +571,17 @@ pub struct FACT25R {
 }
 impl FACT25R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -594,17 +592,17 @@ pub struct FACT26R {
 }
 impl FACT26R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -615,17 +613,17 @@ pub struct FACT27R {
 }
 impl FACT27R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -644,7 +642,7 @@ impl<'a> _FACT0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -667,7 +665,7 @@ impl<'a> _FACT1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -690,7 +688,7 @@ impl<'a> _FACT2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -713,7 +711,7 @@ impl<'a> _FACT3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -736,7 +734,7 @@ impl<'a> _FACT4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -759,7 +757,7 @@ impl<'a> _FACT5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -782,7 +780,7 @@ impl<'a> _FACT6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -805,7 +803,7 @@ impl<'a> _FACT7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -828,7 +826,7 @@ impl<'a> _FACT8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -851,7 +849,7 @@ impl<'a> _FACT9W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -874,7 +872,7 @@ impl<'a> _FACT10W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -897,7 +895,7 @@ impl<'a> _FACT11W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -920,7 +918,7 @@ impl<'a> _FACT12W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -943,7 +941,7 @@ impl<'a> _FACT13W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -966,7 +964,7 @@ impl<'a> _FACT14W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -989,7 +987,7 @@ impl<'a> _FACT15W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -1012,7 +1010,7 @@ impl<'a> _FACT16W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -1035,7 +1033,7 @@ impl<'a> _FACT17W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -1058,7 +1056,7 @@ impl<'a> _FACT18W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -1081,7 +1079,7 @@ impl<'a> _FACT19W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -1104,7 +1102,7 @@ impl<'a> _FACT20W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -1127,7 +1125,7 @@ impl<'a> _FACT21W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -1150,7 +1148,7 @@ impl<'a> _FACT22W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -1173,7 +1171,7 @@ impl<'a> _FACT23W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -1196,7 +1194,7 @@ impl<'a> _FACT24W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -1219,7 +1217,7 @@ impl<'a> _FACT25W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 25;
@@ -1242,7 +1240,7 @@ impl<'a> _FACT26W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 26;
@@ -1265,7 +1263,7 @@ impl<'a> _FACT27W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 27;
@@ -1276,12 +1274,12 @@ impl<'a> _FACT27W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact0(&self) -> FACT0R {
         let bits = {
             const MASK: bool = true;
@@ -1291,7 +1289,7 @@ impl R {
         FACT0R { bits }
     }
     #[doc = "Bit 1 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact1(&self) -> FACT1R {
         let bits = {
             const MASK: bool = true;
@@ -1301,7 +1299,7 @@ impl R {
         FACT1R { bits }
     }
     #[doc = "Bit 2 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact2(&self) -> FACT2R {
         let bits = {
             const MASK: bool = true;
@@ -1311,7 +1309,7 @@ impl R {
         FACT2R { bits }
     }
     #[doc = "Bit 3 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact3(&self) -> FACT3R {
         let bits = {
             const MASK: bool = true;
@@ -1321,7 +1319,7 @@ impl R {
         FACT3R { bits }
     }
     #[doc = "Bit 4 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact4(&self) -> FACT4R {
         let bits = {
             const MASK: bool = true;
@@ -1331,7 +1329,7 @@ impl R {
         FACT4R { bits }
     }
     #[doc = "Bit 5 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact5(&self) -> FACT5R {
         let bits = {
             const MASK: bool = true;
@@ -1341,7 +1339,7 @@ impl R {
         FACT5R { bits }
     }
     #[doc = "Bit 6 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact6(&self) -> FACT6R {
         let bits = {
             const MASK: bool = true;
@@ -1351,7 +1349,7 @@ impl R {
         FACT6R { bits }
     }
     #[doc = "Bit 7 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact7(&self) -> FACT7R {
         let bits = {
             const MASK: bool = true;
@@ -1361,7 +1359,7 @@ impl R {
         FACT7R { bits }
     }
     #[doc = "Bit 8 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact8(&self) -> FACT8R {
         let bits = {
             const MASK: bool = true;
@@ -1371,7 +1369,7 @@ impl R {
         FACT8R { bits }
     }
     #[doc = "Bit 9 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact9(&self) -> FACT9R {
         let bits = {
             const MASK: bool = true;
@@ -1381,7 +1379,7 @@ impl R {
         FACT9R { bits }
     }
     #[doc = "Bit 10 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact10(&self) -> FACT10R {
         let bits = {
             const MASK: bool = true;
@@ -1391,7 +1389,7 @@ impl R {
         FACT10R { bits }
     }
     #[doc = "Bit 11 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact11(&self) -> FACT11R {
         let bits = {
             const MASK: bool = true;
@@ -1401,7 +1399,7 @@ impl R {
         FACT11R { bits }
     }
     #[doc = "Bit 12 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact12(&self) -> FACT12R {
         let bits = {
             const MASK: bool = true;
@@ -1411,7 +1409,7 @@ impl R {
         FACT12R { bits }
     }
     #[doc = "Bit 13 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact13(&self) -> FACT13R {
         let bits = {
             const MASK: bool = true;
@@ -1421,7 +1419,7 @@ impl R {
         FACT13R { bits }
     }
     #[doc = "Bit 14 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact14(&self) -> FACT14R {
         let bits = {
             const MASK: bool = true;
@@ -1431,7 +1429,7 @@ impl R {
         FACT14R { bits }
     }
     #[doc = "Bit 15 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact15(&self) -> FACT15R {
         let bits = {
             const MASK: bool = true;
@@ -1441,7 +1439,7 @@ impl R {
         FACT15R { bits }
     }
     #[doc = "Bit 16 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact16(&self) -> FACT16R {
         let bits = {
             const MASK: bool = true;
@@ -1451,7 +1449,7 @@ impl R {
         FACT16R { bits }
     }
     #[doc = "Bit 17 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact17(&self) -> FACT17R {
         let bits = {
             const MASK: bool = true;
@@ -1461,7 +1459,7 @@ impl R {
         FACT17R { bits }
     }
     #[doc = "Bit 18 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact18(&self) -> FACT18R {
         let bits = {
             const MASK: bool = true;
@@ -1471,7 +1469,7 @@ impl R {
         FACT18R { bits }
     }
     #[doc = "Bit 19 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact19(&self) -> FACT19R {
         let bits = {
             const MASK: bool = true;
@@ -1481,7 +1479,7 @@ impl R {
         FACT19R { bits }
     }
     #[doc = "Bit 20 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact20(&self) -> FACT20R {
         let bits = {
             const MASK: bool = true;
@@ -1491,7 +1489,7 @@ impl R {
         FACT20R { bits }
     }
     #[doc = "Bit 21 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact21(&self) -> FACT21R {
         let bits = {
             const MASK: bool = true;
@@ -1501,7 +1499,7 @@ impl R {
         FACT21R { bits }
     }
     #[doc = "Bit 22 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact22(&self) -> FACT22R {
         let bits = {
             const MASK: bool = true;
@@ -1511,7 +1509,7 @@ impl R {
         FACT22R { bits }
     }
     #[doc = "Bit 23 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact23(&self) -> FACT23R {
         let bits = {
             const MASK: bool = true;
@@ -1521,7 +1519,7 @@ impl R {
         FACT23R { bits }
     }
     #[doc = "Bit 24 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact24(&self) -> FACT24R {
         let bits = {
             const MASK: bool = true;
@@ -1531,7 +1529,7 @@ impl R {
         FACT24R { bits }
     }
     #[doc = "Bit 25 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact25(&self) -> FACT25R {
         let bits = {
             const MASK: bool = true;
@@ -1541,7 +1539,7 @@ impl R {
         FACT25R { bits }
     }
     #[doc = "Bit 26 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact26(&self) -> FACT26R {
         let bits = {
             const MASK: bool = true;
@@ -1551,7 +1549,7 @@ impl R {
         FACT26R { bits }
     }
     #[doc = "Bit 27 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact27(&self) -> FACT27R {
         let bits = {
             const MASK: bool = true;
@@ -1563,153 +1561,153 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact0(&mut self) -> _FACT0W {
         _FACT0W { w: self }
     }
     #[doc = "Bit 1 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact1(&mut self) -> _FACT1W {
         _FACT1W { w: self }
     }
     #[doc = "Bit 2 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact2(&mut self) -> _FACT2W {
         _FACT2W { w: self }
     }
     #[doc = "Bit 3 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact3(&mut self) -> _FACT3W {
         _FACT3W { w: self }
     }
     #[doc = "Bit 4 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact4(&mut self) -> _FACT4W {
         _FACT4W { w: self }
     }
     #[doc = "Bit 5 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact5(&mut self) -> _FACT5W {
         _FACT5W { w: self }
     }
     #[doc = "Bit 6 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact6(&mut self) -> _FACT6W {
         _FACT6W { w: self }
     }
     #[doc = "Bit 7 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact7(&mut self) -> _FACT7W {
         _FACT7W { w: self }
     }
     #[doc = "Bit 8 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact8(&mut self) -> _FACT8W {
         _FACT8W { w: self }
     }
     #[doc = "Bit 9 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact9(&mut self) -> _FACT9W {
         _FACT9W { w: self }
     }
     #[doc = "Bit 10 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact10(&mut self) -> _FACT10W {
         _FACT10W { w: self }
     }
     #[doc = "Bit 11 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact11(&mut self) -> _FACT11W {
         _FACT11W { w: self }
     }
     #[doc = "Bit 12 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact12(&mut self) -> _FACT12W {
         _FACT12W { w: self }
     }
     #[doc = "Bit 13 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact13(&mut self) -> _FACT13W {
         _FACT13W { w: self }
     }
     #[doc = "Bit 14 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact14(&mut self) -> _FACT14W {
         _FACT14W { w: self }
     }
     #[doc = "Bit 15 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact15(&mut self) -> _FACT15W {
         _FACT15W { w: self }
     }
     #[doc = "Bit 16 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact16(&mut self) -> _FACT16W {
         _FACT16W { w: self }
     }
     #[doc = "Bit 17 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact17(&mut self) -> _FACT17W {
         _FACT17W { w: self }
     }
     #[doc = "Bit 18 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact18(&mut self) -> _FACT18W {
         _FACT18W { w: self }
     }
     #[doc = "Bit 19 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact19(&mut self) -> _FACT19W {
         _FACT19W { w: self }
     }
     #[doc = "Bit 20 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact20(&mut self) -> _FACT20W {
         _FACT20W { w: self }
     }
     #[doc = "Bit 21 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact21(&mut self) -> _FACT21W {
         _FACT21W { w: self }
     }
     #[doc = "Bit 22 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact22(&mut self) -> _FACT22W {
         _FACT22W { w: self }
     }
     #[doc = "Bit 23 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact23(&mut self) -> _FACT23W {
         _FACT23W { w: self }
     }
     #[doc = "Bit 24 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact24(&mut self) -> _FACT24W {
         _FACT24W { w: self }
     }
     #[doc = "Bit 25 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact25(&mut self) -> _FACT25W {
         _FACT25W { w: self }
     }
     #[doc = "Bit 26 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact26(&mut self) -> _FACT26W {
         _FACT26W { w: self }
     }
     #[doc = "Bit 27 - Filter active"]
-    #[inline(always)]
+    #[inline]
     pub fn fact27(&mut self) -> _FACT27W {
         _FACT27W { w: self }
     }

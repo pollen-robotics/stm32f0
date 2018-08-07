@@ -4,7 +4,7 @@ pub struct W {
 }
 impl super::OPTKEYR {
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -20,7 +20,7 @@ pub struct _OPTKEYRW<'a> {
 }
 impl<'a> _OPTKEYRW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(self, value: u32) -> &'a mut W {
         const MASK: u32 = 4294967295;
         const OFFSET: u8 = 0;
@@ -31,18 +31,18 @@ impl<'a> _OPTKEYRW<'a> {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 0:31 - Option byte key"]
-    #[inline(always)]
+    #[inline]
     pub fn optkeyr(&mut self) -> _OPTKEYRW {
         _OPTKEYRW { w: self }
     }

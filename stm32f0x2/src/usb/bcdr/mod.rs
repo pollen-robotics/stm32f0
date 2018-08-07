@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::BCDR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::BCDR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::BCDR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct BCDENR {
 }
 impl BCDENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct DCDENR {
 }
 impl DCDENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct PDENR {
 }
 impl PDENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct SDENR {
 }
 impl SDENR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct DCDETR {
 }
 impl DCDETR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct PDETR {
 }
 impl PDETR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct SDETR {
 }
 impl SDETR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct PS2DETR {
 }
 impl PS2DETR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct DPPUR {
 }
 impl DPPUR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -245,7 +243,7 @@ impl<'a> _BCDENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -268,7 +266,7 @@ impl<'a> _DCDENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -291,7 +289,7 @@ impl<'a> _PDENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -314,7 +312,7 @@ impl<'a> _SDENW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -337,7 +335,7 @@ impl<'a> _DPPUW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -348,12 +346,12 @@ impl<'a> _DPPUW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Battery charging detector (BCD) enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bcden(&self) -> BCDENR {
         let bits = {
             const MASK: bool = true;
@@ -363,7 +361,7 @@ impl R {
         BCDENR { bits }
     }
     #[doc = "Bit 1 - Data contact detection (DCD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dcden(&self) -> DCDENR {
         let bits = {
             const MASK: bool = true;
@@ -373,7 +371,7 @@ impl R {
         DCDENR { bits }
     }
     #[doc = "Bit 2 - Primary detection (PD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pden(&self) -> PDENR {
         let bits = {
             const MASK: bool = true;
@@ -383,7 +381,7 @@ impl R {
         PDENR { bits }
     }
     #[doc = "Bit 3 - Secondary detection (SD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn sden(&self) -> SDENR {
         let bits = {
             const MASK: bool = true;
@@ -393,7 +391,7 @@ impl R {
         SDENR { bits }
     }
     #[doc = "Bit 4 - Data contact detection (DCD) status"]
-    #[inline(always)]
+    #[inline]
     pub fn dcdet(&self) -> DCDETR {
         let bits = {
             const MASK: bool = true;
@@ -403,7 +401,7 @@ impl R {
         DCDETR { bits }
     }
     #[doc = "Bit 5 - Primary detection (PD) status"]
-    #[inline(always)]
+    #[inline]
     pub fn pdet(&self) -> PDETR {
         let bits = {
             const MASK: bool = true;
@@ -413,7 +411,7 @@ impl R {
         PDETR { bits }
     }
     #[doc = "Bit 6 - Secondary detection (SD) status"]
-    #[inline(always)]
+    #[inline]
     pub fn sdet(&self) -> SDETR {
         let bits = {
             const MASK: bool = true;
@@ -423,7 +421,7 @@ impl R {
         SDETR { bits }
     }
     #[doc = "Bit 7 - DM pull-up detection status"]
-    #[inline(always)]
+    #[inline]
     pub fn ps2det(&self) -> PS2DETR {
         let bits = {
             const MASK: bool = true;
@@ -433,7 +431,7 @@ impl R {
         PS2DETR { bits }
     }
     #[doc = "Bit 15 - DP pull-up control"]
-    #[inline(always)]
+    #[inline]
     pub fn dppu(&self) -> DPPUR {
         let bits = {
             const MASK: bool = true;
@@ -445,38 +443,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Battery charging detector (BCD) enable"]
-    #[inline(always)]
+    #[inline]
     pub fn bcden(&mut self) -> _BCDENW {
         _BCDENW { w: self }
     }
     #[doc = "Bit 1 - Data contact detection (DCD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn dcden(&mut self) -> _DCDENW {
         _DCDENW { w: self }
     }
     #[doc = "Bit 2 - Primary detection (PD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn pden(&mut self) -> _PDENW {
         _PDENW { w: self }
     }
     #[doc = "Bit 3 - Secondary detection (SD) mode enable"]
-    #[inline(always)]
+    #[inline]
     pub fn sden(&mut self) -> _SDENW {
         _SDENW { w: self }
     }
     #[doc = "Bit 15 - DP pull-up control"]
-    #[inline(always)]
+    #[inline]
     pub fn dppu(&mut self) -> _DPPUW {
         _DPPUW { w: self }
     }

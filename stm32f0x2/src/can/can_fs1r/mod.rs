@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_FS1R {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CAN_FS1R {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CAN_FS1R {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct FSC0R {
 }
 impl FSC0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct FSC1R {
 }
 impl FSC1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct FSC2R {
 }
 impl FSC2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct FSC3R {
 }
 impl FSC3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct FSC4R {
 }
 impl FSC4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct FSC5R {
 }
 impl FSC5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct FSC6R {
 }
 impl FSC6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct FSC7R {
 }
 impl FSC7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct FSC8R {
 }
 impl FSC8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +235,17 @@ pub struct FSC9R {
 }
 impl FSC9R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +256,17 @@ pub struct FSC10R {
 }
 impl FSC10R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +277,17 @@ pub struct FSC11R {
 }
 impl FSC11R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +298,17 @@ pub struct FSC12R {
 }
 impl FSC12R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -321,17 +319,17 @@ pub struct FSC13R {
 }
 impl FSC13R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -342,17 +340,17 @@ pub struct FSC14R {
 }
 impl FSC14R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -363,17 +361,17 @@ pub struct FSC15R {
 }
 impl FSC15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -384,17 +382,17 @@ pub struct FSC16R {
 }
 impl FSC16R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -405,17 +403,17 @@ pub struct FSC17R {
 }
 impl FSC17R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -426,17 +424,17 @@ pub struct FSC18R {
 }
 impl FSC18R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -447,17 +445,17 @@ pub struct FSC19R {
 }
 impl FSC19R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -468,17 +466,17 @@ pub struct FSC20R {
 }
 impl FSC20R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -489,17 +487,17 @@ pub struct FSC21R {
 }
 impl FSC21R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -510,17 +508,17 @@ pub struct FSC22R {
 }
 impl FSC22R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -531,17 +529,17 @@ pub struct FSC23R {
 }
 impl FSC23R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -552,17 +550,17 @@ pub struct FSC24R {
 }
 impl FSC24R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -573,17 +571,17 @@ pub struct FSC25R {
 }
 impl FSC25R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -594,17 +592,17 @@ pub struct FSC26R {
 }
 impl FSC26R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -615,17 +613,17 @@ pub struct FSC27R {
 }
 impl FSC27R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -644,7 +642,7 @@ impl<'a> _FSC0W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -667,7 +665,7 @@ impl<'a> _FSC1W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -690,7 +688,7 @@ impl<'a> _FSC2W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -713,7 +711,7 @@ impl<'a> _FSC3W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -736,7 +734,7 @@ impl<'a> _FSC4W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -759,7 +757,7 @@ impl<'a> _FSC5W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -782,7 +780,7 @@ impl<'a> _FSC6W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -805,7 +803,7 @@ impl<'a> _FSC7W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -828,7 +826,7 @@ impl<'a> _FSC8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -851,7 +849,7 @@ impl<'a> _FSC9W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -874,7 +872,7 @@ impl<'a> _FSC10W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -897,7 +895,7 @@ impl<'a> _FSC11W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -920,7 +918,7 @@ impl<'a> _FSC12W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -943,7 +941,7 @@ impl<'a> _FSC13W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -966,7 +964,7 @@ impl<'a> _FSC14W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -989,7 +987,7 @@ impl<'a> _FSC15W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -1012,7 +1010,7 @@ impl<'a> _FSC16W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 16;
@@ -1035,7 +1033,7 @@ impl<'a> _FSC17W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 17;
@@ -1058,7 +1056,7 @@ impl<'a> _FSC18W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 18;
@@ -1081,7 +1079,7 @@ impl<'a> _FSC19W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 19;
@@ -1104,7 +1102,7 @@ impl<'a> _FSC20W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 20;
@@ -1127,7 +1125,7 @@ impl<'a> _FSC21W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 21;
@@ -1150,7 +1148,7 @@ impl<'a> _FSC22W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 22;
@@ -1173,7 +1171,7 @@ impl<'a> _FSC23W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 23;
@@ -1196,7 +1194,7 @@ impl<'a> _FSC24W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 24;
@@ -1219,7 +1217,7 @@ impl<'a> _FSC25W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 25;
@@ -1242,7 +1240,7 @@ impl<'a> _FSC26W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 26;
@@ -1265,7 +1263,7 @@ impl<'a> _FSC27W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 27;
@@ -1276,12 +1274,12 @@ impl<'a> _FSC27W<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 0 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc0(&self) -> FSC0R {
         let bits = {
             const MASK: bool = true;
@@ -1291,7 +1289,7 @@ impl R {
         FSC0R { bits }
     }
     #[doc = "Bit 1 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc1(&self) -> FSC1R {
         let bits = {
             const MASK: bool = true;
@@ -1301,7 +1299,7 @@ impl R {
         FSC1R { bits }
     }
     #[doc = "Bit 2 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc2(&self) -> FSC2R {
         let bits = {
             const MASK: bool = true;
@@ -1311,7 +1309,7 @@ impl R {
         FSC2R { bits }
     }
     #[doc = "Bit 3 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc3(&self) -> FSC3R {
         let bits = {
             const MASK: bool = true;
@@ -1321,7 +1319,7 @@ impl R {
         FSC3R { bits }
     }
     #[doc = "Bit 4 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc4(&self) -> FSC4R {
         let bits = {
             const MASK: bool = true;
@@ -1331,7 +1329,7 @@ impl R {
         FSC4R { bits }
     }
     #[doc = "Bit 5 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc5(&self) -> FSC5R {
         let bits = {
             const MASK: bool = true;
@@ -1341,7 +1339,7 @@ impl R {
         FSC5R { bits }
     }
     #[doc = "Bit 6 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc6(&self) -> FSC6R {
         let bits = {
             const MASK: bool = true;
@@ -1351,7 +1349,7 @@ impl R {
         FSC6R { bits }
     }
     #[doc = "Bit 7 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc7(&self) -> FSC7R {
         let bits = {
             const MASK: bool = true;
@@ -1361,7 +1359,7 @@ impl R {
         FSC7R { bits }
     }
     #[doc = "Bit 8 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc8(&self) -> FSC8R {
         let bits = {
             const MASK: bool = true;
@@ -1371,7 +1369,7 @@ impl R {
         FSC8R { bits }
     }
     #[doc = "Bit 9 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc9(&self) -> FSC9R {
         let bits = {
             const MASK: bool = true;
@@ -1381,7 +1379,7 @@ impl R {
         FSC9R { bits }
     }
     #[doc = "Bit 10 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc10(&self) -> FSC10R {
         let bits = {
             const MASK: bool = true;
@@ -1391,7 +1389,7 @@ impl R {
         FSC10R { bits }
     }
     #[doc = "Bit 11 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc11(&self) -> FSC11R {
         let bits = {
             const MASK: bool = true;
@@ -1401,7 +1399,7 @@ impl R {
         FSC11R { bits }
     }
     #[doc = "Bit 12 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc12(&self) -> FSC12R {
         let bits = {
             const MASK: bool = true;
@@ -1411,7 +1409,7 @@ impl R {
         FSC12R { bits }
     }
     #[doc = "Bit 13 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc13(&self) -> FSC13R {
         let bits = {
             const MASK: bool = true;
@@ -1421,7 +1419,7 @@ impl R {
         FSC13R { bits }
     }
     #[doc = "Bit 14 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc14(&self) -> FSC14R {
         let bits = {
             const MASK: bool = true;
@@ -1431,7 +1429,7 @@ impl R {
         FSC14R { bits }
     }
     #[doc = "Bit 15 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc15(&self) -> FSC15R {
         let bits = {
             const MASK: bool = true;
@@ -1441,7 +1439,7 @@ impl R {
         FSC15R { bits }
     }
     #[doc = "Bit 16 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc16(&self) -> FSC16R {
         let bits = {
             const MASK: bool = true;
@@ -1451,7 +1449,7 @@ impl R {
         FSC16R { bits }
     }
     #[doc = "Bit 17 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc17(&self) -> FSC17R {
         let bits = {
             const MASK: bool = true;
@@ -1461,7 +1459,7 @@ impl R {
         FSC17R { bits }
     }
     #[doc = "Bit 18 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc18(&self) -> FSC18R {
         let bits = {
             const MASK: bool = true;
@@ -1471,7 +1469,7 @@ impl R {
         FSC18R { bits }
     }
     #[doc = "Bit 19 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc19(&self) -> FSC19R {
         let bits = {
             const MASK: bool = true;
@@ -1481,7 +1479,7 @@ impl R {
         FSC19R { bits }
     }
     #[doc = "Bit 20 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc20(&self) -> FSC20R {
         let bits = {
             const MASK: bool = true;
@@ -1491,7 +1489,7 @@ impl R {
         FSC20R { bits }
     }
     #[doc = "Bit 21 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc21(&self) -> FSC21R {
         let bits = {
             const MASK: bool = true;
@@ -1501,7 +1499,7 @@ impl R {
         FSC21R { bits }
     }
     #[doc = "Bit 22 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc22(&self) -> FSC22R {
         let bits = {
             const MASK: bool = true;
@@ -1511,7 +1509,7 @@ impl R {
         FSC22R { bits }
     }
     #[doc = "Bit 23 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc23(&self) -> FSC23R {
         let bits = {
             const MASK: bool = true;
@@ -1521,7 +1519,7 @@ impl R {
         FSC23R { bits }
     }
     #[doc = "Bit 24 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc24(&self) -> FSC24R {
         let bits = {
             const MASK: bool = true;
@@ -1531,7 +1529,7 @@ impl R {
         FSC24R { bits }
     }
     #[doc = "Bit 25 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc25(&self) -> FSC25R {
         let bits = {
             const MASK: bool = true;
@@ -1541,7 +1539,7 @@ impl R {
         FSC25R { bits }
     }
     #[doc = "Bit 26 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc26(&self) -> FSC26R {
         let bits = {
             const MASK: bool = true;
@@ -1551,7 +1549,7 @@ impl R {
         FSC26R { bits }
     }
     #[doc = "Bit 27 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc27(&self) -> FSC27R {
         let bits = {
             const MASK: bool = true;
@@ -1563,153 +1561,153 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 0 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc0(&mut self) -> _FSC0W {
         _FSC0W { w: self }
     }
     #[doc = "Bit 1 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc1(&mut self) -> _FSC1W {
         _FSC1W { w: self }
     }
     #[doc = "Bit 2 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc2(&mut self) -> _FSC2W {
         _FSC2W { w: self }
     }
     #[doc = "Bit 3 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc3(&mut self) -> _FSC3W {
         _FSC3W { w: self }
     }
     #[doc = "Bit 4 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc4(&mut self) -> _FSC4W {
         _FSC4W { w: self }
     }
     #[doc = "Bit 5 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc5(&mut self) -> _FSC5W {
         _FSC5W { w: self }
     }
     #[doc = "Bit 6 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc6(&mut self) -> _FSC6W {
         _FSC6W { w: self }
     }
     #[doc = "Bit 7 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc7(&mut self) -> _FSC7W {
         _FSC7W { w: self }
     }
     #[doc = "Bit 8 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc8(&mut self) -> _FSC8W {
         _FSC8W { w: self }
     }
     #[doc = "Bit 9 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc9(&mut self) -> _FSC9W {
         _FSC9W { w: self }
     }
     #[doc = "Bit 10 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc10(&mut self) -> _FSC10W {
         _FSC10W { w: self }
     }
     #[doc = "Bit 11 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc11(&mut self) -> _FSC11W {
         _FSC11W { w: self }
     }
     #[doc = "Bit 12 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc12(&mut self) -> _FSC12W {
         _FSC12W { w: self }
     }
     #[doc = "Bit 13 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc13(&mut self) -> _FSC13W {
         _FSC13W { w: self }
     }
     #[doc = "Bit 14 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc14(&mut self) -> _FSC14W {
         _FSC14W { w: self }
     }
     #[doc = "Bit 15 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc15(&mut self) -> _FSC15W {
         _FSC15W { w: self }
     }
     #[doc = "Bit 16 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc16(&mut self) -> _FSC16W {
         _FSC16W { w: self }
     }
     #[doc = "Bit 17 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc17(&mut self) -> _FSC17W {
         _FSC17W { w: self }
     }
     #[doc = "Bit 18 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc18(&mut self) -> _FSC18W {
         _FSC18W { w: self }
     }
     #[doc = "Bit 19 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc19(&mut self) -> _FSC19W {
         _FSC19W { w: self }
     }
     #[doc = "Bit 20 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc20(&mut self) -> _FSC20W {
         _FSC20W { w: self }
     }
     #[doc = "Bit 21 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc21(&mut self) -> _FSC21W {
         _FSC21W { w: self }
     }
     #[doc = "Bit 22 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc22(&mut self) -> _FSC22W {
         _FSC22W { w: self }
     }
     #[doc = "Bit 23 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc23(&mut self) -> _FSC23W {
         _FSC23W { w: self }
     }
     #[doc = "Bit 24 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc24(&mut self) -> _FSC24W {
         _FSC24W { w: self }
     }
     #[doc = "Bit 25 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc25(&mut self) -> _FSC25W {
         _FSC25W { w: self }
     }
     #[doc = "Bit 26 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc26(&mut self) -> _FSC26W {
         _FSC26W { w: self }
     }
     #[doc = "Bit 27 - Filter scale configuration"]
-    #[inline(always)]
+    #[inline]
     pub fn fsc27(&mut self) -> _FSC27W {
         _FSC27W { w: self }
     }

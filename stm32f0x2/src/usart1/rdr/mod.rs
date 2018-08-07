@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::RDR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,19 +15,19 @@ pub struct RDRR {
 }
 impl RDRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 0:8 - Receive data value"]
-    #[inline(always)]
+    #[inline]
     pub fn rdr(&self) -> RDRR {
         let bits = {
             const MASK: u16 = 511;

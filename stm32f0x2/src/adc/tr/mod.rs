@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::TR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::TR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::TR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct HTR {
 }
 impl HTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +57,7 @@ pub struct LTR {
 }
 impl LTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -70,7 +68,7 @@ pub struct _HTW<'a> {
 }
 impl<'a> _HTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 4095;
         const OFFSET: u8 = 16;
@@ -85,7 +83,7 @@ pub struct _LTW<'a> {
 }
 impl<'a> _LTW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 4095;
         const OFFSET: u8 = 0;
@@ -96,12 +94,12 @@ impl<'a> _LTW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 16:27 - Analog watchdog higher threshold"]
-    #[inline(always)]
+    #[inline]
     pub fn ht(&self) -> HTR {
         let bits = {
             const MASK: u16 = 4095;
@@ -111,7 +109,7 @@ impl R {
         HTR { bits }
     }
     #[doc = "Bits 0:11 - Analog watchdog lower threshold"]
-    #[inline(always)]
+    #[inline]
     pub fn lt(&self) -> LTR {
         let bits = {
             const MASK: u16 = 4095;
@@ -123,23 +121,23 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 4095 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 16:27 - Analog watchdog higher threshold"]
-    #[inline(always)]
+    #[inline]
     pub fn ht(&mut self) -> _HTW {
         _HTW { w: self }
     }
     #[doc = "Bits 0:11 - Analog watchdog lower threshold"]
-    #[inline(always)]
+    #[inline]
     pub fn lt(&mut self) -> _LTW {
         _LTW { w: self }
     }

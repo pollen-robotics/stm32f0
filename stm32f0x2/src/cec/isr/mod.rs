@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::ISR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::ISR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::ISR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct TXACKER {
 }
 impl TXACKER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct TXERRR {
 }
 impl TXERRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct TXUDRR {
 }
 impl TXUDRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,17 +109,17 @@ pub struct TXENDR {
 }
 impl TXENDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -132,17 +130,17 @@ pub struct TXBRR {
 }
 impl TXBRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -153,17 +151,17 @@ pub struct ARBLSTR {
 }
 impl ARBLSTR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -174,17 +172,17 @@ pub struct RXACKER {
 }
 impl RXACKER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -195,17 +193,17 @@ pub struct LBPER {
 }
 impl LBPER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -216,17 +214,17 @@ pub struct SBPER {
 }
 impl SBPER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -237,17 +235,17 @@ pub struct BRER {
 }
 impl BRER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -258,17 +256,17 @@ pub struct RXOVRR {
 }
 impl RXOVRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -279,17 +277,17 @@ pub struct RXENDR {
 }
 impl RXENDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -300,17 +298,17 @@ pub struct RXBRR {
 }
 impl RXBRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -329,7 +327,7 @@ impl<'a> _TXACKEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 12;
@@ -352,7 +350,7 @@ impl<'a> _TXERRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 11;
@@ -375,7 +373,7 @@ impl<'a> _TXUDRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 10;
@@ -398,7 +396,7 @@ impl<'a> _TXENDW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 9;
@@ -421,7 +419,7 @@ impl<'a> _TXBRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 8;
@@ -444,7 +442,7 @@ impl<'a> _ARBLSTW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 7;
@@ -467,7 +465,7 @@ impl<'a> _RXACKEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 6;
@@ -490,7 +488,7 @@ impl<'a> _LBPEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 5;
@@ -513,7 +511,7 @@ impl<'a> _SBPEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 4;
@@ -536,7 +534,7 @@ impl<'a> _BREW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 3;
@@ -559,7 +557,7 @@ impl<'a> _RXOVRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -582,7 +580,7 @@ impl<'a> _RXENDW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -605,7 +603,7 @@ impl<'a> _RXBRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -616,12 +614,12 @@ impl<'a> _RXBRW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 12 - Tx-Missing acknowledge error"]
-    #[inline(always)]
+    #[inline]
     pub fn txacke(&self) -> TXACKER {
         let bits = {
             const MASK: bool = true;
@@ -631,7 +629,7 @@ impl R {
         TXACKER { bits }
     }
     #[doc = "Bit 11 - Tx-Error"]
-    #[inline(always)]
+    #[inline]
     pub fn txerr(&self) -> TXERRR {
         let bits = {
             const MASK: bool = true;
@@ -641,7 +639,7 @@ impl R {
         TXERRR { bits }
     }
     #[doc = "Bit 10 - Tx-Buffer Underrun"]
-    #[inline(always)]
+    #[inline]
     pub fn txudr(&self) -> TXUDRR {
         let bits = {
             const MASK: bool = true;
@@ -651,7 +649,7 @@ impl R {
         TXUDRR { bits }
     }
     #[doc = "Bit 9 - End of Transmission"]
-    #[inline(always)]
+    #[inline]
     pub fn txend(&self) -> TXENDR {
         let bits = {
             const MASK: bool = true;
@@ -661,7 +659,7 @@ impl R {
         TXENDR { bits }
     }
     #[doc = "Bit 8 - Tx-Byte Request"]
-    #[inline(always)]
+    #[inline]
     pub fn txbr(&self) -> TXBRR {
         let bits = {
             const MASK: bool = true;
@@ -671,7 +669,7 @@ impl R {
         TXBRR { bits }
     }
     #[doc = "Bit 7 - Arbitration Lost"]
-    #[inline(always)]
+    #[inline]
     pub fn arblst(&self) -> ARBLSTR {
         let bits = {
             const MASK: bool = true;
@@ -681,7 +679,7 @@ impl R {
         ARBLSTR { bits }
     }
     #[doc = "Bit 6 - Rx-Missing Acknowledge"]
-    #[inline(always)]
+    #[inline]
     pub fn rxacke(&self) -> RXACKER {
         let bits = {
             const MASK: bool = true;
@@ -691,7 +689,7 @@ impl R {
         RXACKER { bits }
     }
     #[doc = "Bit 5 - Rx-Long Bit Period Error"]
-    #[inline(always)]
+    #[inline]
     pub fn lbpe(&self) -> LBPER {
         let bits = {
             const MASK: bool = true;
@@ -701,7 +699,7 @@ impl R {
         LBPER { bits }
     }
     #[doc = "Bit 4 - Rx-Short Bit period error"]
-    #[inline(always)]
+    #[inline]
     pub fn sbpe(&self) -> SBPER {
         let bits = {
             const MASK: bool = true;
@@ -711,7 +709,7 @@ impl R {
         SBPER { bits }
     }
     #[doc = "Bit 3 - Rx-Bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn bre(&self) -> BRER {
         let bits = {
             const MASK: bool = true;
@@ -721,7 +719,7 @@ impl R {
         BRER { bits }
     }
     #[doc = "Bit 2 - Rx-Overrun"]
-    #[inline(always)]
+    #[inline]
     pub fn rxovr(&self) -> RXOVRR {
         let bits = {
             const MASK: bool = true;
@@ -731,7 +729,7 @@ impl R {
         RXOVRR { bits }
     }
     #[doc = "Bit 1 - End Of Reception"]
-    #[inline(always)]
+    #[inline]
     pub fn rxend(&self) -> RXENDR {
         let bits = {
             const MASK: bool = true;
@@ -741,7 +739,7 @@ impl R {
         RXENDR { bits }
     }
     #[doc = "Bit 0 - Rx-Byte Received"]
-    #[inline(always)]
+    #[inline]
     pub fn rxbr(&self) -> RXBRR {
         let bits = {
             const MASK: bool = true;
@@ -753,78 +751,78 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 12 - Tx-Missing acknowledge error"]
-    #[inline(always)]
+    #[inline]
     pub fn txacke(&mut self) -> _TXACKEW {
         _TXACKEW { w: self }
     }
     #[doc = "Bit 11 - Tx-Error"]
-    #[inline(always)]
+    #[inline]
     pub fn txerr(&mut self) -> _TXERRW {
         _TXERRW { w: self }
     }
     #[doc = "Bit 10 - Tx-Buffer Underrun"]
-    #[inline(always)]
+    #[inline]
     pub fn txudr(&mut self) -> _TXUDRW {
         _TXUDRW { w: self }
     }
     #[doc = "Bit 9 - End of Transmission"]
-    #[inline(always)]
+    #[inline]
     pub fn txend(&mut self) -> _TXENDW {
         _TXENDW { w: self }
     }
     #[doc = "Bit 8 - Tx-Byte Request"]
-    #[inline(always)]
+    #[inline]
     pub fn txbr(&mut self) -> _TXBRW {
         _TXBRW { w: self }
     }
     #[doc = "Bit 7 - Arbitration Lost"]
-    #[inline(always)]
+    #[inline]
     pub fn arblst(&mut self) -> _ARBLSTW {
         _ARBLSTW { w: self }
     }
     #[doc = "Bit 6 - Rx-Missing Acknowledge"]
-    #[inline(always)]
+    #[inline]
     pub fn rxacke(&mut self) -> _RXACKEW {
         _RXACKEW { w: self }
     }
     #[doc = "Bit 5 - Rx-Long Bit Period Error"]
-    #[inline(always)]
+    #[inline]
     pub fn lbpe(&mut self) -> _LBPEW {
         _LBPEW { w: self }
     }
     #[doc = "Bit 4 - Rx-Short Bit period error"]
-    #[inline(always)]
+    #[inline]
     pub fn sbpe(&mut self) -> _SBPEW {
         _SBPEW { w: self }
     }
     #[doc = "Bit 3 - Rx-Bit rising error"]
-    #[inline(always)]
+    #[inline]
     pub fn bre(&mut self) -> _BREW {
         _BREW { w: self }
     }
     #[doc = "Bit 2 - Rx-Overrun"]
-    #[inline(always)]
+    #[inline]
     pub fn rxovr(&mut self) -> _RXOVRW {
         _RXOVRW { w: self }
     }
     #[doc = "Bit 1 - End Of Reception"]
-    #[inline(always)]
+    #[inline]
     pub fn rxend(&mut self) -> _RXENDW {
         _RXENDW { w: self }
     }
     #[doc = "Bit 0 - Rx-Byte Received"]
-    #[inline(always)]
+    #[inline]
     pub fn rxbr(&mut self) -> _RXBRW {
         _RXBRW { w: self }
     }

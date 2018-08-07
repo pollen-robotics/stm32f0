@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CALR {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CALR {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CALR {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,17 +46,17 @@ pub struct CALPR {
 }
 impl CALPR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -69,17 +67,17 @@ pub struct CALW8R {
 }
 impl CALW8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -90,17 +88,17 @@ pub struct CALW16R {
 }
 impl CALW16R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -111,7 +109,7 @@ pub struct CALMR {
 }
 impl CALMR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -130,7 +128,7 @@ impl<'a> _CALPW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 15;
@@ -153,7 +151,7 @@ impl<'a> _CALW8W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 14;
@@ -176,7 +174,7 @@ impl<'a> _CALW16W<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 13;
@@ -191,7 +189,7 @@ pub struct _CALMW<'a> {
 }
 impl<'a> _CALMW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 511;
         const OFFSET: u8 = 0;
@@ -202,12 +200,12 @@ impl<'a> _CALMW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 15 - Increase frequency of RTC by 488.5 ppm"]
-    #[inline(always)]
+    #[inline]
     pub fn calp(&self) -> CALPR {
         let bits = {
             const MASK: bool = true;
@@ -217,7 +215,7 @@ impl R {
         CALPR { bits }
     }
     #[doc = "Bit 14 - Use an 8-second calibration cycle period"]
-    #[inline(always)]
+    #[inline]
     pub fn calw8(&self) -> CALW8R {
         let bits = {
             const MASK: bool = true;
@@ -227,7 +225,7 @@ impl R {
         CALW8R { bits }
     }
     #[doc = "Bit 13 - Use a 16-second calibration cycle period"]
-    #[inline(always)]
+    #[inline]
     pub fn calw16(&self) -> CALW16R {
         let bits = {
             const MASK: bool = true;
@@ -237,7 +235,7 @@ impl R {
         CALW16R { bits }
     }
     #[doc = "Bits 0:8 - Calibration minus"]
-    #[inline(always)]
+    #[inline]
     pub fn calm(&self) -> CALMR {
         let bits = {
             const MASK: u16 = 511;
@@ -249,33 +247,33 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bit 15 - Increase frequency of RTC by 488.5 ppm"]
-    #[inline(always)]
+    #[inline]
     pub fn calp(&mut self) -> _CALPW {
         _CALPW { w: self }
     }
     #[doc = "Bit 14 - Use an 8-second calibration cycle period"]
-    #[inline(always)]
+    #[inline]
     pub fn calw8(&mut self) -> _CALW8W {
         _CALW8W { w: self }
     }
     #[doc = "Bit 13 - Use a 16-second calibration cycle period"]
-    #[inline(always)]
+    #[inline]
     pub fn calw16(&mut self) -> _CALW16W {
         _CALW16W { w: self }
     }
     #[doc = "Bits 0:8 - Calibration minus"]
-    #[inline(always)]
+    #[inline]
     pub fn calm(&mut self) -> _CALMW {
         _CALMW { w: self }
     }

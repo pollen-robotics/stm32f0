@@ -4,11 +4,9 @@ pub struct R {
 }
 impl super::IDR {
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
 }
 #[doc = r" Value of the field"]
@@ -17,17 +15,17 @@ pub struct IDR15R {
 }
 impl IDR15R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -38,17 +36,17 @@ pub struct IDR14R {
 }
 impl IDR14R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -59,17 +57,17 @@ pub struct IDR13R {
 }
 impl IDR13R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -80,17 +78,17 @@ pub struct IDR12R {
 }
 impl IDR12R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -101,17 +99,17 @@ pub struct IDR11R {
 }
 impl IDR11R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -122,17 +120,17 @@ pub struct IDR10R {
 }
 impl IDR10R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -143,17 +141,17 @@ pub struct IDR9R {
 }
 impl IDR9R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -164,17 +162,17 @@ pub struct IDR8R {
 }
 impl IDR8R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -185,17 +183,17 @@ pub struct IDR7R {
 }
 impl IDR7R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -206,17 +204,17 @@ pub struct IDR6R {
 }
 impl IDR6R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -227,17 +225,17 @@ pub struct IDR5R {
 }
 impl IDR5R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -248,17 +246,17 @@ pub struct IDR4R {
 }
 impl IDR4R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -269,17 +267,17 @@ pub struct IDR3R {
 }
 impl IDR3R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -290,17 +288,17 @@ pub struct IDR2R {
 }
 impl IDR2R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -311,17 +309,17 @@ pub struct IDR1R {
 }
 impl IDR1R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -332,29 +330,29 @@ pub struct IDR0R {
 }
 impl IDR0R {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bit 15 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr15(&self) -> IDR15R {
         let bits = {
             const MASK: bool = true;
@@ -364,7 +362,7 @@ impl R {
         IDR15R { bits }
     }
     #[doc = "Bit 14 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr14(&self) -> IDR14R {
         let bits = {
             const MASK: bool = true;
@@ -374,7 +372,7 @@ impl R {
         IDR14R { bits }
     }
     #[doc = "Bit 13 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr13(&self) -> IDR13R {
         let bits = {
             const MASK: bool = true;
@@ -384,7 +382,7 @@ impl R {
         IDR13R { bits }
     }
     #[doc = "Bit 12 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr12(&self) -> IDR12R {
         let bits = {
             const MASK: bool = true;
@@ -394,7 +392,7 @@ impl R {
         IDR12R { bits }
     }
     #[doc = "Bit 11 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr11(&self) -> IDR11R {
         let bits = {
             const MASK: bool = true;
@@ -404,7 +402,7 @@ impl R {
         IDR11R { bits }
     }
     #[doc = "Bit 10 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr10(&self) -> IDR10R {
         let bits = {
             const MASK: bool = true;
@@ -414,7 +412,7 @@ impl R {
         IDR10R { bits }
     }
     #[doc = "Bit 9 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr9(&self) -> IDR9R {
         let bits = {
             const MASK: bool = true;
@@ -424,7 +422,7 @@ impl R {
         IDR9R { bits }
     }
     #[doc = "Bit 8 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr8(&self) -> IDR8R {
         let bits = {
             const MASK: bool = true;
@@ -434,7 +432,7 @@ impl R {
         IDR8R { bits }
     }
     #[doc = "Bit 7 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr7(&self) -> IDR7R {
         let bits = {
             const MASK: bool = true;
@@ -444,7 +442,7 @@ impl R {
         IDR7R { bits }
     }
     #[doc = "Bit 6 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr6(&self) -> IDR6R {
         let bits = {
             const MASK: bool = true;
@@ -454,7 +452,7 @@ impl R {
         IDR6R { bits }
     }
     #[doc = "Bit 5 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr5(&self) -> IDR5R {
         let bits = {
             const MASK: bool = true;
@@ -464,7 +462,7 @@ impl R {
         IDR5R { bits }
     }
     #[doc = "Bit 4 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr4(&self) -> IDR4R {
         let bits = {
             const MASK: bool = true;
@@ -474,7 +472,7 @@ impl R {
         IDR4R { bits }
     }
     #[doc = "Bit 3 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr3(&self) -> IDR3R {
         let bits = {
             const MASK: bool = true;
@@ -484,7 +482,7 @@ impl R {
         IDR3R { bits }
     }
     #[doc = "Bit 2 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr2(&self) -> IDR2R {
         let bits = {
             const MASK: bool = true;
@@ -494,7 +492,7 @@ impl R {
         IDR2R { bits }
     }
     #[doc = "Bit 1 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr1(&self) -> IDR1R {
         let bits = {
             const MASK: bool = true;
@@ -504,7 +502,7 @@ impl R {
         IDR1R { bits }
     }
     #[doc = "Bit 0 - Port input data (y = 0..15)"]
-    #[inline(always)]
+    #[inline]
     pub fn idr0(&self) -> IDR0R {
         let bits = {
             const MASK: bool = true;

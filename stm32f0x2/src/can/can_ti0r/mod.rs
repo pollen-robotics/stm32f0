@@ -8,7 +8,7 @@ pub struct W {
 }
 impl super::CAN_TI0R {
     #[doc = r" Modifies the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn modify<F>(&self, f: F)
     where
         for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
@@ -20,14 +20,12 @@ impl super::CAN_TI0R {
         self.register.set(w.bits);
     }
     #[doc = r" Reads the contents of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
+        R { bits: self.register.get() }
     }
     #[doc = r" Writes to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn write<F>(&self, f: F)
     where
         F: FnOnce(&mut W) -> &mut W,
@@ -37,7 +35,7 @@ impl super::CAN_TI0R {
         self.register.set(w.bits);
     }
     #[doc = r" Writes the reset value to the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset(&self) {
         self.write(|w| w)
     }
@@ -48,7 +46,7 @@ pub struct STIDR {
 }
 impl STIDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u16 {
         self.bits
     }
@@ -59,7 +57,7 @@ pub struct EXIDR {
 }
 impl EXIDR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
@@ -70,17 +68,17 @@ pub struct IDER {
 }
 impl IDER {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -91,17 +89,17 @@ pub struct RTRR {
 }
 impl RTRR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -112,17 +110,17 @@ pub struct TXRQR {
 }
 impl TXRQR {
     #[doc = r" Value of the field as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(&self) -> bool {
         self.bits
     }
     #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
     #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline(always)]
+    #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
@@ -133,7 +131,7 @@ pub struct _STIDW<'a> {
 }
 impl<'a> _STIDW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 2047;
         const OFFSET: u8 = 21;
@@ -148,7 +146,7 @@ pub struct _EXIDW<'a> {
 }
 impl<'a> _EXIDW<'a> {
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
         const MASK: u32 = 262143;
         const OFFSET: u8 = 3;
@@ -171,7 +169,7 @@ impl<'a> _IDEW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 2;
@@ -194,7 +192,7 @@ impl<'a> _RTRW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 1;
@@ -217,7 +215,7 @@ impl<'a> _TXRQW<'a> {
         self.bit(false)
     }
     #[doc = r" Writes raw bits to the field"]
-    #[inline(always)]
+    #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
         const OFFSET: u8 = 0;
@@ -228,12 +226,12 @@ impl<'a> _TXRQW<'a> {
 }
 impl R {
     #[doc = r" Value of the register as raw bits"]
-    #[inline(always)]
+    #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
     #[doc = "Bits 21:31 - STID"]
-    #[inline(always)]
+    #[inline]
     pub fn stid(&self) -> STIDR {
         let bits = {
             const MASK: u16 = 2047;
@@ -243,7 +241,7 @@ impl R {
         STIDR { bits }
     }
     #[doc = "Bits 3:20 - EXID"]
-    #[inline(always)]
+    #[inline]
     pub fn exid(&self) -> EXIDR {
         let bits = {
             const MASK: u32 = 262143;
@@ -253,7 +251,7 @@ impl R {
         EXIDR { bits }
     }
     #[doc = "Bit 2 - IDE"]
-    #[inline(always)]
+    #[inline]
     pub fn ide(&self) -> IDER {
         let bits = {
             const MASK: bool = true;
@@ -263,7 +261,7 @@ impl R {
         IDER { bits }
     }
     #[doc = "Bit 1 - RTR"]
-    #[inline(always)]
+    #[inline]
     pub fn rtr(&self) -> RTRR {
         let bits = {
             const MASK: bool = true;
@@ -273,7 +271,7 @@ impl R {
         RTRR { bits }
     }
     #[doc = "Bit 0 - TXRQ"]
-    #[inline(always)]
+    #[inline]
     pub fn txrq(&self) -> TXRQR {
         let bits = {
             const MASK: bool = true;
@@ -285,38 +283,38 @@ impl R {
 }
 impl W {
     #[doc = r" Reset value of the register"]
-    #[inline(always)]
+    #[inline]
     pub fn reset_value() -> W {
         W { bits: 0 }
     }
     #[doc = r" Writes raw bits to the register"]
-    #[inline(always)]
+    #[inline]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
         self
     }
     #[doc = "Bits 21:31 - STID"]
-    #[inline(always)]
+    #[inline]
     pub fn stid(&mut self) -> _STIDW {
         _STIDW { w: self }
     }
     #[doc = "Bits 3:20 - EXID"]
-    #[inline(always)]
+    #[inline]
     pub fn exid(&mut self) -> _EXIDW {
         _EXIDW { w: self }
     }
     #[doc = "Bit 2 - IDE"]
-    #[inline(always)]
+    #[inline]
     pub fn ide(&mut self) -> _IDEW {
         _IDEW { w: self }
     }
     #[doc = "Bit 1 - RTR"]
-    #[inline(always)]
+    #[inline]
     pub fn rtr(&mut self) -> _RTRW {
         _RTRW { w: self }
     }
     #[doc = "Bit 0 - TXRQ"]
-    #[inline(always)]
+    #[inline]
     pub fn txrq(&mut self) -> _TXRQW {
         _TXRQW { w: self }
     }
